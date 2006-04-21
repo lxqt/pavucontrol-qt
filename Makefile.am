@@ -17,25 +17,22 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
 # USA.
 
-EXTRA_DIST = bootstrap.sh# README LICENSE
-SUBDIRS=src # doc
+EXTRA_DIST = bootstrap.sh README LICENSE
+SUBDIRS=src doc
 
-#MAINTAINERCLEANFILES=README
-#noinst_DATA = README
+MAINTAINERCLEANFILES=README
+noinst_DATA = README
 
-#README:
-#	rm -f README
-#	$(MAKE) -C doc README
-#	cd $(srcdir) && ln -s doc/README README
+README:
+	rm -f README
+	$(MAKE) -C doc README
+	cd $(srcdir) && ln -s doc/README README
 
 homepage: all dist
 	test -d $$HOME/homepage/private
 	mkdir -p $$HOME/homepage/private/projects/pavucontrol
 	cp pavucontrol-@PACKAGE_VERSION@.tar.gz $$HOME/homepage/private/projects/pavucontrol
 	cp doc/README.html doc/screenshot.png doc/style.css $$HOME/homepage/private/projects/pavucontrol
-	cp $$HOME/homepage/private/projects/pavucontrol/README.html $$HOME/homepage/private/projects/pavucontrol/index.html
+	ln -sf README.html $$HOME/homepage/private/projects/pavucontrol/index.html
 
-distcleancheck:
-	@:
-
-.PHONY: homepage distcleancheck
+.PHONY: homepage
