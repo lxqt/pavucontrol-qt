@@ -17,28 +17,41 @@
 # along with pavucontrol; if not, write to the Free Software Foundation,
 # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
 
+VERSION=1.9
+
 run_versioned() {
     local P
-    type -p "$1-$2" &> /dev/null && P="$1-$2" || local P="$1"
+    local V
+
+    V=$(echo "$2" | sed -e 's,\.,,g')
+    
+    if [ -e "`which $1$V`" ] ; then
+    	P="$1$V" 
+    else
+	if [ -e "`which $1-$2`" ] ; then
+	    P="$1-$2" 
+	else
+	    P="$1"
+	fi
+    fi
 
     shift 2
     "$P" "$@"
 }
 
+set -ex
+
 if [ "x$1" = "xam" ] ; then
-    set -ex
-    run_versioned automake 1.7 -a -c --foreign
+    run_versioned automake "$VERSION" -a -c --foreign
     ./config.status
 else 
-    set -ex
-
     rm -rf autom4te.cache
     rm -f config.cache
 
-    run_versioned aclocal 1.7
-    autoheader
-    run_versioned automake 1.7 -a -c --foreign
-    autoconf -Wall
+    run_versioned aclocal "$VERSION"
+    run_versioned autoconf 2.59 -Wall
+    run_versioned autoheader 2.59
+    run_versioned automake "$VERSION" -a -c --foreign
 
     CFLAGS="-g -O0" ./configure --sysconfdir=/etc "$@"
 
