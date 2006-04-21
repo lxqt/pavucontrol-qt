@@ -25,8 +25,9 @@
 #include <polyp/polypaudio.h>
 #include <polyp/glib-mainloop.h>
 
-#undef GLADE_FILE
+#ifndef GLADE_FILE
 #define GLADE_FILE "pavucontrol.glade"
+#endif
 
 pa_context *context = NULL;
 
