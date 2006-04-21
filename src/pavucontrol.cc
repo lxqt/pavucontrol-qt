@@ -127,6 +127,17 @@ public:
     void updateLabels();
 };
 
+void show_error(const char *txt) {
+    char buf[256];
+
+    snprintf(buf, sizeof(buf), "%s: %s", txt, pa_strerror(pa_context_errno(context)));
+    
+    Gtk::MessageDialog dialog(buf, false, Gtk::MESSAGE_ERROR, Gtk::BUTTONS_CLOSE, true);
+    dialog.run();
+
+    Gtk::Main::quit();
+}
+
 /*** ChannelWidget ***/
 
 ChannelWidget::ChannelWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
@@ -253,15 +264,11 @@ void SinkWidget::updateChannelVolume(int channel, pa_volume_t v) {
     
     pa_operation* o;
     if (!(o = pa_context_set_sink_volume_by_index(context, index, &volume, NULL, NULL))) {
-        g_message("pa_context_set_sink_volume_by_index() failed: %s", pa_strerror(pa_context_errno(context)));
-        goto fail;
+        show_error("pa_context_set_sink_volume_by_index() failed");
+        return;
     }
 
     pa_operation_unref(o);
-    return;
-
-fail:
-    Gtk::Main::quit();
 }
 
 void SinkWidget::onMuteToggleButton() {
@@ -269,15 +276,11 @@ void SinkWidget::onMuteToggleButton() {
 
     pa_operation* o;
     if (!(o = pa_context_set_sink_mute_by_index(context, index, muteToggleButton->get_active(), NULL, NULL))) {
-        g_message("pa_context_set_sink_mute_by_index() failed: %s", pa_strerror(pa_context_errno(context)));
-        goto fail;
+        show_error("pa_context_set_sink_mute_by_index() failed");
+        return;
     }
 
     pa_operation_unref(o);
-    return;
-
-fail:
-    Gtk::Main::quit();
     
 }
 
@@ -297,15 +300,12 @@ void SourceWidget::updateChannelVolume(int channel, pa_volume_t v) {
 
     pa_operation* o;
     if (!(o = pa_context_set_source_volume_by_index(context, index, &volume, NULL, NULL))) {
-        g_message("pa_context_set_source_volume_by_index() failed: %s", pa_strerror(pa_context_errno(context)));
-        goto fail;
+        show_error("pa_context_set_source_volume_by_index() failed");
+        return;
     }
 
     pa_operation_unref(o);
     return;
-
-fail:
-    Gtk::Main::quit();
 }
 
 void SourceWidget::onMuteToggleButton() {
@@ -313,15 +313,11 @@ void SourceWidget::onMuteToggleButton() {
     
     pa_operation* o;
     if (!(o = pa_context_set_source_mute_by_index(context, index, muteToggleButton->get_active(), NULL, NULL))) {
-        g_message("pa_context_set_source_mute_by_index() failed: %s", pa_strerror(pa_context_errno(context)));
-        goto fail;
+        show_error("pa_context_set_source_mute_by_index() failed");
+        return;
     }
 
     pa_operation_unref(o);
-    return;
-
-fail:
-    Gtk::Main::quit();
 }
 
 SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
@@ -340,15 +336,11 @@ void SinkInputWidget::updateChannelVolume(int channel, pa_volume_t v) {
 
     pa_operation* o;
     if (!(o = pa_context_set_sink_input_volume(context, index, &volume, NULL, NULL))) {
-        g_message("pa_context_set_sink_input_volume() failed: %s", pa_strerror(pa_context_errno(context)));
-        goto fail;
+        show_error("pa_context_set_sink_input_volume() failed");
+        return;
     }
 
     pa_operation_unref(o);
-    return;
-
-fail:
-    Gtk::Main::quit();
 }
 
 /*** MainWindow ***/
@@ -511,45 +503,42 @@ void MainWindow::removeSinkInput(uint32_t index) {
     updateLabels();
 }
 
-void sink_cb(pa_context *c, const pa_sink_info *i, int eol, void *userdata) {
+void sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol)
         return;
 
     if (!i) {
-        g_message("sink callback: %s", pa_strerror(pa_context_errno(c)));
-        Gtk::Main::quit();
+        show_error("Sink callback failure");
         return;
     }
 
     w->updateSink(*i);
 }
 
-void source_cb(pa_context *c, const pa_source_info *i, int eol, void *userdata) {
+void source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol)
         return;
 
     if (!i) {
-        g_message("source callback: %s", pa_strerror(pa_context_errno(c)));
-        Gtk::Main::quit();
+        show_error("Source callback failure");
         return;
     }
 
     w->updateSource(*i);
 }
 
-void sink_input_cb(pa_context *c, const pa_sink_input_info *i, int eol, void *userdata) {
+void sink_input_cb(pa_context *, const pa_sink_input_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol)
         return;
 
     if (!i) {
-        g_message("sink input callback: %s", pa_strerror(pa_context_errno(c)));
-        Gtk::Main::quit();
+        show_error("Sink input callback failure");
         return;
     }
 
@@ -566,8 +555,8 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_sink_info_by_index(c, index, sink_cb, w))) {
-                    g_message("pa_context_get_sink_info_by_index() failed: %s", pa_strerror(pa_context_errno(c)));
-                    goto fail;
+                    show_error("pa_context_get_sink_info_by_index() failed");
+                    return;
                 }
                 pa_operation_unref(o);
             }
@@ -578,8 +567,8 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_source_info_by_index(c, index, source_cb, w))) {
-                    g_message("pa_context_get_source_info_by_index() failed: %s", pa_strerror(pa_context_errno(c)));
-                    goto fail;
+                    show_error("pa_context_get_source_info_by_index() failed");
+                    return;
                 }
                 pa_operation_unref(o);
             }
@@ -590,18 +579,13 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_sink_input_info(c, index, sink_input_cb, w))) {
-                    g_message("pa_context_get_sink_input_info() failed: %s", pa_strerror(pa_context_errno(c)));
-                    goto fail;
+                    show_error("pa_context_get_sink_input_info() failed");
+                    return;
                 }
                 pa_operation_unref(o);
             }
             break;
     }
-
-    return;
-
-fail:
-    Gtk::Main::quit();
 }
 
 void context_state_callback(pa_context *c, void *userdata) {
@@ -622,26 +606,26 @@ void context_state_callback(pa_context *c, void *userdata) {
             pa_context_set_subscribe_callback(c, subscribe_cb, w);
             
             if (!(o = pa_context_subscribe(c, (pa_subscription_mask_t) (PA_SUBSCRIPTION_MASK_SINK|PA_SUBSCRIPTION_MASK_SOURCE|PA_SUBSCRIPTION_MASK_SINK_INPUT), NULL, NULL))) {
-                g_message("pa_context_subscribe() failed: %s", pa_strerror(pa_context_errno(c)));
-                goto fail;
+                show_error("pa_context_subscribe() failed");
+                return;
             }
             pa_operation_unref(o);
 
             if (!(o = pa_context_get_sink_info_list(c, sink_cb, w))) {
-                g_message("pa_context_get_sink_info_list() failed: %s", pa_strerror(pa_context_errno(c)));
-                goto fail;
+                show_error("pa_context_get_sink_info_list() failed");
+                return;
             }
             pa_operation_unref(o);
 
             if (!(o = pa_context_get_source_info_list(c, source_cb, w))) {
-                g_message("pa_context_get_source_info_list() failed: %s", pa_strerror(pa_context_errno(c)));
-                goto fail;
+                show_error("pa_context_get_source_info_list() failed");
+                return;
             }
             pa_operation_unref(o);
 
             if (!(o = pa_context_get_sink_input_info_list(c, sink_input_cb, w))) {
-                g_message("pa_context_get_sink_input_info_list() failed: %s", pa_strerror(pa_context_errno(c)));
-                goto fail;
+                show_error("pa_context_get_sink_input_info_list() failed");
+                return;
             }
             pa_operation_unref(o);
                 
@@ -649,19 +633,14 @@ void context_state_callback(pa_context *c, void *userdata) {
         }
             
         case PA_CONTEXT_FAILED:
-             g_message("Connection failed: %s", pa_strerror(pa_context_errno(c)));
-             goto fail;
+            show_error("Connection failed");
+            return;
             
         case PA_CONTEXT_TERMINATED:
         default:
-            goto fail;
-            
+            Gtk::Main::quit();
+            return;
     }
-
-    return;
-    
-fail:
-    Gtk::Main::quit();
 }
 
 int main(int argc, char *argv[]) {
@@ -677,11 +656,16 @@ int main(int argc, char *argv[]) {
     g_assert(context);
 
     pa_context_set_state_callback(context, context_state_callback, mainWindow);
-    pa_context_connect(context, NULL, (pa_context_flags_t) 0, NULL);
- 
+    
+    if (pa_context_connect(context, NULL, (pa_context_flags_t) 0, NULL) < 0) {
+        show_error("Connection failed");
+        goto finish;
+    }
+    
     Gtk::Main::run(*mainWindow);
     delete mainWindow;
 
+finish:
     pa_context_unref(context);
     pa_glib_mainloop_free(m);
 }
