@@ -19,6 +19,8 @@
   USA.
 ***/
 
+#include <signal.h>
+
 #include <gtkmm.h>
 #include <libglademm.h>
 
@@ -645,6 +647,8 @@ void context_state_callback(pa_context *c, void *userdata) {
 }
 
 int main(int argc, char *argv[]) {
+    signal(SIGPIPE, SIG_IGN);
+
     Gtk::Main kit(argc, argv);
     
     Gtk::Window* mainWindow = MainWindow::create();
