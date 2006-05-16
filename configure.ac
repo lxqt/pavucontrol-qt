@@ -20,7 +20,7 @@
 # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
 
 AC_PREREQ(2.57)
-AC_INIT([pavucontrol],[0.8],[mzcnihpbageby (at) 0pointer (dot) de])
+AC_INIT([pavucontrol],[0.9.0],[mzcnihpbageby (at) 0pointer (dot) de])
 AC_CONFIG_SRCDIR([src/pavucontrol.cc])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([foreign 1.9 -Wall])
@@ -45,10 +45,10 @@ AC_SUBST(GUILIBS_LIBS)
 
 if test -d ../polypaudio ; then
    POLYP_CFLAGS='-I$(top_srcdir)/../polypaudio/src'
-   POLYP_LIBS='-L$(top_srcdir)/../polypaudio/src/.libs -lpolyp-0.8.1 -lpolyp-mainloop-glib-0.8.1'
+   POLYP_LIBS='-L$(top_srcdir)/../polypaudio/src/.libs -lpolyp -lpolyp-mainloop-glib'
    echo "*** Found polypaudio in ../polypaudio, using that version ***"
 else
-   PKG_CHECK_MODULES(POLYP, [ polyplib >= 0.8 polyplib-glib-mainloop >= 0.8 ])
+   PKG_CHECK_MODULES(POLYP, [ polyplib >= 0.9.0 polyplib-glib-mainloop >= 0.9.0 ])
 fi
 
 AC_SUBST(POLYP_LIBS)
