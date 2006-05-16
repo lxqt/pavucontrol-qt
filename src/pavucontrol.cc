@@ -74,6 +74,12 @@ public:
     ChannelWidget *channelWidgets[PA_CHANNELS_MAX];
 
     virtual void onMuteToggleButton();
+
+    sigc::connection timeoutConnection;
+
+    bool timeoutEvent();
+    
+    virtual void executeVolumeUpdate();
 };
 
 class SinkWidget : public StreamWidget {
@@ -81,9 +87,9 @@ public:
     SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static SinkWidget* create();
 
-    virtual void updateChannelVolume(int channel, pa_volume_t v);
     virtual void onMuteToggleButton();
     uint32_t index;
+    virtual void executeVolumeUpdate();
 };
 
 class SourceWidget : public StreamWidget {
@@ -91,9 +97,9 @@ public:
     SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static SourceWidget* create();
 
-    virtual void updateChannelVolume(int channel, pa_volume_t v);
     virtual void onMuteToggleButton();
     uint32_t index;
+    virtual void executeVolumeUpdate();
 };
 
 class SinkInputWidget : public StreamWidget {
@@ -101,8 +107,8 @@ public:
     SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static SinkInputWidget* create();
 
-    virtual void updateChannelVolume(int channel, pa_volume_t v);
     uint32_t index;
+    virtual void executeVolumeUpdate();
 };
 
 class MainWindow : public Gtk::Window {
@@ -169,7 +175,7 @@ void ChannelWidget::setVolume(pa_volume_t volume) {
     volumeLabel->set_text(txt);
 
     if (v > 100)
-        v = 1000;
+        v = 100;
 
     volumeScaleEnabled = false;
     volumeScale->set_value(v);
@@ -242,6 +248,11 @@ void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
             volume.values[i] = v;
     } else 
         volume.values[channel] = v;
+
+    setVolume(volume);
+
+    if (timeoutConnection.empty())
+        timeoutConnection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &StreamWidget::timeoutEvent), 50);
 }
 
 void StreamWidget::onMuteToggleButton() {
@@ -249,6 +260,14 @@ void StreamWidget::onMuteToggleButton() {
 
     for (int i = 0; i < channelMap.channels; i++)
         channelWidgets[i]->set_sensitive(!muteToggleButton->get_active());
+}
+
+bool StreamWidget::timeoutEvent() {
+    executeVolumeUpdate();
+    return false;
+}
+
+void StreamWidget::executeVolumeUpdate() {
 }
 
 SinkWidget::SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
@@ -262,10 +281,9 @@ SinkWidget* SinkWidget::create() {
     return w;
 }
 
-void SinkWidget::updateChannelVolume(int channel, pa_volume_t v) {
-    StreamWidget::updateChannelVolume(channel, v);
-    
+void SinkWidget::executeVolumeUpdate() {
     pa_operation* o;
+    
     if (!(o = pa_context_set_sink_volume_by_index(context, index, &volume, NULL, NULL))) {
         show_error("pa_context_set_sink_volume_by_index() failed");
         return;
@@ -284,7 +302,6 @@ void SinkWidget::onMuteToggleButton() {
     }
 
     pa_operation_unref(o);
-    
 }
 
 SourceWidget::SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
@@ -298,17 +315,15 @@ SourceWidget* SourceWidget::create() {
     return w;
 }
 
-void SourceWidget::updateChannelVolume(int channel, pa_volume_t v) {
-    StreamWidget::updateChannelVolume(channel, v);
-
+void SourceWidget::executeVolumeUpdate() {
     pa_operation* o;
+    
     if (!(o = pa_context_set_source_volume_by_index(context, index, &volume, NULL, NULL))) {
         show_error("pa_context_set_source_volume_by_index() failed");
         return;
     }
 
     pa_operation_unref(o);
-    return;
 }
 
 void SourceWidget::onMuteToggleButton() {
@@ -319,7 +334,7 @@ void SourceWidget::onMuteToggleButton() {
         show_error("pa_context_set_source_mute_by_index() failed");
         return;
     }
-
+    
     pa_operation_unref(o);
 }
 
@@ -334,10 +349,9 @@ SinkInputWidget* SinkInputWidget::create() {
     return w;
 }
 
-void SinkInputWidget::updateChannelVolume(int channel, pa_volume_t v) {
-    StreamWidget::updateChannelVolume(channel, v);
-
+void SinkInputWidget::executeVolumeUpdate() {
     pa_operation* o;
+    
     if (!(o = pa_context_set_sink_input_volume(context, index, &volume, NULL, NULL))) {
         show_error("pa_context_set_sink_input_volume() failed");
         return;
