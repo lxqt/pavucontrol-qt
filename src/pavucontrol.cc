@@ -61,10 +61,10 @@ public:
     StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
 
     void setChannelMap(const pa_channel_map &m);
-    void setVolume(const pa_cvolume &volume);
+    void setVolume(const pa_cvolume &volume, bool force);
     virtual void updateChannelVolume(int channel, pa_volume_t v);
 
-    Gtk::Label *nameLabel;
+    Gtk::Label *nameLabel, *boldNameLabel;
     Gtk::VBox *channelsVBox;
     Gtk::ToggleButton *lockToggleButton, *muteToggleButton;
 
@@ -107,7 +107,7 @@ public:
     SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static SinkInputWidget* create();
 
-    uint32_t index;
+    uint32_t index, clientIndex;
     virtual void executeVolumeUpdate();
 };
 
@@ -115,14 +115,17 @@ class MainWindow : public Gtk::Window {
 public:
     MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static MainWindow* create();
+    virtual ~MainWindow();
 
     void updateSink(const pa_sink_info &info);
     void updateSource(const pa_source_info &info);
     void updateSinkInput(const pa_sink_input_info &info);
+    void updateClient(const pa_client_info &info);
 
     void removeSink(uint32_t index);
     void removeSource(uint32_t index);
     void removeSinkInput(uint32_t index);
+    void removeClient(uint32_t index);
     
     Gtk::VBox *streamsVBox, *sinksVBox, *sourcesVBox, *monitorsVBox;
     Gtk::EventBox *titleEventBox;
@@ -132,6 +135,7 @@ public:
     std::map<int, SourceWidget*> sourceWidgets;
     std::map<int, SourceWidget*> monitorWidgets;
     std::map<int, SinkInputWidget*> streamWidgets;
+    std::map<int, char*> clientNames;
 
     void updateLabels();
 };
@@ -206,6 +210,7 @@ StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
 
     x->get_widget("channelsVBox", channelsVBox);
     x->get_widget("nameLabel", nameLabel);
+    x->get_widget("boldNameLabel", boldNameLabel);
     x->get_widget("lockToggleButton", lockToggleButton);
     x->get_widget("muteToggleButton", muteToggleButton);
 
@@ -231,25 +236,28 @@ void StreamWidget::setChannelMap(const pa_channel_map &m) {
     lockToggleButton->set_sensitive(m.channels > 1);
 }
 
-void StreamWidget::setVolume(const pa_cvolume &v) {
+void StreamWidget::setVolume(const pa_cvolume &v, bool force = false) {
     g_assert(v.channels == channelMap.channels);
 
     volume = v;
-    
-    for (int i = 0; i < volume.channels; i++)
-        channelWidgets[i]->setVolume(volume.values[i]);
+
+    if (timeoutConnection.empty() || force) /* do not update the volume when a volume change is still in flux */
+        for (int i = 0; i < volume.channels; i++)
+            channelWidgets[i]->setVolume(volume.values[i]);
 }
 
 void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
+    pa_cvolume n;
     g_assert(channel < volume.channels);
 
+    n = volume;
     if (lockToggleButton->get_active()) {
-        for (int i = 0; i < volume.channels; i++)
-            volume.values[i] = v;
+        for (int i = 0; i < n.channels; i++)
+            n.values[i] = v;
     } else 
-        volume.values[channel] = v;
+        n.values[channel] = v;
 
-    setVolume(volume);
+    setVolume(n, true);
 
     if (timeoutConnection.empty())
         timeoutConnection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &StreamWidget::timeoutEvent), 50);
@@ -389,6 +397,11 @@ MainWindow* MainWindow::create() {
     return w;
 }
 
+MainWindow::~MainWindow() {
+    for (std::map<int, char*>::iterator i = clientNames.begin(); i != clientNames.end(); ++i)
+        g_free(i->second);
+}
+
 void MainWindow::updateSink(const pa_sink_info &info) {
     SinkWidget *w;
 
@@ -401,9 +414,12 @@ void MainWindow::updateSink(const pa_sink_info &info) {
         w->index = info.index;
     }
 
-    char txt[256];
-    snprintf(txt, sizeof(txt), "<b>%s</b> - %s", info.name, info.description);
-    w->nameLabel->set_markup(txt);
+    gchar *txt;
+    w->boldNameLabel->set_markup(txt = g_markup_printf_escaped("<b>%s</b>", info.name));
+    g_free(txt);
+    w->nameLabel->set_markup(txt = g_markup_printf_escaped(": %s", info.description));
+    g_free(txt);
+
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
     w->onMuteToggleButton();
@@ -427,9 +443,12 @@ void MainWindow::updateSource(const pa_source_info &info) {
         w->index = info.index;
     }
 
-    char txt[256];
-    snprintf(txt, sizeof(txt), "<b>%s</b> - %s", info.name, info.description);
-    w->nameLabel->set_markup(txt);
+    gchar *txt;
+    w->boldNameLabel->set_markup(txt = g_markup_printf_escaped("<b>%s</b>", info.name));
+    g_free(txt);
+    w->nameLabel->set_markup(txt = g_markup_printf_escaped(": %s", info.description));
+    g_free(txt);
+    
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
     w->onMuteToggleButton();
@@ -449,15 +468,37 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
         streamsVBox->pack_start(*w, false, false, 0);
         w->muteToggleButton->hide();
         w->index = info.index;
+        w->clientIndex = info.client;
     }
 
-    char txt[256];
-    snprintf(txt, sizeof(txt), "<b>%s</b>", info.name);
-    w->nameLabel->set_markup(txt);
+    char *txt;
+    w->boldNameLabel->set_markup(txt = g_markup_printf_escaped("<b>%s</b>", clientNames[info.client]));
+    g_free(txt);
+    w->nameLabel->set_markup(txt = g_markup_printf_escaped(": %s", info.name));
+    g_free(txt);
     w->setVolume(info.volume);
 
     updateLabels();
     w->check_resize();
+}
+
+void MainWindow::updateClient(const pa_client_info &info) {
+
+    g_free(clientNames[info.index]);
+    clientNames[info.index] = g_strdup(info.name);
+
+    for (std::map<int, SinkInputWidget*>::iterator i = streamWidgets.begin(); i != streamWidgets.end(); ++i) {
+        SinkInputWidget *w = i->second;
+
+        if (!w)
+            continue;
+        
+        if (w->clientIndex == info.index) {
+            gchar *txt;
+            w->boldNameLabel->set_markup(txt = g_markup_printf_escaped("<b>%s</b>", info.name));
+            g_free(txt);
+        }
+    }
 }
 
 void MainWindow::updateLabels() {
@@ -520,6 +561,11 @@ void MainWindow::removeSinkInput(uint32_t index) {
     updateLabels();
 }
 
+void MainWindow::removeClient(uint32_t index) {
+    g_free(clientNames[index]);
+    clientNames.erase(index);
+}
+
 void sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
@@ -562,6 +608,20 @@ void sink_input_cb(pa_context *, const pa_sink_input_info *i, int eol, void *use
     w->updateSinkInput(*i);
 }
 
+void client_cb(pa_context *, const pa_client_info *i, int eol, void *userdata) {
+    MainWindow *w = static_cast<MainWindow*>(userdata);
+
+    if (eol)
+        return;
+
+    if (!i) {
+        show_error("Client callback failure");
+        return;
+    }
+
+    w->updateClient(*i);
+}
+
 void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
@@ -602,6 +662,18 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
                 pa_operation_unref(o);
             }
             break;
+        case PA_SUBSCRIPTION_EVENT_CLIENT:
+            if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
+                w->removeClient(index);
+            else {
+                pa_operation *o;
+                if (!(o = pa_context_get_client_info(c, index, client_cb, w))) {
+                    show_error("pa_context_get_client_info() failed");
+                    return;
+                }
+                pa_operation_unref(o);
+            }
+            break;
     }
 }
 
@@ -622,8 +694,14 @@ void context_state_callback(pa_context *c, void *userdata) {
             
             pa_context_set_subscribe_callback(c, subscribe_cb, w);
             
-            if (!(o = pa_context_subscribe(c, (pa_subscription_mask_t) (PA_SUBSCRIPTION_MASK_SINK|PA_SUBSCRIPTION_MASK_SOURCE|PA_SUBSCRIPTION_MASK_SINK_INPUT), NULL, NULL))) {
+            if (!(o = pa_context_subscribe(c, (pa_subscription_mask_t) (PA_SUBSCRIPTION_MASK_SINK|PA_SUBSCRIPTION_MASK_SOURCE|PA_SUBSCRIPTION_MASK_SINK_INPUT|PA_SUBSCRIPTION_MASK_CLIENT), NULL, NULL))) {
                 show_error("pa_context_subscribe() failed");
+                return;
+            }
+            pa_operation_unref(o);
+
+            if (!(o = pa_context_get_client_info_list(c, client_cb, w))) {
+                show_error("pa_context_client_info_list() failed");
                 return;
             }
             pa_operation_unref(o);
