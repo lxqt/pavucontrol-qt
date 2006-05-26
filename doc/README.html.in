@@ -43,7 +43,7 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</p>
 <h2><a name="news">News</a></h2>
 
 <div class="news-date">Sat May 27 2006: </div> <p class="news-text"><a
-href="@PACKAGE_URL@pavucontrol-0.9.0.tar.gz">Version 0.9.0</a> released; update for Polypaudio 0.9.0; show client name for streams; make volume slide more responsive</p>
+href="@PACKAGE_URL@pavucontrol-0.9.0.tar.gz">Version 0.9.0</a> released; update for Polypaudio 0.9.0; show client name of playback streams; make volume slider more responsive</p>
 
 <div class="news-date">Fri Apr 21 2006: </div> <p class="news-text"><a
 href="@PACKAGE_URL@pavucontrol-0.8.tar.gz">Version 0.8</a> released; initial release</p>
