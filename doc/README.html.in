@@ -42,6 +42,9 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</p>
 
 <h2><a name="news">News</a></h2>
 
+<div class="news-date">Sat May 27 2006: </div> <p class="news-text"><a
+href="@PACKAGE_URL@pavucontrol-0.9.0.tar.gz">Version 0.9.0</a> released; update for Polypaudio 0.9.0; show client name for streams; make volume slide more responsive</p>
+
 <div class="news-date">Fri Apr 21 2006: </div> <p class="news-text"><a
 href="@PACKAGE_URL@pavucontrol-0.8.tar.gz">Version 0.8</a> released; initial release</p>
 
@@ -102,7 +105,7 @@ compilation and <tt>make install</tt> (as root) for installation of
 <p>If you want to be notified whenever I release a new version of this software use the subscription feature of <a href="http://freshmeat.net/projects/pavucontrol/">Freshmeat</a>.</p>
 
 <hr/>
-<address class="grey">Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;, April 2006</address>
+<address class="grey">Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;, May 2006</address>
 <div class="grey"><i>$Id$</i></div>
 
 </body>
