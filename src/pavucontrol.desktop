@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Polypaudio Volume Control
+GenericName=Volume Control
+Comment=Adjust the volume level
+Exec=pavucontrol
+Icon=multimedia-volume-control
+StartupNotify=true
+Type=Application
+Categories=Application;AudioVideo;Audio;
+GenericName[en_GB]=Volume Control

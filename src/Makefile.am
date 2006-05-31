@@ -17,9 +17,12 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
 # USA.
 
+desktopdir = $(datadir)/applications
+
 bin_PROGRAMS=pavucontrol
 
 dist_pkgdata_DATA=pavucontrol.glade
+desktop_DATA=pavucontrol.desktop
 
 pavucontrol_SOURCES=pavucontrol.cc
 
