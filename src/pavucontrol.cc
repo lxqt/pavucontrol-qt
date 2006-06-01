@@ -385,6 +385,8 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
 
     sourcesVBox->set_reallocate_redraws(true);
     monitorsVBox->set_reallocate_redraws(true);
+    streamsVBox->set_reallocate_redraws(true);
+    sinksVBox->set_reallocate_redraws(true);
     
     Gdk::Color c("white");
     titleEventBox->modify_bg(Gtk::STATE_NORMAL, c);
@@ -425,7 +427,7 @@ void MainWindow::updateSink(const pa_sink_info &info) {
     w->onMuteToggleButton();
 
     updateLabels();
-    w->check_resize();
+    w->queue_draw();
 }
 
 void MainWindow::updateSource(const pa_source_info &info) {
@@ -454,7 +456,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
     w->onMuteToggleButton();
 
     updateLabels();
-    w->check_resize();
+    w->queue_draw();
 }
 
 void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
@@ -479,7 +481,7 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
     w->setVolume(info.volume);
 
     updateLabels();
-    w->check_resize();
+    w->queue_draw();
 }
 
 void MainWindow::updateClient(const pa_client_info &info) {
