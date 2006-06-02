@@ -22,7 +22,7 @@ desktopdir = $(datadir)/applications
 bin_PROGRAMS=pavucontrol
 
 dist_pkgdata_DATA=pavucontrol.glade
-desktop_DATA=pavucontrol.desktop
+dist_desktop_DATA=pavucontrol.desktop
 
 pavucontrol_SOURCES=pavucontrol.cc
 
