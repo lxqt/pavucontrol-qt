@@ -3,12 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<title>Polypaudio Volume Control @PACKAGE_VERSION@</title>
+<title>PulseAudio Volume Control @PACKAGE_VERSION@</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
-<h1><a name="top">Polypaudio Volume Control @PACKAGE_VERSION@</a></h1>
+<h1><a name="top">PulseAudio Volume Control @PACKAGE_VERSION@</a></h1>
 
 <p><i>Copyright 2006 Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;</i></p>
 
@@ -53,12 +53,12 @@ href="@PACKAGE_URL@pavucontrol-0.8.tar.gz">Version 0.8</a> released; initial rel
 
 <h2><a name="overview">Overview</a></h2>
 
-<p>Polypaudio Volume Control (<tt>pavucontrol</tt>) is a simple GTK
+<p>PulseAudio Volume Control (<tt>pavucontrol</tt>) is a simple GTK
 based volume control tool ("mixer") for the <a
-href="http://0pointer.de/lennart/projects/polypaudio/">Polypaudio</a>
-sound server. In contrast to classic mixer tools this one allows you
-to control both the volume of hardware devices and of each playback
-stream seperately.</p>
+href="http://0pointer.de/lennart/projects/pulseaudio/">PulseAudio
+sound server</a>. In contrast to classic mixer tools this one allows
+you to control both the volume of hardware devices and of each
+playback stream seperately.</p>
 
 <p>Everybody loves <a href="@PACKAGE_URL@/screenshot.png">screenshots</a>.</p>
 
@@ -81,7 +81,7 @@ source code configuration.</p>
 
 <p><tt>pavucontrol</tt> requires <a href="http://gtkmm.sf.net/"><tt>gtkmm</tt></a> and <tt>glademmm</tt> installed.</p>
 
-<p>Obviously <tt>pavucontrol</tt> requires an installation of <tt>polypaudio</tt> (version 0.8).</p>
+<p>Obviously <tt>pavucontrol</tt> requires an installation of PulseAudio (version 0.9.2).</p>
 
 <h2><a name="installation">Installation</a></h2>
 
