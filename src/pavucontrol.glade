@@ -4,7 +4,7 @@
 <glade-interface>
 
 <widget class="GtkWindow" id="mainWindow">
-  <property name="title" translatable="yes">Polypaudio Volume Control</property>
+  <property name="title" translatable="yes">PulseAudio Volume Control</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
   <property name="modal">False</property>
@@ -66,7 +66,7 @@
 		  <child>
 		    <widget class="GtkLabel" id="titleLabel">
 		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">&lt;span size=&quot;18000&quot; color=&quot;black&quot;&gt;&lt;b&gt;Polypaudio Volume Control&lt;/b&gt;&lt;/span&gt;</property>
+		      <property name="label" translatable="yes">&lt;span size=&quot;18000&quot; color=&quot;black&quot;&gt;&lt;b&gt;PulseAudio Volume Control&lt;/b&gt;&lt;/span&gt;</property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">True</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>

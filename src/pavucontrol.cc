@@ -24,8 +24,8 @@
 #include <gtkmm.h>
 #include <libglademm.h>
 
-#include <polyp/polypaudio.h>
-#include <polyp/glib-mainloop.h>
+#include <pulse/pulseaudio.h>
+#include <pulse/glib-mainloop.h>
 
 #ifndef GLADE_FILE
 #define GLADE_FILE "pavucontrol.glade"
@@ -751,7 +751,7 @@ int main(int argc, char *argv[]) {
     g_assert(m);
     pa_mainloop_api *api = pa_glib_mainloop_get_api(m);
     g_assert(api);
-    context = pa_context_new(api, "Polypaudio Volume Control");
+    context = pa_context_new(api, "PulseAudio Volume Control");
     g_assert(context);
 
     pa_context_set_state_callback(context, context_state_callback, mainWindow);

@@ -26,6 +26,6 @@ dist_desktop_DATA=pavucontrol.desktop
 
 pavucontrol_SOURCES=pavucontrol.cc
 
-pavucontrol_LDADD=$(AM_LDADD) $(GUILIBS_LIBS) $(POLYP_LIBS)
-pavucontrol_CXXFLAGS=$(AM_CXXFLAGS) $(GUILIBS_CFLAGS) $(POLYP_CFLAGS) 
+pavucontrol_LDADD=$(AM_LDADD) $(GUILIBS_LIBS) $(PULSE_LIBS)
+pavucontrol_CXXFLAGS=$(AM_CXXFLAGS) $(GUILIBS_CFLAGS) $(PULSE_CFLAGS) 
 pavucontrol_CXXFLAGS+=-DGLADE_FILE=\"$(pkgdatadir)/pavucontrol.glade\"

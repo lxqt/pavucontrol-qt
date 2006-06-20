@@ -20,7 +20,7 @@
 # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
 
 AC_PREREQ(2.57)
-AC_INIT([pavucontrol],[0.9.1],[mzcnihpbageby (at) 0pointer (dot) de])
+AC_INIT([pavucontrol],[0.9.2],[mzcnihpbageby (at) 0pointer (dot) de])
 AC_CONFIG_SRCDIR([src/pavucontrol.cc])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([foreign 1.9 -Wall])
@@ -43,16 +43,16 @@ PKG_CHECK_MODULES(GUILIBS, [ gtkmm-2.4 libglademm-2.4 sigc++-2.0 ])
 AC_SUBST(GUILIBS_CFLAGS)
 AC_SUBST(GUILIBS_LIBS)
 
-if test -d ../polypaudio ; then
-   POLYP_CFLAGS='-I$(top_srcdir)/../polypaudio/src'
-   POLYP_LIBS='-L$(top_srcdir)/../polypaudio/src/.libs -lpolyp -lpolyp-mainloop-glib'
-   echo "*** Found polypaudio in ../polypaudio, using that version ***"
+if test -d ../pulseaudio ; then
+   PULSE_CFLAGS='-I$(top_srcdir)/../pulseaudio/src'
+   PULSE_LIBS='-L$(top_srcdir)/../pulseaudio/src/.libs -lpulse -lpulse-mainloop-glib'
+   echo "*** Found pulseaudio in ../pulseaudio, using that version ***"
 else
-   PKG_CHECK_MODULES(POLYP, [ polyplib >= 0.9.0 polyplib-glib-mainloop >= 0.9.0 ])
+   PKG_CHECK_MODULES(PULSE, [ libpulse >= 0.9.2 libpulse-mainloop-glib >= 0.9.2 ])
 fi
 
-AC_SUBST(POLYP_LIBS)
-AC_SUBST(POLYP_CFLAGS)
+AC_SUBST(PULSE_LIBS)
+AC_SUBST(PULSE_CFLAGS)
 
 # If using GCC specifiy some additional parameters
 if test "x$GCC" = "xyes" ; then
