@@ -42,7 +42,10 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</p>
 
 <h2><a name="news">News</a></h2>
 
-<div class="news-date">Fri June 2 2006: </div> <p class="news-text"><a
+<div class="news-date">Sat Jul 8 2006: </div> <p class="news-text"><a
+href="@PACKAGE_URL@pavucontrol-0.9.2.tar.gz">Version 0.9.2</a> released; update for <a href="http://pulseaudio.org/">PulseAudio 0.9.2</a></p>
+
+<div class="news-date">Fri Jun 2 2006: </div> <p class="news-text"><a
 href="@PACKAGE_URL@pavucontrol-0.9.1.tar.gz">Version 0.9.1</a> released; add a <tt>.desktop</tt> file; update icons everywhere</p>
 
 <div class="news-date">Sat May 27 2006: </div> <p class="news-text"><a
@@ -81,7 +84,7 @@ source code configuration.</p>
 
 <p><tt>pavucontrol</tt> requires <a href="http://gtkmm.sf.net/"><tt>gtkmm</tt></a> and <tt>glademmm</tt> installed.</p>
 
-<p>Obviously <tt>pavucontrol</tt> requires an installation of PulseAudio (version 0.9.2).</p>
+<p>Obviously <tt>pavucontrol</tt> requires an installation of <a href="http://pulseaudio.org/">PulseAudio</a> (version 0.9.2).</p>
 
 <h2><a name="installation">Installation</a></h2>
 
@@ -108,7 +111,7 @@ compilation and <tt>make install</tt> (as root) for installation of
 <p>If you want to be notified whenever I release a new version of this software use the subscription feature of <a href="http://freshmeat.net/projects/pavucontrol/">Freshmeat</a>.</p>
 
 <hr/>
-<address class="grey">Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;, June 2006</address>
+<address class="grey">Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;, July 2006</address>
 <div class="grey"><i>$Id$</i></div>
 
 </body>
