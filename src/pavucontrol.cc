@@ -478,10 +478,16 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
     }
 
     char *txt;
-    w->boldNameLabel->set_markup(txt = g_markup_printf_escaped("<b>%s</b>", clientNames[info.client]));
-    g_free(txt);
-    w->nameLabel->set_markup(txt = g_markup_printf_escaped(": %s", info.name));
-    g_free(txt);
+    if (clientNames.count(info.client)) {
+        w->boldNameLabel->set_markup(txt = g_markup_printf_escaped("<b>%s</b>", clientNames[info.client]));
+        g_free(txt);
+        w->nameLabel->set_markup(txt = g_markup_printf_escaped(": %s", info.name));
+        g_free(txt);
+    } else {
+        w->boldNameLabel->set_label("");
+        w->nameLabel->set_label(info.name);
+    }
+    
     w->setVolume(info.volume);
 
     updateLabels();
