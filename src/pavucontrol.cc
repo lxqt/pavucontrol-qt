@@ -36,6 +36,7 @@
 #endif
 
 static pa_context *context = NULL;
+static int n_outstanding = 0;
 
 enum SinkType {
     SINK_ALL,
@@ -165,6 +166,9 @@ public:
     virtual void onSourceTypeComboBoxChanged();
 
     void updateDeviceVisibility();
+    
+protected:
+    virtual void on_realize();
 };
 
 void show_error(const char *txt) {
@@ -433,6 +437,12 @@ MainWindow* MainWindow::create() {
     return w;
 }
 
+void MainWindow::on_realize() {
+    Gtk::Window::on_realize();
+
+    get_window()->set_cursor(Gdk::Cursor(Gdk::WATCH));
+}
+
 MainWindow::~MainWindow() {
     for (std::map<int, char*>::iterator i = clientNames.begin(); i != clientNames.end(); ++i)
         g_free(i->second);
@@ -632,11 +642,20 @@ void MainWindow::onSourceTypeComboBoxChanged() {
     updateDeviceVisibility();
 }
 
+static void dec_outstanding(MainWindow *w) {
+    assert(n_outstanding > 0);
+    
+    if (--n_outstanding <= 0)
+        w->get_window()->set_cursor();
+}
+
 void sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
-    if (eol)
+    if (eol) {
+        dec_outstanding(w);
         return;
+    }
 
     if (!i) {
         show_error("Sink callback failure");
@@ -649,8 +668,10 @@ void sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata) {
 void source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
-    if (eol)
+    if (eol) {
+        dec_outstanding(w);
         return;
+    }
 
     if (!i) {
         show_error("Source callback failure");
@@ -663,8 +684,10 @@ void source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata) {
 void sink_input_cb(pa_context *, const pa_sink_input_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
-    if (eol)
+    if (eol) {
+        dec_outstanding(w);
         return;
+    }
 
     if (!i) {
         show_error("Sink input callback failure");
@@ -677,8 +700,10 @@ void sink_input_cb(pa_context *, const pa_sink_input_info *i, int eol, void *use
 void client_cb(pa_context *, const pa_client_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
-    if (eol)
+    if (eol) {
+        dec_outstanding(w);
         return;
+    }
 
     if (!i) {
         show_error("Client callback failure");
@@ -789,6 +814,8 @@ void context_state_callback(pa_context *c, void *userdata) {
                 return;
             }
             pa_operation_unref(o);
+
+            n_outstanding = 4;
                 
             break;
         }
