@@ -52,8 +52,9 @@ enum SourceType{
 };
 
 class StreamWidget;
+class MainWindow;
 
-class ChannelWidget : public Gtk::VBox {
+class ChannelWidget : public Gtk::EventBox {
 public:
     ChannelWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static ChannelWidget* create();
@@ -106,6 +107,7 @@ public:
     static SinkWidget* create();
 
     SinkType type;
+    Glib::ustring name;
     
     virtual void onMuteToggleButton();
     uint32_t index;
@@ -128,9 +130,37 @@ class SinkInputWidget : public StreamWidget {
 public:
     SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static SinkInputWidget* create();
+    virtual ~SinkInputWidget();
 
-    uint32_t index, clientIndex;
+    uint32_t index, clientIndex, sinkIndex;
     virtual void executeVolumeUpdate();
+
+    MainWindow *mainWindow;
+    Gtk::Menu menu, submenu;
+    Gtk::MenuItem titleMenuItem;
+
+    struct SinkMenuItem {
+        SinkMenuItem(SinkInputWidget *w, const char *label, uint32_t i, bool active) :
+            widget(w),
+            menuItem(label),
+            index(i) {
+            menuItem.set_active(active);
+            menuItem.signal_toggled().connect(sigc::mem_fun(*this, &SinkMenuItem::onToggle));
+        }
+
+        SinkInputWidget *widget;
+        Gtk::CheckMenuItem menuItem;
+        uint32_t index;
+        void onToggle();
+    };
+    
+    std::map<uint32_t, SinkMenuItem*> sinkMenuItems;
+
+    void clearMenu();
+    void buildMenu();
+    
+protected:
+    virtual bool on_button_press_event(GdkEventButton* event);
 };
 
 class MainWindow : public Gtk::Window {
@@ -154,10 +184,10 @@ public:
     Gtk::Label *noStreamsLabel, *noSinksLabel, *noSourcesLabel;
     Gtk::ComboBox *sinkTypeComboBox, *sourceTypeComboBox;
 
-    std::map<int, SinkWidget*> sinkWidgets;
-    std::map<int, SourceWidget*> sourceWidgets;
-    std::map<int, SinkInputWidget*> streamWidgets;
-    std::map<int, char*> clientNames;
+    std::map<uint32_t, SinkWidget*> sinkWidgets;
+    std::map<uint32_t, SourceWidget*> sourceWidgets;
+    std::map<uint32_t, SinkInputWidget*> streamWidgets;
+    std::map<uint32_t, char*> clientNames;
 
     SinkType showSinkType;
     SourceType showSourceType;
@@ -166,7 +196,7 @@ public:
     virtual void onSourceTypeComboBoxChanged();
 
     void updateDeviceVisibility();
-    
+
 protected:
     virtual void on_realize();
 };
@@ -185,7 +215,7 @@ void show_error(const char *txt) {
 /*** ChannelWidget ***/
 
 ChannelWidget::ChannelWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    Gtk::VBox(cobject),
+    Gtk::EventBox(cobject),
     volumeScaleEnabled(true) {
 
     x->get_widget("channelLabel", channelLabel);
@@ -227,7 +257,7 @@ void ChannelWidget::onVolumeScaleValueChanged() {
 }
 
 void ChannelWidget::set_sensitive(bool enabled) {
-    Gtk::VBox::set_sensitive(enabled);
+    Gtk::EventBox::set_sensitive(enabled);
 
     channelLabel->set_sensitive(enabled);
     volumeLabel->set_sensitive(enabled);
@@ -378,7 +408,18 @@ void SourceWidget::onMuteToggleButton() {
 }
 
 SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    StreamWidget(cobject, x) {
+    StreamWidget(cobject, x),
+    mainWindow(NULL),
+    titleMenuItem("Move Stream...") {
+
+    add_events(Gdk::BUTTON_PRESS_MASK);
+
+    menu.append(titleMenuItem);
+    titleMenuItem.set_submenu(submenu);
+}
+
+SinkInputWidget::~SinkInputWidget() {
+    clearMenu();
 }
 
 SinkInputWidget* SinkInputWidget::create() {
@@ -393,6 +434,53 @@ void SinkInputWidget::executeVolumeUpdate() {
     
     if (!(o = pa_context_set_sink_input_volume(context, index, &volume, NULL, NULL))) {
         show_error("pa_context_set_sink_input_volume() failed");
+        return;
+    }
+
+    pa_operation_unref(o);
+}
+
+bool SinkInputWidget::on_button_press_event(GdkEventButton* event) {
+    if (StreamWidget::on_button_press_event(event))
+        return TRUE;
+
+    if (event->type == GDK_BUTTON_PRESS && event->button == 3) {
+        clearMenu();
+        buildMenu();
+        menu.popup(event->button, event->time);
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+void SinkInputWidget::clearMenu() {
+    
+    while (!sinkMenuItems.empty()) {
+        std::map<uint32_t, SinkMenuItem*>::iterator i = sinkMenuItems.begin();
+        delete i->second;
+        sinkMenuItems.erase(i);
+    }
+}
+
+void SinkInputWidget::buildMenu() {
+    for (std::map<uint32_t, SinkWidget*>::iterator i = mainWindow->sinkWidgets.begin(); i != mainWindow->sinkWidgets.end(); ++i) {
+        SinkMenuItem *m;
+        sinkMenuItems[i->second->index] = m = new SinkMenuItem(this, i->second->name.c_str(), i->second->index, i->second->index == sinkIndex);
+        submenu.append(m->menuItem);
+    }
+
+    menu.show_all();
+}
+
+void SinkInputWidget::SinkMenuItem::onToggle() {
+
+    if (!menuItem.get_active())
+        return;
+
+    pa_operation* o;
+    if (!(o = pa_context_move_sink_input_by_index(context, widget->index, index, NULL, NULL))) {
+        show_error("pa_context_move_sink_input_by_index() failed");
         return;
     }
 
@@ -425,7 +513,7 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
 
     sinkTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkTypeComboBoxChanged));
     sourceTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceTypeComboBoxChanged));
-    
+
     Gdk::Color c("white");
     titleEventBox->modify_bg(Gtk::STATE_NORMAL, c);
 }
@@ -444,8 +532,11 @@ void MainWindow::on_realize() {
 }
 
 MainWindow::~MainWindow() {
-    for (std::map<int, char*>::iterator i = clientNames.begin(); i != clientNames.end(); ++i)
+    while (!clientNames.empty()) {
+        std::map<uint32_t, char*>::iterator i = clientNames.begin();
         g_free(i->second);
+        clientNames.erase(i);
+    }
 }
 
 void MainWindow::updateSink(const pa_sink_info &info) {
@@ -461,6 +552,7 @@ void MainWindow::updateSink(const pa_sink_info &info) {
     }
 
     w->type = info.flags & PA_SINK_HARDWARE ? SINK_HARDWARE : SINK_VIRTUAL;
+    w->name = info.name;
 
     gchar *txt;
     w->boldNameLabel->set_markup(txt = g_markup_printf_escaped("<b>%s</b>", info.name));
@@ -512,7 +604,10 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
         w->muteToggleButton->hide();
         w->index = info.index;
         w->clientIndex = info.client;
+        w->mainWindow = this;
     }
+
+    w->sinkIndex = info.sink;
 
     char *txt;
     if (clientNames.count(info.client)) {
@@ -536,7 +631,7 @@ void MainWindow::updateClient(const pa_client_info &info) {
     g_free(clientNames[info.index]);
     clientNames[info.index] = g_strdup(info.name);
 
-    for (std::map<int, SinkInputWidget*>::iterator i = streamWidgets.begin(); i != streamWidgets.end(); ++i) {
+    for (std::map<uint32_t, SinkInputWidget*>::iterator i = streamWidgets.begin(); i != streamWidgets.end(); ++i) {
         SinkInputWidget *w = i->second;
 
         if (!w)
@@ -562,7 +657,7 @@ void MainWindow::updateDeviceVisibility() {
 
     bool is_empty = true;
 
-    for (std::map<int, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
+    for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
         SinkWidget* w = i->second;
 
         if (showSinkType == SINK_ALL || w->type == showSinkType) {
@@ -576,7 +671,7 @@ void MainWindow::updateDeviceVisibility() {
 
     is_empty = true;
     
-    for (std::map<int, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
+    for (std::map<uint32_t, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
         SourceWidget* w = i->second;
 
         if (showSourceType == SOURCE_ALL || w->type == showSourceType) {
@@ -643,7 +738,8 @@ void MainWindow::onSourceTypeComboBoxChanged() {
 }
 
 static void dec_outstanding(MainWindow *w) {
-    assert(n_outstanding > 0);
+    if (n_outstanding <= 0)
+        return;
     
     if (--n_outstanding <= 0)
         w->get_window()->set_cursor();
