@@ -302,9 +302,10 @@ void StreamWidget::setVolume(const pa_cvolume &v, bool force = false) {
 
     volume = v;
 
-    if (timeoutConnection.empty() || force) /* do not update the volume when a volume change is still in flux */
+    if (timeoutConnection.empty() || force) { /* do not update the volume when a volume change is still in flux */
         for (int i = 0; i < volume.channels; i++)
             channelWidgets[i]->setVolume(volume.values[i]);
+    }
 }
 
 void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
@@ -321,7 +322,7 @@ void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
     setVolume(n, true);
 
     if (timeoutConnection.empty())
-        timeoutConnection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &StreamWidget::timeoutEvent), 50);
+        timeoutConnection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &StreamWidget::timeoutEvent), 100);
 }
 
 void StreamWidget::onMuteToggleButton() {
@@ -431,7 +432,7 @@ SinkInputWidget* SinkInputWidget::create() {
 
 void SinkInputWidget::executeVolumeUpdate() {
     pa_operation* o;
-    
+
     if (!(o = pa_context_set_sink_input_volume(context, index, &volume, NULL, NULL))) {
         show_error("pa_context_set_sink_input_volume() failed");
         return;
@@ -541,6 +542,7 @@ MainWindow::~MainWindow() {
 
 void MainWindow::updateSink(const pa_sink_info &info) {
     SinkWidget *w;
+    bool is_new = false;
 
     if (sinkWidgets.count(info.index))
         w = sinkWidgets[info.index];
@@ -549,6 +551,7 @@ void MainWindow::updateSink(const pa_sink_info &info) {
         w->setChannelMap(info.channel_map);
         sinksVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
+        is_new = true;
     }
 
     w->type = info.flags & PA_SINK_HARDWARE ? SINK_HARDWARE : SINK_VIRTUAL;
@@ -563,11 +566,13 @@ void MainWindow::updateSink(const pa_sink_info &info) {
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
 
-    updateDeviceVisibility();
+    if (is_new)
+        updateDeviceVisibility();
 }
 
 void MainWindow::updateSource(const pa_source_info &info) {
     SourceWidget *w;
+    bool is_new = false;
 
     if (sourceWidgets.count(info.index))
         w = sourceWidgets[info.index];
@@ -576,6 +581,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
         w->setChannelMap(info.channel_map);
         sourcesVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
+        is_new = true;
     }
 
     w->type = info.monitor_of_sink != PA_INVALID_INDEX ? SOURCE_MONITOR : (info.flags & PA_SOURCE_HARDWARE ? SOURCE_HARDWARE : SOURCE_VIRTUAL);
@@ -589,7 +595,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
 
-    updateDeviceVisibility();
+    if (is_new)
+        updateDeviceVisibility();
 }
 
 void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
