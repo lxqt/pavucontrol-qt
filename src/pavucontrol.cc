@@ -35,7 +35,20 @@
 #define GLADE_FILE "pavucontrol.glade"
 #endif
 
-pa_context *context = NULL;
+static pa_context *context = NULL;
+
+enum SinkType {
+    SINK_ALL,
+    SINK_HARDWARE,
+    SINK_VIRTUAL,
+};
+
+enum SourceType{
+    SOURCE_ALL,
+    SOURCE_HARDWARE,
+    SOURCE_VIRTUAL,
+    SOURCE_MONITOR,
+};
 
 class StreamWidget;
 
@@ -74,7 +87,7 @@ public:
 
     pa_channel_map channelMap;
     pa_cvolume volume;
-
+    
     ChannelWidget *channelWidgets[PA_CHANNELS_MAX];
 
     virtual void onMuteToggleButton();
@@ -91,6 +104,8 @@ public:
     SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static SinkWidget* create();
 
+    SinkType type;
+    
     virtual void onMuteToggleButton();
     uint32_t index;
     virtual void executeVolumeUpdate();
@@ -101,6 +116,8 @@ public:
     SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static SourceWidget* create();
 
+    SourceType type;
+    
     virtual void onMuteToggleButton();
     uint32_t index;
     virtual void executeVolumeUpdate();
@@ -131,17 +148,23 @@ public:
     void removeSinkInput(uint32_t index);
     void removeClient(uint32_t index);
     
-    Gtk::VBox *streamsVBox, *sinksVBox, *sourcesVBox, *monitorsVBox;
+    Gtk::VBox *streamsVBox, *sinksVBox, *sourcesVBox;
     Gtk::EventBox *titleEventBox;
-    Gtk::Label *noStreamsLabel, *noSinksLabel, *noSourcesLabel, *noMonitorsLabel;
+    Gtk::Label *noStreamsLabel, *noSinksLabel, *noSourcesLabel;
+    Gtk::ComboBox *sinkTypeComboBox, *sourceTypeComboBox;
 
     std::map<int, SinkWidget*> sinkWidgets;
     std::map<int, SourceWidget*> sourceWidgets;
-    std::map<int, SourceWidget*> monitorWidgets;
     std::map<int, SinkInputWidget*> streamWidgets;
     std::map<int, char*> clientNames;
 
-    void updateLabels();
+    SinkType showSinkType;
+    SourceType showSourceType;
+
+    virtual void onSinkTypeComboBoxChanged();
+    virtual void onSourceTypeComboBoxChanged();
+
+    void updateDeviceVisibility();
 };
 
 void show_error(const char *txt) {
@@ -375,22 +398,29 @@ void SinkInputWidget::executeVolumeUpdate() {
 /*** MainWindow ***/
 
 MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    Gtk::Window(cobject) {
+    Gtk::Window(cobject),
+    showSinkType(SINK_HARDWARE),
+    showSourceType(SOURCE_HARDWARE) {
 
     x->get_widget("streamsVBox", streamsVBox);
     x->get_widget("sinksVBox", sinksVBox);
     x->get_widget("sourcesVBox", sourcesVBox);
-    x->get_widget("monitorsVBox", monitorsVBox);
     x->get_widget("titleEventBox", titleEventBox);
     x->get_widget("noStreamsLabel", noStreamsLabel);
     x->get_widget("noSinksLabel", noSinksLabel);
     x->get_widget("noSourcesLabel", noSourcesLabel);
-    x->get_widget("noMonitorsLabel", noMonitorsLabel);
+    x->get_widget("sinkTypeComboBox", sinkTypeComboBox);
+    x->get_widget("sourceTypeComboBox", sourceTypeComboBox);
 
     sourcesVBox->set_reallocate_redraws(true);
-    monitorsVBox->set_reallocate_redraws(true);
     streamsVBox->set_reallocate_redraws(true);
     sinksVBox->set_reallocate_redraws(true);
+
+    sinkTypeComboBox->set_active((int) showSinkType);
+    sourceTypeComboBox->set_active((int) showSourceType);
+
+    sinkTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkTypeComboBoxChanged));
+    sourceTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceTypeComboBoxChanged));
     
     Gdk::Color c("white");
     titleEventBox->modify_bg(Gtk::STATE_NORMAL, c);
@@ -420,6 +450,8 @@ void MainWindow::updateSink(const pa_sink_info &info) {
         w->index = info.index;
     }
 
+    w->type = info.flags & PA_SINK_HARDWARE ? SINK_HARDWARE : SINK_VIRTUAL;
+
     gchar *txt;
     w->boldNameLabel->set_markup(txt = g_markup_printf_escaped("<b>%s</b>", info.name));
     g_free(txt);
@@ -428,26 +460,23 @@ void MainWindow::updateSink(const pa_sink_info &info) {
 
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
-    w->onMuteToggleButton();
 
-    updateLabels();
-    w->queue_draw();
+    updateDeviceVisibility();
 }
 
 void MainWindow::updateSource(const pa_source_info &info) {
     SourceWidget *w;
 
-    std::map<int, SourceWidget*> &l = info.monitor_of_sink != PA_INVALID_INDEX ? monitorWidgets : sourceWidgets;
-    Gtk::VBox *vbox = info.monitor_of_sink != PA_INVALID_INDEX ? monitorsVBox : sourcesVBox;
-    
-    if (l.count(info.index))
-        w = l[info.index];
+    if (sourceWidgets.count(info.index))
+        w = sourceWidgets[info.index];
     else {
-        l[info.index] = w = SourceWidget::create();
+        sourceWidgets[info.index] = w = SourceWidget::create();
         w->setChannelMap(info.channel_map);
-        vbox->pack_start(*w, false, false, 0);
+        sourcesVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
     }
+
+    w->type = info.monitor_of_sink != PA_INVALID_INDEX ? SOURCE_MONITOR : (info.flags & PA_SOURCE_HARDWARE ? SOURCE_HARDWARE : SOURCE_VIRTUAL);
 
     gchar *txt;
     w->boldNameLabel->set_markup(txt = g_markup_printf_escaped("<b>%s</b>", info.name));
@@ -457,10 +486,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
     
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
-    w->onMuteToggleButton();
 
-    updateLabels();
-    w->queue_draw();
+    updateDeviceVisibility();
 }
 
 void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
@@ -490,8 +517,8 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
     
     w->setVolume(info.volume);
 
-    updateLabels();
-    w->queue_draw();
+    w->show();
+    updateDeviceVisibility();
 }
 
 void MainWindow::updateClient(const pa_client_info &info) {
@@ -513,69 +540,96 @@ void MainWindow::updateClient(const pa_client_info &info) {
     }
 }
 
-void MainWindow::updateLabels() {
+void MainWindow::updateDeviceVisibility() {
+
     if (streamWidgets.empty())
         noStreamsLabel->show();
     else
         noStreamsLabel->hide();
-    
-    if (sinkWidgets.empty())
-        noSinksLabel->show();
-    else
-        noSinksLabel->hide();
-    
-    if (sourceWidgets.empty())
-        noSourcesLabel->show();
-    else
-        noSourcesLabel->hide();
 
-    if (monitorWidgets.empty())
-        noMonitorsLabel->show();
-    else
-        noMonitorsLabel->hide();
+    sourcesVBox->hide_all();
+    sinksVBox->hide_all();
+
+    bool is_empty = true;
+
+    for (std::map<int, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
+        SinkWidget* w = i->second;
+
+        if (showSinkType == SINK_ALL || w->type == showSinkType) {
+            w->show_all();
+            is_empty = false;
+        }
+    }
+
+    if (is_empty)
+        noSinksLabel->show();
+
+    is_empty = true;
+    
+    for (std::map<int, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
+        SourceWidget* w = i->second;
+
+        if (showSourceType == SOURCE_ALL || w->type == showSourceType) {
+            w->show_all();
+            is_empty = false;
+        }
+    }
+
+    if (is_empty)
+        noSourcesLabel->show();
+
+    sourcesVBox->show();
+    sinksVBox->show();
 }
 
 void MainWindow::removeSink(uint32_t index) {
-    StreamWidget *w;
-    
-    if (!(w = sinkWidgets[index]))
+    if (!sinkWidgets.count(index))
         return;
 
+    delete sinkWidgets[index];
     sinkWidgets.erase(index);
-    delete w;
-    updateLabels();
+    updateDeviceVisibility();
 }
 
 void MainWindow::removeSource(uint32_t index) {
-    StreamWidget *w;
-
-    if (sourceWidgets.count(index)) {
-        w = sourceWidgets[index];
-        sourceWidgets.erase(index);
-    } else if (monitorWidgets.count(index)) {
-        w = monitorWidgets[index];
-        monitorWidgets.erase(index);
-    } else
+    if (!sourceWidgets.count(index))
         return;
 
-    delete w;
-    updateLabels();
+    delete sourceWidgets[index];
+    sourceWidgets.erase(index);
+    updateDeviceVisibility();
 }
 
 void MainWindow::removeSinkInput(uint32_t index) {
-    StreamWidget *w;
-    
-    if (!(w = streamWidgets[index]))
+    if (!streamWidgets.count(index))
         return;
-
+    
+    delete streamWidgets[index];
     streamWidgets.erase(index);
-    delete w;
-    updateLabels();
+    updateDeviceVisibility();
 }
 
 void MainWindow::removeClient(uint32_t index) {
     g_free(clientNames[index]);
     clientNames.erase(index);
+}
+
+void MainWindow::onSinkTypeComboBoxChanged() {
+    showSinkType = (SinkType) sinkTypeComboBox->get_active_row_number();
+
+    if (showSinkType == (SinkType) -1)
+        sinkTypeComboBox->set_active((int) SINK_HARDWARE);
+
+    updateDeviceVisibility();
+}
+
+void MainWindow::onSourceTypeComboBoxChanged() {
+    showSourceType = (SourceType) sourceTypeComboBox->get_active_row_number();
+
+    if (showSourceType == (SourceType) -1)
+        sourceTypeComboBox->set_active((int) SOURCE_HARDWARE);
+
+    updateDeviceVisibility();
 }
 
 void sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata) {
