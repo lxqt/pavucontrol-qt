@@ -107,7 +107,7 @@ public:
     static SinkWidget* create();
 
     SinkType type;
-    Glib::ustring name;
+    Glib::ustring description;
     
     virtual void onMuteToggleButton();
     uint32_t index;
@@ -467,7 +467,7 @@ void SinkInputWidget::clearMenu() {
 void SinkInputWidget::buildMenu() {
     for (std::map<uint32_t, SinkWidget*>::iterator i = mainWindow->sinkWidgets.begin(); i != mainWindow->sinkWidgets.end(); ++i) {
         SinkMenuItem *m;
-        sinkMenuItems[i->second->index] = m = new SinkMenuItem(this, i->second->name.c_str(), i->second->index, i->second->index == sinkIndex);
+        sinkMenuItems[i->second->index] = m = new SinkMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == sinkIndex);
         submenu.append(m->menuItem);
     }
 
@@ -555,7 +555,7 @@ void MainWindow::updateSink(const pa_sink_info &info) {
     }
 
     w->type = info.flags & PA_SINK_HARDWARE ? SINK_HARDWARE : SINK_VIRTUAL;
-    w->name = info.name;
+    w->description = info.description;
 
     w->boldNameLabel->set_text("");
     gchar *txt;
