@@ -557,10 +557,9 @@ void MainWindow::updateSink(const pa_sink_info &info) {
     w->type = info.flags & PA_SINK_HARDWARE ? SINK_HARDWARE : SINK_VIRTUAL;
     w->name = info.name;
 
+    w->boldNameLabel->set_text("");
     gchar *txt;
-    w->boldNameLabel->set_markup(txt = g_markup_printf_escaped("<b>%s</b>", info.name));
-    g_free(txt);
-    w->nameLabel->set_markup(txt = g_markup_printf_escaped(": %s", info.description));
+    w->nameLabel->set_markup(txt = g_markup_printf_escaped("%s", info.description));
     g_free(txt);
 
     w->setVolume(info.volume);
@@ -586,10 +585,9 @@ void MainWindow::updateSource(const pa_source_info &info) {
 
     w->type = info.monitor_of_sink != PA_INVALID_INDEX ? SOURCE_MONITOR : (info.flags & PA_SOURCE_HARDWARE ? SOURCE_HARDWARE : SOURCE_VIRTUAL);
 
+    w->boldNameLabel->set_text("");
     gchar *txt;
-    w->boldNameLabel->set_markup(txt = g_markup_printf_escaped("<b>%s</b>", info.name));
-    g_free(txt);
-    w->nameLabel->set_markup(txt = g_markup_printf_escaped(": %s", info.description));
+    w->nameLabel->set_markup(txt = g_markup_printf_escaped("%s", info.description));
     g_free(txt);
     
     w->setVolume(info.volume);
@@ -623,7 +621,7 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
         w->nameLabel->set_markup(txt = g_markup_printf_escaped(": %s", info.name));
         g_free(txt);
     } else {
-        w->boldNameLabel->set_label("");
+        w->boldNameLabel->set_text("");
         w->nameLabel->set_label(info.name);
     }
     
