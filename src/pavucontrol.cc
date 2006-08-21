@@ -46,6 +46,7 @@ enum SinkType {
 
 enum SourceType{
     SOURCE_ALL,
+    SOURCE_NO_MONITOR,
     SOURCE_HARDWARE,
     SOURCE_VIRTUAL,
     SOURCE_MONITOR,
@@ -492,8 +493,8 @@ void SinkInputWidget::SinkMenuItem::onToggle() {
 
 MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     Gtk::Window(cobject),
-    showSinkType(SINK_HARDWARE),
-    showSourceType(SOURCE_HARDWARE) {
+    showSinkType(SINK_ALL),
+    showSourceType(SOURCE_NO_MONITOR) {
 
     x->get_widget("streamsVBox", streamsVBox);
     x->get_widget("sinksVBox", sinksVBox);
@@ -679,7 +680,9 @@ void MainWindow::updateDeviceVisibility() {
     for (std::map<uint32_t, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
         SourceWidget* w = i->second;
 
-        if (showSourceType == SOURCE_ALL || w->type == showSourceType) {
+        if (showSourceType == SOURCE_ALL ||
+            w->type == showSourceType ||
+            (showSourceType == SOURCE_NO_MONITOR && w->type != SOURCE_MONITOR)) {
             w->show_all();
             is_empty = false;
         }
@@ -728,7 +731,7 @@ void MainWindow::onSinkTypeComboBoxChanged() {
     showSinkType = (SinkType) sinkTypeComboBox->get_active_row_number();
 
     if (showSinkType == (SinkType) -1)
-        sinkTypeComboBox->set_active((int) SINK_HARDWARE);
+        sinkTypeComboBox->set_active((int) SINK_ALL);
 
     updateDeviceVisibility();
 }
@@ -737,7 +740,7 @@ void MainWindow::onSourceTypeComboBoxChanged() {
     showSourceType = (SourceType) sourceTypeComboBox->get_active_row_number();
 
     if (showSourceType == (SourceType) -1)
-        sourceTypeComboBox->set_active((int) SOURCE_HARDWARE);
+        sourceTypeComboBox->set_active((int) SOURCE_NO_MONITOR);
 
     updateDeviceVisibility();
 }
