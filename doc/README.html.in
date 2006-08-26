@@ -42,7 +42,7 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</p>
 
 <h2><a name="news">News</a></h2>
 
-<div class="news-date">Sat Auf 26 2006: </div> <p class="news-text"><a
+<div class="news-date">Sat Aug 26 2006: </div> <p class="news-text"><a
 href="@PACKAGE_URL@pavucontrol-0.9.4.tar.gz">Version 0.9.4</a>
 released; add the ability to move a stream to another device while it
 is playing; limit the list of sinks/sources shown by their type; other cleanups</p>
