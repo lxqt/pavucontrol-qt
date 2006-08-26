@@ -42,6 +42,11 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</p>
 
 <h2><a name="news">News</a></h2>
 
+<div class="news-date">Sat Auf 26 2006: </div> <p class="news-text"><a
+href="@PACKAGE_URL@pavucontrol-0.9.4.tar.gz">Version 0.9.4</a>
+released; add the ability to move a stream to another device while it
+is playing; limit the list of sinks/sources shown by their type; other cleanups</p>
+
 <div class="news-date">Mon Jul 24 2006: </div> <p class="news-text"><a
 href="@PACKAGE_URL@pavucontrol-0.9.3.tar.gz">Version 0.9.3</a> released; show client names only if they are set</p>
 
@@ -87,7 +92,7 @@ source code configuration.</p>
 
 <p><tt>pavucontrol</tt> requires <a href="http://gtkmm.sf.net/"><tt>gtkmm</tt></a> and <tt>glademmm</tt> installed.</p>
 
-<p>Obviously <tt>pavucontrol</tt> requires an installation of <a href="http://pulseaudio.org/">PulseAudio</a> (version 0.9.x).</p>
+<p>Obviously <tt>pavucontrol</tt> requires an installation of <a href="http://pulseaudio.org/">PulseAudio</a> (version 0.9.5).</p>
 
 <h2><a name="installation">Installation</a></h2>
 
@@ -114,7 +119,7 @@ compilation and <tt>make install</tt> (as root) for installation of
 <p>If you want to be notified whenever I release a new version of this software use the subscription feature of <a href="http://freshmeat.net/projects/pavucontrol/">Freshmeat</a>.</p>
 
 <hr/>
-<address class="grey">Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;, July 2006</address>
+<address class="grey">Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;, Aug 2006</address>
 <div class="grey"><i>$Id$</i></div>
 
 </body>
