@@ -462,8 +462,8 @@ Monitor Sources</property>
                             <child>
                               <widget class="GtkImage" id="image18">
                                 <property name="visible">True</property>
-                                <property name="stock">gtk-missing-image</property>
                                 <property name="icon_size">1</property>
+                                <property name="icon_name">stock_lock</property>
                               </widget>
                             </child>
                           </widget>
