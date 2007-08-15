@@ -88,6 +88,8 @@ public:
     Gtk::VBox *channelsVBox;
     Gtk::ToggleButton *lockToggleButton, *muteToggleButton;
 
+    bool updating;
+    
     pa_channel_map channelMap;
     pa_cvolume volume;
     
@@ -135,7 +137,8 @@ public:
 
     uint32_t index, clientIndex, sinkIndex;
     virtual void executeVolumeUpdate();
-
+    virtual void onMuteToggleButton();
+    
     MainWindow *mainWindow;
     Gtk::Menu menu, submenu;
     Gtk::MenuItem titleMenuItem;
@@ -253,6 +256,9 @@ void ChannelWidget::onVolumeScaleValueChanged() {
     if (!volumeScaleEnabled)
         return;
 
+    if (streamWidget->updating)
+        return;
+
     pa_volume_t volume = (pa_volume_t) ((volumeScale->get_value() * PA_VOLUME_NORM) / 100);
     streamWidget->updateChannelVolume(channel, volume);
 }
@@ -268,7 +274,8 @@ void ChannelWidget::set_sensitive(bool enabled) {
 /*** StreamWidget ***/
 
 StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    Gtk::VBox(cobject) {
+    Gtk::VBox(cobject),
+    updating(false) {
 
     x->get_widget("channelsVBox", channelsVBox);
     x->get_widget("nameLabel", nameLabel);
@@ -327,6 +334,7 @@ void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
 }
 
 void StreamWidget::onMuteToggleButton() {
+
     lockToggleButton->set_sensitive(!muteToggleButton->get_active());
 
     for (int i = 0; i < channelMap.channels; i++)
@@ -366,6 +374,9 @@ void SinkWidget::executeVolumeUpdate() {
 void SinkWidget::onMuteToggleButton() {
     StreamWidget::onMuteToggleButton();
 
+    if (updating)
+        return;
+    
     pa_operation* o;
     if (!(o = pa_context_set_sink_mute_by_index(context, index, muteToggleButton->get_active(), NULL, NULL))) {
         show_error("pa_context_set_sink_mute_by_index() failed");
@@ -399,6 +410,9 @@ void SourceWidget::executeVolumeUpdate() {
 
 void SourceWidget::onMuteToggleButton() {
     StreamWidget::onMuteToggleButton();
+
+    if (updating)
+        return;
     
     pa_operation* o;
     if (!(o = pa_context_set_source_mute_by_index(context, index, muteToggleButton->get_active(), NULL, NULL))) {
@@ -436,6 +450,21 @@ void SinkInputWidget::executeVolumeUpdate() {
 
     if (!(o = pa_context_set_sink_input_volume(context, index, &volume, NULL, NULL))) {
         show_error("pa_context_set_sink_input_volume() failed");
+        return;
+    }
+
+    pa_operation_unref(o);
+}
+
+void SinkInputWidget::onMuteToggleButton() {
+    StreamWidget::onMuteToggleButton();
+
+    if (updating)
+        return;
+    
+    pa_operation* o;
+    if (!(o = pa_context_set_sink_input_mute(context, index, muteToggleButton->get_active(), NULL, NULL))) {
+        show_error("pa_context_set_sink_input_mute() failed");
         return;
     }
 
@@ -555,6 +584,8 @@ void MainWindow::updateSink(const pa_sink_info &info) {
         is_new = true;
     }
 
+    w->updating = true;
+    
     w->type = info.flags & PA_SINK_HARDWARE ? SINK_HARDWARE : SINK_VIRTUAL;
     w->description = info.description;
 
@@ -568,6 +599,8 @@ void MainWindow::updateSink(const pa_sink_info &info) {
 
     if (is_new)
         updateDeviceVisibility();
+
+    w->updating = false;
 }
 
 void MainWindow::updateSource(const pa_source_info &info) {
@@ -584,6 +617,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
         is_new = true;
     }
 
+    w->updating = true;
+    
     w->type = info.monitor_of_sink != PA_INVALID_INDEX ? SOURCE_MONITOR : (info.flags & PA_SOURCE_HARDWARE ? SOURCE_HARDWARE : SOURCE_VIRTUAL);
 
     w->boldNameLabel->set_text("");
@@ -596,6 +631,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
 
     if (is_new)
         updateDeviceVisibility();
+
+    w->updating = false;
 }
 
 void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
@@ -607,11 +644,12 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
         streamWidgets[info.index] = w = SinkInputWidget::create();
         w->setChannelMap(info.channel_map);
         streamsVBox->pack_start(*w, false, false, 0);
-        w->muteToggleButton->hide();
         w->index = info.index;
         w->clientIndex = info.client;
         w->mainWindow = this;
     }
+
+    w->updating = true;
 
     w->sinkIndex = info.sink;
 
@@ -626,10 +664,13 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
         w->nameLabel->set_label(info.name);
     }
     
+    w->muteToggleButton->set_active(info.mute);
     w->setVolume(info.volume);
 
     w->show();
     updateDeviceVisibility();
+
+    w->updating = false;
 }
 
 void MainWindow::updateClient(const pa_client_info &info) {
