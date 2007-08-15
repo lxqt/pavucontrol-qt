@@ -20,7 +20,7 @@
 # Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
 
 AC_PREREQ(2.57)
-AC_INIT([pavucontrol],[0.9.4],[mzcnihpbageby (at) 0pointer (dot) de])
+AC_INIT([pavucontrol],[0.9.5],[mzcnihpbageby (at) 0pointer (dot) de])
 AC_CONFIG_SRCDIR([src/pavucontrol.cc])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([foreign 1.9 -Wall])
@@ -48,7 +48,7 @@ if test -d ../pulseaudio ; then
    PULSE_LIBS='-L$(top_srcdir)/../pulseaudio/src/.libs -lpulse -lpulse-mainloop-glib'
    echo "*** Found pulseaudio in ../pulseaudio, using that version ***"
 else
-   PKG_CHECK_MODULES(PULSE, [ libpulse >= 0.9.5 libpulse-mainloop-glib >= 0.9.5 ])
+   PKG_CHECK_MODULES(PULSE, [ libpulse >= 0.9.7 libpulse-mainloop-glib >= 0.9.5 ])
 fi
 
 AC_SUBST(PULSE_LIBS)
