@@ -455,7 +455,7 @@ Monitor Sources</property>
                           <widget class="GtkToggleButton" id="lockToggleButton">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="tooltip" translatable="yes">Lock Channels Together</property>
+                            <property name="tooltip" translatable="yes">Lock channels together</property>
                             <property name="relief">GTK_RELIEF_NONE</property>
                             <property name="response_id">0</property>
                             <property name="active">True</property>
@@ -476,7 +476,7 @@ Monitor Sources</property>
                           <widget class="GtkToggleButton" id="muteToggleButton">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="tooltip" translatable="yes">Lock Channels Together</property>
+                            <property name="tooltip" translatable="yes">Mute audio</property>
                             <property name="relief">GTK_RELIEF_NONE</property>
                             <property name="response_id">0</property>
                             <property name="active">True</property>
