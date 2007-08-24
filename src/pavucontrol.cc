@@ -478,7 +478,7 @@ bool SinkInputWidget::on_button_press_event(GdkEventButton* event) {
     if (event->type == GDK_BUTTON_PRESS && event->button == 3) {
         clearMenu();
         buildMenu();
-        menu.popup(event->button, event->time);
+        menu.popup(0, event->time);
         return TRUE;
     }
 
