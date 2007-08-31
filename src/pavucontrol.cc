@@ -38,6 +38,12 @@
 static pa_context *context = NULL;
 static int n_outstanding = 0;
 
+enum SinkInputType {
+    SINK_INPUT_ALL,
+    SINK_INPUT_CLIENT,
+    SINK_INPUT_VIRTUAL
+};
+
 enum SinkType {
     SINK_ALL,
     SINK_HARDWARE,
@@ -135,6 +141,8 @@ public:
     static SinkInputWidget* create();
     virtual ~SinkInputWidget();
 
+    SinkInputType type;
+    
     uint32_t index, clientIndex, sinkIndex;
     virtual void executeVolumeUpdate();
     virtual void onMuteToggleButton();
@@ -186,16 +194,18 @@ public:
     Gtk::VBox *streamsVBox, *sinksVBox, *sourcesVBox;
     Gtk::EventBox *titleEventBox;
     Gtk::Label *noStreamsLabel, *noSinksLabel, *noSourcesLabel;
-    Gtk::ComboBox *sinkTypeComboBox, *sourceTypeComboBox;
+    Gtk::ComboBox *sinkInputTypeComboBox, *sinkTypeComboBox, *sourceTypeComboBox;
 
     std::map<uint32_t, SinkWidget*> sinkWidgets;
     std::map<uint32_t, SourceWidget*> sourceWidgets;
-    std::map<uint32_t, SinkInputWidget*> streamWidgets;
+    std::map<uint32_t, SinkInputWidget*> sinkInputWidgets;
     std::map<uint32_t, char*> clientNames;
 
+    SinkInputType showSinkInputType;
     SinkType showSinkType;
     SourceType showSourceType;
-
+    
+    virtual void onSinkInputTypeComboBoxChanged();
     virtual void onSinkTypeComboBoxChanged();
     virtual void onSourceTypeComboBoxChanged();
 
@@ -522,6 +532,7 @@ void SinkInputWidget::SinkMenuItem::onToggle() {
 
 MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     Gtk::Window(cobject),
+    showSinkInputType(SINK_INPUT_CLIENT),
     showSinkType(SINK_ALL),
     showSourceType(SOURCE_NO_MONITOR) {
 
@@ -532,6 +543,7 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     x->get_widget("noStreamsLabel", noStreamsLabel);
     x->get_widget("noSinksLabel", noSinksLabel);
     x->get_widget("noSourcesLabel", noSourcesLabel);
+    x->get_widget("sinkInputTypeComboBox", sinkInputTypeComboBox);
     x->get_widget("sinkTypeComboBox", sinkTypeComboBox);
     x->get_widget("sourceTypeComboBox", sourceTypeComboBox);
 
@@ -539,9 +551,11 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     streamsVBox->set_reallocate_redraws(true);
     sinksVBox->set_reallocate_redraws(true);
 
+    sinkInputTypeComboBox->set_active((int) showSinkInputType);
     sinkTypeComboBox->set_active((int) showSinkType);
     sourceTypeComboBox->set_active((int) showSourceType);
 
+    sinkInputTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkInputTypeComboBoxChanged));
     sinkTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkTypeComboBoxChanged));
     sourceTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceTypeComboBoxChanged));
 
@@ -637,19 +651,23 @@ void MainWindow::updateSource(const pa_source_info &info) {
 
 void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
     SinkInputWidget *w;
+    bool is_new = false;
 
-    if (streamWidgets.count(info.index))
-        w = streamWidgets[info.index];
+    if (sinkInputWidgets.count(info.index))
+        w = sinkInputWidgets[info.index];
     else {
-        streamWidgets[info.index] = w = SinkInputWidget::create();
+        sinkInputWidgets[info.index] = w = SinkInputWidget::create();
         w->setChannelMap(info.channel_map);
         streamsVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
         w->clientIndex = info.client;
         w->mainWindow = this;
+        is_new = true;
     }
 
     w->updating = true;
+
+    w->type = info.client != PA_INVALID_INDEX ? SINK_INPUT_CLIENT : SINK_INPUT_VIRTUAL;
 
     w->sinkIndex = info.sink;
 
@@ -664,11 +682,11 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
         w->nameLabel->set_label(info.name);
     }
     
-    w->muteToggleButton->set_active(info.mute);
     w->setVolume(info.volume);
+    w->muteToggleButton->set_active(info.mute);
 
-    w->show();
-    updateDeviceVisibility();
+    if (is_new)
+        updateDeviceVisibility();
 
     w->updating = false;
 }
@@ -678,7 +696,7 @@ void MainWindow::updateClient(const pa_client_info &info) {
     g_free(clientNames[info.index]);
     clientNames[info.index] = g_strdup(info.name);
 
-    for (std::map<uint32_t, SinkInputWidget*>::iterator i = streamWidgets.begin(); i != streamWidgets.end(); ++i) {
+    for (std::map<uint32_t, SinkInputWidget*>::iterator i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
         SinkInputWidget *w = i->second;
 
         if (!w)
@@ -694,16 +712,26 @@ void MainWindow::updateClient(const pa_client_info &info) {
 
 void MainWindow::updateDeviceVisibility() {
 
-    if (streamWidgets.empty())
-        noStreamsLabel->show();
-    else
-        noStreamsLabel->hide();
-
+    streamsVBox->hide_all();
     sourcesVBox->hide_all();
     sinksVBox->hide_all();
 
     bool is_empty = true;
 
+    for (std::map<uint32_t, SinkInputWidget*>::iterator i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
+        SinkInputWidget* w = i->second;
+
+        if (showSinkInputType == SINK_INPUT_ALL || w->type == showSinkInputType) {
+            w->show_all();
+            is_empty = false;
+        }
+    }
+    
+    if (is_empty)
+        noStreamsLabel->show();
+
+    is_empty = true;
+    
     for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
         SinkWidget* w = i->second;
 
@@ -734,6 +762,7 @@ void MainWindow::updateDeviceVisibility() {
 
     sourcesVBox->show();
     sinksVBox->show();
+    streamsVBox->show();
 }
 
 void MainWindow::removeSink(uint32_t index) {
@@ -755,11 +784,11 @@ void MainWindow::removeSource(uint32_t index) {
 }
 
 void MainWindow::removeSinkInput(uint32_t index) {
-    if (!streamWidgets.count(index))
+    if (!sinkInputWidgets.count(index))
         return;
     
-    delete streamWidgets[index];
-    streamWidgets.erase(index);
+    delete sinkInputWidgets[index];
+    sinkInputWidgets.erase(index);
     updateDeviceVisibility();
 }
 
@@ -782,6 +811,15 @@ void MainWindow::onSourceTypeComboBoxChanged() {
 
     if (showSourceType == (SourceType) -1)
         sourceTypeComboBox->set_active((int) SOURCE_NO_MONITOR);
+
+    updateDeviceVisibility();
+}
+
+void MainWindow::onSinkInputTypeComboBoxChanged() {
+    showSinkInputType = (SinkInputType) sinkInputTypeComboBox->get_active_row_number();
+
+    if (showSinkInputType == (SinkInputType) -1)
+        sinkInputTypeComboBox->set_active((int) SINK_INPUT_CLIENT);
 
     updateDeviceVisibility();
 }

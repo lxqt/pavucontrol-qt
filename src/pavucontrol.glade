@@ -100,6 +100,7 @@
                         <child>
                           <widget class="GtkViewport" id="viewport1">
                             <property name="visible">True</property>
+                            <property name="shadow_type">GTK_SHADOW_NONE</property>
                             <child>
                               <widget class="GtkVBox" id="streamsVBox">
                                 <property name="visible">True</property>
@@ -133,34 +134,60 @@
                         <child>
                           <widget class="GtkHBox" id="hbox5">
                             <property name="visible">True</property>
-                            <property name="homogeneous">True</property>
+                            <property name="spacing">6</property>
                             <child>
-                              <widget class="GtkHBox" id="hbox6">
+                              <widget class="GtkImage" id="image21">
                                 <property name="visible">True</property>
-                                <property name="spacing">6</property>
-                                <child>
-                                  <widget class="GtkImage" id="image21">
-                                    <property name="visible">True</property>
-                                    <property name="xalign">1</property>
-                                    <property name="icon_size">6</property>
-                                    <property name="icon_name">gtk-dialog-info</property>
-                                  </widget>
-                                </child>
+                                <property name="xalign">1</property>
+                                <property name="stock">gtk-dialog-info</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkAlignment" id="alignment6">
+                                <property name="visible">True</property>
+                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="right_padding">12</property>
                                 <child>
                                   <widget class="GtkLabel" id="label4828">
                                     <property name="visible">True</property>
                                     <property name="xalign">0</property>
-                                    <property name="label" translatable="yes">&lt;b&gt;Hint:&lt;/b&gt; Right click on a playback stream to move it to another output device.</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;Hint:&lt;/b&gt; &lt;i&gt;Right click on a playback stream to move it to another output device.&lt;/i&gt;</property>
                                     <property name="use_markup">True</property>
                                   </widget>
-                                  <packing>
-                                    <property name="position">1</property>
-                                  </packing>
                                 </child>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
-                                <property name="fill">False</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label1">
+                                <property name="visible">True</property>
+                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="xalign">1</property>
+                                <property name="label" translatable="yes">&lt;b&gt;_Show:&lt;/b&gt;</property>
+                                <property name="use_markup">True</property>
+                                <property name="use_underline">True</property>
+                              </widget>
+                              <packing>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkComboBox" id="sinkInputTypeComboBox">
+                                <property name="visible">True</property>
+                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="items" translatable="yes" comments="Applications&#10;All streams">All Streams
+Applications
+Virtual Streams</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="position">3</property>
                               </packing>
                             </child>
                           </widget>
@@ -180,7 +207,7 @@
                 <child>
                   <widget class="GtkLabel" id="label34">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">S_treams</property>
+                    <property name="label" translatable="yes">_Playback</property>
                     <property name="use_underline">True</property>
                   </widget>
                   <packing>
@@ -202,6 +229,7 @@
                         <child>
                           <widget class="GtkViewport" id="viewport4">
                             <property name="visible">True</property>
+                            <property name="shadow_type">GTK_SHADOW_NONE</property>
                             <child>
                               <widget class="GtkVBox" id="sinksVBox">
                                 <property name="visible">True</property>
@@ -237,27 +265,57 @@
                             <property name="visible">True</property>
                             <property name="spacing">6</property>
                             <child>
+                              <widget class="GtkImage" id="image2">
+                                <property name="visible">True</property>
+                                <property name="xalign">1</property>
+                                <property name="stock">gtk-dialog-info</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkAlignment" id="alignment5">
+                                <property name="visible">True</property>
+                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="right_padding">12</property>
+                                <child>
+                                  <widget class="GtkLabel" id="label3">
+                                    <property name="visible">True</property>
+                                    <property name="xalign">0</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;Hint:&lt;/b&gt; &lt;i&gt;Right click on an output device to make it the default.&lt;/i&gt;</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                </child>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child>
                               <widget class="GtkLabel" id="label4826">
                                 <property name="visible">True</property>
+                                <property name="xalign">1</property>
                                 <property name="label" translatable="yes">&lt;b&gt;S_how:&lt;/b&gt;</property>
                                 <property name="use_markup">True</property>
                                 <property name="use_underline">True</property>
                                 <property name="mnemonic_widget">sinkTypeComboBox</property>
                               </widget>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
+                                <property name="position">2</property>
                               </packing>
                             </child>
                             <child>
                               <widget class="GtkComboBox" id="sinkTypeComboBox">
                                 <property name="visible">True</property>
-                                <property name="items" translatable="yes">All Sinks
-Hardware Sinks
-Virtual Sinks</property>
+                                <property name="items" translatable="yes">All Output Devices
+Hardware Output Devices
+Virtual Output Devices</property>
                               </widget>
                               <packing>
-                                <property name="position">1</property>
+                                <property name="expand">False</property>
+                                <property name="position">3</property>
                               </packing>
                             </child>
                           </widget>
@@ -277,7 +335,7 @@ Virtual Sinks</property>
                 <child>
                   <widget class="GtkLabel" id="label4711">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">S_inks</property>
+                    <property name="label" translatable="yes">_Output Devices</property>
                     <property name="use_underline">True</property>
                   </widget>
                   <packing>
@@ -300,6 +358,7 @@ Virtual Sinks</property>
                         <child>
                           <widget class="GtkViewport" id="viewport3">
                             <property name="visible">True</property>
+                            <property name="shadow_type">GTK_SHADOW_NONE</property>
                             <child>
                               <widget class="GtkVBox" id="sourcesVBox">
                                 <property name="visible">True</property>
@@ -335,29 +394,59 @@ Virtual Sinks</property>
                             <property name="visible">True</property>
                             <property name="spacing">6</property>
                             <child>
+                              <widget class="GtkImage" id="image5">
+                                <property name="visible">True</property>
+                                <property name="xalign">1</property>
+                                <property name="stock">gtk-dialog-info</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkAlignment" id="alignment4">
+                                <property name="visible">True</property>
+                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="right_padding">12</property>
+                                <child>
+                                  <widget class="GtkLabel" id="label5">
+                                    <property name="visible">True</property>
+                                    <property name="xalign">0</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;Hint:&lt;/b&gt; &lt;i&gt;Right click on an input device to make it the default.&lt;/i&gt;</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                </child>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child>
                               <widget class="GtkLabel" id="label4827">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">&lt;b&gt;Sh_ow:&lt;/b&gt;</property>
+                                <property name="xalign">1</property>
+                                <property name="label" translatable="yes">&lt;b&gt;Sho_w:&lt;/b&gt;</property>
                                 <property name="use_markup">True</property>
                                 <property name="use_underline">True</property>
                                 <property name="mnemonic_widget">sourceTypeComboBox</property>
                               </widget>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
+                                <property name="position">2</property>
                               </packing>
                             </child>
                             <child>
                               <widget class="GtkComboBox" id="sourceTypeComboBox">
                                 <property name="visible">True</property>
-                                <property name="items" translatable="yes">All Sources
-All Except Monitor Sources
-Hardware Sources
-Virtual Sources
-Monitor Sources</property>
+                                <property name="items" translatable="yes">All Input Devices
+All Except Monitors
+Hardware Input Devices
+Virtual Input Devices
+Monitors</property>
                               </widget>
                               <packing>
-                                <property name="position">1</property>
+                                <property name="expand">False</property>
+                                <property name="position">3</property>
                               </packing>
                             </child>
                           </widget>
@@ -377,7 +466,7 @@ Monitor Sources</property>
                 <child>
                   <widget class="GtkLabel" id="label4717">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">S_ources</property>
+                    <property name="label" translatable="yes">_Input Devices</property>
                     <property name="use_underline">True</property>
                   </widget>
                   <packing>
