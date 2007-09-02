@@ -307,7 +307,7 @@ void StreamWidget::setChannelMap(const pa_channel_map &m) {
         cw->channel = i;
         cw->streamWidget = this;
         char text[64];
-        snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_string(m.map[i]));
+        snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_pretty_string(m.map[i]));
         cw->channelLabel->set_markup(text);
         channelsVBox->pack_start(*cw, false, false, 0);
     }
