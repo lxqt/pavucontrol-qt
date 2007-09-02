@@ -117,10 +117,18 @@ public:
 
     SinkType type;
     Glib::ustring description;
+    Glib::ustring name;
+    uint32_t index;
+
+    Gtk::Menu menu;
+    Gtk::CheckMenuItem defaultMenuItem;
     
     virtual void onMuteToggleButton();
-    uint32_t index;
     virtual void executeVolumeUpdate();
+    virtual void onDefaultToggle();
+
+protected:
+    virtual bool on_button_press_event(GdkEventButton* event);
 };
 
 class SourceWidget : public StreamWidget {
@@ -129,10 +137,18 @@ public:
     static SourceWidget* create();
 
     SourceType type;
+    Glib::ustring name;
+    uint32_t index;
+
+    Gtk::Menu menu;
+    Gtk::CheckMenuItem defaultMenuItem;
     
     virtual void onMuteToggleButton();
-    uint32_t index;
     virtual void executeVolumeUpdate();
+    virtual void onDefaultToggle();
+
+protected:
+    virtual bool on_button_press_event(GdkEventButton* event);
 };
 
 class SinkInputWidget : public StreamWidget {
@@ -185,6 +201,7 @@ public:
     void updateSource(const pa_source_info &info);
     void updateSinkInput(const pa_sink_input_info &info);
     void updateClient(const pa_client_info &info);
+    void updateServer(const pa_server_info &info);
 
     void removeSink(uint32_t index);
     void removeSource(uint32_t index);
@@ -211,6 +228,8 @@ public:
 
     void updateDeviceVisibility();
 
+    Glib::ustring defaultSinkName, defaultSourceName;
+    
 protected:
     virtual void on_realize();
 };
@@ -360,7 +379,15 @@ void StreamWidget::executeVolumeUpdate() {
 }
 
 SinkWidget::SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    StreamWidget(cobject, x) {
+    StreamWidget(cobject, x),
+    defaultMenuItem("Default"){
+
+    add_events(Gdk::BUTTON_PRESS_MASK);
+
+    defaultMenuItem.set_active(false);
+    defaultMenuItem.signal_toggled().connect(sigc::mem_fun(*this, &SinkWidget::onDefaultToggle));
+    menu.append(defaultMenuItem);
+    menu.show_all();
 }
 
 SinkWidget* SinkWidget::create() {
@@ -396,8 +423,42 @@ void SinkWidget::onMuteToggleButton() {
     pa_operation_unref(o);
 }
 
+bool SinkWidget::on_button_press_event(GdkEventButton* event) {
+    if (StreamWidget::on_button_press_event(event))
+        return TRUE;
+
+    if (event->type == GDK_BUTTON_PRESS && event->button == 3) {
+        
+        menu.popup(0, event->time);
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+void SinkWidget::onDefaultToggle() {
+    pa_operation* o;
+
+    if (updating)
+        return;
+    
+    if (!(o = pa_context_set_default_sink(context, name.c_str(), NULL, NULL))) {
+        show_error("pa_context_set_default_sink() failed");
+        return;
+    }
+    pa_operation_unref(o);
+}
+
 SourceWidget::SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    StreamWidget(cobject, x) {
+    StreamWidget(cobject, x),
+    defaultMenuItem("Default"){
+
+    add_events(Gdk::BUTTON_PRESS_MASK);
+
+    defaultMenuItem.set_active(false);
+    defaultMenuItem.signal_toggled().connect(sigc::mem_fun(*this, &SourceWidget::onDefaultToggle));
+    menu.append(defaultMenuItem);
+    menu.show_all();
 }
 
 SourceWidget* SourceWidget::create() {
@@ -430,6 +491,32 @@ void SourceWidget::onMuteToggleButton() {
         return;
     }
     
+    pa_operation_unref(o);
+}
+
+bool SourceWidget::on_button_press_event(GdkEventButton* event) {
+    if (StreamWidget::on_button_press_event(event))
+        return TRUE;
+
+    if (event->type == GDK_BUTTON_PRESS && event->button == 3) {
+        
+        menu.popup(0, event->time);
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+void SourceWidget::onDefaultToggle() {
+    pa_operation* o;
+
+    if (updating)
+        return;
+    
+    if (!(o = pa_context_set_default_source(context, name.c_str(), NULL, NULL))) {
+        show_error("pa_context_set_default_source() failed");
+        return;
+    }
     pa_operation_unref(o);
 }
 
@@ -516,6 +603,9 @@ void SinkInputWidget::buildMenu() {
 
 void SinkInputWidget::SinkMenuItem::onToggle() {
 
+    if (widget->updating)
+        return;
+    
     if (!menuItem.get_active())
         return;
 
@@ -600,8 +690,9 @@ void MainWindow::updateSink(const pa_sink_info &info) {
 
     w->updating = true;
     
-    w->type = info.flags & PA_SINK_HARDWARE ? SINK_HARDWARE : SINK_VIRTUAL;
+    w->name = info.name;
     w->description = info.description;
+    w->type = info.flags & PA_SINK_HARDWARE ? SINK_HARDWARE : SINK_VIRTUAL;
 
     w->boldNameLabel->set_text("");
     gchar *txt;
@@ -610,6 +701,8 @@ void MainWindow::updateSink(const pa_sink_info &info) {
 
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
+
+    w->defaultMenuItem.set_active(w->name == defaultSinkName);
 
     if (is_new)
         updateDeviceVisibility();
@@ -633,6 +726,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
 
     w->updating = true;
     
+    w->name = info.name;
     w->type = info.monitor_of_sink != PA_INVALID_INDEX ? SOURCE_MONITOR : (info.flags & PA_SOURCE_HARDWARE ? SOURCE_HARDWARE : SOURCE_VIRTUAL);
 
     w->boldNameLabel->set_text("");
@@ -643,6 +737,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
 
+    w->defaultMenuItem.set_active(w->name == defaultSourceName);
+    
     if (is_new)
         updateDeviceVisibility();
 
@@ -708,6 +804,34 @@ void MainWindow::updateClient(const pa_client_info &info) {
             g_free(txt);
         }
     }
+}
+
+void MainWindow::updateServer(const pa_server_info &info) {
+
+    for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
+        SinkWidget *w = i->second;
+
+        if (!w)
+            continue;
+
+        w->updating = true;
+        w->defaultMenuItem.set_active(w->name == info.default_sink_name);
+        w->updating = false;
+    }
+
+    for (std::map<uint32_t, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
+        SourceWidget *w = i->second;
+
+        if (!w)
+            continue;
+
+        w->updating = true;
+        w->defaultMenuItem.set_active(w->name == info.default_source_name);
+        w->updating = false;
+    }
+
+    defaultSourceName = info.default_source_name;
+    defaultSinkName = info.default_sink_name;
 }
 
 void MainWindow::updateDeviceVisibility() {
@@ -896,6 +1020,18 @@ void client_cb(pa_context *, const pa_client_info *i, int eol, void *userdata) {
     w->updateClient(*i);
 }
 
+void server_info_cb(pa_context *, const pa_server_info *i, void *userdata) {
+    MainWindow *w = static_cast<MainWindow*>(userdata);
+
+    if (!i) {
+        show_error("Server info callback failure");
+        return;
+    }
+
+    w->updateServer(*i);
+    dec_outstanding(w);
+}
+
 void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
@@ -912,6 +1048,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
                 pa_operation_unref(o);
             }
             break;
+            
         case PA_SUBSCRIPTION_EVENT_SOURCE:
             if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
                 w->removeSource(index);
@@ -924,6 +1061,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
                 pa_operation_unref(o);
             }
             break;
+            
         case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
             if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
                 w->removeSinkInput(index);
@@ -936,6 +1074,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
                 pa_operation_unref(o);
             }
             break;
+            
         case PA_SUBSCRIPTION_EVENT_CLIENT:
             if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
                 w->removeClient(index);
@@ -948,6 +1087,15 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
                 pa_operation_unref(o);
             }
             break;
+
+        case PA_SUBSCRIPTION_EVENT_SERVER: {
+            pa_operation *o;
+            if (!(o = pa_context_get_server_info(c, server_info_cb, w))) {
+                show_error("pa_context_get_server_info() failed");
+                return;
+            }
+            pa_operation_unref(o);
+        }
     }
 }
 
@@ -968,12 +1116,23 @@ void context_state_callback(pa_context *c, void *userdata) {
             
             pa_context_set_subscribe_callback(c, subscribe_cb, w);
             
-            if (!(o = pa_context_subscribe(c, (pa_subscription_mask_t) (PA_SUBSCRIPTION_MASK_SINK|PA_SUBSCRIPTION_MASK_SOURCE|PA_SUBSCRIPTION_MASK_SINK_INPUT|PA_SUBSCRIPTION_MASK_CLIENT), NULL, NULL))) {
+            if (!(o = pa_context_subscribe(c, (pa_subscription_mask_t)
+                                           (PA_SUBSCRIPTION_MASK_SINK|
+                                            PA_SUBSCRIPTION_MASK_SOURCE|
+                                            PA_SUBSCRIPTION_MASK_SINK_INPUT|
+                                            PA_SUBSCRIPTION_MASK_CLIENT|
+                                            PA_SUBSCRIPTION_MASK_SERVER), NULL, NULL))) {
                 show_error("pa_context_subscribe() failed");
                 return;
             }
             pa_operation_unref(o);
 
+            if (!(o = pa_context_get_server_info(c, server_info_cb, w))) {
+                show_error("pa_context_get_server_info() failed");
+                return;
+            }
+            pa_operation_unref(o);
+            
             if (!(o = pa_context_get_client_info_list(c, client_cb, w))) {
                 show_error("pa_context_client_info_list() failed");
                 return;
@@ -998,7 +1157,7 @@ void context_state_callback(pa_context *c, void *userdata) {
             }
             pa_operation_unref(o);
 
-            n_outstanding = 4;
+            n_outstanding = 5;
                 
             break;
         }
