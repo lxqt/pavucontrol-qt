@@ -162,10 +162,11 @@ public:
     uint32_t index, clientIndex, sinkIndex;
     virtual void executeVolumeUpdate();
     virtual void onMuteToggleButton();
+    virtual void onKill();
     
     MainWindow *mainWindow;
     Gtk::Menu menu, submenu;
-    Gtk::MenuItem titleMenuItem;
+    Gtk::MenuItem titleMenuItem, killMenuItem;
 
     struct SinkMenuItem {
         SinkMenuItem(SinkInputWidget *w, const char *label, uint32_t i, bool active) :
@@ -380,7 +381,7 @@ void StreamWidget::executeVolumeUpdate() {
 
 SinkWidget::SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     StreamWidget(cobject, x),
-    defaultMenuItem("Default"){
+    defaultMenuItem("_Default", true){
 
     add_events(Gdk::BUTTON_PRESS_MASK);
 
@@ -451,7 +452,7 @@ void SinkWidget::onDefaultToggle() {
 
 SourceWidget::SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     StreamWidget(cobject, x),
-    defaultMenuItem("Default"){
+    defaultMenuItem("_Default", true){
 
     add_events(Gdk::BUTTON_PRESS_MASK);
 
@@ -523,12 +524,16 @@ void SourceWidget::onDefaultToggle() {
 SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     StreamWidget(cobject, x),
     mainWindow(NULL),
-    titleMenuItem("Move Stream...") {
+    titleMenuItem("_Move Stream...", true),
+    killMenuItem("_Terminate Stream", true) {
 
     add_events(Gdk::BUTTON_PRESS_MASK);
 
     menu.append(titleMenuItem);
     titleMenuItem.set_submenu(submenu);
+
+    menu.append(killMenuItem);
+    killMenuItem.signal_activate().connect(sigc::mem_fun(*this, &SinkInputWidget::onKill));
 }
 
 SinkInputWidget::~SinkInputWidget() {
@@ -599,6 +604,16 @@ void SinkInputWidget::buildMenu() {
     }
 
     menu.show_all();
+}
+
+void SinkInputWidget::onKill() {
+    pa_operation* o;
+    if (!(o = pa_context_kill_sink_input(context, index, NULL, NULL))) {
+        show_error("pa_context_kill_sink_input() failed");
+        return;
+    }
+
+    pa_operation_unref(o);
 }
 
 void SinkInputWidget::SinkMenuItem::onToggle() {
