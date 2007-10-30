@@ -200,9 +200,6 @@ Virtual Streams</property>
                       </packing>
                     </child>
                   </widget>
-                  <packing>
-                    <property name="tab_expand">False</property>
-                  </packing>
                 </child>
                 <child>
                   <widget class="GtkLabel" id="label34">
@@ -212,7 +209,6 @@ Virtual Streams</property>
                   </widget>
                   <packing>
                     <property name="type">tab</property>
-                    <property name="tab_expand">False</property>
                     <property name="tab_fill">False</property>
                   </packing>
                 </child>
@@ -329,7 +325,6 @@ Virtual Output Devices</property>
                   </widget>
                   <packing>
                     <property name="position">1</property>
-                    <property name="tab_expand">False</property>
                   </packing>
                 </child>
                 <child>
@@ -341,7 +336,6 @@ Virtual Output Devices</property>
                   <packing>
                     <property name="type">tab</property>
                     <property name="position">1</property>
-                    <property name="tab_expand">False</property>
                     <property name="tab_fill">False</property>
                   </packing>
                 </child>
@@ -460,7 +454,6 @@ Monitors</property>
                   </widget>
                   <packing>
                     <property name="position">2</property>
-                    <property name="tab_expand">False</property>
                   </packing>
                 </child>
                 <child>
@@ -472,7 +465,6 @@ Monitors</property>
                   <packing>
                     <property name="type">tab</property>
                     <property name="position">2</property>
-                    <property name="tab_expand">False</property>
                     <property name="tab_fill">False</property>
                   </packing>
                 </child>
@@ -519,6 +511,7 @@ Monitors</property>
                         <property name="xalign">0</property>
                         <property name="label" translatable="yes">Stream Title</property>
                         <property name="use_markup">True</property>
+                        <property name="selectable">True</property>
                         <property name="ellipsize">PANGO_ELLIPSIZE_MIDDLE</property>
                       </widget>
                       <packing>
