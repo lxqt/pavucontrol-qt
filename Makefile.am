@@ -39,3 +39,10 @@ fedora-snapshot: dist
 	cp $(distdir).tar.gz $$HOME/cvs.fedora/pavucontrol/devel/$(distdir).svn`date +%Y%m%d`.tar.gz
 
 .PHONY: homepage
+
+dist-hook:
+	if test -d .svn ; then \
+		svn update ; \
+		chmod u+w ${distdir}/ChangeLog || true ; \
+		svn2cl -o ${distdir}/ChangeLog ; \
+	fi
