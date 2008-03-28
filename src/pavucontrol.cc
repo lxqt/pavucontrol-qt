@@ -824,6 +824,9 @@ void MainWindow::updateClient(const pa_client_info &info) {
 
 void MainWindow::updateServer(const pa_server_info &info) {
 
+    defaultSourceName = info.default_source_name ? info.default_source_name : "";
+    defaultSinkName = info.default_sink_name ? info.default_sink_name : "";
+
     for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
         SinkWidget *w = i->second;
 
@@ -831,7 +834,7 @@ void MainWindow::updateServer(const pa_server_info &info) {
             continue;
 
         w->updating = true;
-        w->defaultMenuItem.set_active(w->name == info.default_sink_name);
+        w->defaultMenuItem.set_active(w->name == defaultSinkName);
         w->updating = false;
     }
 
@@ -842,12 +845,9 @@ void MainWindow::updateServer(const pa_server_info &info) {
             continue;
 
         w->updating = true;
-        w->defaultMenuItem.set_active(w->name == info.default_source_name);
+        w->defaultMenuItem.set_active(w->name == defaultSourceName);
         w->updating = false;
     }
-
-    defaultSourceName = info.default_source_name;
-    defaultSinkName = info.default_sink_name;
 }
 
 void MainWindow::updateDeviceVisibility() {
