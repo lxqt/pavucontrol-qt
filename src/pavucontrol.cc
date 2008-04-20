@@ -268,7 +268,6 @@ public:
     void removeClient(uint32_t index);
 
     Gtk::VBox *streamsVBox, *recsVBox, *sinksVBox, *sourcesVBox;
-    Gtk::EventBox *titleEventBox;
     Gtk::Label *noStreamsLabel, *noRecsLabel, *noSinksLabel, *noSourcesLabel;
     Gtk::ComboBox *sinkInputTypeComboBox, *sourceOutputTypeComboBox, *sinkTypeComboBox, *sourceTypeComboBox;
 
@@ -384,7 +383,6 @@ void MinimalStreamWidget::onMenuDeactivated(void) {
 }
 
 void MinimalStreamWidget::popupMenuPosition(int& x, int& y, bool& push_in G_GNUC_UNUSED) {
-  int menu_width, menu_height;
   Gtk::Requisition  r;
 
   streamToggleButton->get_window()->get_origin(x, y);
@@ -803,7 +801,6 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     x->get_widget("recsVBox", recsVBox);
     x->get_widget("sinksVBox", sinksVBox);
     x->get_widget("sourcesVBox", sourcesVBox);
-    x->get_widget("titleEventBox", titleEventBox);
     x->get_widget("noStreamsLabel", noStreamsLabel);
     x->get_widget("noRecsLabel", noRecsLabel);
     x->get_widget("noSinksLabel", noSinksLabel);
@@ -826,9 +823,6 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     sourceOutputTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceOutputTypeComboBoxChanged));
     sinkTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkTypeComboBoxChanged));
     sourceTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceTypeComboBoxChanged));
-
-    Gdk::Color c("white");
-    titleEventBox->modify_bg(Gtk::STATE_NORMAL, c);
 }
 
 MainWindow* MainWindow::create() {
