@@ -40,6 +40,7 @@
 
 static pa_context *context = NULL;
 static int n_outstanding = 0;
+static bool show_decibel = true;
 
 enum SinkInputType {
     SINK_INPUT_ALL,
@@ -86,6 +87,7 @@ public:
 
     void onVolumeScaleValueChanged();
 
+    bool can_decibel;
     bool volumeScaleEnabled;
 
     virtual void set_sensitive(bool enabled);
@@ -115,7 +117,7 @@ class StreamWidget : public MinimalStreamWidget {
 public:
     StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
 
-    void setChannelMap(const pa_channel_map &m);
+    void setChannelMap(const pa_channel_map &m, bool can_decibel);
     void setVolume(const pa_cvolume &volume, bool force);
     virtual void updateChannelVolume(int channel, pa_volume_t v);
 
@@ -145,6 +147,7 @@ public:
     Glib::ustring description;
     Glib::ustring name;
     uint32_t index;
+    bool can_decibel;
 
     Gtk::CheckMenuItem defaultMenuItem;
 
@@ -162,6 +165,7 @@ public:
     Glib::ustring name;
     Glib::ustring description;
     uint32_t index;
+    bool can_decibel;
 
     Gtk::CheckMenuItem defaultMenuItem;
 
@@ -327,17 +331,26 @@ ChannelWidget* ChannelWidget::create() {
 }
 
 void ChannelWidget::setVolume(pa_volume_t volume) {
-    double v = ((gdouble) volume * 100) / PA_VOLUME_NORM;
+    double v;
     char txt[64];
 
-    snprintf(txt, sizeof(txt), "%0.0f%%", v);
-    volumeLabel->set_text(txt);
+    v = ((gdouble) volume * 100) / PA_VOLUME_NORM;
 
-    if (v > 100)
-        v = 100;
+    if (can_decibel && show_decibel) {
+        double dB = pa_sw_volume_to_dB(volume);
+
+        if (dB > PA_DECIBEL_MININFTY) {
+            snprintf(txt, sizeof(txt), "%0.2f dB", dB);
+            volumeLabel->set_text(txt);
+        } else
+            volumeLabel->set_markup("-&#8734;dB");
+    } else {
+        snprintf(txt, sizeof(txt), "%0.0f%%", v);
+        volumeLabel->set_text(txt);
+    }
 
     volumeScaleEnabled = false;
-    volumeScale->set_value(v);
+    volumeScale->set_value(v > 100 ? 100 : v);
     volumeScaleEnabled = true;
 }
 
@@ -433,12 +446,13 @@ StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
         channelWidgets[i] = NULL;
 }
 
-void StreamWidget::setChannelMap(const pa_channel_map &m) {
+void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
     channelMap = m;
 
     for (int i = 0; i < m.channels; i++) {
         ChannelWidget *cw = channelWidgets[i] = ChannelWidget::create();
         cw->channel = i;
+        cw->can_decibel = can_decibel;
         cw->streamWidget = this;
         char text[64];
         snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_pretty_string(m.map[i]));
@@ -854,7 +868,7 @@ void MainWindow::updateSink(const pa_sink_info &info) {
         w = sinkWidgets[info.index];
     else {
         sinkWidgets[info.index] = w = SinkWidget::create();
-        w->setChannelMap(info.channel_map);
+        w->setChannelMap(info.channel_map, !!(info.flags & PA_SINK_DECIBEL_VOLUME));
         sinksVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
         is_new = true;
@@ -890,7 +904,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
         w = sourceWidgets[info.index];
     else {
         sourceWidgets[info.index] = w = SourceWidget::create();
-        w->setChannelMap(info.channel_map);
+        w->setChannelMap(info.channel_map, !!(info.flags & PA_SOURCE_DECIBEL_VOLUME));
         sourcesVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
         is_new = true;
@@ -926,7 +940,7 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
         w = sinkInputWidgets[info.index];
     else {
         sinkInputWidgets[info.index] = w = SinkInputWidget::create();
-        w->setChannelMap(info.channel_map);
+        w->setChannelMap(info.channel_map, true);
         streamsVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
         w->clientIndex = info.client;
@@ -968,7 +982,6 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
         w = sourceOutputWidgets[info.index];
     else {
         sourceOutputWidgets[info.index] = w = SourceOutputWidget::create();
-        //w->setChannelMap(info.channel_map);
         recsVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
         w->clientIndex = info.client;
