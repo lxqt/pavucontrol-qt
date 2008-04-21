@@ -271,6 +271,7 @@ public:
     void removeSourceOutput(uint32_t index);
     void removeClient(uint32_t index);
 
+    Gtk::Notebook *notebook;
     Gtk::VBox *streamsVBox, *recsVBox, *sinksVBox, *sourcesVBox;
     Gtk::Label *noStreamsLabel, *noRecsLabel, *noSinksLabel, *noSourcesLabel;
     Gtk::ComboBox *sinkInputTypeComboBox, *sourceOutputTypeComboBox, *sinkTypeComboBox, *sourceTypeComboBox;
@@ -823,6 +824,7 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     x->get_widget("sourceOutputTypeComboBox", sourceOutputTypeComboBox);
     x->get_widget("sinkTypeComboBox", sinkTypeComboBox);
     x->get_widget("sourceTypeComboBox", sourceTypeComboBox);
+    x->get_widget("notebook", notebook);
 
     sourcesVBox->set_reallocate_redraws(true);
     streamsVBox->set_reallocate_redraws(true);
@@ -1248,6 +1250,9 @@ void sink_input_cb(pa_context *, const pa_sink_input_info *i, int eol, void *use
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol) {
+        if (w->sinkInputWidgets.size() <= 0)
+            w->notebook->set_current_page(2);
+
         dec_outstanding(w);
         return;
     }
