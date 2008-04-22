@@ -38,16 +38,11 @@
                               <widget class="GtkLabel" id="noStreamsLabel">
                                 <property name="visible">True</property>
                                 <property name="sensitive">False</property>
-                                <property name="xalign">0</property>
                                 <property name="xpad">16</property>
                                 <property name="ypad">16</property>
                                 <property name="label" translatable="yes">&lt;i&gt;No application is currently playing audio.&lt;/i&gt;</property>
                                 <property name="use_markup">True</property>
                               </widget>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
-                              </packing>
                             </child>
                           </widget>
                         </child>
@@ -129,16 +124,11 @@ Virtual Streams</property>
                               <widget class="GtkLabel" id="noRecsLabel">
                                 <property name="visible">True</property>
                                 <property name="sensitive">False</property>
-                                <property name="xalign">0</property>
                                 <property name="xpad">16</property>
                                 <property name="ypad">16</property>
                                 <property name="label" translatable="yes">&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</property>
                                 <property name="use_markup">True</property>
                               </widget>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
-                              </packing>
                             </child>
                           </widget>
                         </child>
@@ -224,16 +214,11 @@ Virtual Streams</property>
                               <widget class="GtkLabel" id="noSinksLabel">
                                 <property name="visible">True</property>
                                 <property name="sensitive">False</property>
-                                <property name="xalign">0</property>
                                 <property name="xpad">16</property>
                                 <property name="ypad">16</property>
                                 <property name="label" translatable="yes">&lt;i&gt;No output devices available&lt;/i&gt;</property>
                                 <property name="use_markup">True</property>
                               </widget>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
-                              </packing>
                             </child>
                           </widget>
                         </child>
@@ -319,16 +304,11 @@ Virtual Output Devices</property>
                               <widget class="GtkLabel" id="noSourcesLabel">
                                 <property name="visible">True</property>
                                 <property name="sensitive">False</property>
-                                <property name="xalign">0</property>
                                 <property name="xpad">16</property>
                                 <property name="ypad">16</property>
                                 <property name="label" translatable="yes">&lt;i&gt;No input devices available&lt;/i&gt;</property>
                                 <property name="use_markup">True</property>
                               </widget>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
-                              </packing>
                             </child>
                           </widget>
                         </child>
