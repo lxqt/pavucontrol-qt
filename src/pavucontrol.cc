@@ -810,6 +810,7 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     Gtk::Window(cobject),
     showSinkInputType(SINK_INPUT_CLIENT),
     showSinkType(SINK_ALL),
+    showSourceOutputType(SOURCE_OUTPUT_CLIENT),
     showSourceType(SOURCE_NO_MONITOR) {
 
     x->get_widget("streamsVBox", streamsVBox);
@@ -828,6 +829,7 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
 
     sourcesVBox->set_reallocate_redraws(true);
     streamsVBox->set_reallocate_redraws(true);
+    recsVBox->set_reallocate_redraws(true);
     sinksVBox->set_reallocate_redraws(true);
 
     sinkInputTypeComboBox->set_active((int) showSinkInputType);
@@ -1080,6 +1082,8 @@ void MainWindow::updateDeviceVisibility() {
 
     if (is_empty)
         noStreamsLabel->show();
+
+    is_empty = true;
 
     for (std::map<uint32_t, SourceOutputWidget*>::iterator i = sourceOutputWidgets.begin(); i != sourceOutputWidgets.end(); ++i) {
         SourceOutputWidget* w = i->second;
