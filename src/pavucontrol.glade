@@ -631,6 +631,7 @@ Monitors</property>
                         <child>
                           <widget class="GtkArrow" id="arrow1">
                             <property name="visible">True</property>
+                            <property name="arrow_type">GTK_ARROW_DOWN</property>
                           </widget>
                         </child>
                       </widget>
