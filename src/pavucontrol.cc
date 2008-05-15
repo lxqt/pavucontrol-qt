@@ -1254,9 +1254,6 @@ void sink_input_cb(pa_context *, const pa_sink_input_info *i, int eol, void *use
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol) {
-        if (w->sinkInputWidgets.size() <= 0)
-            w->notebook->set_current_page(2);
-
         dec_outstanding(w);
         return;
     }
@@ -1273,6 +1270,18 @@ void source_output_cb(pa_context *, const pa_source_output_info *i, int eol, voi
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol) {
+        /* At this point all notebook pages have been populated, so
+         * let's open one that isn't empty */
+
+        if (w->sinkInputWidgets.size() > 0)
+            w->notebook->set_current_page(0);
+        else if (w->sourceOutputWidgets.size() > 0)
+            w->notebook->set_current_page(1);
+        else if (w->sourceWidgets.size() > 0 && w->sinkWidgets.size() == 0)
+            w->notebook->set_current_page(3);
+        else
+            w->notebook->set_current_page(2);
+
         dec_outstanding(w);
         return;
     }
