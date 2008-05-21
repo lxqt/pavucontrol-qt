@@ -27,6 +27,7 @@
 #endif
 
 #include <signal.h>
+#include <string.h>
 
 #include <gtkmm.h>
 #include <libglademm.h>
@@ -123,6 +124,8 @@ public:
 
     Gtk::VBox *channelsVBox;
     Gtk::ToggleButton *lockToggleButton, *muteToggleButton;
+    Gtk::ProgressBar peakProgressBar;
+    double lastPeak;
 
     pa_channel_map channelMap;
     pa_cvolume volume;
@@ -136,6 +139,11 @@ public:
     bool timeoutEvent();
 
     virtual void executeVolumeUpdate();
+
+    bool volumeMeterEnabled;
+    void enableVolumeMeter();
+
+    void updatePeak(double v);
 };
 
 class SinkWidget : public StreamWidget {
@@ -146,7 +154,7 @@ public:
     SinkType type;
     Glib::ustring description;
     Glib::ustring name;
-    uint32_t index;
+    uint32_t index, monitor_index;
     bool can_decibel;
 
     Gtk::CheckMenuItem defaultMenuItem;
@@ -264,6 +272,7 @@ public:
     void updateSourceOutput(const pa_source_output_info &info);
     void updateClient(const pa_client_info &info);
     void updateServer(const pa_server_info &info);
+    void updateVolumeMeter(uint32_t source_index, double v);
 
     void removeSink(uint32_t index);
     void removeSource(uint32_t index);
@@ -293,6 +302,7 @@ public:
     virtual void onSourceTypeComboBoxChanged();
 
     void updateDeviceVisibility();
+    void createMonitorStream(uint32_t idx);
 
     Glib::ustring defaultSinkName, defaultSourceName;
 
@@ -435,16 +445,48 @@ bool MinimalStreamWidget::on_button_press_event (GdkEventButton* event) {
 /*** StreamWidget ***/
 
 StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    MinimalStreamWidget(cobject, x) {
+    MinimalStreamWidget(cobject, x),
+    peakProgressBar(),
+    lastPeak(0),
+    volumeMeterEnabled(false) {
 
     x->get_widget("channelsVBox", channelsVBox);
     x->get_widget("lockToggleButton", lockToggleButton);
     x->get_widget("muteToggleButton", muteToggleButton);
 
+    channelsVBox->pack_end(peakProgressBar, false, false);
+    peakProgressBar.hide();
     muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onMuteToggleButton));
 
-    for (int i = 0; i < PA_CHANNELS_MAX; i++)
+    for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
         channelWidgets[i] = NULL;
+}
+
+#define DECAY_STEP .04
+
+void StreamWidget::updatePeak(double v) {
+
+    if (lastPeak >= DECAY_STEP)
+        if (v < lastPeak - DECAY_STEP)
+            v = lastPeak - DECAY_STEP;
+
+    lastPeak = v;
+
+    if (v >= 0) {
+        peakProgressBar.set_sensitive(TRUE);
+        peakProgressBar.set_fraction(v);
+    } else {
+        peakProgressBar.set_sensitive(FALSE);
+        peakProgressBar.set_fraction(0);
+    }
+}
+
+void StreamWidget::enableVolumeMeter() {
+    if (volumeMeterEnabled)
+        return;
+
+    volumeMeterEnabled = true;
+    peakProgressBar.show();
 }
 
 void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
@@ -875,6 +917,7 @@ void MainWindow::updateSink(const pa_sink_info &info) {
         w->setChannelMap(info.channel_map, !!(info.flags & PA_SINK_DECIBEL_VOLUME));
         sinksVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
+        w->monitor_index = info.monitor_source;
         is_new = true;
     }
 
@@ -900,6 +943,70 @@ void MainWindow::updateSink(const pa_sink_info &info) {
     w->updating = false;
 }
 
+static void suspended_callback(pa_stream *s, void *userdata) {
+    MainWindow *w = static_cast<MainWindow*>(userdata);
+
+    if (pa_stream_is_suspended(s))
+        w->updateVolumeMeter(pa_stream_get_device_index(s), -1);
+}
+
+static void read_callback(pa_stream *s, size_t length, void *userdata) {
+    MainWindow *w = static_cast<MainWindow*>(userdata);
+    const void *data;
+    double v;
+
+    if (pa_stream_peek(s, &data, &length) < 0) {
+        show_error("Failed to read data from stream");
+        return;
+    }
+
+    assert(length > 0);
+    assert(length % sizeof(float) == 0);
+
+    v = ((const float*) data)[length / sizeof(float) -1];
+
+    pa_stream_drop(s);
+
+    fprintf(stderr, "read(%lu) = %.2f\n", (unsigned long) length, v);
+
+    if (v < 0)
+        v = 0;
+    if (v > 1)
+        v = 1;
+
+    w->updateVolumeMeter(pa_stream_get_device_index(s), v);
+}
+
+void MainWindow::createMonitorStream(uint32_t idx) {
+    pa_stream *s;
+    char t[16];
+    pa_sample_spec ss;
+    pa_buffer_attr attr;
+
+    ss.channels = 1;
+    ss.format = PA_SAMPLE_FLOAT32;
+    ss.rate = 25;
+
+    memset(&attr, 0, sizeof(attr));
+    attr.fragsize = sizeof(float);
+
+    snprintf(t, sizeof(t), "%u", idx);
+
+    if (!(s = pa_stream_new(context, "Peak detect", &ss, NULL))) {
+        show_error("Failed to create monitoring stream");
+        return;
+    }
+
+    pa_stream_set_read_callback(s, read_callback, this);
+    pa_stream_set_suspended_callback(s, suspended_callback, this);
+
+    if (pa_stream_connect_record(s, t, &attr, (pa_stream_flags_t) (PA_STREAM_DONT_MOVE|PA_STREAM_PEAK_DETECT|PA_STREAM_ADJUST_LATENCY)) < 0) {
+        show_error("Failed to connect monitoring stream");
+        pa_stream_unref(s);
+        return;
+    }
+}
+
 void MainWindow::updateSource(const pa_source_info &info) {
     SourceWidget *w;
     bool is_new = false;
@@ -912,6 +1019,9 @@ void MainWindow::updateSource(const pa_source_info &info) {
         sourcesVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
         is_new = true;
+
+        if (pa_context_get_server_protocol_version(context) >= 13)
+            createMonitorStream(w->index);
     }
 
     w->updating = true;
@@ -1060,6 +1170,24 @@ void MainWindow::updateServer(const pa_server_info &info) {
         w->updating = true;
         w->defaultMenuItem.set_active(w->name == defaultSourceName);
         w->updating = false;
+    }
+}
+
+void MainWindow::updateVolumeMeter(uint32_t source_index, double v) {
+
+
+    for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
+        SinkWidget* w = i->second;
+
+        if (w->monitor_index == source_index)
+            w->updatePeak(v);
+    }
+
+    for (std::map<uint32_t, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
+        SourceWidget* w = i->second;
+
+        if (w->index == source_index)
+            w->updatePeak(v);
     }
 }
 
