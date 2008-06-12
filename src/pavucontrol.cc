@@ -101,6 +101,7 @@ public:
     Gtk::Label *nameLabel, *boldNameLabel;
     Gtk::ToggleButton *streamToggleButton;
     Gtk::Menu menu;
+    Gtk::Image *iconImage;
 
     bool updating;
 
@@ -303,6 +304,7 @@ public:
 
     void updateDeviceVisibility();
     void createMonitorStream(uint32_t idx);
+    void setIconFromProplist(Gtk::Image *icon, pa_proplist *l, const char *name);
 
     Glib::ustring defaultSinkName, defaultSourceName;
 
@@ -393,6 +395,7 @@ MinimalStreamWidget::MinimalStreamWidget(BaseObjectType* cobject, const Glib::Re
     x->get_widget("nameLabel", nameLabel);
     x->get_widget("boldNameLabel", boldNameLabel);
     x->get_widget("streamToggle", streamToggleButton);
+    x->get_widget("iconImage", iconImage);
 
     streamToggleButton->set_active(false);
     streamToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &MinimalStreamWidget::onStreamToggleButton));
@@ -932,6 +935,8 @@ void MainWindow::updateSink(const pa_sink_info &info) {
     w->nameLabel->set_markup(txt = g_markup_printf_escaped("%s", info.description));
     g_free(txt);
 
+    w->iconImage->set_from_icon_name("audio-card", Gtk::ICON_SIZE_SMALL_TOOLBAR);
+
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
 
@@ -966,8 +971,6 @@ static void read_callback(pa_stream *s, size_t length, void *userdata) {
     v = ((const float*) data)[length / sizeof(float) -1];
 
     pa_stream_drop(s);
-
-    fprintf(stderr, "read(%lu) = %.2f\n", (unsigned long) length, v);
 
     if (v < 0)
         v = 0;
@@ -1035,6 +1038,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
     w->nameLabel->set_markup(txt = g_markup_printf_escaped("%s", info.description));
     g_free(txt);
 
+    w->iconImage->set_from_icon_name("audio-input-microphone", Gtk::ICON_SIZE_SMALL_TOOLBAR);
+
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
 
@@ -1044,6 +1049,47 @@ void MainWindow::updateSource(const pa_source_info &info) {
         updateDeviceVisibility();
 
     w->updating = false;
+}
+
+void MainWindow::setIconFromProplist(Gtk::Image *icon, pa_proplist *l, const char *def) {
+    const char *t;
+
+    if ((t = pa_proplist_gets(l, PA_PROP_MEDIA_ICON_NAME)))
+        goto finish;
+
+    if ((t = pa_proplist_gets(l, PA_PROP_WINDOW_ICON_NAME)))
+        goto finish;
+
+    if ((t = pa_proplist_gets(l, PA_PROP_APPLICATION_ICON_NAME)))
+        goto finish;
+
+    if ((t = pa_proplist_gets(l, PA_PROP_MEDIA_ROLE))) {
+
+        if (strcmp(t, "video") == 0 ||
+            strcmp(t, "phone") == 0)
+            goto finish;
+
+        if (strcmp(t, "music") == 0) {
+            t = "audio";
+            goto finish;
+        }
+
+        if (strcmp(t, "game") == 0) {
+            t = "applications-games";
+            goto finish;
+        }
+
+        if (strcmp(t, "event") == 0) {
+            t = "dialog-information";
+            goto finish;
+        }
+    }
+
+    t = def;
+
+finish:
+
+    icon->set_from_icon_name(t, Gtk::ICON_SIZE_SMALL_TOOLBAR);
 }
 
 void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
@@ -1079,6 +1125,8 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
         w->nameLabel->set_label(info.name);
     }
 
+    setIconFromProplist(w->iconImage, info.proplist, "audio-card");
+
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
 
@@ -1091,6 +1139,11 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
 void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
     SourceOutputWidget *w;
     bool is_new = false;
+    const char *app;
+
+    if ((app = pa_proplist_gets(info.proplist, PA_PROP_APPLICATION_ID)))
+        if (strcmp(app, "org.PulseAudio.pavucontrol") == 0)
+            return;
 
     if (sourceOutputWidgets.count(info.index))
         w = sourceOutputWidgets[info.index];
@@ -1119,6 +1172,8 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
         w->boldNameLabel->set_text("");
         w->nameLabel->set_label(info.name);
     }
+
+    setIconFromProplist(w->iconImage, info.proplist, "audio-input-microphone");
 
     if (is_new)
         updateDeviceVisibility();
@@ -1622,8 +1677,17 @@ int main(int argc, char *argv[]) {
     g_assert(m);
     pa_mainloop_api *api = pa_glib_mainloop_get_api(m);
     g_assert(api);
-    context = pa_context_new(api, "PulseAudio Volume Control");
+
+    pa_proplist *proplist = pa_proplist_new();
+    pa_proplist_sets(proplist, PA_PROP_APPLICATION_NAME, "PulseAudio Volume Control");
+    pa_proplist_sets(proplist, PA_PROP_APPLICATION_ID, "org.PulseAudio.pavucontrol");
+    pa_proplist_sets(proplist, PA_PROP_APPLICATION_ICON_NAME, "audio-card");
+    pa_proplist_sets(proplist, PA_PROP_APPLICATION_VERSION, PACKAGE_VERSION);
+
+    context = pa_context_new_with_proplist(api, NULL, proplist);
     g_assert(context);
+
+    pa_proplist_free(proplist);
 
     pa_context_set_state_callback(context, context_state_callback, mainWindow);
 
