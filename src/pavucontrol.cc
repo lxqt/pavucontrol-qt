@@ -98,10 +98,13 @@ class MinimalStreamWidget : public Gtk::VBox {
 public:
     MinimalStreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
 
+    Gtk::VBox *channelsVBox;
     Gtk::Label *nameLabel, *boldNameLabel;
     Gtk::ToggleButton *streamToggleButton;
     Gtk::Menu menu;
     Gtk::Image *iconImage;
+    Gtk::ProgressBar peakProgressBar;
+    double lastPeak;
 
     bool updating;
 
@@ -110,6 +113,10 @@ public:
     void popupMenuPosition(int& x, int& y, bool& push_in);
 
     virtual void prepareMenu(void);
+
+    bool volumeMeterEnabled;
+    void enableVolumeMeter();
+    void updatePeak(double v);
 
 protected:
     virtual bool on_button_press_event(GdkEventButton* event);
@@ -123,10 +130,7 @@ public:
     void setVolume(const pa_cvolume &volume, bool force);
     virtual void updateChannelVolume(int channel, pa_volume_t v);
 
-    Gtk::VBox *channelsVBox;
     Gtk::ToggleButton *lockToggleButton, *muteToggleButton;
-    Gtk::ProgressBar peakProgressBar;
-    double lastPeak;
 
     pa_channel_map channelMap;
     pa_cvolume volume;
@@ -140,11 +144,6 @@ public:
     bool timeoutEvent();
 
     virtual void executeVolumeUpdate();
-
-    bool volumeMeterEnabled;
-    void enableVolumeMeter();
-
-    void updatePeak(double v);
 };
 
 class SinkWidget : public StreamWidget {
@@ -273,7 +272,7 @@ public:
     void updateSourceOutput(const pa_source_output_info &info);
     void updateClient(const pa_client_info &info);
     void updateServer(const pa_server_info &info);
-    void updateVolumeMeter(uint32_t source_index, double v);
+    void updateVolumeMeter(uint32_t source_index, uint32_t sink_input_index, double v);
 
     void removeSink(uint32_t index);
     void removeSource(uint32_t index);
@@ -303,7 +302,9 @@ public:
     virtual void onSourceTypeComboBoxChanged();
 
     void updateDeviceVisibility();
-    void createMonitorStream(uint32_t idx);
+    void createMonitorStreamForSource(uint32_t source_idx);
+    void createMonitorStreamForSinkInput(uint32_t sink_input_idx, uint32_t sink_idx);
+
     void setIconFromProplist(Gtk::Image *icon, pa_proplist *l, const char *name);
 
     Glib::ustring defaultSinkName, defaultSourceName;
@@ -390,12 +391,20 @@ void ChannelWidget::set_sensitive(bool enabled) {
 /*** MinimalStreamWidget ***/
 MinimalStreamWidget::MinimalStreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     Gtk::VBox(cobject),
-    updating(false) {
+    peakProgressBar(),
+    lastPeak(0),
+    updating(false),
+    volumeMeterEnabled(false) {
 
+    x->get_widget("channelsVBox", channelsVBox);
     x->get_widget("nameLabel", nameLabel);
     x->get_widget("boldNameLabel", boldNameLabel);
     x->get_widget("streamToggle", streamToggleButton);
     x->get_widget("iconImage", iconImage);
+
+    peakProgressBar.set_size_request(-1, 10);
+    channelsVBox->pack_end(peakProgressBar, false, false);
+    peakProgressBar.hide();
 
     streamToggleButton->set_active(false);
     streamToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &MinimalStreamWidget::onStreamToggleButton));
@@ -445,29 +454,9 @@ bool MinimalStreamWidget::on_button_press_event (GdkEventButton* event) {
     return FALSE;
 }
 
-/*** StreamWidget ***/
-
-StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    MinimalStreamWidget(cobject, x),
-    peakProgressBar(),
-    lastPeak(0),
-    volumeMeterEnabled(false) {
-
-    x->get_widget("channelsVBox", channelsVBox);
-    x->get_widget("lockToggleButton", lockToggleButton);
-    x->get_widget("muteToggleButton", muteToggleButton);
-
-    channelsVBox->pack_end(peakProgressBar, false, false);
-    peakProgressBar.hide();
-    muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onMuteToggleButton));
-
-    for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
-        channelWidgets[i] = NULL;
-}
-
 #define DECAY_STEP .04
 
-void StreamWidget::updatePeak(double v) {
+void MinimalStreamWidget::updatePeak(double v) {
 
     if (lastPeak >= DECAY_STEP)
         if (v < lastPeak - DECAY_STEP)
@@ -484,12 +473,26 @@ void StreamWidget::updatePeak(double v) {
     }
 }
 
-void StreamWidget::enableVolumeMeter() {
+void MinimalStreamWidget::enableVolumeMeter() {
     if (volumeMeterEnabled)
         return;
 
     volumeMeterEnabled = true;
     peakProgressBar.show();
+}
+
+/*** StreamWidget ***/
+
+StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
+    MinimalStreamWidget(cobject, x)  {
+
+    x->get_widget("lockToggleButton", lockToggleButton);
+    x->get_widget("muteToggleButton", muteToggleButton);
+
+    muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onMuteToggleButton));
+
+    for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
+        channelWidgets[i] = NULL;
 }
 
 void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
@@ -793,8 +796,8 @@ SourceOutputWidget::~SourceOutputWidget() {
 
 SourceOutputWidget* SourceOutputWidget::create() {
     SourceOutputWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "minimalStreamWidget");
-    x->get_widget_derived("minimalStreamWidget", w);
+    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "StreamWidget");
+    x->get_widget_derived("StreamWidget", w);
     return w;
 }
 
@@ -952,7 +955,7 @@ static void suspended_callback(pa_stream *s, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (pa_stream_is_suspended(s))
-        w->updateVolumeMeter(pa_stream_get_device_index(s), -1);
+        w->updateVolumeMeter(pa_stream_get_device_index(s), PA_INVALID_INDEX, -1);
 }
 
 static void read_callback(pa_stream *s, size_t length, void *userdata) {
@@ -977,14 +980,14 @@ static void read_callback(pa_stream *s, size_t length, void *userdata) {
     if (v > 1)
         v = 1;
 
-    w->updateVolumeMeter(pa_stream_get_device_index(s), v);
+    w->updateVolumeMeter(pa_stream_get_device_index(s), pa_stream_get_monitor_stream(s), v);
 }
 
-void MainWindow::createMonitorStream(uint32_t idx) {
+void MainWindow::createMonitorStreamForSource(uint32_t source_idx) {
     pa_stream *s;
     char t[16];
-    pa_sample_spec ss;
     pa_buffer_attr attr;
+    pa_sample_spec ss;
 
     ss.channels = 1;
     ss.format = PA_SAMPLE_FLOAT32;
@@ -993,13 +996,50 @@ void MainWindow::createMonitorStream(uint32_t idx) {
     memset(&attr, 0, sizeof(attr));
     attr.fragsize = sizeof(float);
 
-    snprintf(t, sizeof(t), "%u", idx);
+    snprintf(t, sizeof(t), "%u", source_idx);
 
     if (!(s = pa_stream_new(context, "Peak detect", &ss, NULL))) {
         show_error("Failed to create monitoring stream");
         return;
     }
 
+    pa_stream_set_read_callback(s, read_callback, this);
+    pa_stream_set_suspended_callback(s, suspended_callback, this);
+
+    if (pa_stream_connect_record(s, t, &attr, (pa_stream_flags_t) (PA_STREAM_DONT_MOVE|PA_STREAM_PEAK_DETECT|PA_STREAM_ADJUST_LATENCY)) < 0) {
+        show_error("Failed to connect monitoring stream");
+        pa_stream_unref(s);
+        return;
+    }
+}
+
+void MainWindow::createMonitorStreamForSinkInput(uint32_t sink_input_idx, uint32_t sink_idx) {
+    pa_stream *s;
+    char t[16];
+    pa_buffer_attr attr;
+    pa_sample_spec ss;
+    uint32_t monitor_source_idx;
+
+    ss.channels = 1;
+    ss.format = PA_SAMPLE_FLOAT32;
+    ss.rate = 25;
+
+    if (!sinkWidgets.count(sink_idx))
+        return;
+
+    monitor_source_idx = sinkWidgets[sink_idx]->monitor_index;
+
+    memset(&attr, 0, sizeof(attr));
+    attr.fragsize = sizeof(float);
+
+    snprintf(t, sizeof(t), "%u", monitor_source_idx);
+
+    if (!(s = pa_stream_new(context, "Peak detect", &ss, NULL))) {
+        show_error("Failed to create monitoring stream");
+        return;
+    }
+
+    pa_stream_set_monitor_stream(s, sink_input_idx);
     pa_stream_set_read_callback(s, read_callback, this);
     pa_stream_set_suspended_callback(s, suspended_callback, this);
 
@@ -1024,7 +1064,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
         is_new = true;
 
         if (pa_context_get_server_protocol_version(context) >= 13)
-            createMonitorStream(w->index);
+            createMonitorStreamForSource(info.index);
     }
 
     w->updating = true;
@@ -1106,6 +1146,9 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
         w->clientIndex = info.client;
         w->mainWindow = this;
         is_new = true;
+
+        if (pa_context_get_server_protocol_version(context) >= 13)
+            createMonitorStreamForSinkInput(info.index, info.sink);
     }
 
     w->updating = true;
@@ -1228,21 +1271,38 @@ void MainWindow::updateServer(const pa_server_info &info) {
     }
 }
 
-void MainWindow::updateVolumeMeter(uint32_t source_index, double v) {
+void MainWindow::updateVolumeMeter(uint32_t source_index, uint32_t sink_input_idx, double v) {
 
+    if (sink_input_idx != PA_INVALID_INDEX) {
+        SinkInputWidget *w;
 
-    for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
-        SinkWidget* w = i->second;
-
-        if (w->monitor_index == source_index)
+        if (sinkInputWidgets.count(sink_input_idx)) {
+            w = sinkInputWidgets[sink_input_idx];
             w->updatePeak(v);
-    }
+        }
 
-    for (std::map<uint32_t, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
-        SourceWidget* w = i->second;
+    } else {
 
-        if (w->index == source_index)
-            w->updatePeak(v);
+        for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
+            SinkWidget* w = i->second;
+
+            if (w->monitor_index == source_index)
+                w->updatePeak(v);
+        }
+
+        for (std::map<uint32_t, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
+            SourceWidget* w = i->second;
+
+            if (w->index == source_index)
+                w->updatePeak(v);
+        }
+
+        for (std::map<uint32_t, SourceOutputWidget*>::iterator i = sourceOutputWidgets.begin(); i != sourceOutputWidgets.end(); ++i) {
+            SourceOutputWidget* w = i->second;
+
+            if (w->sourceIndex == source_index)
+                w->updatePeak(v);
+        }
     }
 }
 
@@ -1452,18 +1512,21 @@ void sink_input_cb(pa_context *, const pa_sink_input_info *i, int eol, void *use
 void source_output_cb(pa_context *, const pa_source_output_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
-    if (eol) {
-        /* At this point all notebook pages have been populated, so
-         * let's open one that isn't empty */
+    if (eol)  {
 
-        if (w->sinkInputWidgets.size() > 0)
-            w->notebook->set_current_page(0);
-        else if (w->sourceOutputWidgets.size() > 0)
-            w->notebook->set_current_page(1);
-        else if (w->sourceWidgets.size() > 0 && w->sinkWidgets.size() == 0)
-            w->notebook->set_current_page(3);
-        else
-            w->notebook->set_current_page(2);
+        if (n_outstanding > 0) {
+            /* At this point all notebook pages have been populated, so
+             * let's open one that isn't empty */
+
+            if (w->sinkInputWidgets.size() > 0)
+                w->notebook->set_current_page(0);
+            else if (w->sourceOutputWidgets.size() > 0)
+                w->notebook->set_current_page(1);
+            else if (w->sourceWidgets.size() > 0 && w->sinkWidgets.size() == 0)
+                w->notebook->set_current_page(3);
+            else
+                w->notebook->set_current_page(2);
+        }
 
         dec_outstanding(w);
         return;
