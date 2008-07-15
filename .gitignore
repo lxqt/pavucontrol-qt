@@ -1,0 +1,17 @@
+aclocal.m4
+*.cache
+config.h
+config.h.in
+config.log
+config.status
+configure
+depcomp
+README
+README.html
+install-sh
+missing
+*.o
+stamp*
+Makefile
+Makefile.in
+.deps
