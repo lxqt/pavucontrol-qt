@@ -34,7 +34,7 @@ homepage: all dist
 	ln -sf README.html $$HOME/homepage/private/projects/pavucontrol/index.html
 
 fedora-snapshot: dist
-	cp $(distdir).tar.gz $$HOME/cvs.fedora/pavucontrol/devel/$(distdir).svn`date +%Y%m%d`.tar.gz
+	cp $(distdir).tar.gz $$HOME/cvs.fedora/pavucontrol/devel/$(distdir).git`date +%Y%m%d`.tar.gz
 
 .PHONY: homepage
 
