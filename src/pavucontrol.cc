@@ -794,8 +794,8 @@ SourceOutputWidget::~SourceOutputWidget() {
 
 SourceOutputWidget* SourceOutputWidget::create() {
     SourceOutputWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "StreamWidget");
-    x->get_widget_derived("StreamWidget", w);
+    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "streamWidget");
+    x->get_widget_derived("streamWidget", w);
     return w;
 }
 
