@@ -26,5 +26,5 @@ pavucontrol_SOURCES=pavucontrol.cc
 
 pavucontrol_LDADD=$(AM_LDADD) $(GUILIBS_LIBS) $(PULSE_LIBS)
 pavucontrol_CXXFLAGS=$(AM_CXXFLAGS) $(GUILIBS_CFLAGS) $(PULSE_CFLAGS)
-#pavucontrol_CXXFLAGS+=-DGLADE_FILE=\"$(pkgdatadir)/pavucontrol.glade\"
-pavucontrol_CXXFLAGS+=-DGLADE_FILE=\"pavucontrol.glade\"
+pavucontrol_CXXFLAGS+=-DGLADE_FILE=\"$(pkgdatadir)/pavucontrol.glade\"
+#pavucontrol_CXXFLAGS+=-DGLADE_FILE=\"pavucontrol.glade\"
