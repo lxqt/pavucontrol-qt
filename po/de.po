@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-05 20:39+0200\n"
-"PO-Revision-Date: 2008-08-05 20:44+0100\n"
+"PO-Revision-Date: 2008-08-05 20:49+0100\n"
 "Last-Translator: Lennart Poettering <lennart@poettering.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -108,19 +108,19 @@ msgstr ""
 
 #: ../src/pavucontrol.glade.h:28
 msgid "_Input Devices"
-msgstr ""
+msgstr "_Eingabegeräte"
 
 #: ../src/pavucontrol.glade.h:29
 msgid "_Output Devices"
-msgstr ""
+msgstr "_Ausgabegeräte"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "_Playback"
-msgstr ""
+msgstr "_Wiedergabe"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "_Recording"
-msgstr ""
+msgstr "_Aufnahme"
 
 #: ../src/pavucontrol.cc:606
 msgid "pa_context_set_sink_volume_by_index() failed"
