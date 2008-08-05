@@ -24,10 +24,10 @@ glade_DATA=pavucontrol.glade
 desktop_in_files=pavucontrol.desktop.in
 desktop_DATA=$(desktop_in_files:.desktop.in=.desktop)
 
-pavucontrol_SOURCES=pavucontrol.cc
+pavucontrol_SOURCES=pavucontrol.cc i18n.h
 
 pavucontrol_LDADD=$(AM_LDADD) $(GUILIBS_LIBS) $(PULSE_LIBS)
-pavucontrol_CXXFLAGS=$(AM_CXXFLAGS) $(GUILIBS_CFLAGS) $(PULSE_CFLAGS)
+pavucontrol_CXXFLAGS=$(AM_CXXFLAGS) $(GUILIBS_CFLAGS) $(PULSE_CFLAGS) -DLOCALEDIR=\"$(localedir)\"
 pavucontrol_CXXFLAGS+=-DGLADE_FILE=\"$(gladedir)/pavucontrol.glade\"
 #pavucontrol_CXXFLAGS+=-DGLADE_FILE=\"pavucontrol.glade\"
 
