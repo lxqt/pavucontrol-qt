@@ -15,8 +15,15 @@
 # You should have received a copy of the GNU General Public License
 # along with pavucontrol. If not, see <http://www.gnu.org/licenses/>.
 
-EXTRA_DIST = bootstrap.sh README LICENSE
-SUBDIRS=src doc
+EXTRA_DIST = \
+	m4/ChangeLog \
+	bootstrap.sh \
+	README LICENSE \
+	intltool-merge.in \
+	intltool-update.in \
+	intltool-extract.in
+
+SUBDIRS=src doc po
 
 MAINTAINERCLEANFILES=README
 noinst_DATA = README
@@ -33,10 +40,17 @@ homepage: all dist
 	cp doc/README.html doc/screenshot.png doc/style.css $$HOME/homepage/private/projects/pavucontrol
 	ln -sf README.html $$HOME/homepage/private/projects/pavucontrol/index.html
 
+DISTCLEANFILES = \
+        intltool-extract \
+        intltool-merge \
+        intltool-update
+
 fedora-snapshot: dist
 	cp $(distdir).tar.gz $$HOME/cvs.fedora/pavucontrol/devel/$(distdir).git`date +%Y%m%d`.tar.gz
 
 .PHONY: homepage
+
+ACLOCAL_AMFLAGS = -I m4
 
 dist-hook:
 	if test -d .git ; then \

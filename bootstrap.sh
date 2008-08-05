@@ -48,7 +48,14 @@ else
     rm -rf autom4te.cache
     rm -f config.cache
 
-    run_versioned aclocal "$VERSION"
+    rm -f Makefile.am~ configure.ac~
+    # Evil, evil, evil, evil hack
+    sed 's/read dummy/\#/' `which gettextize` | sh -s -- --copy --force
+    test -f Makefile.am~ && mv Makefile.am~ Makefile.am
+    test -f configure.ac~ && mv configure.ac~ configure.ac
+
+    intltoolize --copy --force --automake
+    run_versioned aclocal "$VERSION" -I m4
     run_versioned autoconf 2.59 -Wall
     run_versioned autoheader 2.59
     run_versioned automake "$VERSION" -a -c --foreign

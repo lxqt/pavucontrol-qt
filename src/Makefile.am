@@ -16,15 +16,23 @@
 # along with pavucontrol. If not, see <http://www.gnu.org/licenses/>.
 
 desktopdir = $(datadir)/applications
+gladedir = $(pkgdatadir)
+localedir = $(datadir)/locale
 
 bin_PROGRAMS=pavucontrol
-
-dist_pkgdata_DATA=pavucontrol.glade
-dist_desktop_DATA=pavucontrol.desktop
+glade_DATA=pavucontrol.glade
+desktop_in_files=pavucontrol.desktop.in
+desktop_DATA=$(desktop_in_files:.desktop.in=.desktop)
 
 pavucontrol_SOURCES=pavucontrol.cc
 
 pavucontrol_LDADD=$(AM_LDADD) $(GUILIBS_LIBS) $(PULSE_LIBS)
 pavucontrol_CXXFLAGS=$(AM_CXXFLAGS) $(GUILIBS_CFLAGS) $(PULSE_CFLAGS)
-pavucontrol_CXXFLAGS+=-DGLADE_FILE=\"$(pkgdatadir)/pavucontrol.glade\"
+pavucontrol_CXXFLAGS+=-DGLADE_FILE=\"$(gladedir)/pavucontrol.glade\"
 #pavucontrol_CXXFLAGS+=-DGLADE_FILE=\"pavucontrol.glade\"
+
+EXTRA_DIST = $(glade_DATA) $(desktop_in_files)
+
+CLEANFILES = $(desktop_DATA)
+
+@INTLTOOL_DESKTOP_RULE@

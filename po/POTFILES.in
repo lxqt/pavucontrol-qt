@@ -1,0 +1,4 @@
+[encoding: UTF-8]
+src/pavucontrol.desktop.in
+src/pavucontrol.glade
+src/pavucontrol.cc
