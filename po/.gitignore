@@ -10,3 +10,5 @@ insert-header.sin
 pavucontrol.pot
 quot.sed
 remove-potcdate.sin
+*.gmo
+*.mo
