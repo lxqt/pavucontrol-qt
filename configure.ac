@@ -78,8 +78,6 @@ fi
 
 AM_CONDITIONAL([USE_LYNX], [test "x$lynx" = xyes])
 
-AM_GNU_GETTEXT([external])
-
 IT_PROG_INTLTOOL([0.35.0])
 GETTEXT_PACKAGE=pavucontrol
 AC_SUBST([GETTEXT_PACKAGE])
