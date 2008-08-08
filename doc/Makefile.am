@@ -16,8 +16,9 @@
 # License along with pavucontrol. If not, see
 # <http://www.gnu.org/licenses/>.
 
-noinst_DATA = README.html README
-EXTRA_DIST = $(noinst_DATA) style.css README.html.in
+dist_html_DATA = README.html style.css
+dist_doc_DATA = README
+EXTRA_DIST = README.html.in
 
 MAINTAINERCLEANFILES = README README.html
 CLEANFILES =
