@@ -60,24 +60,7 @@ if test "x$GCC" = "xyes" ; then
    CXXFLAGS="$CXXFLAGS -pipe -Wall -W"
 fi
 
-# LYNX documentation generation
-AC_ARG_ENABLE(lynx,
-        AS_HELP_STRING(--disable-lynx,Turn off lynx usage for documentation generation),
-[case "${enableval}" in
-  yes) lynx=yes ;;
-  no)  lynx=no ;;
-  *) AC_MSG_ERROR(bad value ${enableval} for --disable-lynx) ;;
-esac],[lynx=yes])
-
-if test x$lynx = xyes ; then
-   AC_CHECK_PROG(have_lynx, lynx, yes, no)
-
-   if test x$have_lynx = xno ; then
-     AC_MSG_ERROR([*** Sorry, you have to install lynx or use --disable-lynx ***])
-   fi
-fi
-
-AM_CONDITIONAL([USE_LYNX], [test "x$lynx" = xyes])
+ZP_LYNX_DOC
 
 IT_PROG_INTLTOOL([0.35.0])
 GETTEXT_PACKAGE=pavucontrol
