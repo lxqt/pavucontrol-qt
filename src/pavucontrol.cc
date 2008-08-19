@@ -29,6 +29,8 @@
 #include <libglademm.h>
 #include <libintl.h>
 
+#include <canberra-gtk.h>
+
 #include <pulse/pulseaudio.h>
 #include <pulse/glib-mainloop.h>
 #include <pulse/ext-stream-restore.h>
@@ -91,6 +93,8 @@ public:
     bool can_decibel;
     bool volumeScaleEnabled;
 
+    Glib::ustring beepDevice;
+
     virtual void set_sensitive(bool enabled);
 };
 
@@ -117,6 +121,8 @@ public:
     bool volumeMeterEnabled;
     void enableVolumeMeter();
     void updatePeak(double v);
+
+    Glib::ustring beepDevice;
 
 protected:
     virtual bool on_button_press_event(GdkEventButton* event);
@@ -376,13 +382,15 @@ void ChannelWidget::setVolume(pa_volume_t volume) {
 
         if (dB > PA_DECIBEL_MININFTY) {
             snprintf(txt, sizeof(txt), "%0.2f dB", dB);
-            volumeLabel->set_text(txt);
+            volumeLabel->set_tooltip_text(txt);
         } else
-            volumeLabel->set_markup("-&#8734;dB");
-    } else {
-        snprintf(txt, sizeof(txt), "%0.0f%%", v);
-        volumeLabel->set_text(txt);
-    }
+            volumeLabel->set_tooltip_markup("-&#8734;dB");
+        volumeLabel->set_has_tooltip(TRUE);
+    } else
+        volumeLabel->set_has_tooltip(FALSE);
+
+    snprintf(txt, sizeof(txt), "%0.0f%%", v);
+    volumeLabel->set_text(txt);
 
     volumeScaleEnabled = false;
     volumeScale->set_value(v > 100 ? 100 : v);
@@ -399,6 +407,26 @@ void ChannelWidget::onVolumeScaleValueChanged() {
 
     pa_volume_t volume = (pa_volume_t) ((volumeScale->get_value() * PA_VOLUME_NORM) / 100);
     streamWidget->updateChannelVolume(channel, volume);
+
+    if (beepDevice != "") {
+        g_debug("blah: %s", beepDevice.c_str());
+        ca_context_change_device(ca_gtk_context_get(), beepDevice.c_str());
+
+        ca_context_cancel(ca_gtk_context_get(), 2);
+
+        int r = ca_gtk_play_for_widget(GTK_WIDGET(volumeScale->gobj()),
+                               2,
+                               CA_PROP_EVENT_DESCRIPTION, _("Volume Control Feedback Sound"),
+                               CA_PROP_EVENT_ID, "audio-volume-change",
+                               CA_PROP_CANBERRA_CACHE_CONTROL, "permanent",
+                               CA_PROP_CANBERRA_VOLUME, "0",
+                               CA_PROP_CANBERRA_ENABLE, "1",
+                               NULL);
+
+        g_debug("%i = %s", r, ca_strerror(r));
+
+        ca_context_change_device(ca_gtk_context_get(), NULL);
+    }
 }
 
 void ChannelWidget::set_sensitive(bool enabled) {
@@ -524,6 +552,7 @@ void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
 
     for (int i = 0; i < m.channels; i++) {
         ChannelWidget *cw = channelWidgets[i] = ChannelWidget::create();
+        cw->beepDevice = beepDevice;
         cw->channel = i;
         cw->can_decibel = can_decibel;
         cw->streamWidget = this;
@@ -988,6 +1017,7 @@ void MainWindow::updateSink(const pa_sink_info &info) {
         w = sinkWidgets[info.index];
     else {
         sinkWidgets[info.index] = w = SinkWidget::create();
+        w->beepDevice = info.name;
         w->setChannelMap(info.channel_map, !!(info.flags & PA_SINK_DECIBEL_VOLUME));
         sinksVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
@@ -1631,6 +1661,9 @@ void sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol < 0) {
+        if (pa_context_errno(context) == PA_ERR_NOENTITY)
+            return;
+
         show_error(_("Sink callback failure"));
         return;
     }
@@ -1647,6 +1680,9 @@ void source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol < 0) {
+        if (pa_context_errno(context) == PA_ERR_NOENTITY)
+            return;
+
         show_error(_("Source callback failure"));
         return;
     }
@@ -1663,6 +1699,9 @@ void sink_input_cb(pa_context *, const pa_sink_input_info *i, int eol, void *use
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol < 0) {
+        if (pa_context_errno(context) == PA_ERR_NOENTITY)
+            return;
+
         show_error(_("Sink input callback failure"));
         return;
     }
@@ -1679,6 +1718,9 @@ void source_output_cb(pa_context *, const pa_source_output_info *i, int eol, voi
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol < 0) {
+        if (pa_context_errno(context) == PA_ERR_NOENTITY)
+            return;
+
         show_error(_("Source output callback failure"));
         return;
     }
@@ -1710,6 +1752,9 @@ void client_cb(pa_context *, const pa_client_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol < 0) {
+        if (pa_context_errno(context) == PA_ERR_NOENTITY)
+            return;
+
         show_error(_("Client callback failure"));
         return;
     }
@@ -1954,6 +1999,8 @@ int main(int argc, char *argv[]) {
     signal(SIGPIPE, SIG_IGN);
 
     Gtk::Main kit(argc, argv);
+
+    ca_context_set_driver(ca_gtk_context_get(), "pulse");
 
     Gtk::Window* mainWindow = MainWindow::create();
 
