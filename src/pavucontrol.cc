@@ -27,10 +27,15 @@
 
 #include <gtkmm.h>
 #include <libglademm.h>
+#include <libintl.h>
+
+#include <canberra-gtk.h>
 
 #include <pulse/pulseaudio.h>
 #include <pulse/glib-mainloop.h>
 #include <pulse/ext-stream-restore.h>
+
+#include "i18n.h"
 
 #ifndef GLADE_FILE
 #define GLADE_FILE "pavucontrol.glade"
@@ -88,6 +93,8 @@ public:
     bool can_decibel;
     bool volumeScaleEnabled;
 
+    Glib::ustring beepDevice;
+
     virtual void set_sensitive(bool enabled);
 };
 
@@ -114,6 +121,8 @@ public:
     bool volumeMeterEnabled;
     void enableVolumeMeter();
     void updatePeak(double v);
+
+    Glib::ustring beepDevice;
 
 protected:
     virtual bool on_button_press_event(GdkEventButton* event);
@@ -373,13 +382,15 @@ void ChannelWidget::setVolume(pa_volume_t volume) {
 
         if (dB > PA_DECIBEL_MININFTY) {
             snprintf(txt, sizeof(txt), "%0.2f dB", dB);
-            volumeLabel->set_text(txt);
+            volumeLabel->set_tooltip_text(txt);
         } else
-            volumeLabel->set_markup("-&#8734;dB");
-    } else {
-        snprintf(txt, sizeof(txt), "%0.0f%%", v);
-        volumeLabel->set_text(txt);
-    }
+            volumeLabel->set_tooltip_markup("-&#8734;dB");
+        volumeLabel->set_has_tooltip(TRUE);
+    } else
+        volumeLabel->set_has_tooltip(FALSE);
+
+    snprintf(txt, sizeof(txt), "%0.0f%%", v);
+    volumeLabel->set_text(txt);
 
     volumeScaleEnabled = false;
     volumeScale->set_value(v > 100 ? 100 : v);
@@ -396,6 +407,26 @@ void ChannelWidget::onVolumeScaleValueChanged() {
 
     pa_volume_t volume = (pa_volume_t) ((volumeScale->get_value() * PA_VOLUME_NORM) / 100);
     streamWidget->updateChannelVolume(channel, volume);
+
+    if (beepDevice != "") {
+        g_debug("blah: %s", beepDevice.c_str());
+        ca_context_change_device(ca_gtk_context_get(), beepDevice.c_str());
+
+        ca_context_cancel(ca_gtk_context_get(), 2);
+
+        int r = ca_gtk_play_for_widget(GTK_WIDGET(volumeScale->gobj()),
+                               2,
+                               CA_PROP_EVENT_DESCRIPTION, _("Volume Control Feedback Sound"),
+                               CA_PROP_EVENT_ID, "audio-volume-change",
+                               CA_PROP_CANBERRA_CACHE_CONTROL, "permanent",
+                               CA_PROP_CANBERRA_VOLUME, "0",
+                               CA_PROP_CANBERRA_ENABLE, "1",
+                               NULL);
+
+        g_debug("%i = %s", r, ca_strerror(r));
+
+        ca_context_change_device(ca_gtk_context_get(), NULL);
+    }
 }
 
 void ChannelWidget::set_sensitive(bool enabled) {
@@ -521,6 +552,7 @@ void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
 
     for (int i = 0; i < m.channels; i++) {
         ChannelWidget *cw = channelWidgets[i] = ChannelWidget::create();
+        cw->beepDevice = beepDevice;
         cw->channel = i;
         cw->can_decibel = can_decibel;
         cw->streamWidget = this;
@@ -600,7 +632,7 @@ void SinkWidget::executeVolumeUpdate() {
     pa_operation* o;
 
     if (!(o = pa_context_set_sink_volume_by_index(context, index, &volume, NULL, NULL))) {
-        show_error("pa_context_set_sink_volume_by_index() failed");
+        show_error(_("pa_context_set_sink_volume_by_index() failed"));
         return;
     }
 
@@ -615,7 +647,7 @@ void SinkWidget::onMuteToggleButton() {
 
     pa_operation* o;
     if (!(o = pa_context_set_sink_mute_by_index(context, index, muteToggleButton->get_active(), NULL, NULL))) {
-        show_error("pa_context_set_sink_mute_by_index() failed");
+        show_error(_("pa_context_set_sink_mute_by_index() failed"));
         return;
     }
 
@@ -629,7 +661,7 @@ void SinkWidget::onDefaultToggle() {
         return;
 
     if (!(o = pa_context_set_default_sink(context, name.c_str(), NULL, NULL))) {
-        show_error("pa_context_set_default_sink() failed");
+        show_error(_("pa_context_set_default_sink() failed"));
         return;
     }
     pa_operation_unref(o);
@@ -637,7 +669,7 @@ void SinkWidget::onDefaultToggle() {
 
 SourceWidget::SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     StreamWidget(cobject, x),
-    defaultMenuItem("_Default", true){
+    defaultMenuItem(_("_Default"), true){
 
     add_events(Gdk::BUTTON_PRESS_MASK);
 
@@ -658,7 +690,7 @@ void SourceWidget::executeVolumeUpdate() {
     pa_operation* o;
 
     if (!(o = pa_context_set_source_volume_by_index(context, index, &volume, NULL, NULL))) {
-        show_error("pa_context_set_source_volume_by_index() failed");
+        show_error(_("pa_context_set_source_volume_by_index() failed"));
         return;
     }
 
@@ -673,7 +705,7 @@ void SourceWidget::onMuteToggleButton() {
 
     pa_operation* o;
     if (!(o = pa_context_set_source_mute_by_index(context, index, muteToggleButton->get_active(), NULL, NULL))) {
-        show_error("pa_context_set_source_mute_by_index() failed");
+        show_error(_("pa_context_set_source_mute_by_index() failed"));
         return;
     }
 
@@ -687,7 +719,7 @@ void SourceWidget::onDefaultToggle() {
         return;
 
     if (!(o = pa_context_set_default_source(context, name.c_str(), NULL, NULL))) {
-        show_error("pa_context_set_default_source() failed");
+        show_error(_("pa_context_set_default_source() failed"));
         return;
     }
     pa_operation_unref(o);
@@ -696,8 +728,8 @@ void SourceWidget::onDefaultToggle() {
 SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     StreamWidget(cobject, x),
     mainWindow(NULL),
-    titleMenuItem("_Move Stream...", true),
-    killMenuItem("_Terminate Stream", true) {
+    titleMenuItem(_("_Move Stream..."), true),
+    killMenuItem(_("_Terminate Stream"), true) {
 
     add_events(Gdk::BUTTON_PRESS_MASK);
 
@@ -723,7 +755,7 @@ void SinkInputWidget::executeVolumeUpdate() {
     pa_operation* o;
 
     if (!(o = pa_context_set_sink_input_volume(context, index, &volume, NULL, NULL))) {
-        show_error("pa_context_set_sink_input_volume() failed");
+        show_error(_("pa_context_set_sink_input_volume() failed"));
         return;
     }
 
@@ -738,7 +770,7 @@ void SinkInputWidget::onMuteToggleButton() {
 
     pa_operation* o;
     if (!(o = pa_context_set_sink_input_mute(context, index, muteToggleButton->get_active(), NULL, NULL))) {
-        show_error("pa_context_set_sink_input_mute() failed");
+        show_error(_("pa_context_set_sink_input_mute() failed"));
         return;
     }
 
@@ -772,7 +804,7 @@ void SinkInputWidget::buildMenu() {
 void SinkInputWidget::onKill() {
     pa_operation* o;
     if (!(o = pa_context_kill_sink_input(context, index, NULL, NULL))) {
-        show_error("pa_context_kill_sink_input() failed");
+        show_error(_("pa_context_kill_sink_input() failed"));
         return;
     }
 
@@ -789,7 +821,7 @@ void SinkInputWidget::SinkMenuItem::onToggle() {
 
     pa_operation* o;
     if (!(o = pa_context_move_sink_input_by_index(context, widget->index, index, NULL, NULL))) {
-        show_error("pa_context_move_sink_input_by_index() failed");
+        show_error(_("pa_context_move_sink_input_by_index() failed"));
         return;
     }
 
@@ -799,8 +831,8 @@ void SinkInputWidget::SinkMenuItem::onToggle() {
 SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     MinimalStreamWidget(cobject, x),
     mainWindow(NULL),
-    titleMenuItem("_Move Stream...", true),
-    killMenuItem("_Terminate Stream", true) {
+    titleMenuItem(_("_Move Stream..."), true),
+    killMenuItem(_("_Terminate Stream"), true) {
 
     add_events(Gdk::BUTTON_PRESS_MASK);
 
@@ -825,7 +857,7 @@ SourceOutputWidget* SourceOutputWidget::create() {
 void SourceOutputWidget::onKill() {
     pa_operation* o;
     if (!(o = pa_context_kill_source_output(context, index, NULL, NULL))) {
-        show_error("pa_context_kill_source_output() failed");
+        show_error(_("pa_context_kill_source_output() failed"));
         return;
     }
 
@@ -866,7 +898,7 @@ void SourceOutputWidget::SourceMenuItem::onToggle() {
 
     pa_operation* o;
     if (!(o = pa_context_move_source_output_by_index(context, widget->index, index, NULL, NULL))) {
-        show_error("pa_context_move_source_output_by_index() failed");
+        show_error(_("pa_context_move_source_output_by_index() failed"));
         return;
     }
 
@@ -908,7 +940,7 @@ void RoleWidget::executeVolumeUpdate() {
 
     pa_operation* o;
     if (!(o = pa_ext_stream_restore_write(context, PA_UPDATE_REPLACE, &info, 1, TRUE, NULL, NULL))) {
-        show_error("pa_ext_stream_restore_write() failed");
+        show_error(_("pa_ext_stream_restore_write() failed"));
         return;
     }
 
@@ -985,6 +1017,7 @@ void MainWindow::updateSink(const pa_sink_info &info) {
         w = sinkWidgets[info.index];
     else {
         sinkWidgets[info.index] = w = SinkWidget::create();
+        w->beepDevice = info.name;
         w->setChannelMap(info.channel_map, !!(info.flags & PA_SINK_DECIBEL_VOLUME));
         sinksVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
@@ -1029,7 +1062,7 @@ static void read_callback(pa_stream *s, size_t length, void *userdata) {
     double v;
 
     if (pa_stream_peek(s, &data, &length) < 0) {
-        show_error("Failed to read data from stream");
+        show_error(_("Failed to read data from stream"));
         return;
     }
 
@@ -1063,8 +1096,8 @@ void MainWindow::createMonitorStreamForSource(uint32_t source_idx) {
 
     snprintf(t, sizeof(t), "%u", source_idx);
 
-    if (!(s = pa_stream_new(context, "Peak detect", &ss, NULL))) {
-        show_error("Failed to create monitoring stream");
+    if (!(s = pa_stream_new(context, _("Peak detect"), &ss, NULL))) {
+        show_error(_("Failed to create monitoring stream"));
         return;
     }
 
@@ -1072,7 +1105,7 @@ void MainWindow::createMonitorStreamForSource(uint32_t source_idx) {
     pa_stream_set_suspended_callback(s, suspended_callback, this);
 
     if (pa_stream_connect_record(s, t, &attr, (pa_stream_flags_t) (PA_STREAM_DONT_MOVE|PA_STREAM_PEAK_DETECT|PA_STREAM_ADJUST_LATENCY)) < 0) {
-        show_error("Failed to connect monitoring stream");
+        show_error(_("Failed to connect monitoring stream"));
         pa_stream_unref(s);
         return;
     }
@@ -1099,8 +1132,8 @@ void MainWindow::createMonitorStreamForSinkInput(uint32_t sink_input_idx, uint32
 
     snprintf(t, sizeof(t), "%u", monitor_source_idx);
 
-    if (!(s = pa_stream_new(context, "Peak detect", &ss, NULL))) {
-        show_error("Failed to create monitoring stream");
+    if (!(s = pa_stream_new(context, _("Peak detect"), &ss, NULL))) {
+        show_error(_("Failed to create monitoring stream"));
         return;
     }
 
@@ -1109,7 +1142,7 @@ void MainWindow::createMonitorStreamForSinkInput(uint32_t sink_input_idx, uint32
     pa_stream_set_suspended_callback(s, suspended_callback, this);
 
     if (pa_stream_connect_record(s, t, &attr, (pa_stream_flags_t) (PA_STREAM_DONT_MOVE|PA_STREAM_PEAK_DETECT|PA_STREAM_ADJUST_LATENCY)) < 0) {
-        show_error("Failed to connect monitoring stream");
+        show_error(_("Failed to connect monitoring stream"));
         pa_stream_unref(s);
         return;
     }
@@ -1349,7 +1382,7 @@ bool MainWindow::createEventRoleWidget() {
     eventRoleWidget->setChannelMap(cm, true);
 
     eventRoleWidget->boldNameLabel->set_text("");
-    eventRoleWidget->nameLabel->set_label("System Sounds");
+    eventRoleWidget->nameLabel->set_label(_("System Sounds"));
 
     eventRoleWidget->iconImage->set_from_icon_name("multimedia-volume-control", Gtk::ICON_SIZE_SMALL_TOOLBAR);
 
@@ -1628,7 +1661,10 @@ void sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol < 0) {
-        show_error("Sink callback failure");
+        if (pa_context_errno(context) == PA_ERR_NOENTITY)
+            return;
+
+        show_error(_("Sink callback failure"));
         return;
     }
 
@@ -1644,7 +1680,10 @@ void source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol < 0) {
-        show_error("Source callback failure");
+        if (pa_context_errno(context) == PA_ERR_NOENTITY)
+            return;
+
+        show_error(_("Source callback failure"));
         return;
     }
 
@@ -1660,7 +1699,10 @@ void sink_input_cb(pa_context *, const pa_sink_input_info *i, int eol, void *use
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol < 0) {
-        show_error("Sink input callback failure");
+        if (pa_context_errno(context) == PA_ERR_NOENTITY)
+            return;
+
+        show_error(_("Sink input callback failure"));
         return;
     }
 
@@ -1676,7 +1718,10 @@ void source_output_cb(pa_context *, const pa_source_output_info *i, int eol, voi
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol < 0) {
-        show_error("Source output callback failure");
+        if (pa_context_errno(context) == PA_ERR_NOENTITY)
+            return;
+
+        show_error(_("Source output callback failure"));
         return;
     }
 
@@ -1707,7 +1752,10 @@ void client_cb(pa_context *, const pa_client_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol < 0) {
-        show_error("Client callback failure");
+        if (pa_context_errno(context) == PA_ERR_NOENTITY)
+            return;
+
+        show_error(_("Client callback failure"));
         return;
     }
 
@@ -1723,7 +1771,7 @@ void server_info_cb(pa_context *, const pa_server_info *i, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (!i) {
-        show_error("Server info callback failure");
+        show_error(_("Server info callback failure"));
         return;
     }
 
@@ -1740,7 +1788,7 @@ void ext_stream_restore_read_cb(
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol < 0) {
-        g_debug("Failed to initialized stream_restore extension: %s", pa_strerror(pa_context_errno(context)));
+        g_debug(_("Failed to initialized stream_restore extension: %s"), pa_strerror(pa_context_errno(context)));
         w->deleteEventRoleWidget();
         return;
     }
@@ -1760,7 +1808,7 @@ static void ext_stream_restore_subscribe_cb(pa_context *c, void *userdata) {
     pa_operation *o;
 
     if (!(o = pa_ext_stream_restore_read(c, ext_stream_restore_read_cb, w))) {
-        show_error("pa_ext_stream_restore_read() failed");
+        show_error(_("pa_ext_stream_restore_read() failed"));
         return;
     }
 
@@ -1777,7 +1825,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_sink_info_by_index(c, index, sink_cb, w))) {
-                    show_error("pa_context_get_sink_info_by_index() failed");
+                    show_error(_("pa_context_get_sink_info_by_index() failed"));
                     return;
                 }
                 pa_operation_unref(o);
@@ -1790,7 +1838,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_source_info_by_index(c, index, source_cb, w))) {
-                    show_error("pa_context_get_source_info_by_index() failed");
+                    show_error(_("pa_context_get_source_info_by_index() failed"));
                     return;
                 }
                 pa_operation_unref(o);
@@ -1803,7 +1851,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_sink_input_info(c, index, sink_input_cb, w))) {
-                    show_error("pa_context_get_sink_input_info() failed");
+                    show_error(_("pa_context_get_sink_input_info() failed"));
                     return;
                 }
                 pa_operation_unref(o);
@@ -1816,7 +1864,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_source_output_info(c, index, source_output_cb, w))) {
-                    show_error("pa_context_get_sink_input_info() failed");
+                    show_error(_("pa_context_get_sink_input_info() failed"));
                     return;
                 }
                 pa_operation_unref(o);
@@ -1829,7 +1877,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_client_info(c, index, client_cb, w))) {
-                    show_error("pa_context_get_client_info() failed");
+                    show_error(_("pa_context_get_client_info() failed"));
                     return;
                 }
                 pa_operation_unref(o);
@@ -1839,7 +1887,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
         case PA_SUBSCRIPTION_EVENT_SERVER: {
             pa_operation *o;
             if (!(o = pa_context_get_server_info(c, server_info_cb, w))) {
-                show_error("pa_context_get_server_info() failed");
+                show_error(_("pa_context_get_server_info() failed"));
                 return;
             }
             pa_operation_unref(o);
@@ -1871,43 +1919,43 @@ void context_state_callback(pa_context *c, void *userdata) {
                                             PA_SUBSCRIPTION_MASK_SOURCE_OUTPUT|
                                             PA_SUBSCRIPTION_MASK_CLIENT|
                                             PA_SUBSCRIPTION_MASK_SERVER), NULL, NULL))) {
-                show_error("pa_context_subscribe() failed");
+                show_error(_("pa_context_subscribe() failed"));
                 return;
             }
             pa_operation_unref(o);
 
             if (!(o = pa_context_get_server_info(c, server_info_cb, w))) {
-                show_error("pa_context_get_server_info() failed");
+                show_error(_("pa_context_get_server_info() failed"));
                 return;
             }
             pa_operation_unref(o);
 
             if (!(o = pa_context_get_client_info_list(c, client_cb, w))) {
-                show_error("pa_context_client_info_list() failed");
+                show_error(_("pa_context_client_info_list() failed"));
                 return;
             }
             pa_operation_unref(o);
 
             if (!(o = pa_context_get_sink_info_list(c, sink_cb, w))) {
-                show_error("pa_context_get_sink_info_list() failed");
+                show_error(_("pa_context_get_sink_info_list() failed"));
                 return;
             }
             pa_operation_unref(o);
 
             if (!(o = pa_context_get_source_info_list(c, source_cb, w))) {
-                show_error("pa_context_get_source_info_list() failed");
+                show_error(_("pa_context_get_source_info_list() failed"));
                 return;
             }
             pa_operation_unref(o);
 
             if (!(o = pa_context_get_sink_input_info_list(c, sink_input_cb, w))) {
-                show_error("pa_context_get_sink_input_info_list() failed");
+                show_error(_("pa_context_get_sink_input_info_list() failed"));
                 return;
             }
             pa_operation_unref(o);
 
             if (!(o = pa_context_get_source_output_info_list(c, source_output_cb, w))) {
-                show_error("pa_context_get_source_output_info_list() failed");
+                show_error(_("pa_context_get_source_output_info_list() failed"));
                 return;
             }
             pa_operation_unref(o);
@@ -1925,13 +1973,13 @@ void context_state_callback(pa_context *c, void *userdata) {
                     pa_operation_unref(o);
 
             } else
-                g_debug("Failed to initialized stream_restore extension: %s", pa_strerror(pa_context_errno(context)));
+                g_debug(_("Failed to initialized stream_restore extension: %s"), pa_strerror(pa_context_errno(context)));
 
             break;
         }
 
         case PA_CONTEXT_FAILED:
-            show_error("Connection failed");
+            show_error(_("Connection failed"));
             return;
 
         case PA_CONTEXT_TERMINATED:
@@ -1942,9 +1990,17 @@ void context_state_callback(pa_context *c, void *userdata) {
 }
 
 int main(int argc, char *argv[]) {
+
+    /* Initialize the i18n stuff */
+    bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR);
+    bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
+    textdomain(GETTEXT_PACKAGE);
+
     signal(SIGPIPE, SIG_IGN);
 
     Gtk::Main kit(argc, argv);
+
+    ca_context_set_driver(ca_gtk_context_get(), "pulse");
 
     Gtk::Window* mainWindow = MainWindow::create();
 
@@ -1954,7 +2010,7 @@ int main(int argc, char *argv[]) {
     g_assert(api);
 
     pa_proplist *proplist = pa_proplist_new();
-    pa_proplist_sets(proplist, PA_PROP_APPLICATION_NAME, "PulseAudio Volume Control");
+    pa_proplist_sets(proplist, PA_PROP_APPLICATION_NAME, _("PulseAudio Volume Control"));
     pa_proplist_sets(proplist, PA_PROP_APPLICATION_ID, "org.PulseAudio.pavucontrol");
     pa_proplist_sets(proplist, PA_PROP_APPLICATION_ICON_NAME, "audio-card");
     pa_proplist_sets(proplist, PA_PROP_APPLICATION_VERSION, PACKAGE_VERSION);
@@ -1967,7 +2023,7 @@ int main(int argc, char *argv[]) {
     pa_context_set_state_callback(context, context_state_callback, mainWindow);
 
     if (pa_context_connect(context, NULL, (pa_context_flags_t) 0, NULL) < 0) {
-        show_error("Connection failed");
+        show_error(_("Connection failed"));
         goto finish;
     }
 
