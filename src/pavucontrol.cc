@@ -1093,6 +1093,7 @@ void MainWindow::createMonitorStreamForSource(uint32_t source_idx) {
 
     memset(&attr, 0, sizeof(attr));
     attr.fragsize = sizeof(float);
+    attr.maxlength = (uint32_t) -1;
 
     snprintf(t, sizeof(t), "%u", source_idx);
 
@@ -1129,6 +1130,7 @@ void MainWindow::createMonitorStreamForSinkInput(uint32_t sink_input_idx, uint32
 
     memset(&attr, 0, sizeof(attr));
     attr.fragsize = sizeof(float);
+    attr.maxlength = (uint32_t) -1;
 
     snprintf(t, sizeof(t), "%u", monitor_source_idx);
 
