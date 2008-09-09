@@ -38,6 +38,10 @@ General Public License for more details.</p>
 
 <h2><a name="news">News</a></h2>
 
+<div class="news-date">Tue Sep 9
+2008: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-0.9.7.tar.gz">Version
+0.9.7</a> released; show volume meter for each stream and device.</p>
+
 <div class="news-date">Fri Mar 28
 2008: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-0.9.6.tar.gz">Version
 0.9.6</a> released; draw radio buttons instead of check boxes when
@@ -125,7 +129,7 @@ compilation and <tt>make install</tt> (as root) for installation of
 <p>If you want to be notified whenever I release a new version of this software use the subscription feature of <a href="http://freshmeat.net/projects/pavucontrol/">Freshmeat</a>.</p>
 
 <hr/>
-<address class="grey">Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;, Mar 2008</address>
+<address class="grey">Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;, September 2008</address>
 
 </body>
 </html>
