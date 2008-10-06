@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-22 19:37+0300\n"
-"PO-Revision-Date: 2008-08-22 19:41+0300\n"
-"Last-Translator: Dimitris Glezos <dimitris@glezos.com>\n"
+"PO-Revision-Date: 2008-10-06 16:20+0200\n"
+"Last-Translator: nikosCharonitakis <nikosx@gmail.com>\n"
 "Language-Team: Greek <fedora-trans-el@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,13 +18,15 @@ msgstr ""
 
 #: ../src/pavucontrol.desktop.in.h:1
 msgid "Adjust the volume level"
-msgstr ""
+msgstr "Ρύθμιση επιπέδου έντασης"
 
-#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:2013
+#: ../src/pavucontrol.desktop.in.h:2
+#: ../src/pavucontrol.cc:2013
 msgid "PulseAudio Volume Control"
 msgstr "Έλεγχος έντασης ήχου PulseAudio"
 
-#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:27
+#: ../src/pavucontrol.desktop.in.h:3
+#: ../src/pavucontrol.glade.h:27
 msgid "Volume Control"
 msgstr "Έλεγχος έντασης ήχου"
 
@@ -35,15 +37,15 @@ msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
 msgid "<b>S_how:</b>"
-msgstr ""
+msgstr "<b>Εμφά_νιση:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Sho_w:</b>"
-msgstr ""
+msgstr "<b>Εμ_φάνιση:</b>"
 
 #: ../src/pavucontrol.glade.h:5
 msgid "<b>_Show:</b>"
-msgstr ""
+msgstr "<b>Ε_μφάνιση:</b>"
 
 #: ../src/pavucontrol.glade.h:6
 msgid "<b>left-front</b>"
@@ -59,11 +61,11 @@ msgstr ""
 
 #: ../src/pavucontrol.glade.h:9
 msgid "<i>No input devices available</i>"
-msgstr ""
+msgstr "<i>Δεν υπάρχουν διαθέσιμες συσκευές εισόδου</i>"
 
 #: ../src/pavucontrol.glade.h:10
 msgid "<i>No output devices available</i>"
-msgstr ""
+msgstr "<i>Δεν υπάρχουν διαθέσιμες συσκευές εξόδου</i>"
 
 #: ../src/pavucontrol.glade.h:11
 msgid ""
@@ -91,7 +93,7 @@ msgstr ""
 
 #: ../src/pavucontrol.glade.h:23
 msgid "Lock channels together"
-msgstr ""
+msgstr "Κλείδωμα των καναλιών μαζί"
 
 #: ../src/pavucontrol.glade.h:24
 msgid "Mute audio"
@@ -107,19 +109,19 @@ msgstr ""
 
 #: ../src/pavucontrol.glade.h:28
 msgid "_Input Devices"
-msgstr ""
+msgstr "Συσκευές _εισόδου"
 
 #: ../src/pavucontrol.glade.h:29
 msgid "_Output Devices"
-msgstr ""
+msgstr "Συσκευές εξό_δου"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "_Playback"
-msgstr ""
+msgstr "_Αναπαραγωγή"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "_Recording"
-msgstr ""
+msgstr "Εγγρα_φή"
 
 #: ../src/pavucontrol.cc:419
 msgid "Volume Control Feedback Sound"
@@ -139,7 +141,7 @@ msgstr ""
 
 #: ../src/pavucontrol.cc:672
 msgid "_Default"
-msgstr ""
+msgstr "_Προεπιλογή"
 
 #: ../src/pavucontrol.cc:693
 msgid "pa_context_set_source_volume_by_index() failed"
@@ -153,11 +155,13 @@ msgstr ""
 msgid "pa_context_set_default_source() failed"
 msgstr ""
 
-#: ../src/pavucontrol.cc:731 ../src/pavucontrol.cc:834
+#: ../src/pavucontrol.cc:731
+#: ../src/pavucontrol.cc:834
 msgid "_Move Stream..."
 msgstr ""
 
-#: ../src/pavucontrol.cc:732 ../src/pavucontrol.cc:835
+#: ../src/pavucontrol.cc:732
+#: ../src/pavucontrol.cc:835
 msgid "_Terminate Stream"
 msgstr ""
 
@@ -193,21 +197,24 @@ msgstr ""
 msgid "Failed to read data from stream"
 msgstr ""
 
-#: ../src/pavucontrol.cc:1099 ../src/pavucontrol.cc:1135
+#: ../src/pavucontrol.cc:1099
+#: ../src/pavucontrol.cc:1135
 msgid "Peak detect"
 msgstr ""
 
-#: ../src/pavucontrol.cc:1100 ../src/pavucontrol.cc:1136
+#: ../src/pavucontrol.cc:1100
+#: ../src/pavucontrol.cc:1136
 msgid "Failed to create monitoring stream"
 msgstr ""
 
-#: ../src/pavucontrol.cc:1108 ../src/pavucontrol.cc:1145
+#: ../src/pavucontrol.cc:1108
+#: ../src/pavucontrol.cc:1145
 msgid "Failed to connect monitoring stream"
 msgstr ""
 
 #: ../src/pavucontrol.cc:1385
 msgid "System Sounds"
-msgstr ""
+msgstr "Ήχοι συστήματος"
 
 #: ../src/pavucontrol.cc:1667
 msgid "Sink callback failure"
@@ -233,7 +240,8 @@ msgstr ""
 msgid "Server info callback failure"
 msgstr ""
 
-#: ../src/pavucontrol.cc:1791 ../src/pavucontrol.cc:1976
+#: ../src/pavucontrol.cc:1791
+#: ../src/pavucontrol.cc:1976
 #, c-format
 msgid "Failed to initialized stream_restore extension: %s"
 msgstr ""
@@ -250,7 +258,8 @@ msgstr ""
 msgid "pa_context_get_source_info_by_index() failed"
 msgstr ""
 
-#: ../src/pavucontrol.cc:1854 ../src/pavucontrol.cc:1867
+#: ../src/pavucontrol.cc:1854
+#: ../src/pavucontrol.cc:1867
 msgid "pa_context_get_sink_input_info() failed"
 msgstr ""
 
@@ -258,7 +267,8 @@ msgstr ""
 msgid "pa_context_get_client_info() failed"
 msgstr ""
 
-#: ../src/pavucontrol.cc:1890 ../src/pavucontrol.cc:1928
+#: ../src/pavucontrol.cc:1890
+#: ../src/pavucontrol.cc:1928
 msgid "pa_context_get_server_info() failed"
 msgstr ""
 
@@ -286,7 +296,8 @@ msgstr ""
 msgid "pa_context_get_source_output_info_list() failed"
 msgstr ""
 
-#: ../src/pavucontrol.cc:1982 ../src/pavucontrol.cc:2026
+#: ../src/pavucontrol.cc:1982
+#: ../src/pavucontrol.cc:2026
 msgid "Connection failed"
-msgstr ""
+msgstr "Αποτυχία σύνδεσης"
 
