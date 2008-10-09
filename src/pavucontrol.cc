@@ -409,7 +409,6 @@ void ChannelWidget::onVolumeScaleValueChanged() {
     streamWidget->updateChannelVolume(channel, volume);
 
     if (beepDevice != "") {
-        g_debug("blah: %s", beepDevice.c_str());
         ca_context_change_device(ca_gtk_context_get(), beepDevice.c_str());
 
         ca_context_cancel(ca_gtk_context_get(), 2);
@@ -422,8 +421,6 @@ void ChannelWidget::onVolumeScaleValueChanged() {
                                CA_PROP_CANBERRA_VOLUME, "0",
                                CA_PROP_CANBERRA_ENABLE, "1",
                                NULL);
-
-        g_debug("%i = %s", r, ca_strerror(r));
 
         ca_context_change_device(ca_gtk_context_get(), NULL);
     }
