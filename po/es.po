@@ -1,0 +1,309 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: pavucontrol\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-12 01:19+0000\n"
+"PO-Revision-Date: 2008-10-12 01:17-0300\n"
+"Last-Translator: Domingo Becker <domingobecker@gmail.com>\n"
+"Language-Team: Fedora Spanish <fedora-trans-es@redhat.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+
+#: ../src/pavucontrol.desktop.in.h:1
+msgid "Adjust the volume level"
+msgstr "Ajustar el nivel de volumen"
+
+#: ../src/pavucontrol.desktop.in.h:2
+#: ../src/pavucontrol.cc:2015
+msgid "PulseAudio Volume Control"
+msgstr "Control de Volumen de PulseAudio"
+
+#: ../src/pavucontrol.desktop.in.h:3
+#: ../src/pavucontrol.glade.h:27
+msgid "Volume Control"
+msgstr "Control de Volumen"
+
+#: ../src/pavucontrol.glade.h:2
+#, no-c-format
+msgid "50%"
+msgstr "50%"
+
+#: ../src/pavucontrol.glade.h:3
+msgid "<b>S_how:</b>"
+msgstr "<b>M_ostrar:</b>"
+
+#: ../src/pavucontrol.glade.h:4
+msgid "<b>Sho_w:</b>"
+msgstr "<b>Mo_strar:</b>"
+
+#: ../src/pavucontrol.glade.h:5
+msgid "<b>_Show:</b>"
+msgstr "<b>_Mostrar:</b>"
+
+#: ../src/pavucontrol.glade.h:6
+msgid "<b>left-front</b>"
+msgstr "<b>frente-izquierda</b>"
+
+#: ../src/pavucontrol.glade.h:7
+msgid "<i>No application is currently playing audio.</i>"
+msgstr "<i>Ninguna aplicación está actualmente reproduciendo sonidos.</i>"
+
+#: ../src/pavucontrol.glade.h:8
+msgid "<i>No application is currently recording audio.</i>"
+msgstr "<i>Ninguna aplicación está actualmente grabando audio.</i>"
+
+#: ../src/pavucontrol.glade.h:9
+msgid "<i>No input devices available</i>"
+msgstr "<i>No hay dispositivos de entrada disponibles</i>"
+
+#: ../src/pavucontrol.glade.h:10
+msgid "<i>No output devices available</i>"
+msgstr "<i>No hay dispositivos de salida disponibles</i>"
+
+#: ../src/pavucontrol.glade.h:11
+msgid ""
+"All Input Devices\n"
+"All Except Monitors\n"
+"Hardware Input Devices\n"
+"Virtual Input Devices\n"
+"Monitors"
+msgstr ""
+"Todos los Dispositivos de Entrada\n"
+"Todos Excepto los Monitores\n"
+"Dispositivos de Entrada por Hardware\n"
+"Dispositivos de Entrada Virtuales\n"
+"Monitores"
+
+#: ../src/pavucontrol.glade.h:16
+msgid ""
+"All Output Devices\n"
+"Hardware Output Devices\n"
+"Virtual Output Devices"
+msgstr ""
+"Todos los Dispositivos de Salida\n"
+"Dispositivos de Salida por Hardware\n"
+"Dispositivos de Salida Virtuales"
+
+#. Applications All streams
+#: ../src/pavucontrol.glade.h:20
+msgid ""
+"All Streams\n"
+"Applications\n"
+"Virtual Streams"
+msgstr ""
+"Todos los Flujos\n"
+"Aplicaciones\n"
+"Flujos Virtuales"
+
+#: ../src/pavucontrol.glade.h:23
+msgid "Lock channels together"
+msgstr "Bloquear los canales entre sí"
+
+#: ../src/pavucontrol.glade.h:24
+msgid "Mute audio"
+msgstr "Silenciar audio"
+
+#: ../src/pavucontrol.glade.h:25
+msgid "Open menu"
+msgstr "Abrir menu"
+
+#: ../src/pavucontrol.glade.h:26
+msgid "Stream Title"
+msgstr "Título del Flujo"
+
+#: ../src/pavucontrol.glade.h:28
+msgid "_Input Devices"
+msgstr "_Dispositivos de Entrada"
+
+#: ../src/pavucontrol.glade.h:29
+msgid "_Output Devices"
+msgstr "Dispositivos de _Salida"
+
+#: ../src/pavucontrol.glade.h:30
+msgid "_Playback"
+msgstr "_Reproducción"
+
+#: ../src/pavucontrol.glade.h:31
+msgid "_Recording"
+msgstr "_Grabación"
+
+#: ../src/pavucontrol.cc:419
+msgid "Volume Control Feedback Sound"
+msgstr "Sonido de Retorno del Control de Volúmen"
+
+#: ../src/pavucontrol.cc:635
+msgid "pa_context_set_sink_volume_by_index() failed"
+msgstr "pa_context_set_sink_volume_by_index() falló"
+
+#: ../src/pavucontrol.cc:650
+msgid "pa_context_set_sink_mute_by_index() failed"
+msgstr "pa_context_set_sink_mute_by_index() falló"
+
+#: ../src/pavucontrol.cc:664
+msgid "pa_context_set_default_sink() failed"
+msgstr "pa_context_set_default_sink() falló"
+
+#: ../src/pavucontrol.cc:672
+msgid "_Default"
+msgstr "_Predeterminado"
+
+#: ../src/pavucontrol.cc:693
+msgid "pa_context_set_source_volume_by_index() failed"
+msgstr "pa_context_set_source_volume_by_index() falló"
+
+#: ../src/pavucontrol.cc:708
+msgid "pa_context_set_source_mute_by_index() failed"
+msgstr "pa_context_set_source_mute_by_index() falló"
+
+#: ../src/pavucontrol.cc:722
+msgid "pa_context_set_default_source() failed"
+msgstr "pa_context_set_default_source() falló"
+
+#: ../src/pavucontrol.cc:731
+#: ../src/pavucontrol.cc:834
+msgid "_Move Stream..."
+msgstr "_Mover Flujo..."
+
+#: ../src/pavucontrol.cc:732
+#: ../src/pavucontrol.cc:835
+msgid "_Terminate Stream"
+msgstr "_Terminar Flujo"
+
+#: ../src/pavucontrol.cc:758
+msgid "pa_context_set_sink_input_volume() failed"
+msgstr "pa_context_set_sink_input_volume() falló"
+
+#: ../src/pavucontrol.cc:773
+msgid "pa_context_set_sink_input_mute() failed"
+msgstr "pa_context_set_sink_input_mute() falló"
+
+#: ../src/pavucontrol.cc:807
+msgid "pa_context_kill_sink_input() failed"
+msgstr "pa_context_kill_sink_input() falló"
+
+#: ../src/pavucontrol.cc:824
+msgid "pa_context_move_sink_input_by_index() failed"
+msgstr "pa_context_move_sink_input_by_index() falló"
+
+#: ../src/pavucontrol.cc:860
+msgid "pa_context_kill_source_output() failed"
+msgstr "pa_context_kill_source_output() falló"
+
+#: ../src/pavucontrol.cc:901
+msgid "pa_context_move_source_output_by_index() failed"
+msgstr "pa_context_move_source_output_by_index() falló"
+
+#: ../src/pavucontrol.cc:943
+msgid "pa_ext_stream_restore_write() failed"
+msgstr "pa_ext_stream_restore_write() falló"
+
+#: ../src/pavucontrol.cc:1065
+msgid "Failed to read data from stream"
+msgstr "Falló al leer datos desde el flujo"
+
+#: ../src/pavucontrol.cc:1100
+#: ../src/pavucontrol.cc:1137
+msgid "Peak detect"
+msgstr "Detección de Picos"
+
+#: ../src/pavucontrol.cc:1101
+#: ../src/pavucontrol.cc:1138
+msgid "Failed to create monitoring stream"
+msgstr "Falló al crear flujo de monitoreo"
+
+#: ../src/pavucontrol.cc:1109
+#: ../src/pavucontrol.cc:1147
+msgid "Failed to connect monitoring stream"
+msgstr "Falló al conectarse al flujo de monitoreo"
+
+#: ../src/pavucontrol.cc:1387
+msgid "System Sounds"
+msgstr "Sonidos del Sistema"
+
+#: ../src/pavucontrol.cc:1669
+msgid "Sink callback failure"
+msgstr "Fallo en retrollamada al sumidero"
+
+#: ../src/pavucontrol.cc:1688
+msgid "Source callback failure"
+msgstr "Fallo en retrollamada a la fuente"
+
+#: ../src/pavucontrol.cc:1707
+msgid "Sink input callback failure"
+msgstr "Fallo en retrollamada de entrada sumidero"
+
+#: ../src/pavucontrol.cc:1726
+msgid "Source output callback failure"
+msgstr "Fallo en retrollamada de salida fuente"
+
+#: ../src/pavucontrol.cc:1760
+msgid "Client callback failure"
+msgstr "Fallo en retrollamada al cliente"
+
+#: ../src/pavucontrol.cc:1776
+msgid "Server info callback failure"
+msgstr "Fallo en retrollamada por información del servidor"
+
+#: ../src/pavucontrol.cc:1793
+#: ../src/pavucontrol.cc:1978
+#, c-format
+msgid "Failed to initialized stream_restore extension: %s"
+msgstr "Falló al inicializar flujo _restaruar extensión: %s"
+
+#: ../src/pavucontrol.cc:1813
+msgid "pa_ext_stream_restore_read() failed"
+msgstr "pa_ext_stream_restore_read() falló"
+
+#: ../src/pavucontrol.cc:1830
+msgid "pa_context_get_sink_info_by_index() failed"
+msgstr "pa_context_get_sink_info_by_index() falló"
+
+#: ../src/pavucontrol.cc:1843
+msgid "pa_context_get_source_info_by_index() failed"
+msgstr "pa_context_get_source_info_by_index() falló"
+
+#: ../src/pavucontrol.cc:1856
+#: ../src/pavucontrol.cc:1869
+msgid "pa_context_get_sink_input_info() failed"
+msgstr "pa_context_get_sink_input_info() falló"
+
+#: ../src/pavucontrol.cc:1882
+msgid "pa_context_get_client_info() failed"
+msgstr "pa_context_get_client_info() falló"
+
+#: ../src/pavucontrol.cc:1892
+#: ../src/pavucontrol.cc:1930
+msgid "pa_context_get_server_info() failed"
+msgstr "pa_context_get_server_info() falló"
+
+#: ../src/pavucontrol.cc:1924
+msgid "pa_context_subscribe() failed"
+msgstr "pa_context_subscribe() falló"
+
+#: ../src/pavucontrol.cc:1936
+msgid "pa_context_client_info_list() failed"
+msgstr "pa_context_client_info_list() falló"
+
+#: ../src/pavucontrol.cc:1942
+msgid "pa_context_get_sink_info_list() failed"
+msgstr "pa_context_get_sink_info_list() falló"
+
+#: ../src/pavucontrol.cc:1948
+msgid "pa_context_get_source_info_list() failed"
+msgstr "pa_context_get_source_info_list() falló"
+
+#: ../src/pavucontrol.cc:1954
+msgid "pa_context_get_sink_input_info_list() failed"
+msgstr "pa_context_get_sink_input_info_list() falló"
+
+#: ../src/pavucontrol.cc:1960
+msgid "pa_context_get_source_output_info_list() failed"
+msgstr "pa_context_get_source_output_info_list() falló"
+
+#: ../src/pavucontrol.cc:1984
+#: ../src/pavucontrol.cc:2028
+msgid "Connection failed"
+msgstr "Falló la conexión"
+
