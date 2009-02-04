@@ -932,7 +932,7 @@ void RoleWidget::executeVolumeUpdate() {
     info.channel_map.channels = 1;
     info.channel_map.map[0] = PA_CHANNEL_POSITION_MONO;
     info.volume = volume;
-    info.device = device.c_str();
+    info.device = device == "" ? NULL : device.c_str();
     info.mute = muteToggleButton->get_active();
 
     pa_operation* o;
@@ -943,7 +943,6 @@ void RoleWidget::executeVolumeUpdate() {
 
     pa_operation_unref(o);
 }
-
 
 /*** MainWindow ***/
 
@@ -1420,10 +1419,10 @@ void MainWindow::updateRole(const pa_ext_stream_restore_info &info) {
 
     eventRoleWidget->updating = true;
 
-    eventRoleWidget->device = info.device;
+    eventRoleWidget->device = info.device ? info.device : "";
 
     volume.channels = 1;
-    volume.values[0] = pa_cvolume_avg(&info.volume);
+    volume.values[0] = pa_cvolume_max(&info.volume);
 
     eventRoleWidget->setVolume(volume);
     eventRoleWidget->muteToggleButton->set_active(info.mute);
