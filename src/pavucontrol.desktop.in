@@ -8,4 +8,4 @@ Exec=pavucontrol
 Icon=multimedia-volume-control
 StartupNotify=true
 Type=Application
-Categories=Application;AudioVideo;Audio;
+Categories=AudioVideo;Audio;Mixer;GTK;
