@@ -2152,49 +2152,57 @@ void context_state_callback(pa_context *c, void *userdata) {
             }
             pa_operation_unref(o);
 
+            // Keep track of the outstanding callbacks for UI tweaks
+            n_outstanding = 0;
+
             if (!(o = pa_context_get_server_info(c, server_info_cb, w))) {
                 show_error(_("pa_context_get_server_info() failed"));
                 return;
             }
             pa_operation_unref(o);
+            n_outstanding++;
 
             if (!(o = pa_context_get_client_info_list(c, client_cb, w))) {
                 show_error(_("pa_context_client_info_list() failed"));
                 return;
             }
             pa_operation_unref(o);
+            n_outstanding++;
 
             if (!(o = pa_context_get_card_info_list(c, card_cb, w))) {
                 show_error(_("pa_context_get_card_info_list() failed"));
                 return;
             }
             pa_operation_unref(o);
+            n_outstanding++;
 
             if (!(o = pa_context_get_sink_info_list(c, sink_cb, w))) {
                 show_error(_("pa_context_get_sink_info_list() failed"));
                 return;
             }
             pa_operation_unref(o);
+            n_outstanding++;
 
             if (!(o = pa_context_get_source_info_list(c, source_cb, w))) {
                 show_error(_("pa_context_get_source_info_list() failed"));
                 return;
             }
             pa_operation_unref(o);
+            n_outstanding++;
 
             if (!(o = pa_context_get_sink_input_info_list(c, sink_input_cb, w))) {
                 show_error(_("pa_context_get_sink_input_info_list() failed"));
                 return;
             }
             pa_operation_unref(o);
+            n_outstanding++;
 
             if (!(o = pa_context_get_source_output_info_list(c, source_output_cb, w))) {
                 show_error(_("pa_context_get_source_output_info_list() failed"));
                 return;
             }
             pa_operation_unref(o);
-
-            n_outstanding = 6;
+            n_outstanding++;
 
             /* This call is not always supported */
             if ((o = pa_ext_stream_restore_read(c, ext_stream_restore_read_cb, w))) {
