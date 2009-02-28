@@ -156,7 +156,6 @@ class CardWidget : public Gtk::VBox {
 public:
     CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static CardWidget* create();
-    virtual ~CardWidget();
 
     Gtk::Label *nameLabel, *boldNameLabel;
     Gtk::ToggleButton *streamToggleButton;
@@ -166,43 +165,33 @@ public:
     uint32_t index;
     bool updating;
 
-    void onStreamToggleButton();
-    void onMenuDeactivated();
-    void popupMenuPosition(int& x, int& y, bool& push_in);
-
     std::map<Glib::ustring,Glib::ustring> profiles;
     Glib::ustring activeProfile;
     bool hasSinks;
     bool hasSources;
 
-    MainWindow *mainWindow;
-    Gtk::Menu submenu;
-    Gtk::MenuItem profilesMenuItem;
+    void prepareMenu();
 
-    struct ProfileMenuItem {
-        ProfileMenuItem(CardWidget *w, const char *label, Glib::ustring profile, bool active) :
-            widget(w),
-            menuItem(label),
-            profile(profile) {
-            menuItem.set_active(active);
-            menuItem.set_draw_as_radio(true);
-            menuItem.signal_toggled().connect(sigc::mem_fun(*this, &ProfileMenuItem::onToggle));
-        }
+protected:  
+  virtual void onProfileChange();
 
-        CardWidget *widget;
-        Gtk::CheckMenuItem menuItem;
-        Glib::ustring profile;
-        void onToggle();
-    };
+  //Tree model columns:
+  class ModelColumns : public Gtk::TreeModel::ColumnRecord
+  {
+  public:
 
-    std::map<uint32_t, ProfileMenuItem*> profileMenuItems;
+    ModelColumns()
+    { add(name); add(desc); }
 
-    void clearMenu();
-    void buildMenu();
-    virtual void prepareMenu(void);
+    Gtk::TreeModelColumn<Glib::ustring> name;
+    Gtk::TreeModelColumn<Glib::ustring> desc;
+  };
 
-protected:
-    virtual bool on_button_press_event(GdkEventButton* event);
+  ModelColumns profileModel;
+
+  //Child widgets:
+  Gtk::ComboBox *profileList;
+  Glib::RefPtr<Gtk::ListStore> treeModel;
 };
 
 class SinkWidget : public StreamWidget {
@@ -494,114 +483,72 @@ void ChannelWidget::set_sensitive(bool enabled) {
 
 /*** CardWidget ***/
 CardWidget::CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    Gtk::VBox(cobject),
-    profilesMenuItem(_("_Set Profile..."), true) {
+    Gtk::VBox(cobject) {
 
     x->get_widget("nameLabel", nameLabel);
     x->get_widget("boldNameLabel", boldNameLabel);
-    x->get_widget("streamToggle", streamToggleButton);
+    x->get_widget("profileList", profileList);
     x->get_widget("iconImage", iconImage);
 
-    streamToggleButton->set_active(false);
-    streamToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &CardWidget::onStreamToggleButton));
-    menu.signal_deactivate().connect(sigc::mem_fun(*this, &CardWidget::onMenuDeactivated));
-
-    menu.append(profilesMenuItem);
-    profilesMenuItem.set_submenu(submenu);
-}
-
-CardWidget::~CardWidget() {
-    clearMenu();
+    profileList->signal_changed().connect( sigc::mem_fun(*this, &CardWidget::onProfileChange));
 }
 
 CardWidget* CardWidget::create() {
     CardWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "minimalStreamWidget");
-    x->get_widget_derived("minimalStreamWidget", w);
+    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "cardWidget");
+    x->get_widget_derived("cardWidget", w);
     return w;
 }
 
+
 void CardWidget::prepareMenu() {
-  clearMenu();
-  buildMenu();
-}
+    int idx = 0;
+    int active_idx = -1;
 
-void CardWidget::clearMenu() {
+    //m_refTreeModel = Gtk::TreeStore::create(m_Columns);
+    treeModel = Gtk::ListStore::create(profileModel);
+    profileList->set_model(treeModel);
 
-    while (!profileMenuItems.empty()) {
-        std::map<uint32_t, ProfileMenuItem*>::iterator i = profileMenuItems.begin();
-        delete i->second;
-        profileMenuItems.erase(i);
-    }
-}
-
-void CardWidget::buildMenu() {
-    int num = 0;
+    //Fill the ComboBox's Tree Model:
     for (std::map<Glib::ustring, Glib::ustring>::iterator i = profiles.begin(); i != profiles.end(); ++i) {
-        ProfileMenuItem *m;
-        profileMenuItems[num++] = m = new ProfileMenuItem(this, i->second.c_str(), i->first.c_str(), i->first == activeProfile);
-        submenu.append(m->menuItem);
+        Gtk::TreeModel::Row row = *(treeModel->append());
+        row[profileModel.name] = i->first;
+        row[profileModel.desc] = i->second;
+        if (i->first == activeProfile)
+          active_idx = idx;
+        idx++;
     }
 
-    menu.show_all();
+    //Add the model columns to the Combo (which is a kind of view),
+    //rendering them in the default way:
+    profileList->pack_start(profileModel.desc);
+    if (active_idx >= 0)
+        profileList->set_active(active_idx);
 }
 
-void CardWidget::ProfileMenuItem::onToggle() {
+void CardWidget::onProfileChange() {
+    Gtk::TreeModel::iterator iter;
 
-    if (widget->updating)
+    if (updating)
         return;
 
-    if (!menuItem.get_active())
-        return;
+    iter = profileList->get_active();
+    if (iter)
+    {
+        Gtk::TreeModel::Row row = *iter;
+        if (row)
+        {
+          pa_operation* o;
+          Glib::ustring profile = row[profileModel.name];
 
-    pa_operation* o;
-    if (!(o = pa_context_set_card_profile_by_index(context, widget->index, profile.c_str(), NULL, NULL))) {
-        show_error(_("pa_context_set_card_profile_by_index() failed"));
-        return;
+          if (!(o = pa_context_set_card_profile_by_index(context, index, profile.c_str(), NULL, NULL))) {
+              show_error(_("pa_context_set_card_profile_by_index() failed"));
+              return;
+          }
+
+          pa_operation_unref(o);
+        }
     }
-
-    pa_operation_unref(o);
-}
-
-
-void CardWidget::onMenuDeactivated(void) {
-    streamToggleButton->set_active(false);
-}
-
-void CardWidget::popupMenuPosition(int& x, int& y, bool& push_in G_GNUC_UNUSED) {
-    Gtk::Requisition  r;
-
-    streamToggleButton->get_window()->get_origin(x, y);
-    r = menu.size_request();
-
-    /* Align the right side of the menu with the right side of the togglebutton */
-    x += streamToggleButton->get_allocation().get_x();
-    x += streamToggleButton->get_allocation().get_width();
-    x -= r.width;
-
-    /* Align the top of the menu with the buttom of the togglebutton */
-    y += streamToggleButton->get_allocation().get_y();
-    y += streamToggleButton->get_allocation().get_height();
-}
-
-void CardWidget::onStreamToggleButton(void) {
-    if (streamToggleButton->get_active()) {
-        prepareMenu();
-        menu.popup(sigc::mem_fun(*this, &CardWidget::popupMenuPosition), 0, gtk_get_current_event_time());
-    }
-}
-
-bool CardWidget::on_button_press_event (GdkEventButton* event) {
-    if (Gtk::VBox::on_button_press_event(event))
-        return TRUE;
-
-    if (event->type == GDK_BUTTON_PRESS && event->button == 3) {
-        prepareMenu();
-        menu.popup(0, event->time);
-        return TRUE;
-    }
-
-    return FALSE;
 }
 
 
@@ -1217,6 +1164,8 @@ void MainWindow::updateCard(const pa_card_info &info) {
     //w->defaultMenuItem.set_active(w->name == defaultSinkName);
 
     w->updating = false;
+
+    w->prepareMenu();
 
     if (is_new)
         updateDeviceVisibility();
