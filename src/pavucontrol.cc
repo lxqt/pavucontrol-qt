@@ -470,7 +470,7 @@ void ChannelWidget::onVolumeScaleValueChanged() {
 
         ca_context_cancel(ca_gtk_context_get(), 2);
 
-        int r = ca_gtk_play_for_widget(GTK_WIDGET(volumeScale->gobj()),
+        ca_gtk_play_for_widget(GTK_WIDGET(volumeScale->gobj()),
                                2,
                                CA_PROP_EVENT_DESCRIPTION, _("Volume Control Feedback Sound"),
                                CA_PROP_EVENT_ID, "audio-volume-change",
@@ -1207,7 +1207,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
 
     w->hasSinks = w->hasSources = false;
     w->profiles.clear();
-    for (int i=0; i<info.n_profiles; ++i) {
+    for (uint32_t i=0; i<info.n_profiles; ++i) {
       w->hasSinks = w->hasSinks || (info.profiles[i].n_sinks > 0);
       w->hasSources = w->hasSources || (info.profiles[i].n_sources > 0);
       w->profiles.insert(std::pair<Glib::ustring,Glib::ustring>(info.profiles[i].name, info.profiles[i].description));
