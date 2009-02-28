@@ -24,7 +24,6 @@
 
 #include <signal.h>
 #include <string.h>
-#include <set>
 
 #include <gtkmm.h>
 #include <libglademm.h>
@@ -356,8 +355,8 @@ public:
     void removeClient(uint32_t index);
 
     Gtk::Notebook *notebook;
-    Gtk::VBox *streamsVBox, *recsVBox, *sinksVBox, *sourcesVBox;
-    Gtk::Label *noStreamsLabel, *noRecsLabel, *noSinksLabel, *noSourcesLabel;
+    Gtk::VBox *streamsVBox, *recsVBox, *sinksVBox, *sourcesVBox, *cardsVBox;
+    Gtk::Label *noStreamsLabel, *noRecsLabel, *noSinksLabel, *noSourcesLabel, *noCardsLabel;
     Gtk::ComboBox *sinkInputTypeComboBox, *sourceOutputTypeComboBox, *sinkTypeComboBox, *sourceTypeComboBox;
 
     std::map<uint32_t, CardWidget*> cardWidgets;
@@ -1126,10 +1125,12 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     showSourceType(SOURCE_NO_MONITOR),
     eventRoleWidget(NULL){
 
+    x->get_widget("cardsVBox", cardsVBox);
     x->get_widget("streamsVBox", streamsVBox);
     x->get_widget("recsVBox", recsVBox);
     x->get_widget("sinksVBox", sinksVBox);
     x->get_widget("sourcesVBox", sourcesVBox);
+    x->get_widget("noCardsLabel", noCardsLabel);
     x->get_widget("noStreamsLabel", noStreamsLabel);
     x->get_widget("noRecsLabel", noRecsLabel);
     x->get_widget("noSinksLabel", noSinksLabel);
@@ -1140,6 +1141,7 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     x->get_widget("sourceTypeComboBox", sourceTypeComboBox);
     x->get_widget("notebook", notebook);
 
+    cardsVBox->set_reallocate_redraws(true);
     sourcesVBox->set_reallocate_redraws(true);
     streamsVBox->set_reallocate_redraws(true);
     recsVBox->set_reallocate_redraws(true);
@@ -1185,8 +1187,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
         w = cardWidgets[info.index];
     else {
         cardWidgets[info.index] = w = CardWidget::create();
-        sinksVBox->pack_start(*w, false, false, 0);
-        //sourcesVBox->pack_start(*w, false, false, 0);
+        cardsVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
         is_new = true;
     }
@@ -1198,7 +1199,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
     else
       w->name = info.name;
 
-    w->boldNameLabel->set_text("Card: ");
+    w->boldNameLabel->set_text("");
     gchar *txt;
     w->nameLabel->set_markup(txt = g_markup_printf_escaped("%s", w->name.c_str()));
     g_free(txt);
@@ -1299,6 +1300,7 @@ void MainWindow::createMonitorStreamForSource(uint32_t source_idx) {
     char t[16];
     pa_buffer_attr attr;
     pa_sample_spec ss;
+    return;
 
     ss.channels = 1;
     ss.format = PA_SAMPLE_FLOAT32;
@@ -1331,6 +1333,7 @@ void MainWindow::createMonitorStreamForSinkInput(uint32_t sink_input_idx, uint32
     pa_buffer_attr attr;
     pa_sample_spec ss;
     uint32_t monitor_source_idx;
+    return;
 
     ss.channels = 1;
     ss.format = PA_SAMPLE_FLOAT32;
@@ -1704,8 +1707,6 @@ void MainWindow::updateDeviceVisibility() {
 
 void MainWindow::reallyUpdateDeviceVisibility() {
     bool is_empty = true;
-    std::set<uint32_t> visible_cards;
-    std::set<uint32_t>::iterator it_card;
 
     for (std::map<uint32_t, SinkInputWidget*>::iterator i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
         SinkInputWidget* w = i->second;
@@ -1743,24 +1744,11 @@ void MainWindow::reallyUpdateDeviceVisibility() {
         noRecsLabel->hide();
 
     is_empty = true;
-    visible_cards.clear();
 
     for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
         SinkWidget* w = i->second;
 
         if (showSinkType == SINK_ALL || w->type == showSinkType) {
-            w->show();
-            is_empty = false;
-            if (w->card_index != PA_INVALID_INDEX)
-                visible_cards.insert(w->card_index);
-        } else
-            w->hide();
-    }
-
-    for (std::map<uint32_t, CardWidget*>::iterator i = cardWidgets.begin(); i != cardWidgets.end(); ++i) {
-        CardWidget* w = i->second;
-
-        if (true || (!visible_cards.count(w->index) && w->hasSinks)) {
             w->show();
             is_empty = false;
         } else
@@ -1771,6 +1759,20 @@ void MainWindow::reallyUpdateDeviceVisibility() {
         noSinksLabel->show();
     else
         noSinksLabel->hide();
+
+    is_empty = true;
+
+    for (std::map<uint32_t, CardWidget*>::iterator i = cardWidgets.begin(); i != cardWidgets.end(); ++i) {
+        CardWidget* w = i->second;
+
+        w->show();
+        is_empty = false;
+    }
+
+    if (is_empty)
+        noCardsLabel->show();
+    else
+        noCardsLabel->hide();
 
     is_empty = true;
 
@@ -1801,6 +1803,8 @@ void MainWindow::reallyUpdateDeviceVisibility() {
     streamsVBox->show();
     recsVBox->hide();
     recsVBox->show();
+    cardsVBox->hide();
+    cardsVBox->show();
 }
 
 void MainWindow::removeCard(uint32_t index) {
