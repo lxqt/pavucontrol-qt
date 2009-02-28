@@ -24,6 +24,7 @@
 
 #include <signal.h>
 #include <string.h>
+#include <set>
 
 #include <gtkmm.h>
 #include <libglademm.h>
@@ -152,6 +153,59 @@ public:
     virtual void executeVolumeUpdate();
 };
 
+class CardWidget : public Gtk::VBox {
+public:
+    CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
+    static CardWidget* create();
+    virtual ~CardWidget();
+
+    Gtk::Label *nameLabel, *boldNameLabel;
+    Gtk::ToggleButton *streamToggleButton;
+    Gtk::Menu menu;
+    Gtk::Image *iconImage;
+    Glib::ustring name;
+    uint32_t index;
+    bool updating;
+
+    void onStreamToggleButton();
+    void onMenuDeactivated();
+    void popupMenuPosition(int& x, int& y, bool& push_in);
+
+    std::map<Glib::ustring,Glib::ustring> profiles;
+    Glib::ustring activeProfile;
+    bool hasSinks;
+    bool hasSources;
+
+    MainWindow *mainWindow;
+    Gtk::Menu submenu;
+    Gtk::MenuItem profilesMenuItem;
+
+    struct ProfileMenuItem {
+        ProfileMenuItem(CardWidget *w, const char *label, Glib::ustring profile, bool active) :
+            widget(w),
+            menuItem(label),
+            profile(profile) {
+            menuItem.set_active(active);
+            menuItem.set_draw_as_radio(true);
+            menuItem.signal_toggled().connect(sigc::mem_fun(*this, &ProfileMenuItem::onToggle));
+        }
+
+        CardWidget *widget;
+        Gtk::CheckMenuItem menuItem;
+        Glib::ustring profile;
+        void onToggle();
+    };
+
+    std::map<uint32_t, ProfileMenuItem*> profileMenuItems;
+
+    void clearMenu();
+    void buildMenu();
+    virtual void prepareMenu(void);
+
+protected:
+    virtual bool on_button_press_event(GdkEventButton* event);
+};
+
 class SinkWidget : public StreamWidget {
 public:
     SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
@@ -160,7 +214,7 @@ public:
     SinkType type;
     Glib::ustring description;
     Glib::ustring name;
-    uint32_t index, monitor_index;
+    uint32_t index, monitor_index, card_index;
     bool can_decibel;
 
     Gtk::CheckMenuItem defaultMenuItem;
@@ -178,7 +232,7 @@ public:
     SourceType type;
     Glib::ustring name;
     Glib::ustring description;
-    uint32_t index;
+    uint32_t index, card_index;
     bool can_decibel;
 
     Gtk::CheckMenuItem defaultMenuItem;
@@ -284,6 +338,7 @@ public:
     static MainWindow* create();
     virtual ~MainWindow();
 
+    void updateCard(const pa_card_info &info);
     void updateSink(const pa_sink_info &info);
     void updateSource(const pa_source_info &info);
     void updateSinkInput(const pa_sink_input_info &info);
@@ -293,6 +348,7 @@ public:
     void updateVolumeMeter(uint32_t source_index, uint32_t sink_input_index, double v);
     void updateRole(const pa_ext_stream_restore_info &info);
 
+    void removeCard(uint32_t index);
     void removeSink(uint32_t index);
     void removeSource(uint32_t index);
     void removeSinkInput(uint32_t index);
@@ -304,6 +360,7 @@ public:
     Gtk::Label *noStreamsLabel, *noRecsLabel, *noSinksLabel, *noSourcesLabel;
     Gtk::ComboBox *sinkInputTypeComboBox, *sourceOutputTypeComboBox, *sinkTypeComboBox, *sourceTypeComboBox;
 
+    std::map<uint32_t, CardWidget*> cardWidgets;
     std::map<uint32_t, SinkWidget*> sinkWidgets;
     std::map<uint32_t, SourceWidget*> sourceWidgets;
     std::map<uint32_t, SinkInputWidget*> sinkInputWidgets;
@@ -433,6 +490,121 @@ void ChannelWidget::set_sensitive(bool enabled) {
     volumeLabel->set_sensitive(enabled);
     volumeScale->set_sensitive(enabled);
 }
+
+
+
+/*** CardWidget ***/
+CardWidget::CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
+    Gtk::VBox(cobject),
+    profilesMenuItem(_("_Set Profile..."), true) {
+
+    x->get_widget("nameLabel", nameLabel);
+    x->get_widget("boldNameLabel", boldNameLabel);
+    x->get_widget("streamToggle", streamToggleButton);
+    x->get_widget("iconImage", iconImage);
+
+    streamToggleButton->set_active(false);
+    streamToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &CardWidget::onStreamToggleButton));
+    menu.signal_deactivate().connect(sigc::mem_fun(*this, &CardWidget::onMenuDeactivated));
+
+    menu.append(profilesMenuItem);
+    profilesMenuItem.set_submenu(submenu);
+}
+
+CardWidget::~CardWidget() {
+    clearMenu();
+}
+
+CardWidget* CardWidget::create() {
+    CardWidget* w;
+    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "minimalStreamWidget");
+    x->get_widget_derived("minimalStreamWidget", w);
+    return w;
+}
+
+void CardWidget::prepareMenu() {
+  clearMenu();
+  buildMenu();
+}
+
+void CardWidget::clearMenu() {
+
+    while (!profileMenuItems.empty()) {
+        std::map<uint32_t, ProfileMenuItem*>::iterator i = profileMenuItems.begin();
+        delete i->second;
+        profileMenuItems.erase(i);
+    }
+}
+
+void CardWidget::buildMenu() {
+    int num = 0;
+    for (std::map<Glib::ustring, Glib::ustring>::iterator i = profiles.begin(); i != profiles.end(); ++i) {
+        ProfileMenuItem *m;
+        profileMenuItems[num++] = m = new ProfileMenuItem(this, i->second.c_str(), i->first.c_str(), i->first == activeProfile);
+        submenu.append(m->menuItem);
+    }
+
+    menu.show_all();
+}
+
+void CardWidget::ProfileMenuItem::onToggle() {
+
+    if (widget->updating)
+        return;
+
+    if (!menuItem.get_active())
+        return;
+
+    pa_operation* o;
+    if (!(o = pa_context_set_card_profile_by_index(context, widget->index, profile.c_str(), NULL, NULL))) {
+        show_error(_("pa_context_set_card_profile_by_index() failed"));
+        return;
+    }
+
+    pa_operation_unref(o);
+}
+
+
+void CardWidget::onMenuDeactivated(void) {
+    streamToggleButton->set_active(false);
+}
+
+void CardWidget::popupMenuPosition(int& x, int& y, bool& push_in G_GNUC_UNUSED) {
+    Gtk::Requisition  r;
+
+    streamToggleButton->get_window()->get_origin(x, y);
+    r = menu.size_request();
+
+    /* Align the right side of the menu with the right side of the togglebutton */
+    x += streamToggleButton->get_allocation().get_x();
+    x += streamToggleButton->get_allocation().get_width();
+    x -= r.width;
+
+    /* Align the top of the menu with the buttom of the togglebutton */
+    y += streamToggleButton->get_allocation().get_y();
+    y += streamToggleButton->get_allocation().get_height();
+}
+
+void CardWidget::onStreamToggleButton(void) {
+    if (streamToggleButton->get_active()) {
+        prepareMenu();
+        menu.popup(sigc::mem_fun(*this, &CardWidget::popupMenuPosition), 0, gtk_get_current_event_time());
+    }
+}
+
+bool CardWidget::on_button_press_event (GdkEventButton* event) {
+    if (Gtk::VBox::on_button_press_event(event))
+        return TRUE;
+
+    if (event->type == GDK_BUTTON_PRESS && event->button == 3) {
+        prepareMenu();
+        menu.popup(0, event->time);
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
 
 /*** MinimalStreamWidget ***/
 MinimalStreamWidget::MinimalStreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
@@ -1005,6 +1177,50 @@ MainWindow::~MainWindow() {
     }
 }
 
+void MainWindow::updateCard(const pa_card_info &info) {
+    CardWidget *w;
+    bool is_new = false;
+
+    if (cardWidgets.count(info.index))
+        w = cardWidgets[info.index];
+    else {
+        cardWidgets[info.index] = w = CardWidget::create();
+        sinksVBox->pack_start(*w, false, false, 0);
+        //sourcesVBox->pack_start(*w, false, false, 0);
+        w->index = info.index;
+        is_new = true;
+    }
+
+    w->updating = true;
+
+    if (NULL != info.proplist && pa_proplist_contains(info.proplist, "alsa.card_name"))
+      w->name = pa_proplist_gets(info.proplist, "alsa.card_name");
+    else
+      w->name = info.name;
+
+    w->boldNameLabel->set_text("Card: ");
+    gchar *txt;
+    w->nameLabel->set_markup(txt = g_markup_printf_escaped("%s", w->name.c_str()));
+    g_free(txt);
+
+    w->iconImage->set_from_icon_name("audio-card", Gtk::ICON_SIZE_SMALL_TOOLBAR);
+
+    w->hasSinks = w->hasSources = false;
+    w->profiles.clear();
+    for (int i=0; i<info.n_profiles; ++i) {
+      w->hasSinks = w->hasSinks || (info.profiles[i].n_sinks > 0);
+      w->hasSources = w->hasSources || (info.profiles[i].n_sources > 0);
+      w->profiles.insert(std::pair<Glib::ustring,Glib::ustring>(info.profiles[i].name, info.profiles[i].description));
+    }
+    w->activeProfile = info.active_profile->name;
+    //w->defaultMenuItem.set_active(w->name == defaultSinkName);
+
+    w->updating = false;
+
+    if (is_new)
+        updateDeviceVisibility();
+}
+
 void MainWindow::updateSink(const pa_sink_info &info) {
     SinkWidget *w;
     bool is_new = false;
@@ -1023,6 +1239,7 @@ void MainWindow::updateSink(const pa_sink_info &info) {
 
     w->updating = true;
 
+    w->card_index = info.card;
     w->name = info.name;
     w->description = info.description;
     w->type = info.flags & PA_SINK_HARDWARE ? SINK_HARDWARE : SINK_VIRTUAL;
@@ -1165,6 +1382,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
 
     w->updating = true;
 
+    w->card_index = info.card;
     w->name = info.name;
     w->description = info.description;
     w->type = info.monitor_of_sink != PA_INVALID_INDEX ? SOURCE_MONITOR : (info.flags & PA_SOURCE_HARDWARE ? SOURCE_HARDWARE : SOURCE_VIRTUAL);
@@ -1486,6 +1704,8 @@ void MainWindow::updateDeviceVisibility() {
 
 void MainWindow::reallyUpdateDeviceVisibility() {
     bool is_empty = true;
+    std::set<uint32_t> visible_cards;
+    std::set<uint32_t>::iterator it_card;
 
     for (std::map<uint32_t, SinkInputWidget*>::iterator i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
         SinkInputWidget* w = i->second;
@@ -1523,11 +1743,24 @@ void MainWindow::reallyUpdateDeviceVisibility() {
         noRecsLabel->hide();
 
     is_empty = true;
+    visible_cards.clear();
 
     for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
         SinkWidget* w = i->second;
 
         if (showSinkType == SINK_ALL || w->type == showSinkType) {
+            w->show();
+            is_empty = false;
+            if (w->card_index != PA_INVALID_INDEX)
+                visible_cards.insert(w->card_index);
+        } else
+            w->hide();
+    }
+
+    for (std::map<uint32_t, CardWidget*>::iterator i = cardWidgets.begin(); i != cardWidgets.end(); ++i) {
+        CardWidget* w = i->second;
+
+        if (true || (!visible_cards.count(w->index) && w->hasSinks)) {
             w->show();
             is_empty = false;
         } else
@@ -1568,6 +1801,15 @@ void MainWindow::reallyUpdateDeviceVisibility() {
     streamsVBox->show();
     recsVBox->hide();
     recsVBox->show();
+}
+
+void MainWindow::removeCard(uint32_t index) {
+    if (!cardWidgets.count(index))
+        return;
+
+    delete cardWidgets[index];
+    cardWidgets.erase(index);
+    updateDeviceVisibility();
 }
 
 void MainWindow::removeSink(uint32_t index) {
@@ -1653,6 +1895,25 @@ static void dec_outstanding(MainWindow *w) {
 
     if (--n_outstanding <= 0)
         w->get_window()->set_cursor();
+}
+
+void card_cb(pa_context *, const pa_card_info *i, int eol, void *userdata) {
+    MainWindow *w = static_cast<MainWindow*>(userdata);
+
+    if (eol < 0) {
+        if (pa_context_errno(context) == PA_ERR_NOENTITY)
+            return;
+
+        show_error(_("Card callback failure"));
+        return;
+    }
+
+    if (eol > 0) {
+        dec_outstanding(w);
+        return;
+    }
+
+    w->updateCard(*i);
 }
 
 void sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata) {
@@ -1883,13 +2144,28 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             break;
 
         case PA_SUBSCRIPTION_EVENT_SERVER: {
-            pa_operation *o;
-            if (!(o = pa_context_get_server_info(c, server_info_cb, w))) {
-                show_error(_("pa_context_get_server_info() failed"));
-                return;
+                pa_operation *o;
+                if (!(o = pa_context_get_server_info(c, server_info_cb, w))) {
+                    show_error(_("pa_context_get_server_info() failed"));
+                    return;
+                }
+                pa_operation_unref(o);
             }
-            pa_operation_unref(o);
-        }
+            break;
+
+        case PA_SUBSCRIPTION_EVENT_CARD:
+            if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
+                w->removeCard(index);
+            else {
+                pa_operation *o;
+                if (!(o = pa_context_get_card_info_by_index(c, index, card_cb, w))) {
+                    show_error(_("pa_context_get_card_info_by_index() failed"));
+                    return;
+                }
+                pa_operation_unref(o);
+            }
+            break;
+
     }
 }
 
@@ -1916,7 +2192,8 @@ void context_state_callback(pa_context *c, void *userdata) {
                                             PA_SUBSCRIPTION_MASK_SINK_INPUT|
                                             PA_SUBSCRIPTION_MASK_SOURCE_OUTPUT|
                                             PA_SUBSCRIPTION_MASK_CLIENT|
-                                            PA_SUBSCRIPTION_MASK_SERVER), NULL, NULL))) {
+                                            PA_SUBSCRIPTION_MASK_SERVER|
+                                            PA_SUBSCRIPTION_MASK_CARD), NULL, NULL))) {
                 show_error(_("pa_context_subscribe() failed"));
                 return;
             }
@@ -1930,6 +2207,12 @@ void context_state_callback(pa_context *c, void *userdata) {
 
             if (!(o = pa_context_get_client_info_list(c, client_cb, w))) {
                 show_error(_("pa_context_client_info_list() failed"));
+                return;
+            }
+            pa_operation_unref(o);
+
+            if (!(o = pa_context_get_card_info_list(c, card_cb, w))) {
+                show_error(_("pa_context_get_card_info_list() failed"));
                 return;
             }
             pa_operation_unref(o);
