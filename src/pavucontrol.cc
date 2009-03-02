@@ -157,7 +157,7 @@ public:
     CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static CardWidget* create();
 
-    Gtk::Label *nameLabel, *boldNameLabel;
+    Gtk::Label *nameLabel;
     Gtk::ToggleButton *streamToggleButton;
     Gtk::Menu menu;
     Gtk::Image *iconImage;
@@ -172,7 +172,7 @@ public:
 
     void prepareMenu();
 
-protected:  
+protected:
   virtual void onProfileChange();
 
   //Tree model columns:
@@ -486,7 +486,6 @@ CardWidget::CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     Gtk::VBox(cobject) {
 
     x->get_widget("nameLabel", nameLabel);
-    x->get_widget("boldNameLabel", boldNameLabel);
     x->get_widget("profileList", profileList);
     x->get_widget("iconImage", iconImage);
 
@@ -1126,9 +1125,25 @@ MainWindow::~MainWindow() {
     }
 }
 
+static void set_icon_name_fallback(Gtk::Image *i, const char *name, Gtk::IconSize size) {
+    Glib::RefPtr<Gtk::IconTheme> theme;
+    Glib::RefPtr<Gdk::Pixbuf> pixbuf;
+    gint width = 24, height = 24;
+
+    Gtk::IconSize::lookup(size, width, height);
+    theme = Gtk::IconTheme::get_default();
+    pixbuf = theme->load_icon(name, width, Gtk::ICON_LOOKUP_GENERIC_FALLBACK);
+
+    if (pixbuf)
+        i->set(pixbuf);
+    else
+        i->set(name);
+}
+
 void MainWindow::updateCard(const pa_card_info &info) {
     CardWidget *w;
     bool is_new = false;
+    const char *description, *icon;
 
     if (cardWidgets.count(info.index))
         w = cardWidgets[info.index];
@@ -1141,24 +1156,19 @@ void MainWindow::updateCard(const pa_card_info &info) {
 
     w->updating = true;
 
-    if (NULL != info.proplist && pa_proplist_contains(info.proplist, "alsa.card_name"))
-      w->name = pa_proplist_gets(info.proplist, "alsa.card_name");
-    else
-      w->name = info.name;
+    description = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_DESCRIPTION);
+    w->name = description ? description : info.name;
+    w->nameLabel->set_markup(w->name.c_str());
 
-    w->boldNameLabel->set_text("");
-    gchar *txt;
-    w->nameLabel->set_markup(txt = g_markup_printf_escaped("%s", w->name.c_str()));
-    g_free(txt);
-
-    w->iconImage->set_from_icon_name("audio-card", Gtk::ICON_SIZE_SMALL_TOOLBAR);
+    icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
+    set_icon_name_fallback(w->iconImage, icon ? icon : "audio-card", Gtk::ICON_SIZE_SMALL_TOOLBAR);
 
     w->hasSinks = w->hasSources = false;
     w->profiles.clear();
     for (uint32_t i=0; i<info.n_profiles; ++i) {
-      w->hasSinks = w->hasSinks || (info.profiles[i].n_sinks > 0);
-      w->hasSources = w->hasSources || (info.profiles[i].n_sources > 0);
-      w->profiles.insert(std::pair<Glib::ustring,Glib::ustring>(info.profiles[i].name, info.profiles[i].description));
+        w->hasSinks = w->hasSinks || (info.profiles[i].n_sinks > 0);
+        w->hasSources = w->hasSources || (info.profiles[i].n_sources > 0);
+        w->profiles.insert(std::pair<Glib::ustring,Glib::ustring>(info.profiles[i].name, info.profiles[i].description));
     }
     w->activeProfile = info.active_profile->name;
     //w->defaultMenuItem.set_active(w->name == defaultSinkName);
@@ -1174,6 +1184,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
 void MainWindow::updateSink(const pa_sink_info &info) {
     SinkWidget *w;
     bool is_new = false;
+    const char *icon;
 
     if (sinkWidgets.count(info.index))
         w = sinkWidgets[info.index];
@@ -1199,7 +1210,8 @@ void MainWindow::updateSink(const pa_sink_info &info) {
     w->nameLabel->set_markup(txt = g_markup_printf_escaped("%s", info.description));
     g_free(txt);
 
-    w->iconImage->set_from_icon_name("audio-card", Gtk::ICON_SIZE_SMALL_TOOLBAR);
+    icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
+    set_icon_name_fallback(w->iconImage, icon ? icon : "audio-card", Gtk::ICON_SIZE_SMALL_TOOLBAR);
 
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
@@ -1318,6 +1330,7 @@ void MainWindow::createMonitorStreamForSinkInput(uint32_t sink_input_idx, uint32
 void MainWindow::updateSource(const pa_source_info &info) {
     SourceWidget *w;
     bool is_new = false;
+    const char *icon;
 
     if (sourceWidgets.count(info.index))
         w = sourceWidgets[info.index];
@@ -1344,7 +1357,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
     w->nameLabel->set_markup(txt = g_markup_printf_escaped("%s", info.description));
     g_free(txt);
 
-    w->iconImage->set_from_icon_name("audio-input-microphone", Gtk::ICON_SIZE_SMALL_TOOLBAR);
+    icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
+    set_icon_name_fallback(w->iconImage, icon ? icon : "audio-input-microphone", Gtk::ICON_SIZE_SMALL_TOOLBAR);
 
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);

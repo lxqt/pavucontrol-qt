@@ -845,25 +845,15 @@ Monitors</property>
                       <widget class="GtkHBox" id="hbox11">
                         <property name="visible">True</property>
                         <child>
-                          <widget class="GtkLabel" id="boldNameLabel">
-                            <property name="visible">True</property>
-                            <property name="use_markup">True</property>
-                          </widget>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
                           <widget class="GtkLabel" id="nameLabel">
                             <property name="visible">True</property>
                             <property name="xalign">0</property>
-                            <property name="label" translatable="yes">Stream Title</property>
+                            <property name="label" translatable="yes">Card Name</property>
                             <property name="use_markup">True</property>
                             <property name="ellipsize">middle</property>
                           </widget>
                           <packing>
-                            <property name="position">1</property>
+                            <property name="position">0</property>
                           </packing>
                         </child>
                       </widget>
