@@ -489,6 +489,10 @@ CardWidget::CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     x->get_widget("profileList", profileList);
     x->get_widget("iconImage", iconImage);
 
+    treeModel = Gtk::ListStore::create(profileModel);
+    profileList->set_model(treeModel);
+    profileList->pack_start(profileModel.desc);
+
     profileList->signal_changed().connect( sigc::mem_fun(*this, &CardWidget::onProfileChange));
 }
 
@@ -504,10 +508,7 @@ void CardWidget::prepareMenu() {
     int idx = 0;
     int active_idx = -1;
 
-    //m_refTreeModel = Gtk::TreeStore::create(m_Columns);
-    treeModel = Gtk::ListStore::create(profileModel);
-    profileList->set_model(treeModel);
-
+    treeModel->clear();
     //Fill the ComboBox's Tree Model:
     for (std::map<Glib::ustring, Glib::ustring>::iterator i = profiles.begin(); i != profiles.end(); ++i) {
         Gtk::TreeModel::Row row = *(treeModel->append());
@@ -518,9 +519,6 @@ void CardWidget::prepareMenu() {
         idx++;
     }
 
-    //Add the model columns to the Combo (which is a kind of view),
-    //rendering them in the default way:
-    profileList->pack_start(profileModel.desc);
     if (active_idx >= 0)
         profileList->set_active(active_idx);
 }
