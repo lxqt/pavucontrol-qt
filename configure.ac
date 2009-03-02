@@ -38,7 +38,7 @@ AC_PROG_LN_S
 AC_TYPE_SIGNAL
 AC_HEADER_STDC
 
-PKG_CHECK_MODULES(GUILIBS, [ gtkmm-2.4 libglademm-2.4 sigc++-2.0 libcanberra-gtk ])
+PKG_CHECK_MODULES(GUILIBS, [ gtkmm-2.4 libglademm-2.4 sigc++-2.0 libcanberra-gtk >= 0.11 ])
 AC_SUBST(GUILIBS_CFLAGS)
 AC_SUBST(GUILIBS_LIBS)
 
