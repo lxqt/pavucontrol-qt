@@ -1,33 +1,32 @@
-# Hungarian translation of pavucontrol
-# Copyright (C) 2008 Free Software Foundation, Inc.
-# This file is distributed under the same license as the pulseaudio package.
+# Slovak translations for pavucontrol package
+# This file is distributed under the same license as the pavucontrol package.
 #
-# Gabor Kelemen <kelemeng@gnome.hu>, 2008.
+# Ondrej Šulek <feonsu@gmail.com>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: HEAD\n"
+"Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-02-25 05:19+0100\n"
-"PO-Revision-Date: 2008-08-29 01:57+0200\n"
-"Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
-"Language-Team: Hungarian <gnome@fsf.hu>\n"
+"PO-Revision-Date: 2008-10-03 22:10+0200\n"
+"Last-Translator: Ondrej Šulek <feonsu@gmail.com>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 0.2\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../src/pavucontrol.desktop.in.h:1
 msgid "Adjust the volume level"
-msgstr "Hangerő beállítása"
+msgstr "Upraviť úroveň hlasitosti"
 
 #: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:2011
 msgid "PulseAudio Volume Control"
-msgstr "PulseAudio hangerőszabályzó"
+msgstr "Ovládanie hlasitosti PulseAudio"
 
 #: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:27
 msgid "Volume Control"
-msgstr "Hangerőszabályzó"
+msgstr "Ovládanie hlasitosti"
 
 #: ../src/pavucontrol.glade.h:2
 #, no-c-format
@@ -36,35 +35,35 @@ msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
 msgid "<b>S_how:</b>"
-msgstr "<b>_Megjelenítés:</b>"
+msgstr "<b>_Zobraziť:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Sho_w:</b>"
-msgstr "<b>M_egjelenítés:</b>"
+msgstr "<b>_Zobraziť:</b>"
 
 #: ../src/pavucontrol.glade.h:5
 msgid "<b>_Show:</b>"
-msgstr "<b>Megjele_nítés:</b>"
+msgstr "<b>_Zobraziť:</b>"
 
 #: ../src/pavucontrol.glade.h:6
 msgid "<b>left-front</b>"
-msgstr "<b>bal első</b>"
+msgstr "<b>ľavý-predný</b>"
 
 #: ../src/pavucontrol.glade.h:7
 msgid "<i>No application is currently playing audio.</i>"
-msgstr "<i>Jelenleg egy alkalmazás sem játszik le hangot.</i>"
+msgstr "<i>Žiadna aplikácia momentálne neprehráva zvuk.</i>"
 
 #: ../src/pavucontrol.glade.h:8
 msgid "<i>No application is currently recording audio.</i>"
-msgstr "<i>Jelenleg egy alkalmazás sem vesz fel hangot.</i>"
+msgstr "<i>Žiadna aplikácia momentálne nenahráva zvuk.</i>"
 
 #: ../src/pavucontrol.glade.h:9
 msgid "<i>No input devices available</i>"
-msgstr "<i>Nem állnak rendelkezésre bemeneti eszközök</i>"
+msgstr "<i>Nie sú dostupné žiadne vstupné zariadenia.</i>"
 
 #: ../src/pavucontrol.glade.h:10
 msgid "<i>No output devices available</i>"
-msgstr "<i>Nem állnak rendelkezésre kimeneti eszközök</i>"
+msgstr "<i>Nie sú dostupné žiadne výstupné zariadenia.</i>"
 
 #: ../src/pavucontrol.glade.h:11
 msgid ""
@@ -74,11 +73,11 @@ msgid ""
 "Virtual Input Devices\n"
 "Monitors"
 msgstr ""
-"Minden bemeneti eszköz\n"
-"Minden kivéve a monitorokat\n"
-"Hardveres bemeneti eszközök\n"
-"Virtuális bemeneti eszközök\n"
-"Monitorok"
+"Všetky vstupné zariadenia\n"
+"Všetky okrem monitorov\n"
+"Hardvérové vstupné zariadenia\n"
+"Virtuálne vstupné zariadenia\n"
+"Monitory"
 
 #: ../src/pavucontrol.glade.h:16
 msgid ""
@@ -86,9 +85,9 @@ msgid ""
 "Hardware Output Devices\n"
 "Virtual Output Devices"
 msgstr ""
-"Minden kimeneti eszköz\n"
-"Hardveres kimeneti eszközök\n"
-"Virtuális kimeneti eszközök"
+"Všetky výstupné zariadenia\n"
+"Hardvérové výstupné zariadenia\n"
+"Virtuálne výstupné zariadenia"
 
 #. Applications All streams
 #: ../src/pavucontrol.glade.h:20
@@ -97,207 +96,207 @@ msgid ""
 "Applications\n"
 "Virtual Streams"
 msgstr ""
-"Minden adatfolyam\n"
-"Alkalmazások\n"
-"Virtuális adatfolyamok"
+"Všetky prúdy\n"
+"Aplikácie\n"
+"Virtuálne prúdy"
 
 #: ../src/pavucontrol.glade.h:23
 msgid "Lock channels together"
-msgstr "Csatornák összekapcsolása"
+msgstr "Zamknúť kanály dohromady"
 
 #: ../src/pavucontrol.glade.h:24
 msgid "Mute audio"
-msgstr "Hang némítása"
+msgstr "Stlmiť zvuk"
 
 #: ../src/pavucontrol.glade.h:25
 msgid "Open menu"
-msgstr "Menü megnyitása"
+msgstr "Otvoriť menu"
 
 #: ../src/pavucontrol.glade.h:26
 msgid "Stream Title"
-msgstr "Adatfolyam címe"
+msgstr "Názov prúdu"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "_Input Devices"
-msgstr "B_emeneti eszközök"
+msgstr "Vstupné zar_iadenia"
 
 #: ../src/pavucontrol.glade.h:29
 msgid "_Output Devices"
-msgstr "_Kimeneti eszközök"
+msgstr "_Výstupné zariadenia"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "_Playback"
-msgstr "_Lejátszás"
+msgstr "_Prehrávanie"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "_Recording"
-msgstr "_Felvétel"
+msgstr "_Nahrávanie"
 
 #: ../src/pavucontrol.cc:418
 msgid "Volume Control Feedback Sound"
-msgstr "Hangerőszabályzó visszajelzési hang"
+msgstr "Ovládanie hlasitosti Feedback zvuku"
 
 #: ../src/pavucontrol.cc:632
 msgid "pa_context_set_sink_volume_by_index() failed"
-msgstr "pa_context_set_sink_volume_by_index() meghiúsult"
+msgstr "pa_context_set_sink_volume_by_index() zlyhal"
 
 #: ../src/pavucontrol.cc:647
 msgid "pa_context_set_sink_mute_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() meghiúsult"
+msgstr "pa_context_set_sink_mute_by_index() zlyhal"
 
 #: ../src/pavucontrol.cc:661
 msgid "pa_context_set_default_sink() failed"
-msgstr "pa_context_set_default_sink() meghiúsult"
+msgstr "pa_context_set_default_sink() zlyhal"
 
 #: ../src/pavucontrol.cc:669
 msgid "_Default"
-msgstr "_Alapértelmezett"
+msgstr "Pre_dvolené"
 
 #: ../src/pavucontrol.cc:690
 msgid "pa_context_set_source_volume_by_index() failed"
-msgstr "pa_context_set_source_volume_by_index() meghiúsult"
+msgstr "pa_context_set_source_volume_by_index() zlyhal"
 
 #: ../src/pavucontrol.cc:705
 msgid "pa_context_set_source_mute_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() meghiúsult"
+msgstr "pa_context_set_source_mute_by_index() zlyhal"
 
 #: ../src/pavucontrol.cc:719
 msgid "pa_context_set_default_source() failed"
-msgstr "pa_context_set_default_source() meghiúsult"
+msgstr "pa_context_set_default_source() zlyhal"
 
 #: ../src/pavucontrol.cc:728 ../src/pavucontrol.cc:831
 msgid "_Move Stream..."
-msgstr "A_datfolyam mozgatása..."
+msgstr "_Presunúť prúd..."
 
 #: ../src/pavucontrol.cc:729 ../src/pavucontrol.cc:832
 msgid "_Terminate Stream"
-msgstr "Adatfolyam be_fejeztetése..."
+msgstr "_Ukončiť prúd"
 
 #: ../src/pavucontrol.cc:755
 msgid "pa_context_set_sink_input_volume() failed"
-msgstr "pa_context_set_sink_input_volume() meghiúsult"
+msgstr "pa_context_set_sink_input_volume() zlyhal"
 
 #: ../src/pavucontrol.cc:770
 msgid "pa_context_set_sink_input_mute() failed"
-msgstr "pa_context_set_sink_input_mute() meghiúsult"
+msgstr "pa_context_set_sink_input_mute() zlyhal"
 
 #: ../src/pavucontrol.cc:804
 msgid "pa_context_kill_sink_input() failed"
-msgstr "pa_context_kill_sink_input() meghiúsult"
+msgstr "pa_context_kill_sink_input() zlyhal"
 
 #: ../src/pavucontrol.cc:821
 msgid "pa_context_move_sink_input_by_index() failed"
-msgstr "pa_context_move_sink_input_by_index() meghiúsult"
+msgstr "pa_context_move_sink_input_by_index() zlyhal"
 
 #: ../src/pavucontrol.cc:857
 msgid "pa_context_kill_source_output() failed"
-msgstr "pa_context_kill_source_output() meghiúsult"
+msgstr "pa_context_kill_source_output() zlyhal"
 
 #: ../src/pavucontrol.cc:898
 msgid "pa_context_move_source_output_by_index() failed"
-msgstr "pa_context_move_source_output_by_index() meghiúsult"
+msgstr "pa_context_move_source_output_by_index() zlyhal"
 
 #: ../src/pavucontrol.cc:940
 msgid "pa_ext_stream_restore_write() failed"
-msgstr "pa_ext_stream_restore_write() meghiúsult"
+msgstr "pa_ext_stream_restore_write() zlyhal"
 
 #: ../src/pavucontrol.cc:1061
 msgid "Failed to read data from stream"
-msgstr "Az adatok olvasása meghiúsult az adatfolyamból"
+msgstr "Nepodarilo sa prečítať dáta z prúdu"
 
 #: ../src/pavucontrol.cc:1096 ../src/pavucontrol.cc:1133
 msgid "Peak detect"
-msgstr "Csúcsérzékelés"
+msgstr "Detekcia vrcholov"
 
 #: ../src/pavucontrol.cc:1097 ../src/pavucontrol.cc:1134
 msgid "Failed to create monitoring stream"
-msgstr "A megfigyelő adatfolyam létrehozása meghiúsult"
+msgstr "Nepodarilo sa vytvoriť monitorovací prúd"
 
 #: ../src/pavucontrol.cc:1105 ../src/pavucontrol.cc:1143
 msgid "Failed to connect monitoring stream"
-msgstr "A megfigyelő adatfolyam csatlakoztatása meghiúsult"
+msgstr "Nepodarilo sa pripojiť monitorovací prúd"
 
 #: ../src/pavucontrol.cc:1383
 msgid "System Sounds"
-msgstr "Rendszerhangok"
+msgstr "Systémové zvuky"
 
 #: ../src/pavucontrol.cc:1665
 msgid "Sink callback failure"
-msgstr "Visszahíváshiba a nyelőn"
+msgstr "Cieľové spätné volanie zlyhalo"
 
 #: ../src/pavucontrol.cc:1684
 msgid "Source callback failure"
-msgstr "Visszahíváshiba a forrásban"
+msgstr "Zdrojové spätné volanie zlyhalo"
 
 #: ../src/pavucontrol.cc:1703
 msgid "Sink input callback failure"
-msgstr "Visszahíváshiba a nyelőbemeneten"
+msgstr "Cieľové vstupné spätné volanie zlyhalo"
 
 #: ../src/pavucontrol.cc:1722
 msgid "Source output callback failure"
-msgstr "Visszahíváshiba a forráskimeneten"
+msgstr "Zdrojové výstupné spätné volanie zlyhalo"
 
 #: ../src/pavucontrol.cc:1756
 msgid "Client callback failure"
-msgstr "Visszahíváshiba a kliensen"
+msgstr "Klientské spätné volanie zlyhalo"
 
 #: ../src/pavucontrol.cc:1772
 msgid "Server info callback failure"
-msgstr "Visszahíváshiba a kiszolgálóinformációkban"
+msgstr "Server info spätné volanie zlyhalo"
 
 #: ../src/pavucontrol.cc:1789 ../src/pavucontrol.cc:1974
 #, c-format
 msgid "Failed to initialized stream_restore extension: %s"
-msgstr "A stream_restore kiterjesztés előkészítése meghiúsult: %s"
+msgstr "Nepodarilo sa inicializovať stream_restore rozšírenie: %s"
 
 #: ../src/pavucontrol.cc:1809
 msgid "pa_ext_stream_restore_read() failed"
-msgstr "pa_ext_stream_restore_read() meghiúsult"
+msgstr "pa_ext_stream_restore_read() zlyhal"
 
 #: ../src/pavucontrol.cc:1826
 msgid "pa_context_get_sink_info_by_index() failed"
-msgstr "pa_context_get_sink_info_by_index() meghiúsult"
+msgstr "pa_context_get_sink_info_by_index() zlyhal"
 
 #: ../src/pavucontrol.cc:1839
 msgid "pa_context_get_source_info_by_index() failed"
-msgstr "pa_context_get_source_info_by_index() meghiúsult"
+msgstr "pa_context_get_source_info_by_index() zlyhal"
 
 #: ../src/pavucontrol.cc:1852 ../src/pavucontrol.cc:1865
 msgid "pa_context_get_sink_input_info() failed"
-msgstr "pa_context_get_sink_input_info() meghiúsult"
+msgstr "pa_context_get_sink_input_info() zlyhal"
 
 #: ../src/pavucontrol.cc:1878
 msgid "pa_context_get_client_info() failed"
-msgstr "pa_context_get_client_info() meghiúsult"
+msgstr "pa_context_get_client_info() zlyhal"
 
 #: ../src/pavucontrol.cc:1888 ../src/pavucontrol.cc:1926
 msgid "pa_context_get_server_info() failed"
-msgstr "pa_context_get_server_info() meghiúsult"
+msgstr "pa_context_get_server_info() zlyhal"
 
 #: ../src/pavucontrol.cc:1920
 msgid "pa_context_subscribe() failed"
-msgstr "pa_context_subscribe() meghiúsult"
+msgstr "pa_context_subscribe() zlyhal"
 
 #: ../src/pavucontrol.cc:1932
 msgid "pa_context_client_info_list() failed"
-msgstr "pa_context_client_info_list() meghiúsult"
+msgstr "pa_context_client_info_list() zlyhal"
 
 #: ../src/pavucontrol.cc:1938
 msgid "pa_context_get_sink_info_list() failed"
-msgstr "pa_context_get_sink_info_list() meghiúsult"
+msgstr "pa_context_get_sink_info_list() zlyhal"
 
 #: ../src/pavucontrol.cc:1944
 msgid "pa_context_get_source_info_list() failed"
-msgstr "pa_context_get_source_info_list() meghiúsult"
+msgstr "pa_context_get_source_info_list() zlyhal"
 
 #: ../src/pavucontrol.cc:1950
 msgid "pa_context_get_sink_input_info_list() failed"
-msgstr "pa_context_get_sink_input_info_list() meghiúsult"
+msgstr "pa_context_get_sink_input_info_list() zlyhal"
 
 #: ../src/pavucontrol.cc:1956
 msgid "pa_context_get_source_output_info_list() failed"
-msgstr "pa_context_get_source_output_info_list() meghiúsult"
+msgstr "pa_context_get_source_output_info_list() zlyhal"
 
 #: ../src/pavucontrol.cc:1980 ../src/pavucontrol.cc:2024
 msgid "Connection failed"
-msgstr "A kapcsolatfelvétel nem sikerült"
+msgstr "Spojenie zlyhalo"
