@@ -7,7 +7,6 @@ config.sub
 intltool-extract.in
 intltool-merge.in
 intltool-update.in
-m4/
 aclocal.m4
 *.cache
 config.h

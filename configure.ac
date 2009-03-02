@@ -18,9 +18,10 @@
 # You should have received a copy of the GNU General Public License
 # along with pavucontrol. If not, see <http://www.gnu.org/licenses/>.
 
-AC_PREREQ(2.57)
+AC_PREREQ(2.62)
 AC_INIT([pavucontrol],[0.9.7],[mzcnihpbageby (at) 0pointer (dot) de])
 AC_CONFIG_SRCDIR([src/pavucontrol.cc])
+AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([foreign 1.9 -Wall])
 
@@ -59,24 +60,7 @@ if test "x$GCC" = "xyes" ; then
    CXXFLAGS="$CXXFLAGS -pipe -Wall -W"
 fi
 
-# LYNX documentation generation
-AC_ARG_ENABLE(lynx,
-        AS_HELP_STRING(--disable-lynx,Turn off lynx usage for documentation generation),
-[case "${enableval}" in
-  yes) lynx=yes ;;
-  no)  lynx=no ;;
-  *) AC_MSG_ERROR(bad value ${enableval} for --disable-lynx) ;;
-esac],[lynx=yes])
-
-if test x$lynx = xyes ; then
-   AC_CHECK_PROG(have_lynx, lynx, yes, no)
-
-   if test x$have_lynx = xno ; then
-     AC_MSG_ERROR([*** Sorry, you have to install lynx or use --disable-lynx ***])
-   fi
-fi
-
-AM_CONDITIONAL([USE_LYNX], [test "x$lynx" = xyes])
+ZP_LYNX_DOC
 
 IT_PROG_INTLTOOL([0.35.0])
 GETTEXT_PACKAGE=pavucontrol
