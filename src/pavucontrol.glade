@@ -323,6 +323,7 @@ Virtual Output Devices</property>
                     <child>
                       <widget class="GtkViewport" id="viewport3">
                         <property name="visible">True</property>
+                        <property name="resize_mode">queue</property>
                         <property name="shadow_type">none</property>
                         <child>
                           <widget class="GtkVBox" id="sourcesVBox">
@@ -414,21 +415,20 @@ Monitors</property>
             <child>
               <widget class="GtkVBox" id="vbox1">
                 <property name="visible">True</property>
-                <property name="orientation">vertical</property>
                 <child>
                   <widget class="GtkScrolledWindow" id="scrolledwindow1">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="hscrollbar_policy">automatic</property>
+                    <property name="border_width">12</property>
+                    <property name="hscrollbar_policy">never</property>
                     <property name="vscrollbar_policy">automatic</property>
                     <child>
                       <widget class="GtkViewport" id="viewport2">
                         <property name="visible">True</property>
-                        <property name="resize_mode">queue</property>
+                        <property name="shadow_type">none</property>
                         <child>
                           <widget class="GtkVBox" id="cardsVBox">
                             <property name="visible">True</property>
-                            <property name="orientation">vertical</property>
                             <child>
                               <widget class="GtkLabel" id="noCardsLabel">
                                 <property name="visible">True</property>
@@ -819,7 +819,6 @@ Monitors</property>
         <child>
           <widget class="GtkVBox" id="cardWidget1">
             <property name="visible">True</property>
-            <property name="orientation">vertical</property>
             <child>
               <widget class="GtkVBox" id="vbox7">
                 <property name="visible">True</property>
@@ -882,13 +881,16 @@ Monitors</property>
                 <child>
                   <widget class="GtkHBox" id="hbox1">
                     <property name="visible">True</property>
+                    <property name="spacing">6</property>
                     <child>
                       <widget class="GtkLabel" id="label1">
                         <property name="visible">True</property>
                         <property name="xalign">0</property>
-                        <property name="label" translatable="yes">Profile</property>
+                        <property name="label" translatable="yes">&lt;b&gt;Profile:&lt;/b&gt;</property>
+                        <property name="use_markup">True</property>
                       </widget>
                       <packing>
+                        <property name="expand">False</property>
                         <property name="position">0</property>
                       </packing>
                     </child>
