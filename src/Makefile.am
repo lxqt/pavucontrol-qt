@@ -27,7 +27,7 @@ desktop_DATA=$(desktop_in_files:.desktop.in=.desktop)
 pavucontrol_SOURCES= \
   minimalstreamwidget.h minimalstreamwidget.cc \
   channelwidget.h channelwidget.cc \
-  streamwidget.h \
+  streamwidget.h streamwidget.cc \
   pavucontrol.cc i18n.h
 
 pavucontrol_LDADD=$(AM_LDADD) $(GUILIBS_LIBS) $(PULSE_LIBS)

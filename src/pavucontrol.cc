@@ -73,7 +73,6 @@ enum SourceType{
     SOURCE_MONITOR,
 };
 
-class StreamWidget;
 class MainWindow;
 
 class CardWidget : public Gtk::VBox {
@@ -385,82 +384,6 @@ void CardWidget::onProfileChange() {
     }
 }
 
-
-/*** StreamWidget ***/
-
-StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    MinimalStreamWidget(cobject, x)  {
-
-    x->get_widget("lockToggleButton", lockToggleButton);
-    x->get_widget("muteToggleButton", muteToggleButton);
-
-    muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onMuteToggleButton));
-
-    for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
-        channelWidgets[i] = NULL;
-}
-
-void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
-    channelMap = m;
-
-    for (int i = 0; i < m.channels; i++) {
-        ChannelWidget *cw = channelWidgets[i] = ChannelWidget::create();
-        cw->beepDevice = beepDevice;
-        cw->channel = i;
-        cw->can_decibel = can_decibel;
-        cw->streamWidget = this;
-        char text[64];
-        snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_pretty_string(m.map[i]));
-        cw->channelLabel->set_markup(text);
-        channelsVBox->pack_start(*cw, false, false, 0);
-    }
-
-    lockToggleButton->set_sensitive(m.channels > 1);
-}
-
-void StreamWidget::setVolume(const pa_cvolume &v, bool force = false) {
-    g_assert(v.channels == channelMap.channels);
-
-    volume = v;
-
-    if (timeoutConnection.empty() || force) { /* do not update the volume when a volume change is still in flux */
-        for (int i = 0; i < volume.channels; i++)
-            channelWidgets[i]->setVolume(volume.values[i]);
-    }
-}
-
-void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
-    pa_cvolume n;
-    g_assert(channel < volume.channels);
-
-    n = volume;
-    if (lockToggleButton->get_active()) {
-        for (int i = 0; i < n.channels; i++)
-            n.values[i] = v;
-    } else
-        n.values[channel] = v;
-
-    setVolume(n, true);
-
-    if (timeoutConnection.empty())
-        timeoutConnection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &StreamWidget::timeoutEvent), 100);
-}
-
-void StreamWidget::onMuteToggleButton() {
-
-    lockToggleButton->set_sensitive(!muteToggleButton->get_active());
-
-    for (int i = 0; i < channelMap.channels; i++)
-        channelWidgets[i]->set_sensitive(!muteToggleButton->get_active());
-}
-
-bool StreamWidget::timeoutEvent() {
-    executeVolumeUpdate();
-    return false;
-}
-
-void StreamWidget::executeVolumeUpdate() {
-}
 
 SinkWidget::SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     StreamWidget(cobject, x),

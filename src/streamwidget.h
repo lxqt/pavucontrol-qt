@@ -28,14 +28,18 @@
 #include <gtkmm.h>
 #include <libglademm.h>
 
+#include <pulse/pulseaudio.h>
+
 #include "minimalstreamwidget.h"
+
+class ChannelWidget;
 
 class StreamWidget : public MinimalStreamWidget {
 public:
     StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
 
     void setChannelMap(const pa_channel_map &m, bool can_decibel);
-    void setVolume(const pa_cvolume &volume, bool force);
+    void setVolume(const pa_cvolume &volume, bool force = false);
     virtual void updateChannelVolume(int channel, pa_volume_t v);
 
     Gtk::ToggleButton *lockToggleButton, *muteToggleButton;
