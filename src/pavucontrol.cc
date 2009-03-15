@@ -37,6 +37,8 @@
 
 #include "i18n.h"
 #include "minimalstreamwidget.h"
+#include "channelwidget.h"
+#include "streamwidget.h"
 
 #ifndef GLADE_FILE
 #define GLADE_FILE "pavucontrol.glade"
@@ -44,7 +46,6 @@
 
 static pa_context *context = NULL;
 static int n_outstanding = 0;
-static bool show_decibel = true;
 
 enum SinkInputType {
     SINK_INPUT_ALL,
@@ -74,54 +75,6 @@ enum SourceType{
 
 class StreamWidget;
 class MainWindow;
-
-class ChannelWidget : public Gtk::EventBox {
-public:
-    ChannelWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
-    static ChannelWidget* create();
-
-    void setVolume(pa_volume_t volume);
-
-    Gtk::Label *channelLabel;
-    Gtk::Label *volumeLabel;
-    Gtk::HScale *volumeScale;
-
-    int channel;
-    StreamWidget *streamWidget;
-
-    void onVolumeScaleValueChanged();
-
-    bool can_decibel;
-    bool volumeScaleEnabled;
-
-    Glib::ustring beepDevice;
-
-    virtual void set_sensitive(bool enabled);
-};
-
-class StreamWidget : public MinimalStreamWidget {
-public:
-    StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
-
-    void setChannelMap(const pa_channel_map &m, bool can_decibel);
-    void setVolume(const pa_cvolume &volume, bool force);
-    virtual void updateChannelVolume(int channel, pa_volume_t v);
-
-    Gtk::ToggleButton *lockToggleButton, *muteToggleButton;
-
-    pa_channel_map channelMap;
-    pa_cvolume volume;
-
-    ChannelWidget *channelWidgets[PA_CHANNELS_MAX];
-
-    virtual void onMuteToggleButton();
-
-    sigc::connection timeoutConnection;
-
-    bool timeoutEvent();
-
-    virtual void executeVolumeUpdate();
-};
 
 class CardWidget : public Gtk::VBox {
 public:
@@ -364,93 +317,6 @@ void show_error(const char *txt) {
 
     Gtk::Main::quit();
 }
-
-/*** ChannelWidget ***/
-
-ChannelWidget::ChannelWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    Gtk::EventBox(cobject),
-    volumeScaleEnabled(true) {
-
-    x->get_widget("channelLabel", channelLabel);
-    x->get_widget("volumeLabel", volumeLabel);
-    x->get_widget("volumeScale", volumeScale);
-
-    volumeScale->set_value(100);
-
-    volumeScale->signal_value_changed().connect(sigc::mem_fun(*this, &ChannelWidget::onVolumeScaleValueChanged));
-}
-
-ChannelWidget* ChannelWidget::create() {
-    ChannelWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "channelWidget");
-    x->get_widget_derived("channelWidget", w);
-    return w;
-}
-
-void ChannelWidget::setVolume(pa_volume_t volume) {
-    double v;
-    char txt[64];
-
-    v = ((gdouble) volume * 100) / PA_VOLUME_NORM;
-
-    if (can_decibel && show_decibel) {
-        double dB = pa_sw_volume_to_dB(volume);
-
-        if (dB > PA_DECIBEL_MININFTY) {
-            snprintf(txt, sizeof(txt), "%0.2f dB", dB);
-            volumeLabel->set_tooltip_text(txt);
-        } else
-            volumeLabel->set_tooltip_markup("-&#8734;dB");
-        volumeLabel->set_has_tooltip(TRUE);
-    } else
-        volumeLabel->set_has_tooltip(FALSE);
-
-    snprintf(txt, sizeof(txt), "%0.0f%%", v);
-    volumeLabel->set_text(txt);
-
-    volumeScaleEnabled = false;
-    volumeScale->set_value(v > 100 ? 100 : v);
-    volumeScaleEnabled = true;
-}
-
-void ChannelWidget::onVolumeScaleValueChanged() {
-
-    if (!volumeScaleEnabled)
-        return;
-
-    if (streamWidget->updating)
-        return;
-
-    pa_volume_t volume = (pa_volume_t) ((volumeScale->get_value() * PA_VOLUME_NORM) / 100);
-    streamWidget->updateChannelVolume(channel, volume);
-
-    if (beepDevice != "") {
-        ca_context_change_device(ca_gtk_context_get(), beepDevice.c_str());
-
-        ca_context_cancel(ca_gtk_context_get(), 2);
-
-        ca_gtk_play_for_widget(GTK_WIDGET(volumeScale->gobj()),
-                               2,
-                               CA_PROP_EVENT_DESCRIPTION, _("Volume Control Feedback Sound"),
-                               CA_PROP_EVENT_ID, "audio-volume-change",
-                               CA_PROP_CANBERRA_CACHE_CONTROL, "permanent",
-                               CA_PROP_CANBERRA_VOLUME, "0",
-                               CA_PROP_CANBERRA_ENABLE, "1",
-                               NULL);
-
-        ca_context_change_device(ca_gtk_context_get(), NULL);
-    }
-}
-
-void ChannelWidget::set_sensitive(bool enabled) {
-    Gtk::EventBox::set_sensitive(enabled);
-
-    channelLabel->set_sensitive(enabled);
-    volumeLabel->set_sensitive(enabled);
-    volumeScale->set_sensitive(enabled);
-}
-
-
 
 /*** CardWidget ***/
 CardWidget::CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
