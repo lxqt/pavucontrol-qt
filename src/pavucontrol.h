@@ -18,38 +18,20 @@
   along with pavucontrol. If not, see <http://www.gnu.org/licenses/>.
 ***/
 
-#ifndef channelwidget_h
-#define channelwidget_h
+#ifndef pavucontrol_h
+#define pavucontrol_h
 
-#include "pavucontrol.h"
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 
-#include <canberra-gtk.h>
+#include <gtkmm.h>
+#include <libglademm.h>
 
-class StreamWidget;
+#include <pulse/pulseaudio.h>
 
-class ChannelWidget : public Gtk::EventBox {
-public:
-    ChannelWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
-    static ChannelWidget* create();
-
-    void setVolume(pa_volume_t volume);
-
-    Gtk::Label *channelLabel;
-    Gtk::Label *volumeLabel;
-    Gtk::HScale *volumeScale;
-
-    int channel;
-    StreamWidget *streamWidget;
-
-    void onVolumeScaleValueChanged();
-
-    bool can_decibel;
-    bool volumeScaleEnabled;
-
-    Glib::ustring beepDevice;
-
-    virtual void set_sensitive(bool enabled);
-};
-
+#ifndef GLADE_FILE
+#define GLADE_FILE "pavucontrol.glade"
+#endif
 
 #endif

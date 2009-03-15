@@ -18,20 +18,15 @@
   along with pavucontrol. If not, see <http://www.gnu.org/licenses/>.
 ***/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
+#include "pavucontrol.h"
 
 #include <signal.h>
 #include <string.h>
 
-#include <gtkmm.h>
-#include <libglademm.h>
 #include <libintl.h>
 
 #include <canberra-gtk.h>
 
-#include <pulse/pulseaudio.h>
 #include <pulse/glib-mainloop.h>
 #include <pulse/ext-stream-restore.h>
 
@@ -39,10 +34,6 @@
 #include "minimalstreamwidget.h"
 #include "channelwidget.h"
 #include "streamwidget.h"
-
-#ifndef GLADE_FILE
-#define GLADE_FILE "pavucontrol.glade"
-#endif
 
 static pa_context *context = NULL;
 static int n_outstanding = 0;

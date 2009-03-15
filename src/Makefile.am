@@ -28,7 +28,8 @@ pavucontrol_SOURCES= \
   minimalstreamwidget.h minimalstreamwidget.cc \
   channelwidget.h channelwidget.cc \
   streamwidget.h streamwidget.cc \
-  pavucontrol.cc i18n.h
+  pavucontrol.h pavucontrol.cc \
+  i18n.h
 
 pavucontrol_LDADD=$(AM_LDADD) $(GUILIBS_LIBS) $(PULSE_LIBS)
 pavucontrol_CXXFLAGS=$(AM_CXXFLAGS) $(GUILIBS_CFLAGS) $(PULSE_CFLAGS) -DLOCALEDIR=\"$(localedir)\"

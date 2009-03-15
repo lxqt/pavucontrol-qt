@@ -21,14 +21,7 @@
 #ifndef streamwidget_h
 #define streamwidget_h
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
-#include <gtkmm.h>
-#include <libglademm.h>
-
-#include <pulse/pulseaudio.h>
+#include "pavucontrol.h"
 
 #include "minimalstreamwidget.h"
 

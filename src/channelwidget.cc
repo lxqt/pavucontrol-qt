@@ -21,6 +21,8 @@
 #include "channelwidget.h"
 #include "streamwidget.h"
 
+#include "i18n.h"
+
 static bool show_decibel = true;
 
 /*** ChannelWidget ***/
