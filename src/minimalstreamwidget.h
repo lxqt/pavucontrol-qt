@@ -21,6 +21,10 @@
 #ifndef minimalstreamwidget_h
 #define minimalstreamwidget_h
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <gtkmm.h>
 #include <libglademm.h>
 
