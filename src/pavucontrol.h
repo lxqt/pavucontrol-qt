@@ -34,4 +34,7 @@
 #define GLADE_FILE "pavucontrol.glade"
 #endif
 
+pa_context* get_context(void);
+void show_error(const char *txt);
+
 #endif

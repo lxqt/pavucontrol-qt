@@ -34,6 +34,7 @@
 #include "minimalstreamwidget.h"
 #include "channelwidget.h"
 #include "streamwidget.h"
+#include "cardwidget.h"
 
 static pa_context *context = NULL;
 static int n_outstanding = 0;
@@ -65,48 +66,6 @@ enum SourceType{
 };
 
 class MainWindow;
-
-class CardWidget : public Gtk::VBox {
-public:
-    CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
-    static CardWidget* create();
-
-    Gtk::Label *nameLabel;
-    Gtk::ToggleButton *streamToggleButton;
-    Gtk::Menu menu;
-    Gtk::Image *iconImage;
-    Glib::ustring name;
-    uint32_t index;
-    bool updating;
-
-    std::map<Glib::ustring,Glib::ustring> profiles;
-    Glib::ustring activeProfile;
-    bool hasSinks;
-    bool hasSources;
-
-    void prepareMenu();
-
-protected:
-  virtual void onProfileChange();
-
-  //Tree model columns:
-  class ModelColumns : public Gtk::TreeModel::ColumnRecord
-  {
-  public:
-
-    ModelColumns()
-    { add(name); add(desc); }
-
-    Gtk::TreeModelColumn<Glib::ustring> name;
-    Gtk::TreeModelColumn<Glib::ustring> desc;
-  };
-
-  ModelColumns profileModel;
-
-  //Child widgets:
-  Gtk::ComboBox *profileList;
-  Glib::RefPtr<Gtk::ListStore> treeModel;
-};
 
 class SinkWidget : public StreamWidget {
 public:
@@ -306,73 +265,6 @@ void show_error(const char *txt) {
     dialog.run();
 
     Gtk::Main::quit();
-}
-
-/*** CardWidget ***/
-CardWidget::CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    Gtk::VBox(cobject) {
-
-    x->get_widget("nameLabel", nameLabel);
-    x->get_widget("profileList", profileList);
-    x->get_widget("iconImage", iconImage);
-
-    treeModel = Gtk::ListStore::create(profileModel);
-    profileList->set_model(treeModel);
-    profileList->pack_start(profileModel.desc);
-
-    profileList->signal_changed().connect( sigc::mem_fun(*this, &CardWidget::onProfileChange));
-}
-
-CardWidget* CardWidget::create() {
-    CardWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "cardWidget");
-    x->get_widget_derived("cardWidget", w);
-    return w;
-}
-
-
-void CardWidget::prepareMenu() {
-    int idx = 0;
-    int active_idx = -1;
-
-    treeModel->clear();
-    //Fill the ComboBox's Tree Model:
-    for (std::map<Glib::ustring, Glib::ustring>::iterator i = profiles.begin(); i != profiles.end(); ++i) {
-        Gtk::TreeModel::Row row = *(treeModel->append());
-        row[profileModel.name] = i->first;
-        row[profileModel.desc] = i->second;
-        if (i->first == activeProfile)
-          active_idx = idx;
-        idx++;
-    }
-
-    if (active_idx >= 0)
-        profileList->set_active(active_idx);
-}
-
-void CardWidget::onProfileChange() {
-    Gtk::TreeModel::iterator iter;
-
-    if (updating)
-        return;
-
-    iter = profileList->get_active();
-    if (iter)
-    {
-        Gtk::TreeModel::Row row = *iter;
-        if (row)
-        {
-          pa_operation* o;
-          Glib::ustring profile = row[profileModel.name];
-
-          if (!(o = pa_context_set_card_profile_by_index(context, index, profile.c_str(), NULL, NULL))) {
-              show_error(_("pa_context_set_card_profile_by_index() failed"));
-              return;
-          }
-
-          pa_operation_unref(o);
-        }
-    }
 }
 
 
@@ -1896,6 +1788,10 @@ void context_state_callback(pa_context *c, void *userdata) {
             Gtk::Main::quit();
             return;
     }
+}
+
+pa_context* get_context(void) {
+  return context;
 }
 
 int main(int argc, char *argv[]) {
