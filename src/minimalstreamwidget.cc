@@ -35,15 +35,12 @@ MinimalStreamWidget::MinimalStreamWidget(BaseObjectType* cobject, const Glib::Re
     x->get_widget("channelsVBox", channelsVBox);
     x->get_widget("nameLabel", nameLabel);
     x->get_widget("boldNameLabel", boldNameLabel);
-    x->get_widget("streamToggle", streamToggleButton);
     x->get_widget("iconImage", iconImage);
 
     peakProgressBar.set_size_request(-1, 10);
     channelsVBox->pack_end(peakProgressBar, false, false);
 
-    streamToggleButton->set_active(false);
-    streamToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &MinimalStreamWidget::onStreamToggleButton));
-    menu.signal_deactivate().connect(sigc::mem_fun(*this, &MinimalStreamWidget::onMenuDeactivated));
+    //menu.signal_deactivate().connect(sigc::mem_fun(*this, &MinimalStreamWidget::onMenuDeactivated));
 
     peakProgressBar.hide();
 }
@@ -52,30 +49,34 @@ void MinimalStreamWidget::prepareMenu(void) {
 }
 
 void MinimalStreamWidget::onMenuDeactivated(void) {
-    streamToggleButton->set_active(false);
+    //streamToggleButton->set_active(false);
 }
 
 void MinimalStreamWidget::popupMenuPosition(int& x, int& y, bool& push_in G_GNUC_UNUSED) {
+/*
     Gtk::Requisition  r;
 
     streamToggleButton->get_window()->get_origin(x, y);
     r = menu.size_request();
 
-    /* Align the right side of the menu with the right side of the togglebutton */
+    // Align the right side of the menu with the right side of the togglebutton
     x += streamToggleButton->get_allocation().get_x();
     x += streamToggleButton->get_allocation().get_width();
     x -= r.width;
 
-    /* Align the top of the menu with the buttom of the togglebutton */
+    // Align the top of the menu with the buttom of the togglebutton
     y += streamToggleButton->get_allocation().get_y();
     y += streamToggleButton->get_allocation().get_height();
+*/
 }
 
 void MinimalStreamWidget::onStreamToggleButton(void) {
+/*
     if (streamToggleButton->get_active()) {
         prepareMenu();
         menu.popup(sigc::mem_fun(*this, &MinimalStreamWidget::popupMenuPosition), 0, gtk_get_current_event_time());
     }
+*/
 }
 
 bool MinimalStreamWidget::on_button_press_event (GdkEventButton* event) {

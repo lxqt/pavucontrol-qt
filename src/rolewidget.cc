@@ -32,7 +32,7 @@ RoleWidget::RoleWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     StreamWidget(cobject, x) {
 
     lockToggleButton->hide();
-    streamToggleButton->hide();
+    streamControlHBox->hide();
 }
 
 RoleWidget* RoleWidget::create() {
@@ -46,6 +46,9 @@ void RoleWidget::onMuteToggleButton() {
     StreamWidget::onMuteToggleButton();
 
     executeVolumeUpdate();
+}
+
+void RoleWidget::onDeviceChange() {
 }
 
 void RoleWidget::executeVolumeUpdate() {

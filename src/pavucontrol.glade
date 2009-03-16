@@ -613,13 +613,13 @@ Monitors</property>
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkHBox" id="hbox2">
+                  <widget class="GtkHBox" id="streamControlHBox">
                     <property name="visible">True</property>
                     <child>
                       <widget class="GtkLabel" id="directionLabel">
                         <property name="visible">True</property>
                         <property name="xalign">0</property>
-                        <property name="label" translatable="yes">&lt;i&gt;Playing on &lt;/i&gt;</property>
+                        <property name="label" translatable="yes">direction</property>
                         <property name="use_markup">True</property>
                       </widget>
                       <packing>

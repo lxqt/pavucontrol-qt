@@ -36,12 +36,16 @@ public:
     virtual void updateChannelVolume(int channel, pa_volume_t v);
 
     Gtk::ToggleButton *lockToggleButton, *muteToggleButton;
+    Gtk::Button *terminateButton;
+    Gtk::Label *directionLabel;
+    Gtk::HBox *streamControlHBox;
 
     pa_channel_map channelMap;
     pa_cvolume volume;
 
     ChannelWidget *channelWidgets[PA_CHANNELS_MAX];
 
+    virtual void onDeviceChange() = 0;
     virtual void onMuteToggleButton();
 
     sigc::connection timeoutConnection;
@@ -51,6 +55,9 @@ public:
     virtual void executeVolumeUpdate();
     virtual void setBaseVolume(pa_volume_t v);
     virtual void setSteps(unsigned n);
+
+protected:
+  Gtk::ComboBox *deviceCombo;
 };
 
 #endif

@@ -29,7 +29,6 @@ public:
     static CardWidget* create();
 
     Gtk::Label *nameLabel;
-    Gtk::ToggleButton *streamToggleButton;
     Gtk::Menu menu;
     Gtk::Image *iconImage;
     Glib::ustring name;

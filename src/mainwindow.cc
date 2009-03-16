@@ -86,6 +86,9 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     sourceOutputTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceOutputTypeComboBoxChanged));
     sinkTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkTypeComboBoxChanged));
     sourceTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceTypeComboBoxChanged));
+
+    sinkTree = Gtk::ListStore::create(deviceColumns);
+    sourceTree = Gtk::ListStore::create(deviceColumns);
 }
 
 MainWindow* MainWindow::create() {
@@ -176,6 +179,29 @@ void MainWindow::updateCard(const pa_card_info &info) {
         updateDeviceVisibility();
 }
 
+void MainWindow::rebuildSinkCombo() {
+    //int active_idx = -1;
+    Gtk::TreeModel::Row row;
+
+    // Update our sinkTree
+    sinkTree->clear();
+    row = *(sinkTree->append());
+    row[deviceColumns.index] = -1;
+    row[deviceColumns.name] = "Default Output";
+
+    for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
+        Gtk::TreeModel::Row row = *(sinkTree->append());
+        row[deviceColumns.index] = i->first;
+        row[deviceColumns.name] = i->second->description.c_str();
+        /*if (i->first == activeProfile)
+          active_idx = idx;
+        idx++;*/
+    }
+
+    /*if (active_idx >= 0)
+        sinkTree->set_active(active_idx);*/
+}
+
 void MainWindow::updateSink(const pa_sink_info &info) {
     SinkWidget *w;
     bool is_new = false;
@@ -218,6 +244,7 @@ void MainWindow::updateSink(const pa_sink_info &info) {
 
     w->updating = false;
 
+    rebuildSinkCombo();
     if (is_new)
         updateDeviceVisibility();
 }
@@ -323,6 +350,29 @@ void MainWindow::createMonitorStreamForSinkInput(uint32_t sink_input_idx, uint32
     }
 }
 
+void MainWindow::rebuildSourceCombo() {
+    //int active_idx = -1;
+    Gtk::TreeModel::Row row;
+
+    // Update our sinkTree
+    sourceTree->clear();
+    row = *(sourceTree->append());
+    row[deviceColumns.index] = -1;
+    row[deviceColumns.name] = "Default Input";
+
+    for (std::map<uint32_t, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
+        Gtk::TreeModel::Row row = *(sourceTree->append());
+        row[deviceColumns.index] = i->first;
+        row[deviceColumns.name] = i->second->description.c_str();
+        /*if (i->first == activeProfile)
+          active_idx = idx;
+        idx++;*/
+    }
+
+    /*if (active_idx >= 0)
+        sourceTree->set_active(active_idx);*/
+}
+
 void MainWindow::updateSource(const pa_source_info &info) {
     SourceWidget *w;
     bool is_new = false;
@@ -366,6 +416,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
 
     w->updating = false;
 
+    rebuildSourceCombo();
     if (is_new)
         updateDeviceVisibility();
 }
@@ -784,6 +835,7 @@ void MainWindow::removeSink(uint32_t index) {
 
     delete sinkWidgets[index];
     sinkWidgets.erase(index);
+    rebuildSinkCombo();
     updateDeviceVisibility();
 }
 
@@ -793,6 +845,7 @@ void MainWindow::removeSource(uint32_t index) {
 
     delete sourceWidgets[index];
     sourceWidgets.erase(index);
+    rebuildSourceCombo();
     updateDeviceVisibility();
 }
 

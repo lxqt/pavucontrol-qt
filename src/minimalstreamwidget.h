@@ -29,7 +29,6 @@ public:
 
     Gtk::VBox *channelsVBox;
     Gtk::Label *nameLabel, *boldNameLabel;
-    Gtk::ToggleButton *streamToggleButton;
     Gtk::Menu menu;
     Gtk::Image *iconImage;
     Gtk::ProgressBar peakProgressBar;
@@ -37,10 +36,12 @@ public:
 
     bool updating;
 
-    void onStreamToggleButton();
-    void onMenuDeactivated();
-    void popupMenuPosition(int& x, int& y, bool& push_in);
+    /**/void onStreamToggleButton();
+    /**/void onMenuDeactivated();
+    /**/void popupMenuPosition(int& x, int& y, bool& push_in);
 
+    virtual void onMuteToggleButton() = 0;
+    virtual void updateChannelVolume(int channel, pa_volume_t v) = 0;
     virtual void prepareMenu(void);
 
     bool volumeMeterEnabled;

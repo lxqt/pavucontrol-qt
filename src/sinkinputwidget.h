@@ -37,6 +37,7 @@ public:
 
     uint32_t index, clientIndex, sinkIndex;
     virtual void executeVolumeUpdate();
+    virtual void onDeviceChange();
     virtual void onMuteToggleButton();
     virtual void onKill();
     virtual void prepareMenu();

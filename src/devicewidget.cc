@@ -19,6 +19,7 @@
 ***/
 
 #include "devicewidget.h"
+#include "channelwidget.h"
 
 /*** DeviceWidget ***/
 DeviceWidget::DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
@@ -41,7 +42,7 @@ void DeviceWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
         cw->beepDevice = beepDevice;
         cw->channel = i;
         cw->can_decibel = can_decibel;
-        cw->streamWidget = this;
+        cw->minimalStreamWidget = this;
         char text[64];
         snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_pretty_string(m.map[i]));
         cw->channelLabel->set_markup(text);

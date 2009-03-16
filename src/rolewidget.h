@@ -33,6 +33,7 @@ public:
     Glib::ustring role;
     Glib::ustring device;
 
+    virtual void onDeviceChange();
     virtual void onMuteToggleButton();
     virtual void executeVolumeUpdate();
 };

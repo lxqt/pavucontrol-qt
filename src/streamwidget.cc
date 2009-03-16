@@ -26,12 +26,18 @@
 #include "channelwidget.h"
 
 /*** StreamWidget ***/
-
 StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     MinimalStreamWidget(cobject, x)  {
 
     x->get_widget("lockToggleButton", lockToggleButton);
     x->get_widget("muteToggleButton", muteToggleButton);
+    x->get_widget("deviceCombo", deviceCombo);
+    x->get_widget("terminateButton", terminateButton);
+    x->get_widget("directionLabel", directionLabel);
+    x->get_widget("streamControlHBox", streamControlHBox);
+
+    //deviceCombo->set_active(false);
+    //deviceCombo->signal_clicked().connect(sigc::mem_fun(*this, &MinimalStreamWidget::onDeviceChange));
 
     muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onMuteToggleButton));
 
@@ -47,7 +53,7 @@ void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
         cw->beepDevice = beepDevice;
         cw->channel = i;
         cw->can_decibel = can_decibel;
-        cw->streamWidget = this;
+        cw->minimalStreamWidget = this;
         char text[64];
         snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_pretty_string(m.map[i]));
         cw->channelLabel->set_markup(text);

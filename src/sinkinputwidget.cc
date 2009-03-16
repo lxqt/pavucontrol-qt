@@ -34,6 +34,8 @@ SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gno
     titleMenuItem(_("_Move Stream..."), true),
     killMenuItem(_("_Terminate Stream"), true) {
 
+    directionLabel->set_label(_("<i>Playing on </i> "));
+
     add_events(Gdk::BUTTON_PRESS_MASK);
 
     menu.append(titleMenuItem);
@@ -112,6 +114,9 @@ void SinkInputWidget::onKill() {
     }
 
     pa_operation_unref(o);
+}
+
+void SinkInputWidget::onDeviceChange() {
 }
 
 void SinkInputWidget::SinkMenuItem::onToggle() {

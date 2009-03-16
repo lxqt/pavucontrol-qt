@@ -23,7 +23,7 @@
 #endif
 
 #include "channelwidget.h"
-#include "streamwidget.h"
+#include "minimalstreamwidget.h"
 
 #include "i18n.h"
 
@@ -83,11 +83,11 @@ void ChannelWidget::onVolumeScaleValueChanged() {
     if (!volumeScaleEnabled)
         return;
 
-    if (streamWidget->updating)
+    if (minimalStreamWidget->updating)
         return;
 
     pa_volume_t volume = (pa_volume_t) ((volumeScale->get_value() * PA_VOLUME_NORM) / 100);
-    streamWidget->updateChannelVolume(channel, volume);
+    minimalStreamWidget->updateChannelVolume(channel, volume);
 
     if (beepDevice != "") {
         ca_context_change_device(ca_gtk_context_get(), beepDevice.c_str());

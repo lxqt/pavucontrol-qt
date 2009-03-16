@@ -25,7 +25,7 @@
 
 #include <canberra-gtk.h>
 
-class StreamWidget;
+class MinimalStreamWidget;
 
 class ChannelWidget : public Gtk::EventBox {
 public:
@@ -39,7 +39,7 @@ public:
     Gtk::HScale *volumeScale;
 
     int channel;
-    StreamWidget *streamWidget;
+    MinimalStreamWidget *minimalStreamWidget;
 
     void onVolumeScaleValueChanged();
 

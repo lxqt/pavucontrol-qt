@@ -29,10 +29,12 @@
 #include "i18n.h"
 
 SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    MinimalStreamWidget(cobject, x),
+    StreamWidget(cobject, x),
     mainWindow(NULL),
     titleMenuItem(_("_Move Stream..."), true),
     killMenuItem(_("_Terminate Stream"), true) {
+
+    directionLabel->set_label(_("<i>Recording from </i> "));
 
     add_events(Gdk::BUTTON_PRESS_MASK);
 
@@ -86,6 +88,9 @@ void SourceOutputWidget::buildMenu() {
 void SourceOutputWidget::prepareMenu(void) {
   clearMenu();
   buildMenu();
+}
+
+void SourceOutputWidget::onDeviceChange() {
 }
 
 void SourceOutputWidget::SourceMenuItem::onToggle() {

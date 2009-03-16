@@ -23,11 +23,11 @@
 
 #include "pavucontrol.h"
 
-#include "minimalstreamwidget.h"
+#include "streamwidget.h"
 
 class MainWindow;
 
-class SourceOutputWidget : public MinimalStreamWidget {
+class SourceOutputWidget : public StreamWidget {
 public:
     SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static SourceOutputWidget* create();
@@ -36,6 +36,7 @@ public:
     SourceOutputType type;
 
     uint32_t index, clientIndex, sourceIndex;
+    virtual void onDeviceChange();
     virtual void onKill();
 
     MainWindow *mainWindow;
