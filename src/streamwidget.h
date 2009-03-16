@@ -45,6 +45,7 @@ public:
 
     ChannelWidget *channelWidgets[PA_CHANNELS_MAX];
 
+    virtual void onKill();
     virtual void onDeviceChange() = 0;
     virtual void onMuteToggleButton();
 

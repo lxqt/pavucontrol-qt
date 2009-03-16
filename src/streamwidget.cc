@@ -39,10 +39,14 @@ StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
     //deviceCombo->set_active(false);
     //deviceCombo->signal_clicked().connect(sigc::mem_fun(*this, &MinimalStreamWidget::onDeviceChange));
 
+    terminateButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onKill));
     muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onMuteToggleButton));
 
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
         channelWidgets[i] = NULL;
+}
+
+void StreamWidget::onKill() {
 }
 
 void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
