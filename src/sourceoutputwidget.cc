@@ -30,9 +30,9 @@
 
 SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     StreamWidget(cobject, x),
-    mainWindow(NULL),
     titleMenuItem(_("_Move Stream..."), true),
-    killMenuItem(_("_Terminate Stream"), true) {
+    killMenuItem(_("_Terminate Stream"), true),
+    mpMainWindow(NULL) {
 
     directionLabel->set_label(_("<i>Recording from </i> "));
 
@@ -45,14 +45,20 @@ SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefP
     killMenuItem.signal_activate().connect(sigc::mem_fun(*this, &SourceOutputWidget::onKill));
 }
 
+void SourceOutputWidget::init(MainWindow* mainWindow) {
+    mpMainWindow = mainWindow;
+    deviceCombo->set_model(mpMainWindow->sourceTree);
+}
+
 SourceOutputWidget::~SourceOutputWidget() {
     clearMenu();
 }
 
-SourceOutputWidget* SourceOutputWidget::create() {
+SourceOutputWidget* SourceOutputWidget::create(MainWindow* mainWindow) {
     SourceOutputWidget* w;
     Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "streamWidget");
     x->get_widget_derived("streamWidget", w);
+    w->init(mainWindow);
     return w;
 }
 
@@ -76,7 +82,7 @@ void SourceOutputWidget::clearMenu() {
 }
 
 void SourceOutputWidget::buildMenu() {
-    for (std::map<uint32_t, SourceWidget*>::iterator i = mainWindow->sourceWidgets.begin(); i != mainWindow->sourceWidgets.end(); ++i) {
+    for (std::map<uint32_t, SourceWidget*>::iterator i = mpMainWindow->sourceWidgets.begin(); i != mpMainWindow->sourceWidgets.end(); ++i) {
         SourceMenuItem *m;
         sourceMenuItems[i->second->index] = m = new SourceMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == sourceIndex);
         submenu.append(m->menuItem);

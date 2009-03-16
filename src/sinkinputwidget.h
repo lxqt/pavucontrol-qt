@@ -30,8 +30,10 @@ class MainWindow;
 class SinkInputWidget : public StreamWidget {
 public:
     SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
-    static SinkInputWidget* create();
+    static SinkInputWidget* create(MainWindow* mainWindow);
     virtual ~SinkInputWidget();
+
+    void init(MainWindow* mainWindow);
 
     SinkInputType type;
 
@@ -42,7 +44,6 @@ public:
     virtual void onKill();
     virtual void prepareMenu();
 
-    MainWindow *mainWindow;
     Gtk::Menu submenu;
     Gtk::MenuItem titleMenuItem, killMenuItem;
 
@@ -66,6 +67,10 @@ public:
 
     void clearMenu();
     void buildMenu();
+
+private:
+    MainWindow *mpMainWindow;
+
 };
 
 #endif

@@ -469,12 +469,11 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
     if (sinkInputWidgets.count(info.index))
         w = sinkInputWidgets[info.index];
     else {
-        sinkInputWidgets[info.index] = w = SinkInputWidget::create();
+        sinkInputWidgets[info.index] = w = SinkInputWidget::create(this);
         w->setChannelMap(info.channel_map, true);
         streamsVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
         w->clientIndex = info.client;
-        w->mainWindow = this;
         is_new = true;
 
         if (pa_context_get_server_protocol_version(get_context()) >= 13)
@@ -521,11 +520,10 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
     if (sourceOutputWidgets.count(info.index))
         w = sourceOutputWidgets[info.index];
     else {
-        sourceOutputWidgets[info.index] = w = SourceOutputWidget::create();
+        sourceOutputWidgets[info.index] = w = SourceOutputWidget::create(this);
         recsVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
         w->clientIndex = info.client;
-        w->mainWindow = this;
     }
 
     w->updating = true;

@@ -30,8 +30,10 @@ class MainWindow;
 class SourceOutputWidget : public StreamWidget {
 public:
     SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
-    static SourceOutputWidget* create();
+    static SourceOutputWidget* create(MainWindow* mainWindow);
     virtual ~SourceOutputWidget();
+
+    void init(MainWindow* mainWindow);
 
     SourceOutputType type;
 
@@ -39,7 +41,6 @@ public:
     virtual void onDeviceChange();
     virtual void onKill();
 
-    MainWindow *mainWindow;
     Gtk::Menu submenu;
     Gtk::MenuItem titleMenuItem, killMenuItem;
 
@@ -64,6 +65,10 @@ public:
     void clearMenu();
     void buildMenu();
     virtual void prepareMenu();
+
+private:
+    MainWindow *mpMainWindow;
+
 };
 
 #endif

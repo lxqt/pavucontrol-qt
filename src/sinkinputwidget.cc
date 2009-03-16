@@ -30,9 +30,9 @@
 
 SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     StreamWidget(cobject, x),
-    mainWindow(NULL),
     titleMenuItem(_("_Move Stream..."), true),
-    killMenuItem(_("_Terminate Stream"), true) {
+    killMenuItem(_("_Terminate Stream"), true),
+    mpMainWindow(NULL) {
 
     directionLabel->set_label(_("<i>Playing on </i> "));
 
@@ -45,14 +45,20 @@ SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gno
     killMenuItem.signal_activate().connect(sigc::mem_fun(*this, &SinkInputWidget::onKill));
 }
 
+void SinkInputWidget::init(MainWindow* mainWindow) {
+    mpMainWindow = mainWindow;
+    deviceCombo->set_model(mpMainWindow->sinkTree);
+}
+
 SinkInputWidget::~SinkInputWidget() {
     clearMenu();
 }
 
-SinkInputWidget* SinkInputWidget::create() {
+SinkInputWidget* SinkInputWidget::create(MainWindow* mainWindow) {
     SinkInputWidget* w;
     Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "streamWidget");
     x->get_widget_derived("streamWidget", w);
+    w->init(mainWindow);
     return w;
 }
 
@@ -97,7 +103,7 @@ void SinkInputWidget::clearMenu() {
 }
 
 void SinkInputWidget::buildMenu() {
-    for (std::map<uint32_t, SinkWidget*>::iterator i = mainWindow->sinkWidgets.begin(); i != mainWindow->sinkWidgets.end(); ++i) {
+    for (std::map<uint32_t, SinkWidget*>::iterator i = mpMainWindow->sinkWidgets.begin(); i != mpMainWindow->sinkWidgets.end(); ++i) {
         SinkMenuItem *m;
         sinkMenuItems[i->second->index] = m = new SinkMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == sinkIndex);
         submenu.append(m->menuItem);
