@@ -36,11 +36,9 @@ public:
     uint32_t index, card_index;
     bool can_decibel;
 
-    Gtk::CheckMenuItem defaultMenuItem;
-
     virtual void onMuteToggleButton();
     virtual void executeVolumeUpdate();
-    virtual void onDefaultToggle();
+    virtual void onDefaultToggleButton();
 };
 
 #endif

@@ -27,15 +27,7 @@
 #include "i18n.h"
 
 SourceWidget::SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    DeviceWidget(cobject, x),
-    defaultMenuItem(_("_Default"), true){
-
-    add_events(Gdk::BUTTON_PRESS_MASK);
-
-    defaultMenuItem.set_active(false);
-    defaultMenuItem.signal_toggled().connect(sigc::mem_fun(*this, &SourceWidget::onDefaultToggle));
-    menu.append(defaultMenuItem);
-    menu.show_all();
+    DeviceWidget(cobject, x) {
 }
 
 SourceWidget* SourceWidget::create() {
@@ -71,8 +63,10 @@ void SourceWidget::onMuteToggleButton() {
     pa_operation_unref(o);
 }
 
-void SourceWidget::onDefaultToggle() {
+void SourceWidget::onDefaultToggleButton() {
     pa_operation* o;
+
+    DeviceWidget::onDefaultToggleButton();
 
     if (updating)
         return;

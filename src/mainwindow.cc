@@ -245,7 +245,8 @@ void MainWindow::updateSink(const pa_sink_info &info) {
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
 
-    w->defaultMenuItem.set_active(w->name == defaultSinkName);
+    w->defaultToggleButton->set_active(w->name == defaultSinkName);
+    w->defaultToggleButton->set_sensitive(w->name != defaultSinkName);
 
     w->updating = false;
 
@@ -422,7 +423,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
     w->setVolume(info.volume);
     w->muteToggleButton->set_active(info.mute);
 
-    w->defaultMenuItem.set_active(w->name == defaultSourceName);
+    w->defaultToggleButton->set_active(w->name == defaultSourceName);
+    w->defaultToggleButton->set_sensitive(w->name != defaultSourceName);
 
     w->updating = false;
 
@@ -592,7 +594,9 @@ void MainWindow::updateServer(const pa_server_info &info) {
             continue;
 
         w->updating = true;
-        w->defaultMenuItem.set_active(w->name == defaultSinkName);
+        w->defaultToggleButton->set_active(w->name == defaultSinkName);
+        w->defaultToggleButton->set_sensitive(w->name != defaultSinkName);
+
         w->updating = false;
     }
 
@@ -603,7 +607,8 @@ void MainWindow::updateServer(const pa_server_info &info) {
             continue;
 
         w->updating = true;
-        w->defaultMenuItem.set_active(w->name == defaultSourceName);
+        w->defaultToggleButton->set_active(w->name == defaultSourceName);
+        w->defaultToggleButton->set_sensitive(w->name != defaultSourceName);
         w->updating = false;
     }
 }

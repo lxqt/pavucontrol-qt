@@ -45,9 +45,9 @@ public:
 
     ChannelWidget *channelWidgets[PA_CHANNELS_MAX];
 
-    virtual void onKill();
-    virtual void onDeviceChange() = 0;
     virtual void onMuteToggleButton();
+    virtual void onDeviceChange() = 0;
+    virtual void onKill();
 
     sigc::connection timeoutConnection;
 
@@ -59,6 +59,8 @@ public:
 
 protected:
   Gtk::ComboBox *deviceCombo;
+
+  bool mSuppressDeviceChange;
 };
 
 #endif

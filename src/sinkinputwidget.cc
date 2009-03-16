@@ -30,25 +30,15 @@
 
 SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     StreamWidget(cobject, x),
-    titleMenuItem(_("_Move Stream..."), true),
     mpMainWindow(NULL) {
 
     directionLabel->set_label(_("<i>Playing on </i> "));
-
-    add_events(Gdk::BUTTON_PRESS_MASK);
-
-    menu.append(titleMenuItem);
-    titleMenuItem.set_submenu(submenu);
 }
 
 void SinkInputWidget::init(MainWindow* mainWindow) {
     mpMainWindow = mainWindow;
     deviceCombo->set_model(mpMainWindow->sinkTree);
     deviceCombo->pack_start(mpMainWindow->deviceColumns.name);
-}
-
-SinkInputWidget::~SinkInputWidget() {
-    clearMenu();
 }
 
 SinkInputWidget* SinkInputWidget::create(MainWindow* mainWindow) {
@@ -61,7 +51,10 @@ SinkInputWidget* SinkInputWidget::create(MainWindow* mainWindow) {
 
 void SinkInputWidget::setSinkIndex(uint32_t idx) {
     mSinkIndex = idx;
+
+    mSuppressDeviceChange = true;
     deviceCombo->set_active(mpMainWindow->sinkTreeIndexes[idx]);
+    mSuppressDeviceChange = false;
 }
 
 uint32_t SinkInputWidget::sinkIndex() {
@@ -94,30 +87,6 @@ void SinkInputWidget::onMuteToggleButton() {
     pa_operation_unref(o);
 }
 
-void SinkInputWidget::prepareMenu() {
-  clearMenu();
-  buildMenu();
-}
-
-void SinkInputWidget::clearMenu() {
-
-    while (!sinkMenuItems.empty()) {
-        std::map<uint32_t, SinkMenuItem*>::iterator i = sinkMenuItems.begin();
-        delete i->second;
-        sinkMenuItems.erase(i);
-    }
-}
-
-void SinkInputWidget::buildMenu() {
-    for (std::map<uint32_t, SinkWidget*>::iterator i = mpMainWindow->sinkWidgets.begin(); i != mpMainWindow->sinkWidgets.end(); ++i) {
-        SinkMenuItem *m;
-        sinkMenuItems[i->second->index] = m = new SinkMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == mSinkIndex);
-        submenu.append(m->menuItem);
-    }
-
-    menu.show_all();
-}
-
 void SinkInputWidget::onKill() {
     pa_operation* o;
     if (!(o = pa_context_kill_sink_input(get_context(), index, NULL, NULL))) {
@@ -129,21 +98,26 @@ void SinkInputWidget::onKill() {
 }
 
 void SinkInputWidget::onDeviceChange() {
-}
+    Gtk::TreeModel::iterator iter;
 
-void SinkInputWidget::SinkMenuItem::onToggle() {
-
-    if (widget->updating)
+    if (updating || mSuppressDeviceChange)
         return;
 
-    if (!menuItem.get_active())
-        return;
+    iter = deviceCombo->get_active();
+    if (iter)
+    {
+        Gtk::TreeModel::Row row = *iter;
+        if (row)
+        {
+          pa_operation* o;
+          uint32_t sink_index = row[mpMainWindow->deviceColumns.index];
 
-    pa_operation* o;
-    if (!(o = pa_context_move_sink_input_by_index(get_context(), widget->index, index, NULL, NULL))) {
-        show_error(_("pa_context_move_sink_input_by_index() failed"));
-        return;
+          if (!(o = pa_context_move_sink_input_by_index(get_context(), index, sink_index, NULL, NULL))) {
+              show_error(_("pa_context_move_sink_input_by_index() failed"));
+              return;
+          }
+
+          pa_operation_unref(o);
+        }
     }
-
-    pa_operation_unref(o);
 }

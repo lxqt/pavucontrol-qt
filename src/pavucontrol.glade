@@ -786,11 +786,11 @@ Monitors</property>
                           </packing>
                         </child>
                         <child>
-                          <widget class="GtkToggleButton" id="defaultToggle">
+                          <widget class="GtkToggleButton" id="defaultToggleButton">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
-                            <property name="tooltip" translatable="yes">Open menu</property>
+                            <property name="tooltip" translatable="yes">Set as default</property>
                             <child>
                               <widget class="GtkHBox" id="hbox2">
                                 <property name="visible">True</property>
