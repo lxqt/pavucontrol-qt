@@ -31,6 +31,8 @@ pavucontrol_SOURCES= \
   cardwidget.h cardwidget.cc \
   sinkwidget.h sinkwidget.cc \
   sourcewidget.h sourcewidget.cc \
+  sinkinputwidget.h sinkinputwidget.cc \
+  mainwindow.h \
   pavucontrol.h pavucontrol.cc \
   i18n.h
 

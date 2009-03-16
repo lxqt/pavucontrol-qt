@@ -37,51 +37,11 @@
 #include "cardwidget.h"
 #include "sinkwidget.h"
 #include "sourcewidget.h"
+#include "sinkinputwidget.h"
+#include "mainwindow.h"
 
 static pa_context *context = NULL;
 static int n_outstanding = 0;
-
-class MainWindow;
-
-class SinkInputWidget : public StreamWidget {
-public:
-    SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
-    static SinkInputWidget* create();
-    virtual ~SinkInputWidget();
-
-    SinkInputType type;
-
-    uint32_t index, clientIndex, sinkIndex;
-    virtual void executeVolumeUpdate();
-    virtual void onMuteToggleButton();
-    virtual void onKill();
-    virtual void prepareMenu();
-
-    MainWindow *mainWindow;
-    Gtk::Menu submenu;
-    Gtk::MenuItem titleMenuItem, killMenuItem;
-
-    struct SinkMenuItem {
-        SinkMenuItem(SinkInputWidget *w, const char *label, uint32_t i, bool active) :
-            widget(w),
-            menuItem(label),
-            index(i) {
-            menuItem.set_active(active);
-            menuItem.set_draw_as_radio(true);
-            menuItem.signal_toggled().connect(sigc::mem_fun(*this, &SinkMenuItem::onToggle));
-        }
-
-        SinkInputWidget *widget;
-        Gtk::CheckMenuItem menuItem;
-        uint32_t index;
-        void onToggle();
-    };
-
-    std::map<uint32_t, SinkMenuItem*> sinkMenuItems;
-
-    void clearMenu();
-    void buildMenu();
-};
 
 class SourceOutputWidget : public MinimalStreamWidget {
 public:
@@ -133,69 +93,6 @@ public:
     virtual void executeVolumeUpdate();
 };
 
-class MainWindow : public Gtk::Window {
-public:
-    MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
-    static MainWindow* create();
-    virtual ~MainWindow();
-
-    void updateCard(const pa_card_info &info);
-    void updateSink(const pa_sink_info &info);
-    void updateSource(const pa_source_info &info);
-    void updateSinkInput(const pa_sink_input_info &info);
-    void updateSourceOutput(const pa_source_output_info &info);
-    void updateClient(const pa_client_info &info);
-    void updateServer(const pa_server_info &info);
-    void updateVolumeMeter(uint32_t source_index, uint32_t sink_input_index, double v);
-    void updateRole(const pa_ext_stream_restore_info &info);
-
-    void removeCard(uint32_t index);
-    void removeSink(uint32_t index);
-    void removeSource(uint32_t index);
-    void removeSinkInput(uint32_t index);
-    void removeSourceOutput(uint32_t index);
-    void removeClient(uint32_t index);
-
-    Gtk::Notebook *notebook;
-    Gtk::VBox *streamsVBox, *recsVBox, *sinksVBox, *sourcesVBox, *cardsVBox;
-    Gtk::Label *noStreamsLabel, *noRecsLabel, *noSinksLabel, *noSourcesLabel, *noCardsLabel;
-    Gtk::ComboBox *sinkInputTypeComboBox, *sourceOutputTypeComboBox, *sinkTypeComboBox, *sourceTypeComboBox;
-
-    std::map<uint32_t, CardWidget*> cardWidgets;
-    std::map<uint32_t, SinkWidget*> sinkWidgets;
-    std::map<uint32_t, SourceWidget*> sourceWidgets;
-    std::map<uint32_t, SinkInputWidget*> sinkInputWidgets;
-    std::map<uint32_t, SourceOutputWidget*> sourceOutputWidgets;
-    std::map<uint32_t, char*> clientNames;
-
-    SinkInputType showSinkInputType;
-    SinkType showSinkType;
-    SourceOutputType showSourceOutputType;
-    SourceType showSourceType;
-
-    virtual void onSinkInputTypeComboBoxChanged();
-    virtual void onSourceOutputTypeComboBoxChanged();
-    virtual void onSinkTypeComboBoxChanged();
-    virtual void onSourceTypeComboBoxChanged();
-
-    void updateDeviceVisibility();
-    void reallyUpdateDeviceVisibility();
-    void createMonitorStreamForSource(uint32_t source_idx);
-    void createMonitorStreamForSinkInput(uint32_t sink_input_idx, uint32_t sink_idx);
-
-    void setIconFromProplist(Gtk::Image *icon, pa_proplist *l, const char *name);
-
-    RoleWidget *eventRoleWidget;
-
-    bool createEventRoleWidget();
-    void deleteEventRoleWidget();
-
-    Glib::ustring defaultSinkName, defaultSourceName;
-
-protected:
-    virtual void on_realize();
-};
-
 void show_error(const char *txt) {
     char buf[256];
 
@@ -207,109 +104,6 @@ void show_error(const char *txt) {
     Gtk::Main::quit();
 }
 
-
-SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    StreamWidget(cobject, x),
-    mainWindow(NULL),
-    titleMenuItem(_("_Move Stream..."), true),
-    killMenuItem(_("_Terminate Stream"), true) {
-
-    add_events(Gdk::BUTTON_PRESS_MASK);
-
-    menu.append(titleMenuItem);
-    titleMenuItem.set_submenu(submenu);
-
-    menu.append(killMenuItem);
-    killMenuItem.signal_activate().connect(sigc::mem_fun(*this, &SinkInputWidget::onKill));
-}
-
-SinkInputWidget::~SinkInputWidget() {
-    clearMenu();
-}
-
-SinkInputWidget* SinkInputWidget::create() {
-    SinkInputWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "streamWidget");
-    x->get_widget_derived("streamWidget", w);
-    return w;
-}
-
-void SinkInputWidget::executeVolumeUpdate() {
-    pa_operation* o;
-
-    if (!(o = pa_context_set_sink_input_volume(context, index, &volume, NULL, NULL))) {
-        show_error(_("pa_context_set_sink_input_volume() failed"));
-        return;
-    }
-
-    pa_operation_unref(o);
-}
-
-void SinkInputWidget::onMuteToggleButton() {
-    StreamWidget::onMuteToggleButton();
-
-    if (updating)
-        return;
-
-    pa_operation* o;
-    if (!(o = pa_context_set_sink_input_mute(context, index, muteToggleButton->get_active(), NULL, NULL))) {
-        show_error(_("pa_context_set_sink_input_mute() failed"));
-        return;
-    }
-
-    pa_operation_unref(o);
-}
-
-void SinkInputWidget::prepareMenu() {
-  clearMenu();
-  buildMenu();
-}
-
-void SinkInputWidget::clearMenu() {
-
-    while (!sinkMenuItems.empty()) {
-        std::map<uint32_t, SinkMenuItem*>::iterator i = sinkMenuItems.begin();
-        delete i->second;
-        sinkMenuItems.erase(i);
-    }
-}
-
-void SinkInputWidget::buildMenu() {
-    for (std::map<uint32_t, SinkWidget*>::iterator i = mainWindow->sinkWidgets.begin(); i != mainWindow->sinkWidgets.end(); ++i) {
-        SinkMenuItem *m;
-        sinkMenuItems[i->second->index] = m = new SinkMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == sinkIndex);
-        submenu.append(m->menuItem);
-    }
-
-    menu.show_all();
-}
-
-void SinkInputWidget::onKill() {
-    pa_operation* o;
-    if (!(o = pa_context_kill_sink_input(context, index, NULL, NULL))) {
-        show_error(_("pa_context_kill_sink_input() failed"));
-        return;
-    }
-
-    pa_operation_unref(o);
-}
-
-void SinkInputWidget::SinkMenuItem::onToggle() {
-
-    if (widget->updating)
-        return;
-
-    if (!menuItem.get_active())
-        return;
-
-    pa_operation* o;
-    if (!(o = pa_context_move_sink_input_by_index(context, widget->index, index, NULL, NULL))) {
-        show_error(_("pa_context_move_sink_input_by_index() failed"));
-        return;
-    }
-
-    pa_operation_unref(o);
-}
 
 SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     MinimalStreamWidget(cobject, x),
