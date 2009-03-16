@@ -59,6 +59,14 @@ SourceOutputWidget* SourceOutputWidget::create(MainWindow* mainWindow) {
     return w;
 }
 
+void SourceOutputWidget::setSourceIndex(uint32_t idx) {
+    mSourceIndex = idx;
+}
+
+uint32_t SourceOutputWidget::sourceIndex() {
+    return mSourceIndex;
+}
+
 void SourceOutputWidget::onKill() {
     pa_operation* o;
     if (!(o = pa_context_kill_source_output(get_context(), index, NULL, NULL))) {
@@ -81,7 +89,7 @@ void SourceOutputWidget::clearMenu() {
 void SourceOutputWidget::buildMenu() {
     for (std::map<uint32_t, SourceWidget*>::iterator i = mpMainWindow->sourceWidgets.begin(); i != mpMainWindow->sourceWidgets.end(); ++i) {
         SourceMenuItem *m;
-        sourceMenuItems[i->second->index] = m = new SourceMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == sourceIndex);
+        sourceMenuItems[i->second->index] = m = new SourceMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == mSourceIndex);
         submenu.append(m->menuItem);
     }
 

@@ -37,7 +37,9 @@ public:
 
     SinkInputType type;
 
-    uint32_t index, clientIndex, sinkIndex;
+    uint32_t index, clientIndex;
+    void setSinkIndex(uint32_t idx);
+    uint32_t sinkIndex();
     virtual void executeVolumeUpdate();
     virtual void onDeviceChange();
     virtual void onMuteToggleButton();
@@ -70,6 +72,7 @@ public:
 
 private:
     MainWindow *mpMainWindow;
+    uint32_t mSinkIndex;
 
 };
 

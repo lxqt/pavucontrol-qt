@@ -37,7 +37,9 @@ public:
 
     SourceOutputType type;
 
-    uint32_t index, clientIndex, sourceIndex;
+    uint32_t index, clientIndex;
+    void setSourceIndex(uint32_t idx);
+    uint32_t sourceIndex();
     virtual void onDeviceChange();
     virtual void onKill();
 
@@ -68,6 +70,7 @@ public:
 
 private:
     MainWindow *mpMainWindow;
+    uint32_t mSourceIndex;
 
 };
 

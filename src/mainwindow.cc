@@ -484,7 +484,7 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
 
     w->type = info.client != PA_INVALID_INDEX ? SINK_INPUT_CLIENT : SINK_INPUT_VIRTUAL;
 
-    w->sinkIndex = info.sink;
+    w->setSinkIndex(info.sink);
 
     char *txt;
     if (clientNames.count(info.client)) {
@@ -530,7 +530,7 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
 
     w->type = info.client != PA_INVALID_INDEX ? SOURCE_OUTPUT_CLIENT : SOURCE_OUTPUT_VIRTUAL;
 
-    w->sourceIndex = info.source;
+    w->setSourceIndex(info.source);
 
     char *txt;
     if (clientNames.count(info.client)) {
@@ -694,7 +694,7 @@ void MainWindow::updateVolumeMeter(uint32_t source_index, uint32_t sink_input_id
         for (std::map<uint32_t, SourceOutputWidget*>::iterator i = sourceOutputWidgets.begin(); i != sourceOutputWidgets.end(); ++i) {
             SourceOutputWidget* w = i->second;
 
-            if (w->sourceIndex == source_index)
+            if (w->sourceIndex() == source_index)
                 w->updatePeak(v);
         }
     }

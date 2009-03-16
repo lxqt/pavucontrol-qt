@@ -59,6 +59,14 @@ SinkInputWidget* SinkInputWidget::create(MainWindow* mainWindow) {
     return w;
 }
 
+void SinkInputWidget::setSinkIndex(uint32_t idx) {
+    mSinkIndex = idx;
+}
+
+uint32_t SinkInputWidget::sinkIndex() {
+    return mSinkIndex;
+}
+
 void SinkInputWidget::executeVolumeUpdate() {
     pa_operation* o;
 
@@ -102,7 +110,7 @@ void SinkInputWidget::clearMenu() {
 void SinkInputWidget::buildMenu() {
     for (std::map<uint32_t, SinkWidget*>::iterator i = mpMainWindow->sinkWidgets.begin(); i != mpMainWindow->sinkWidgets.end(); ++i) {
         SinkMenuItem *m;
-        sinkMenuItems[i->second->index] = m = new SinkMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == sinkIndex);
+        sinkMenuItems[i->second->index] = m = new SinkMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == mSinkIndex);
         submenu.append(m->menuItem);
     }
 
