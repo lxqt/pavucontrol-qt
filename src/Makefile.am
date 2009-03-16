@@ -30,6 +30,7 @@ pavucontrol_SOURCES= \
   streamwidget.h streamwidget.cc \
   cardwidget.h cardwidget.cc \
   sinkwidget.h sinkwidget.cc \
+  sourcewidget.h sourcewidget.cc \
   pavucontrol.h pavucontrol.cc \
   i18n.h
 

@@ -36,29 +36,12 @@
 #include "streamwidget.h"
 #include "cardwidget.h"
 #include "sinkwidget.h"
+#include "sourcewidget.h"
 
 static pa_context *context = NULL;
 static int n_outstanding = 0;
 
 class MainWindow;
-
-class SourceWidget : public StreamWidget {
-public:
-    SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
-    static SourceWidget* create();
-
-    SourceType type;
-    Glib::ustring name;
-    Glib::ustring description;
-    uint32_t index, card_index;
-    bool can_decibel;
-
-    Gtk::CheckMenuItem defaultMenuItem;
-
-    virtual void onMuteToggleButton();
-    virtual void executeVolumeUpdate();
-    virtual void onDefaultToggle();
-};
 
 class SinkInputWidget : public StreamWidget {
 public:
@@ -224,64 +207,6 @@ void show_error(const char *txt) {
     Gtk::Main::quit();
 }
 
-
-SourceWidget::SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    StreamWidget(cobject, x),
-    defaultMenuItem(_("_Default"), true){
-
-    add_events(Gdk::BUTTON_PRESS_MASK);
-
-    defaultMenuItem.set_active(false);
-    defaultMenuItem.signal_toggled().connect(sigc::mem_fun(*this, &SourceWidget::onDefaultToggle));
-    menu.append(defaultMenuItem);
-    menu.show_all();
-}
-
-SourceWidget* SourceWidget::create() {
-    SourceWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "streamWidget");
-    x->get_widget_derived("streamWidget", w);
-    return w;
-}
-
-void SourceWidget::executeVolumeUpdate() {
-    pa_operation* o;
-
-    if (!(o = pa_context_set_source_volume_by_index(context, index, &volume, NULL, NULL))) {
-        show_error(_("pa_context_set_source_volume_by_index() failed"));
-        return;
-    }
-
-    pa_operation_unref(o);
-}
-
-void SourceWidget::onMuteToggleButton() {
-    StreamWidget::onMuteToggleButton();
-
-    if (updating)
-        return;
-
-    pa_operation* o;
-    if (!(o = pa_context_set_source_mute_by_index(context, index, muteToggleButton->get_active(), NULL, NULL))) {
-        show_error(_("pa_context_set_source_mute_by_index() failed"));
-        return;
-    }
-
-    pa_operation_unref(o);
-}
-
-void SourceWidget::onDefaultToggle() {
-    pa_operation* o;
-
-    if (updating)
-        return;
-
-    if (!(o = pa_context_set_default_source(context, name.c_str(), NULL, NULL))) {
-        show_error(_("pa_context_set_default_source() failed"));
-        return;
-    }
-    pa_operation_unref(o);
-}
 
 SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     StreamWidget(cobject, x),
