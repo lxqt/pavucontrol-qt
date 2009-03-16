@@ -103,8 +103,12 @@ public:
     };
 
     DeviceColumns deviceColumns;
+
     Glib::RefPtr<Gtk::ListStore> sinkTree;
+    std::map<uint32_t, uint32_t> sinkTreeIndexes;
+
     Glib::RefPtr<Gtk::ListStore> sourceTree;
+    std::map<uint32_t, uint32_t> sourceTreeIndexes;
 
 protected:
     virtual void on_realize();

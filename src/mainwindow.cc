@@ -180,26 +180,23 @@ void MainWindow::updateCard(const pa_card_info &info) {
 }
 
 void MainWindow::rebuildSinkCombo() {
-    //int active_idx = -1;
+    uint32_t idx = 0;
     Gtk::TreeModel::Row row;
 
-    // Update our sinkTree
     sinkTree->clear();
+    sinkTreeIndexes.clear();
+
     row = *(sinkTree->append());
+    idx++;
     row[deviceColumns.index] = -1;
     row[deviceColumns.name] = "Default Output";
 
     for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
         Gtk::TreeModel::Row row = *(sinkTree->append());
+        sinkTreeIndexes[i->first] = idx++;
         row[deviceColumns.index] = i->first;
         row[deviceColumns.name] = i->second->description.c_str();
-        /*if (i->first == activeProfile)
-          active_idx = idx;
-        idx++;*/
     }
-
-    /*if (active_idx >= 0)
-        sinkTree->set_active(active_idx);*/
 }
 
 void MainWindow::updateSink(const pa_sink_info &info) {
@@ -351,26 +348,22 @@ void MainWindow::createMonitorStreamForSinkInput(uint32_t sink_input_idx, uint32
 }
 
 void MainWindow::rebuildSourceCombo() {
-    //int active_idx = -1;
+    uint32_t idx = 0;
     Gtk::TreeModel::Row row;
 
-    // Update our sinkTree
     sourceTree->clear();
+    sourceTreeIndexes.clear();
     row = *(sourceTree->append());
+    idx++;
     row[deviceColumns.index] = -1;
     row[deviceColumns.name] = "Default Input";
 
     for (std::map<uint32_t, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
         Gtk::TreeModel::Row row = *(sourceTree->append());
+        sourceTreeIndexes[i->first] = idx++;
         row[deviceColumns.index] = i->first;
         row[deviceColumns.name] = i->second->description.c_str();
-        /*if (i->first == activeProfile)
-          active_idx = idx;
-        idx++;*/
     }
-
-    /*if (active_idx >= 0)
-        sourceTree->set_active(active_idx);*/
 }
 
 void MainWindow::updateSource(const pa_source_info &info) {
