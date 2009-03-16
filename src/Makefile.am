@@ -34,7 +34,7 @@ pavucontrol_SOURCES= \
   sinkinputwidget.h sinkinputwidget.cc \
   sourceoutputwidget.h sourceoutputwidget.cc \
   rolewidget.h rolewidget.cc \
-  mainwindow.h \
+  mainwindow.h mainwindow.cc \
   pavucontrol.h pavucontrol.cc \
   i18n.h
 
