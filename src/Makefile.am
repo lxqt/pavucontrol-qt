@@ -28,6 +28,7 @@ pavucontrol_SOURCES= \
   minimalstreamwidget.h minimalstreamwidget.cc \
   channelwidget.h channelwidget.cc \
   streamwidget.h streamwidget.cc \
+  devicewidget.h devicewidget.cc \
   cardwidget.h cardwidget.cc \
   sinkwidget.h sinkwidget.cc \
   sourcewidget.h sourcewidget.cc \

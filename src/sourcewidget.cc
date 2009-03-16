@@ -27,7 +27,7 @@
 #include "i18n.h"
 
 SourceWidget::SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    StreamWidget(cobject, x),
+    DeviceWidget(cobject, x),
     defaultMenuItem(_("_Default"), true){
 
     add_events(Gdk::BUTTON_PRESS_MASK);
@@ -40,8 +40,8 @@ SourceWidget::SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
 
 SourceWidget* SourceWidget::create() {
     SourceWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "streamWidget");
-    x->get_widget_derived("streamWidget", w);
+    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "deviceWidget");
+    x->get_widget_derived("deviceWidget", w);
     return w;
 }
 
@@ -57,7 +57,7 @@ void SourceWidget::executeVolumeUpdate() {
 }
 
 void SourceWidget::onMuteToggleButton() {
-    StreamWidget::onMuteToggleButton();
+    DeviceWidget::onMuteToggleButton();
 
     if (updating)
         return;

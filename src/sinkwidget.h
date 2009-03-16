@@ -23,9 +23,9 @@
 
 #include "pavucontrol.h"
 
-#include "streamwidget.h"
+#include "devicewidget.h"
 
-class SinkWidget : public StreamWidget {
+class SinkWidget : public DeviceWidget {
 public:
     SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static SinkWidget* create();

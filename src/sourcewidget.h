@@ -23,9 +23,9 @@
 
 #include "pavucontrol.h"
 
-#include "streamwidget.h"
+#include "devicewidget.h"
 
-class SourceWidget : public StreamWidget {
+class SourceWidget : public DeviceWidget {
 public:
     SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static SourceWidget* create();

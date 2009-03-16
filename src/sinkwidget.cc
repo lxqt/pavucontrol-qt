@@ -27,7 +27,7 @@
 #include "i18n.h"
 
 SinkWidget::SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    StreamWidget(cobject, x),
+    DeviceWidget(cobject, x),
     defaultMenuItem("_Default", true){
 
     add_events(Gdk::BUTTON_PRESS_MASK);
@@ -40,8 +40,8 @@ SinkWidget::SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
 
 SinkWidget* SinkWidget::create() {
     SinkWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "streamWidget");
-    x->get_widget_derived("streamWidget", w);
+    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "deviceWidget");
+    x->get_widget_derived("deviceWidget", w);
     return w;
 }
 
@@ -57,7 +57,7 @@ void SinkWidget::executeVolumeUpdate() {
 }
 
 void SinkWidget::onMuteToggleButton() {
-    StreamWidget::onMuteToggleButton();
+    DeviceWidget::onMuteToggleButton();
 
     if (updating)
         return;
