@@ -186,10 +186,12 @@ void MainWindow::rebuildSinkCombo() {
     sinkTree->clear();
     sinkTreeIndexes.clear();
 
+    /*
     row = *(sinkTree->append());
     idx++;
     row[deviceColumns.index] = -1;
     row[deviceColumns.name] = "Default Output";
+    */
 
     for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
         Gtk::TreeModel::Row row = *(sinkTree->append());
@@ -359,10 +361,13 @@ void MainWindow::rebuildSourceCombo() {
 
     sourceTree->clear();
     sourceTreeIndexes.clear();
+
+    /*
     row = *(sourceTree->append());
     idx++;
     row[deviceColumns.index] = -1;
     row[deviceColumns.name] = "Default Input";
+    */
 
     for (std::map<uint32_t, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
         Gtk::TreeModel::Row row = *(sourceTree->append());
