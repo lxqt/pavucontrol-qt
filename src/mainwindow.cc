@@ -197,6 +197,12 @@ void MainWindow::rebuildSinkCombo() {
         row[deviceColumns.index] = i->first;
         row[deviceColumns.name] = i->second->description.c_str();
     }
+
+    /* Force a redraw of the dropdown combo due to the model change. */
+    for (std::map<uint32_t, SinkInputWidget*>::iterator i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
+        SinkInputWidget* w = i->second;
+        w->setSinkIndex(w->sinkIndex());
+    }
 }
 
 void MainWindow::updateSink(const pa_sink_info &info) {
@@ -363,6 +369,12 @@ void MainWindow::rebuildSourceCombo() {
         sourceTreeIndexes[i->first] = idx++;
         row[deviceColumns.index] = i->first;
         row[deviceColumns.name] = i->second->description.c_str();
+    }
+
+    /* Force a redraw of the dropdown combo due to the model change. */
+    for (std::map<uint32_t, SourceOutputWidget*>::iterator i = sourceOutputWidgets.begin(); i != sourceOutputWidgets.end(); ++i) {
+        SourceOutputWidget* w = i->second;
+        w->setSourceIndex(w->sourceIndex());
     }
 }
 

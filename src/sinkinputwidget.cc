@@ -61,6 +61,7 @@ SinkInputWidget* SinkInputWidget::create(MainWindow* mainWindow) {
 
 void SinkInputWidget::setSinkIndex(uint32_t idx) {
     mSinkIndex = idx;
+    deviceCombo->set_active(mpMainWindow->sinkTreeIndexes[idx]);
 }
 
 uint32_t SinkInputWidget::sinkIndex() {

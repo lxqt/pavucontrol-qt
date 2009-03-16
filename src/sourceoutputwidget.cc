@@ -61,6 +61,7 @@ SourceOutputWidget* SourceOutputWidget::create(MainWindow* mainWindow) {
 
 void SourceOutputWidget::setSourceIndex(uint32_t idx) {
     mSourceIndex = idx;
+    deviceCombo->set_active(mpMainWindow->sourceTreeIndexes[idx]);
 }
 
 uint32_t SourceOutputWidget::sourceIndex() {
