@@ -640,6 +640,7 @@ Monitors</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
+                        <property name="tooltip" translatable="yes">Terminate stream</property>
                         <child>
                           <widget class="GtkImage" id="image2">
                             <property name="visible">True</property>
