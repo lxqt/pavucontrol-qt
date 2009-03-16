@@ -35,7 +35,7 @@ public:
     void setVolume(const pa_cvolume &volume, bool force = false);
     virtual void updateChannelVolume(int channel, pa_volume_t v);
 
-    Gtk::ToggleButton *lockToggleButton, *muteToggleButton;
+    Gtk::ToggleButton *lockToggleButton, *muteToggleButton, *defaultToggleButton;
 
     pa_channel_map channelMap;
     pa_cvolume volume;
@@ -43,6 +43,7 @@ public:
     ChannelWidget *channelWidgets[PA_CHANNELS_MAX];
 
     virtual void onMuteToggleButton();
+    virtual void onDefaultToggleButton();
 
     sigc::connection timeoutConnection;
 

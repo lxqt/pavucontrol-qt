@@ -27,8 +27,10 @@ DeviceWidget::DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
 
     x->get_widget("lockToggleButton", lockToggleButton);
     x->get_widget("muteToggleButton", muteToggleButton);
+    x->get_widget("defaultToggleButton", defaultToggleButton);
 
     muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &DeviceWidget::onMuteToggleButton));
+    defaultToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &DeviceWidget::onDefaultToggleButton));
 
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
         channelWidgets[i] = NULL;
@@ -86,6 +88,12 @@ void DeviceWidget::onMuteToggleButton() {
 
     for (int i = 0; i < channelMap.channels; i++)
         channelWidgets[i]->set_sensitive(!muteToggleButton->get_active());
+}
+
+void DeviceWidget::onDefaultToggleButton() {
+    /* Prevent the button being untoggled */
+    if (defaultToggleButton->get_active())
+        defaultToggleButton->set_sensitive(false);
 }
 
 bool DeviceWidget::timeoutEvent() {
