@@ -36,9 +36,7 @@ StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
     x->get_widget("directionLabel", directionLabel);
     x->get_widget("streamControlHBox", streamControlHBox);
 
-    //deviceCombo->set_active(false);
-    //deviceCombo->signal_clicked().connect(sigc::mem_fun(*this, &MinimalStreamWidget::onDeviceChange));
-
+    deviceCombo->signal_changed().connect( sigc::mem_fun(*this, &StreamWidget::onDeviceChange));
     terminateButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onKill));
     muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onMuteToggleButton));
 
