@@ -29,6 +29,7 @@ pavucontrol_SOURCES= \
   channelwidget.h channelwidget.cc \
   streamwidget.h streamwidget.cc \
   cardwidget.h cardwidget.cc \
+  sinkwidget.h sinkwidget.cc \
   pavucontrol.h pavucontrol.cc \
   i18n.h
 

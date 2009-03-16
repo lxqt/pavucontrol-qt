@@ -18,49 +18,29 @@
   along with pavucontrol. If not, see <http://www.gnu.org/licenses/>.
 ***/
 
-#ifndef pavucontrol_h
-#define pavucontrol_h
+#ifndef sinkwidget_h
+#define sinkwidget_h
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
+#include "pavucontrol.h"
 
-#include <gtkmm.h>
-#include <libglademm.h>
+#include "streamwidget.h"
 
-#include <pulse/pulseaudio.h>
+class SinkWidget : public StreamWidget {
+public:
+    SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
+    static SinkWidget* create();
 
-#ifndef GLADE_FILE
-#define GLADE_FILE "pavucontrol.glade"
-#endif
+    SinkType type;
+    Glib::ustring description;
+    Glib::ustring name;
+    uint32_t index, monitor_index, card_index;
+    bool can_decibel;
 
-enum SinkInputType {
-    SINK_INPUT_ALL,
-    SINK_INPUT_CLIENT,
-    SINK_INPUT_VIRTUAL
+    Gtk::CheckMenuItem defaultMenuItem;
+
+    virtual void onMuteToggleButton();
+    virtual void executeVolumeUpdate();
+    virtual void onDefaultToggle();
 };
-
-enum SinkType {
-    SINK_ALL,
-    SINK_HARDWARE,
-    SINK_VIRTUAL,
-};
-
-enum SourceOutputType {
-    SOURCE_OUTPUT_ALL,
-    SOURCE_OUTPUT_CLIENT,
-    SOURCE_OUTPUT_VIRTUAL
-};
-
-enum SourceType {
-    SOURCE_ALL,
-    SOURCE_NO_MONITOR,
-    SOURCE_HARDWARE,
-    SOURCE_VIRTUAL,
-    SOURCE_MONITOR,
-};
-
-pa_context* get_context(void);
-void show_error(const char *txt);
 
 #endif
