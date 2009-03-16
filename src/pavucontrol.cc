@@ -38,48 +38,11 @@
 #include "sinkwidget.h"
 #include "sourcewidget.h"
 #include "sinkinputwidget.h"
+#include "sourceoutputwidget.h"
 #include "mainwindow.h"
 
 static pa_context *context = NULL;
 static int n_outstanding = 0;
-
-class SourceOutputWidget : public MinimalStreamWidget {
-public:
-    SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
-    static SourceOutputWidget* create();
-    virtual ~SourceOutputWidget();
-
-    SourceOutputType type;
-
-    uint32_t index, clientIndex, sourceIndex;
-    virtual void onKill();
-
-    MainWindow *mainWindow;
-    Gtk::Menu submenu;
-    Gtk::MenuItem titleMenuItem, killMenuItem;
-
-    struct SourceMenuItem {
-        SourceMenuItem(SourceOutputWidget *w, const char *label, uint32_t i, bool active) :
-            widget(w),
-            menuItem(label),
-            index(i) {
-            menuItem.set_active(active);
-            menuItem.set_draw_as_radio(true);
-            menuItem.signal_toggled().connect(sigc::mem_fun(*this, &SourceMenuItem::onToggle));
-        }
-
-        SourceOutputWidget *widget;
-        Gtk::CheckMenuItem menuItem;
-        uint32_t index;
-        void onToggle();
-    };
-
-    std::map<uint32_t, SourceMenuItem*> sourceMenuItems;
-
-    void clearMenu();
-    void buildMenu();
-    virtual void prepareMenu();
-};
 
 class RoleWidget : public StreamWidget {
 public:
@@ -104,83 +67,6 @@ void show_error(const char *txt) {
     Gtk::Main::quit();
 }
 
-
-SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    MinimalStreamWidget(cobject, x),
-    mainWindow(NULL),
-    titleMenuItem(_("_Move Stream..."), true),
-    killMenuItem(_("_Terminate Stream"), true) {
-
-    add_events(Gdk::BUTTON_PRESS_MASK);
-
-    menu.append(titleMenuItem);
-    titleMenuItem.set_submenu(submenu);
-
-    menu.append(killMenuItem);
-    killMenuItem.signal_activate().connect(sigc::mem_fun(*this, &SourceOutputWidget::onKill));
-}
-
-SourceOutputWidget::~SourceOutputWidget() {
-    clearMenu();
-}
-
-SourceOutputWidget* SourceOutputWidget::create() {
-    SourceOutputWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "streamWidget");
-    x->get_widget_derived("streamWidget", w);
-    return w;
-}
-
-void SourceOutputWidget::onKill() {
-    pa_operation* o;
-    if (!(o = pa_context_kill_source_output(context, index, NULL, NULL))) {
-        show_error(_("pa_context_kill_source_output() failed"));
-        return;
-    }
-
-    pa_operation_unref(o);
-}
-
-void SourceOutputWidget::clearMenu() {
-
-    while (!sourceMenuItems.empty()) {
-        std::map<uint32_t, SourceMenuItem*>::iterator i = sourceMenuItems.begin();
-        delete i->second;
-        sourceMenuItems.erase(i);
-    }
-}
-
-void SourceOutputWidget::buildMenu() {
-    for (std::map<uint32_t, SourceWidget*>::iterator i = mainWindow->sourceWidgets.begin(); i != mainWindow->sourceWidgets.end(); ++i) {
-        SourceMenuItem *m;
-        sourceMenuItems[i->second->index] = m = new SourceMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == sourceIndex);
-        submenu.append(m->menuItem);
-    }
-
-    menu.show_all();
-}
-
-void SourceOutputWidget::prepareMenu(void) {
-  clearMenu();
-  buildMenu();
-}
-
-void SourceOutputWidget::SourceMenuItem::onToggle() {
-
-    if (widget->updating)
-        return;
-
-    if (!menuItem.get_active())
-        return;
-
-    pa_operation* o;
-    if (!(o = pa_context_move_source_output_by_index(context, widget->index, index, NULL, NULL))) {
-        show_error(_("pa_context_move_source_output_by_index() failed"));
-        return;
-    }
-
-    pa_operation_unref(o);
-}
 
 RoleWidget::RoleWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     StreamWidget(cobject, x) {
