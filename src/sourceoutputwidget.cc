@@ -31,7 +31,6 @@
 SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     StreamWidget(cobject, x),
     titleMenuItem(_("_Move Stream..."), true),
-    killMenuItem(_("_Terminate Stream"), true),
     mpMainWindow(NULL) {
 
     directionLabel->set_label(_("<i>Recording from </i> "));
@@ -40,9 +39,6 @@ SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefP
 
     menu.append(titleMenuItem);
     titleMenuItem.set_submenu(submenu);
-
-    menu.append(killMenuItem);
-    killMenuItem.signal_activate().connect(sigc::mem_fun(*this, &SourceOutputWidget::onKill));
 }
 
 void SourceOutputWidget::init(MainWindow* mainWindow) {

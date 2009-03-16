@@ -42,7 +42,7 @@ public:
     virtual void onKill();
 
     Gtk::Menu submenu;
-    Gtk::MenuItem titleMenuItem, killMenuItem;
+    Gtk::MenuItem titleMenuItem;
 
     struct SourceMenuItem {
         SourceMenuItem(SourceOutputWidget *w, const char *label, uint32_t i, bool active) :

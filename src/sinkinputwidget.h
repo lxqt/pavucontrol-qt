@@ -45,7 +45,7 @@ public:
     virtual void prepareMenu();
 
     Gtk::Menu submenu;
-    Gtk::MenuItem titleMenuItem, killMenuItem;
+    Gtk::MenuItem titleMenuItem;
 
     struct SinkMenuItem {
         SinkMenuItem(SinkInputWidget *w, const char *label, uint32_t i, bool active) :

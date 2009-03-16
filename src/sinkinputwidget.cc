@@ -31,7 +31,6 @@
 SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     StreamWidget(cobject, x),
     titleMenuItem(_("_Move Stream..."), true),
-    killMenuItem(_("_Terminate Stream"), true),
     mpMainWindow(NULL) {
 
     directionLabel->set_label(_("<i>Playing on </i> "));
@@ -40,9 +39,6 @@ SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gno
 
     menu.append(titleMenuItem);
     titleMenuItem.set_submenu(submenu);
-
-    menu.append(killMenuItem);
-    killMenuItem.signal_activate().connect(sigc::mem_fun(*this, &SinkInputWidget::onKill));
 }
 
 void SinkInputWidget::init(MainWindow* mainWindow) {
