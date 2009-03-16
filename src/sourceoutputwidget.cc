@@ -48,6 +48,7 @@ SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefP
 void SourceOutputWidget::init(MainWindow* mainWindow) {
     mpMainWindow = mainWindow;
     deviceCombo->set_model(mpMainWindow->sourceTree);
+    deviceCombo->pack_start(mpMainWindow->deviceColumns.name);
 }
 
 SourceOutputWidget::~SourceOutputWidget() {

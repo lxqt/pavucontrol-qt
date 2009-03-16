@@ -48,6 +48,7 @@ SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gno
 void SinkInputWidget::init(MainWindow* mainWindow) {
     mpMainWindow = mainWindow;
     deviceCombo->set_model(mpMainWindow->sinkTree);
+    deviceCombo->pack_start(mpMainWindow->deviceColumns.name);
 }
 
 SinkInputWidget::~SinkInputWidget() {
