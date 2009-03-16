@@ -39,22 +39,11 @@
 #include "sourcewidget.h"
 #include "sinkinputwidget.h"
 #include "sourceoutputwidget.h"
+#include "rolewidget.h"
 #include "mainwindow.h"
 
 static pa_context *context = NULL;
 static int n_outstanding = 0;
-
-class RoleWidget : public StreamWidget {
-public:
-    RoleWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
-    static RoleWidget* create();
-
-    Glib::ustring role;
-    Glib::ustring device;
-
-    virtual void onMuteToggleButton();
-    virtual void executeVolumeUpdate();
-};
 
 void show_error(const char *txt) {
     char buf[256];
@@ -67,48 +56,6 @@ void show_error(const char *txt) {
     Gtk::Main::quit();
 }
 
-
-RoleWidget::RoleWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    StreamWidget(cobject, x) {
-
-    lockToggleButton->hide();
-    streamToggleButton->hide();
-}
-
-RoleWidget* RoleWidget::create() {
-    RoleWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "streamWidget");
-    x->get_widget_derived("streamWidget", w);
-    return w;
-}
-
-void RoleWidget::onMuteToggleButton() {
-    StreamWidget::onMuteToggleButton();
-
-    executeVolumeUpdate();
-}
-
-void RoleWidget::executeVolumeUpdate() {
-    pa_ext_stream_restore_info info;
-
-    if (updating)
-        return;
-
-    info.name = role.c_str();
-    info.channel_map.channels = 1;
-    info.channel_map.map[0] = PA_CHANNEL_POSITION_MONO;
-    info.volume = volume;
-    info.device = device == "" ? NULL : device.c_str();
-    info.mute = muteToggleButton->get_active();
-
-    pa_operation* o;
-    if (!(o = pa_ext_stream_restore_write(context, PA_UPDATE_REPLACE, &info, 1, TRUE, NULL, NULL))) {
-        show_error(_("pa_ext_stream_restore_write() failed"));
-        return;
-    }
-
-    pa_operation_unref(o);
-}
 
 /*** MainWindow ***/
 
