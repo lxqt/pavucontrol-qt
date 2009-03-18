@@ -21,6 +21,11 @@
 #ifndef pavucontrol_h
 #define pavucontrol_h
 
+#include <signal.h>
+#include <string.h>
+
+#include <libintl.h>
+
 #include <gtkmm.h>
 #include <libglademm.h>
 

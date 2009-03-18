@@ -24,13 +24,6 @@
 
 #include "pavucontrol.h"
 
-#include <signal.h>
-#include <string.h>
-
-#include <libintl.h>
-
-#include <canberra-gtk.h>
-
 #include <pulse/glib-mainloop.h>
 #include <pulse/ext-stream-restore.h>
 
