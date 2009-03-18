@@ -54,7 +54,7 @@ void CardWidget::prepareMenu() {
     int active_idx = -1;
 
     treeModel->clear();
-    //Fill the ComboBox's Tree Model:
+    /* Fill the ComboBox's Tree Model */
     for (std::map<Glib::ustring, Glib::ustring>::iterator i = profiles.begin(); i != profiles.end(); ++i) {
         Gtk::TreeModel::Row row = *(treeModel->append());
         row[profileModel.name] = i->first;

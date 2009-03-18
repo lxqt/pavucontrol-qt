@@ -143,7 +143,6 @@ void MainWindow::updateCard(const pa_card_info &info) {
         w->profiles.insert(std::pair<Glib::ustring,Glib::ustring>(info.profiles[i].name, info.profiles[i].description));
     }
     w->activeProfile = info.active_profile->name;
-    //w->defaultMenuItem.set_active(w->name == defaultSinkName);
 
     w->updating = false;
 

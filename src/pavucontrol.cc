@@ -371,7 +371,7 @@ void context_state_callback(pa_context *c, void *userdata) {
             }
             pa_operation_unref(o);
 
-            // Keep track of the outstanding callbacks for UI tweaks
+            /* Keep track of the outstanding callbacks for UI tweaks */
             n_outstanding = 0;
 
             if (!(o = pa_context_get_server_info(c, server_info_cb, w))) {

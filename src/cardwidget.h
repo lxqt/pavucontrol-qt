@@ -46,7 +46,7 @@ public:
 protected:
   virtual void onProfileChange();
 
-  //Tree model columns:
+  /* Tree model columns */
   class ModelColumns : public Gtk::TreeModel::ColumnRecord
   {
   public:
@@ -60,7 +60,6 @@ protected:
 
   ModelColumns profileModel;
 
-  //Child widgets:
   Gtk::ComboBox *profileList;
   Glib::RefPtr<Gtk::ListStore> treeModel;
 };
