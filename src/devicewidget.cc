@@ -18,6 +18,10 @@
   along with pavucontrol. If not, see <http://www.gnu.org/licenses/>.
 ***/
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include "devicewidget.h"
 #include "channelwidget.h"
 
