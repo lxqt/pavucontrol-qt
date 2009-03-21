@@ -217,8 +217,6 @@ void ext_stream_restore_read_cb(
         return;
     }
 
-    w->createEventRoleWidget();
-
     if (eol > 0) {
         dec_outstanding(w);
         return;
@@ -461,7 +459,11 @@ int main(int argc, char *argv[]) {
 
     ca_context_set_driver(ca_gtk_context_get(), "pulse");
 
-    Gtk::Window* mainWindow = MainWindow::create();
+    MainWindow* mainWindow = MainWindow::create();
+
+    /* Create event widget immediately so it's first in the list */
+    mainWindow->createEventRoleWidget();
+
 
     pa_glib_mainloop *m = pa_glib_mainloop_new(g_main_context_default());
     g_assert(m);
