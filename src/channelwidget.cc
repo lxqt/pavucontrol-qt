@@ -39,7 +39,8 @@ ChannelWidget::ChannelWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::
     x->get_widget("volumeLabel", volumeLabel);
     x->get_widget("volumeScale", volumeScale);
 
-    volumeScale->set_value(100);
+    volumeScale->set_value(100.0);
+    volumeScale->set_increments(100.0/PA_VOLUME_NORM, 100.0/PA_VOLUME_NORM);
 
     volumeScale->signal_value_changed().connect(sigc::mem_fun(*this, &ChannelWidget::onVolumeScaleValueChanged));
 }
@@ -116,13 +117,16 @@ void ChannelWidget::set_sensitive(bool enabled) {
 
 void ChannelWidget::setBaseVolume(pa_volume_t v) {
 
-    volumeScale->clear_marks();
+    gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), 0.0, (GtkPositionType) GTK_POS_BOTTOM, _("<small>Silence</small>"));
+    gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), 100.0, (GtkPositionType) GTK_POS_BOTTOM, _("<small>Max</small>"));
 
     if (v > PA_VOLUME_MUTED && v < PA_VOLUME_NORM) {
         double p = ((double) v * 100) / PA_VOLUME_NORM;
-        gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), p, (GtkPositionType) GTK_POS_BOTTOM, NULL);
+        gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), p, (GtkPositionType) GTK_POS_BOTTOM, _("<small><i>Base</i></small>"));
     }
 
-    gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), 0.0, (GtkPositionType) GTK_POS_BOTTOM, NULL);
-    gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), 100.0, (GtkPositionType) GTK_POS_BOTTOM, NULL);
+}
+
+void ChannelWidget::setSteps(unsigned n) {
+    volumeScale->set_increments(100.0/(n-1), 100.0/(n-1));
 }

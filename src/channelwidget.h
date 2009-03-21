@@ -50,6 +50,7 @@ public:
 
     virtual void set_sensitive(bool enabled);
     virtual void setBaseVolume(pa_volume_t);
+    virtual void setSteps(unsigned n);
 };
 
 

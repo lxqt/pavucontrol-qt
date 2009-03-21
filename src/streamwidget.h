@@ -50,6 +50,7 @@ public:
 
     virtual void executeVolumeUpdate();
     virtual void setBaseVolume(pa_volume_t v);
+    virtual void setSteps(unsigned n);
 };
 
 #endif
