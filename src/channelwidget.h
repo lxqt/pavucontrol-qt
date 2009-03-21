@@ -49,6 +49,7 @@ public:
     Glib::ustring beepDevice;
 
     virtual void set_sensitive(bool enabled);
+    virtual void setBaseVolume(pa_volume_t);
 };
 
 

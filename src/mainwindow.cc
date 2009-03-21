@@ -167,6 +167,8 @@ void MainWindow::updateSink(const pa_sink_info &info) {
         w->index = info.index;
         w->monitor_index = info.monitor_source;
         is_new = true;
+
+        w->setBaseVolume(info.base_volume);
     }
 
     w->updating = true;
@@ -311,6 +313,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
         sourcesVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
         is_new = true;
+
+        w->setBaseVolume(info.base_volume);
 
         if (pa_context_get_server_protocol_version(get_context()) >= 13)
             createMonitorStreamForSource(info.index);

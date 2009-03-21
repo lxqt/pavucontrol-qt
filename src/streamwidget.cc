@@ -101,3 +101,9 @@ bool StreamWidget::timeoutEvent() {
 void StreamWidget::executeVolumeUpdate() {
 }
 
+
+void StreamWidget::setBaseVolume(pa_volume_t v) {
+
+    if (channelMap.channels > 0)
+        channelWidgets[channelMap.channels-1]->setBaseVolume(v);
+}
