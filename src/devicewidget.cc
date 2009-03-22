@@ -107,3 +107,15 @@ bool DeviceWidget::timeoutEvent() {
 
 void DeviceWidget::executeVolumeUpdate() {
 }
+
+void DeviceWidget::setBaseVolume(pa_volume_t v) {
+
+    if (channelMap.channels > 0)
+        channelWidgets[channelMap.channels-1]->setBaseVolume(v);
+}
+
+void DeviceWidget::setSteps(unsigned n) {
+
+    for (int i = 0; i < channelMap.channels; i++)
+        channelWidgets[channelMap.channels-1]->setSteps(n);
+}

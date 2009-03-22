@@ -54,8 +54,6 @@ public:
     bool timeoutEvent();
 
     virtual void executeVolumeUpdate();
-    virtual void setBaseVolume(pa_volume_t v);
-    virtual void setSteps(unsigned n);
 
 protected:
   Gtk::ComboBox *deviceCombo;
