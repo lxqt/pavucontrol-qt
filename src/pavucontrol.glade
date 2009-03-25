@@ -807,7 +807,7 @@ Monitors</property>
                                 <child>
                                   <widget class="GtkLabel" id="label1">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">Default</property>
+                                    <property name="label" translatable="yes">Use as fallback</property>
                                   </widget>
                                   <packing>
                                     <property name="position">1</property>
