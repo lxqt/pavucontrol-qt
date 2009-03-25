@@ -204,7 +204,7 @@ void server_info_cb(pa_context *, const pa_server_info *i, void *userdata) {
 }
 
 void ext_stream_restore_read_cb(
-        pa_context *c,
+        pa_context *,
         const pa_ext_stream_restore_info *i,
         int eol,
         void *userdata) {
