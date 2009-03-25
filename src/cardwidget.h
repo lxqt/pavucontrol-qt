@@ -36,7 +36,7 @@ public:
     uint32_t index;
     bool updating;
 
-    std::map<Glib::ustring,Glib::ustring> profiles;
+    std::vector< std::pair<Glib::ustring,Glib::ustring> > profiles;
     Glib::ustring activeProfile;
     bool hasSinks;
     bool hasSources;
