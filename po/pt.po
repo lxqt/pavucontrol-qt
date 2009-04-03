@@ -39,11 +39,11 @@ msgstr "Adicionar um dispositivo _virtual de saída para saídas simultâneas em
 
 #: ../src/paprefs.glade.h:4
 msgid "Allow other machines on the LAN to _discover local sound devices"
-msgstr "Permitir que outras máquinas na rede _encontrem localmente dispositivos de som "
+msgstr "Permitir que outras máquinas na rede _encontrem dispositivos de som locais"
 
 #: ../src/paprefs.glade.h:5
 msgid "Create seperate audio _device for Multicast/RTP"
-msgstr "Criar separadamente um _dispositivo de áudio para Multicast/RTP"
+msgstr "Criar um _dispositivo de áudio distinto para Multicast/RTP"
 
 #: ../src/paprefs.glade.h:6
 msgid "Don't require _authentication"
