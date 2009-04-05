@@ -7,26 +7,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-05 02:29+0000\n"
-"PO-Revision-Date: 2009-04-04 23:38-0500\n"
+"POT-Creation-Date: 2009-04-05 19:28+0000\n"
+"PO-Revision-Date: 2009-04-05 16:34-0400\n"
 "Last-Translator: Igor Miletic <grejigl-gnomeprevod@yahoo.ca>\n"
 "Language-Team: Serbian (sr) <fedora-trans-sr@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../src/pavucontrol.desktop.in.h:1
 msgid "Adjust the volume level"
 msgstr "Подесите ниво јачине звука"
 
-#: ../src/pavucontrol.desktop.in.h:2
-#: ../src/pavucontrol.cc:2267
+#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:2267
 msgid "PulseAudio Volume Control"
 msgstr "PulseAudio контрола јачине звука"
 
-#: ../src/pavucontrol.desktop.in.h:3
-#: ../src/pavucontrol.glade.h:30
+#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:30
 msgid "Volume Control"
 msgstr "Контрола јачине звука"
 
@@ -156,19 +155,19 @@ msgstr "Контрола јачине одзива звука"
 
 #: ../src/pavucontrol.cc:542
 msgid "pa_context_set_card_profile_by_index() failed"
-msgstr "НиНије успело извршавање функције pa_context_set_card_profile_by_index()"
+msgstr "Неуспела функција pa_context_set_card_profile_by_index()"
 
 #: ../src/pavucontrol.cc:747
 msgid "pa_context_set_sink_volume_by_index() failed"
-msgstr "Није успело извршавање функције pa_context_set_sink_volume_by_index()"
+msgstr "Неуспела функција pa_context_set_sink_volume_by_index()"
 
 #: ../src/pavucontrol.cc:762
 msgid "pa_context_set_sink_mute_by_index() failed"
-msgstr "Није успело извршавање функције pa_context_set_sink_mute_by_index()"
+msgstr "Неуспела функција pa_context_set_sink_mute_by_index()"
 
 #: ../src/pavucontrol.cc:776
 msgid "pa_context_set_default_sink() failed"
-msgstr "Није успело извршавање функције pa_context_set_default_sink()"
+msgstr "Неуспела функција pa_context_set_default_sink()"
 
 #: ../src/pavucontrol.cc:784
 msgid "_Default"
@@ -176,70 +175,66 @@ msgstr "_Подразумевано"
 
 #: ../src/pavucontrol.cc:805
 msgid "pa_context_set_source_volume_by_index() failed"
-msgstr "Није успело иѕвршавање функције pa_context_set_source_volume_by_index()"
+msgstr "Неуспела функција pa_context_set_source_volume_by_index()"
 
 #: ../src/pavucontrol.cc:820
 msgid "pa_context_set_source_mute_by_index() failed"
-msgstr "Није успело извршавање функције pa_context_set_source_mute_by_index()"
+msgstr "Неуспела функција pa_context_set_source_mute_by_index()"
 
 #: ../src/pavucontrol.cc:834
 msgid "pa_context_set_default_source() failed"
-msgstr "Није успело извршавање функције pa_context_set_default_source()"
+msgstr "Неуспела функција pa_context_set_default_source()"
 
-#: ../src/pavucontrol.cc:843
-#: ../src/pavucontrol.cc:946
+#: ../src/pavucontrol.cc:843 ../src/pavucontrol.cc:946
 msgid "_Move Stream..."
 msgstr "_Премести ток..."
 
-#: ../src/pavucontrol.cc:844
-#: ../src/pavucontrol.cc:947
+#: ../src/pavucontrol.cc:844 ../src/pavucontrol.cc:947
 msgid "_Terminate Stream"
 msgstr "_Прекини ток"
 
 #: ../src/pavucontrol.cc:870
 msgid "pa_context_set_sink_input_volume() failed"
-msgstr "Није успело извршавање функције pa_context_set_sink_input_volume()"
+msgstr "Неуспела функција pa_context_set_sink_input_volume()"
 
 #: ../src/pavucontrol.cc:885
 msgid "pa_context_set_sink_input_mute() failed"
-msgstr "Није успело извршавање функције pa_context_set_sink_input_mute()"
+msgstr "Неуспела функција pa_context_set_sink_input_mute()"
 
 #: ../src/pavucontrol.cc:919
 msgid "pa_context_kill_sink_input() failed"
-msgstr "Није успело извршавање функције pa_context_kill_sink_input()"
+msgstr "Неуспела функција pa_context_kill_sink_input()"
 
 #: ../src/pavucontrol.cc:936
 msgid "pa_context_move_sink_input_by_index() failed"
-msgstr "Није успело извршавање функције pa_context_move_sink_input_by_index()"
+msgstr "Неуспела функција pa_context_move_sink_input_by_index()"
 
 #: ../src/pavucontrol.cc:972
 msgid "pa_context_kill_source_output() failed"
-msgstr "Није успело извршавање функције pa_context_kill_source_output()"
+msgstr "Неуспела функција pa_context_kill_source_output()"
 
 #: ../src/pavucontrol.cc:1013
 msgid "pa_context_move_source_output_by_index() failed"
-msgstr "Није успело извршавање функције pa_context_move_source_output_by_index()"
+msgstr ""
+"Неуспела функција pa_context_move_source_output_by_index()"
 
 #: ../src/pavucontrol.cc:1055
 msgid "pa_ext_stream_restore_write() failed"
-msgstr "Није успело извршавање функције pa_ext_stream_restore_write()"
+msgstr "Неуспела функција pa_ext_stream_restore_write()"
 
 #: ../src/pavucontrol.cc:1238
 msgid "Failed to read data from stream"
 msgstr "Неуспело очитавање података са тока"
 
-#: ../src/pavucontrol.cc:1274
-#: ../src/pavucontrol.cc:1312
+#: ../src/pavucontrol.cc:1274 ../src/pavucontrol.cc:1312
 msgid "Peak detect"
 msgstr "Откривање максималног нивоа"
 
-#: ../src/pavucontrol.cc:1275
-#: ../src/pavucontrol.cc:1313
+#: ../src/pavucontrol.cc:1275 ../src/pavucontrol.cc:1313
 msgid "Failed to create monitoring stream"
 msgstr "Неуспело прављење надзорног тока"
 
-#: ../src/pavucontrol.cc:1283
-#: ../src/pavucontrol.cc:1322
+#: ../src/pavucontrol.cc:1283 ../src/pavucontrol.cc:1322
 msgid "Failed to connect monitoring stream"
 msgstr "Неуспело повезивање са надзорним током"
 
@@ -275,49 +270,46 @@ msgstr "Неуспешан опозив клијента"
 msgid "Server info callback failure"
 msgstr "Неуспешан опозив информација о серверу"
 
-#: ../src/pavucontrol.cc:2015
-#: ../src/pavucontrol.cc:2230
+#: ../src/pavucontrol.cc:2015 ../src/pavucontrol.cc:2230
 #, c-format
 msgid "Failed to initialized stream_restore extension: %s"
 msgstr "Неуспешна иницијализација stream_restore проширења: %s"
 
 #: ../src/pavucontrol.cc:2035
 msgid "pa_ext_stream_restore_read() failed"
-msgstr "Није успело извршавање функције pa_ext_stream_restore_read()"
+msgstr "Неуспела функција pa_ext_stream_restore_read()"
 
 #: ../src/pavucontrol.cc:2052
 msgid "pa_context_get_sink_info_by_index() failed"
-msgstr "Није успело извршавање функције pa_context_get_sink_info_by_index()"
+msgstr "Неуспела функција pa_context_get_sink_info_by_index()"
 
 #: ../src/pavucontrol.cc:2065
 msgid "pa_context_get_source_info_by_index() failed"
-msgstr "Није успело извршавање функције pa_context_get_source_info_by_index()"
+msgstr "Неуспела функција pa_context_get_source_info_by_index()"
 
-#: ../src/pavucontrol.cc:2078
-#: ../src/pavucontrol.cc:2091
+#: ../src/pavucontrol.cc:2078 ../src/pavucontrol.cc:2091
 msgid "pa_context_get_sink_input_info() failed"
-msgstr "Није успело извршавање функције pa_context_get_sink_input_info()"
+msgstr "Неуспела функција pa_context_get_sink_input_info()"
 
 #: ../src/pavucontrol.cc:2104
 msgid "pa_context_get_client_info() failed"
-msgstr "Није успело извршавање функције pa_context_get_client_info()"
+msgstr "Неуспела функција pa_context_get_client_info()"
 
-#: ../src/pavucontrol.cc:2114
-#: ../src/pavucontrol.cc:2171
+#: ../src/pavucontrol.cc:2114 ../src/pavucontrol.cc:2171
 msgid "pa_context_get_server_info() failed"
-msgstr "Није успело извршавање функције pa_context_get_server_info()"
+msgstr "Неуспела функција pa_context_get_server_info()"
 
 #: ../src/pavucontrol.cc:2127
 msgid "pa_context_get_card_info_by_index() failed"
-msgstr "Није успело извршавање функције pa_context_get_card_info_by_index()"
+msgstr "Неуспела функција pa_context_get_card_info_by_index()"
 
 #: ../src/pavucontrol.cc:2162
 msgid "pa_context_subscribe() failed"
-msgstr "Није успело извршавање функције pa_context_subscribe()"
+msgstr "Неуспела функција pa_context_subscribe()"
 
 #: ../src/pavucontrol.cc:2178
 msgid "pa_context_client_info_list() failed"
-msgstr "Није успело извршавање функције pa_context_client_info_list()"
+msgstr "Неуспела функција pa_context_client_info_list()"
 
 #: ../src/pavucontrol.cc:2185
 msgid "pa_context_get_card_info_list() failed"
@@ -325,22 +317,21 @@ msgstr "Није успело иѕзвршавање функције pa_context
 
 #: ../src/pavucontrol.cc:2192
 msgid "pa_context_get_sink_info_list() failed"
-msgstr "Није успело извршавање функције pa_context_get_sink_info_list()"
+msgstr "Неуспела функција pa_context_get_sink_info_list()"
 
 #: ../src/pavucontrol.cc:2199
 msgid "pa_context_get_source_info_list() failed"
-msgstr "Није успело извршавање функције pa_context_get_source_info_list()"
+msgstr "Неуспела функција pa_context_get_source_info_list()"
 
 #: ../src/pavucontrol.cc:2206
 msgid "pa_context_get_sink_input_info_list() failed"
-msgstr "Није успело извршавање функције pa_context_get_sink_input_info_list()"
+msgstr "Неуспела функција pa_context_get_sink_input_info_list()"
 
 #: ../src/pavucontrol.cc:2213
 msgid "pa_context_get_source_output_info_list() failed"
-msgstr "Није успело извршавање функције pa_context_get_source_output_info_list()"
+msgstr ""
+"Неуспела функција pa_context_get_source_output_info_list()"
 
-#: ../src/pavucontrol.cc:2236
-#: ../src/pavucontrol.cc:2280
+#: ../src/pavucontrol.cc:2236 ../src/pavucontrol.cc:2280
 msgid "Connection failed"
 msgstr "Повезивање није успело"
-
