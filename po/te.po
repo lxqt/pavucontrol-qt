@@ -1,0 +1,336 @@
+# translation of pavucontrol.master-tx.pavucontrol.po to Telugu
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Krishna Babu K <kkrothap@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: pavucontrol.master-tx.pavucontrol\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-03 08:29+0000\n"
+"PO-Revision-Date: 2009-04-07 01:53+0530\n"
+"Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
+"Language-Team: Telugu <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+
+#: ../src/pavucontrol.desktop.in.h:1
+msgid "Adjust the volume level"
+msgstr "ధ్వని స్థాయిను సర్దుము"
+
+#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:2267
+msgid "PulseAudio Volume Control"
+msgstr "PulseAudio ధ్వని నియంత్రణ"
+
+#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:30
+msgid "Volume Control"
+msgstr "ధ్వని నియంత్రణ"
+
+#: ../src/pavucontrol.glade.h:2
+#, no-c-format
+msgid "50%"
+msgstr "50%"
+
+#: ../src/pavucontrol.glade.h:3
+msgid "<b>Profile:</b>"
+msgstr "<b>ప్రొఫైల్:</b>"
+
+#: ../src/pavucontrol.glade.h:4
+msgid "<b>S_how:</b>"
+msgstr "<b>చూపుము (_h):</b>"
+
+#: ../src/pavucontrol.glade.h:5
+msgid "<b>Sho_w:</b>"
+msgstr "<b>చూపుము (_w):</b>"
+
+#: ../src/pavucontrol.glade.h:6
+msgid "<b>_Show:</b>"
+msgstr "<b>చూపుము (_S):</b>"
+
+#: ../src/pavucontrol.glade.h:7
+msgid "<b>left-front</b>"
+msgstr "<b>ఎడమవైపు-ముందు</b>"
+
+#: ../src/pavucontrol.glade.h:8
+msgid "<i>No application is currently playing audio.</i>"
+msgstr "<i>ఏ అనువర్తనము యిప్పుడు ఆడియోను ప్లే చేయుటలేదు.</i>"
+
+#: ../src/pavucontrol.glade.h:9
+msgid "<i>No application is currently recording audio.</i>"
+msgstr "<i>ఏ అనువర్తనము యిప్పుడు ఆడియోను రికార్డు చేయుటలేదు.</i>"
+
+#: ../src/pavucontrol.glade.h:10
+msgid "<i>No cards available for configuration</i>"
+msgstr "<i>ఆకృతీకరణకు ఏ కార్డులు అందుబాటులో లేవు</i>"
+
+#: ../src/pavucontrol.glade.h:11
+msgid "<i>No input devices available</i>"
+msgstr "<i>ఏ యిన్పుట్ పరికరములు అందుబాటులో లేవు</i>"
+
+#: ../src/pavucontrol.glade.h:12
+msgid "<i>No output devices available</i>"
+msgstr "<i>ఏ అవుట్పుట్ పరికరములు అందుబాటులోలేవు</i>"
+
+#: ../src/pavucontrol.glade.h:13
+msgid ""
+"All Input Devices\n"
+"All Except Monitors\n"
+"Hardware Input Devices\n"
+"Virtual Input Devices\n"
+"Monitors"
+msgstr ""
+"అన్ని యిన్పుట్ పరికరములు\n"
+"అన్ని ఆక్షేపిత మానిటర్లు\n"
+"హార్డువేర్ ఇన్పుట్ పరికరములు\n"
+"వర్చ్యువల్ ఇన్పుట్ పరికరములు\n"
+"మానిటర్లు"
+
+#: ../src/pavucontrol.glade.h:18
+msgid ""
+"All Output Devices\n"
+"Hardware Output Devices\n"
+"Virtual Output Devices"
+msgstr ""
+"అన్ని అవుట్పుట్ పరికరములు\n"
+"హర్డువేర్ అవుట్ పరికరములు\n"
+"వర్చ్యువల్ అవుట్పుట్ పరికరములు"
+
+#. Applications All streams
+#: ../src/pavucontrol.glade.h:22
+msgid ""
+"All Streams\n"
+"Applications\n"
+"Virtual Streams"
+msgstr ""
+"అన్ని స్ట్రీమ్సు\n"
+"అనువర్తనములు\n"
+"వర్చ్యువల్ స్ట్రీమ్సు"
+
+#: ../src/pavucontrol.glade.h:25
+msgid "Card Name"
+msgstr "కార్డు నామము"
+
+#: ../src/pavucontrol.glade.h:26
+msgid "Lock channels together"
+msgstr "చానళ్ళను కలిపి లాక్‌చేయుము"
+
+#: ../src/pavucontrol.glade.h:27
+msgid "Mute audio"
+msgstr "ఆడియోను నిశ్శబ్దముచేయి"
+
+#: ../src/pavucontrol.glade.h:28
+msgid "Open menu"
+msgstr "మెనూను తెరువుము"
+
+#: ../src/pavucontrol.glade.h:29
+msgid "Stream Title"
+msgstr "శీర్షికను స్టీమ్‌చేయి"
+
+#: ../src/pavucontrol.glade.h:31
+msgid "_Configuration"
+msgstr "ఆకృతీకరణ (_C)"
+
+#: ../src/pavucontrol.glade.h:32
+msgid "_Input Devices"
+msgstr "ఇన్పుట్ పరికరములు (_I)"
+
+#: ../src/pavucontrol.glade.h:33
+msgid "_Output Devices"
+msgstr "అవుట్పుట్ పరికరములు (_O)"
+
+#: ../src/pavucontrol.glade.h:34
+msgid "_Playback"
+msgstr "ప్లేబ్యాక్ (_P)"
+
+#: ../src/pavucontrol.glade.h:35
+msgid "_Recording"
+msgstr "రికార్డింగ్ (_R)"
+
+#: ../src/pavucontrol.cc:463
+msgid "Volume Control Feedback Sound"
+msgstr "ధ్వని నియంత్రణ తెలుపు శబ్ధము"
+
+#: ../src/pavucontrol.cc:542
+msgid "pa_context_set_card_profile_by_index() failed"
+msgstr "pa_context_set_card_profile_by_index() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:747
+msgid "pa_context_set_sink_volume_by_index() failed"
+msgstr "pa_context_set_sink_volume_by_index() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:762
+msgid "pa_context_set_sink_mute_by_index() failed"
+msgstr "pa_context_set_sink_mute_by_index() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:776
+msgid "pa_context_set_default_sink() failed"
+msgstr "pa_context_set_default_sink() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:784
+msgid "_Default"
+msgstr "అప్రమేయము (_D)"
+
+#: ../src/pavucontrol.cc:805
+msgid "pa_context_set_source_volume_by_index() failed"
+msgstr "pa_context_set_source_volume_by_index() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:820
+msgid "pa_context_set_source_mute_by_index() failed"
+msgstr "pa_context_set_source_mute_by_index() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:834
+msgid "pa_context_set_default_source() failed"
+msgstr "pa_context_set_default_source() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:843 ../src/pavucontrol.cc:946
+msgid "_Move Stream..."
+msgstr "మూవీ స్ట్రీమ్... (_M)"
+
+#: ../src/pavucontrol.cc:844 ../src/pavucontrol.cc:947
+msgid "_Terminate Stream"
+msgstr "స్ట్రీమ్ ముగించుము (_T)"
+
+#: ../src/pavucontrol.cc:870
+msgid "pa_context_set_sink_input_volume() failed"
+msgstr "pa_context_set_sink_input_volume() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:885
+msgid "pa_context_set_sink_input_mute() failed"
+msgstr "pa_context_set_sink_input_mute() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:919
+msgid "pa_context_kill_sink_input() failed"
+msgstr "pa_context_kill_sink_input() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:936
+msgid "pa_context_move_sink_input_by_index() failed"
+msgstr "pa_context_move_sink_input_by_index() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:972
+msgid "pa_context_kill_source_output() failed"
+msgstr "pa_context_kill_source_output() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:1013
+msgid "pa_context_move_source_output_by_index() failed"
+msgstr "pa_context_move_source_output_by_index() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:1055
+msgid "pa_ext_stream_restore_write() failed"
+msgstr "pa_ext_stream_restore_write() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:1238
+msgid "Failed to read data from stream"
+msgstr "స్ట్రీమ్ నుండి డాటాను చదువుటకు విఫలమైంది"
+
+#: ../src/pavucontrol.cc:1274 ../src/pavucontrol.cc:1312
+msgid "Peak detect"
+msgstr "అంత్యస్థాయి గుర్తింపు"
+
+#: ../src/pavucontrol.cc:1275 ../src/pavucontrol.cc:1313
+msgid "Failed to create monitoring stream"
+msgstr "పర్యవేక్షక స్ట్రీమ్ సృష్టించుటకు విఫలమైంది"
+
+#: ../src/pavucontrol.cc:1283 ../src/pavucontrol.cc:1322
+msgid "Failed to connect monitoring stream"
+msgstr "పర్యవేక్షక స్ట్రీమ్ అనుసంధానములో విఫలమైంది"
+
+#: ../src/pavucontrol.cc:1565
+msgid "System Sounds"
+msgstr "సిస్టమ్ శబ్దములు"
+
+#: ../src/pavucontrol.cc:1872
+msgid "Card callback failure"
+msgstr "కార్డ్ కాల్‌బ్యాక్ విఫలమైంది"
+
+#: ../src/pavucontrol.cc:1891
+msgid "Sink callback failure"
+msgstr "సింక్ కాల్‌బ్యాక్ విఫలమైంది"
+
+#: ../src/pavucontrol.cc:1910
+msgid "Source callback failure"
+msgstr "ములం కాల్‌బ్యాక్ విఫలమైంది"
+
+#: ../src/pavucontrol.cc:1929
+msgid "Sink input callback failure"
+msgstr "సింక్ ఇన్పుట్ కాల్‌బ్యాక్ విఫలమైంది"
+
+#: ../src/pavucontrol.cc:1948
+msgid "Source output callback failure"
+msgstr "మూలం అవుట్పుట్ కాల్‌బ్యాక్ విఫలమైంది"
+
+#: ../src/pavucontrol.cc:1982
+msgid "Client callback failure"
+msgstr "కక్షిదారి కాల్‌బ్యాక్ విఫలమైంది"
+
+#: ../src/pavucontrol.cc:1998
+msgid "Server info callback failure"
+msgstr "సేవిక సమాచారము కాల్‌బ్యాక్ విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2015 ../src/pavucontrol.cc:2230
+#, c-format
+msgid "Failed to initialized stream_restore extension: %s"
+msgstr "stream_restore పొడిగింపును సిద్దముచేయుటకు విఫలమైంది: %s"
+
+#: ../src/pavucontrol.cc:2035
+msgid "pa_ext_stream_restore_read() failed"
+msgstr "pa_ext_stream_restore_read() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2052
+msgid "pa_context_get_sink_info_by_index() failed"
+msgstr "pa_context_get_sink_info_by_index() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2065
+msgid "pa_context_get_source_info_by_index() failed"
+msgstr "pa_context_get_source_info_by_index() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2078 ../src/pavucontrol.cc:2091
+msgid "pa_context_get_sink_input_info() failed"
+msgstr "pa_context_get_sink_input_info() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2104
+msgid "pa_context_get_client_info() failed"
+msgstr "pa_context_get_client_info() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2114 ../src/pavucontrol.cc:2171
+msgid "pa_context_get_server_info() failed"
+msgstr "pa_context_get_server_info() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2127
+msgid "pa_context_get_card_info_by_index() failed"
+msgstr "pa_context_get_card_info_by_index() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2162
+msgid "pa_context_subscribe() failed"
+msgstr "pa_context_subscribe() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2178
+msgid "pa_context_client_info_list() failed"
+msgstr "pa_context_client_info_list() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2185
+msgid "pa_context_get_card_info_list() failed"
+msgstr "pa_context_get_card_info_list() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2192
+msgid "pa_context_get_sink_info_list() failed"
+msgstr "pa_context_get_sink_info_list() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2199
+msgid "pa_context_get_source_info_list() failed"
+msgstr "pa_context_get_source_info_list() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2206
+msgid "pa_context_get_sink_input_info_list() failed"
+msgstr "pa_context_get_sink_input_info_list() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2213
+msgid "pa_context_get_source_output_info_list() failed"
+msgstr "pa_context_get_source_output_info_list() విఫలమైంది"
+
+#: ../src/pavucontrol.cc:2236 ../src/pavucontrol.cc:2280
+msgid "Connection failed"
+msgstr "అనుసంధానం విఫలమైంది"
+
