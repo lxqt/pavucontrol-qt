@@ -53,7 +53,6 @@ void show_error(const char *txt) {
     Gtk::Main::quit();
 }
 
-
 static void dec_outstanding(MainWindow *w) {
     if (n_outstanding <= 0)
         return;
@@ -212,7 +211,8 @@ void ext_stream_restore_read_cb(
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol < 0) {
-        g_debug(_("Failed to initialized stream_restore extension: %s"), pa_strerror(pa_context_errno(context)));
+        dec_outstanding(w);
+        g_debug(_("Failed to initialize stream_restore extension: %s"), pa_strerror(pa_context_errno(context)));
         w->deleteEventRoleWidget();
         return;
     }
@@ -427,7 +427,8 @@ void context_state_callback(pa_context *c, void *userdata) {
                     pa_operation_unref(o);
 
             } else
-                g_debug(_("Failed to initialized stream_restore extension: %s"), pa_strerror(pa_context_errno(context)));
+                g_debug(_("Failed to initialize stream_restore extension: %s"), pa_strerror(pa_context_errno(context)));
+
 
             break;
         }
