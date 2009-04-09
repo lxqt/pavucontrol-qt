@@ -72,7 +72,6 @@ msgid "<i>No output devices available</i>"
 msgstr "<i>Não está disponível nenhum dispositivo de saída</i>"
 
 #: ../src/pavucontrol.glade.h:13
-#, fuzzy
 msgid ""
 "All Input Devices\n"
 "All Except Monitors\n"
@@ -98,22 +97,22 @@ msgstr ""
 
 #. Applications All streams
 #: ../src/pavucontrol.glade.h:22
-#, fuzzy
 msgid ""
 "All Streams\n"
 "Applications\n"
 "Virtual Streams"
-msgstr "Emitir todas as emissões elementares"
+msgstr ""
+"Todos os fluxos\n"
+"Aplicações\n"
+"Fluxos Virtuais"
 
 #: ../src/pavucontrol.glade.h:25
-#, fuzzy
 msgid "Card Name"
-msgstr "Indique o nome da nova carta:"
+msgstr "Nome da placa"
 
 #: ../src/pavucontrol.glade.h:26
-#, fuzzy
 msgid "Lock channels together"
-msgstr "Trancar juntos os canais de %s"
+msgstr "Trancar juntos os canais"
 
 #: ../src/pavucontrol.glade.h:27
 msgid "Mute audio"
@@ -124,9 +123,8 @@ msgid "Open menu"
 msgstr "Abrir menu"
 
 #: ../src/pavucontrol.glade.h:29
-#, fuzzy
 msgid "Stream Title"
-msgstr "O título do fluxo actual."
+msgstr "Título do fluxo"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "_Configuration"
@@ -149,9 +147,8 @@ msgid "_Recording"
 msgstr "A _Gravar"
 
 #: ../src/pavucontrol.cc:463
-#, fuzzy
 msgid "Volume Control Feedback Sound"
-msgstr "O Módulo de Controlo do Servidor de Som"
+msgstr "Controlo de Volume Som Feedbak"
 
 #: ../src/pavucontrol.cc:542
 msgid "pa_context_set_card_profile_by_index() failed"
@@ -187,15 +184,13 @@ msgstr "pa_context_set_default_source() falhou"
 
 #: ../src/pavucontrol.cc:843
 #: ../src/pavucontrol.cc:946
-#, fuzzy
 msgid "_Move Stream..."
-msgstr "Comprimento da 'stream':"
+msgstr "_Mover Fluxo..."
 
 #: ../src/pavucontrol.cc:844
 #: ../src/pavucontrol.cc:947
-#, fuzzy
 msgid "_Terminate Stream"
-msgstr "Comprimento da 'stream':"
+msgstr "_Terminar Fluxo"
 
 #: ../src/pavucontrol.cc:870
 msgid "pa_context_set_sink_input_volume() failed"
@@ -226,9 +221,8 @@ msgid "pa_ext_stream_restore_write() failed"
 msgstr "pa_ext_stream_restore_write() falhou"
 
 #: ../src/pavucontrol.cc:1238
-#, fuzzy
 msgid "Failed to read data from stream"
-msgstr "Falha ao ler dados de processo filho"
+msgstr "Falha ao ler dados do fluxo"
 
 #: ../src/pavucontrol.cc:1274
 #: ../src/pavucontrol.cc:1312
@@ -237,59 +231,51 @@ msgstr "Detectado pico"
 
 #: ../src/pavucontrol.cc:1275
 #: ../src/pavucontrol.cc:1313
-#, fuzzy
 msgid "Failed to create monitoring stream"
-msgstr "Falhou ao iniciar novo stream"
+msgstr "Falha ao criar um stream de monitorização"
 
 #: ../src/pavucontrol.cc:1283
 #: ../src/pavucontrol.cc:1322
-#, fuzzy
 msgid "Failed to connect monitoring stream"
-msgstr "Falhou ao iniciar novo stream"
+msgstr "Falha ao ligar o fluxo de monitorização"
 
 #: ../src/pavucontrol.cc:1565
 msgid "System Sounds"
 msgstr "Sons do Sistema"
 
 #: ../src/pavucontrol.cc:1872
-#, fuzzy
 msgid "Card callback failure"
-msgstr "sessão: falha ao executar o forking: %m"
+msgstr "Falha no callback da placa"
 
 #: ../src/pavucontrol.cc:1891
-#, fuzzy
 msgid "Sink callback failure"
-msgstr "sessão: falha ao executar o forking: %m"
+msgstr "Sincronização 'callback' falhou"
 
 #: ../src/pavucontrol.cc:1910
-#, fuzzy
 msgid "Source callback failure"
-msgstr "sessão: falha ao executar o forking: %m"
+msgstr "Falhou 'callback' do código"
 
 #: ../src/pavucontrol.cc:1929
 msgid "Sink input callback failure"
-msgstr ""
+msgstr "Falhou entrada de sincronização 'callback' "
 
 #: ../src/pavucontrol.cc:1948
-#, fuzzy
 msgid "Source output callback failure"
-msgstr "Falha geral ao adicionar ficheiro de código"
+msgstr "Falhou 'callback' de saída"
 
 #: ../src/pavucontrol.cc:1982
-#, fuzzy
 msgid "Client callback failure"
-msgstr "sessão: falha ao executar o forking: %m"
+msgstr "Falhou 'callback' do cliente"
 
 #: ../src/pavucontrol.cc:1998
-#, fuzzy
 msgid "Server info callback failure"
-msgstr "Falha geral do servidor de SOCKS"
+msgstr " Falhou 'callback' de informação do servidor"
 
 #: ../src/pavucontrol.cc:2015
 #: ../src/pavucontrol.cc:2230
 #, c-format
 msgid "Failed to initialized stream_restore extension: %s"
-msgstr ""
+msgstr "Falha ao inicializar a extensão de restauro_fluxo: %s"
 
 #: ../src/pavucontrol.cc:2035
 msgid "pa_ext_stream_restore_read() failed"
