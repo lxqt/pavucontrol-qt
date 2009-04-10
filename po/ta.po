@@ -1,0 +1,339 @@
+# translation of pavucontrol.master-tx.pavucontrol.po to Tamil
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# I. Felix <ifelix@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: pavucontrol.master-tx.pavucontrol\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-03 08:29+0000\n"
+"PO-Revision-Date: 2009-04-07 15:42+0530\n"
+"Last-Translator: I. Felix <ifelix@redhat.com>\n"
+"Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\\n\n"
+"\n"
+"\n"
+"\n"
+
+#: ../src/pavucontrol.desktop.in.h:1
+msgid "Adjust the volume level"
+msgstr "ஒலியளவு நிலையை சரிப்படுத்து"
+
+#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:2267
+msgid "PulseAudio Volume Control"
+msgstr "PulseAudio ஒலியளவு கட்டுப்பாடு"
+
+#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:30
+msgid "Volume Control"
+msgstr "ஒலியளவு கட்டுப்பாடு"
+
+#: ../src/pavucontrol.glade.h:2
+#, no-c-format
+msgid "50%"
+msgstr "50%"
+
+#: ../src/pavucontrol.glade.h:3
+msgid "<b>Profile:</b>"
+msgstr "<b>விவரக்குறிப்பு:</b>"
+
+#: ../src/pavucontrol.glade.h:4
+msgid "<b>S_how:</b>"
+msgstr "<b>காட்டு:</b> (_h)"
+
+#: ../src/pavucontrol.glade.h:5
+msgid "<b>Sho_w:</b>"
+msgstr "<b>காட்டு:</b> (_w)"
+
+#: ../src/pavucontrol.glade.h:6
+msgid "<b>_Show:</b>"
+msgstr "<b>காட்டு:</b> (_S)"
+
+#: ../src/pavucontrol.glade.h:7
+msgid "<b>left-front</b>"
+msgstr "<b>இடது-முன்னால்</b>"
+
+#: ../src/pavucontrol.glade.h:8
+msgid "<i>No application is currently playing audio.</i>"
+msgstr "<i>எந்த பயன்பாடும் தற்போது ஆடியோ இசைக்கவில்லை.</i>"
+
+#: ../src/pavucontrol.glade.h:9
+msgid "<i>No application is currently recording audio.</i>"
+msgstr "<i>எந்த பயன்பாடும் தற்போது ஆடியோ பதிவு செய்யவில்லை.</i>"
+
+#: ../src/pavucontrol.glade.h:10
+msgid "<i>No cards available for configuration</i>"
+msgstr "<i>கட்டமைப்பதற்கு அட்டைகள் கிடைக்கப் பெறவில்லை</i>"
+
+#: ../src/pavucontrol.glade.h:11
+msgid "<i>No input devices available</i>"
+msgstr "<i>உள்வரும் சாதனங்கள் கிடைக்கப் பெறவில்லை</i>"
+
+#: ../src/pavucontrol.glade.h:12
+msgid "<i>No output devices available</i>"
+msgstr "<i>வெளிப்பாடு சாதனங்கள் கிடைக்கப் பெறவில்லை</i>"
+
+#: ../src/pavucontrol.glade.h:13
+msgid ""
+"All Input Devices\n"
+"All Except Monitors\n"
+"Hardware Input Devices\n"
+"Virtual Input Devices\n"
+"Monitors"
+msgstr ""
+"அனைத்து உள்ளீடு சாதனங்கள்\n"
+"கணித்திரைகள் தவிர அனைத்தும்\n"
+"வன்பொருள் உள்ளீடு சாதனங்கள்\n"
+"மெய்நிகர் உள்ளீடு சாதனங்கள்\n"
+"திரையகம்"
+
+#: ../src/pavucontrol.glade.h:18
+msgid ""
+"All Output Devices\n"
+"Hardware Output Devices\n"
+"Virtual Output Devices"
+msgstr ""
+"அனைத்து வெளிப்பாடு சாதனங்கள்\n"
+"வன்பொருள் வெளிப்பாடு சாதனங்கள்\n"
+"மெய்நிகர் வெளிப்பாடு சாதனங்கள்"
+
+#. Applications All streams
+#: ../src/pavucontrol.glade.h:22
+msgid ""
+"All Streams\n"
+"Applications\n"
+"Virtual Streams"
+msgstr ""
+"அனைத்து ஸ்ட்ரீம்கள்\n"
+"பயன்பாடு\n"
+"மெய்நிகர் ஸ்டீரிம்கள்"
+
+#: ../src/pavucontrol.glade.h:25
+msgid "Card Name"
+msgstr "அட்டையின் பெயர்"
+
+#: ../src/pavucontrol.glade.h:26
+msgid "Lock channels together"
+msgstr "சேனல்களை ஒன்றாக பூட்டு"
+
+#: ../src/pavucontrol.glade.h:27
+msgid "Mute audio"
+msgstr "ஒலி நிறுத்தப்பட்டது"
+
+#: ../src/pavucontrol.glade.h:28
+msgid "Open menu"
+msgstr "மெனுவைத் திற"
+
+#: ../src/pavucontrol.glade.h:29
+msgid "Stream Title"
+msgstr "ஸ்ட்ரீம் தலைப்பு"
+
+#: ../src/pavucontrol.glade.h:31
+msgid "_Configuration"
+msgstr "கட்டமைப்பு (_C)"
+
+#: ../src/pavucontrol.glade.h:32
+msgid "_Input Devices"
+msgstr "உள்வரும் சாதனங்கள் (_I)"
+
+#: ../src/pavucontrol.glade.h:33
+msgid "_Output Devices"
+msgstr "வெளிப்பாடு சாதனங்கள் (_O)"
+
+#: ../src/pavucontrol.glade.h:34
+msgid "_Playback"
+msgstr "இயக்கு (_P)"
+
+#: ../src/pavucontrol.glade.h:35
+msgid "_Recording"
+msgstr "ஒலிப்பதிவு (_R)"
+
+#: ../src/pavucontrol.cc:463
+msgid "Volume Control Feedback Sound"
+msgstr "ஒலியளவு கட்டுப்பாடு பின்னூட்ட ஒலி"
+
+#: ../src/pavucontrol.cc:542
+msgid "pa_context_set_card_profile_by_index() failed"
+msgstr "pa_context_set_card_profile_by_index() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:747
+msgid "pa_context_set_sink_volume_by_index() failed"
+msgstr "pa_context_set_sink_volume_by_index() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:762
+msgid "pa_context_set_sink_mute_by_index() failed"
+msgstr "pa_context_set_sink_mute_by_index() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:776
+msgid "pa_context_set_default_sink() failed"
+msgstr "pa_context_set_default_sink() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:784
+msgid "_Default"
+msgstr "முன்னிருப்பு (_D)"
+
+#: ../src/pavucontrol.cc:805
+msgid "pa_context_set_source_volume_by_index() failed"
+msgstr "pa_context_set_source_volume_by_index() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:820
+msgid "pa_context_set_source_mute_by_index() failed"
+msgstr "pa_context_set_source_mute_by_index() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:834
+msgid "pa_context_set_default_source() failed"
+msgstr "pa_context_set_default_source() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:843 ../src/pavucontrol.cc:946
+msgid "_Move Stream..."
+msgstr "ஸ்ட்டிரிமை நகர்த்து...(_M)"
+
+#: ../src/pavucontrol.cc:844 ../src/pavucontrol.cc:947
+msgid "_Terminate Stream"
+msgstr "ஸ்டிரிமை நீக்கு (_T)"
+
+#: ../src/pavucontrol.cc:870
+msgid "pa_context_set_sink_input_volume() failed"
+msgstr "pa_context_set_sink_input_volume() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:885
+msgid "pa_context_set_sink_input_mute() failed"
+msgstr "pa_context_set_sink_input_mute() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:919
+msgid "pa_context_kill_sink_input() failed"
+msgstr "pa_context_kill_sink_input() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:936
+msgid "pa_context_move_sink_input_by_index() failed"
+msgstr "pa_context_move_sink_input_by_index() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:972
+msgid "pa_context_kill_source_output() failed"
+msgstr "pa_context_kill_source_output() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:1013
+msgid "pa_context_move_source_output_by_index() failed"
+msgstr "pa_context_move_source_output_by_index() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:1055
+msgid "pa_ext_stream_restore_write() failed"
+msgstr "pa_ext_stream_restore_write() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:1238
+msgid "Failed to read data from stream"
+msgstr "ஸ்ட்ரீமிலிருந்து தரவை வாசிக்க முடியவில்லை"
+
+#: ../src/pavucontrol.cc:1274 ../src/pavucontrol.cc:1312
+msgid "Peak detect"
+msgstr "பீக் கண்டறியப்பட்டது"
+
+#: ../src/pavucontrol.cc:1275 ../src/pavucontrol.cc:1313
+msgid "Failed to create monitoring stream"
+msgstr "கண்காணிக்கும் ஸ்ட்ரீமை உருவாக்க முடியவில்லை"
+
+#: ../src/pavucontrol.cc:1283 ../src/pavucontrol.cc:1322
+msgid "Failed to connect monitoring stream"
+msgstr "கண்காணிக்கும் ஸ்ட்ரீமை இணைக்க முடியவில்லை"
+
+#: ../src/pavucontrol.cc:1565
+msgid "System Sounds"
+msgstr "கணினியின் ஒலிகள்"
+
+#: ../src/pavucontrol.cc:1872
+msgid "Card callback failure"
+msgstr "அட்டை மறுஅழைப்பில் தோல்வி"
+
+#: ../src/pavucontrol.cc:1891
+msgid "Sink callback failure"
+msgstr "சுருங்கி மறுஅழைப்பில் தோல்வி"
+
+#: ../src/pavucontrol.cc:1910
+msgid "Source callback failure"
+msgstr "மூல மறுஅழைப்பில் தோல்வி"
+
+#: ../src/pavucontrol.cc:1929
+msgid "Sink input callback failure"
+msgstr "மூழ்கும் உள்ளீடு கால்பேக் தோல்வி"
+
+#: ../src/pavucontrol.cc:1948
+msgid "Source output callback failure"
+msgstr "மூல வெளியேறும் மறுஅழைப்பில் தோல்வி"
+
+#: ../src/pavucontrol.cc:1982
+msgid "Client callback failure"
+msgstr "கிளையன்ட்டை மறுஅழைப்பதில் தோல்வி"
+
+#: ../src/pavucontrol.cc:1998
+msgid "Server info callback failure"
+msgstr "சேவையக தகவலை மறுஅழைப்பதில் தோல்வி"
+
+#: ../src/pavucontrol.cc:2015 ../src/pavucontrol.cc:2230
+#, c-format
+msgid "Failed to initialized stream_restore extension: %s"
+msgstr "stream_restore விரிவாக்கத்தை துவக்க முடியவில்லை: %s"
+
+#: ../src/pavucontrol.cc:2035
+msgid "pa_ext_stream_restore_read() failed"
+msgstr "pa_ext_stream_restore_read() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2052
+msgid "pa_context_get_sink_info_by_index() failed"
+msgstr "pa_context_get_sink_info_by_index() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2065
+msgid "pa_context_get_source_info_by_index() failed"
+msgstr "pa_context_get_source_info_by_index() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2078 ../src/pavucontrol.cc:2091
+msgid "pa_context_get_sink_input_info() failed"
+msgstr "pa_context_get_sink_input_info() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2104
+msgid "pa_context_get_client_info() failed"
+msgstr "pa_context_get_client_info() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2114 ../src/pavucontrol.cc:2171
+msgid "pa_context_get_server_info() failed"
+msgstr "pa_context_get_server_info() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2127
+msgid "pa_context_get_card_info_by_index() failed"
+msgstr "pa_context_get_card_info_by_index() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2162
+msgid "pa_context_subscribe() failed"
+msgstr "pa_context_subscribe() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2178
+msgid "pa_context_client_info_list() failed"
+msgstr "pa_context_client_info_list() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2185
+msgid "pa_context_get_card_info_list() failed"
+msgstr "pa_context_get_card_info_list() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2192
+msgid "pa_context_get_sink_info_list() failed"
+msgstr "pa_context_get_sink_info_list() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2199
+msgid "pa_context_get_source_info_list() failed"
+msgstr "pa_context_get_source_info_list() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2206
+msgid "pa_context_get_sink_input_info_list() failed"
+msgstr "pa_context_get_sink_input_info_list() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2213
+msgid "pa_context_get_source_output_info_list() failed"
+msgstr "pa_context_get_source_output_info_list() தோல்வியடைந்தது"
+
+#: ../src/pavucontrol.cc:2236 ../src/pavucontrol.cc:2280
+msgid "Connection failed"
+msgstr "இணைப்பு தோல்வியுற்றது"
+

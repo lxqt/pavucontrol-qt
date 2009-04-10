@@ -1,33 +1,33 @@
-# translation of pavucontrol.master-tx.po to Simplified Chinese
-# 甘露 (Gan Lu) <rhythm.gan@gmail.com>, 2008.msgid "".
-# Leah Liu <lliu@redhat.com>, 2009.
-# Simplified Chinese Version of pavucontrol.
+# translation of pavucontrol.po to Gujarati
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+#
+# Sweta Kothari <swkothar@redhat.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: pavucontrol.master-tx\n"
+"Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-31 08:22+0000\n"
-"PO-Revision-Date: 2009-04-01 21:43+1000\n"
-"Last-Translator: Leah Liu <lliu@redhat.com>\n"
-"Language-Team: Simplified Chinese <zh@li.org>\n"
+"POT-Creation-Date: 2009-04-06 08:18+0000\n"
+"PO-Revision-Date: 2009-04-06 16:27+0530\n"
+"Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
+"Language-Team: Gujarati\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: ../src/pavucontrol.desktop.in.h:1
 msgid "Adjust the volume level"
-msgstr "调节音量水平"
+msgstr "વોલ્યુમ સ્તરને વ્યવસ્થિત કરો"
 
 #: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:2267
 msgid "PulseAudio Volume Control"
-msgstr "PulseAudio 音量控制"
+msgstr "PulseAudio વોલ્યુમ નિયંત્રણ"
 
 #: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:30
 msgid "Volume Control"
-msgstr "音量控制"
+msgstr "વોલ્યમ નિયંત્રણ"
 
 #: ../src/pavucontrol.glade.h:2
 #, no-c-format
@@ -36,43 +36,43 @@ msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
 msgid "<b>Profile:</b>"
-msgstr "<b>侧写：</b>"
+msgstr "<b>રૂપરેખા:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>S_how:</b>"
-msgstr "<b>显示(_h)：</b>"
+msgstr "<b>બતાવો (_h):</b>"
 
 #: ../src/pavucontrol.glade.h:5
 msgid "<b>Sho_w:</b>"
-msgstr "<b>显示(_w)：</b>"
+msgstr "<b>બતાવો (_w):</b>"
 
 #: ../src/pavucontrol.glade.h:6
 msgid "<b>_Show:</b>"
-msgstr "<b>显示(_S)：</b>"
+msgstr "<b>બતાવો (_S):</b>"
 
 #: ../src/pavucontrol.glade.h:7
 msgid "<b>left-front</b>"
-msgstr "<b>左-前</b>"
+msgstr "<b>ડાબે-આગળ</b>"
 
 #: ../src/pavucontrol.glade.h:8
 msgid "<i>No application is currently playing audio.</i>"
-msgstr "<i>没有程序正在播放音频。</i>"
+msgstr "<i>કાર્યક્રમ એ હાલમાં ઓડિયોને વગાડતી નથી.</i>"
 
 #: ../src/pavucontrol.glade.h:9
 msgid "<i>No application is currently recording audio.</i>"
-msgstr "<i>没有程序正在录音。</i>"
+msgstr "<i>કાર્યક્રમ એ હાલમાં ઓડિયોને રેકોર્ડ કરતી નથી.</i>"
 
 #: ../src/pavucontrol.glade.h:10
 msgid "<i>No cards available for configuration</i>"
-msgstr "<i>没有可用来配置的声卡</i>"
+msgstr "<i>રૂપરેખાંકન માટે કાર્ડો ઉપલ્બધ નથી</i>"
 
 #: ../src/pavucontrol.glade.h:11
 msgid "<i>No input devices available</i>"
-msgstr "<i>没有可用的输入设备</i>"
+msgstr "<i>ઇનપુટ ઉપકરણો ઉપલ્બધ નથી</i>"
 
 #: ../src/pavucontrol.glade.h:12
 msgid "<i>No output devices available</i>"
-msgstr "<i>没有可用的输出设备</i>"
+msgstr "<i>આઉટપુટ ઉપકરણો ઉપલ્બધ નથી</i>"
 
 #: ../src/pavucontrol.glade.h:13
 msgid ""
@@ -82,11 +82,11 @@ msgid ""
 "Virtual Input Devices\n"
 "Monitors"
 msgstr ""
-"全部输入设备\n"
-"全部但不包括监视器\n"
-"硬件输入设备\n"
-"虚拟输入设备\n"
-"监视器"
+"બધા ઇનપુટ ઉપકરણો\n"
+"બધા સિવાય મોનિટરો\n"
+"હાર્ડવેર ઇનપુટ ઉપકરણો\n"
+"વર્ચ્યુઅલ ઇનપુટ ઉપકરણો\n"
+"મોનિટરો"
 
 #: ../src/pavucontrol.glade.h:18
 msgid ""
@@ -94,9 +94,9 @@ msgid ""
 "Hardware Output Devices\n"
 "Virtual Output Devices"
 msgstr ""
-"全部输出设备\n"
-"硬件输出设备\n"
-"虚拟输出设备"
+"બધા આઉટપુટ ઉપકરણો\n"
+"હાર્ડવેર આઉટપુટ ઉપકરણો\n"
+"વર્ચ્યુઅલ આઉટપુટ ઉપકરણો"
 
 #. Applications All streams
 #: ../src/pavucontrol.glade.h:22
@@ -105,232 +105,232 @@ msgid ""
 "Applications\n"
 "Virtual Streams"
 msgstr ""
-"所有流媒体\n"
-"程序\n"
-"虚拟流媒体"
+"બધી સ્ટ્રીમો\n"
+"કાર્યક્રમો\n"
+"વર્ચ્યુઅલ સ્ટ્રીમો"
 
 #: ../src/pavucontrol.glade.h:25
 msgid "Card Name"
-msgstr "声卡名称"
+msgstr "કાર્ડ નામ"
 
 #: ../src/pavucontrol.glade.h:26
 msgid "Lock channels together"
-msgstr "锁定声道"
+msgstr "ભેગી ચેનલોને તાળુ મારો"
 
 #: ../src/pavucontrol.glade.h:27
 msgid "Mute audio"
-msgstr "音频静音"
+msgstr "મૂંગુ ઓડિયો"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Open menu"
-msgstr "打开菜单"
+msgstr "મેનુ ખોલો"
 
 #: ../src/pavucontrol.glade.h:29
 msgid "Stream Title"
-msgstr "流媒体标题"
+msgstr "સ્ટ્રીમ શિર્ષક"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "_Configuration"
-msgstr "配置（_C）"
+msgstr "રૂપરેખાંકન (_C)"
 
 #: ../src/pavucontrol.glade.h:32
 msgid "_Input Devices"
-msgstr "输入设备(_I)"
+msgstr "ઇનપુટ ઉપકરણો (_I)"
 
 #: ../src/pavucontrol.glade.h:33
 msgid "_Output Devices"
-msgstr "输出设备(_O)"
+msgstr "આઉટપુટ ઉપકરણો (_O)"
 
 #: ../src/pavucontrol.glade.h:34
 msgid "_Playback"
-msgstr "回放(_P)"
+msgstr "પ્લેબેક (_P)"
 
 #: ../src/pavucontrol.glade.h:35
 msgid "_Recording"
-msgstr "录音(_R)"
+msgstr "રેકોર્ડ કરી રહ્યા છે (_R)"
 
 #: ../src/pavucontrol.cc:463
 msgid "Volume Control Feedback Sound"
-msgstr "音量控制反馈声音"
+msgstr "વોલ્યુમ નિયંત્રણ ફીડબેક સાઉન્ડ"
 
 #: ../src/pavucontrol.cc:542
 msgid "pa_context_set_card_profile_by_index() failed"
-msgstr "pa_context_set_card_profile_by_index() failed"
+msgstr "pa_context_set_card_profile_by_index() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:747
 msgid "pa_context_set_sink_volume_by_index() failed"
-msgstr "pa_context_set_sink_volume_by_index() 失败"
+msgstr "pa_context_set_sink_volume_by_index() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:762
 msgid "pa_context_set_sink_mute_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() 失败"
+msgstr "pa_context_set_sink_mute_by_index() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:776
 msgid "pa_context_set_default_sink() failed"
-msgstr "pa_context_set_default_sink() 失败"
+msgstr "pa_context_set_default_sink() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:784
 msgid "_Default"
-msgstr "默认(_D)"
+msgstr "મૂળભૂત (_D)"
 
 #: ../src/pavucontrol.cc:805
 msgid "pa_context_set_source_volume_by_index() failed"
-msgstr "pa_context_set_source_volume_by_index() 失败"
+msgstr "pa_context_set_source_volume_by_index() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:820
 msgid "pa_context_set_source_mute_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() 失败"
+msgstr "pa_context_set_source_mute_by_index() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:834
 msgid "pa_context_set_default_source() failed"
-msgstr "pa_context_set_default_source() 失败"
+msgstr "pa_context_set_default_source() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:843 ../src/pavucontrol.cc:946
 msgid "_Move Stream..."
-msgstr "移动流媒体(_M)..."
+msgstr "સ્ટ્રીમને ખસેડો (_M)..."
 
 #: ../src/pavucontrol.cc:844 ../src/pavucontrol.cc:947
 msgid "_Terminate Stream"
-msgstr "结束流媒体(_T)"
+msgstr "સ્ટ્રીમનો અંત લાવો (_T)"
 
 #: ../src/pavucontrol.cc:870
 msgid "pa_context_set_sink_input_volume() failed"
-msgstr "pa_context_set_sink_input_volume() 失败"
+msgstr "pa_context_set_sink_input_volume() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:885
 msgid "pa_context_set_sink_input_mute() failed"
-msgstr "pa_context_set_sink_input_mute() 失败"
+msgstr "pa_context_set_sink_input_mute() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:919
 msgid "pa_context_kill_sink_input() failed"
-msgstr "pa_context_kill_sink_input() 失败"
+msgstr "pa_context_kill_sink_input() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:936
 msgid "pa_context_move_sink_input_by_index() failed"
-msgstr "pa_context_move_sink_input_by_index() 失败"
+msgstr "pa_context_move_sink_input_by_index() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:972
 msgid "pa_context_kill_source_output() failed"
-msgstr "pa_context_kill_source_output() 失败"
+msgstr "pa_context_kill_source_output() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:1013
 msgid "pa_context_move_source_output_by_index() failed"
-msgstr "pa_context_move_source_output_by_index() 失败"
+msgstr "pa_context_move_source_output_by_index() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:1055
 msgid "pa_ext_stream_restore_write() failed"
-msgstr "pa_ext_stream_restore_write() 失败"
+msgstr "pa_ext_stream_restore_write() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:1238
 msgid "Failed to read data from stream"
-msgstr "无法从流媒体中读取数据"
+msgstr "સ્ટ્રીમમાંથી માહિતી વાંચવામાં નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:1274 ../src/pavucontrol.cc:1312
 msgid "Peak detect"
-msgstr "尖峰探测"
+msgstr "શોધની ટોચ"
 
 #: ../src/pavucontrol.cc:1275 ../src/pavucontrol.cc:1313
 msgid "Failed to create monitoring stream"
-msgstr "无法常见监视流媒体"
+msgstr "મોનિટરીંગ સ્ટ્રીમને બનાવવામાં નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:1283 ../src/pavucontrol.cc:1322
 msgid "Failed to connect monitoring stream"
-msgstr "无法连接到监视流媒体"
+msgstr "મોનિટરીંગ સ્ટ્રીમને જોડવામાં નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:1565
 msgid "System Sounds"
-msgstr "系统声音"
+msgstr "સિસ્ટમ સાઉન્ડો"
 
 #: ../src/pavucontrol.cc:1872
 msgid "Card callback failure"
-msgstr "声卡回叫失败"
+msgstr "કાર્ડ કોલબેક નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:1891
 msgid "Sink callback failure"
-msgstr "Sink 回叫失败"
+msgstr "સિન્ક કોલબેક નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:1910
 msgid "Source callback failure"
-msgstr "源回叫失败"
+msgstr "સ્ત્રોત કોલબેક નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:1929
 msgid "Sink input callback failure"
-msgstr "Sink 输入回叫失败"
+msgstr "સિન્ક ઇનપુટ કોલબેક નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:1948
 msgid "Source output callback failure"
-msgstr "源输出回叫失败"
+msgstr "સ્ત્રોત આઉટપુટ કોલબેક નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:1982
 msgid "Client callback failure"
-msgstr "客户端回叫失败"
+msgstr "ક્લાઇન્ટ કોલબેક નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:1998
 msgid "Server info callback failure"
-msgstr "服务器信息回叫失败"
+msgstr "સર્વર જાણકારી કોલબેક નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2015 ../src/pavucontrol.cc:2230
 #, c-format
 msgid "Failed to initialized stream_restore extension: %s"
-msgstr "无法初始化 stream_restore 扩展：%s"
+msgstr "સ્ટ્રીમ પુન:સંગ્રહ એક્સટેન્શનને પ્રારંભ કરવામાં નિષ્ફળ: %s"
 
 #: ../src/pavucontrol.cc:2035
 msgid "pa_ext_stream_restore_read() failed"
-msgstr "pa_ext_stream_restore_read() 失败"
+msgstr "pa_ext_stream_restore_read() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2052
 msgid "pa_context_get_sink_info_by_index() failed"
-msgstr "pa_context_get_sink_info_by_index() 失败"
+msgstr "pa_context_get_sink_info_by_index() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2065
 msgid "pa_context_get_source_info_by_index() failed"
-msgstr "pa_context_get_source_info_by_index() 失败"
+msgstr "pa_context_get_source_info_by_index() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2078 ../src/pavucontrol.cc:2091
 msgid "pa_context_get_sink_input_info() failed"
-msgstr "pa_context_get_sink_input_info() 失败"
+msgstr "pa_context_get_sink_input_info() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2104
 msgid "pa_context_get_client_info() failed"
-msgstr "pa_context_get_client_info() 失败"
+msgstr "pa_context_get_client_info() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2114 ../src/pavucontrol.cc:2171
 msgid "pa_context_get_server_info() failed"
-msgstr "pa_context_get_server_info() 失败"
+msgstr "pa_context_get_server_info() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2127
 msgid "pa_context_get_card_info_by_index() failed"
-msgstr "pa_context_get_card_info_by_index() 失败"
+msgstr "pa_context_get_card_info_by_index() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2162
 msgid "pa_context_subscribe() failed"
-msgstr "pa_context_subscribe() 失败"
+msgstr "pa_context_subscribe() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2178
 msgid "pa_context_client_info_list() failed"
-msgstr "pa_context_client_info_list() 失败"
+msgstr "pa_context_client_info_list() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2185
 msgid "pa_context_get_card_info_list() failed"
-msgstr "pa_context_get_card_info_list() 失败"
+msgstr "pa_context_get_card_info_list() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2192
 msgid "pa_context_get_sink_info_list() failed"
-msgstr "pa_context_get_sink_info_list() 失败"
+msgstr "pa_context_get_sink_info_list() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2199
 msgid "pa_context_get_source_info_list() failed"
-msgstr "pa_context_get_source_info_list() 失败"
+msgstr "pa_context_get_source_info_list() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2206
 msgid "pa_context_get_sink_input_info_list() failed"
-msgstr "pa_context_get_sink_input_info_list() 失败"
+msgstr "pa_context_get_sink_input_info_list() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2213
 msgid "pa_context_get_source_output_info_list() failed"
-msgstr "pa_context_get_source_output_info_list() 失败"
+msgstr "pa_context_get_source_output_info_list() નિષ્ફળ"
 
 #: ../src/pavucontrol.cc:2236 ../src/pavucontrol.cc:2280
 msgid "Connection failed"
-msgstr "连接失败"
+msgstr "જોડાણ નિષ્ફળ"
 

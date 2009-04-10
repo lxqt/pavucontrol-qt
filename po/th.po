@@ -1,29 +1,35 @@
+# pavucontrol thai
+# Copyright (C) 2009
+# This file is distributed under the same license as the pavucontrol package.
+# Manatsawin Hanmongkolchai <manatsawin@gmail.com>, 2009.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-05 13:28+0000\n"
-"PO-Revision-Date: 2009-03-08 21:14-0300\n"
-"Last-Translator: Domingo Becker <domingobecker@gmail.com>\n"
-"Language-Team: Fedora Spanish <fedora-trans-es@redhat.com>\n"
+"POT-Creation-Date: 2009-03-13 07:30+0000\n"
+"PO-Revision-Date: 2009-03-13 16:02+0700\n"
+"Last-Translator: Manatsawin Hanmongkolchai <manatsawin@gmail.com>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Spanish\n"
+"X-Poedit-Language: Thai\n"
+"X-Poedit-Country: THAILAND\n"
 
 #: ../src/pavucontrol.desktop.in.h:1
 msgid "Adjust the volume level"
-msgstr "Ajustar el nivel de volumen"
+msgstr "ปรับระดับเสียง"
 
 #: ../src/pavucontrol.desktop.in.h:2
 #: ../src/pavucontrol.cc:2267
 msgid "PulseAudio Volume Control"
-msgstr "Control de Volumen de PulseAudio"
+msgstr "ตัวควบคุมเสียง PulseAudio"
 
 #: ../src/pavucontrol.desktop.in.h:3
 #: ../src/pavucontrol.glade.h:30
 msgid "Volume Control"
-msgstr "Control de Volumen"
+msgstr "ตัวควบคุมเสียง"
 
 #: ../src/pavucontrol.glade.h:2
 #, no-c-format
@@ -32,43 +38,43 @@ msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
 msgid "<b>Profile:</b>"
-msgstr "<b>Perfil:</b>"
+msgstr "<b>โพรไฟล์:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>S_how:</b>"
-msgstr "<b>M_ostrar:</b>"
+msgstr "<b>_แสดง:</b>"
 
 #: ../src/pavucontrol.glade.h:5
 msgid "<b>Sho_w:</b>"
-msgstr "<b>Mo_strar:</b>"
+msgstr "<b>แ_สดง:</b>"
 
 #: ../src/pavucontrol.glade.h:6
 msgid "<b>_Show:</b>"
-msgstr "<b>_Mostrar:</b>"
+msgstr "<b>แส_ดง:</b>"
 
 #: ../src/pavucontrol.glade.h:7
 msgid "<b>left-front</b>"
-msgstr "<b>frente-izquierda</b>"
+msgstr "<b>ซ้าย-หน้า</b>"
 
 #: ../src/pavucontrol.glade.h:8
 msgid "<i>No application is currently playing audio.</i>"
-msgstr "<i>Ninguna aplicación está actualmente reproduciendo sonidos.</i>"
+msgstr "<i>ไม่มีโปรแกรมใดกำลังเล่นเสียงอยู่</i>"
 
 #: ../src/pavucontrol.glade.h:9
 msgid "<i>No application is currently recording audio.</i>"
-msgstr "<i>Ninguna aplicación está actualmente grabando audio.</i>"
+msgstr "<i>ไม่มีโปรแกรมใดกำลังอัดเสียงอยู่</i>"
 
 #: ../src/pavucontrol.glade.h:10
 msgid "<i>No cards available for configuration</i>"
-msgstr "<i>No hay placas disponibles para configurar</i>"
+msgstr "<i>ไม่มีการ์ดให้ปรับแต่ง</i>"
 
 #: ../src/pavucontrol.glade.h:11
 msgid "<i>No input devices available</i>"
-msgstr "<i>No hay dispositivos de entrada disponibles</i>"
+msgstr "<i>ไม่มีอุปกรณ์รับเข้า</i>"
 
 #: ../src/pavucontrol.glade.h:12
 msgid "<i>No output devices available</i>"
-msgstr "<i>No hay dispositivos de salida disponibles</i>"
+msgstr "<i>ไม่มีอุปกรณ์เอาท์พุต</i>"
 
 #: ../src/pavucontrol.glade.h:13
 msgid ""
@@ -78,11 +84,11 @@ msgid ""
 "Virtual Input Devices\n"
 "Monitors"
 msgstr ""
-"Todos los Dispositivos de Entrada\n"
-"Todos Excepto los Monitores\n"
-"Dispositivos de Entrada por Hardware\n"
-"Dispositivos de Entrada Virtuales\n"
-"Monitores"
+"อุปกรณ์รับเข้าทั้งหมด\n"
+"ทั้งหมดยกเว้นจอ\n"
+"อุปกรณ์รับเข้าฮาร์ดแวร์\n"
+"อุปกรณ์รับเข้าเสมือน\n"
+"จอ"
 
 #: ../src/pavucontrol.glade.h:18
 msgid ""
@@ -90,9 +96,9 @@ msgid ""
 "Hardware Output Devices\n"
 "Virtual Output Devices"
 msgstr ""
-"Todos los Dispositivos de Salida\n"
-"Dispositivos de Salida por Hardware\n"
-"Dispositivos de Salida Virtuales"
+"อุปกรณ์เอาท์พุตทั้งหมด\n"
+"อุปกรณ์เอาท์พุตฮาร์ดแวร์\n"
+"อุปกรณ์เอาท์พุตเสมือน"
 
 #. Applications All streams
 #: ../src/pavucontrol.glade.h:22
@@ -101,241 +107,241 @@ msgid ""
 "Applications\n"
 "Virtual Streams"
 msgstr ""
-"Todos los Flujos\n"
-"Aplicaciones\n"
-"Flujos Virtuales"
+"สตรีมทั้งหมด\n"
+"โปรแกรม\n"
+"สตรีมเสมือน"
 
 #: ../src/pavucontrol.glade.h:25
 msgid "Card Name"
-msgstr "Nombre de la Placa"
+msgstr "ชื่อการ์ด"
 
 #: ../src/pavucontrol.glade.h:26
 msgid "Lock channels together"
-msgstr "Bloquear los canales entre sí"
+msgstr "ล็อคช่องไว้ด้วยกัน"
 
 #: ../src/pavucontrol.glade.h:27
 msgid "Mute audio"
-msgstr "Silenciar audio"
+msgstr "ปิดเสียง"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Open menu"
-msgstr "Abrir menu"
+msgstr "เปิดเมนู"
 
 #: ../src/pavucontrol.glade.h:29
 msgid "Stream Title"
-msgstr "Título del Flujo"
+msgstr "ชื่อสตรีม"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "_Configuration"
-msgstr "_Configuración"
+msgstr "_การตั้งค่า"
 
 #: ../src/pavucontrol.glade.h:32
 msgid "_Input Devices"
-msgstr "_Dispositivos de Entrada"
+msgstr "_อุปกรณ์รับเข้า"
 
 #: ../src/pavucontrol.glade.h:33
 msgid "_Output Devices"
-msgstr "Dispositivos de _Salida"
+msgstr "อุปกรณ์เ_อาท์พุต"
 
 #: ../src/pavucontrol.glade.h:34
 msgid "_Playback"
-msgstr "_Reproducción"
+msgstr "_เล่น"
 
 #: ../src/pavucontrol.glade.h:35
 msgid "_Recording"
-msgstr "_Grabación"
+msgstr "_บันทึกเสียง"
 
 #: ../src/pavucontrol.cc:463
 msgid "Volume Control Feedback Sound"
-msgstr "Sonido de Retorno del Control de Volúmen"
+msgstr ""
 
 #: ../src/pavucontrol.cc:542
 msgid "pa_context_set_card_profile_by_index() failed"
-msgstr "pa_context_set_card_profile_by_index() falló"
+msgstr "pa_context_set_card_profile_by_index() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:747
 msgid "pa_context_set_sink_volume_by_index() failed"
-msgstr "pa_context_set_sink_volume_by_index() falló"
+msgstr "pa_context_set_sink_volume_by_index() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:762
 msgid "pa_context_set_sink_mute_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() falló"
+msgstr "pa_context_set_sink_mute_by_index() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:776
 msgid "pa_context_set_default_sink() failed"
-msgstr "pa_context_set_default_sink() falló"
+msgstr "pa_context_set_default_sink() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:784
 msgid "_Default"
-msgstr "_Predeterminado"
+msgstr "_ปริยาย"
 
 #: ../src/pavucontrol.cc:805
 msgid "pa_context_set_source_volume_by_index() failed"
-msgstr "pa_context_set_source_volume_by_index() falló"
+msgstr "pa_context_set_source_volume_by_index() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:820
 msgid "pa_context_set_source_mute_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() falló"
+msgstr "pa_context_set_source_mute_by_index() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:834
 msgid "pa_context_set_default_source() failed"
-msgstr "pa_context_set_default_source() falló"
+msgstr "pa_context_set_default_source() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:843
 #: ../src/pavucontrol.cc:946
 msgid "_Move Stream..."
-msgstr "_Mover Flujo..."
+msgstr "_ย้ายสตรีม..."
 
 #: ../src/pavucontrol.cc:844
 #: ../src/pavucontrol.cc:947
 msgid "_Terminate Stream"
-msgstr "_Terminar Flujo"
+msgstr "_จบสตรีม"
 
 #: ../src/pavucontrol.cc:870
 msgid "pa_context_set_sink_input_volume() failed"
-msgstr "pa_context_set_sink_input_volume() falló"
+msgstr "pa_context_set_sink_input_volume() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:885
 msgid "pa_context_set_sink_input_mute() failed"
-msgstr "pa_context_set_sink_input_mute() falló"
+msgstr "pa_context_set_sink_input_mute() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:919
 msgid "pa_context_kill_sink_input() failed"
-msgstr "pa_context_kill_sink_input() falló"
+msgstr "pa_context_kill_sink_input() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:936
 msgid "pa_context_move_sink_input_by_index() failed"
-msgstr "pa_context_move_sink_input_by_index() falló"
+msgstr "pa_context_move_sink_input_by_index() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:972
 msgid "pa_context_kill_source_output() failed"
-msgstr "pa_context_kill_source_output() falló"
+msgstr "pa_context_kill_source_output() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:1013
 msgid "pa_context_move_source_output_by_index() failed"
-msgstr "pa_context_move_source_output_by_index() falló"
+msgstr "pa_context_move_source_output_by_index() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:1055
 msgid "pa_ext_stream_restore_write() failed"
-msgstr "pa_ext_stream_restore_write() falló"
+msgstr "pa_ext_stream_restore_write() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:1238
 msgid "Failed to read data from stream"
-msgstr "Falló al leer datos desde el flujo"
+msgstr "ไม่สามารถอ่านจากสตรีมได้"
 
 #: ../src/pavucontrol.cc:1274
 #: ../src/pavucontrol.cc:1312
 msgid "Peak detect"
-msgstr "Detección de Picos"
+msgstr "ตรวจพบพีค"
 
 #: ../src/pavucontrol.cc:1275
 #: ../src/pavucontrol.cc:1313
 msgid "Failed to create monitoring stream"
-msgstr "Falló al crear flujo de monitoreo"
+msgstr ""
 
 #: ../src/pavucontrol.cc:1283
 #: ../src/pavucontrol.cc:1322
 msgid "Failed to connect monitoring stream"
-msgstr "Falló al conectarse al flujo de monitoreo"
+msgstr ""
 
 #: ../src/pavucontrol.cc:1565
 msgid "System Sounds"
-msgstr "Sonidos del Sistema"
+msgstr "เสียงของระบบ"
 
 #: ../src/pavucontrol.cc:1872
 msgid "Card callback failure"
-msgstr "Fallo en retrollamada de la placa"
+msgstr ""
 
 #: ../src/pavucontrol.cc:1891
 msgid "Sink callback failure"
-msgstr "Fallo en retrollamada al sumidero"
+msgstr ""
 
 #: ../src/pavucontrol.cc:1910
 msgid "Source callback failure"
-msgstr "Fallo en retrollamada a la fuente"
+msgstr ""
 
 #: ../src/pavucontrol.cc:1929
 msgid "Sink input callback failure"
-msgstr "Fallo en retrollamada de entrada sumidero"
+msgstr ""
 
 #: ../src/pavucontrol.cc:1948
 msgid "Source output callback failure"
-msgstr "Fallo en retrollamada de salida fuente"
+msgstr ""
 
 #: ../src/pavucontrol.cc:1982
 msgid "Client callback failure"
-msgstr "Fallo en retrollamada al cliente"
+msgstr ""
 
 #: ../src/pavucontrol.cc:1998
 msgid "Server info callback failure"
-msgstr "Fallo en retrollamada por información del servidor"
+msgstr ""
 
 #: ../src/pavucontrol.cc:2015
 #: ../src/pavucontrol.cc:2230
 #, c-format
 msgid "Failed to initialized stream_restore extension: %s"
-msgstr "Falló al inicializar flujo _restaruar extensión: %s"
+msgstr "ไม่สามารถเรียกส่วนขยายของ stream_restore: %s"
 
 #: ../src/pavucontrol.cc:2035
 msgid "pa_ext_stream_restore_read() failed"
-msgstr "pa_ext_stream_restore_read() falló"
+msgstr "pa_ext_stream_restore_read() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2052
 msgid "pa_context_get_sink_info_by_index() failed"
-msgstr "pa_context_get_sink_info_by_index() falló"
+msgstr "pa_context_get_sink_info_by_index() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2065
 msgid "pa_context_get_source_info_by_index() failed"
-msgstr "pa_context_get_source_info_by_index() falló"
+msgstr "pa_context_get_source_info_by_index() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2078
 #: ../src/pavucontrol.cc:2091
 msgid "pa_context_get_sink_input_info() failed"
-msgstr "pa_context_get_sink_input_info() falló"
+msgstr "pa_context_get_sink_input_info() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2104
 msgid "pa_context_get_client_info() failed"
-msgstr "pa_context_get_client_info() falló"
+msgstr "pa_context_get_client_info() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2114
 #: ../src/pavucontrol.cc:2171
 msgid "pa_context_get_server_info() failed"
-msgstr "pa_context_get_server_info() falló"
+msgstr "pa_context_get_server_info() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2127
 msgid "pa_context_get_card_info_by_index() failed"
-msgstr "pa_context_get_card_info_by_index() falló"
+msgstr "pa_context_get_card_info_by_index() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2162
 msgid "pa_context_subscribe() failed"
-msgstr "pa_context_subscribe() falló"
+msgstr "pa_context_subscribe() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2178
 msgid "pa_context_client_info_list() failed"
-msgstr "pa_context_client_info_list() falló"
+msgstr "pa_context_client_info_list() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2185
 msgid "pa_context_get_card_info_list() failed"
-msgstr "pa_context_get_card_info_list() falló"
+msgstr "pa_context_get_card_info_list() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2192
 msgid "pa_context_get_sink_info_list() failed"
-msgstr "pa_context_get_sink_info_list() falló"
+msgstr "pa_context_get_sink_info_list() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2199
 msgid "pa_context_get_source_info_list() failed"
-msgstr "pa_context_get_source_info_list() falló"
+msgstr "pa_context_get_source_info_list() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2206
 msgid "pa_context_get_sink_input_info_list() failed"
-msgstr "pa_context_get_sink_input_info_list() falló"
+msgstr "pa_context_get_sink_input_info_list() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2213
 msgid "pa_context_get_source_output_info_list() failed"
-msgstr "pa_context_get_source_output_info_list() falló"
+msgstr "pa_context_get_source_output_info_list() ไม่สำเร็จ"
 
 #: ../src/pavucontrol.cc:2236
 #: ../src/pavucontrol.cc:2280
 msgid "Connection failed"
-msgstr "Falló la conexión"
+msgstr "การเชื่อมต่อล้มเหลว"
 
