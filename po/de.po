@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-25 05:19+0100\n"
+"POT-Creation-Date: 2009-04-10 02:55+0200\n"
 "PO-Revision-Date: 2008-09-09 21:32+0200\n"
 "Last-Translator: Florian Steinel <fsteinel@fedoraproject.org>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "Adjust the volume level"
 msgstr "Lautstärke anpassen"
 
-#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:2011
+#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:472
 msgid "PulseAudio Volume Control"
 msgstr "PulseAudio-Lautstärkeregler"
 
-#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:27
+#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:30
 msgid "Volume Control"
 msgstr "Lautstärkeregler"
 
@@ -36,38 +36,47 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-msgid "<b>S_how:</b>"
+#, fuzzy
+msgid "<b>Profile:</b>"
 msgstr "<b>A_nzeigen:</b>"
 
 #: ../src/pavucontrol.glade.h:4
+msgid "<b>S_how:</b>"
+msgstr "<b>A_nzeigen:</b>"
+
+#: ../src/pavucontrol.glade.h:5
 msgid "<b>Sho_w:</b>"
 msgstr "<b>Anze_igen:</b>"
 
-#: ../src/pavucontrol.glade.h:5
+#: ../src/pavucontrol.glade.h:6
 msgid "<b>_Show:</b>"
 msgstr "<b>_Anzeigen:</b>"
 
-#: ../src/pavucontrol.glade.h:6
+#: ../src/pavucontrol.glade.h:7
 msgid "<b>left-front</b>"
 msgstr "<b>vorne links</>"
 
-#: ../src/pavucontrol.glade.h:7
+#: ../src/pavucontrol.glade.h:8
 msgid "<i>No application is currently playing audio.</i>"
 msgstr "<i>Keine Applikation gibt zur Zeit Ton wieder.</i>"
 
-#: ../src/pavucontrol.glade.h:8
+#: ../src/pavucontrol.glade.h:9
 msgid "<i>No application is currently recording audio.</i>"
 msgstr "<i>Keine Applikation nimmt zur Zeit Ton auf.</i>"
 
-#: ../src/pavucontrol.glade.h:9
+#: ../src/pavucontrol.glade.h:10
+msgid "<i>No cards available for configuration</i>"
+msgstr ""
+
+#: ../src/pavucontrol.glade.h:11
 msgid "<i>No input devices available</i>"
 msgstr "<i>Keine Eingabegeräte verfügbar.</i>"
 
-#: ../src/pavucontrol.glade.h:10
+#: ../src/pavucontrol.glade.h:12
 msgid "<i>No output devices available</i>"
 msgstr "<i>Keine Ausgabegeräte verfügbar</i>"
 
-#: ../src/pavucontrol.glade.h:11
+#: ../src/pavucontrol.glade.h:13
 msgid ""
 "All Input Devices\n"
 "All Except Monitors\n"
@@ -81,7 +90,7 @@ msgstr ""
 "Virtuelle Eingabegeräte\n"
 "Beobachter"
 
-#: ../src/pavucontrol.glade.h:16
+#: ../src/pavucontrol.glade.h:18
 msgid ""
 "All Output Devices\n"
 "Hardware Output Devices\n"
@@ -92,7 +101,7 @@ msgstr ""
 "Virtuelle Ausgabegeräte"
 
 #. Applications All streams
-#: ../src/pavucontrol.glade.h:20
+#: ../src/pavucontrol.glade.h:22
 msgid ""
 "All Streams\n"
 "Applications\n"
@@ -102,203 +111,204 @@ msgstr ""
 "Anwendungen\n"
 "Virtuelle Spuren"
 
-#: ../src/pavucontrol.glade.h:23
+#: ../src/pavucontrol.glade.h:25
+msgid "Card Name"
+msgstr ""
+
+#: ../src/pavucontrol.glade.h:26
 msgid "Lock channels together"
 msgstr "Kanäle zusammen anpassen"
 
-#: ../src/pavucontrol.glade.h:24
+#: ../src/pavucontrol.glade.h:27
 msgid "Mute audio"
 msgstr "Stummschalten"
 
-#: ../src/pavucontrol.glade.h:25
+#: ../src/pavucontrol.glade.h:28
 msgid "Open menu"
 msgstr "Menü öffnen"
 
-#: ../src/pavucontrol.glade.h:26
+#: ../src/pavucontrol.glade.h:29
 msgid "Stream Title"
 msgstr "Spurtitel"
 
-#: ../src/pavucontrol.glade.h:28
+#: ../src/pavucontrol.glade.h:31
+msgid "_Configuration"
+msgstr ""
+
+#: ../src/pavucontrol.glade.h:32
 msgid "_Input Devices"
 msgstr "_Eingabegeräte"
 
-#: ../src/pavucontrol.glade.h:29
+#: ../src/pavucontrol.glade.h:33
 msgid "_Output Devices"
 msgstr "_Ausgabegeräte"
 
-#: ../src/pavucontrol.glade.h:30
+#: ../src/pavucontrol.glade.h:34
 msgid "_Playback"
 msgstr "_Wiedergabe"
 
-#: ../src/pavucontrol.glade.h:31
+#: ../src/pavucontrol.glade.h:35
 msgid "_Recording"
 msgstr "_Aufnahme"
 
-#: ../src/pavucontrol.cc:418
-msgid "Volume Control Feedback Sound"
-msgstr "Lautstärkeregler-Rückgabeklang"
+#: ../src/pavucontrol.cc:71
+#, fuzzy
+msgid "Card callback failure"
+msgstr "Quellen Callback-Fehler"
 
-#: ../src/pavucontrol.cc:632
-msgid "pa_context_set_sink_volume_by_index() failed"
-msgstr "pa_context_set_sink_volume_by_index() gescheitert"
-
-#: ../src/pavucontrol.cc:647
-msgid "pa_context_set_sink_mute_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() gescheitert"
-
-#: ../src/pavucontrol.cc:661
-msgid "pa_context_set_default_sink() failed"
-msgstr "pa_context_set_default_sink() gescheitert"
-
-#: ../src/pavucontrol.cc:669
-msgid "_Default"
-msgstr "_Vorgabe"
-
-#: ../src/pavucontrol.cc:690
-msgid "pa_context_set_source_volume_by_index() failed"
-msgstr "pa_context_set_source_volume_by_index() gescheitert"
-
-#: ../src/pavucontrol.cc:705
-msgid "pa_context_set_source_mute_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() gescheitert"
-
-#: ../src/pavucontrol.cc:719
-msgid "pa_context_set_default_source() failed"
-msgstr "pa_context_set_default_source() gescheitert"
-
-#: ../src/pavucontrol.cc:728 ../src/pavucontrol.cc:831
-msgid "_Move Stream..."
-msgstr "Spur _verschieben …"
-
-#: ../src/pavucontrol.cc:729 ../src/pavucontrol.cc:832
-msgid "_Terminate Stream"
-msgstr "Spur _beenden"
-
-#: ../src/pavucontrol.cc:755
-msgid "pa_context_set_sink_input_volume() failed"
-msgstr "pa_context_set_sink_input_volume() gescheitert"
-
-#: ../src/pavucontrol.cc:770
-msgid "pa_context_set_sink_input_mute() failed"
-msgstr "pa_context_set_sink_input_mute() gescheitert"
-
-#: ../src/pavucontrol.cc:804
-msgid "pa_context_kill_sink_input() failed"
-msgstr "pa_context_kill_sink_input() gescheitert"
-
-#: ../src/pavucontrol.cc:821
-msgid "pa_context_move_sink_input_by_index() failed"
-msgstr "pa_context_move_sink_input_by_index() gescheitert"
-
-#: ../src/pavucontrol.cc:857
-msgid "pa_context_kill_source_output() failed"
-msgstr "pa_context_kill_source_output() gescheitert"
-
-#: ../src/pavucontrol.cc:898
-msgid "pa_context_move_source_output_by_index() failed"
-msgstr "pa_context_move_source_output_by_index() gescheitert"
-
-#: ../src/pavucontrol.cc:940
-msgid "pa_ext_stream_restore_write() failed"
-msgstr "pa_ext_stream_restore_write() gescheitert"
-
-#: ../src/pavucontrol.cc:1061
-msgid "Failed to read data from stream"
-msgstr "Lesen des Datenstroms gescheitert"
-
-#: ../src/pavucontrol.cc:1096 ../src/pavucontrol.cc:1133
-msgid "Peak detect"
-msgstr "Ausschlagsserkennung"
-
-#: ../src/pavucontrol.cc:1097 ../src/pavucontrol.cc:1134
-msgid "Failed to create monitoring stream"
-msgstr "Erstellung des Beobachterdatenstroms gescheitert"
-
-#: ../src/pavucontrol.cc:1105 ../src/pavucontrol.cc:1143
-msgid "Failed to connect monitoring stream"
-msgstr "Verbindungsaufbau zum Beobachterdatenstrom gescheitert"
-
-#: ../src/pavucontrol.cc:1383
-msgid "System Sounds"
-msgstr "Systemklänge"
-
-#: ../src/pavucontrol.cc:1665
+#: ../src/pavucontrol.cc:90
 msgid "Sink callback failure"
 msgstr "Senke Callback-Fehler"
 
-#: ../src/pavucontrol.cc:1684
+#: ../src/pavucontrol.cc:109
 msgid "Source callback failure"
 msgstr "Quellen Callback-Fehler"
 
-#: ../src/pavucontrol.cc:1703
+#: ../src/pavucontrol.cc:128
 msgid "Sink input callback failure"
 msgstr "Senken-Eingabe Callback-Fehler"
 
-#: ../src/pavucontrol.cc:1722
+#: ../src/pavucontrol.cc:147
 msgid "Source output callback failure"
 msgstr "Quellen-Ausgabe Callback-Fehler"
 
-#: ../src/pavucontrol.cc:1756
+#: ../src/pavucontrol.cc:181
 msgid "Client callback failure"
 msgstr "Client Callback-Fehler"
 
-#: ../src/pavucontrol.cc:1772
+#: ../src/pavucontrol.cc:197
 msgid "Server info callback failure"
 msgstr "Server-Information Callback-Fehler"
 
-#: ../src/pavucontrol.cc:1789 ../src/pavucontrol.cc:1974
-#, c-format
-msgid "Failed to initialized stream_restore extension: %s"
+#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
+#, fuzzy, c-format
+msgid "Failed to initialize stream_restore extension: %s"
 msgstr "Initialisierung der »stream_restore«-Erweiterung gescheitert: %s"
 
-#: ../src/pavucontrol.cc:1809
+#: ../src/pavucontrol.cc:235
 msgid "pa_ext_stream_restore_read() failed"
 msgstr "pa_ext_stream_restore_read() gescheitert"
 
-#: ../src/pavucontrol.cc:1826
+#: ../src/pavucontrol.cc:252
 msgid "pa_context_get_sink_info_by_index() failed"
 msgstr "pa_context_get_sink_info_by_index() gescheitert"
 
-#: ../src/pavucontrol.cc:1839
+#: ../src/pavucontrol.cc:265
 msgid "pa_context_get_source_info_by_index() failed"
 msgstr "pa_context_get_source_info_by_index() gescheitert"
 
-#: ../src/pavucontrol.cc:1852 ../src/pavucontrol.cc:1865
+#: ../src/pavucontrol.cc:278 ../src/pavucontrol.cc:291
 msgid "pa_context_get_sink_input_info() failed"
 msgstr "pa_context_get_sink_input_info() gescheitert"
 
-#: ../src/pavucontrol.cc:1878
+#: ../src/pavucontrol.cc:304
 msgid "pa_context_get_client_info() failed"
 msgstr "pa_context_get_client_info() gescheitert"
 
-#: ../src/pavucontrol.cc:1888 ../src/pavucontrol.cc:1926
+#: ../src/pavucontrol.cc:314 ../src/pavucontrol.cc:371
 msgid "pa_context_get_server_info() failed"
 msgstr "pa_context_get_server_info() gescheitert"
 
-#: ../src/pavucontrol.cc:1920
+#: ../src/pavucontrol.cc:327
+#, fuzzy
+msgid "pa_context_get_card_info_by_index() failed"
+msgstr "pa_context_get_source_info_by_index() gescheitert"
+
+#: ../src/pavucontrol.cc:362
 msgid "pa_context_subscribe() failed"
 msgstr "pa_context_subscribe() gescheitert"
 
-#: ../src/pavucontrol.cc:1932
+#: ../src/pavucontrol.cc:378
 msgid "pa_context_client_info_list() failed"
 msgstr "pa_context_client_info_list() gescheitert"
 
-#: ../src/pavucontrol.cc:1938
+#: ../src/pavucontrol.cc:385
+#, fuzzy
+msgid "pa_context_get_card_info_list() failed"
+msgstr "pa_context_get_source_info_list() gescheitert"
+
+#: ../src/pavucontrol.cc:392
 msgid "pa_context_get_sink_info_list() failed"
 msgstr "pa_context_get_sink_info_list() gescheitert"
 
-#: ../src/pavucontrol.cc:1944
+#: ../src/pavucontrol.cc:399
 msgid "pa_context_get_source_info_list() failed"
 msgstr "pa_context_get_source_info_list() gescheitert"
 
-#: ../src/pavucontrol.cc:1950
+#: ../src/pavucontrol.cc:406
 msgid "pa_context_get_sink_input_info_list() failed"
 msgstr "pa_context_get_sink_input_info_list() gescheitert"
 
-#: ../src/pavucontrol.cc:1956
+#: ../src/pavucontrol.cc:413
 msgid "pa_context_get_source_output_info_list() failed"
 msgstr "pa_context_get_source_output_info_list() gescheitert"
 
-#: ../src/pavucontrol.cc:1980 ../src/pavucontrol.cc:2024
+#: ../src/pavucontrol.cc:437 ../src/pavucontrol.cc:485
 msgid "Connection failed"
 msgstr "Verbindung gescheitert"
+
+#~ msgid "Volume Control Feedback Sound"
+#~ msgstr "Lautstärkeregler-Rückgabeklang"
+
+#~ msgid "pa_context_set_sink_volume_by_index() failed"
+#~ msgstr "pa_context_set_sink_volume_by_index() gescheitert"
+
+#~ msgid "pa_context_set_sink_mute_by_index() failed"
+#~ msgstr "pa_context_set_sink_mute_by_index() gescheitert"
+
+#~ msgid "pa_context_set_default_sink() failed"
+#~ msgstr "pa_context_set_default_sink() gescheitert"
+
+#~ msgid "_Default"
+#~ msgstr "_Vorgabe"
+
+#~ msgid "pa_context_set_source_volume_by_index() failed"
+#~ msgstr "pa_context_set_source_volume_by_index() gescheitert"
+
+#~ msgid "pa_context_set_source_mute_by_index() failed"
+#~ msgstr "pa_context_set_source_mute_by_index() gescheitert"
+
+#~ msgid "pa_context_set_default_source() failed"
+#~ msgstr "pa_context_set_default_source() gescheitert"
+
+#~ msgid "_Move Stream..."
+#~ msgstr "Spur _verschieben …"
+
+#~ msgid "_Terminate Stream"
+#~ msgstr "Spur _beenden"
+
+#~ msgid "pa_context_set_sink_input_volume() failed"
+#~ msgstr "pa_context_set_sink_input_volume() gescheitert"
+
+#~ msgid "pa_context_set_sink_input_mute() failed"
+#~ msgstr "pa_context_set_sink_input_mute() gescheitert"
+
+#~ msgid "pa_context_kill_sink_input() failed"
+#~ msgstr "pa_context_kill_sink_input() gescheitert"
+
+#~ msgid "pa_context_move_sink_input_by_index() failed"
+#~ msgstr "pa_context_move_sink_input_by_index() gescheitert"
+
+#~ msgid "pa_context_kill_source_output() failed"
+#~ msgstr "pa_context_kill_source_output() gescheitert"
+
+#~ msgid "pa_context_move_source_output_by_index() failed"
+#~ msgstr "pa_context_move_source_output_by_index() gescheitert"
+
+#~ msgid "pa_ext_stream_restore_write() failed"
+#~ msgstr "pa_ext_stream_restore_write() gescheitert"
+
+#~ msgid "Failed to read data from stream"
+#~ msgstr "Lesen des Datenstroms gescheitert"
+
+#~ msgid "Peak detect"
+#~ msgstr "Ausschlagsserkennung"
+
+#~ msgid "Failed to create monitoring stream"
+#~ msgstr "Erstellung des Beobachterdatenstroms gescheitert"
+
+#~ msgid "Failed to connect monitoring stream"
+#~ msgstr "Verbindungsaufbau zum Beobachterdatenstrom gescheitert"
+
+#~ msgid "System Sounds"
+#~ msgstr "Systemklänge"

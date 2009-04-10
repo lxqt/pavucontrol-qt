@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-05 19:28+0000\n"
+"POT-Creation-Date: 2009-04-10 02:55+0200\n"
 "PO-Revision-Date: 2009-04-05 16:34-0400\n"
 "Last-Translator: Igor Miletic <grejigl-gnomeprevod@yahoo.ca>\n"
 "Language-Team: Serbian (sr) <fedora-trans-sr@redhat.com>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Adjust the volume level"
 msgstr "Подесите ниво јачине звука"
 
-#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:2267
+#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:472
 msgid "PulseAudio Volume Control"
 msgstr "PulseAudio контрола јачине звука"
 
@@ -149,189 +149,164 @@ msgstr "_Репродукција"
 msgid "_Recording"
 msgstr "_Снимање"
 
-#: ../src/pavucontrol.cc:463
-msgid "Volume Control Feedback Sound"
-msgstr "Контрола јачине одзива звука"
-
-#: ../src/pavucontrol.cc:542
-msgid "pa_context_set_card_profile_by_index() failed"
-msgstr "Неуспела функција pa_context_set_card_profile_by_index()"
-
-#: ../src/pavucontrol.cc:747
-msgid "pa_context_set_sink_volume_by_index() failed"
-msgstr "Неуспела функција pa_context_set_sink_volume_by_index()"
-
-#: ../src/pavucontrol.cc:762
-msgid "pa_context_set_sink_mute_by_index() failed"
-msgstr "Неуспела функција pa_context_set_sink_mute_by_index()"
-
-#: ../src/pavucontrol.cc:776
-msgid "pa_context_set_default_sink() failed"
-msgstr "Неуспела функција pa_context_set_default_sink()"
-
-#: ../src/pavucontrol.cc:784
-msgid "_Default"
-msgstr "_Подразумевано"
-
-#: ../src/pavucontrol.cc:805
-msgid "pa_context_set_source_volume_by_index() failed"
-msgstr "Неуспела функција pa_context_set_source_volume_by_index()"
-
-#: ../src/pavucontrol.cc:820
-msgid "pa_context_set_source_mute_by_index() failed"
-msgstr "Неуспела функција pa_context_set_source_mute_by_index()"
-
-#: ../src/pavucontrol.cc:834
-msgid "pa_context_set_default_source() failed"
-msgstr "Неуспела функција pa_context_set_default_source()"
-
-#: ../src/pavucontrol.cc:843 ../src/pavucontrol.cc:946
-msgid "_Move Stream..."
-msgstr "_Премести ток..."
-
-#: ../src/pavucontrol.cc:844 ../src/pavucontrol.cc:947
-msgid "_Terminate Stream"
-msgstr "_Прекини ток"
-
-#: ../src/pavucontrol.cc:870
-msgid "pa_context_set_sink_input_volume() failed"
-msgstr "Неуспела функција pa_context_set_sink_input_volume()"
-
-#: ../src/pavucontrol.cc:885
-msgid "pa_context_set_sink_input_mute() failed"
-msgstr "Неуспела функција pa_context_set_sink_input_mute()"
-
-#: ../src/pavucontrol.cc:919
-msgid "pa_context_kill_sink_input() failed"
-msgstr "Неуспела функција pa_context_kill_sink_input()"
-
-#: ../src/pavucontrol.cc:936
-msgid "pa_context_move_sink_input_by_index() failed"
-msgstr "Неуспела функција pa_context_move_sink_input_by_index()"
-
-#: ../src/pavucontrol.cc:972
-msgid "pa_context_kill_source_output() failed"
-msgstr "Неуспела функција pa_context_kill_source_output()"
-
-#: ../src/pavucontrol.cc:1013
-msgid "pa_context_move_source_output_by_index() failed"
-msgstr ""
-"Неуспела функција pa_context_move_source_output_by_index()"
-
-#: ../src/pavucontrol.cc:1055
-msgid "pa_ext_stream_restore_write() failed"
-msgstr "Неуспела функција pa_ext_stream_restore_write()"
-
-#: ../src/pavucontrol.cc:1238
-msgid "Failed to read data from stream"
-msgstr "Неуспело очитавање података са тока"
-
-#: ../src/pavucontrol.cc:1274 ../src/pavucontrol.cc:1312
-msgid "Peak detect"
-msgstr "Откривање максималног нивоа"
-
-#: ../src/pavucontrol.cc:1275 ../src/pavucontrol.cc:1313
-msgid "Failed to create monitoring stream"
-msgstr "Неуспело прављење надзорног тока"
-
-#: ../src/pavucontrol.cc:1283 ../src/pavucontrol.cc:1322
-msgid "Failed to connect monitoring stream"
-msgstr "Неуспело повезивање са надзорним током"
-
-#: ../src/pavucontrol.cc:1565
-msgid "System Sounds"
-msgstr "Системски звуци"
-
-#: ../src/pavucontrol.cc:1872
+#: ../src/pavucontrol.cc:71
 msgid "Card callback failure"
 msgstr "Неуспешан опозив картице"
 
-#: ../src/pavucontrol.cc:1891
+#: ../src/pavucontrol.cc:90
 msgid "Sink callback failure"
 msgstr "Неуспешан опозив сливника"
 
-#: ../src/pavucontrol.cc:1910
+#: ../src/pavucontrol.cc:109
 msgid "Source callback failure"
 msgstr "Неуспешан опозив извора"
 
-#: ../src/pavucontrol.cc:1929
+#: ../src/pavucontrol.cc:128
 msgid "Sink input callback failure"
 msgstr "Неуспешан опозив сливника улаза"
 
-#: ../src/pavucontrol.cc:1948
+#: ../src/pavucontrol.cc:147
 msgid "Source output callback failure"
 msgstr "Неуспешан опозив извора излаза"
 
-#: ../src/pavucontrol.cc:1982
+#: ../src/pavucontrol.cc:181
 msgid "Client callback failure"
 msgstr "Неуспешан опозив клијента"
 
-#: ../src/pavucontrol.cc:1998
+#: ../src/pavucontrol.cc:197
 msgid "Server info callback failure"
 msgstr "Неуспешан опозив информација о серверу"
 
-#: ../src/pavucontrol.cc:2015 ../src/pavucontrol.cc:2230
-#, c-format
-msgid "Failed to initialized stream_restore extension: %s"
+#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
+#, fuzzy, c-format
+msgid "Failed to initialize stream_restore extension: %s"
 msgstr "Неуспешна иницијализација stream_restore проширења: %s"
 
-#: ../src/pavucontrol.cc:2035
+#: ../src/pavucontrol.cc:235
 msgid "pa_ext_stream_restore_read() failed"
 msgstr "Неуспела функција pa_ext_stream_restore_read()"
 
-#: ../src/pavucontrol.cc:2052
+#: ../src/pavucontrol.cc:252
 msgid "pa_context_get_sink_info_by_index() failed"
 msgstr "Неуспела функција pa_context_get_sink_info_by_index()"
 
-#: ../src/pavucontrol.cc:2065
+#: ../src/pavucontrol.cc:265
 msgid "pa_context_get_source_info_by_index() failed"
 msgstr "Неуспела функција pa_context_get_source_info_by_index()"
 
-#: ../src/pavucontrol.cc:2078 ../src/pavucontrol.cc:2091
+#: ../src/pavucontrol.cc:278 ../src/pavucontrol.cc:291
 msgid "pa_context_get_sink_input_info() failed"
 msgstr "Неуспела функција pa_context_get_sink_input_info()"
 
-#: ../src/pavucontrol.cc:2104
+#: ../src/pavucontrol.cc:304
 msgid "pa_context_get_client_info() failed"
 msgstr "Неуспела функција pa_context_get_client_info()"
 
-#: ../src/pavucontrol.cc:2114 ../src/pavucontrol.cc:2171
+#: ../src/pavucontrol.cc:314 ../src/pavucontrol.cc:371
 msgid "pa_context_get_server_info() failed"
 msgstr "Неуспела функција pa_context_get_server_info()"
 
-#: ../src/pavucontrol.cc:2127
+#: ../src/pavucontrol.cc:327
 msgid "pa_context_get_card_info_by_index() failed"
 msgstr "Неуспела функција pa_context_get_card_info_by_index()"
 
-#: ../src/pavucontrol.cc:2162
+#: ../src/pavucontrol.cc:362
 msgid "pa_context_subscribe() failed"
 msgstr "Неуспела функција pa_context_subscribe()"
 
-#: ../src/pavucontrol.cc:2178
+#: ../src/pavucontrol.cc:378
 msgid "pa_context_client_info_list() failed"
 msgstr "Неуспела функција pa_context_client_info_list()"
 
-#: ../src/pavucontrol.cc:2185
+#: ../src/pavucontrol.cc:385
 msgid "pa_context_get_card_info_list() failed"
 msgstr "Није успело иѕзвршавање функције pa_context_get_card_info_list()"
 
-#: ../src/pavucontrol.cc:2192
+#: ../src/pavucontrol.cc:392
 msgid "pa_context_get_sink_info_list() failed"
 msgstr "Неуспела функција pa_context_get_sink_info_list()"
 
-#: ../src/pavucontrol.cc:2199
+#: ../src/pavucontrol.cc:399
 msgid "pa_context_get_source_info_list() failed"
 msgstr "Неуспела функција pa_context_get_source_info_list()"
 
-#: ../src/pavucontrol.cc:2206
+#: ../src/pavucontrol.cc:406
 msgid "pa_context_get_sink_input_info_list() failed"
 msgstr "Неуспела функција pa_context_get_sink_input_info_list()"
 
-#: ../src/pavucontrol.cc:2213
+#: ../src/pavucontrol.cc:413
 msgid "pa_context_get_source_output_info_list() failed"
-msgstr ""
-"Неуспела функција pa_context_get_source_output_info_list()"
+msgstr "Неуспела функција pa_context_get_source_output_info_list()"
 
-#: ../src/pavucontrol.cc:2236 ../src/pavucontrol.cc:2280
+#: ../src/pavucontrol.cc:437 ../src/pavucontrol.cc:485
 msgid "Connection failed"
 msgstr "Повезивање није успело"
+
+#~ msgid "Volume Control Feedback Sound"
+#~ msgstr "Контрола јачине одзива звука"
+
+#~ msgid "pa_context_set_card_profile_by_index() failed"
+#~ msgstr "Неуспела функција pa_context_set_card_profile_by_index()"
+
+#~ msgid "pa_context_set_sink_volume_by_index() failed"
+#~ msgstr "Неуспела функција pa_context_set_sink_volume_by_index()"
+
+#~ msgid "pa_context_set_sink_mute_by_index() failed"
+#~ msgstr "Неуспела функција pa_context_set_sink_mute_by_index()"
+
+#~ msgid "pa_context_set_default_sink() failed"
+#~ msgstr "Неуспела функција pa_context_set_default_sink()"
+
+#~ msgid "_Default"
+#~ msgstr "_Подразумевано"
+
+#~ msgid "pa_context_set_source_volume_by_index() failed"
+#~ msgstr "Неуспела функција pa_context_set_source_volume_by_index()"
+
+#~ msgid "pa_context_set_source_mute_by_index() failed"
+#~ msgstr "Неуспела функција pa_context_set_source_mute_by_index()"
+
+#~ msgid "pa_context_set_default_source() failed"
+#~ msgstr "Неуспела функција pa_context_set_default_source()"
+
+#~ msgid "_Move Stream..."
+#~ msgstr "_Премести ток..."
+
+#~ msgid "_Terminate Stream"
+#~ msgstr "_Прекини ток"
+
+#~ msgid "pa_context_set_sink_input_volume() failed"
+#~ msgstr "Неуспела функција pa_context_set_sink_input_volume()"
+
+#~ msgid "pa_context_set_sink_input_mute() failed"
+#~ msgstr "Неуспела функција pa_context_set_sink_input_mute()"
+
+#~ msgid "pa_context_kill_sink_input() failed"
+#~ msgstr "Неуспела функција pa_context_kill_sink_input()"
+
+#~ msgid "pa_context_move_sink_input_by_index() failed"
+#~ msgstr "Неуспела функција pa_context_move_sink_input_by_index()"
+
+#~ msgid "pa_context_kill_source_output() failed"
+#~ msgstr "Неуспела функција pa_context_kill_source_output()"
+
+#~ msgid "pa_context_move_source_output_by_index() failed"
+#~ msgstr "Неуспела функција pa_context_move_source_output_by_index()"
+
+#~ msgid "pa_ext_stream_restore_write() failed"
+#~ msgstr "Неуспела функција pa_ext_stream_restore_write()"
+
+#~ msgid "Failed to read data from stream"
+#~ msgstr "Неуспело очитавање података са тока"
+
+#~ msgid "Peak detect"
+#~ msgstr "Откривање максималног нивоа"
+
+#~ msgid "Failed to create monitoring stream"
+#~ msgstr "Неуспело прављење надзорног тока"
+
+#~ msgid "Failed to connect monitoring stream"
+#~ msgstr "Неуспело повезивање са надзорним током"
+
+#~ msgid "System Sounds"
+#~ msgstr "Системски звуци"

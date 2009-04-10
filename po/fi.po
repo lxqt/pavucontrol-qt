@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: git trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-04 19:28+0000\n"
+"POT-Creation-Date: 2009-04-10 02:55+0200\n"
 "PO-Revision-Date: 2009-04-05 00:06+0300\n"
 "Last-Translator: Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>\n"
 "Language-Team: Finnish <laatu@lokalisointi.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Adjust the volume level"
 msgstr "Säädä äänenvoimakkuutta"
 
-#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:2267
+#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:472
 msgid "PulseAudio Volume Control"
 msgstr "PulseAudion äänenvoimakkuuden hallinta"
 
@@ -148,187 +148,164 @@ msgstr "_Toisto"
 msgid "_Recording"
 msgstr "_Nauhoitus"
 
-#: ../src/pavucontrol.cc:463
-msgid "Volume Control Feedback Sound"
-msgstr "Äänenvoimakkuuden säädön palauteääni"
-
-#: ../src/pavucontrol.cc:542
-msgid "pa_context_set_card_profile_by_index() failed"
-msgstr "pa_context_set_card_profile_by_index() epäonnistui"
-
-#: ../src/pavucontrol.cc:747
-msgid "pa_context_set_sink_volume_by_index() failed"
-msgstr "pa_context_set_sink_volume_by_index() epäonnistui"
-
-#: ../src/pavucontrol.cc:762
-msgid "pa_context_set_sink_mute_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() epäonnistui"
-
-#: ../src/pavucontrol.cc:776
-msgid "pa_context_set_default_sink() failed"
-msgstr "pa_context_set_default_sink() epäonnistui"
-
-#: ../src/pavucontrol.cc:784
-msgid "_Default"
-msgstr "_Oletus"
-
-#: ../src/pavucontrol.cc:805
-msgid "pa_context_set_source_volume_by_index() failed"
-msgstr "pa_context_set_source_volume_by_index() epäonnistui"
-
-#: ../src/pavucontrol.cc:820
-msgid "pa_context_set_source_mute_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() epäonnistui"
-
-#: ../src/pavucontrol.cc:834
-msgid "pa_context_set_default_source() failed"
-msgstr "pa_context_set_default_source() epäonnistui"
-
-#: ../src/pavucontrol.cc:843 ../src/pavucontrol.cc:946
-msgid "_Move Stream..."
-msgstr "_Siirrä virta"
-
-#: ../src/pavucontrol.cc:844 ../src/pavucontrol.cc:947
-msgid "_Terminate Stream"
-msgstr "_Lopeta virta"
-
-#: ../src/pavucontrol.cc:870
-msgid "pa_context_set_sink_input_volume() failed"
-msgstr "pa_context_set_sink_input_volume() epäonnistui"
-
-#: ../src/pavucontrol.cc:885
-msgid "pa_context_set_sink_input_mute() failed"
-msgstr "pa_context_set_sink_input_mute() epäonnistui"
-
-#: ../src/pavucontrol.cc:919
-msgid "pa_context_kill_sink_input() failed"
-msgstr "pa_context_kill_sink_input() epäonnistui"
-
-#: ../src/pavucontrol.cc:936
-msgid "pa_context_move_sink_input_by_index() failed"
-msgstr "pa_context_move_sink_input_by_index() epäonnistui"
-
-#: ../src/pavucontrol.cc:972
-msgid "pa_context_kill_source_output() failed"
-msgstr "pa_context_kill_source_output() epäonnistui"
-
-#: ../src/pavucontrol.cc:1013
-msgid "pa_context_move_source_output_by_index() failed"
-msgstr "pa_context_move_source_output_by_index() epäonnistui"
-
-#: ../src/pavucontrol.cc:1055
-msgid "pa_ext_stream_restore_write() failed"
-msgstr "pa_ext_stream_restore_write() epäonnistui"
-
-#: ../src/pavucontrol.cc:1238
-msgid "Failed to read data from stream"
-msgstr "Datan lukeminen virrasta epäonnistui"
-
-#: ../src/pavucontrol.cc:1274 ../src/pavucontrol.cc:1312
-msgid "Peak detect"
-msgstr "Huipun tunnistus"
-
-#: ../src/pavucontrol.cc:1275 ../src/pavucontrol.cc:1313
-msgid "Failed to create monitoring stream"
-msgstr "Tarkkailuvirran luonti epäonnistui"
-
-#: ../src/pavucontrol.cc:1283 ../src/pavucontrol.cc:1322
-msgid "Failed to connect monitoring stream"
-msgstr "Tarkkailuvirtaan yhdistäminen epäonnistui"
-
-#: ../src/pavucontrol.cc:1565
-msgid "System Sounds"
-msgstr "Järjestelmän äänet"
-
-#: ../src/pavucontrol.cc:1872
+#: ../src/pavucontrol.cc:71
 msgid "Card callback failure"
 msgstr "Kortin takaisinkutsu epäonnistui"
 
-#: ../src/pavucontrol.cc:1891
+#: ../src/pavucontrol.cc:90
 msgid "Sink callback failure"
 msgstr "Nielun takaisinkutsu epäonnistui"
 
-#: ../src/pavucontrol.cc:1910
+#: ../src/pavucontrol.cc:109
 msgid "Source callback failure"
 msgstr "Lähteen takaisinkutsu epäonnistui"
 
-#: ../src/pavucontrol.cc:1929
+#: ../src/pavucontrol.cc:128
 msgid "Sink input callback failure"
 msgstr "Nielun sisääntulon takaisinkutsu epäonnistui"
 
-#: ../src/pavucontrol.cc:1948
+#: ../src/pavucontrol.cc:147
 msgid "Source output callback failure"
 msgstr "Lähteen ulostulon takaisinkutsu epäonnistui"
 
-#: ../src/pavucontrol.cc:1982
+#: ../src/pavucontrol.cc:181
 msgid "Client callback failure"
 msgstr "Asiakkaan takaisinkutsu"
 
-#: ../src/pavucontrol.cc:1998
+#: ../src/pavucontrol.cc:197
 msgid "Server info callback failure"
 msgstr "Palvelintietojen takaisinkutsu epäonnistui"
 
-#: ../src/pavucontrol.cc:2015 ../src/pavucontrol.cc:2230
-#, c-format
-msgid "Failed to initialized stream_restore extension: %s"
+#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
+#, fuzzy, c-format
+msgid "Failed to initialize stream_restore extension: %s"
 msgstr "stream_restore-laajennoksen alustus epäonnistui: %s"
 
-#: ../src/pavucontrol.cc:2035
+#: ../src/pavucontrol.cc:235
 msgid "pa_ext_stream_restore_read() failed"
 msgstr "pa_ext_stream_restore_read() epäonnistui"
 
-#: ../src/pavucontrol.cc:2052
+#: ../src/pavucontrol.cc:252
 msgid "pa_context_get_sink_info_by_index() failed"
 msgstr "pa_context_get_sink_info_by_index() epäonnistui"
 
-#: ../src/pavucontrol.cc:2065
+#: ../src/pavucontrol.cc:265
 msgid "pa_context_get_source_info_by_index() failed"
 msgstr "pa_context_get_source_info_by_index() epäonnistui"
 
-#: ../src/pavucontrol.cc:2078 ../src/pavucontrol.cc:2091
+#: ../src/pavucontrol.cc:278 ../src/pavucontrol.cc:291
 msgid "pa_context_get_sink_input_info() failed"
 msgstr "pa_context_get_sink_input_info() epäonnistui"
 
-#: ../src/pavucontrol.cc:2104
+#: ../src/pavucontrol.cc:304
 msgid "pa_context_get_client_info() failed"
 msgstr "pa_context_get_client_info() epäonnistui"
 
-#: ../src/pavucontrol.cc:2114 ../src/pavucontrol.cc:2171
+#: ../src/pavucontrol.cc:314 ../src/pavucontrol.cc:371
 msgid "pa_context_get_server_info() failed"
 msgstr "pa_context_get_server_info() epäonnistui"
 
-#: ../src/pavucontrol.cc:2127
+#: ../src/pavucontrol.cc:327
 msgid "pa_context_get_card_info_by_index() failed"
 msgstr "pa_context_get_card_info_by_index() epäonnistui"
 
-#: ../src/pavucontrol.cc:2162
+#: ../src/pavucontrol.cc:362
 msgid "pa_context_subscribe() failed"
 msgstr "pa_context_subscribe() epäonnistui"
 
-#: ../src/pavucontrol.cc:2178
+#: ../src/pavucontrol.cc:378
 msgid "pa_context_client_info_list() failed"
 msgstr "pa_context_client_info_list() epäonnistui"
 
-#: ../src/pavucontrol.cc:2185
+#: ../src/pavucontrol.cc:385
 msgid "pa_context_get_card_info_list() failed"
 msgstr "pa_context_get_card_info_list() epäonnistui"
 
-#: ../src/pavucontrol.cc:2192
+#: ../src/pavucontrol.cc:392
 msgid "pa_context_get_sink_info_list() failed"
 msgstr "pa_context_get_sink_info_list() epäonnistui"
 
-#: ../src/pavucontrol.cc:2199
+#: ../src/pavucontrol.cc:399
 msgid "pa_context_get_source_info_list() failed"
 msgstr "pa_context_get_source_info_list() epäonnistui"
 
-#: ../src/pavucontrol.cc:2206
+#: ../src/pavucontrol.cc:406
 msgid "pa_context_get_sink_input_info_list() failed"
 msgstr "pa_context_get_sink_input_info_list() epäonnistui"
 
-#: ../src/pavucontrol.cc:2213
+#: ../src/pavucontrol.cc:413
 msgid "pa_context_get_source_output_info_list() failed"
 msgstr "pa_context_get_source_output_info_list() epäonnistui"
 
-#: ../src/pavucontrol.cc:2236 ../src/pavucontrol.cc:2280
+#: ../src/pavucontrol.cc:437 ../src/pavucontrol.cc:485
 msgid "Connection failed"
 msgstr "Yhteys epäonnistui"
+
+#~ msgid "Volume Control Feedback Sound"
+#~ msgstr "Äänenvoimakkuuden säädön palauteääni"
+
+#~ msgid "pa_context_set_card_profile_by_index() failed"
+#~ msgstr "pa_context_set_card_profile_by_index() epäonnistui"
+
+#~ msgid "pa_context_set_sink_volume_by_index() failed"
+#~ msgstr "pa_context_set_sink_volume_by_index() epäonnistui"
+
+#~ msgid "pa_context_set_sink_mute_by_index() failed"
+#~ msgstr "pa_context_set_sink_mute_by_index() epäonnistui"
+
+#~ msgid "pa_context_set_default_sink() failed"
+#~ msgstr "pa_context_set_default_sink() epäonnistui"
+
+#~ msgid "_Default"
+#~ msgstr "_Oletus"
+
+#~ msgid "pa_context_set_source_volume_by_index() failed"
+#~ msgstr "pa_context_set_source_volume_by_index() epäonnistui"
+
+#~ msgid "pa_context_set_source_mute_by_index() failed"
+#~ msgstr "pa_context_set_source_mute_by_index() epäonnistui"
+
+#~ msgid "pa_context_set_default_source() failed"
+#~ msgstr "pa_context_set_default_source() epäonnistui"
+
+#~ msgid "_Move Stream..."
+#~ msgstr "_Siirrä virta"
+
+#~ msgid "_Terminate Stream"
+#~ msgstr "_Lopeta virta"
+
+#~ msgid "pa_context_set_sink_input_volume() failed"
+#~ msgstr "pa_context_set_sink_input_volume() epäonnistui"
+
+#~ msgid "pa_context_set_sink_input_mute() failed"
+#~ msgstr "pa_context_set_sink_input_mute() epäonnistui"
+
+#~ msgid "pa_context_kill_sink_input() failed"
+#~ msgstr "pa_context_kill_sink_input() epäonnistui"
+
+#~ msgid "pa_context_move_sink_input_by_index() failed"
+#~ msgstr "pa_context_move_sink_input_by_index() epäonnistui"
+
+#~ msgid "pa_context_kill_source_output() failed"
+#~ msgstr "pa_context_kill_source_output() epäonnistui"
+
+#~ msgid "pa_context_move_source_output_by_index() failed"
+#~ msgstr "pa_context_move_source_output_by_index() epäonnistui"
+
+#~ msgid "pa_ext_stream_restore_write() failed"
+#~ msgstr "pa_ext_stream_restore_write() epäonnistui"
+
+#~ msgid "Failed to read data from stream"
+#~ msgstr "Datan lukeminen virrasta epäonnistui"
+
+#~ msgid "Peak detect"
+#~ msgstr "Huipun tunnistus"
+
+#~ msgid "Failed to create monitoring stream"
+#~ msgstr "Tarkkailuvirran luonti epäonnistui"
+
+#~ msgid "Failed to connect monitoring stream"
+#~ msgstr "Tarkkailuvirtaan yhdistäminen epäonnistui"
+
+#~ msgid "System Sounds"
+#~ msgstr "Järjestelmän äänet"
