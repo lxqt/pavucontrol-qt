@@ -481,10 +481,8 @@ int main(int argc, char *argv[]) {
 
     pa_context_set_state_callback(context, context_state_callback, mainWindow);
 
-    if (pa_context_connect(context, NULL, (pa_context_flags_t) 0, NULL) < 0) {
-        show_error(_("Connection failed"));
+    if (pa_context_connect(context, NULL, (pa_context_flags_t) 0, NULL) < 0)
         goto finish;
-    }
 
     Gtk::Main::run(*mainWindow);
     delete mainWindow;
