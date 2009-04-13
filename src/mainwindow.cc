@@ -22,6 +22,8 @@
 #include <config.h>
 #endif
 
+#include <set>
+
 #include "mainwindow.h"
 
 #include "cardwidget.h"
@@ -33,7 +35,12 @@
 
 #include "i18n.h"
 
-/*** MainWindow ***/
+/* Used for profile sorting */
+struct profile_prio_compare {
+    bool operator() (const pa_card_profile_info& lhs, const pa_card_profile_info& rhs) const
+    {return lhs.priority>rhs.priority;}
+};
+
 
 MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     Gtk::Window(cobject),
@@ -116,6 +123,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
     CardWidget *w;
     bool is_new = false;
     const char *description, *icon;
+    std::set<pa_card_profile_info,profile_prio_compare> profile_priorities;
 
     if (cardWidgets.count(info.index))
         w = cardWidgets[info.index];
@@ -136,11 +144,15 @@ void MainWindow::updateCard(const pa_card_info &info) {
     set_icon_name_fallback(w->iconImage, icon ? icon : "audio-card", Gtk::ICON_SIZE_SMALL_TOOLBAR);
 
     w->hasSinks = w->hasSources = false;
-    w->profiles.clear();
+    profile_priorities.clear();
     for (uint32_t i=0; i<info.n_profiles; ++i) {
         w->hasSinks = w->hasSinks || (info.profiles[i].n_sinks > 0);
         w->hasSources = w->hasSources || (info.profiles[i].n_sources > 0);
-        w->profiles.insert(std::pair<Glib::ustring,Glib::ustring>(info.profiles[i].name, info.profiles[i].description));
+        profile_priorities.insert(info.profiles[i]);
+    }
+    w->profiles.clear();
+    for (std::set<pa_card_profile_info>::iterator i=profile_priorities.begin(); i != profile_priorities.end(); ++i) {
+        w->profiles.push_back(std::pair<Glib::ustring,Glib::ustring>(i->name,i->description));
     }
     w->activeProfile = info.active_profile->name;
 

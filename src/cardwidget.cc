@@ -55,11 +55,11 @@ void CardWidget::prepareMenu() {
 
     treeModel->clear();
     /* Fill the ComboBox's Tree Model */
-    for (std::map<Glib::ustring, Glib::ustring>::iterator i = profiles.begin(); i != profiles.end(); ++i) {
+    for (uint32_t i = 0; i < profiles.size(); ++i) {
         Gtk::TreeModel::Row row = *(treeModel->append());
-        row[profileModel.name] = i->first;
-        row[profileModel.desc] = i->second;
-        if (i->first == activeProfile)
+        row[profileModel.name] = profiles[i].first;
+        row[profileModel.desc] = profiles[i].second;
+        if (profiles[i].first == activeProfile)
           active_idx = idx;
         idx++;
     }
