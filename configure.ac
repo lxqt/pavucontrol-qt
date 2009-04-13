@@ -19,7 +19,7 @@
 # along with pavucontrol. If not, see <http://www.gnu.org/licenses/>.
 
 AC_PREREQ(2.62)
-AC_INIT([pavucontrol],[0.9.7],[mzcnihpbageby (at) 0pointer (dot) de])
+AC_INIT([pavucontrol],[0.9.8],[mzcnihpbageby (at) 0pointer (dot) de])
 AC_CONFIG_SRCDIR([src/pavucontrol.cc])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_HEADERS([config.h])
@@ -48,7 +48,7 @@ if test -d ../pulseaudio ; then
    PULSE_LIBS='-L$(top_srcdir)/../pulseaudio/src/.libs -lpulse -lpulse-mainloop-glib'
    echo "*** Found pulseaudio in ../pulseaudio, using that version ***"
 else
-   PKG_CHECK_MODULES(PULSE, [ libpulse >= 0.9.12 libpulse-mainloop-glib >= 0.9.12 ])
+   PKG_CHECK_MODULES(PULSE, [ libpulse >= 0.9.15 libpulse-mainloop-glib >= 0.9.15 ])
 fi
 
 AC_SUBST(PULSE_LIBS)
