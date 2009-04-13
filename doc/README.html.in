@@ -38,6 +38,10 @@ General Public License for more details.</p>
 
 <h2><a name="news">News</a></h2>
 
+<div class="news-date">Mon Apr 13
+2009: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-0.9.8.tar.gz">Version
+0.9.8</a> released; allow configuring card profiles; various updates.</p>
+
 <div class="news-date">Tue Sep 9
 2008: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-0.9.7.tar.gz">Version
 0.9.7</a> released; show volume meter for each stream and device.</p>
@@ -102,7 +106,7 @@ source code configuration.</p>
 
 <p><tt>pavucontrol</tt> requires <a href="http://gtkmm.sf.net/"><tt>gtkmm</tt></a> and <tt>glademmm</tt> installed.</p>
 
-<p>Obviously <tt>pavucontrol</tt> requires an installation of <a href="http://pulseaudio.org/">PulseAudio</a> (version 0.9.5).</p>
+<p>Obviously <tt>pavucontrol</tt> requires an installation of <a href="http://pulseaudio.org/">PulseAudio</a> (version 0.9.15).</p>
 
 <h2><a name="installation">Installation</a></h2>
 
@@ -114,7 +118,7 @@ compilation and <tt>make install</tt> (as root) for installation of
 
 <h2><a name="acks">Acknowledgements</a></h2>
 
-<p>None so far.</p>
+<p>Coling Guthrie for the card profile UI and other work</p>
 
 <h2><a name="download">Download</a></h2>
 
@@ -122,14 +126,12 @@ compilation and <tt>make install</tt> (as root) for installation of
 
 <p>The current release is <a href="@PACKAGE_URL@pavucontrol-@PACKAGE_VERSION@.tar.gz">@PACKAGE_VERSION@</a></p>
 
-<p>Get <tt>pavucontrol</tt>'s development sources from the <a href="http://subversion.tigris.org/">Subversion</a> <a href="svn://svn.0pointer.net/pavucontrol">repository</a> (<a href="http://0pointer.net/cgi-bin/viewcvs.cgi/?root=pavucontrol">viewcvs</a>): </p>
+<p>Get <tt>pavucontrol</tt>'s development sources from the <a href="http://git-scm.org/">GIT</a> <a href="git://git.0pointer.de/pavucontrol">repository</a> (<a href="http://git.0pointer.de/?p=pavucontrol.git">gitweb</a>): </p>
 
-<pre>svn checkout svn://svn.0pointer.net/pavucontrol/trunk pavucontrol</pre>
-
-<p>If you want to be notified whenever I release a new version of this software use the subscription feature of <a href="http://freshmeat.net/projects/pavucontrol/">Freshmeat</a>.</p>
+<pre>git clone git://git.0pointer.de/pavucontrol</pre>
 
 <hr/>
-<address class="grey">Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;, September 2008</address>
+<address class="grey">Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;, April 2009</address>
 
 </body>
 </html>
