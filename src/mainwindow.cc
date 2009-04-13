@@ -247,7 +247,6 @@ void MainWindow::createMonitorStreamForSource(uint32_t source_idx) {
     char t[16];
     pa_buffer_attr attr;
     pa_sample_spec ss;
-    return;
 
     ss.channels = 1;
     ss.format = PA_SAMPLE_FLOAT32;
@@ -280,7 +279,6 @@ void MainWindow::createMonitorStreamForSinkInput(uint32_t sink_input_idx, uint32
     pa_buffer_attr attr;
     pa_sample_spec ss;
     uint32_t monitor_source_idx;
-    return;
 
     ss.channels = 1;
     ss.format = PA_SAMPLE_FLOAT32;
