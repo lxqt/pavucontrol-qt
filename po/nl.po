@@ -5,21 +5,19 @@
 #
 # Reinout van Schouwen <reinouts@gnome.org>, 2008.
 # R.E. van der Luit <nippur@fedoraproject.org>, 2009.
+# Geert Warrink <geert.warrink@onsnet.nu>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-10 02:55+0200\n"
-"PO-Revision-Date: 2009-04-04 18:02+0200\n"
+"POT-Creation-Date: 2009-04-14 14:25+0000\n"
+"PO-Revision-Date: 2009-04-14 19:40+0200\n"
 "Last-Translator: R.E. van der Luit <nippur@fedoraproject.org>\n"
 "Language-Team: Dutch <nippur@fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: Netherlands\n"
-"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);"
 
 #: ../src/pavucontrol.desktop.in.h:1
 msgid "Adjust the volume level"
@@ -182,9 +180,9 @@ msgid "Server info callback failure"
 msgstr "Callbackaanroep voor serverinformatie is mislukt"
 
 #: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to initialize stream_restore extension: %s"
-msgstr "Stream_restore-uitbreiding initialiseren mislukt: %s"
+msgstr "Stream_restore-uitbreiding initialiseren mislukte: %s"
 
 #: ../src/pavucontrol.cc:235
 msgid "pa_ext_stream_restore_read() failed"
@@ -242,75 +240,111 @@ msgstr "pa_context_get_sink_input_info_list() failed"
 msgid "pa_context_get_source_output_info_list() failed"
 msgstr "pa_context_get_source_output_info_list() failed"
 
-#: ../src/pavucontrol.cc:437 ../src/pavucontrol.cc:485
+#: ../src/pavucontrol.cc:437
 msgid "Connection failed"
 msgstr "Verbinding is mislukt"
 
-#~ msgid "Volume Control Feedback Sound"
-#~ msgstr "Terugkoppelingsgeluid volumeregeling"
+#: ../src/cardwidget.cc:87
+msgid "pa_context_set_card_profile_by_index() failed"
+msgstr "pa_context_set_card_profile_by_index() mislukte"
 
-#~ msgid "pa_context_set_card_profile_by_index() failed"
-#~ msgstr "pa_context_set_card_profile_by_index() mislukte"
+#: ../src/channelwidget.cc:99
+msgid "Volume Control Feedback Sound"
+msgstr "Terugkoppelingsgeluid volumeregeling"
 
-#~ msgid "pa_context_set_sink_volume_by_index() failed"
-#~ msgstr "pa_context_set_sink_volume_by_index() failed"
+#: ../src/channelwidget.cc:120
+msgid "<small>Silence</small>"
+msgstr "<small>Stilte</small>"
 
-#~ msgid "pa_context_set_sink_mute_by_index() failed"
-#~ msgstr "pa_context_set_sink_mute_by_index() failed"
+#: ../src/channelwidget.cc:121
+msgid "<small>Max</small>"
+msgstr "<small>Maximaal</small>"
 
-#~ msgid "pa_context_set_default_sink() failed"
-#~ msgstr "pa_context_set_default_sink() failed"
+#: ../src/channelwidget.cc:125
+msgid "<small><i>Base</i></small>"
+msgstr "<small><i>Basis</i></small>"
 
-#~ msgid "_Default"
-#~ msgstr "_Standaard"
+#: ../src/mainwindow.cc:226
+msgid "Failed to read data from stream"
+msgstr "Lezen van data van stream is mislukt"
 
-#~ msgid "pa_context_set_source_volume_by_index() failed"
-#~ msgstr "pa_context_set_source_volume_by_index() failed"
+#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+msgid "Peak detect"
+msgstr "Pieken bespeuren"
 
-#~ msgid "pa_context_set_source_mute_by_index() failed"
-#~ msgstr "pa_context_set_source_mute_by_index() failed"
+#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+msgid "Failed to create monitoring stream"
+msgstr "Starten van observatie-stream is mislukt"
 
-#~ msgid "pa_context_set_default_source() failed"
-#~ msgstr "pa_context_set_default_source() failed"
+#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+msgid "Failed to connect monitoring stream"
+msgstr "Verbinden met observatie-stream is mislukt"
 
-#~ msgid "_Move Stream..."
-#~ msgstr "Stream ver_plaatsen…"
+#: ../src/mainwindow.cc:554
+msgid "System Sounds"
+msgstr "Systeemgeluiden"
 
-#~ msgid "_Terminate Stream"
-#~ msgstr "Stream af_breken"
+#: ../src/rolewidget.cc:66
+msgid "pa_ext_stream_restore_write() failed"
+msgstr "pa_ext_stream_restore_write() failed"
 
-#~ msgid "pa_context_set_sink_input_volume() failed"
-#~ msgstr "pa_context_set_sink_input_volume() failed"
+#: ../src/sinkinputwidget.cc:34 ../src/sourceoutputwidget.cc:34
+msgid "_Move Stream..."
+msgstr "Stream ver_plaatsen…"
 
-#~ msgid "pa_context_set_sink_input_mute() failed"
-#~ msgstr "pa_context_set_sink_input_mute() failed"
+#: ../src/sinkinputwidget.cc:35 ../src/sourceoutputwidget.cc:35
+msgid "_Terminate Stream"
+msgstr "Stream af_breken"
 
-#~ msgid "pa_context_kill_sink_input() failed"
-#~ msgstr "pa_context_kill_sink_input() failed"
+#: ../src/sinkinputwidget.cc:61
+msgid "pa_context_set_sink_input_volume() failed"
+msgstr "pa_context_set_sink_input_volume() failed"
 
-#~ msgid "pa_context_move_sink_input_by_index() failed"
-#~ msgstr "pa_context_move_sink_input_by_index() failed"
+#: ../src/sinkinputwidget.cc:76
+msgid "pa_context_set_sink_input_mute() failed"
+msgstr "pa_context_set_sink_input_mute() failed"
 
-#~ msgid "pa_context_kill_source_output() failed"
-#~ msgstr "pa_context_kill_source_output() failed"
+#: ../src/sinkinputwidget.cc:110
+msgid "pa_context_kill_sink_input() failed"
+msgstr "pa_context_kill_sink_input() failed"
 
-#~ msgid "pa_context_move_source_output_by_index() failed"
-#~ msgstr "pa_context_move_source_output_by_index() failed"
+#: ../src/sinkinputwidget.cc:127
+msgid "pa_context_move_sink_input_by_index() failed"
+msgstr "pa_context_move_sink_input_by_index() failed"
 
-#~ msgid "pa_ext_stream_restore_write() failed"
-#~ msgstr "pa_ext_stream_restore_write() failed"
+#: ../src/sinkwidget.cc:52
+msgid "pa_context_set_sink_volume_by_index() failed"
+msgstr "pa_context_set_sink_volume_by_index() failed"
 
-#~ msgid "Failed to read data from stream"
-#~ msgstr "Lezen van data van stream is mislukt"
+#: ../src/sinkwidget.cc:67
+msgid "pa_context_set_sink_mute_by_index() failed"
+msgstr "pa_context_set_sink_mute_by_index() failed"
 
-#~ msgid "Peak detect"
-#~ msgstr "Pieken bespeuren"
+#: ../src/sinkwidget.cc:81
+msgid "pa_context_set_default_sink() failed"
+msgstr "pa_context_set_default_sink() failed"
 
-#~ msgid "Failed to create monitoring stream"
-#~ msgstr "Starten van observatie-stream is mislukt"
+#: ../src/sourceoutputwidget.cc:60
+msgid "pa_context_kill_source_output() failed"
+msgstr "pa_context_kill_source_output() failed"
 
-#~ msgid "Failed to connect monitoring stream"
-#~ msgstr "Verbinden met observatie-stream is mislukt"
+#: ../src/sourceoutputwidget.cc:101
+msgid "pa_context_move_source_output_by_index() failed"
+msgstr "pa_context_move_source_output_by_index() failed"
 
-#~ msgid "System Sounds"
-#~ msgstr "Systeemgeluiden"
+#: ../src/sourcewidget.cc:31
+msgid "_Default"
+msgstr "_Standaard"
+
+#: ../src/sourcewidget.cc:52
+msgid "pa_context_set_source_volume_by_index() failed"
+msgstr "pa_context_set_source_volume_by_index() failed"
+
+#: ../src/sourcewidget.cc:67
+msgid "pa_context_set_source_mute_by_index() failed"
+msgstr "pa_context_set_source_mute_by_index() failed"
+
+#: ../src/sourcewidget.cc:81
+msgid "pa_context_set_default_source() failed"
+msgstr "pa_context_set_default_source() failed"
+
