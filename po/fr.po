@@ -253,7 +253,7 @@ msgstr "Son de retour du contrôle du volume"
 
 #: ../src/channelwidget.cc:120
 msgid "<small>Silence</small>"
-msgstr "<small>Silence</small>"
+msgstr "<small>Muet</small>"
 
 #: ../src/channelwidget.cc:121
 msgid "<small>Max</small>"
