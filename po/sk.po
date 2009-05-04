@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-10 02:55+0200\n"
-"PO-Revision-Date: 2009-04-02 15:38+0200\n"
+"POT-Creation-Date: 2009-05-04 08:34+0000\n"
+"PO-Revision-Date: 2009-05-04 14:07+0200\n"
 "Last-Translator: Ondrej Šulek <feonsu@gmail.com>\n"
-"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"Language-Team: Slovak <fedora-trans-sk@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural= (n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
 "X-Generator: Lokalize 0.3\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../src/pavucontrol.desktop.in.h:1
 msgid "Adjust the volume level"
@@ -176,8 +176,7 @@ msgstr "Klientské spätné volanie zlyhalo"
 msgid "Server info callback failure"
 msgstr "Server info spätné volanie zlyhalo"
 
-#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
-#, fuzzy, c-format
+#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430, c-format
 msgid "Failed to initialize stream_restore extension: %s"
 msgstr "Nepodarilo sa inicializovať stream_restore rozšírenie: %s"
 
@@ -237,75 +236,111 @@ msgstr "pa_context_get_sink_input_info_list() zlyhal"
 msgid "pa_context_get_source_output_info_list() failed"
 msgstr "pa_context_get_source_output_info_list() zlyhal"
 
-#: ../src/pavucontrol.cc:437 ../src/pavucontrol.cc:485
+#: ../src/pavucontrol.cc:437
 msgid "Connection failed"
 msgstr "Spojenie zlyhalo"
 
-#~ msgid "Volume Control Feedback Sound"
-#~ msgstr "Ovládanie hlasitosti Feedback zvuku"
+#: ../src/cardwidget.cc:87
+msgid "pa_context_set_card_profile_by_index() failed"
+msgstr "pa_context_set_card_profile_by_index() zlyhal"
 
-#~ msgid "pa_context_set_card_profile_by_index() failed"
-#~ msgstr "pa_context_set_card_profile_by_index() zlyhal"
+#: ../src/channelwidget.cc:99
+msgid "Volume Control Feedback Sound"
+msgstr "Ovládanie hlasitosti Feedback zvuku"
 
-#~ msgid "pa_context_set_sink_volume_by_index() failed"
-#~ msgstr "pa_context_set_sink_volume_by_index() zlyhal"
+#: ../src/channelwidget.cc:120
+msgid "<small>Silence</small>"
+msgstr "<small>Ticho</small>"
 
-#~ msgid "pa_context_set_sink_mute_by_index() failed"
-#~ msgstr "pa_context_set_sink_mute_by_index() zlyhal"
+#: ../src/channelwidget.cc:121
+msgid "<small>Max</small>"
+msgstr "<small>Maximálne</small>"
 
-#~ msgid "pa_context_set_default_sink() failed"
-#~ msgstr "pa_context_set_default_sink() zlyhal"
+#: ../src/channelwidget.cc:125
+msgid "<small><i>Base</i></small>"
+msgstr "<small><i>Základné</i></small>"
 
-#~ msgid "_Default"
-#~ msgstr "Pre_dvolené"
+#: ../src/mainwindow.cc:226
+msgid "Failed to read data from stream"
+msgstr "Nepodarilo sa prečítať dáta z prúdu"
 
-#~ msgid "pa_context_set_source_volume_by_index() failed"
-#~ msgstr "pa_context_set_source_volume_by_index() zlyhal"
+#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+msgid "Peak detect"
+msgstr "Detekcia vrcholov"
 
-#~ msgid "pa_context_set_source_mute_by_index() failed"
-#~ msgstr "pa_context_set_source_mute_by_index() zlyhal"
+#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+msgid "Failed to create monitoring stream"
+msgstr "Nepodarilo sa vytvoriť monitorovací prúd"
 
-#~ msgid "pa_context_set_default_source() failed"
-#~ msgstr "pa_context_set_default_source() zlyhal"
+#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+msgid "Failed to connect monitoring stream"
+msgstr "Nepodarilo sa pripojiť monitorovací prúd"
 
-#~ msgid "_Move Stream..."
-#~ msgstr "_Presunúť prúd..."
+#: ../src/mainwindow.cc:554
+msgid "System Sounds"
+msgstr "Systémové zvuky"
 
-#~ msgid "_Terminate Stream"
-#~ msgstr "_Ukončiť prúd"
+#: ../src/rolewidget.cc:66
+msgid "pa_ext_stream_restore_write() failed"
+msgstr "pa_ext_stream_restore_write() zlyhal"
 
-#~ msgid "pa_context_set_sink_input_volume() failed"
-#~ msgstr "pa_context_set_sink_input_volume() zlyhal"
+#: ../src/sinkinputwidget.cc:34 ../src/sourceoutputwidget.cc:34
+msgid "_Move Stream..."
+msgstr "_Presunúť prúd..."
 
-#~ msgid "pa_context_set_sink_input_mute() failed"
-#~ msgstr "pa_context_set_sink_input_mute() zlyhal"
+#: ../src/sinkinputwidget.cc:35 ../src/sourceoutputwidget.cc:35
+msgid "_Terminate Stream"
+msgstr "_Ukončiť prúd"
 
-#~ msgid "pa_context_kill_sink_input() failed"
-#~ msgstr "pa_context_kill_sink_input() zlyhal"
+#: ../src/sinkinputwidget.cc:61
+msgid "pa_context_set_sink_input_volume() failed"
+msgstr "pa_context_set_sink_input_volume() zlyhal"
 
-#~ msgid "pa_context_move_sink_input_by_index() failed"
-#~ msgstr "pa_context_move_sink_input_by_index() zlyhal"
+#: ../src/sinkinputwidget.cc:76
+msgid "pa_context_set_sink_input_mute() failed"
+msgstr "pa_context_set_sink_input_mute() zlyhal"
 
-#~ msgid "pa_context_kill_source_output() failed"
-#~ msgstr "pa_context_kill_source_output() zlyhal"
+#: ../src/sinkinputwidget.cc:110
+msgid "pa_context_kill_sink_input() failed"
+msgstr "pa_context_kill_sink_input() zlyhal"
 
-#~ msgid "pa_context_move_source_output_by_index() failed"
-#~ msgstr "pa_context_move_source_output_by_index() zlyhal"
+#: ../src/sinkinputwidget.cc:127
+msgid "pa_context_move_sink_input_by_index() failed"
+msgstr "pa_context_move_sink_input_by_index() zlyhal"
 
-#~ msgid "pa_ext_stream_restore_write() failed"
-#~ msgstr "pa_ext_stream_restore_write() zlyhal"
+#: ../src/sinkwidget.cc:52
+msgid "pa_context_set_sink_volume_by_index() failed"
+msgstr "pa_context_set_sink_volume_by_index() zlyhal"
 
-#~ msgid "Failed to read data from stream"
-#~ msgstr "Nepodarilo sa prečítať dáta z prúdu"
+#: ../src/sinkwidget.cc:67
+msgid "pa_context_set_sink_mute_by_index() failed"
+msgstr "pa_context_set_sink_mute_by_index() zlyhal"
 
-#~ msgid "Peak detect"
-#~ msgstr "Detekcia vrcholov"
+#: ../src/sinkwidget.cc:81
+msgid "pa_context_set_default_sink() failed"
+msgstr "pa_context_set_default_sink() zlyhal"
 
-#~ msgid "Failed to create monitoring stream"
-#~ msgstr "Nepodarilo sa vytvoriť monitorovací prúd"
+#: ../src/sourceoutputwidget.cc:60
+msgid "pa_context_kill_source_output() failed"
+msgstr "pa_context_kill_source_output() zlyhal"
 
-#~ msgid "Failed to connect monitoring stream"
-#~ msgstr "Nepodarilo sa pripojiť monitorovací prúd"
+#: ../src/sourceoutputwidget.cc:101
+msgid "pa_context_move_source_output_by_index() failed"
+msgstr "pa_context_move_source_output_by_index() zlyhal"
 
-#~ msgid "System Sounds"
-#~ msgstr "Systémové zvuky"
+#: ../src/sourcewidget.cc:31
+msgid "_Default"
+msgstr "Pre_dvolené"
+
+#: ../src/sourcewidget.cc:52
+msgid "pa_context_set_source_volume_by_index() failed"
+msgstr "pa_context_set_source_volume_by_index() zlyhal"
+
+#: ../src/sourcewidget.cc:67
+msgid "pa_context_set_source_mute_by_index() failed"
+msgstr "pa_context_set_source_mute_by_index() zlyhal"
+
+#: ../src/sourcewidget.cc:81
+msgid "pa_context_set_default_source() failed"
+msgstr "pa_context_set_default_source() zlyhal"
+
