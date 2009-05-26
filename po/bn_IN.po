@@ -1,14 +1,14 @@
-# translation of pavucontrol.master-tx.pavucontrol.po to Bengali INDIA
+# translation of pavucontrol.master-tx.bn_IN.po to Bengali INDIA
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Runa Bhattacharjee <runab@fedoraproject.org>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: pavucontrol.master-tx.pavucontrol\n"
+"Project-Id-Version: pavucontrol.master-tx.bn_IN\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-07 08:18+0000\n"
-"PO-Revision-Date: 2009-04-07 21:30+0530\n"
+"POT-Creation-Date: 2009-05-26 02:55+0000\n"
+"PO-Revision-Date: 2009-05-26 11:26+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@fedoraproject.org>\n"
 "Language-Team: Bengali INDIA <fedora-trans-bn_in@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Adjust the volume level"
 msgstr "শব্দের মাত্রা পরিবর্তন করুন"
 
-#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:2267
+#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:472
 msgid "PulseAudio Volume Control"
 msgstr "PulseAudio শব্দের মাত্রা নিয়ন্ত্রণ ব্যবস্থা"
 
@@ -149,188 +149,200 @@ msgstr "প্লে-ব্যাক (_P)"
 msgid "_Recording"
 msgstr "রেকর্ডিং (_R)"
 
-#: ../src/pavucontrol.cc:463
-msgid "Volume Control Feedback Sound"
-msgstr "শব্দের মাত্রা নিয়ন্ত্রণের ফিডব্যাক রূপে উপলব্ধ শব্দ"
-
-#: ../src/pavucontrol.cc:542
-msgid "pa_context_set_card_profile_by_index() failed"
-msgstr "pa_context_set_card_profile_by_index() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:747
-msgid "pa_context_set_sink_volume_by_index() failed"
-msgstr "pa_context_set_sink_volume_by_index() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:762
-msgid "pa_context_set_sink_mute_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:776
-msgid "pa_context_set_default_sink() failed"
-msgstr "pa_context_set_default_sink() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:784
-msgid "_Default"
-msgstr "ডিফল্ট মান (_D)"
-
-#: ../src/pavucontrol.cc:805
-msgid "pa_context_set_source_volume_by_index() failed"
-msgstr "pa_context_set_source_volume_by_index() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:820
-msgid "pa_context_set_source_mute_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:834
-msgid "pa_context_set_default_source() failed"
-msgstr "pa_context_set_default_source() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:843 ../src/pavucontrol.cc:946
-msgid "_Move Stream..."
-msgstr "স্ট্রিম স্থানান্তর... (_M)"
-
-#: ../src/pavucontrol.cc:844 ../src/pavucontrol.cc:947
-msgid "_Terminate Stream"
-msgstr "স্ট্রিম বন্ধ করুন (_T)"
-
-#: ../src/pavucontrol.cc:870
-msgid "pa_context_set_sink_input_volume() failed"
-msgstr "pa_context_set_sink_input_volume() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:885
-msgid "pa_context_set_sink_input_mute() failed"
-msgstr "pa_context_set_sink_input_mute() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:919
-msgid "pa_context_kill_sink_input() failed"
-msgstr "pa_context_kill_sink_input() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:936
-msgid "pa_context_move_sink_input_by_index() failed"
-msgstr "pa_context_move_sink_input_by_index() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:972
-msgid "pa_context_kill_source_output() failed"
-msgstr "pa_context_kill_source_output() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:1013
-msgid "pa_context_move_source_output_by_index() failed"
-msgstr "pa_context_move_source_output_by_index() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:1055
-msgid "pa_ext_stream_restore_write() failed"
-msgstr "pa_ext_stream_restore_write() ব্যর্থ"
-
-#: ../src/pavucontrol.cc:1238
-msgid "Failed to read data from stream"
-msgstr "স্ট্রিম থেকে তথ্য পড়তে ব্যর্থ"
-
-#: ../src/pavucontrol.cc:1274 ../src/pavucontrol.cc:1312
-msgid "Peak detect"
-msgstr "চুড়ান্ত মাপ সনাক্ত হয়েছে"
-
-#: ../src/pavucontrol.cc:1275 ../src/pavucontrol.cc:1313
-msgid "Failed to create monitoring stream"
-msgstr "নিরীক্ষণের স্ট্রিম নির্মাণ করতে ব্যর্থ"
-
-#: ../src/pavucontrol.cc:1283 ../src/pavucontrol.cc:1322
-msgid "Failed to connect monitoring stream"
-msgstr "নিরীক্ষণের স্ট্রিম সংযুক্ত করতে ব্যর্থ"
-
-#: ../src/pavucontrol.cc:1565
-msgid "System Sounds"
-msgstr "সিস্টেমের শব্দ"
-
-#: ../src/pavucontrol.cc:1872
+#: ../src/pavucontrol.cc:71
 msgid "Card callback failure"
 msgstr "কার্ড কল-ব্যাক বিফল"
 
-#: ../src/pavucontrol.cc:1891
+#: ../src/pavucontrol.cc:90
 msgid "Sink callback failure"
 msgstr "সিংক কল-ব্যাক বিফল"
 
-#: ../src/pavucontrol.cc:1910
+#: ../src/pavucontrol.cc:109
 msgid "Source callback failure"
 msgstr "সোর্স কল-ব্যাক বিফল"
 
-#: ../src/pavucontrol.cc:1929
+#: ../src/pavucontrol.cc:128
 msgid "Sink input callback failure"
 msgstr "সিংক ইনপুট কল-ব্যাক বিফল"
 
-#: ../src/pavucontrol.cc:1948
+#: ../src/pavucontrol.cc:147
 msgid "Source output callback failure"
 msgstr "সোর্স আউটপুট কল-ব্যাক বিফল"
 
-#: ../src/pavucontrol.cc:1982
+#: ../src/pavucontrol.cc:181
 msgid "Client callback failure"
 msgstr "ক্লায়েন্ট কল-ব্যাক বিফল"
 
-#: ../src/pavucontrol.cc:1998
+#: ../src/pavucontrol.cc:197
 msgid "Server info callback failure"
 msgstr "সার্ভার ইনফো কল-ব্যাক বিফল"
 
-#: ../src/pavucontrol.cc:2015 ../src/pavucontrol.cc:2230
+#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
 #, c-format
-msgid "Failed to initialized stream_restore extension: %s"
-msgstr "stream_restore এক্সটেনশব আরম্ভ করতে ব্যর্থ: %s"
+msgid "Failed to initialize stream_restore extension: %s"
+msgstr "stream_restore এক্সটেনশন আরম্ভ করতে ব্যর্থ: %s"
 
-#: ../src/pavucontrol.cc:2035
+#: ../src/pavucontrol.cc:235
 msgid "pa_ext_stream_restore_read() failed"
 msgstr "pa_ext_stream_restore_read() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2052
+#: ../src/pavucontrol.cc:252
 msgid "pa_context_get_sink_info_by_index() failed"
 msgstr "pa_context_get_sink_info_by_index() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2065
+#: ../src/pavucontrol.cc:265
 msgid "pa_context_get_source_info_by_index() failed"
 msgstr "pa_context_get_source_info_by_index() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2078 ../src/pavucontrol.cc:2091
+#: ../src/pavucontrol.cc:278 ../src/pavucontrol.cc:291
 msgid "pa_context_get_sink_input_info() failed"
 msgstr "pa_context_get_sink_input_info() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2104
+#: ../src/pavucontrol.cc:304
 msgid "pa_context_get_client_info() failed"
 msgstr "pa_context_get_client_info() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2114 ../src/pavucontrol.cc:2171
+#: ../src/pavucontrol.cc:314 ../src/pavucontrol.cc:371
 msgid "pa_context_get_server_info() failed"
 msgstr "pa_context_get_server_info() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2127
+#: ../src/pavucontrol.cc:327
 msgid "pa_context_get_card_info_by_index() failed"
 msgstr "pa_context_get_card_info_by_index() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2162
+#: ../src/pavucontrol.cc:362
 msgid "pa_context_subscribe() failed"
 msgstr "pa_context_subscribe() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2178
+#: ../src/pavucontrol.cc:378
 msgid "pa_context_client_info_list() failed"
 msgstr "pa_context_client_info_list() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2185
+#: ../src/pavucontrol.cc:385
 msgid "pa_context_get_card_info_list() failed"
 msgstr "pa_context_get_card_info_list() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2192
+#: ../src/pavucontrol.cc:392
 msgid "pa_context_get_sink_info_list() failed"
 msgstr "pa_context_get_sink_info_list() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2199
+#: ../src/pavucontrol.cc:399
 msgid "pa_context_get_source_info_list() failed"
 msgstr "pa_context_get_source_info_list() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2206
+#: ../src/pavucontrol.cc:406
 msgid "pa_context_get_sink_input_info_list() failed"
 msgstr "pa_context_get_sink_input_info_list() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2213
+#: ../src/pavucontrol.cc:413
 msgid "pa_context_get_source_output_info_list() failed"
 msgstr "pa_context_get_source_output_info_list() ব্যর্থ"
 
-#: ../src/pavucontrol.cc:2236 ../src/pavucontrol.cc:2280
+#: ../src/pavucontrol.cc:437
 msgid "Connection failed"
 msgstr "সংযোগ বিফল"
+
+#: ../src/cardwidget.cc:87
+msgid "pa_context_set_card_profile_by_index() failed"
+msgstr "pa_context_set_card_profile_by_index() ব্যর্থ"
+
+#: ../src/channelwidget.cc:99
+msgid "Volume Control Feedback Sound"
+msgstr "শব্দের মাত্রা নিয়ন্ত্রণের ফিডব্যাক রূপে উপলব্ধ শব্দ"
+
+#: ../src/channelwidget.cc:120
+msgid "<small>Silence</small>"
+msgstr "<small>নিঃশব্দ</small>"
+
+#: ../src/channelwidget.cc:121
+msgid "<small>Max</small>"
+msgstr "<small>সর্বাধিক</small>"
+
+#: ../src/channelwidget.cc:125
+msgid "<small><i>Base</i></small>"
+msgstr "<small><i>বেস</i></small>"
+
+#: ../src/mainwindow.cc:226
+msgid "Failed to read data from stream"
+msgstr "স্ট্রিম থেকে তথ্য পড়তে ব্যর্থ"
+
+#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+msgid "Peak detect"
+msgstr "চুড়ান্ত মাপ সনাক্ত হয়েছে"
+
+#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+msgid "Failed to create monitoring stream"
+msgstr "নিরীক্ষণের স্ট্রিম নির্মাণ করতে ব্যর্থ"
+
+#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+msgid "Failed to connect monitoring stream"
+msgstr "নিরীক্ষণের স্ট্রিম সংযুক্ত করতে ব্যর্থ"
+
+#: ../src/mainwindow.cc:554
+msgid "System Sounds"
+msgstr "সিস্টেমের শব্দ"
+
+#: ../src/rolewidget.cc:66
+msgid "pa_ext_stream_restore_write() failed"
+msgstr "pa_ext_stream_restore_write() ব্যর্থ"
+
+#: ../src/sinkinputwidget.cc:34 ../src/sourceoutputwidget.cc:34
+msgid "_Move Stream..."
+msgstr "স্ট্রিম স্থানান্তর... (_M)"
+
+#: ../src/sinkinputwidget.cc:35 ../src/sourceoutputwidget.cc:35
+msgid "_Terminate Stream"
+msgstr "স্ট্রিম বন্ধ করুন (_T)"
+
+#: ../src/sinkinputwidget.cc:61
+msgid "pa_context_set_sink_input_volume() failed"
+msgstr "pa_context_set_sink_input_volume() ব্যর্থ"
+
+#: ../src/sinkinputwidget.cc:76
+msgid "pa_context_set_sink_input_mute() failed"
+msgstr "pa_context_set_sink_input_mute() ব্যর্থ"
+
+#: ../src/sinkinputwidget.cc:110
+msgid "pa_context_kill_sink_input() failed"
+msgstr "pa_context_kill_sink_input() ব্যর্থ"
+
+#: ../src/sinkinputwidget.cc:127
+msgid "pa_context_move_sink_input_by_index() failed"
+msgstr "pa_context_move_sink_input_by_index() ব্যর্থ"
+
+#: ../src/sinkwidget.cc:52
+msgid "pa_context_set_sink_volume_by_index() failed"
+msgstr "pa_context_set_sink_volume_by_index() ব্যর্থ"
+
+#: ../src/sinkwidget.cc:67
+msgid "pa_context_set_sink_mute_by_index() failed"
+msgstr "pa_context_set_sink_mute_by_index() ব্যর্থ"
+
+#: ../src/sinkwidget.cc:81
+msgid "pa_context_set_default_sink() failed"
+msgstr "pa_context_set_default_sink() ব্যর্থ"
+
+#: ../src/sourceoutputwidget.cc:60
+msgid "pa_context_kill_source_output() failed"
+msgstr "pa_context_kill_source_output() ব্যর্থ"
+
+#: ../src/sourceoutputwidget.cc:101
+msgid "pa_context_move_source_output_by_index() failed"
+msgstr "pa_context_move_source_output_by_index() ব্যর্থ"
+
+#: ../src/sourcewidget.cc:31
+msgid "_Default"
+msgstr "ডিফল্ট মান (_D)"
+
+#: ../src/sourcewidget.cc:52
+msgid "pa_context_set_source_volume_by_index() failed"
+msgstr "pa_context_set_source_volume_by_index() ব্যর্থ"
+
+#: ../src/sourcewidget.cc:67
+msgid "pa_context_set_source_mute_by_index() failed"
+msgstr "pa_context_set_source_mute_by_index() ব্যর্থ"
+
+#: ../src/sourcewidget.cc:81
+msgid "pa_context_set_default_source() failed"
+msgstr "pa_context_set_default_source() ব্যর্থ"
 
