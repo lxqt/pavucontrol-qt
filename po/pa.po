@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.pa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-26 08:46+0000\n"
-"PO-Revision-Date: 2009-05-26 15:25+0530\n"
+"POT-Creation-Date: 2009-06-01 08:40+0000\n"
+"PO-Revision-Date: 2009-06-01 16:22+0530\n"
 "Last-Translator: Jaswinder Singh <jsingh@redhat.com>\n"
 "Language-Team: Punjabi <Punjabi-users@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../src/pavucontrol.desktop.in.h:1
 msgid "Adjust the volume level"
-msgstr "ਵਾਲੀਅਮ ਲੈਵਲ ਅਡਜੱਸਟ ਕਰੋ"
+msgstr "ਵਾਲੀਅਮ ਲੈਵਲ ਅਨੁਕੂਲ ਕਰੋ"
 
 #: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:472
 msgid "PulseAudio Volume Control"
@@ -45,11 +45,11 @@ msgstr "<b>ਵੇਖੋ(_h):</b>"
 
 #: ../src/pavucontrol.glade.h:5
 msgid "<b>Sho_w:</b>"
-msgstr "<b>ਵੇਖੋ(_w):</b>"
+msgstr "<b>ਵੇਖਾਓ(_w):</b>"
 
 #: ../src/pavucontrol.glade.h:6
 msgid "<b>_Show:</b>"
-msgstr "<b>ਵੇਖੋ(_S):</b>"
+msgstr "<b>ਵੇਖਾਓ(_S):</b>"
 
 #: ../src/pavucontrol.glade.h:7
 msgid "<b>left-front</b>"
@@ -73,7 +73,7 @@ msgstr "<i>ਕੋਈ ਇੰਪੁੱਟ ਜੰਤਰ ਉਪਲੱਬਧ ਨਹ�
 
 #: ../src/pavucontrol.glade.h:12
 msgid "<i>No output devices available</i>"
-msgstr "<i>ਕੋਈ ਆਉਟਪੁੱਟ ਜੰਤਰ ਉਪਲੱਬਧ ਨਹੀਂ</i>"
+msgstr "<i>ਕੋਈ ਆਊਟਪੁੱਟ ਜੰਤਰ ਉਪਲੱਬਧ ਨਹੀਂ</i>"
 
 #: ../src/pavucontrol.glade.h:13
 msgid ""
@@ -95,9 +95,9 @@ msgid ""
 "Hardware Output Devices\n"
 "Virtual Output Devices"
 msgstr ""
-"ਸਭ ਆਉਟਪੁੱਟ ਜੰਤਰ\n"
-"ਹਾਰਡਵੇਅਰ ਆਉਟਪੁੱਟ ਜੰਤਰ\n"
-"ਵੁਰਚੁਅਲ ਆਉਟਪੁੱਟ ਜੰਤਰ"
+"ਸਭ ਆਊਟਪੁੱਟ ਜੰਤਰ\n"
+"ਹਾਰਡਵੇਅਰ ਆਊਟਪੁੱਟ ਜੰਤਰ\n"
+"ਵੁਰਚੁਅਲ ਆਊਟਪੁੱਟ ਜੰਤਰ"
 
 #. Applications All streams
 #: ../src/pavucontrol.glade.h:22
@@ -140,7 +140,7 @@ msgstr "ਇੰਪੁੱਟ ਜੰਤਰ(_I)"
 
 #: ../src/pavucontrol.glade.h:33
 msgid "_Output Devices"
-msgstr "ਆਉਟਪੁੱਟ ਜੰਤਰ(_O)"
+msgstr "ਆਊਟਪੁੱਟ ਜੰਤਰ(_O)"
 
 #: ../src/pavucontrol.glade.h:34
 msgid "_Playback"
