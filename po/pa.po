@@ -4,23 +4,24 @@
 #
 # Amanpreet Singh Alam <aalam@users.sf.net>, 2008.
 # Jaswinder Singh <jsingh@redhat.com>, 2009.
+# A S Alam <aalam@users.sf.net>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.pa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-01 08:40+0000\n"
-"PO-Revision-Date: 2009-06-01 16:22+0530\n"
-"Last-Translator: Jaswinder Singh <jsingh@redhat.com>\n"
-"Language-Team: Punjabi <Punjabi-users@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2009-06-05 19:43+0000\n"
+"PO-Revision-Date: 2009-06-06 07:14+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: ../src/pavucontrol.desktop.in.h:1
 msgid "Adjust the volume level"
-msgstr "ਵਾਲੀਅਮ ਲੈਵਲ ਅਨੁਕੂਲ ਕਰੋ"
+msgstr "ਵਾਲੀਅਮ ਲੈਵਲ ਅਡਜੱਸਟ ਕਰੋ"
 
 #: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:472
 msgid "PulseAudio Volume Control"
@@ -28,12 +29,12 @@ msgstr "ਪਲੱਸਆਡੀਓ ਵਾਲੀਅਮ ਕੰਟਰੋਲ"
 
 #: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:30
 msgid "Volume Control"
-msgstr "ਆਵਾਜ਼ ਕੰਟਰੋਲ"
+msgstr "ਵਾਲੀਅਮ ਕੰਟਰੋਲ"
 
 #: ../src/pavucontrol.glade.h:2
 #, no-c-format
 msgid "50%"
-msgstr "50%"
+msgstr "੫੦%"
 
 #: ../src/pavucontrol.glade.h:3
 msgid "<b>Profile:</b>"
@@ -45,11 +46,11 @@ msgstr "<b>ਵੇਖੋ(_h):</b>"
 
 #: ../src/pavucontrol.glade.h:5
 msgid "<b>Sho_w:</b>"
-msgstr "<b>ਵੇਖਾਓ(_w):</b>"
+msgstr "<b>ਵੇਖੋ(_w):</b>"
 
 #: ../src/pavucontrol.glade.h:6
 msgid "<b>_Show:</b>"
-msgstr "<b>ਵੇਖਾਓ(_S):</b>"
+msgstr "<b>ਵੇਖੋ(_S):</b>"
 
 #: ../src/pavucontrol.glade.h:7
 msgid "<b>left-front</b>"
@@ -73,7 +74,7 @@ msgstr "<i>ਕੋਈ ਇੰਪੁੱਟ ਜੰਤਰ ਉਪਲੱਬਧ ਨਹ�
 
 #: ../src/pavucontrol.glade.h:12
 msgid "<i>No output devices available</i>"
-msgstr "<i>ਕੋਈ ਆਊਟਪੁੱਟ ਜੰਤਰ ਉਪਲੱਬਧ ਨਹੀਂ</i>"
+msgstr "<i>ਕੋਈ ਆਉਟਪੁੱਟ ਜੰਤਰ ਉਪਲੱਬਧ ਨਹੀਂ</i>"
 
 #: ../src/pavucontrol.glade.h:13
 msgid ""
@@ -95,9 +96,9 @@ msgid ""
 "Hardware Output Devices\n"
 "Virtual Output Devices"
 msgstr ""
-"ਸਭ ਆਊਟਪੁੱਟ ਜੰਤਰ\n"
-"ਹਾਰਡਵੇਅਰ ਆਊਟਪੁੱਟ ਜੰਤਰ\n"
-"ਵੁਰਚੁਅਲ ਆਊਟਪੁੱਟ ਜੰਤਰ"
+"ਸਭ ਆਉਟਪੁੱਟ ਜੰਤਰ\n"
+"ਹਾਰਡਵੇਅਰ ਆਉਟਪੁੱਟ ਜੰਤਰ\n"
+"ਵੁਰਚੁਅਲ ਆਉਟਪੁੱਟ ਜੰਤਰ"
 
 #. Applications All streams
 #: ../src/pavucontrol.glade.h:22
@@ -116,7 +117,7 @@ msgstr "ਕਾਰਡ ਨਾਂ"
 
 #: ../src/pavucontrol.glade.h:26
 msgid "Lock channels together"
-msgstr "ਲੋਕਲ ਚੈਨਲ ਇੱਕਠੇ"
+msgstr "ਚੈਨਲ ਇੱਕਠੇ ਲਾਕ ਕਰੋ"
 
 #: ../src/pavucontrol.glade.h:27
 msgid "Mute audio"
@@ -140,7 +141,7 @@ msgstr "ਇੰਪੁੱਟ ਜੰਤਰ(_I)"
 
 #: ../src/pavucontrol.glade.h:33
 msgid "_Output Devices"
-msgstr "ਆਊਟਪੁੱਟ ਜੰਤਰ(_O)"
+msgstr "ਆਉਟਪੁੱਟ ਜੰਤਰ(_O)"
 
 #: ../src/pavucontrol.glade.h:34
 msgid "_Playback"
@@ -168,7 +169,7 @@ msgstr "ਸਿੰਕ ਇੰਪੁੱਟ ਕਾਲਬੈਕ ਫੇਲ"
 
 #: ../src/pavucontrol.cc:147
 msgid "Source output callback failure"
-msgstr "ਸਰੋਤ ਆਉਟਪੁੱਤ ਕਾਲਬੈਕ ਫੇਲ੍ਹ"
+msgstr "ਸਰੋਤ ਆਉਟਪੁੱਟ ਕਾਲਬੈਕ ਫੇਲ੍ਹ"
 
 #: ../src/pavucontrol.cc:181
 msgid "Client callback failure"
@@ -209,7 +210,7 @@ msgstr "pa_context_get_server_info() ਫੇਲ੍ਹ ਹੈ"
 
 #: ../src/pavucontrol.cc:327
 msgid "pa_context_get_card_info_by_index() failed"
-msgstr "pa_context_get_card_info_by_index() ਫੇਲ ਹੋਇਆ"
+msgstr "pa_context_get_card_info_by_index() ਫੇਲ੍ਹ ਹੋਇਆ"
 
 #: ../src/pavucontrol.cc:362
 msgid "pa_context_subscribe() failed"
@@ -245,7 +246,7 @@ msgstr "ਕੁਨੈਕਸ਼ਨ ਫੇਲ੍ਹ ਹੋਇਆ"
 
 #: ../src/cardwidget.cc:87
 msgid "pa_context_set_card_profile_by_index() failed"
-msgstr "pa_context_set_card_profile_by_index() ਫੇਲ ਹੋਇਆ"
+msgstr "pa_context_set_card_profile_by_index() ਫੇਲ੍ਹ ਹੋਇਆ"
 
 #: ../src/channelwidget.cc:99
 msgid "Volume Control Feedback Sound"
@@ -261,11 +262,11 @@ msgstr "<small>ਵੱਧ</small>"
 
 #: ../src/channelwidget.cc:125
 msgid "<small><i>Base</i></small>"
-msgstr "<small><i>ਅਧਾਰ</i></small>"
+msgstr "<small><i>ਬੇਸ</i></small>"
 
 #: ../src/mainwindow.cc:226
 msgid "Failed to read data from stream"
-msgstr "ਸਟਰੀਮ ਤੋਂ ਡਾਟਾ ਪੜਨ ਵਿੱਚ ਫੇਲ"
+msgstr "ਸਟਰੀਮ ਤੋਂ ਡਾਟਾ ਪੜ੍ਹਨ ਵਿੱਚ ਫੇਲ੍ਹ ਹੈ"
 
 #: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
 msgid "Peak detect"
@@ -273,11 +274,11 @@ msgstr "ਪੀਕ ਮਿਲੀ"
 
 #: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
 msgid "Failed to create monitoring stream"
-msgstr "ਨਿਗਰਾਨੀ ਸਟਰੀਮ ਬਣਾਉਣ ਵਿੱਚ ਫੇਲ ਹੋਇਆ"
+msgstr "ਨਿਗਰਾਨੀ ਸਟਰੀਮ ਬਣਾਉਣ ਵਿੱਚ ਫੇਲ੍ਹ ਹੋਇਆ"
 
 #: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
 msgid "Failed to connect monitoring stream"
-msgstr "ਨਿਗਰਾਨੀ ਸਟਰੀਮ ਨਾਲ ਜੁੜਨ ਵਿੱਚ ਫੇਲ"
+msgstr "ਨਿਗਰਾਨੀ ਸਟਰੀਮ ਨਾਲ ਕੁਨੈਕਟ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
 
 #: ../src/mainwindow.cc:554
 msgid "System Sounds"
