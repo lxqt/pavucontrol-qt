@@ -498,7 +498,6 @@ Monitors</property>
                       <widget class="GtkImage" id="iconImage">
                         <property name="visible">True</property>
                         <property name="stock">gtk-missing-image</property>
-                        <property name="icon-size">4</property>
                       </widget>
                       <packing>
                         <property name="expand">False</property>
@@ -508,6 +507,7 @@ Monitors</property>
                     <child>
                       <widget class="GtkHBox" id="hbox12">
                         <property name="visible">True</property>
+                        <property name="spacing">2</property>
                         <child>
                           <widget class="GtkLabel" id="boldNameLabel">
                             <property name="visible">True</property>
@@ -524,10 +524,40 @@ Monitors</property>
                             <property name="xalign">0</property>
                             <property name="label" translatable="yes">Stream Title</property>
                             <property name="use_markup">True</property>
-                            <property name="ellipsize">middle</property>
                           </widget>
                           <packing>
+                            <property name="expand">False</property>
                             <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="directionLabel">
+                            <property name="visible">True</property>
+                            <property name="xalign">0</property>
+                            <property name="xpad">4</property>
+                            <property name="label" translatable="yes">direction</property>
+                            <property name="use_markup">True</property>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkEventBox" id="deviceButton">
+                            <property name="visible">True</property>
+                            <child>
+                              <widget class="GtkLabel" id="deviceLabel">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">&lt;a href=""&gt;Device&lt;/a&gt;</property>
+                                <property name="use_markup">True</property>
+                              </widget>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="position">3</property>
                           </packing>
                         </child>
                       </widget>
@@ -582,6 +612,26 @@ Monitors</property>
                             <property name="position">1</property>
                           </packing>
                         </child>
+                        <child>
+                          <widget class="GtkButton" id="terminateButton">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="has_tooltip">True</property>
+                            <property name="tooltip" translatable="yes">Terminate stream</property>
+                            <child>
+                              <widget class="GtkImage" id="image1">
+                                <property name="visible">True</property>
+                                <property name="stock">gtk-delete</property>
+                              </widget>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
                       </widget>
                       <packing>
                         <property name="expand">False</property>
@@ -610,52 +660,6 @@ Monitors</property>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
                     <property name="position">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkHBox" id="streamControlHBox">
-                    <property name="visible">True</property>
-                    <child>
-                      <widget class="GtkLabel" id="directionLabel">
-                        <property name="visible">True</property>
-                        <property name="xalign">0</property>
-                        <property name="label" translatable="yes">direction</property>
-                        <property name="use_markup">True</property>
-                      </widget>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="position">0</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <widget class="GtkComboBox" id="deviceCombo">
-                        <property name="visible">True</property>
-                      </widget>
-                      <packing>
-                        <property name="position">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <widget class="GtkButton" id="terminateButton">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">True</property>
-                        <property name="tooltip" translatable="yes">Terminate stream</property>
-                        <child>
-                          <widget class="GtkImage" id="image2">
-                            <property name="visible">True</property>
-                            <property name="stock">gtk-delete</property>
-                          </widget>
-                        </child>
-                      </widget>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="position">2</property>
-                      </packing>
-                    </child>
-                  </widget>
-                  <packing>
-                    <property name="position">2</property>
                   </packing>
                 </child>
               </widget>
@@ -702,7 +706,6 @@ Monitors</property>
                       <widget class="GtkImage" id="iconImage">
                         <property name="visible">True</property>
                         <property name="stock">gtk-missing-image</property>
-                        <property name="icon-size">4</property>
                       </widget>
                       <packing>
                         <property name="expand">False</property>
@@ -947,7 +950,6 @@ Monitors</property>
                         <property name="visible">True</property>
                         <property name="xalign">0</property>
                         <property name="stock">gtk-missing-image</property>
-                        <property name="icon-size">4</property>
                       </widget>
                       <packing>
                         <property name="expand">False</property>

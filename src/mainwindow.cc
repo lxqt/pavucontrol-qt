@@ -86,9 +86,6 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     sourceOutputTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceOutputTypeComboBoxChanged));
     sinkTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkTypeComboBoxChanged));
     sourceTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceTypeComboBoxChanged));
-
-    sinkTree = Gtk::ListStore::create(deviceColumns);
-    sourceTree = Gtk::ListStore::create(deviceColumns);
 }
 
 MainWindow* MainWindow::create() {
@@ -179,34 +176,6 @@ void MainWindow::updateCard(const pa_card_info &info) {
         updateDeviceVisibility();
 }
 
-void MainWindow::rebuildSinkCombo() {
-    uint32_t idx = 0;
-    Gtk::TreeModel::Row row;
-
-    sinkTree->clear();
-    sinkTreeIndexes.clear();
-
-    /*
-    row = *(sinkTree->append());
-    idx++;
-    row[deviceColumns.index] = -1;
-    row[deviceColumns.name] = "Default Output";
-    */
-
-    for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
-        Gtk::TreeModel::Row row = *(sinkTree->append());
-        sinkTreeIndexes[i->first] = idx++;
-        row[deviceColumns.index] = i->first;
-        row[deviceColumns.name] = i->second->description.c_str();
-    }
-
-    /* Force a redraw of the dropdown combo due to the model change. */
-    for (std::map<uint32_t, SinkInputWidget*>::iterator i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
-        SinkInputWidget* w = i->second;
-        w->setSinkIndex(w->sinkIndex());
-    }
-}
-
 void MainWindow::updateSink(const pa_sink_info &info) {
     SinkWidget *w;
     bool is_new = false;
@@ -250,7 +219,6 @@ void MainWindow::updateSink(const pa_sink_info &info) {
 
     w->updating = false;
 
-    rebuildSinkCombo();
     if (is_new)
         updateDeviceVisibility();
 }
@@ -356,34 +324,6 @@ void MainWindow::createMonitorStreamForSinkInput(uint32_t sink_input_idx, uint32
     }
 }
 
-void MainWindow::rebuildSourceCombo() {
-    uint32_t idx = 0;
-    Gtk::TreeModel::Row row;
-
-    sourceTree->clear();
-    sourceTreeIndexes.clear();
-
-    /*
-    row = *(sourceTree->append());
-    idx++;
-    row[deviceColumns.index] = -1;
-    row[deviceColumns.name] = "Default Input";
-    */
-
-    for (std::map<uint32_t, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
-        Gtk::TreeModel::Row row = *(sourceTree->append());
-        sourceTreeIndexes[i->first] = idx++;
-        row[deviceColumns.index] = i->first;
-        row[deviceColumns.name] = i->second->description.c_str();
-    }
-
-    /* Force a redraw of the dropdown combo due to the model change. */
-    for (std::map<uint32_t, SourceOutputWidget*>::iterator i = sourceOutputWidgets.begin(); i != sourceOutputWidgets.end(); ++i) {
-        SourceOutputWidget* w = i->second;
-        w->setSourceIndex(w->sourceIndex());
-    }
-}
-
 void MainWindow::updateSource(const pa_source_info &info) {
     SourceWidget *w;
     bool is_new = false;
@@ -428,7 +368,6 @@ void MainWindow::updateSource(const pa_source_info &info) {
 
     w->updating = false;
 
-    rebuildSourceCombo();
     if (is_new)
         updateDeviceVisibility();
 }
@@ -737,6 +676,14 @@ void MainWindow::reallyUpdateDeviceVisibility() {
     for (std::map<uint32_t, SinkInputWidget*>::iterator i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
         SinkInputWidget* w = i->second;
 
+        if (sinkWidgets.size() > 1) {
+            w->directionLabel->show();
+            w->deviceButton->show();
+        } else {
+          w->directionLabel->hide();
+          w->deviceButton->hide();
+        }
+
         if (showSinkInputType == SINK_INPUT_ALL || w->type == showSinkInputType) {
             w->show();
             is_empty = false;
@@ -756,6 +703,14 @@ void MainWindow::reallyUpdateDeviceVisibility() {
 
     for (std::map<uint32_t, SourceOutputWidget*>::iterator i = sourceOutputWidgets.begin(); i != sourceOutputWidgets.end(); ++i) {
         SourceOutputWidget* w = i->second;
+
+        if (sourceWidgets.size() > 1) {
+          w->directionLabel->show();
+          w->deviceButton->show();
+        } else {
+          w->directionLabel->hide();
+          w->deviceButton->hide();
+        }
 
         if (showSourceOutputType == SOURCE_OUTPUT_ALL || w->type == showSourceOutputType) {
             w->show();
@@ -848,7 +803,6 @@ void MainWindow::removeSink(uint32_t index) {
 
     delete sinkWidgets[index];
     sinkWidgets.erase(index);
-    rebuildSinkCombo();
     updateDeviceVisibility();
 }
 
@@ -858,7 +812,6 @@ void MainWindow::removeSource(uint32_t index) {
 
     delete sourceWidgets[index];
     sourceWidgets.erase(index);
-    rebuildSourceCombo();
     updateDeviceVisibility();
 }
 

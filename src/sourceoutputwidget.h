@@ -31,6 +31,7 @@ class SourceOutputWidget : public StreamWidget {
 public:
     SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
     static SourceOutputWidget* create(MainWindow* mainWindow);
+    ~SourceOutputWidget(void);
 
     void init(MainWindow* mainWindow);
 
@@ -39,13 +40,35 @@ public:
     uint32_t index, clientIndex;
     void setSourceIndex(uint32_t idx);
     uint32_t sourceIndex();
-    virtual void onDeviceChange();
+    virtual bool onDeviceChangePopup(GdkEventButton*);
     virtual void onKill();
 
 private:
     MainWindow *mpMainWindow;
     uint32_t mSourceIndex;
 
+    void clearMenu();
+    void buildMenu();
+
+    Gtk::Menu menu;
+
+    struct SourceMenuItem {
+      SourceMenuItem(SourceOutputWidget *w, const char *label, uint32_t i, bool active) :
+      widget(w),
+      menuItem(label),
+      index(i) {
+        menuItem.set_active(active);
+        menuItem.set_draw_as_radio(true);
+        menuItem.signal_toggled().connect(sigc::mem_fun(*this, &SourceMenuItem::onToggle));
+      }
+
+      SourceOutputWidget *widget;
+      Gtk::CheckMenuItem menuItem;
+      uint32_t index;
+      void onToggle();
+    };
+
+    std::map<uint32_t, SourceMenuItem*> sourceMenuItems;
 };
 
 #endif

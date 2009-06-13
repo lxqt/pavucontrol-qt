@@ -32,13 +32,13 @@ SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefP
     StreamWidget(cobject, x),
     mpMainWindow(NULL) {
 
-    directionLabel->set_label(_("<i>Recording from </i> "));
+    gchar *txt;
+    directionLabel->set_label(txt = g_markup_printf_escaped("<i>%s</i>", _("from")));
+    g_free(txt);
 }
 
 void SourceOutputWidget::init(MainWindow* mainWindow) {
     mpMainWindow = mainWindow;
-    deviceCombo->set_model(mpMainWindow->sourceTree);
-    deviceCombo->pack_start(mpMainWindow->deviceColumns.name);
 }
 
 SourceOutputWidget* SourceOutputWidget::create(MainWindow* mainWindow) {
@@ -49,12 +49,22 @@ SourceOutputWidget* SourceOutputWidget::create(MainWindow* mainWindow) {
     return w;
 }
 
+SourceOutputWidget::~SourceOutputWidget(void) {
+  clearMenu();
+}
+
 void SourceOutputWidget::setSourceIndex(uint32_t idx) {
     mSourceIndex = idx;
 
-    mSuppressDeviceChange = true;
-    deviceCombo->set_active(mpMainWindow->sourceTreeIndexes[idx]);
-    mSuppressDeviceChange = false;
+    gchar *txt;
+    if (mpMainWindow->sourceWidgets.count(idx)) {
+      SourceWidget *w = mpMainWindow->sourceWidgets[idx];
+      txt = g_markup_printf_escaped("<a href=\"\">%s</a>", w->description.c_str());
+    }
+    else
+      txt = g_markup_printf_escaped("<a href=\"\">%s</a>", _("Unknown input"));
+    deviceLabel->set_label(txt);
+    g_free(txt);
 }
 
 uint32_t SourceOutputWidget::sourceIndex() {
@@ -71,27 +81,51 @@ void SourceOutputWidget::onKill() {
     pa_operation_unref(o);
 }
 
-void SourceOutputWidget::onDeviceChange() {
-    Gtk::TreeModel::iterator iter;
 
-    if (updating || mSuppressDeviceChange)
-        return;
+void SourceOutputWidget::clearMenu() {
+  while (!sourceMenuItems.empty()) {
+    std::map<uint32_t, SourceMenuItem*>::iterator i = sourceMenuItems.begin();
+    delete i->second;
+    sourceMenuItems.erase(i);
+  }
+}
 
-    iter = deviceCombo->get_active();
-    if (iter)
+void SourceOutputWidget::buildMenu() {
+  for (std::map<uint32_t, SourceWidget*>::iterator i = mpMainWindow->sourceWidgets.begin(); i != mpMainWindow->sourceWidgets.end(); ++i) {
+    SourceMenuItem *m;
+    sourceMenuItems[i->second->index] = m = new SourceMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == mSourceIndex);
+    menu.append(m->menuItem);
+  }
+  menu.show_all();
+}
+
+void SourceOutputWidget::SourceMenuItem::onToggle() {
+  if (widget->updating)
+    return;
+
+  if (!menuItem.get_active())
+    return;
+
+  /*if (!mpMainWindow->sourceWidgets.count(widget->index))
+    return;*/
+
+  pa_operation* o;
+  if (!(o = pa_context_move_source_output_by_index(get_context(), widget->index, index, NULL, NULL))) {
+    show_error(_("pa_context_move_source_output_by_index() failed"));
+    return;
+  }
+
+  pa_operation_unref(o);
+}
+
+bool SourceOutputWidget::onDeviceChangePopup(GdkEventButton* event) {
+    if (GDK_BUTTON_PRESS == event->type && 1 == event->button)
     {
-        Gtk::TreeModel::Row row = *iter;
-        if (row)
-        {
-          pa_operation* o;
-          uint32_t source_index = row[mpMainWindow->deviceColumns.index];
-
-          if (!(o = pa_context_move_source_output_by_index(get_context(), source_index, index, NULL, NULL))) {
-              show_error(_("pa_context_move_source_output_by_index() failed"));
-              return;
-          }
-
-          pa_operation_unref(o);
-        }
+      clearMenu();
+      buildMenu();
+      menu.popup(event->button, event->time);
+      return true;
     }
+    else
+      return false;
 }

@@ -38,7 +38,8 @@ public:
     Gtk::ToggleButton *lockToggleButton, *muteToggleButton;
     Gtk::Button *terminateButton;
     Gtk::Label *directionLabel;
-    Gtk::HBox *streamControlHBox;
+    Gtk::EventBox *deviceButton;
+    Gtk::Label *deviceLabel;
 
     pa_channel_map channelMap;
     pa_cvolume volume;
@@ -46,7 +47,7 @@ public:
     ChannelWidget *channelWidgets[PA_CHANNELS_MAX];
 
     virtual void onMuteToggleButton();
-    virtual void onDeviceChange() = 0;
+    virtual bool onDeviceChangePopup(GdkEventButton*);
     virtual void onKill();
 
     sigc::connection timeoutConnection;
@@ -54,11 +55,6 @@ public:
     bool timeoutEvent();
 
     virtual void executeVolumeUpdate();
-
-protected:
-  Gtk::ComboBox *deviceCombo;
-
-  bool mSuppressDeviceChange;
 };
 
 #endif

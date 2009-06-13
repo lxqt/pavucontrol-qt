@@ -27,19 +27,18 @@
 
 /*** StreamWidget ***/
 StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    MinimalStreamWidget(cobject, x),
-    mSuppressDeviceChange(false)  {
+    MinimalStreamWidget(cobject, x) {
 
     x->get_widget("lockToggleButton", lockToggleButton);
     x->get_widget("muteToggleButton", muteToggleButton);
-    x->get_widget("deviceCombo", deviceCombo);
     x->get_widget("terminateButton", terminateButton);
     x->get_widget("directionLabel", directionLabel);
-    x->get_widget("streamControlHBox", streamControlHBox);
-
-    deviceCombo->signal_changed().connect( sigc::mem_fun(*this, &StreamWidget::onDeviceChange));
+    x->get_widget("deviceButton", deviceButton);
+    x->get_widget("deviceLabel", deviceLabel);
+    
     terminateButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onKill));
     muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onMuteToggleButton));
+    deviceButton->signal_button_press_event().connect(sigc::mem_fun(*this, &StreamWidget::onDeviceChangePopup));
 
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
         channelWidgets[i] = NULL;
@@ -108,4 +107,8 @@ bool StreamWidget::timeoutEvent() {
 }
 
 void StreamWidget::executeVolumeUpdate() {
+}
+
+bool StreamWidget::onDeviceChangePopup(GdkEventButton*) {
+  return false;
 }

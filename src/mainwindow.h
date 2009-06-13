@@ -91,31 +91,8 @@ public:
 
     Glib::ustring defaultSinkName, defaultSourceName;
 
-    class DeviceColumns : public Gtk::TreeModel::ColumnRecord
-    {
-    public:
-
-      DeviceColumns()
-      { add(index); add(name); }
-
-      Gtk::TreeModelColumn<uint32_t> index;
-      Gtk::TreeModelColumn<Glib::ustring> name;
-    };
-
-    DeviceColumns deviceColumns;
-
-    Glib::RefPtr<Gtk::ListStore> sinkTree;
-    std::map<uint32_t, uint32_t> sinkTreeIndexes;
-
-    Glib::RefPtr<Gtk::ListStore> sourceTree;
-    std::map<uint32_t, uint32_t> sourceTreeIndexes;
-
 protected:
     virtual void on_realize();
-
-private:
-    void rebuildSinkCombo();
-    void rebuildSourceCombo();
 };
 
 
