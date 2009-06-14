@@ -111,12 +111,17 @@ static void set_icon_name_fallback(Gtk::Image *i, const char *name, Gtk::IconSiz
 
     Gtk::IconSize::lookup(size, width, height);
     theme = Gtk::IconTheme::get_default();
-    pixbuf = theme->load_icon(name, width, Gtk::ICON_LOOKUP_GENERIC_FALLBACK);
 
-    if (pixbuf)
-        i->set(pixbuf);
-    else
+    try {
+        pixbuf = theme->load_icon(name, width, Gtk::ICON_LOOKUP_GENERIC_FALLBACK);
+
+        if (pixbuf)
+            i->set(pixbuf);
+        else
+            i->set(name);
+    } catch (Gtk::IconThemeError &e) {
         i->set(name);
+    }
 }
 
 void MainWindow::updateCard(const pa_card_info &info) {
