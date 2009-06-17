@@ -40,7 +40,7 @@ public:
     uint32_t index, clientIndex;
     void setSourceIndex(uint32_t idx);
     uint32_t sourceIndex();
-    virtual bool onDeviceChangePopup(GdkEventButton*);
+    virtual void onDeviceChangePopup();
     virtual bool onWidgetButtonEvent(GdkEventButton*);
     virtual void onKill();
 

@@ -61,15 +61,12 @@ SourceOutputWidget::~SourceOutputWidget(void) {
 void SourceOutputWidget::setSourceIndex(uint32_t idx) {
     mSourceIndex = idx;
 
-    gchar *txt;
     if (mpMainWindow->sourceWidgets.count(idx)) {
       SourceWidget *w = mpMainWindow->sourceWidgets[idx];
-      txt = g_markup_printf_escaped("<a href=\"\">%s</a>", w->description.c_str());
+      deviceButton->set_label(w->description.c_str());
     }
     else
-      txt = g_markup_printf_escaped("<a href=\"\">%s</a>", _("Unknown input"));
-    deviceLabel->set_label(txt);
-    g_free(txt);
+      deviceButton->set_label(_("Unknown input"));
 }
 
 uint32_t SourceOutputWidget::sourceIndex() {
@@ -132,13 +129,8 @@ void SourceOutputWidget::SourceMenuItem::onToggle() {
   pa_operation_unref(o);
 }
 
-bool SourceOutputWidget::onDeviceChangePopup(GdkEventButton* event) {
-    if (GDK_BUTTON_PRESS == event->type && 1 == event->button) {
-        clearMenu();
-        buildMenu();
-        menu.popup(event->button, event->time);
-        return true;
-    }
-
-    return false;
+void SourceOutputWidget::onDeviceChangePopup() {
+    clearMenu();
+    buildMenu();
+    menu.popup(1, 0);
 }

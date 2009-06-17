@@ -41,7 +41,7 @@ public:
     void setSinkIndex(uint32_t idx);
     uint32_t sinkIndex();
     virtual void executeVolumeUpdate();
-    virtual bool onDeviceChangePopup(GdkEventButton*);
+    virtual void onDeviceChangePopup();
     virtual bool onWidgetButtonEvent(GdkEventButton*);
     virtual void onMuteToggleButton();
     virtual void onKill();

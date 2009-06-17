@@ -33,11 +33,10 @@ StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
     x->get_widget("muteToggleButton", muteToggleButton);
     x->get_widget("directionLabel", directionLabel);
     x->get_widget("deviceButton", deviceButton);
-    x->get_widget("deviceLabel", deviceLabel);
 
     this->signal_button_press_event().connect(sigc::mem_fun(*this, &StreamWidget::onWidgetButtonEvent));
     muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onMuteToggleButton));
-    deviceButton->signal_button_press_event().connect(sigc::mem_fun(*this, &StreamWidget::onDeviceChangePopup));
+    deviceButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onDeviceChangePopup));
 
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
         channelWidgets[i] = NULL;
@@ -110,6 +109,5 @@ bool StreamWidget::timeoutEvent() {
 void StreamWidget::executeVolumeUpdate() {
 }
 
-bool StreamWidget::onDeviceChangePopup(GdkEventButton*) {
-  return false;
+void StreamWidget::onDeviceChangePopup() {
 }

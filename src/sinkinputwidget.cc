@@ -61,15 +61,12 @@ SinkInputWidget::~SinkInputWidget(void) {
 void SinkInputWidget::setSinkIndex(uint32_t idx) {
     mSinkIndex = idx;
 
-    gchar *txt;
     if (mpMainWindow->sinkWidgets.count(idx)) {
         SinkWidget *w = mpMainWindow->sinkWidgets[idx];
-        txt = g_markup_printf_escaped("<a href=\"\">%s</a>", w->description.c_str());
+        deviceButton->set_label(w->description.c_str());
     }
     else
-        txt = g_markup_printf_escaped("<a href=\"\">%s</a>", _("Unknown output"));
-    deviceLabel->set_label(txt);
-    g_free(txt);
+        deviceButton->set_label(_("Unknown output"));
 }
 
 uint32_t SinkInputWidget::sinkIndex() {
@@ -157,13 +154,8 @@ void SinkInputWidget::SinkMenuItem::onToggle() {
   pa_operation_unref(o);
 }
 
-bool SinkInputWidget::onDeviceChangePopup(GdkEventButton* event) {
-    if (GDK_BUTTON_PRESS == event->type && 1 == event->button) {
-        clearMenu();
-        buildMenu();
-        menu.popup(event->button, event->time);
-        return true;
-    }
-
-    return false;
+void SinkInputWidget::onDeviceChangePopup() {
+    clearMenu();
+    buildMenu();
+    menu.popup(1, 0);
 }
