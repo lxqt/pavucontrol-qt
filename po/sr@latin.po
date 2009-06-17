@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-10 02:55+0200\n"
-"PO-Revision-Date: 2009-04-05 16:34-0400\n"
-"Last-Translator: Igor Miletic <grejigl-gnomeprevod@yahoo.ca>\n"
+"POT-Creation-Date: 2009-05-03 19:39+0000\n"
+"PO-Revision-Date: 2009-05-03 22:52+0100\n"
+"Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
 "Language-Team: Serbian (sr) <fedora-trans-sr@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +36,7 @@ msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
 msgid "<b>Profile:</b>"
-msgstr "<b>Pr_ofil:</b>"
+msgstr "<b>Profil:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>S_how:</b>"
@@ -52,7 +52,7 @@ msgstr "<b>_Prikaži:</b>"
 
 #: ../src/pavucontrol.glade.h:7
 msgid "<b>left-front</b>"
-msgstr "<b>levi-prednji</>"
+msgstr "<b>levi-prednji</b>"
 
 #: ../src/pavucontrol.glade.h:8
 msgid "<i>No application is currently playing audio.</i>"
@@ -178,9 +178,9 @@ msgid "Server info callback failure"
 msgstr "Neuspešan opoziv informacija o serveru"
 
 #: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to initialize stream_restore extension: %s"
-msgstr "Neuspešna inicijalizacija stream_restore proširenja: %s"
+msgstr "Neuspešna inicijalizacija proširenja stream_restore: %s"
 
 #: ../src/pavucontrol.cc:235
 msgid "pa_ext_stream_restore_read() failed"
@@ -220,7 +220,7 @@ msgstr "Neuspela funkcija pa_context_client_info_list()"
 
 #: ../src/pavucontrol.cc:385
 msgid "pa_context_get_card_info_list() failed"
-msgstr "Nije uspelo iѕzvršavanje funkcije pa_context_get_card_info_list()"
+msgstr "Nije uspelo izvršavanje funkcije pa_context_get_card_info_list()"
 
 #: ../src/pavucontrol.cc:392
 msgid "pa_context_get_sink_info_list() failed"
@@ -238,75 +238,110 @@ msgstr "Neuspela funkcija pa_context_get_sink_input_info_list()"
 msgid "pa_context_get_source_output_info_list() failed"
 msgstr "Neuspela funkcija pa_context_get_source_output_info_list()"
 
-#: ../src/pavucontrol.cc:437 ../src/pavucontrol.cc:485
+#: ../src/pavucontrol.cc:437
 msgid "Connection failed"
 msgstr "Povezivanje nije uspelo"
 
-#~ msgid "Volume Control Feedback Sound"
-#~ msgstr "Kontrola jačine odziva zvuka"
+#: ../src/cardwidget.cc:87
+msgid "pa_context_set_card_profile_by_index() failed"
+msgstr "Neuspela funkcija pa_context_set_card_profile_by_index()"
 
-#~ msgid "pa_context_set_card_profile_by_index() failed"
-#~ msgstr "Neuspela funkcija pa_context_set_card_profile_by_index()"
+#: ../src/channelwidget.cc:99
+msgid "Volume Control Feedback Sound"
+msgstr "Kontrola jačine odziva zvuka"
 
-#~ msgid "pa_context_set_sink_volume_by_index() failed"
-#~ msgstr "Neuspela funkcija pa_context_set_sink_volume_by_index()"
+#: ../src/channelwidget.cc:120
+msgid "<small>Silence</small>"
+msgstr "<small>Tišina</small>"
 
-#~ msgid "pa_context_set_sink_mute_by_index() failed"
-#~ msgstr "Neuspela funkcija pa_context_set_sink_mute_by_index()"
+#: ../src/channelwidget.cc:121
+msgid "<small>Max</small>"
+msgstr "<small>Maks</small>"
 
-#~ msgid "pa_context_set_default_sink() failed"
-#~ msgstr "Neuspela funkcija pa_context_set_default_sink()"
+#: ../src/channelwidget.cc:125
+msgid "<small><i>Base</i></small>"
+msgstr "<small><i>Osnova</i></small>"
 
-#~ msgid "_Default"
-#~ msgstr "_Podrazumevano"
+#: ../src/mainwindow.cc:226
+msgid "Failed to read data from stream"
+msgstr "Neuspelo očitavanje podataka sa toka"
 
-#~ msgid "pa_context_set_source_volume_by_index() failed"
-#~ msgstr "Neuspela funkcija pa_context_set_source_volume_by_index()"
+#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+msgid "Peak detect"
+msgstr "Otkrivanje maksimalnog nivoa"
 
-#~ msgid "pa_context_set_source_mute_by_index() failed"
-#~ msgstr "Neuspela funkcija pa_context_set_source_mute_by_index()"
+#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+msgid "Failed to create monitoring stream"
+msgstr "Neuspelo pravljenje nadzornog toka"
 
-#~ msgid "pa_context_set_default_source() failed"
-#~ msgstr "Neuspela funkcija pa_context_set_default_source()"
+#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+msgid "Failed to connect monitoring stream"
+msgstr "Neuspelo povezivanje sa nadzornim tokom"
 
-#~ msgid "_Move Stream..."
-#~ msgstr "_Premesti tok..."
+#: ../src/mainwindow.cc:554
+msgid "System Sounds"
+msgstr "Sistemski zvuci"
 
-#~ msgid "_Terminate Stream"
-#~ msgstr "_Prekini tok"
+#: ../src/rolewidget.cc:66
+msgid "pa_ext_stream_restore_write() failed"
+msgstr "Neuspela funkcija pa_ext_stream_restore_write()"
 
-#~ msgid "pa_context_set_sink_input_volume() failed"
-#~ msgstr "Neuspela funkcija pa_context_set_sink_input_volume()"
+#: ../src/sinkinputwidget.cc:34 ../src/sourceoutputwidget.cc:34
+msgid "_Move Stream..."
+msgstr "_Premesti tok..."
 
-#~ msgid "pa_context_set_sink_input_mute() failed"
-#~ msgstr "Neuspela funkcija pa_context_set_sink_input_mute()"
+#: ../src/sinkinputwidget.cc:35 ../src/sourceoutputwidget.cc:35
+msgid "_Terminate Stream"
+msgstr "_Prekini tok"
 
-#~ msgid "pa_context_kill_sink_input() failed"
-#~ msgstr "Neuspela funkcija pa_context_kill_sink_input()"
+#: ../src/sinkinputwidget.cc:61
+msgid "pa_context_set_sink_input_volume() failed"
+msgstr "Neuspela funkcija pa_context_set_sink_input_volume()"
 
-#~ msgid "pa_context_move_sink_input_by_index() failed"
-#~ msgstr "Neuspela funkcija pa_context_move_sink_input_by_index()"
+#: ../src/sinkinputwidget.cc:76
+msgid "pa_context_set_sink_input_mute() failed"
+msgstr "Neuspela funkcija pa_context_set_sink_input_mute()"
 
-#~ msgid "pa_context_kill_source_output() failed"
-#~ msgstr "Neuspela funkcija pa_context_kill_source_output()"
+#: ../src/sinkinputwidget.cc:110
+msgid "pa_context_kill_sink_input() failed"
+msgstr "Neuspela funkcija pa_context_kill_sink_input()"
 
-#~ msgid "pa_context_move_source_output_by_index() failed"
-#~ msgstr "Neuspela funkcija pa_context_move_source_output_by_index()"
+#: ../src/sinkinputwidget.cc:127
+msgid "pa_context_move_sink_input_by_index() failed"
+msgstr "Neuspela funkcija pa_context_move_sink_input_by_index()"
 
-#~ msgid "pa_ext_stream_restore_write() failed"
-#~ msgstr "Neuspela funkcija pa_ext_stream_restore_write()"
+#: ../src/sinkwidget.cc:52
+msgid "pa_context_set_sink_volume_by_index() failed"
+msgstr "Neuspela funkcija pa_context_set_sink_volume_by_index()"
 
-#~ msgid "Failed to read data from stream"
-#~ msgstr "Neuspelo očitavanje podataka sa toka"
+#: ../src/sinkwidget.cc:67
+msgid "pa_context_set_sink_mute_by_index() failed"
+msgstr "Neuspela funkcija pa_context_set_sink_mute_by_index()"
 
-#~ msgid "Peak detect"
-#~ msgstr "Otkrivanje maksimalnog nivoa"
+#: ../src/sinkwidget.cc:81
+msgid "pa_context_set_default_sink() failed"
+msgstr "Neuspela funkcija pa_context_set_default_sink()"
 
-#~ msgid "Failed to create monitoring stream"
-#~ msgstr "Neuspelo pravljenje nadzornog toka"
+#: ../src/sourceoutputwidget.cc:60
+msgid "pa_context_kill_source_output() failed"
+msgstr "Neuspela funkcija pa_context_kill_source_output()"
 
-#~ msgid "Failed to connect monitoring stream"
-#~ msgstr "Neuspelo povezivanje sa nadzornim tokom"
+#: ../src/sourceoutputwidget.cc:101
+msgid "pa_context_move_source_output_by_index() failed"
+msgstr "Neuspela funkcija pa_context_move_source_output_by_index()"
 
-#~ msgid "System Sounds"
-#~ msgstr "Sistemski zvuci"
+#: ../src/sourcewidget.cc:31
+msgid "_Default"
+msgstr "_Podrazumevano"
+
+#: ../src/sourcewidget.cc:52
+msgid "pa_context_set_source_volume_by_index() failed"
+msgstr "Neuspela funkcija pa_context_set_source_volume_by_index()"
+
+#: ../src/sourcewidget.cc:67
+msgid "pa_context_set_source_mute_by_index() failed"
+msgstr "Neuspela funkcija pa_context_set_source_mute_by_index()"
+
+#: ../src/sourcewidget.cc:81
+msgid "pa_context_set_default_source() failed"
+msgstr "Neuspela funkcija pa_context_set_default_source()"

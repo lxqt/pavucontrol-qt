@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the pavucontrol package.
 #
 # Robert-André Mauchin <zebob.m@pengzone.org>, 2008.
-#
+# Corentin Perard <corentin.perard@gmail.com>, 2009.
+# Charles-Antoine Couret <cacouret@wanadoo.fr>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-10 02:55+0200\n"
-"PO-Revision-Date: 2008-08-29 01:14+0200\n"
-"Last-Translator: Robert-André Mauchin <zebob.m@pengzone.org>\n"
-"Language-Team: Fedora French <fedora-trans-fr@redhat.com>\n"
+"POT-Creation-Date: 2009-04-26 19:23+0000\n"
+"PO-Revision-Date: 2009-04-27 00:31+0200\n"
+"Last-Translator: Charles-Antoine Couret <cacouret@wanadoo.fr>\n"
+"Language-Team: French <fedora-trans-fr@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../src/pavucontrol.desktop.in.h:1
 msgid "Adjust the volume level"
@@ -35,9 +37,8 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Profile:</b>"
-msgstr "<b>A_fficher :</b>"
+msgstr "<b>Profil :</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>S_how:</b>"
@@ -65,7 +66,7 @@ msgstr "<i>Aucune application n'enregistre actuellement du son.</i>"
 
 #: ../src/pavucontrol.glade.h:10
 msgid "<i>No cards available for configuration</i>"
-msgstr ""
+msgstr "<i>Aucune carte n'est disponible pour la configuration</i>"
 
 #: ../src/pavucontrol.glade.h:11
 msgid "<i>No input devices available</i>"
@@ -112,7 +113,7 @@ msgstr ""
 
 #: ../src/pavucontrol.glade.h:25
 msgid "Card Name"
-msgstr ""
+msgstr "Nom de la carte"
 
 #: ../src/pavucontrol.glade.h:26
 msgid "Lock channels together"
@@ -132,11 +133,11 @@ msgstr "Titre du flux"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "_Configuration"
-msgstr ""
+msgstr "_Configuration"
 
 #: ../src/pavucontrol.glade.h:32
 msgid "_Input Devices"
-msgstr "Périphérique d'_entrée"
+msgstr "Périphériques d'_entrée"
 
 #: ../src/pavucontrol.glade.h:33
 msgid "_Output Devices"
@@ -151,9 +152,8 @@ msgid "_Recording"
 msgstr "_Enregistrement"
 
 #: ../src/pavucontrol.cc:71
-#, fuzzy
 msgid "Card callback failure"
-msgstr "Échec du rappel de la source"
+msgstr "Échec de la fonction de rappel de la carte"
 
 #: ../src/pavucontrol.cc:90
 msgid "Sink callback failure"
@@ -179,10 +179,9 @@ msgstr "Échec du rappel du client"
 msgid "Server info callback failure"
 msgstr "Échec du rappel des informations sur le serveur"
 
-#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
-#, fuzzy, c-format
+#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430, c-format
 msgid "Failed to initialize stream_restore extension: %s"
-msgstr "Échec de l'initialisation de l'extension stream_restore : %s"
+msgstr "Impossible d'initialiser l'extension stream_restore : %s"
 
 #: ../src/pavucontrol.cc:235
 msgid "pa_ext_stream_restore_read() failed"
@@ -209,9 +208,8 @@ msgid "pa_context_get_server_info() failed"
 msgstr "Échec de pa_context_get_server_info()"
 
 #: ../src/pavucontrol.cc:327
-#, fuzzy
 msgid "pa_context_get_card_info_by_index() failed"
-msgstr "Échec de pa_context_get_source_info_by_index()"
+msgstr "Échec de pa_context_get_card_info_by_index()"
 
 #: ../src/pavucontrol.cc:362
 msgid "pa_context_subscribe() failed"
@@ -222,9 +220,8 @@ msgid "pa_context_client_info_list() failed"
 msgstr "Échec de pa_context_client_info_list()"
 
 #: ../src/pavucontrol.cc:385
-#, fuzzy
 msgid "pa_context_get_card_info_list() failed"
-msgstr "Échec de pa_context_get_source_info_list()"
+msgstr "Échec de pa_context_get_card_info_list()"
 
 #: ../src/pavucontrol.cc:392
 msgid "pa_context_get_sink_info_list() failed"
@@ -242,72 +239,111 @@ msgstr "Échec de pa_context_get_sink_input_info_list()"
 msgid "pa_context_get_source_output_info_list() failed"
 msgstr "Échec de pa_context_get_source_output_info_list()"
 
-#: ../src/pavucontrol.cc:437 ../src/pavucontrol.cc:485
+#: ../src/pavucontrol.cc:437
 msgid "Connection failed"
 msgstr "Échec de la connexion"
 
-#~ msgid "Volume Control Feedback Sound"
-#~ msgstr "Son de retour du contrôle du volume"
+#: ../src/cardwidget.cc:87
+msgid "pa_context_set_card_profile_by_index() failed"
+msgstr "Échec de pa_context_set_card_profile_by_index()"
 
-#~ msgid "pa_context_set_sink_volume_by_index() failed"
-#~ msgstr "Échec de pa_context_set_sink_volume_by_index()"
+#: ../src/channelwidget.cc:99
+msgid "Volume Control Feedback Sound"
+msgstr "Son de retour du contrôle du volume"
 
-#~ msgid "pa_context_set_sink_mute_by_index() failed"
-#~ msgstr "Échec de pa_context_set_sink_mute_by_index()"
+#: ../src/channelwidget.cc:120
+msgid "<small>Silence</small>"
+msgstr "<small>Muet</small>"
 
-#~ msgid "pa_context_set_default_sink() failed"
-#~ msgstr "Échec de pa_context_set_default_sink()"
+#: ../src/channelwidget.cc:121
+msgid "<small>Max</small>"
+msgstr "<small>Max</small>"
 
-#~ msgid "_Default"
-#~ msgstr "Par _défaut"
+#: ../src/channelwidget.cc:125
+msgid "<small><i>Base</i></small>"
+msgstr "<small><i>Base</i></small>"
 
-#~ msgid "pa_context_set_source_volume_by_index() failed"
-#~ msgstr "Échec de pa_context_set_source_volume_by_index()"
+#: ../src/mainwindow.cc:226
+msgid "Failed to read data from stream"
+msgstr "Échec de la lecture de données du flux"
 
-#~ msgid "pa_context_set_source_mute_by_index() failed"
-#~ msgstr "Échec de pa_context_set_source_mute_by_index()"
+#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+msgid "Peak detect"
+msgstr "Détection de crêtes"
 
-#~ msgid "pa_context_set_default_source() failed"
-#~ msgstr "Échec de pa_context_set_default_source()"
+#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+msgid "Failed to create monitoring stream"
+msgstr "Échec de la création du flux de surveillance"
 
-#~ msgid "_Move Stream..."
-#~ msgstr "_Déplacer le flux..."
+#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+msgid "Failed to connect monitoring stream"
+msgstr "Échec de la connexion au flux de surveillance"
 
-#~ msgid "_Terminate Stream"
-#~ msgstr "_Terminer le flux"
+#: ../src/mainwindow.cc:554
+msgid "System Sounds"
+msgstr "Sons système"
 
-#~ msgid "pa_context_set_sink_input_volume() failed"
-#~ msgstr "Échec de pa_context_set_sink_input_volume()"
+#: ../src/rolewidget.cc:66
+msgid "pa_ext_stream_restore_write() failed"
+msgstr "Échec de pa_ext_stream_restore_write()"
 
-#~ msgid "pa_context_set_sink_input_mute() failed"
-#~ msgstr "Échec de pa_context_set_sink_input_mute()"
+#: ../src/sinkinputwidget.cc:34 ../src/sourceoutputwidget.cc:34
+msgid "_Move Stream..."
+msgstr "_Déplacer le flux..."
 
-#~ msgid "pa_context_kill_sink_input() failed"
-#~ msgstr "Échec de pa_context_kill_sink_input()"
+#: ../src/sinkinputwidget.cc:35 ../src/sourceoutputwidget.cc:35
+msgid "_Terminate Stream"
+msgstr "_Terminer le flux"
 
-#~ msgid "pa_context_move_sink_input_by_index() failed"
-#~ msgstr "Échec de pa_context_move_sink_input_by_index()"
+#: ../src/sinkinputwidget.cc:61
+msgid "pa_context_set_sink_input_volume() failed"
+msgstr "Échec de pa_context_set_sink_input_volume()"
 
-#~ msgid "pa_context_kill_source_output() failed"
-#~ msgstr "Échec de pa_context_kill_source_output()"
+#: ../src/sinkinputwidget.cc:76
+msgid "pa_context_set_sink_input_mute() failed"
+msgstr "Échec de pa_context_set_sink_input_mute()"
 
-#~ msgid "pa_context_move_source_output_by_index() failed"
-#~ msgstr "Échec de pa_context_move_source_output_by_index()"
+#: ../src/sinkinputwidget.cc:110
+msgid "pa_context_kill_sink_input() failed"
+msgstr "Échec de pa_context_kill_sink_input()"
 
-#~ msgid "pa_ext_stream_restore_write() failed"
-#~ msgstr "Échec de pa_ext_stream_restore_write()"
+#: ../src/sinkinputwidget.cc:127
+msgid "pa_context_move_sink_input_by_index() failed"
+msgstr "Échec de pa_context_move_sink_input_by_index()"
 
-#~ msgid "Failed to read data from stream"
-#~ msgstr "Échec de la lecture de données du flux"
+#: ../src/sinkwidget.cc:52
+msgid "pa_context_set_sink_volume_by_index() failed"
+msgstr "Échec de pa_context_set_sink_volume_by_index()"
 
-#~ msgid "Peak detect"
-#~ msgstr "Détection de crêtes"
+#: ../src/sinkwidget.cc:67
+msgid "pa_context_set_sink_mute_by_index() failed"
+msgstr "Échec de pa_context_set_sink_mute_by_index()"
 
-#~ msgid "Failed to create monitoring stream"
-#~ msgstr "Échec de la création du flux de surveillance"
+#: ../src/sinkwidget.cc:81
+msgid "pa_context_set_default_sink() failed"
+msgstr "Échec de pa_context_set_default_sink()"
 
-#~ msgid "Failed to connect monitoring stream"
-#~ msgstr "Échec de la connexion au flux de surveillance"
+#: ../src/sourceoutputwidget.cc:60
+msgid "pa_context_kill_source_output() failed"
+msgstr "Échec de pa_context_kill_source_output()"
 
-#~ msgid "System Sounds"
-#~ msgstr "Sons système"
+#: ../src/sourceoutputwidget.cc:101
+msgid "pa_context_move_source_output_by_index() failed"
+msgstr "Échec de pa_context_move_source_output_by_index()"
+
+#: ../src/sourcewidget.cc:31
+msgid "_Default"
+msgstr "Par _défaut"
+
+#: ../src/sourcewidget.cc:52
+msgid "pa_context_set_source_volume_by_index() failed"
+msgstr "Échec de pa_context_set_source_volume_by_index()"
+
+#: ../src/sourcewidget.cc:67
+msgid "pa_context_set_source_mute_by_index() failed"
+msgstr "Échec de pa_context_set_source_mute_by_index()"
+
+#: ../src/sourcewidget.cc:81
+msgid "pa_context_set_default_source() failed"
+msgstr "Échec de pa_context_set_default_source()"
+

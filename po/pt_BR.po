@@ -3,15 +3,15 @@
 # Copyright (C) 2008 Free Software Foundation, Inc.
 #
 # Jyulliano Arruda Ferraro Rocha <jyulliano@gmail.com>, 2008.
-# Igor Pires Soares <igor@projetofedora.org>, 2008.
+# Igor Pires Soares <igor@projetofedora.org>, 2008,2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-10 02:55+0200\n"
-"PO-Revision-Date: 2008-09-17 11:22-0300\n"
-"Last-Translator: Jyulliano Arruda Ferraro Rocha <jyulliano@gmail.com>\n"
+"POT-Creation-Date: 2009-04-19 19:27+0000\n"
+"PO-Revision-Date: 2009-04-19 19:56-0300\n"
+"Last-Translator: Igor Pires Soares <igor@projetofedora.org>\n"
 "Language-Team: Brazilian Portuguese <fedora-trans-pt_br@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,11 +24,13 @@ msgstr ""
 msgid "Adjust the volume level"
 msgstr "Ajuste o nível do volume"
 
-#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:472
+#: ../src/pavucontrol.desktop.in.h:2
+#: ../src/pavucontrol.cc:472
 msgid "PulseAudio Volume Control"
-msgstr "Controle de Volume do PulseAudio"
+msgstr "Controle de volume do PulseAudio"
 
-#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:30
+#: ../src/pavucontrol.desktop.in.h:3
+#: ../src/pavucontrol.glade.h:30
 msgid "Volume Control"
 msgstr "Controle de volume"
 
@@ -38,9 +40,8 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Profile:</b>"
-msgstr "<b>M_ostrar:</b>"
+msgstr "<b>Perfil:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>S_how:</b>"
@@ -68,7 +69,7 @@ msgstr "<i>Nenhum aplicativo está gravando áudio no momento.</i>"
 
 #: ../src/pavucontrol.glade.h:10
 msgid "<i>No cards available for configuration</i>"
-msgstr ""
+msgstr "<i>Nenhuma placa disponível para configuração</i>"
 
 #: ../src/pavucontrol.glade.h:11
 msgid "<i>No input devices available</i>"
@@ -115,7 +116,7 @@ msgstr ""
 
 #: ../src/pavucontrol.glade.h:25
 msgid "Card Name"
-msgstr ""
+msgstr "Nome da placa"
 
 #: ../src/pavucontrol.glade.h:26
 msgid "Lock channels together"
@@ -135,7 +136,7 @@ msgstr "Título do fluxo"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "_Configuration"
-msgstr ""
+msgstr "_Configuração"
 
 #: ../src/pavucontrol.glade.h:32
 msgid "_Input Devices"
@@ -154,9 +155,8 @@ msgid "_Recording"
 msgstr "_Gravando"
 
 #: ../src/pavucontrol.cc:71
-#, fuzzy
 msgid "Card callback failure"
-msgstr "Chamada da fonte de retorno falhou"
+msgstr "Falha na chamada de retorno da placa"
 
 #: ../src/pavucontrol.cc:90
 msgid "Sink callback failure"
@@ -182,8 +182,9 @@ msgstr "Falha na chamada de retorno do cliente"
 msgid "Server info callback failure"
 msgstr "Falha na chamada de retorno das informações do servidor"
 
-#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
-#, fuzzy, c-format
+#: ../src/pavucontrol.cc:215
+#: ../src/pavucontrol.cc:430
+#, c-format
 msgid "Failed to initialize stream_restore extension: %s"
 msgstr "Falha ao inicializar a extensão stream_restore: %s"
 
@@ -199,7 +200,8 @@ msgstr "pa_context_get_sink_info_by_index() falhou"
 msgid "pa_context_get_source_info_by_index() failed"
 msgstr "pa_context_get_source_info_by_index() falhou"
 
-#: ../src/pavucontrol.cc:278 ../src/pavucontrol.cc:291
+#: ../src/pavucontrol.cc:278
+#: ../src/pavucontrol.cc:291
 msgid "pa_context_get_sink_input_info() failed"
 msgstr "pa_context_get_sink_input_info() falhou"
 
@@ -207,14 +209,14 @@ msgstr "pa_context_get_sink_input_info() falhou"
 msgid "pa_context_get_client_info() failed"
 msgstr "pa_context_get_client_info() falhou"
 
-#: ../src/pavucontrol.cc:314 ../src/pavucontrol.cc:371
+#: ../src/pavucontrol.cc:314
+#: ../src/pavucontrol.cc:371
 msgid "pa_context_get_server_info() failed"
 msgstr "pa_context_get_server_info() falhou"
 
 #: ../src/pavucontrol.cc:327
-#, fuzzy
 msgid "pa_context_get_card_info_by_index() failed"
-msgstr "pa_context_get_source_info_by_index() falhou"
+msgstr "pa_context_get_card_info_by_index() falhou"
 
 #: ../src/pavucontrol.cc:362
 msgid "pa_context_subscribe() failed"
@@ -225,9 +227,8 @@ msgid "pa_context_client_info_list() failed"
 msgstr "pa_context_client_info_list() falhou"
 
 #: ../src/pavucontrol.cc:385
-#, fuzzy
 msgid "pa_context_get_card_info_list() failed"
-msgstr "pa_context_get_source_info_list() falhou"
+msgstr "pa_context_get_card_info_list() falhou"
 
 #: ../src/pavucontrol.cc:392
 msgid "pa_context_get_sink_info_list() failed"
@@ -245,72 +246,116 @@ msgstr "pa_context_get_sink_input_info_list() falhou"
 msgid "pa_context_get_source_output_info_list() failed"
 msgstr "pa_context_get_source_output_info_list() falhou"
 
-#: ../src/pavucontrol.cc:437 ../src/pavucontrol.cc:485
+#: ../src/pavucontrol.cc:437
 msgid "Connection failed"
 msgstr "Falha na conexão"
 
-#~ msgid "Volume Control Feedback Sound"
-#~ msgstr "Controle do volume do som de retorno"
+#: ../src/cardwidget.cc:87
+msgid "pa_context_set_card_profile_by_index() failed"
+msgstr "pa_context_set_card_profile_by_index() falhou"
 
-#~ msgid "pa_context_set_sink_volume_by_index() failed"
-#~ msgstr "pa_context_set_sink_volume_by_index() falhou"
+#: ../src/channelwidget.cc:99
+msgid "Volume Control Feedback Sound"
+msgstr "Controle do volume do som de retorno"
 
-#~ msgid "pa_context_set_sink_mute_by_index() failed"
-#~ msgstr "pa_context_set_sink_mute_by_index() falhou"
+#: ../src/channelwidget.cc:120
+msgid "<small>Silence</small>"
+msgstr "<small>Silencioso</small>"
 
-#~ msgid "pa_context_set_default_sink() failed"
-#~ msgstr "pa_context_set_default_sink() falhou"
+#: ../src/channelwidget.cc:121
+msgid "<small>Max</small>"
+msgstr "<small>Máximo</small>"
 
-#~ msgid "_Default"
-#~ msgstr "_Padrão"
+#: ../src/channelwidget.cc:125
+msgid "<small><i>Base</i></small>"
+msgstr "<small><i>Básico</i></small>"
 
-#~ msgid "pa_context_set_source_volume_by_index() failed"
-#~ msgstr "pa_context_set_source_volume_by_index() falhou"
+#: ../src/mainwindow.cc:226
+msgid "Failed to read data from stream"
+msgstr "Falha ao ler dados procedentes do fluxo"
 
-#~ msgid "pa_context_set_source_mute_by_index() failed"
-#~ msgstr "pa_context_set_source_mute_by_index() falhou"
+#: ../src/mainwindow.cc:261
+#: ../src/mainwindow.cc:298
+msgid "Peak detect"
+msgstr "Detectar pico"
 
-#~ msgid "pa_context_set_default_source() failed"
-#~ msgstr "pa_context_set_default_source() falhou"
+#: ../src/mainwindow.cc:262
+#: ../src/mainwindow.cc:299
+msgid "Failed to create monitoring stream"
+msgstr "Falha ao criar o fluxo de monitoramento"
 
-#~ msgid "_Move Stream..."
-#~ msgstr "_Mover fluxo..."
+#: ../src/mainwindow.cc:270
+#: ../src/mainwindow.cc:308
+msgid "Failed to connect monitoring stream"
+msgstr "Falha ao conectar o fluxo de monitoramento"
 
-#~ msgid "_Terminate Stream"
-#~ msgstr "_Cancelar fluxo"
+#: ../src/mainwindow.cc:554
+msgid "System Sounds"
+msgstr "Sons do sistema"
 
-#~ msgid "pa_context_set_sink_input_volume() failed"
-#~ msgstr "pa_context_set_sink_input_volume() falhou"
+#: ../src/rolewidget.cc:66
+msgid "pa_ext_stream_restore_write() failed"
+msgstr "pa_ext_stream_restore_write() falhou"
 
-#~ msgid "pa_context_set_sink_input_mute() failed"
-#~ msgstr "pa_context_set_sink_input_mute() falhou"
+#: ../src/sinkinputwidget.cc:34
+#: ../src/sourceoutputwidget.cc:34
+msgid "_Move Stream..."
+msgstr "_Mover fluxo..."
 
-#~ msgid "pa_context_kill_sink_input() failed"
-#~ msgstr "pa_context_kill_sink_input() falhou"
+#: ../src/sinkinputwidget.cc:35
+#: ../src/sourceoutputwidget.cc:35
+msgid "_Terminate Stream"
+msgstr "_Cancelar fluxo"
 
-#~ msgid "pa_context_move_sink_input_by_index() failed"
-#~ msgstr "pa_context_move_sink_input_by_index() falhou"
+#: ../src/sinkinputwidget.cc:61
+msgid "pa_context_set_sink_input_volume() failed"
+msgstr "pa_context_set_sink_input_volume() falhou"
 
-#~ msgid "pa_context_kill_source_output() failed"
-#~ msgstr "pa_context_kill_source_output() falhou"
+#: ../src/sinkinputwidget.cc:76
+msgid "pa_context_set_sink_input_mute() failed"
+msgstr "pa_context_set_sink_input_mute() falhou"
 
-#~ msgid "pa_context_move_source_output_by_index() failed"
-#~ msgstr "pa_context_move_source_output_by_index() falhou"
+#: ../src/sinkinputwidget.cc:110
+msgid "pa_context_kill_sink_input() failed"
+msgstr "pa_context_kill_sink_input() falhou"
 
-#~ msgid "pa_ext_stream_restore_write() failed"
-#~ msgstr "pa_ext_stream_restore_write() falhou"
+#: ../src/sinkinputwidget.cc:127
+msgid "pa_context_move_sink_input_by_index() failed"
+msgstr "pa_context_move_sink_input_by_index() falhou"
 
-#~ msgid "Failed to read data from stream"
-#~ msgstr "Falha ao ler dados procedentes do fluxo"
+#: ../src/sinkwidget.cc:52
+msgid "pa_context_set_sink_volume_by_index() failed"
+msgstr "pa_context_set_sink_volume_by_index() falhou"
 
-#~ msgid "Peak detect"
-#~ msgstr "Detectar pico"
+#: ../src/sinkwidget.cc:67
+msgid "pa_context_set_sink_mute_by_index() failed"
+msgstr "pa_context_set_sink_mute_by_index() falhou"
 
-#~ msgid "Failed to create monitoring stream"
-#~ msgstr "Falha ao criar o fluxo de monitoramento"
+#: ../src/sinkwidget.cc:81
+msgid "pa_context_set_default_sink() failed"
+msgstr "pa_context_set_default_sink() falhou"
 
-#~ msgid "Failed to connect monitoring stream"
-#~ msgstr "Falha ao conectar o fluxo de monitoramento"
+#: ../src/sourceoutputwidget.cc:60
+msgid "pa_context_kill_source_output() failed"
+msgstr "pa_context_kill_source_output() falhou"
 
-#~ msgid "System Sounds"
-#~ msgstr "Sons do sistema"
+#: ../src/sourceoutputwidget.cc:101
+msgid "pa_context_move_source_output_by_index() failed"
+msgstr "pa_context_move_source_output_by_index() falhou"
+
+#: ../src/sourcewidget.cc:31
+msgid "_Default"
+msgstr "_Padrão"
+
+#: ../src/sourcewidget.cc:52
+msgid "pa_context_set_source_volume_by_index() failed"
+msgstr "pa_context_set_source_volume_by_index() falhou"
+
+#: ../src/sourcewidget.cc:67
+msgid "pa_context_set_source_mute_by_index() failed"
+msgstr "pa_context_set_source_mute_by_index() falhou"
+
+#: ../src/sourcewidget.cc:81
+msgid "pa_context_set_default_source() failed"
+msgstr "pa_context_set_default_source() falhou"
+

@@ -1,15 +1,15 @@
 # Czech translation of pavucontrol.
 # Based on Slovak translation by Ondrej Šulek <feonsu@gmail.com>, 2008.
-# Copyright (C) 2008 the author(s) of pavucontrol.
+# Copyright (C) 2008, 2009 the author(s) of pavucontrol.
 # This file is distributed under the same license as the pavucontrol package.
-# Petr Kovar <pknbe@volny.cz>, 2008.
+# Petr Kovar <pknbe@volny.cz>, 2008, 2009.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pavucontrol\n"
+"Project-Id-Version: pavucontrol.master-tx\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-10 02:55+0200\n"
-"PO-Revision-Date: 2008-10-12 20:05+0200\n"
+"POT-Creation-Date: 2009-04-27 19:20+0000\n"
+"PO-Revision-Date: 2009-04-27 23:16+0200\n"
 "Last-Translator: Petr Kovar <pknbe@volny.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -36,9 +36,8 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Profile:</b>"
-msgstr "<b>_Zobrazit:</b>"
+msgstr "<b>Profil:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>S_how:</b>"
@@ -66,7 +65,7 @@ msgstr "<i>Žádná aplikace momentálně nenahrává zvuk.</i>"
 
 #: ../src/pavucontrol.glade.h:10
 msgid "<i>No cards available for configuration</i>"
-msgstr ""
+msgstr "<i>Nelze nastavit žádné karty</i>"
 
 #: ../src/pavucontrol.glade.h:11
 msgid "<i>No input devices available</i>"
@@ -113,7 +112,7 @@ msgstr ""
 
 #: ../src/pavucontrol.glade.h:25
 msgid "Card Name"
-msgstr ""
+msgstr "Název karty"
 
 #: ../src/pavucontrol.glade.h:26
 msgid "Lock channels together"
@@ -133,7 +132,7 @@ msgstr "Název proudu"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "_Configuration"
-msgstr ""
+msgstr "N_astavení"
 
 #: ../src/pavucontrol.glade.h:32
 msgid "_Input Devices"
@@ -152,9 +151,8 @@ msgid "_Recording"
 msgstr "_Nahrávání"
 
 #: ../src/pavucontrol.cc:71
-#, fuzzy
 msgid "Card callback failure"
-msgstr "Zdrojové zpětné volání selhalo"
+msgstr "Zpětné volání karty selhalo"
 
 #: ../src/pavucontrol.cc:90
 msgid "Sink callback failure"
@@ -181,7 +179,7 @@ msgid "Server info callback failure"
 msgstr "Zpětné volání serverových informací selhalo"
 
 #: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to initialize stream_restore extension: %s"
 msgstr "Nepodařilo se spustit rozšíření stream_restore: %s"
 
@@ -210,9 +208,8 @@ msgid "pa_context_get_server_info() failed"
 msgstr "pa_context_get_server_info() selhalo"
 
 #: ../src/pavucontrol.cc:327
-#, fuzzy
 msgid "pa_context_get_card_info_by_index() failed"
-msgstr "pa_context_get_source_info_by_index() selhalo"
+msgstr "pa_context_get_card_info_by_index() selhalo"
 
 #: ../src/pavucontrol.cc:362
 msgid "pa_context_subscribe() failed"
@@ -223,9 +220,8 @@ msgid "pa_context_client_info_list() failed"
 msgstr "pa_context_client_info_list() selhalo"
 
 #: ../src/pavucontrol.cc:385
-#, fuzzy
 msgid "pa_context_get_card_info_list() failed"
-msgstr "pa_context_get_source_info_list() selhalo"
+msgstr "pa_context_get_card_info_list() selhalo"
 
 #: ../src/pavucontrol.cc:392
 msgid "pa_context_get_sink_info_list() failed"
@@ -243,72 +239,111 @@ msgstr "pa_context_get_sink_input_info_list() selhalo"
 msgid "pa_context_get_source_output_info_list() failed"
 msgstr "pa_context_get_source_output_info_list() selhalo"
 
-#: ../src/pavucontrol.cc:437 ../src/pavucontrol.cc:485
+#: ../src/pavucontrol.cc:437
 msgid "Connection failed"
 msgstr "Spojení selhalo"
 
-#~ msgid "Volume Control Feedback Sound"
-#~ msgstr "Zvuk zpětné vazby ovládání hlasitosti"
+#: ../src/cardwidget.cc:87
+msgid "pa_context_set_card_profile_by_index() failed"
+msgstr "pa_context_set_card_profile_by_index() selhalo"
 
-#~ msgid "pa_context_set_sink_volume_by_index() failed"
-#~ msgstr "pa_context_set_sink_volume_by_index() selhalo"
+#: ../src/channelwidget.cc:99
+msgid "Volume Control Feedback Sound"
+msgstr "Zvuk zpětné vazby ovládání hlasitosti"
 
-#~ msgid "pa_context_set_sink_mute_by_index() failed"
-#~ msgstr "pa_context_set_sink_mute_by_index() selhalo"
+#: ../src/channelwidget.cc:120
+msgid "<small>Silence</small>"
+msgstr "<small>Ticho</small>"
 
-#~ msgid "pa_context_set_default_sink() failed"
-#~ msgstr "pa_context_set_default_sink() selhalo"
+#: ../src/channelwidget.cc:121
+msgid "<small>Max</small>"
+msgstr "<small>Maximální</small>"
 
-#~ msgid "_Default"
-#~ msgstr "Vý_chozí"
+#: ../src/channelwidget.cc:125
+msgid "<small><i>Base</i></small>"
+msgstr "<small><i>Základní</i></small>"
 
-#~ msgid "pa_context_set_source_volume_by_index() failed"
-#~ msgstr "pa_context_set_source_volume_by_index() selhalo"
+#: ../src/mainwindow.cc:226
+msgid "Failed to read data from stream"
+msgstr "Nepodařilo se přečíst data z proudu"
 
-#~ msgid "pa_context_set_source_mute_by_index() failed"
-#~ msgstr "pa_context_set_source_mute_by_index() selhalo"
+#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+msgid "Peak detect"
+msgstr "Rozpoznání vrcholů"
 
-#~ msgid "pa_context_set_default_source() failed"
-#~ msgstr "pa_context_set_default_source() selhalo"
+#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+msgid "Failed to create monitoring stream"
+msgstr "Nepodařilo se vytvořit monitorovací proud"
 
-#~ msgid "_Move Stream..."
-#~ msgstr "_Přesunout proud..."
+#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+msgid "Failed to connect monitoring stream"
+msgstr "Nepodařilo se připojit monitorovací proud"
 
-#~ msgid "_Terminate Stream"
-#~ msgstr "_Ukončit proud"
+#: ../src/mainwindow.cc:554
+msgid "System Sounds"
+msgstr "Systémové zvuky"
 
-#~ msgid "pa_context_set_sink_input_volume() failed"
-#~ msgstr "pa_context_set_sink_input_volume() selhalo"
+#: ../src/rolewidget.cc:66
+msgid "pa_ext_stream_restore_write() failed"
+msgstr "pa_ext_stream_restore_write() selhalo"
 
-#~ msgid "pa_context_set_sink_input_mute() failed"
-#~ msgstr "pa_context_set_sink_input_mute() selhalo"
+#: ../src/sinkinputwidget.cc:34 ../src/sourceoutputwidget.cc:34
+msgid "_Move Stream..."
+msgstr "_Přesunout proud..."
 
-#~ msgid "pa_context_kill_sink_input() failed"
-#~ msgstr "pa_context_kill_sink_input() selhalo"
+#: ../src/sinkinputwidget.cc:35 ../src/sourceoutputwidget.cc:35
+msgid "_Terminate Stream"
+msgstr "_Ukončit proud"
 
-#~ msgid "pa_context_move_sink_input_by_index() failed"
-#~ msgstr "pa_context_move_sink_input_by_index() selhalo"
+#: ../src/sinkinputwidget.cc:61
+msgid "pa_context_set_sink_input_volume() failed"
+msgstr "pa_context_set_sink_input_volume() selhalo"
 
-#~ msgid "pa_context_kill_source_output() failed"
-#~ msgstr "pa_context_kill_source_output() selhalo"
+#: ../src/sinkinputwidget.cc:76
+msgid "pa_context_set_sink_input_mute() failed"
+msgstr "pa_context_set_sink_input_mute() selhalo"
 
-#~ msgid "pa_context_move_source_output_by_index() failed"
-#~ msgstr "pa_context_move_source_output_by_index() selhalo"
+#: ../src/sinkinputwidget.cc:110
+msgid "pa_context_kill_sink_input() failed"
+msgstr "pa_context_kill_sink_input() selhalo"
 
-#~ msgid "pa_ext_stream_restore_write() failed"
-#~ msgstr "pa_ext_stream_restore_write() selhalo"
+#: ../src/sinkinputwidget.cc:127
+msgid "pa_context_move_sink_input_by_index() failed"
+msgstr "pa_context_move_sink_input_by_index() selhalo"
 
-#~ msgid "Failed to read data from stream"
-#~ msgstr "Nepodařilo se přečíst data z proudu"
+#: ../src/sinkwidget.cc:52
+msgid "pa_context_set_sink_volume_by_index() failed"
+msgstr "pa_context_set_sink_volume_by_index() selhalo"
 
-#~ msgid "Peak detect"
-#~ msgstr "Rozpoznání vrcholů"
+#: ../src/sinkwidget.cc:67
+msgid "pa_context_set_sink_mute_by_index() failed"
+msgstr "pa_context_set_sink_mute_by_index() selhalo"
 
-#~ msgid "Failed to create monitoring stream"
-#~ msgstr "Nepodařilo se vytvořit monitorovací proud"
+#: ../src/sinkwidget.cc:81
+msgid "pa_context_set_default_sink() failed"
+msgstr "pa_context_set_default_sink() selhalo"
 
-#~ msgid "Failed to connect monitoring stream"
-#~ msgstr "Nepodařilo se připojit monitorovací proud"
+#: ../src/sourceoutputwidget.cc:60
+msgid "pa_context_kill_source_output() failed"
+msgstr "pa_context_kill_source_output() selhalo"
 
-#~ msgid "System Sounds"
-#~ msgstr "Systémové zvuky"
+#: ../src/sourceoutputwidget.cc:101
+msgid "pa_context_move_source_output_by_index() failed"
+msgstr "pa_context_move_source_output_by_index() selhalo"
+
+#: ../src/sourcewidget.cc:31
+msgid "_Default"
+msgstr "Vý_chozí"
+
+#: ../src/sourcewidget.cc:52
+msgid "pa_context_set_source_volume_by_index() failed"
+msgstr "pa_context_set_source_volume_by_index() selhalo"
+
+#: ../src/sourcewidget.cc:67
+msgid "pa_context_set_source_mute_by_index() failed"
+msgstr "pa_context_set_source_mute_by_index() selhalo"
+
+#: ../src/sourcewidget.cc:81
+msgid "pa_context_set_default_source() failed"
+msgstr "pa_context_set_default_source() selhalo"
+
