@@ -37,8 +37,13 @@
 
 /* Used for profile sorting */
 struct profile_prio_compare {
-    bool operator() (const pa_card_profile_info& lhs, const pa_card_profile_info& rhs) const
-    {return lhs.priority>rhs.priority;}
+    bool operator() (const pa_card_profile_info& lhs, const pa_card_profile_info& rhs) const {
+
+        if (lhs.priority == rhs.priority)
+            return strcmp(lhs.name, rhs.name) > 0;
+
+        return lhs.priority > rhs.priority;
+    }
 };
 
 
@@ -155,10 +160,12 @@ void MainWindow::updateCard(const pa_card_info &info) {
         w->hasSources = w->hasSources || (info.profiles[i].n_sources > 0);
         profile_priorities.insert(info.profiles[i]);
     }
+
     w->profiles.clear();
-    for (std::set<pa_card_profile_info>::iterator i=profile_priorities.begin(); i != profile_priorities.end(); ++i) {
-        w->profiles.push_back(std::pair<Glib::ustring,Glib::ustring>(i->name,i->description));
-    }
+
+    for (std::set<pa_card_profile_info>::iterator i = profile_priorities.begin(); i != profile_priorities.end(); ++i)
+        w->profiles.push_back(std::pair<Glib::ustring,Glib::ustring>(i->name, i->description));
+
     w->activeProfile = info.active_profile->name;
 
     w->updating = false;
