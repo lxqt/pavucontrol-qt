@@ -41,11 +41,15 @@ public:
     void setSourceIndex(uint32_t idx);
     uint32_t sourceIndex();
     virtual bool onDeviceChangePopup(GdkEventButton*);
+    virtual bool onWidgetButtonEvent(GdkEventButton*);
     virtual void onKill();
 
 private:
     MainWindow *mpMainWindow;
     uint32_t mSourceIndex;
+
+    Gtk::Menu terminateMenu;
+    Gtk::MenuItem terminate;
 
     void clearMenu();
     void buildMenu();

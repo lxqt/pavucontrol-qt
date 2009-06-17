@@ -35,6 +35,11 @@ SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gno
     gchar *txt;
     directionLabel->set_label(txt = g_markup_printf_escaped("<i>%s</i>", _("on")));
     g_free(txt);
+
+    terminate.set_label(_("Terminate Playback"));
+    terminate.signal_activate().connect(sigc::mem_fun(*this, &SinkInputWidget::onKill));
+    terminateMenu.append(terminate);
+    terminateMenu.show_all();
 }
 
 void SinkInputWidget::init(MainWindow* mainWindow) {
@@ -97,6 +102,15 @@ void SinkInputWidget::onMuteToggleButton() {
     pa_operation_unref(o);
 }
 
+bool SinkInputWidget::onWidgetButtonEvent(GdkEventButton* event) {
+    if (GDK_BUTTON_PRESS == event->type && 3 == event->button) {
+        terminateMenu.popup(event->button, event->time);
+        return true;
+    }
+
+    return false;
+}
+
 void SinkInputWidget::onKill() {
     pa_operation* o;
     if (!(o = pa_context_kill_sink_input(get_context(), index, NULL, NULL))) {
@@ -144,13 +158,12 @@ void SinkInputWidget::SinkMenuItem::onToggle() {
 }
 
 bool SinkInputWidget::onDeviceChangePopup(GdkEventButton* event) {
-  if (GDK_BUTTON_PRESS == event->type && 1 == event->button)
-  {
-    clearMenu();
-    buildMenu();
-    menu.popup(event->button, event->time);
-    return true;
-  }
-  else
+    if (GDK_BUTTON_PRESS == event->type && 1 == event->button) {
+        clearMenu();
+        buildMenu();
+        menu.popup(event->button, event->time);
+        return true;
+    }
+
     return false;
 }

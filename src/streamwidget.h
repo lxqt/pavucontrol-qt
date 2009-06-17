@@ -36,7 +36,6 @@ public:
     virtual void updateChannelVolume(int channel, pa_volume_t v);
 
     Gtk::ToggleButton *lockToggleButton, *muteToggleButton;
-    Gtk::Button *terminateButton;
     Gtk::Label *directionLabel;
     Gtk::EventBox *deviceButton;
     Gtk::Label *deviceLabel;
@@ -48,7 +47,7 @@ public:
 
     virtual void onMuteToggleButton();
     virtual bool onDeviceChangePopup(GdkEventButton*);
-    virtual void onKill();
+    virtual bool onWidgetButtonEvent(GdkEventButton*);
 
     sigc::connection timeoutConnection;
 

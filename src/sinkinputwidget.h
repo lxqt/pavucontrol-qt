@@ -42,12 +42,16 @@ public:
     uint32_t sinkIndex();
     virtual void executeVolumeUpdate();
     virtual bool onDeviceChangePopup(GdkEventButton*);
+    virtual bool onWidgetButtonEvent(GdkEventButton*);
     virtual void onMuteToggleButton();
     virtual void onKill();
 
 private:
     MainWindow *mpMainWindow;
     uint32_t mSinkIndex;
+
+    Gtk::Menu terminateMenu;
+    Gtk::MenuItem terminate;
 
     void clearMenu();
     void buildMenu();

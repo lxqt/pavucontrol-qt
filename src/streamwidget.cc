@@ -31,12 +31,11 @@ StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
 
     x->get_widget("lockToggleButton", lockToggleButton);
     x->get_widget("muteToggleButton", muteToggleButton);
-    x->get_widget("terminateButton", terminateButton);
     x->get_widget("directionLabel", directionLabel);
     x->get_widget("deviceButton", deviceButton);
     x->get_widget("deviceLabel", deviceLabel);
-    
-    terminateButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onKill));
+
+    this->signal_button_press_event().connect(sigc::mem_fun(*this, &StreamWidget::onWidgetButtonEvent));
     muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onMuteToggleButton));
     deviceButton->signal_button_press_event().connect(sigc::mem_fun(*this, &StreamWidget::onDeviceChangePopup));
 
@@ -44,7 +43,9 @@ StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
         channelWidgets[i] = NULL;
 }
 
-void StreamWidget::onKill() {
+
+bool StreamWidget::onWidgetButtonEvent(GdkEventButton*) {
+    return false;
 }
 
 void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
