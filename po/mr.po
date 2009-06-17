@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.mr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-14 02:26+0000\n"
+"POT-Creation-Date: 2009-06-17 03:51+0200\n"
 "PO-Revision-Date: 2009-04-14 11:35+0530\n"
 "Last-Translator: Sandeep Shedmake <sandeep.shedmake@gmail.com>\n"
 "Language-Team: marathi\n"
@@ -262,23 +262,23 @@ msgstr "<small>कमाल</small>"
 msgid "<small><i>Base</i></small>"
 msgstr "<small><i>बेस</i></small>"
 
-#: ../src/mainwindow.cc:226
+#: ../src/mainwindow.cc:238
 msgid "Failed to read data from stream"
 msgstr "स्ट्रीम पासून डेटा वाचण्यास अपयशी"
 
-#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
 msgid "Peak detect"
 msgstr "उच्च स्तर आढळले"
 
-#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
 msgid "Failed to create monitoring stream"
 msgstr "नियंत्रण स्ट्रीम बनवण्यास अपयशी"
 
-#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
 msgid "Failed to connect monitoring stream"
 msgstr "नियंत्रण स्ट्रीम जुळवण्यास अपयशी"
 
-#: ../src/mainwindow.cc:554
+#: ../src/mainwindow.cc:566
 msgid "System Sounds"
 msgstr "प्रणाली आवाज"
 
@@ -345,4 +345,3 @@ msgstr "pa_context_set_source_mute_by_index() अपयशी"
 #: ../src/sourcewidget.cc:81
 msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() अपयशी"
-

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-03 19:39+0000\n"
+"POT-Creation-Date: 2009-06-17 03:51+0200\n"
 "PO-Revision-Date: 2009-05-03 22:52+0100\n"
 "Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
 "Language-Team: Serbian (sr) <fedora-trans-sr@redhat.com>\n"
@@ -262,23 +262,23 @@ msgstr "<small>Maks</small>"
 msgid "<small><i>Base</i></small>"
 msgstr "<small><i>Osnova</i></small>"
 
-#: ../src/mainwindow.cc:226
+#: ../src/mainwindow.cc:238
 msgid "Failed to read data from stream"
 msgstr "Neuspelo očitavanje podataka sa toka"
 
-#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
 msgid "Peak detect"
 msgstr "Otkrivanje maksimalnog nivoa"
 
-#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
 msgid "Failed to create monitoring stream"
 msgstr "Neuspelo pravljenje nadzornog toka"
 
-#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
 msgid "Failed to connect monitoring stream"
 msgstr "Neuspelo povezivanje sa nadzornim tokom"
 
-#: ../src/mainwindow.cc:554
+#: ../src/mainwindow.cc:566
 msgid "System Sounds"
 msgstr "Sistemski zvuci"
 

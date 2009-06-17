@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.pavucontrol.as\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-23 02:43+0000\n"
+"POT-Creation-Date: 2009-06-17 03:51+0200\n"
 "PO-Revision-Date: 2009-04-23 11:42+0530\n"
 "Last-Translator: Amitakhya Phukan <aphukan@fedoraproject.org>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
@@ -176,7 +176,8 @@ msgstr "গ্ৰাহক callback বিফলতা"
 msgid "Server info callback failure"
 msgstr "সেৱক তথ্য callback বিফলতা"
 
-#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430, c-format
+#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
+#, c-format
 msgid "Failed to initialize stream_restore extension: %s"
 msgstr "stream restore সম্প্ৰসাৰণ আৰম্ভ কৰিবলৈ বিফলতা (_r): %s"
 
@@ -260,23 +261,23 @@ msgstr "<small>সৰ্বাধিক</small>"
 msgid "<small><i>Base</i></small>"
 msgstr "<small><i>আধাৰ</i></small>"
 
-#: ../src/mainwindow.cc:226
+#: ../src/mainwindow.cc:238
 msgid "Failed to read data from stream"
 msgstr "স্ট্ৰিমৰ পৰা তথ্য পঢ়িবলৈ বিফল"
 
-#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
 msgid "Peak detect"
 msgstr "সৰ্বাধিক মাত্ৰা চিনাক্ত"
 
-#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
 msgid "Failed to create monitoring stream"
 msgstr "monitoring stream নিৰ্মাণ কৰোঁতে ব্যৰ্থ"
 
-#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
 msgid "Failed to connect monitoring stream"
 msgstr "monitoring stream লৈ সংয়োগ কৰিবলৈ অক্ষম"
 
-#: ../src/mainwindow.cc:554
+#: ../src/mainwindow.cc:566
 msgid "System Sounds"
 msgstr "ব্যৱস্থাপ্ৰণালীৰ শব্দ"
 
@@ -343,4 +344,3 @@ msgstr "pa_context_set_source_mute_by_index() বিফল"
 #: ../src/sourcewidget.cc:81
 msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() বিফল"
-

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-14 02:26+0000\n"
+"POT-Creation-Date: 2009-06-17 03:51+0200\n"
 "PO-Revision-Date: 2009-04-14 11:24+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
@@ -262,23 +262,23 @@ msgstr "<small>મહત્તમ</small>"
 msgid "<small><i>Base</i></small>"
 msgstr "<small><i>આધાર</i></small>"
 
-#: ../src/mainwindow.cc:226
+#: ../src/mainwindow.cc:238
 msgid "Failed to read data from stream"
 msgstr "સ્ટ્રીમમાંથી માહિતી વાંચવામાં નિષ્ફળ"
 
-#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
 msgid "Peak detect"
 msgstr "શોધની ટોચ"
 
-#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
 msgid "Failed to create monitoring stream"
 msgstr "મોનિટરીંગ સ્ટ્રીમને બનાવવામાં નિષ્ફળ"
 
-#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
 msgid "Failed to connect monitoring stream"
 msgstr "મોનિટરીંગ સ્ટ્રીમને જોડવામાં નિષ્ફળ"
 
-#: ../src/mainwindow.cc:554
+#: ../src/mainwindow.cc:566
 msgid "System Sounds"
 msgstr "સિસ્ટમ સાઉન્ડો"
 
@@ -345,4 +345,3 @@ msgstr "pa_context_set_source_mute_by_index() નિષ્ફળ"
 #: ../src/sourcewidget.cc:81
 msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() નિષ્ફળ"
-

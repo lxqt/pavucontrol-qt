@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.or\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-14 02:26+0000\n"
+"POT-Creation-Date: 2009-06-17 03:51+0200\n"
 "PO-Revision-Date: 2009-04-14 11:21+0530\n"
 "Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
 "Language-Team: Oriya <oriya-it@googlegroups.com>\n"
@@ -15,7 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n!=1);\n\n"
+"Plural-Forms:  nplurals=2; plural=(n!=1);\n"
+"\n"
 "\n"
 "\n"
 
@@ -264,23 +265,23 @@ msgstr "<small>ସର୍ବାଧିକ</small>"
 msgid "<small><i>Base</i></small>"
 msgstr "<small><i>ଆଧାର</i></small>"
 
-#: ../src/mainwindow.cc:226
+#: ../src/mainwindow.cc:238
 msgid "Failed to read data from stream"
 msgstr "ଧାରାରୁ ତଥ୍ୟ ପଢ଼ିବାରେ ବିଫଳ ହୋଇଛି"
 
-#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
 msgid "Peak detect"
 msgstr "ଶିଖର ଚିହ୍ନାପଡ଼ିଛି"
 
-#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
 msgid "Failed to create monitoring stream"
 msgstr "ପ୍ରଦର୍ଶିକା ଧାରାକୁ ନିର୍ମାଣ କରିବାରେ ବିଫଳ ହୋଇଛି"
 
-#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
 msgid "Failed to connect monitoring stream"
 msgstr "ପ୍ରଦର୍ଶିକା ଧାରା ସହିତ ସଂଯୋଗ କରିବାରେ ବିଫଳ ହୋଇଛି"
 
-#: ../src/mainwindow.cc:554
+#: ../src/mainwindow.cc:566
 msgid "System Sounds"
 msgstr "ତନ୍ତ୍ର ଧ୍ୱନିି"
 
@@ -347,4 +348,3 @@ msgstr "pa_context_set_source_mute_by_index() ବିଫଳ ହୋଇଛି"
 #: ../src/sourcewidget.cc:81
 msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() ବିଫଳ ହୋଇଛି"
-

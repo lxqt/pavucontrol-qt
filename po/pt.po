@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-28 08:18+0000\n"
+"POT-Creation-Date: 2009-06-17 03:51+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Rui Gouveia <rui.gouveia@globaltek.pt>\n"
 "Language-Team: pt <fedora-trans-pt@redhat.com>\n"
@@ -16,13 +16,11 @@ msgstr ""
 msgid "Adjust the volume level"
 msgstr "Ajustar o nível do volume"
 
-#: ../src/pavucontrol.desktop.in.h:2
-#: ../src/pavucontrol.cc:472
+#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:472
 msgid "PulseAudio Volume Control"
 msgstr "Controlo de Volume PulseAudio"
 
-#: ../src/pavucontrol.desktop.in.h:3
-#: ../src/pavucontrol.glade.h:30
+#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:30
 msgid "Volume Control"
 msgstr "Controlo de Volume"
 
@@ -174,8 +172,7 @@ msgstr "Falhou 'callback' do cliente"
 msgid "Server info callback failure"
 msgstr " Falhou 'callback' de informação do servidor"
 
-#: ../src/pavucontrol.cc:215
-#: ../src/pavucontrol.cc:430
+#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
 #, c-format
 msgid "Failed to initialize stream_restore extension: %s"
 msgstr "Falha ao inicializar a extensão de \"stream_restore\": %s"
@@ -192,8 +189,7 @@ msgstr "pa_context_get_sink_info_by_index() falhou"
 msgid "pa_context_get_source_info_by_index() failed"
 msgstr "pa_context_get_source_info_by_index() falhou"
 
-#: ../src/pavucontrol.cc:278
-#: ../src/pavucontrol.cc:291
+#: ../src/pavucontrol.cc:278 ../src/pavucontrol.cc:291
 msgid "pa_context_get_sink_input_info() failed"
 msgstr "pa_context_get_sink_input_info() falhou"
 
@@ -201,8 +197,7 @@ msgstr "pa_context_get_sink_input_info() falhou"
 msgid "pa_context_get_client_info() failed"
 msgstr "pa_context_get_client_info() falhou"
 
-#: ../src/pavucontrol.cc:314
-#: ../src/pavucontrol.cc:371
+#: ../src/pavucontrol.cc:314 ../src/pavucontrol.cc:371
 msgid "pa_context_get_server_info() failed"
 msgstr "pa_context_get_server_info() falhou"
 
@@ -262,26 +257,23 @@ msgstr "<small>Máximo</small>"
 msgid "<small><i>Base</i></small>"
 msgstr "<small><i>Baixos</i></small>"
 
-#: ../src/mainwindow.cc:226
+#: ../src/mainwindow.cc:238
 msgid "Failed to read data from stream"
 msgstr "Falha ao ler dados do fluxo"
 
-#: ../src/mainwindow.cc:261
-#: ../src/mainwindow.cc:298
+#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
 msgid "Peak detect"
 msgstr "Detectado pico"
 
-#: ../src/mainwindow.cc:262
-#: ../src/mainwindow.cc:299
+#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
 msgid "Failed to create monitoring stream"
 msgstr "Falha ao criar um stream de monitorização"
 
-#: ../src/mainwindow.cc:270
-#: ../src/mainwindow.cc:308
+#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
 msgid "Failed to connect monitoring stream"
 msgstr "Falha ao ligar o fluxo de monitorização"
 
-#: ../src/mainwindow.cc:554
+#: ../src/mainwindow.cc:566
 msgid "System Sounds"
 msgstr "Sons do Sistema"
 
@@ -289,13 +281,11 @@ msgstr "Sons do Sistema"
 msgid "pa_ext_stream_restore_write() failed"
 msgstr "pa_ext_stream_restore_write() falhou"
 
-#: ../src/sinkinputwidget.cc:34
-#: ../src/sourceoutputwidget.cc:34
+#: ../src/sinkinputwidget.cc:34 ../src/sourceoutputwidget.cc:34
 msgid "_Move Stream..."
 msgstr "_Mover Fluxo..."
 
-#: ../src/sinkinputwidget.cc:35
-#: ../src/sourceoutputwidget.cc:35
+#: ../src/sinkinputwidget.cc:35 ../src/sourceoutputwidget.cc:35
 msgid "_Terminate Stream"
 msgstr "_Terminar Fluxo"
 
@@ -350,4 +340,3 @@ msgstr "pa_context_set_source_mute_by_index() falhou"
 #: ../src/sourcewidget.cc:81
 msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() falhou"
-

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-16 14:24+0000\n"
+"POT-Creation-Date: 2009-06-17 03:51+0200\n"
 "PO-Revision-Date: 2009-04-16 17:37+0100\n"
 "Last-Translator: Felix Kaechele <heffer@fedoraproject.org>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
@@ -22,13 +22,11 @@ msgstr ""
 msgid "Adjust the volume level"
 msgstr "Lautstärke anpassen"
 
-#: ../src/pavucontrol.desktop.in.h:2
-#: ../src/pavucontrol.cc:472
+#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:472
 msgid "PulseAudio Volume Control"
 msgstr "PulseAudio-Lautstärkeregler"
 
-#: ../src/pavucontrol.desktop.in.h:3
-#: ../src/pavucontrol.glade.h:30
+#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:30
 msgid "Volume Control"
 msgstr "Lautstärkeregler"
 
@@ -180,8 +178,7 @@ msgstr "Client Callback-Fehler"
 msgid "Server info callback failure"
 msgstr "Server-Information Callback-Fehler"
 
-#: ../src/pavucontrol.cc:215
-#: ../src/pavucontrol.cc:430
+#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
 #, c-format
 msgid "Failed to initialize stream_restore extension: %s"
 msgstr "Initialisierung der »stream_restore«-Erweiterung gescheitert: %s"
@@ -198,8 +195,7 @@ msgstr "pa_context_get_sink_info_by_index() gescheitert"
 msgid "pa_context_get_source_info_by_index() failed"
 msgstr "pa_context_get_source_info_by_index() gescheitert"
 
-#: ../src/pavucontrol.cc:278
-#: ../src/pavucontrol.cc:291
+#: ../src/pavucontrol.cc:278 ../src/pavucontrol.cc:291
 msgid "pa_context_get_sink_input_info() failed"
 msgstr "pa_context_get_sink_input_info() gescheitert"
 
@@ -207,8 +203,7 @@ msgstr "pa_context_get_sink_input_info() gescheitert"
 msgid "pa_context_get_client_info() failed"
 msgstr "pa_context_get_client_info() gescheitert"
 
-#: ../src/pavucontrol.cc:314
-#: ../src/pavucontrol.cc:371
+#: ../src/pavucontrol.cc:314 ../src/pavucontrol.cc:371
 msgid "pa_context_get_server_info() failed"
 msgstr "pa_context_get_server_info() gescheitert"
 
@@ -268,26 +263,23 @@ msgstr "<small>Maximum</small>"
 msgid "<small><i>Base</i></small>"
 msgstr "<small><i>Basis</i></small>"
 
-#: ../src/mainwindow.cc:226
+#: ../src/mainwindow.cc:238
 msgid "Failed to read data from stream"
 msgstr "Lesen des Datenstroms gescheitert"
 
-#: ../src/mainwindow.cc:261
-#: ../src/mainwindow.cc:298
+#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
 msgid "Peak detect"
 msgstr "Ausschlagsserkennung"
 
-#: ../src/mainwindow.cc:262
-#: ../src/mainwindow.cc:299
+#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
 msgid "Failed to create monitoring stream"
 msgstr "Erstellung des Beobachterdatenstroms gescheitert"
 
-#: ../src/mainwindow.cc:270
-#: ../src/mainwindow.cc:308
+#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
 msgid "Failed to connect monitoring stream"
 msgstr "Verbindungsaufbau zum Beobachterdatenstrom gescheitert"
 
-#: ../src/mainwindow.cc:554
+#: ../src/mainwindow.cc:566
 msgid "System Sounds"
 msgstr "Systemklänge"
 
@@ -295,13 +287,11 @@ msgstr "Systemklänge"
 msgid "pa_ext_stream_restore_write() failed"
 msgstr "pa_ext_stream_restore_write() gescheitert"
 
-#: ../src/sinkinputwidget.cc:34
-#: ../src/sourceoutputwidget.cc:34
+#: ../src/sinkinputwidget.cc:34 ../src/sourceoutputwidget.cc:34
 msgid "_Move Stream..."
 msgstr "Spur _verschieben …"
 
-#: ../src/sinkinputwidget.cc:35
-#: ../src/sourceoutputwidget.cc:35
+#: ../src/sinkinputwidget.cc:35 ../src/sourceoutputwidget.cc:35
 msgid "_Terminate Stream"
 msgstr "Spur _beenden"
 
@@ -356,4 +346,3 @@ msgstr "pa_context_set_source_mute_by_index() gescheitert"
 #: ../src/sourcewidget.cc:81
 msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() gescheitert"
-

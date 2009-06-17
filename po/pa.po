@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.pa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 19:43+0000\n"
+"POT-Creation-Date: 2009-06-17 03:51+0200\n"
 "PO-Revision-Date: 2009-06-06 07:14+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -264,23 +264,23 @@ msgstr "<small>ਵੱਧ</small>"
 msgid "<small><i>Base</i></small>"
 msgstr "<small><i>ਬੇਸ</i></small>"
 
-#: ../src/mainwindow.cc:226
+#: ../src/mainwindow.cc:238
 msgid "Failed to read data from stream"
 msgstr "ਸਟਰੀਮ ਤੋਂ ਡਾਟਾ ਪੜ੍ਹਨ ਵਿੱਚ ਫੇਲ੍ਹ ਹੈ"
 
-#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
 msgid "Peak detect"
 msgstr "ਪੀਕ ਮਿਲੀ"
 
-#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
 msgid "Failed to create monitoring stream"
 msgstr "ਨਿਗਰਾਨੀ ਸਟਰੀਮ ਬਣਾਉਣ ਵਿੱਚ ਫੇਲ੍ਹ ਹੋਇਆ"
 
-#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
 msgid "Failed to connect monitoring stream"
 msgstr "ਨਿਗਰਾਨੀ ਸਟਰੀਮ ਨਾਲ ਕੁਨੈਕਟ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
 
-#: ../src/mainwindow.cc:554
+#: ../src/mainwindow.cc:566
 msgid "System Sounds"
 msgstr "ਸਿਸਟਮ ਸਾਊਂਡ"
 
@@ -347,4 +347,3 @@ msgstr "pa_context_set_source_mute_by_index() ਫੇਲ੍ਹ ਹੈ"
 #: ../src/sourcewidget.cc:81
 msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() ਫੇਲ੍ਹ ਹੈ"
-

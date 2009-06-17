@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.bn_IN\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-26 02:55+0000\n"
+"POT-Creation-Date: 2009-06-17 03:51+0200\n"
 "PO-Revision-Date: 2009-05-26 11:26+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@fedoraproject.org>\n"
 "Language-Team: Bengali INDIA <fedora-trans-bn_in@redhat.com>\n"
@@ -262,23 +262,23 @@ msgstr "<small>সর্বাধিক</small>"
 msgid "<small><i>Base</i></small>"
 msgstr "<small><i>বেস</i></small>"
 
-#: ../src/mainwindow.cc:226
+#: ../src/mainwindow.cc:238
 msgid "Failed to read data from stream"
 msgstr "স্ট্রিম থেকে তথ্য পড়তে ব্যর্থ"
 
-#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
 msgid "Peak detect"
 msgstr "চুড়ান্ত মাপ সনাক্ত হয়েছে"
 
-#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
 msgid "Failed to create monitoring stream"
 msgstr "নিরীক্ষণের স্ট্রিম নির্মাণ করতে ব্যর্থ"
 
-#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
 msgid "Failed to connect monitoring stream"
 msgstr "নিরীক্ষণের স্ট্রিম সংযুক্ত করতে ব্যর্থ"
 
-#: ../src/mainwindow.cc:554
+#: ../src/mainwindow.cc:566
 msgid "System Sounds"
 msgstr "সিস্টেমের শব্দ"
 
@@ -345,4 +345,3 @@ msgstr "pa_context_set_source_mute_by_index() ব্যর্থ"
 #: ../src/sourcewidget.cc:81
 msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() ব্যর্থ"
-

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.ml\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-06 02:39+0000\n"
+"POT-Creation-Date: 2009-06-17 03:51+0200\n"
 "PO-Revision-Date: 2009-05-06 13:10+0530\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
@@ -262,23 +262,23 @@ msgstr "<small>ഏറ്റവും കൂടുതല്‍</small>"
 msgid "<small><i>Base</i></small>"
 msgstr "<small><i>അടിസ്ഥാനം</i></small>"
 
-#: ../src/mainwindow.cc:226
+#: ../src/mainwindow.cc:238
 msgid "Failed to read data from stream"
 msgstr "സ്ട്രീമില്‍ നിന്നും ഡേറ്റാ ലഭ്യമാക്കുന്നതില്‍ പരാജയപ്പെട്ടു"
 
-#: ../src/mainwindow.cc:261 ../src/mainwindow.cc:298
+#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
 msgid "Peak detect"
 msgstr "Peak detect"
 
-#: ../src/mainwindow.cc:262 ../src/mainwindow.cc:299
+#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
 msgid "Failed to create monitoring stream"
 msgstr "മോണിറ്ററിങ് സ്ട്രീം ഉണ്ടാക്കുന്നതില്‍ പരാജയപ്പെട്ടു"
 
-#: ../src/mainwindow.cc:270 ../src/mainwindow.cc:308
+#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
 msgid "Failed to connect monitoring stream"
 msgstr "മോണിറ്ററിങ് സ്ട്രീം കണക്ട് ചെയ്യുന്നതില്‍ പരാജയപ്പെട്ടു"
 
-#: ../src/mainwindow.cc:554
+#: ../src/mainwindow.cc:566
 msgid "System Sounds"
 msgstr "സിസ്റ്റം ശബ്ദങ്ങള്‍"
 
@@ -345,4 +345,3 @@ msgstr "pa_context_set_source_mute_by_index() പരാജയപ്പെട്�
 #: ../src/sourcewidget.cc:81
 msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() പരാജയപ്പെട്ടു"
-
