@@ -95,9 +95,11 @@ void DeviceWidget::onMuteToggleButton() {
 }
 
 void DeviceWidget::onDefaultToggleButton() {
-    /* Prevent the button being untoggled */
-    if (defaultToggleButton->get_active())
-        defaultToggleButton->set_sensitive(false);
+}
+
+void DeviceWidget::setDefault(bool isDefault) {
+    defaultToggleButton->set_active(isDefault);
+    /*defaultToggleButton->set_sensitive(!isDefault);*/
 }
 
 bool DeviceWidget::timeoutEvent() {

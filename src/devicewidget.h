@@ -44,6 +44,7 @@ public:
 
     virtual void onMuteToggleButton();
     virtual void onDefaultToggleButton();
+    virtual void setDefault(bool isDefault);
 
     sigc::connection timeoutConnection;
 

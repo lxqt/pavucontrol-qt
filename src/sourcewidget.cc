@@ -66,8 +66,6 @@ void SourceWidget::onMuteToggleButton() {
 void SourceWidget::onDefaultToggleButton() {
     pa_operation* o;
 
-    DeviceWidget::onDefaultToggleButton();
-
     if (updating)
         return;
 
