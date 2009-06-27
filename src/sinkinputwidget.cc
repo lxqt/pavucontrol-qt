@@ -38,8 +38,8 @@ SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gno
 
     terminate.set_label(_("Terminate Playback"));
     terminate.signal_activate().connect(sigc::mem_fun(*this, &SinkInputWidget::onKill));
-    terminateMenu.append(terminate);
-    terminateMenu.show_all();
+    contextMenu.append(terminate);
+    contextMenu.show_all();
 }
 
 void SinkInputWidget::init(MainWindow* mainWindow) {
@@ -101,7 +101,7 @@ void SinkInputWidget::onMuteToggleButton() {
 
 bool SinkInputWidget::onWidgetButtonEvent(GdkEventButton* event) {
     if (GDK_BUTTON_PRESS == event->type && 3 == event->button) {
-        terminateMenu.popup(event->button, event->time);
+        contextMenu.popup(event->button, event->time);
         return true;
     }
 

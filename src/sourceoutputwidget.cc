@@ -38,8 +38,8 @@ SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefP
 
     terminate.set_label(_("Terminate Recording"));
     terminate.signal_activate().connect(sigc::mem_fun(*this, &SourceOutputWidget::onKill));
-    terminateMenu.append(terminate);
-    terminateMenu.show_all();
+    contextMenu.append(terminate);
+    contextMenu.show_all();
 }
 
 void SourceOutputWidget::init(MainWindow* mainWindow) {
@@ -75,7 +75,7 @@ uint32_t SourceOutputWidget::sourceIndex() {
 
 bool SourceOutputWidget::onWidgetButtonEvent(GdkEventButton* event) {
     if (GDK_BUTTON_PRESS == event->type && 3 == event->button) {
-        terminateMenu.popup(event->button, event->time);
+        contextMenu.popup(event->button, event->time);
         return true;
     }
 

@@ -50,7 +50,7 @@ private:
     MainWindow *mpMainWindow;
     uint32_t mSinkIndex;
 
-    Gtk::Menu terminateMenu;
+    Gtk::Menu contextMenu;
     Gtk::MenuItem terminate;
 
     void clearMenu();

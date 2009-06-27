@@ -48,7 +48,7 @@ private:
     MainWindow *mpMainWindow;
     uint32_t mSourceIndex;
 
-    Gtk::Menu terminateMenu;
+    Gtk::Menu contextMenu;
     Gtk::MenuItem terminate;
 
     void clearMenu();
