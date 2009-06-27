@@ -75,3 +75,28 @@ void SinkWidget::onDefaultToggleButton() {
     }
     pa_operation_unref(o);
 }
+
+void SinkWidget::onPortChange() {
+  Gtk::TreeModel::iterator iter;
+
+  if (updating)
+    return;
+
+  iter = portList->get_active();
+  if (iter)
+  {
+    Gtk::TreeModel::Row row = *iter;
+    if (row)
+    {
+      pa_operation* o;
+      Glib::ustring port = row[portModel.name];
+
+      if (!(o = pa_context_set_sink_port_by_index(get_context(), index, port.c_str(), NULL, NULL))) {
+        show_error(_("pa_context_set_sink_port_by_index() failed"));
+        return;
+      }
+
+      pa_operation_unref(o);
+    }
+  }
+}

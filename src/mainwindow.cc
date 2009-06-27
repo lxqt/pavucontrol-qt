@@ -37,13 +37,31 @@
 
 /* Used for profile sorting */
 struct profile_prio_compare {
-    bool operator() (const pa_card_profile_info& lhs, const pa_card_profile_info& rhs) const {
-
-        if (lhs.priority == rhs.priority)
-            return strcmp(lhs.name, rhs.name) > 0;
-
-        return lhs.priority > rhs.priority;
-    }
+  bool operator() (const pa_card_profile_info& lhs, const pa_card_profile_info& rhs) const {
+    
+    if (lhs.priority == rhs.priority)
+      return strcmp(lhs.name, rhs.name) > 0;
+    
+    return lhs.priority > rhs.priority;
+  }
+};
+struct sink_port_prio_compare {
+  bool operator() (const pa_sink_port_info& lhs, const pa_sink_port_info& rhs) const {
+    
+    if (lhs.priority == rhs.priority)
+      return strcmp(lhs.name, rhs.name) > 0;
+    
+    return lhs.priority > rhs.priority;
+  }
+};
+struct source_port_prio_compare {
+  bool operator() (const pa_source_port_info& lhs, const pa_source_port_info& rhs) const {
+    
+    if (lhs.priority == rhs.priority)
+      return strcmp(lhs.name, rhs.name) > 0;
+    
+    return lhs.priority > rhs.priority;
+  }
 };
 
 
@@ -162,12 +180,11 @@ void MainWindow::updateCard(const pa_card_info &info) {
     }
 
     w->profiles.clear();
-
     for (std::set<pa_card_profile_info>::iterator i = profile_priorities.begin(); i != profile_priorities.end(); ++i)
         w->profiles.push_back(std::pair<Glib::ustring,Glib::ustring>(i->name, i->description));
 
-    w->activeProfile = info.active_profile->name;
-
+    w->activeProfile = info.active_profile ? info.active_profile->name : "";
+    
     w->updating = false;
 
     w->prepareMenu();
@@ -180,6 +197,7 @@ void MainWindow::updateSink(const pa_sink_info &info) {
     SinkWidget *w;
     bool is_new = false;
     const char *icon;
+    std::set<pa_sink_port_info,sink_port_prio_compare> port_priorities;
 
     if (sinkWidgets.count(info.index))
         w = sinkWidgets[info.index];
@@ -216,7 +234,20 @@ void MainWindow::updateSink(const pa_sink_info &info) {
 
     w->setDefault(w->name == defaultSinkName);
 
+    port_priorities.clear();
+    for (uint32_t i=0; i<info.n_ports; ++i) {
+      port_priorities.insert(*info.ports[i]);
+    }
+
+    w->ports.clear();
+    for (std::set<pa_sink_port_info>::iterator i = port_priorities.begin(); i != port_priorities.end(); ++i)
+      w->ports.push_back(std::pair<Glib::ustring,Glib::ustring>(i->name, i->description));
+
+    w->activePort = info.active_port ? info.active_port->name : "";
+
     w->updating = false;
+
+    w->prepareMenu();
 
     if (is_new)
         updateDeviceVisibility();
@@ -327,7 +358,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
     SourceWidget *w;
     bool is_new = false;
     const char *icon;
-
+    std::set<pa_source_port_info,source_port_prio_compare> port_priorities;
+    
     if (sourceWidgets.count(info.index))
         w = sourceWidgets[info.index];
     else {
@@ -364,7 +396,20 @@ void MainWindow::updateSource(const pa_source_info &info) {
 
     w->setDefault(w->name == defaultSourceName);
 
+    port_priorities.clear();
+    for (uint32_t i=0; i<info.n_ports; ++i) {
+      port_priorities.insert(*info.ports[i]);
+    }
+
+    w->ports.clear();
+    for (std::set<pa_source_port_info>::iterator i = port_priorities.begin(); i != port_priorities.end(); ++i)
+      w->ports.push_back(std::pair<Glib::ustring,Glib::ustring>(i->name, i->description));
+
+    w->activePort = info.active_port ? info.active_port->name : "";
+
     w->updating = false;
+
+    w->prepareMenu();
 
     if (is_new)
         updateDeviceVisibility();

@@ -39,6 +39,9 @@ public:
     virtual void onMuteToggleButton();
     virtual void executeVolumeUpdate();
     virtual void onDefaultToggleButton();
+
+protected:
+    virtual void onPortChange();
 };
 
 #endif

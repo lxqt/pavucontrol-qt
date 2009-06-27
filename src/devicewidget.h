@@ -53,6 +53,32 @@ public:
     virtual void executeVolumeUpdate();
     virtual void setBaseVolume(pa_volume_t v);
     virtual void setSteps(unsigned n);
+
+    std::vector< std::pair<Glib::ustring,Glib::ustring> > ports;
+    Glib::ustring activePort;
+
+    void prepareMenu();
+
+protected:
+    virtual void onPortChange() = 0;
+
+    /* Tree model columns */
+    class ModelColumns : public Gtk::TreeModel::ColumnRecord
+    {
+      public:
+
+        ModelColumns()
+        { add(name); add(desc); }
+
+        Gtk::TreeModelColumn<Glib::ustring> name;
+        Gtk::TreeModelColumn<Glib::ustring> desc;
+    };
+
+    ModelColumns portModel;
+
+    Gtk::HBox *portSelect;
+    Gtk::ComboBox *portList;
+    Glib::RefPtr<Gtk::ListStore> treeModel;
 };
 
 #endif

@@ -32,9 +32,17 @@ DeviceWidget::DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
     x->get_widget("lockToggleButton", lockToggleButton);
     x->get_widget("muteToggleButton", muteToggleButton);
     x->get_widget("defaultToggleButton", defaultToggleButton);
+    x->get_widget("portSelect", portSelect);
+    x->get_widget("portList", portList);
 
     muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &DeviceWidget::onMuteToggleButton));
     defaultToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &DeviceWidget::onDefaultToggleButton));
+
+    treeModel = Gtk::ListStore::create(portModel);
+    portList->set_model(treeModel);
+    portList->pack_start(portModel.desc);
+
+    portList->signal_changed().connect( sigc::mem_fun(*this, &DeviceWidget::onPortChange));
 
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
         channelWidgets[i] = NULL;
@@ -120,4 +128,28 @@ void DeviceWidget::setSteps(unsigned n) {
 
     for (int i = 0; i < channelMap.channels; i++)
         channelWidgets[channelMap.channels-1]->setSteps(n);
+}
+
+void DeviceWidget::prepareMenu() {
+  int idx = 0;
+  int active_idx = -1;
+
+  treeModel->clear();
+  /* Fill the ComboBox's Tree Model */
+  for (uint32_t i = 0; i < ports.size(); ++i) {
+    Gtk::TreeModel::Row row = *(treeModel->append());
+    row[portModel.name] = ports[i].first;
+    row[portModel.desc] = ports[i].second;
+    if (ports[i].first == activePort)
+      active_idx = idx;
+    idx++;
+  }
+
+  if (active_idx >= 0)
+    portList->set_active(active_idx);
+
+  if (ports.size() > 0)
+    portSelect->show();
+  else
+    portSelect->hide();
 }
