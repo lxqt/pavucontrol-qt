@@ -43,6 +43,10 @@ RoleWidget* RoleWidget::create() {
     return w;
 }
 
+bool RoleWidget::onContextTriggerEvent(GdkEventButton*) {
+    return false;
+}
+
 void RoleWidget::onMuteToggleButton() {
     StreamWidget::onMuteToggleButton();
 

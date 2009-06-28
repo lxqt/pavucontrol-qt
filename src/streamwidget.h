@@ -25,11 +25,13 @@
 
 #include "minimalstreamwidget.h"
 
+class MainWindow;
 class ChannelWidget;
 
 class StreamWidget : public MinimalStreamWidget {
 public:
     StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
+    void init(MainWindow* mainWindow);
 
     void setChannelMap(const pa_channel_map &m, bool can_decibel);
     void setVolume(const pa_cvolume &volume, bool force = false);
@@ -53,6 +55,14 @@ public:
     bool timeoutEvent();
 
     virtual void executeVolumeUpdate();
+    virtual void onKill();
+
+protected:
+    MainWindow* mpMainWindow;
+
+    Gtk::Menu contextMenu;
+    Gtk::MenuItem terminate;
+
 };
 
 #endif

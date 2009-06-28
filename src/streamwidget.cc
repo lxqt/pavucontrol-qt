@@ -23,11 +23,15 @@
 #endif
 
 #include "streamwidget.h"
+#include "mainwindow.h"
 #include "channelwidget.h"
+
+#include "i18n.h"
 
 /*** StreamWidget ***/
 StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    MinimalStreamWidget(cobject, x) {
+    MinimalStreamWidget(cobject, x),
+    mpMainWindow(NULL) {
 
     x->get_widget("lockToggleButton", lockToggleButton);
     x->get_widget("muteToggleButton", muteToggleButton);
@@ -38,12 +42,25 @@ StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
     muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onMuteToggleButton));
     deviceButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onDeviceChangePopup));
 
+    terminate.set_label(_("Terminate"));
+    terminate.signal_activate().connect(sigc::mem_fun(*this, &StreamWidget::onKill));
+    contextMenu.append(terminate);
+    contextMenu.show_all();
+
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
         channelWidgets[i] = NULL;
 }
 
 
-bool StreamWidget::onContextTriggerEvent(GdkEventButton*) {
+void StreamWidget::init(MainWindow* mainWindow) {
+    mpMainWindow = mainWindow;
+}
+
+bool StreamWidget::onContextTriggerEvent(GdkEventButton* event) {
+    if (GDK_BUTTON_PRESS == event->type && 3 == event->button) {
+        contextMenu.popup(event->button, event->time);
+        return true;
+    }
     return false;
 }
 
@@ -110,4 +127,7 @@ void StreamWidget::executeVolumeUpdate() {
 }
 
 void StreamWidget::onDeviceChangePopup() {
+}
+
+void StreamWidget::onKill() {
 }

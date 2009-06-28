@@ -33,23 +33,16 @@ public:
     static SourceOutputWidget* create(MainWindow* mainWindow);
     ~SourceOutputWidget(void);
 
-    void init(MainWindow* mainWindow);
-
     SourceOutputType type;
 
     uint32_t index, clientIndex;
     void setSourceIndex(uint32_t idx);
     uint32_t sourceIndex();
     virtual void onDeviceChangePopup();
-    virtual bool onContextTriggerEvent(GdkEventButton*);
     virtual void onKill();
 
 private:
-    MainWindow *mpMainWindow;
     uint32_t mSourceIndex;
-
-    Gtk::Menu contextMenu;
-    Gtk::MenuItem terminate;
 
     void clearMenu();
     void buildMenu();

@@ -29,21 +29,13 @@
 #include "i18n.h"
 
 SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    StreamWidget(cobject, x),
-    mpMainWindow(NULL) {
+    StreamWidget(cobject, x) {
 
     gchar *txt;
     directionLabel->set_label(txt = g_markup_printf_escaped("<i>%s</i>", _("on")));
     g_free(txt);
 
     terminate.set_label(_("Terminate Playback"));
-    terminate.signal_activate().connect(sigc::mem_fun(*this, &SinkInputWidget::onKill));
-    contextMenu.append(terminate);
-    contextMenu.show_all();
-}
-
-void SinkInputWidget::init(MainWindow* mainWindow) {
-    mpMainWindow = mainWindow;
 }
 
 SinkInputWidget* SinkInputWidget::create(MainWindow* mainWindow) {
@@ -97,15 +89,6 @@ void SinkInputWidget::onMuteToggleButton() {
     }
 
     pa_operation_unref(o);
-}
-
-bool SinkInputWidget::onContextTriggerEvent(GdkEventButton* event) {
-    if (GDK_BUTTON_PRESS == event->type && 3 == event->button) {
-        contextMenu.popup(event->button, event->time);
-        return true;
-    }
-
-    return false;
 }
 
 void SinkInputWidget::onKill() {

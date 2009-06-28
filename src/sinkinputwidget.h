@@ -33,8 +33,6 @@ public:
     static SinkInputWidget* create(MainWindow* mainWindow);
     ~SinkInputWidget(void);
 
-    void init(MainWindow* mainWindow);
-
     SinkInputType type;
 
     uint32_t index, clientIndex;
@@ -42,16 +40,11 @@ public:
     uint32_t sinkIndex();
     virtual void executeVolumeUpdate();
     virtual void onDeviceChangePopup();
-    virtual bool onContextTriggerEvent(GdkEventButton*);
     virtual void onMuteToggleButton();
     virtual void onKill();
 
 private:
-    MainWindow *mpMainWindow;
     uint32_t mSinkIndex;
-
-    Gtk::Menu contextMenu;
-    Gtk::MenuItem terminate;
 
     void clearMenu();
     void buildMenu();

@@ -35,6 +35,7 @@ public:
 
     virtual void onMuteToggleButton();
     virtual void executeVolumeUpdate();
+    virtual bool onContextTriggerEvent(GdkEventButton*);
 };
 
 #endif

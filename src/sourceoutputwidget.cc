@@ -29,21 +29,13 @@
 #include "i18n.h"
 
 SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
-    StreamWidget(cobject, x),
-    mpMainWindow(NULL) {
+    StreamWidget(cobject, x) {
 
     gchar *txt;
     directionLabel->set_label(txt = g_markup_printf_escaped("<i>%s</i>", _("from")));
     g_free(txt);
 
     terminate.set_label(_("Terminate Recording"));
-    terminate.signal_activate().connect(sigc::mem_fun(*this, &SourceOutputWidget::onKill));
-    contextMenu.append(terminate);
-    contextMenu.show_all();
-}
-
-void SourceOutputWidget::init(MainWindow* mainWindow) {
-    mpMainWindow = mainWindow;
 }
 
 SourceOutputWidget* SourceOutputWidget::create(MainWindow* mainWindow) {
@@ -71,15 +63,6 @@ void SourceOutputWidget::setSourceIndex(uint32_t idx) {
 
 uint32_t SourceOutputWidget::sourceIndex() {
     return mSourceIndex;
-}
-
-bool SourceOutputWidget::onContextTriggerEvent(GdkEventButton* event) {
-    if (GDK_BUTTON_PRESS == event->type && 3 == event->button) {
-        contextMenu.popup(event->button, event->time);
-        return true;
-    }
-
-    return false;
 }
 
 void SourceOutputWidget::onKill() {
