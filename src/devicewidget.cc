@@ -212,7 +212,7 @@ void DeviceWidget::renamePopup() {
         info[0].name = key;
         info[0].description = renameText->get_text().c_str();
 
-        if (!(o = pa_ext_device_manager_write(get_context(), PA_UPDATE_MERGE, info, 1, 1, NULL, NULL))) {
+        if (!(o = pa_ext_device_manager_write(get_context(), PA_UPDATE_REPLACE, info, 1, 1, NULL, NULL))) {
             show_error(_("pa_ext_device_manager_write() failed"));
             return;
         }
