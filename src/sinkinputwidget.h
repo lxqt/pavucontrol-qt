@@ -42,7 +42,7 @@ public:
     uint32_t sinkIndex();
     virtual void executeVolumeUpdate();
     virtual void onDeviceChangePopup();
-    virtual bool onWidgetButtonEvent(GdkEventButton*);
+    virtual bool onContextTriggerEvent(GdkEventButton*);
     virtual void onMuteToggleButton();
     virtual void onKill();
 

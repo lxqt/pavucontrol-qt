@@ -99,7 +99,7 @@ void SinkInputWidget::onMuteToggleButton() {
     pa_operation_unref(o);
 }
 
-bool SinkInputWidget::onWidgetButtonEvent(GdkEventButton* event) {
+bool SinkInputWidget::onContextTriggerEvent(GdkEventButton* event) {
     if (GDK_BUTTON_PRESS == event->type && 3 == event->button) {
         contextMenu.popup(event->button, event->time);
         return true;

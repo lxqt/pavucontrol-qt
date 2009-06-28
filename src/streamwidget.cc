@@ -34,7 +34,7 @@ StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
     x->get_widget("directionLabel", directionLabel);
     x->get_widget("deviceButton", deviceButton);
 
-    this->signal_button_press_event().connect(sigc::mem_fun(*this, &StreamWidget::onWidgetButtonEvent));
+    this->signal_button_press_event().connect(sigc::mem_fun(*this, &StreamWidget::onContextTriggerEvent));
     muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onMuteToggleButton));
     deviceButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onDeviceChangePopup));
 
@@ -43,7 +43,7 @@ StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
 }
 
 
-bool StreamWidget::onWidgetButtonEvent(GdkEventButton*) {
+bool StreamWidget::onContextTriggerEvent(GdkEventButton*) {
     return false;
 }
 

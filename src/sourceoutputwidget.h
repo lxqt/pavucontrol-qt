@@ -41,7 +41,7 @@ public:
     void setSourceIndex(uint32_t idx);
     uint32_t sourceIndex();
     virtual void onDeviceChangePopup();
-    virtual bool onWidgetButtonEvent(GdkEventButton*);
+    virtual bool onContextTriggerEvent(GdkEventButton*);
     virtual void onKill();
 
 private:

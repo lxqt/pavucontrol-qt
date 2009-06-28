@@ -73,7 +73,7 @@ uint32_t SourceOutputWidget::sourceIndex() {
     return mSourceIndex;
 }
 
-bool SourceOutputWidget::onWidgetButtonEvent(GdkEventButton* event) {
+bool SourceOutputWidget::onContextTriggerEvent(GdkEventButton* event) {
     if (GDK_BUTTON_PRESS == event->type && 3 == event->button) {
         contextMenu.popup(event->button, event->time);
         return true;

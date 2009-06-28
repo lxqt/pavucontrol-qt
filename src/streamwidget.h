@@ -46,7 +46,7 @@ public:
 
     virtual void onMuteToggleButton();
     virtual void onDeviceChangePopup();
-    virtual bool onWidgetButtonEvent(GdkEventButton*);
+    virtual bool onContextTriggerEvent(GdkEventButton*);
 
     sigc::connection timeoutConnection;
 
