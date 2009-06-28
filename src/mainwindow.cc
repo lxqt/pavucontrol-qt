@@ -72,7 +72,8 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     showSinkType(SINK_ALL),
     showSourceOutputType(SOURCE_OUTPUT_CLIENT),
     showSourceType(SOURCE_NO_MONITOR),
-    eventRoleWidget(NULL){
+    eventRoleWidget(NULL),
+    canRenameDevices(false) {
 
     x->get_widget("cardsVBox", cardsVBox);
     x->get_widget("streamsVBox", streamsVBox);
@@ -203,7 +204,7 @@ void MainWindow::updateSink(const pa_sink_info &info) {
     if (sinkWidgets.count(info.index))
         w = sinkWidgets[info.index];
     else {
-        sinkWidgets[info.index] = w = SinkWidget::create();
+        sinkWidgets[info.index] = w = SinkWidget::create(this);
         w->setChannelMap(info.channel_map, !!(info.flags & PA_SINK_DECIBEL_VOLUME));
         sinksVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
@@ -363,7 +364,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
     if (sourceWidgets.count(info.index))
         w = sourceWidgets[info.index];
     else {
-        sourceWidgets[info.index] = w = SourceWidget::create();
+        sourceWidgets[info.index] = w = SourceWidget::create(this);
         w->setChannelMap(info.channel_map, !!(info.flags & PA_SOURCE_DECIBEL_VOLUME));
         sourcesVBox->pack_start(*w, false, false, 0);
         w->index = info.index;

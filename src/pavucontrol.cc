@@ -25,6 +25,7 @@
 #include <pulse/pulseaudio.h>
 #include <pulse/glib-mainloop.h>
 #include <pulse/ext-stream-restore.h>
+#include <pulse/ext-device-manager.h>
 
 #include <canberra-gtk.h>
 
@@ -239,6 +240,42 @@ static void ext_stream_restore_subscribe_cb(pa_context *c, void *userdata) {
     pa_operation_unref(o);
 }
 
+void ext_device_manager_read_cb(
+        pa_context *,
+        const pa_ext_device_manager_info *,
+        int eol,
+        void *userdata) {
+
+    MainWindow *w = static_cast<MainWindow*>(userdata);
+
+    if (eol < 0) {
+        dec_outstanding(w);
+        g_debug(_("Failed to initialize device manager extension: %s"), pa_strerror(pa_context_errno(context)));
+        return;
+    }
+
+    w->canRenameDevices = true;
+
+    if (eol > 0) {
+        dec_outstanding(w);
+        return;
+    }
+
+    /* Do something with a widget when this part is written */
+}
+
+static void ext_device_manager_subscribe_cb(pa_context *c, void *userdata) {
+    MainWindow *w = static_cast<MainWindow*>(userdata);
+    pa_operation *o;
+
+    if (!(o = pa_ext_device_manager_read(c, ext_device_manager_read_cb, w))) {
+        show_error(_("pa_ext_device_manager_read() failed"));
+        return;
+    }
+
+    pa_operation_unref(o);
+}
+
 void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
@@ -416,7 +453,7 @@ void context_state_callback(pa_context *c, void *userdata) {
             pa_operation_unref(o);
             n_outstanding++;
 
-            /* This call is not always supported */
+            /* These calls are not always supported */
             if ((o = pa_ext_stream_restore_read(c, ext_stream_restore_read_cb, w))) {
                 pa_operation_unref(o);
                 n_outstanding++;
@@ -428,6 +465,18 @@ void context_state_callback(pa_context *c, void *userdata) {
 
             } else
                 g_debug(_("Failed to initialize stream_restore extension: %s"), pa_strerror(pa_context_errno(context)));
+
+            if ((o = pa_ext_device_manager_read(c, ext_device_manager_read_cb, w))) {
+                pa_operation_unref(o);
+                n_outstanding++;
+
+                pa_ext_device_manager_set_subscribe_cb(c, ext_device_manager_subscribe_cb, w);
+
+                if ((o = pa_ext_device_manager_subscribe(c, 1, NULL, NULL)))
+                    pa_operation_unref(o);
+
+            } else
+                g_debug(_("Failed to initialize device manager extension: %s"), pa_strerror(pa_context_errno(context)));
 
 
             break;

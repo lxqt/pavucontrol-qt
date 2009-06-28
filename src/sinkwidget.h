@@ -28,11 +28,9 @@
 class SinkWidget : public DeviceWidget {
 public:
     SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
-    static SinkWidget* create();
+    static SinkWidget* create(MainWindow* mainWindow);
 
     SinkType type;
-    Glib::ustring description;
-    Glib::ustring name;
     uint32_t index, monitor_index, card_index;
     bool can_decibel;
 

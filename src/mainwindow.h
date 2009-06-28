@@ -91,6 +91,8 @@ public:
 
     Glib::ustring defaultSinkName, defaultSourceName;
 
+    bool canRenameDevices;
+
 protected:
     virtual void on_realize();
 };

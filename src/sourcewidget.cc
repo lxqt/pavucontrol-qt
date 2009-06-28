@@ -30,10 +30,11 @@ SourceWidget::SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
     DeviceWidget(cobject, x) {
 }
 
-SourceWidget* SourceWidget::create() {
+SourceWidget* SourceWidget::create(MainWindow* mainWindow) {
     SourceWidget* w;
     Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "deviceWidget");
     x->get_widget_derived("deviceWidget", w);
+    w->init(mainWindow, "source");
     return w;
 }
 

@@ -22,8 +22,13 @@
 #include <config.h>
 #endif
 
+#include <pulse/ext-device-manager.h>
+
+#include "mainwindow.h"
 #include "devicewidget.h"
 #include "channelwidget.h"
+
+#include "i18n.h"
 
 /*** DeviceWidget ***/
 DeviceWidget::DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
@@ -35,8 +40,14 @@ DeviceWidget::DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
     x->get_widget("portSelect", portSelect);
     x->get_widget("portList", portList);
 
+    this->signal_button_press_event().connect(sigc::mem_fun(*this, &DeviceWidget::onContextTriggerEvent));
     muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &DeviceWidget::onMuteToggleButton));
     defaultToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &DeviceWidget::onDefaultToggleButton));
+
+    rename.set_label(_("Rename Device..."));
+    rename.signal_activate().connect(sigc::mem_fun(*this, &DeviceWidget::renamePopup));
+    contextMenu.append(rename);
+    contextMenu.show_all();
 
     treeModel = Gtk::ListStore::create(portModel);
     portList->set_model(treeModel);
@@ -46,6 +57,11 @@ DeviceWidget::DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
 
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
         channelWidgets[i] = NULL;
+}
+
+void DeviceWidget::init(MainWindow* mainWindow, Glib::ustring deviceType) {
+    mpMainWindow = mainWindow;
+    mDeviceType = deviceType;
 }
 
 void DeviceWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
@@ -150,4 +166,58 @@ void DeviceWidget::prepareMenu() {
         portSelect->show();
     else
         portSelect->hide();
+}
+
+bool DeviceWidget::onContextTriggerEvent(GdkEventButton* event) {
+    if (GDK_BUTTON_PRESS == event->type && 3 == event->button) {
+        contextMenu.popup(event->button, event->time);
+        return true;
+    }
+
+    return false;
+}
+
+void DeviceWidget::renamePopup() {
+    if (updating)
+        return;
+
+    if (!mpMainWindow->canRenameDevices) {
+        Gtk::MessageDialog dialog(
+            *mpMainWindow,
+            _("Sorry, but device renaming is not supported."),
+            false,
+            Gtk::MESSAGE_WARNING,
+            Gtk::BUTTONS_OK,
+            true);
+        dialog.set_secondary_text(_("You need to load module-device-manager in the PulseAudio server in order to rename devices"));
+        dialog.run();
+        return;
+    }
+
+    Gtk::Dialog* dialog;
+    Gtk::Entry* renameText;
+
+    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "renameDialog");
+    x->get_widget("renameDialog", dialog);
+    x->get_widget("renameText", renameText);
+
+    renameText->set_text(description);
+    dialog->add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
+    dialog->add_button(Gtk::Stock::OK, Gtk::RESPONSE_OK);
+    dialog->set_default_response(Gtk::RESPONSE_OK);
+    if (Gtk::RESPONSE_OK == dialog->run()) {
+        pa_operation* o;
+        pa_ext_device_manager_info info[1];
+        gchar *key = g_markup_printf_escaped("%s:%s", mDeviceType.c_str(), name.c_str());
+        info[0].name = key;
+        info[0].description = renameText->get_text().c_str();
+
+        if (!(o = pa_ext_device_manager_write(get_context(), PA_UPDATE_MERGE, info, 1, 1, NULL, NULL))) {
+            show_error(_("pa_ext_device_manager_write() failed"));
+            return;
+        }
+        pa_operation_unref(o);
+        g_free(key);
+    }
+    delete dialog;
 }

@@ -32,10 +32,11 @@ SinkWidget::SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     DeviceWidget(cobject, x) {
 }
 
-SinkWidget* SinkWidget::create() {
+SinkWidget* SinkWidget::create(MainWindow* mainWindow) {
     SinkWidget* w;
     Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "deviceWidget");
     x->get_widget_derived("deviceWidget", w);
+    w->init(mainWindow, "sink");
     return w;
 }
 
