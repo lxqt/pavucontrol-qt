@@ -553,6 +553,8 @@ Monitors</property>
                             <property name="xalign">0</property>
                           </widget>
                           <packing>
+                            <property name="expand">False</property>
+                            <property name="pack_type">end</property>
                             <property name="position">3</property>
                           </packing>
                         </child>
