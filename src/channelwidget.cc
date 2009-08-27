@@ -117,7 +117,8 @@ void ChannelWidget::set_sensitive(bool enabled) {
 
 void ChannelWidget::setBaseVolume(pa_volume_t v) {
 
-    gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), 0.0, (GtkPositionType) GTK_POS_BOTTOM, _("<small>Silence</small>"));
+    gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), 0.0, (GtkPositionType) GTK_POS_BOTTOM,
+                       can_decibel ? _("<small>Silence</small>") : _("<small>Min</small>"));
     gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), 100.0, (GtkPositionType) GTK_POS_BOTTOM, _("<small>Max</small>"));
 
     if (v > PA_VOLUME_MUTED && v < PA_VOLUME_NORM) {
