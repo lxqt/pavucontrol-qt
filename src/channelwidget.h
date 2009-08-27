@@ -23,8 +23,6 @@
 
 #include "pavucontrol.h"
 
-#include <canberra-gtk.h>
-
 class MinimalStreamWidget;
 
 class ChannelWidget : public Gtk::EventBox {
@@ -45,8 +43,6 @@ public:
 
     bool can_decibel;
     bool volumeScaleEnabled;
-
-    Glib::ustring beepDevice;
 
     virtual void set_sensitive(bool enabled);
     virtual void setBaseVolume(pa_volume_t);

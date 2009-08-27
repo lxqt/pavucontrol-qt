@@ -22,6 +22,8 @@
 #include <config.h>
 #endif
 
+#include <canberra-gtk.h>
+
 #include "sinkwidget.h"
 
 #include "i18n.h"
@@ -39,6 +41,8 @@ SinkWidget* SinkWidget::create() {
 
 void SinkWidget::executeVolumeUpdate() {
     pa_operation* o;
+    char dev[64];
+    int playing = 0;
 
     if (!(o = pa_context_set_sink_volume_by_index(get_context(), index, &volume, NULL, NULL))) {
         show_error(_("pa_context_set_sink_volume_by_index() failed"));
@@ -46,6 +50,23 @@ void SinkWidget::executeVolumeUpdate() {
     }
 
     pa_operation_unref(o);
+
+    ca_context_playing(ca_gtk_context_get(), 2, &playing);
+    if (playing)
+        return;
+
+    snprintf(dev, sizeof(dev), "%lu", (unsigned long) index);
+    ca_context_change_device(ca_gtk_context_get(), dev);
+
+    ca_gtk_play_for_widget(GTK_WIDGET(gobj()),
+                           2,
+                           CA_PROP_EVENT_DESCRIPTION, _("Volume Control Feedback Sound"),
+                           CA_PROP_EVENT_ID, "audio-volume-change",
+                           CA_PROP_CANBERRA_CACHE_CONTROL, "permanent",
+                           CA_PROP_CANBERRA_ENABLE, "1",
+                           NULL);
+
+    ca_context_change_device(ca_gtk_context_get(), NULL);
 }
 
 void SinkWidget::onMuteToggleButton() {
@@ -77,26 +98,24 @@ void SinkWidget::onDefaultToggleButton() {
 }
 
 void SinkWidget::onPortChange() {
-  Gtk::TreeModel::iterator iter;
+    Gtk::TreeModel::iterator iter;
 
-  if (updating)
-    return;
-
-  iter = portList->get_active();
-  if (iter)
-  {
-    Gtk::TreeModel::Row row = *iter;
-    if (row)
-    {
-      pa_operation* o;
-      Glib::ustring port = row[portModel.name];
-
-      if (!(o = pa_context_set_sink_port_by_index(get_context(), index, port.c_str(), NULL, NULL))) {
-        show_error(_("pa_context_set_sink_port_by_index() failed"));
+    if (updating)
         return;
-      }
 
-      pa_operation_unref(o);
+    iter = portList->get_active();
+    if (iter) {
+        Gtk::TreeModel::Row row = *iter;
+        if (row) {
+            pa_operation* o;
+            Glib::ustring port = row[portModel.name];
+
+            if (!(o = pa_context_set_sink_port_by_index(get_context(), index, port.c_str(), NULL, NULL))) {
+                show_error(_("pa_context_set_sink_port_by_index() failed"));
+                return;
+            }
+
+            pa_operation_unref(o);
+        }
     }
-  }
 }

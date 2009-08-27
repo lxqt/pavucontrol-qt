@@ -88,23 +88,6 @@ void ChannelWidget::onVolumeScaleValueChanged() {
 
     pa_volume_t volume = (pa_volume_t) ((volumeScale->get_value() * PA_VOLUME_NORM) / 100);
     minimalStreamWidget->updateChannelVolume(channel, volume);
-
-    if (beepDevice != "") {
-        ca_context_change_device(ca_gtk_context_get(), beepDevice.c_str());
-
-        ca_context_cancel(ca_gtk_context_get(), 2);
-
-        ca_gtk_play_for_widget(GTK_WIDGET(volumeScale->gobj()),
-                               2,
-                               CA_PROP_EVENT_DESCRIPTION, _("Volume Control Feedback Sound"),
-                               CA_PROP_EVENT_ID, "audio-volume-change",
-                               CA_PROP_CANBERRA_CACHE_CONTROL, "permanent",
-                               CA_PROP_CANBERRA_VOLUME, "0",
-                               CA_PROP_CANBERRA_ENABLE, "1",
-                               NULL);
-
-        ca_context_change_device(ca_gtk_context_get(), NULL);
-    }
 }
 
 void ChannelWidget::set_sensitive(bool enabled) {

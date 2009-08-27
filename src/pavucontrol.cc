@@ -22,11 +22,13 @@
 #include <config.h>
 #endif
 
-#include "pavucontrol.h"
-
+#include <pulse/pulseaudio.h>
 #include <pulse/glib-mainloop.h>
 #include <pulse/ext-stream-restore.h>
 
+#include <canberra-gtk.h>
+
+#include "pavucontrol.h"
 #include "i18n.h"
 #include "minimalstreamwidget.h"
 #include "channelwidget.h"

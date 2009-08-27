@@ -42,7 +42,7 @@ DeviceWidget::DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Gl
     portList->set_model(treeModel);
     portList->pack_start(portModel.desc);
 
-    portList->signal_changed().connect( sigc::mem_fun(*this, &DeviceWidget::onPortChange));
+    portList->signal_changed().connect(sigc::mem_fun(*this, &DeviceWidget::onPortChange));
 
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
         channelWidgets[i] = NULL;
@@ -53,7 +53,6 @@ void DeviceWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
 
     for (int i = 0; i < m.channels; i++) {
         ChannelWidget *cw = channelWidgets[i] = ChannelWidget::create();
-        cw->beepDevice = beepDevice;
         cw->channel = i;
         cw->can_decibel = can_decibel;
         cw->minimalStreamWidget = this;
@@ -82,10 +81,9 @@ void DeviceWidget::updateChannelVolume(int channel, pa_volume_t v) {
     g_assert(channel < volume.channels);
 
     n = volume;
-    if (lockToggleButton->get_active()) {
-        for (int i = 0; i < n.channels; i++)
-            n.values[i] = v;
-    } else
+    if (lockToggleButton->get_active())
+        pa_cvolume_set(&n, n.channels, v);
+    else
         n.values[channel] = v;
 
     setVolume(n, true);
@@ -131,25 +129,25 @@ void DeviceWidget::setSteps(unsigned n) {
 }
 
 void DeviceWidget::prepareMenu() {
-  int idx = 0;
-  int active_idx = -1;
+    int idx = 0;
+    int active_idx = -1;
 
-  treeModel->clear();
-  /* Fill the ComboBox's Tree Model */
-  for (uint32_t i = 0; i < ports.size(); ++i) {
-    Gtk::TreeModel::Row row = *(treeModel->append());
-    row[portModel.name] = ports[i].first;
-    row[portModel.desc] = ports[i].second;
-    if (ports[i].first == activePort)
-      active_idx = idx;
-    idx++;
-  }
+    treeModel->clear();
+    /* Fill the ComboBox's Tree Model */
+    for (uint32_t i = 0; i < ports.size(); ++i) {
+        Gtk::TreeModel::Row row = *(treeModel->append());
+        row[portModel.name] = ports[i].first;
+        row[portModel.desc] = ports[i].second;
+        if (ports[i].first == activePort)
+            active_idx = idx;
+        idx++;
+    }
 
-  if (active_idx >= 0)
-    portList->set_active(active_idx);
+    if (active_idx >= 0)
+        portList->set_active(active_idx);
 
-  if (ports.size() > 0)
-    portSelect->show();
-  else
-    portSelect->hide();
+    if (ports.size() > 0)
+        portSelect->show();
+    else
+        portSelect->hide();
 }

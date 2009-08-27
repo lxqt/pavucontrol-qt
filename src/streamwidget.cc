@@ -69,7 +69,6 @@ void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
 
     for (int i = 0; i < m.channels; i++) {
         ChannelWidget *cw = channelWidgets[i] = ChannelWidget::create();
-        cw->beepDevice = beepDevice;
         cw->channel = i;
         cw->can_decibel = can_decibel;
         cw->minimalStreamWidget = this;

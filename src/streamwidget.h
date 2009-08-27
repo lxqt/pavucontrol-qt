@@ -62,7 +62,6 @@ protected:
 
     Gtk::Menu contextMenu;
     Gtk::MenuItem terminate;
-
 };
 
 #endif

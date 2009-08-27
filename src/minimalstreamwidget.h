@@ -41,8 +41,6 @@ public:
     bool volumeMeterEnabled;
     void enableVolumeMeter();
     void updatePeak(double v);
-
-    Glib::ustring beepDevice;
 };
 
 #endif
