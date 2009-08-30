@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: git trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-17 03:51+0200\n"
-"PO-Revision-Date: 2009-04-05 00:06+0300\n"
+"POT-Creation-Date: 2009-08-30 10:50+0000\n"
+"PO-Revision-Date: 2009-08-30 19:16+0300\n"
 "Last-Translator: Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>\n"
 "Language-Team: Finnish <laatu@lokalisointi.org>\n"
 "MIME-Version: 1.0\n"
@@ -177,7 +177,7 @@ msgid "Server info callback failure"
 msgstr "Palvelintietojen takaisinkutsu epäonnistui"
 
 #: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to initialize stream_restore extension: %s"
 msgstr "stream_restore-laajennoksen alustus epäonnistui: %s"
 
@@ -251,15 +251,15 @@ msgstr "Äänenvoimakkuuden säädön palauteääni"
 
 #: ../src/channelwidget.cc:120
 msgid "<small>Silence</small>"
-msgstr ""
+msgstr "<small>Hiljaisuus</small>"
 
 #: ../src/channelwidget.cc:121
 msgid "<small>Max</small>"
-msgstr ""
+msgstr "<small>Maksimi</small>"
 
 #: ../src/channelwidget.cc:125
 msgid "<small><i>Base</i></small>"
-msgstr ""
+msgstr "<small><i>Perus</i></small>"
 
 #: ../src/mainwindow.cc:238
 msgid "Failed to read data from stream"
