@@ -204,7 +204,6 @@ void MainWindow::updateSink(const pa_sink_info &info) {
         w = sinkWidgets[info.index];
     else {
         sinkWidgets[info.index] = w = SinkWidget::create();
-        w->beepDevice = info.name;
         w->setChannelMap(info.channel_map, !!(info.flags & PA_SINK_DECIBEL_VOLUME));
         sinksVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
