@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.te\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
-"PO-Revision-Date: 2009-04-14 15:17+0530\n"
+"POT-Creation-Date: 2009-09-10 08:40+0000\n"
+"PO-Revision-Date: 2009-09-10 17:13+0530\n"
 "Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
 
@@ -37,9 +37,8 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Port:</b>"
-msgstr "<b>ప్రొఫైల్:</b>"
+msgstr "<b>పోర్టు:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Profile:</b>"
@@ -121,9 +120,8 @@ msgid "Card Name"
 msgstr "కార్డు నామము"
 
 #: ../src/pavucontrol.glade.h:27
-#, fuzzy
 msgid "Device"
-msgstr "ఇన్పుట్ పరికరములు (_I)"
+msgstr "పరికరము"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
@@ -135,7 +133,7 @@ msgstr "ఆడియోను నిశ్శబ్దముచేయి"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "Set as fallback"
-msgstr ""
+msgstr "ఫాల్‌బ్యాక్‌గా అమర్చుము"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
@@ -163,7 +161,7 @@ msgstr "రికార్డింగ్ (_R)"
 
 #: ../src/pavucontrol.glade.h:38
 msgid "direction"
-msgstr ""
+msgstr "దిశ"
 
 #: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
@@ -267,9 +265,8 @@ msgid "<small>Silence</small>"
 msgstr "<small>నిశ్శబ్దము</small>"
 
 #: ../src/channelwidget.cc:104
-#, fuzzy
 msgid "<small>Min</small>"
-msgstr "<small>గరిష్టము</small>"
+msgstr "<small>కనిష్టము</small>"
 
 #: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
@@ -305,16 +302,15 @@ msgstr "pa_ext_stream_restore_write() విఫలమైంది"
 
 #: ../src/sinkinputwidget.cc:35
 msgid "on"
-msgstr ""
+msgstr "ఆన్"
 
 #: ../src/sinkinputwidget.cc:38
-#, fuzzy
 msgid "Terminate Playback"
-msgstr "స్ట్రీమ్ ముగించుము (_T)"
+msgstr "ప్లేబ్యాక్ అంతంచేయి"
 
 #: ../src/sinkinputwidget.cc:61
 msgid "Unknown output"
-msgstr ""
+msgstr "తెలియని అవుట్పుట్"
 
 #: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
@@ -349,22 +345,20 @@ msgid "pa_context_set_default_sink() failed"
 msgstr "pa_context_set_default_sink() విఫలమైంది"
 
 #: ../src/sinkwidget.cc:114
-#, fuzzy
 msgid "pa_context_set_sink_port_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() విఫలమైంది"
+msgstr "pa_context_set_sink_port_by_index() విఫలమైంది"
 
 #: ../src/sourceoutputwidget.cc:35
 msgid "from"
-msgstr ""
+msgstr "నుండి"
 
 #: ../src/sourceoutputwidget.cc:38
-#, fuzzy
 msgid "Terminate Recording"
-msgstr "రికార్డింగ్ (_R)"
+msgstr "రికార్డింగ్ అంతంచేయి"
 
 #: ../src/sourceoutputwidget.cc:61
 msgid "Unknown input"
-msgstr ""
+msgstr "తెలియని యిన్పుట్"
 
 #: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
@@ -387,15 +381,6 @@ msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() విఫలమైంది"
 
 #: ../src/sourcewidget.cc:95
-#, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() విఫలమైంది"
+msgstr "pa_context_set_source_port_by_index() విఫలమైంది"
 
-#~ msgid "Open menu"
-#~ msgstr "మెనూను తెరువుము"
-
-#~ msgid "_Move Stream..."
-#~ msgstr "మూవీ స్ట్రీమ్... (_M)"
-
-#~ msgid "_Default"
-#~ msgstr "అప్రమేయము (_D)"
