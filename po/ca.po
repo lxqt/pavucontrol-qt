@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-17 03:51+0200\n"
+"POT-Creation-Date: 2009-09-10 04:15+0200\n"
 "PO-Revision-Date: 2009-03-19 21:04+0100\n"
 "Last-Translator: Agustí Grau <fletxa@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.net>\n"
@@ -33,11 +33,11 @@ msgstr ""
 msgid "Adjust the volume level"
 msgstr "Ajusta el volum"
 
-#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:472
+#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:476
 msgid "PulseAudio Volume Control"
 msgstr "Control del volum del PulseAudio"
 
-#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:30
+#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:32
 msgid "Volume Control"
 msgstr "Control del volum"
 
@@ -47,46 +47,51 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-msgid "<b>Profile:</b>"
+#, fuzzy
+msgid "<b>Port:</b>"
 msgstr "<b>_Perfil:</b>"
 
 #: ../src/pavucontrol.glade.h:4
+msgid "<b>Profile:</b>"
+msgstr "<b>_Perfil:</b>"
+
+#: ../src/pavucontrol.glade.h:5
 msgid "<b>S_how:</b>"
 msgstr "<b>_Mostra:</b>"
 
-#: ../src/pavucontrol.glade.h:5
+#: ../src/pavucontrol.glade.h:6
 msgid "<b>Sho_w:</b>"
 msgstr "<b>Mos_tra:</b>"
 
-#: ../src/pavucontrol.glade.h:6
+#: ../src/pavucontrol.glade.h:7
 msgid "<b>_Show:</b>"
 msgstr "<b>Mo_stra:</b>"
 
-#: ../src/pavucontrol.glade.h:7
+#: ../src/pavucontrol.glade.h:8
 msgid "<b>left-front</b>"
 msgstr "<b>esquerra-davant</b>"
 
-#: ../src/pavucontrol.glade.h:8
+#: ../src/pavucontrol.glade.h:9
 msgid "<i>No application is currently playing audio.</i>"
 msgstr "<i>Cap aplicació està reproduïnt àudio actualment</i>"
 
-#: ../src/pavucontrol.glade.h:9
+#: ../src/pavucontrol.glade.h:10
 msgid "<i>No application is currently recording audio.</i>"
 msgstr "<i>Cap aplicació està enregistrant àudio actualment.</i>"
 
-#: ../src/pavucontrol.glade.h:10
+#: ../src/pavucontrol.glade.h:11
 msgid "<i>No cards available for configuration</i>"
 msgstr "<i>No hi han targetes disponibles per a configurar</i>"
 
-#: ../src/pavucontrol.glade.h:11
+#: ../src/pavucontrol.glade.h:12
 msgid "<i>No input devices available</i>"
 msgstr "<i>No hi ha cap dispositiu d'entrada disponible</i>"
 
-#: ../src/pavucontrol.glade.h:12
+#: ../src/pavucontrol.glade.h:13
 msgid "<i>No output devices available</i>"
 msgstr "<i>No hi ha cap dispositiu de sortida disponible</i>"
 
-#: ../src/pavucontrol.glade.h:13
+#: ../src/pavucontrol.glade.h:14
 msgid ""
 "All Input Devices\n"
 "All Except Monitors\n"
@@ -100,7 +105,7 @@ msgstr ""
 "Dispositius d'entrada virtuals\n"
 "Monitors"
 
-#: ../src/pavucontrol.glade.h:18
+#: ../src/pavucontrol.glade.h:19
 msgid ""
 "All Output Devices\n"
 "Hardware Output Devices\n"
@@ -111,7 +116,7 @@ msgstr ""
 "Dispositius de sortida virtuals"
 
 #. Applications All streams
-#: ../src/pavucontrol.glade.h:22
+#: ../src/pavucontrol.glade.h:23
 msgid ""
 "All Streams\n"
 "Applications\n"
@@ -121,75 +126,84 @@ msgstr ""
 "Aplicacions\n"
 "Fluxes virtuals"
 
-#: ../src/pavucontrol.glade.h:25
+#: ../src/pavucontrol.glade.h:26
 msgid "Card Name"
 msgstr "Nom de la targeta"
 
-#: ../src/pavucontrol.glade.h:26
+#: ../src/pavucontrol.glade.h:27
+#, fuzzy
+msgid "Device"
+msgstr "D_ispositius d'entrada"
+
+#: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
 msgstr "Bloca els canals junts"
 
-#: ../src/pavucontrol.glade.h:27
+#: ../src/pavucontrol.glade.h:29
 msgid "Mute audio"
 msgstr "Silencia"
 
-#: ../src/pavucontrol.glade.h:28
-msgid "Open menu"
-msgstr "Obre el menú"
+#: ../src/pavucontrol.glade.h:30
+msgid "Set as fallback"
+msgstr ""
 
-#: ../src/pavucontrol.glade.h:29
+#: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
 msgstr "Títol del flux"
 
-#: ../src/pavucontrol.glade.h:31
+#: ../src/pavucontrol.glade.h:33
 msgid "_Configuration"
 msgstr "_Configuració"
 
-#: ../src/pavucontrol.glade.h:32
+#: ../src/pavucontrol.glade.h:34
 msgid "_Input Devices"
 msgstr "D_ispositius d'entrada"
 
-#: ../src/pavucontrol.glade.h:33
+#: ../src/pavucontrol.glade.h:35
 msgid "_Output Devices"
 msgstr "Dispositius de s_ortida"
 
-#: ../src/pavucontrol.glade.h:34
+#: ../src/pavucontrol.glade.h:36
 msgid "_Playback"
 msgstr "Re_producció"
 
-#: ../src/pavucontrol.glade.h:35
+#: ../src/pavucontrol.glade.h:37
 msgid "_Recording"
 msgstr "En_registrament"
 
-#: ../src/pavucontrol.cc:71
+#: ../src/pavucontrol.glade.h:38
+msgid "direction"
+msgstr ""
+
+#: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
 msgstr "Ha fallat la crida de retorn a la targeta"
 
-#: ../src/pavucontrol.cc:90
+#: ../src/pavucontrol.cc:92
 msgid "Sink callback failure"
 msgstr "Ha fallat la crida de retorn del conducte"
 
-#: ../src/pavucontrol.cc:109
+#: ../src/pavucontrol.cc:111
 msgid "Source callback failure"
 msgstr "Ha fallat la crida de retorn de l'origen"
 
-#: ../src/pavucontrol.cc:128
+#: ../src/pavucontrol.cc:130
 msgid "Sink input callback failure"
 msgstr "Ha fallat la crida de retorn del conducte d'entrada"
 
-#: ../src/pavucontrol.cc:147
+#: ../src/pavucontrol.cc:149
 msgid "Source output callback failure"
 msgstr "Ha fallat la crida de retorn de l'origen de la sortida"
 
-#: ../src/pavucontrol.cc:181
+#: ../src/pavucontrol.cc:183
 msgid "Client callback failure"
 msgstr "Ha fallat la crida de retorn del client"
 
-#: ../src/pavucontrol.cc:197
+#: ../src/pavucontrol.cc:199
 msgid "Server info callback failure"
 msgstr "Ha fallat la crida de retorn de la informació del servidor"
 
-#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
+#: ../src/pavucontrol.cc:217 ../src/pavucontrol.cc:430
 #, fuzzy, c-format
 msgid "Failed to initialize stream_restore extension: %s"
 msgstr "Ha fallat la inicialització de l'extensió stream_restore: %s"
@@ -258,102 +272,139 @@ msgstr "Ha fallat la connexió"
 msgid "pa_context_set_card_profile_by_index() failed"
 msgstr "Ha fallat pa_context_set_card_profile_by_index()"
 
-#: ../src/channelwidget.cc:99
-msgid "Volume Control Feedback Sound"
-msgstr "Control del volum de la realimentació del so"
-
-#: ../src/channelwidget.cc:120
+#: ../src/channelwidget.cc:104
 msgid "<small>Silence</small>"
 msgstr ""
 
-#: ../src/channelwidget.cc:121
+#: ../src/channelwidget.cc:104
+msgid "<small>Min</small>"
+msgstr ""
+
+#: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
 msgstr ""
 
-#: ../src/channelwidget.cc:125
+#: ../src/channelwidget.cc:109
 msgid "<small><i>Base</i></small>"
 msgstr ""
 
-#: ../src/mainwindow.cc:238
+#: ../src/mainwindow.cc:269
 msgid "Failed to read data from stream"
 msgstr "Ha fallat la lectura del fluxe"
 
-#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
+#: ../src/mainwindow.cc:304 ../src/mainwindow.cc:341
 msgid "Peak detect"
 msgstr "Detecta els pics"
 
-#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
+#: ../src/mainwindow.cc:305 ../src/mainwindow.cc:342
 msgid "Failed to create monitoring stream"
 msgstr "Ha fallat la creació del fluxe de monitorització"
 
-#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
+#: ../src/mainwindow.cc:313 ../src/mainwindow.cc:351
 msgid "Failed to connect monitoring stream"
 msgstr "Ha fallat la connexió al fluxe de monitorització"
 
-#: ../src/mainwindow.cc:566
+#: ../src/mainwindow.cc:610
 msgid "System Sounds"
 msgstr "Sons del sistema"
 
-#: ../src/rolewidget.cc:66
+#: ../src/rolewidget.cc:71
 msgid "pa_ext_stream_restore_write() failed"
 msgstr "Ha fallat pa_ext_stream_restore_write()"
 
-#: ../src/sinkinputwidget.cc:34 ../src/sourceoutputwidget.cc:34
-msgid "_Move Stream..."
-msgstr "_Mou el fluxe..."
+#: ../src/sinkinputwidget.cc:35
+msgid "on"
+msgstr ""
 
-#: ../src/sinkinputwidget.cc:35 ../src/sourceoutputwidget.cc:35
-msgid "_Terminate Stream"
+#: ../src/sinkinputwidget.cc:38
+#, fuzzy
+msgid "Terminate Playback"
 msgstr "Finali_tza el fluxe"
 
 #: ../src/sinkinputwidget.cc:61
+msgid "Unknown output"
+msgstr ""
+
+#: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
 msgstr "Ha fallat pa_context_set_sink_input_volume()"
 
-#: ../src/sinkinputwidget.cc:76
+#: ../src/sinkinputwidget.cc:87
 msgid "pa_context_set_sink_input_mute() failed"
 msgstr "Ha fallat pa_context_set_sink_input_mute()"
 
-#: ../src/sinkinputwidget.cc:110
+#: ../src/sinkinputwidget.cc:97
 msgid "pa_context_kill_sink_input() failed"
 msgstr "Ha fallat pa_context_kill_sink_input()"
 
-#: ../src/sinkinputwidget.cc:127
+#: ../src/sinkinputwidget.cc:133
 msgid "pa_context_move_sink_input_by_index() failed"
 msgstr "Ha fallat pa_context_move_sink_input_by_index()"
 
-#: ../src/sinkwidget.cc:52
+#: ../src/sinkwidget.cc:48
 msgid "pa_context_set_sink_volume_by_index() failed"
 msgstr "Ha fallat pa_context_set_sink_volume_by_index()"
 
-#: ../src/sinkwidget.cc:67
+#: ../src/sinkwidget.cc:63
+msgid "Volume Control Feedback Sound"
+msgstr "Control del volum de la realimentació del so"
+
+#: ../src/sinkwidget.cc:80
 msgid "pa_context_set_sink_mute_by_index() failed"
 msgstr "Ha fallat pa_context_set_sink_mute_by_index()"
 
-#: ../src/sinkwidget.cc:81
+#: ../src/sinkwidget.cc:94
 msgid "pa_context_set_default_sink() failed"
 msgstr "Ha fallat pa_context_set_default_sink()"
 
-#: ../src/sourceoutputwidget.cc:60
+#: ../src/sinkwidget.cc:114
+#, fuzzy
+msgid "pa_context_set_sink_port_by_index() failed"
+msgstr "Ha fallat pa_context_set_sink_mute_by_index()"
+
+#: ../src/sourceoutputwidget.cc:35
+msgid "from"
+msgstr ""
+
+#: ../src/sourceoutputwidget.cc:38
+#, fuzzy
+msgid "Terminate Recording"
+msgstr "En_registrament"
+
+#: ../src/sourceoutputwidget.cc:61
+msgid "Unknown input"
+msgstr ""
+
+#: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
 msgstr "Ha fallat pa_context_kill_source_output()"
 
-#: ../src/sourceoutputwidget.cc:101
+#: ../src/sourceoutputwidget.cc:108
 msgid "pa_context_move_source_output_by_index() failed"
 msgstr "Ha fallat pa_context_move_source_output_by_index()"
 
-#: ../src/sourcewidget.cc:31
-msgid "_Default"
-msgstr "Per _defecte"
-
-#: ../src/sourcewidget.cc:52
+#: ../src/sourcewidget.cc:44
 msgid "pa_context_set_source_volume_by_index() failed"
 msgstr "Ha fallat pa_context_set_source_volume_by_index()"
 
-#: ../src/sourcewidget.cc:67
+#: ../src/sourcewidget.cc:59
 msgid "pa_context_set_source_mute_by_index() failed"
 msgstr "Ha fallat pa_context_set_source_mute_by_index()"
 
-#: ../src/sourcewidget.cc:81
+#: ../src/sourcewidget.cc:73
 msgid "pa_context_set_default_source() failed"
 msgstr "Ha fallat pa_context_set_default_source()"
+
+#: ../src/sourcewidget.cc:95
+#, fuzzy
+msgid "pa_context_set_source_port_by_index() failed"
+msgstr "Ha fallat pa_context_set_source_mute_by_index()"
+
+#~ msgid "Open menu"
+#~ msgstr "Obre el menú"
+
+#~ msgid "_Move Stream..."
+#~ msgstr "_Mou el fluxe..."
+
+#~ msgid "_Default"
+#~ msgstr "Per _defecte"

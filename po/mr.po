@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.mr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-17 03:51+0200\n"
+"POT-Creation-Date: 2009-09-10 04:15+0200\n"
 "PO-Revision-Date: 2009-04-14 11:35+0530\n"
 "Last-Translator: Sandeep Shedmake <sandeep.shedmake@gmail.com>\n"
 "Language-Team: marathi\n"
@@ -21,11 +21,11 @@ msgstr ""
 msgid "Adjust the volume level"
 msgstr "ध्वनिमान स्तर सुस्थित करा"
 
-#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:472
+#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:476
 msgid "PulseAudio Volume Control"
 msgstr "PulseAudio आवाज नियंत्रण"
 
-#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:30
+#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:32
 msgid "Volume Control"
 msgstr "आवाज नियंत्रण"
 
@@ -35,46 +35,51 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-msgid "<b>Profile:</b>"
+#, fuzzy
+msgid "<b>Port:</b>"
 msgstr "<b>संक्षिप्त माहिती:</b>"
 
 #: ../src/pavucontrol.glade.h:4
+msgid "<b>Profile:</b>"
+msgstr "<b>संक्षिप्त माहिती:</b>"
+
+#: ../src/pavucontrol.glade.h:5
 msgid "<b>S_how:</b>"
 msgstr "<b>दाखवा (_h):</b>"
 
-#: ../src/pavucontrol.glade.h:5
+#: ../src/pavucontrol.glade.h:6
 msgid "<b>Sho_w:</b>"
 msgstr "<b>दाखवा (_w):</b>"
 
-#: ../src/pavucontrol.glade.h:6
+#: ../src/pavucontrol.glade.h:7
 msgid "<b>_Show:</b>"
 msgstr "<b>दाखवा (_S):</b>"
 
-#: ../src/pavucontrol.glade.h:7
+#: ../src/pavucontrol.glade.h:8
 msgid "<b>left-front</b>"
 msgstr "<b>डावे-समोरचे</b>"
 
-#: ../src/pavucontrol.glade.h:8
+#: ../src/pavucontrol.glade.h:9
 msgid "<i>No application is currently playing audio.</i>"
 msgstr "<i>वर्तमानक्षणी कुठलेही ऍप्लिकेशन ऑडिओ चालवत नाही.</i>"
 
-#: ../src/pavucontrol.glade.h:9
+#: ../src/pavucontrol.glade.h:10
 msgid "<i>No application is currently recording audio.</i>"
 msgstr "<i>वर्तमानक्षणी कुठलेही ऍप्लिकेशन ऑडिओ रेकॉर्ड करत नाही.</i>"
 
-#: ../src/pavucontrol.glade.h:10
+#: ../src/pavucontrol.glade.h:11
 msgid "<i>No cards available for configuration</i>"
 msgstr "<i>संयोजना करीता कार्ड उपलब्ध नाही</i>"
 
-#: ../src/pavucontrol.glade.h:11
+#: ../src/pavucontrol.glade.h:12
 msgid "<i>No input devices available</i>"
 msgstr "<i>इनपुट साधन उपलब्ध नाही</i>"
 
-#: ../src/pavucontrol.glade.h:12
+#: ../src/pavucontrol.glade.h:13
 msgid "<i>No output devices available</i>"
 msgstr "<i>आऊटपुट साधन उपलब्ध नाही</i>"
 
-#: ../src/pavucontrol.glade.h:13
+#: ../src/pavucontrol.glade.h:14
 msgid ""
 "All Input Devices\n"
 "All Except Monitors\n"
@@ -88,7 +93,7 @@ msgstr ""
 "आभासी इनपुट साधन\n"
 "मॉनीटर"
 
-#: ../src/pavucontrol.glade.h:18
+#: ../src/pavucontrol.glade.h:19
 msgid ""
 "All Output Devices\n"
 "Hardware Output Devices\n"
@@ -99,7 +104,7 @@ msgstr ""
 "आभासी आऊटपुट साधन"
 
 #. Applications All streams
-#: ../src/pavucontrol.glade.h:22
+#: ../src/pavucontrol.glade.h:23
 msgid ""
 "All Streams\n"
 "Applications\n"
@@ -109,75 +114,84 @@ msgstr ""
 "ऍप्लिकेशन\n"
 "आभासी स्ट्रीम"
 
-#: ../src/pavucontrol.glade.h:25
+#: ../src/pavucontrol.glade.h:26
 msgid "Card Name"
 msgstr "कार्ड नाव"
 
-#: ../src/pavucontrol.glade.h:26
+#: ../src/pavucontrol.glade.h:27
+#, fuzzy
+msgid "Device"
+msgstr "इनपुट साधन (_I)"
+
+#: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
 msgstr "मार्ग एकत्रपणे कुलूपबंद करा"
 
-#: ../src/pavucontrol.glade.h:27
+#: ../src/pavucontrol.glade.h:29
 msgid "Mute audio"
 msgstr "ऑडिओ मंद करा"
 
-#: ../src/pavucontrol.glade.h:28
-msgid "Open menu"
-msgstr "मेन्यू उघडा"
+#: ../src/pavucontrol.glade.h:30
+msgid "Set as fallback"
+msgstr ""
 
-#: ../src/pavucontrol.glade.h:29
+#: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
 msgstr "स्ट्रीम शिर्षक"
 
-#: ../src/pavucontrol.glade.h:31
+#: ../src/pavucontrol.glade.h:33
 msgid "_Configuration"
 msgstr "संयोजना (_C)"
 
-#: ../src/pavucontrol.glade.h:32
+#: ../src/pavucontrol.glade.h:34
 msgid "_Input Devices"
 msgstr "इनपुट साधन (_I)"
 
-#: ../src/pavucontrol.glade.h:33
+#: ../src/pavucontrol.glade.h:35
 msgid "_Output Devices"
 msgstr "आऊटपुट साधन (_O)"
 
-#: ../src/pavucontrol.glade.h:34
+#: ../src/pavucontrol.glade.h:36
 msgid "_Playback"
 msgstr "प्लेबॅक (_P)"
 
-#: ../src/pavucontrol.glade.h:35
+#: ../src/pavucontrol.glade.h:37
 msgid "_Recording"
 msgstr "रेकॉर्डींग (_R)"
 
-#: ../src/pavucontrol.cc:71
+#: ../src/pavucontrol.glade.h:38
+msgid "direction"
+msgstr ""
+
+#: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
 msgstr "कार्ड कॉलबॅक अपयशी"
 
-#: ../src/pavucontrol.cc:90
+#: ../src/pavucontrol.cc:92
 msgid "Sink callback failure"
 msgstr "सिंक कॉलबॅक अपयशी"
 
-#: ../src/pavucontrol.cc:109
+#: ../src/pavucontrol.cc:111
 msgid "Source callback failure"
 msgstr "स्त्रोत कॉलबॅक अपयशी"
 
-#: ../src/pavucontrol.cc:128
+#: ../src/pavucontrol.cc:130
 msgid "Sink input callback failure"
 msgstr "सिंक इनपुट कॉलबॅक अपयशी"
 
-#: ../src/pavucontrol.cc:147
+#: ../src/pavucontrol.cc:149
 msgid "Source output callback failure"
 msgstr "स्त्रोत आऊटपुट कॉलबॅक अपयशी"
 
-#: ../src/pavucontrol.cc:181
+#: ../src/pavucontrol.cc:183
 msgid "Client callback failure"
 msgstr "क्लाऐंट कॉलबॅक अपयशी"
 
-#: ../src/pavucontrol.cc:197
+#: ../src/pavucontrol.cc:199
 msgid "Server info callback failure"
 msgstr "सर्वर माहिती कॉलबॅक अपयशी"
 
-#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
+#: ../src/pavucontrol.cc:217 ../src/pavucontrol.cc:430
 #, c-format
 msgid "Failed to initialize stream_restore extension: %s"
 msgstr "stream_restore वाढ प्रारंभ करण्यास अपयशी: %s"
@@ -246,102 +260,140 @@ msgstr "जुळवणी अपयशी"
 msgid "pa_context_set_card_profile_by_index() failed"
 msgstr "pa_context_set_card_profile_by_index() अपयशी"
 
-#: ../src/channelwidget.cc:99
-msgid "Volume Control Feedback Sound"
-msgstr "ध्वनिमान नियंत्रण प्रतिसाद आवाज"
-
-#: ../src/channelwidget.cc:120
+#: ../src/channelwidget.cc:104
 msgid "<small>Silence</small>"
 msgstr "<small>गप्प</small>"
 
-#: ../src/channelwidget.cc:121
+#: ../src/channelwidget.cc:104
+#, fuzzy
+msgid "<small>Min</small>"
+msgstr "<small>कमाल</small>"
+
+#: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
 msgstr "<small>कमाल</small>"
 
-#: ../src/channelwidget.cc:125
+#: ../src/channelwidget.cc:109
 msgid "<small><i>Base</i></small>"
 msgstr "<small><i>बेस</i></small>"
 
-#: ../src/mainwindow.cc:238
+#: ../src/mainwindow.cc:269
 msgid "Failed to read data from stream"
 msgstr "स्ट्रीम पासून डेटा वाचण्यास अपयशी"
 
-#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
+#: ../src/mainwindow.cc:304 ../src/mainwindow.cc:341
 msgid "Peak detect"
 msgstr "उच्च स्तर आढळले"
 
-#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
+#: ../src/mainwindow.cc:305 ../src/mainwindow.cc:342
 msgid "Failed to create monitoring stream"
 msgstr "नियंत्रण स्ट्रीम बनवण्यास अपयशी"
 
-#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
+#: ../src/mainwindow.cc:313 ../src/mainwindow.cc:351
 msgid "Failed to connect monitoring stream"
 msgstr "नियंत्रण स्ट्रीम जुळवण्यास अपयशी"
 
-#: ../src/mainwindow.cc:566
+#: ../src/mainwindow.cc:610
 msgid "System Sounds"
 msgstr "प्रणाली आवाज"
 
-#: ../src/rolewidget.cc:66
+#: ../src/rolewidget.cc:71
 msgid "pa_ext_stream_restore_write() failed"
 msgstr "pa_ext_stream_restore_write() अपयशी"
 
-#: ../src/sinkinputwidget.cc:34 ../src/sourceoutputwidget.cc:34
-msgid "_Move Stream..."
-msgstr "स्ट्रीम हलवा (_M)..."
+#: ../src/sinkinputwidget.cc:35
+msgid "on"
+msgstr ""
 
-#: ../src/sinkinputwidget.cc:35 ../src/sourceoutputwidget.cc:35
-msgid "_Terminate Stream"
+#: ../src/sinkinputwidget.cc:38
+#, fuzzy
+msgid "Terminate Playback"
 msgstr "स्ट्रीम नष्ट करा (_T)"
 
 #: ../src/sinkinputwidget.cc:61
+msgid "Unknown output"
+msgstr ""
+
+#: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
 msgstr "pa_context_set_sink_input_volume() अपयशी"
 
-#: ../src/sinkinputwidget.cc:76
+#: ../src/sinkinputwidget.cc:87
 msgid "pa_context_set_sink_input_mute() failed"
 msgstr "pa_context_set_sink_input_mute() अपयशी"
 
-#: ../src/sinkinputwidget.cc:110
+#: ../src/sinkinputwidget.cc:97
 msgid "pa_context_kill_sink_input() failed"
 msgstr "pa_context_kill_sink_input() अपयशी"
 
-#: ../src/sinkinputwidget.cc:127
+#: ../src/sinkinputwidget.cc:133
 msgid "pa_context_move_sink_input_by_index() failed"
 msgstr "pa_context_move_sink_input_by_index() अपयशी"
 
-#: ../src/sinkwidget.cc:52
+#: ../src/sinkwidget.cc:48
 msgid "pa_context_set_sink_volume_by_index() failed"
 msgstr "pa_context_set_sink_volume_by_index() अपयशी"
 
-#: ../src/sinkwidget.cc:67
+#: ../src/sinkwidget.cc:63
+msgid "Volume Control Feedback Sound"
+msgstr "ध्वनिमान नियंत्रण प्रतिसाद आवाज"
+
+#: ../src/sinkwidget.cc:80
 msgid "pa_context_set_sink_mute_by_index() failed"
 msgstr "pa_context_set_sink_mute_by_index() अपयशी"
 
-#: ../src/sinkwidget.cc:81
+#: ../src/sinkwidget.cc:94
 msgid "pa_context_set_default_sink() failed"
 msgstr "pa_context_set_default_sink() अपयशी"
 
-#: ../src/sourceoutputwidget.cc:60
+#: ../src/sinkwidget.cc:114
+#, fuzzy
+msgid "pa_context_set_sink_port_by_index() failed"
+msgstr "pa_context_set_sink_mute_by_index() अपयशी"
+
+#: ../src/sourceoutputwidget.cc:35
+msgid "from"
+msgstr ""
+
+#: ../src/sourceoutputwidget.cc:38
+#, fuzzy
+msgid "Terminate Recording"
+msgstr "रेकॉर्डींग (_R)"
+
+#: ../src/sourceoutputwidget.cc:61
+msgid "Unknown input"
+msgstr ""
+
+#: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
 msgstr "pa_context_kill_source_output() अपयशी"
 
-#: ../src/sourceoutputwidget.cc:101
+#: ../src/sourceoutputwidget.cc:108
 msgid "pa_context_move_source_output_by_index() failed"
 msgstr "pa_context_move_source_output_by_index() अपयशी"
 
-#: ../src/sourcewidget.cc:31
-msgid "_Default"
-msgstr "मुलभूत (_D)"
-
-#: ../src/sourcewidget.cc:52
+#: ../src/sourcewidget.cc:44
 msgid "pa_context_set_source_volume_by_index() failed"
 msgstr "pa_context_set_source_volume_by_index() अपयशी"
 
-#: ../src/sourcewidget.cc:67
+#: ../src/sourcewidget.cc:59
 msgid "pa_context_set_source_mute_by_index() failed"
 msgstr "pa_context_set_source_mute_by_index() अपयशी"
 
-#: ../src/sourcewidget.cc:81
+#: ../src/sourcewidget.cc:73
 msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() अपयशी"
+
+#: ../src/sourcewidget.cc:95
+#, fuzzy
+msgid "pa_context_set_source_port_by_index() failed"
+msgstr "pa_context_set_source_mute_by_index() अपयशी"
+
+#~ msgid "Open menu"
+#~ msgstr "मेन्यू उघडा"
+
+#~ msgid "_Move Stream..."
+#~ msgstr "स्ट्रीम हलवा (_M)..."
+
+#~ msgid "_Default"
+#~ msgstr "मुलभूत (_D)"

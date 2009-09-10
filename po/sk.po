@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-17 03:51+0200\n"
+"POT-Creation-Date: 2009-09-10 04:15+0200\n"
 "PO-Revision-Date: 2009-05-04 14:07+0200\n"
 "Last-Translator: Ondrej Šulek <feonsu@gmail.com>\n"
 "Language-Team: Slovak <fedora-trans-sk@redhat.com>\n"
@@ -20,11 +20,11 @@ msgstr ""
 msgid "Adjust the volume level"
 msgstr "Upraviť úroveň hlasitosti"
 
-#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:472
+#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:476
 msgid "PulseAudio Volume Control"
 msgstr "Ovládanie hlasitosti PulseAudio"
 
-#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:30
+#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:32
 msgid "Volume Control"
 msgstr "Ovládanie hlasitosti"
 
@@ -34,46 +34,51 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-msgid "<b>Profile:</b>"
+#, fuzzy
+msgid "<b>Port:</b>"
 msgstr "<b>Profil:</b>"
 
 #: ../src/pavucontrol.glade.h:4
+msgid "<b>Profile:</b>"
+msgstr "<b>Profil:</b>"
+
+#: ../src/pavucontrol.glade.h:5
 msgid "<b>S_how:</b>"
 msgstr "<b>_Zobraziť:</b>"
 
-#: ../src/pavucontrol.glade.h:5
+#: ../src/pavucontrol.glade.h:6
 msgid "<b>Sho_w:</b>"
 msgstr "<b>_Zobraziť:</b>"
 
-#: ../src/pavucontrol.glade.h:6
+#: ../src/pavucontrol.glade.h:7
 msgid "<b>_Show:</b>"
 msgstr "<b>_Zobraziť:</b>"
 
-#: ../src/pavucontrol.glade.h:7
+#: ../src/pavucontrol.glade.h:8
 msgid "<b>left-front</b>"
 msgstr "<b>ľavý-predný</b>"
 
-#: ../src/pavucontrol.glade.h:8
+#: ../src/pavucontrol.glade.h:9
 msgid "<i>No application is currently playing audio.</i>"
 msgstr "<i>Žiadna aplikácia momentálne neprehráva zvuk.</i>"
 
-#: ../src/pavucontrol.glade.h:9
+#: ../src/pavucontrol.glade.h:10
 msgid "<i>No application is currently recording audio.</i>"
 msgstr "<i>Žiadna aplikácia momentálne nenahráva zvuk.</i>"
 
-#: ../src/pavucontrol.glade.h:10
+#: ../src/pavucontrol.glade.h:11
 msgid "<i>No cards available for configuration</i>"
 msgstr "<i>Žiadne karty nie sú dostupné na konfiguráciu</i>"
 
-#: ../src/pavucontrol.glade.h:11
+#: ../src/pavucontrol.glade.h:12
 msgid "<i>No input devices available</i>"
 msgstr "<i>Nie sú dostupné žiadne vstupné zariadenia.</i>"
 
-#: ../src/pavucontrol.glade.h:12
+#: ../src/pavucontrol.glade.h:13
 msgid "<i>No output devices available</i>"
 msgstr "<i>Nie sú dostupné žiadne výstupné zariadenia.</i>"
 
-#: ../src/pavucontrol.glade.h:13
+#: ../src/pavucontrol.glade.h:14
 msgid ""
 "All Input Devices\n"
 "All Except Monitors\n"
@@ -87,7 +92,7 @@ msgstr ""
 "Virtuálne vstupné zariadenia\n"
 "Monitory"
 
-#: ../src/pavucontrol.glade.h:18
+#: ../src/pavucontrol.glade.h:19
 msgid ""
 "All Output Devices\n"
 "Hardware Output Devices\n"
@@ -98,7 +103,7 @@ msgstr ""
 "Virtuálne výstupné zariadenia"
 
 #. Applications All streams
-#: ../src/pavucontrol.glade.h:22
+#: ../src/pavucontrol.glade.h:23
 msgid ""
 "All Streams\n"
 "Applications\n"
@@ -108,75 +113,84 @@ msgstr ""
 "Aplikácie\n"
 "Virtuálne prúdy"
 
-#: ../src/pavucontrol.glade.h:25
+#: ../src/pavucontrol.glade.h:26
 msgid "Card Name"
 msgstr "Názov karty"
 
-#: ../src/pavucontrol.glade.h:26
+#: ../src/pavucontrol.glade.h:27
+#, fuzzy
+msgid "Device"
+msgstr "Vstupné zar_iadenia"
+
+#: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
 msgstr "Zamknúť kanály dohromady"
 
-#: ../src/pavucontrol.glade.h:27
+#: ../src/pavucontrol.glade.h:29
 msgid "Mute audio"
 msgstr "Stlmiť zvuk"
 
-#: ../src/pavucontrol.glade.h:28
-msgid "Open menu"
-msgstr "Otvoriť menu"
+#: ../src/pavucontrol.glade.h:30
+msgid "Set as fallback"
+msgstr ""
 
-#: ../src/pavucontrol.glade.h:29
+#: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
 msgstr "Názov prúdu"
 
-#: ../src/pavucontrol.glade.h:31
+#: ../src/pavucontrol.glade.h:33
 msgid "_Configuration"
 msgstr "_Nastavenie"
 
-#: ../src/pavucontrol.glade.h:32
+#: ../src/pavucontrol.glade.h:34
 msgid "_Input Devices"
 msgstr "Vstupné zar_iadenia"
 
-#: ../src/pavucontrol.glade.h:33
+#: ../src/pavucontrol.glade.h:35
 msgid "_Output Devices"
 msgstr "_Výstupné zariadenia"
 
-#: ../src/pavucontrol.glade.h:34
+#: ../src/pavucontrol.glade.h:36
 msgid "_Playback"
 msgstr "_Prehrávanie"
 
-#: ../src/pavucontrol.glade.h:35
+#: ../src/pavucontrol.glade.h:37
 msgid "_Recording"
 msgstr "_Nahrávanie"
 
-#: ../src/pavucontrol.cc:71
+#: ../src/pavucontrol.glade.h:38
+msgid "direction"
+msgstr ""
+
+#: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
 msgstr "Spätné volanie karty zlyhalo"
 
-#: ../src/pavucontrol.cc:90
+#: ../src/pavucontrol.cc:92
 msgid "Sink callback failure"
 msgstr "Cieľové spätné volanie zlyhalo"
 
-#: ../src/pavucontrol.cc:109
+#: ../src/pavucontrol.cc:111
 msgid "Source callback failure"
 msgstr "Zdrojové spätné volanie zlyhalo"
 
-#: ../src/pavucontrol.cc:128
+#: ../src/pavucontrol.cc:130
 msgid "Sink input callback failure"
 msgstr "Cieľové vstupné spätné volanie zlyhalo"
 
-#: ../src/pavucontrol.cc:147
+#: ../src/pavucontrol.cc:149
 msgid "Source output callback failure"
 msgstr "Zdrojové výstupné spätné volanie zlyhalo"
 
-#: ../src/pavucontrol.cc:181
+#: ../src/pavucontrol.cc:183
 msgid "Client callback failure"
 msgstr "Klientské spätné volanie zlyhalo"
 
-#: ../src/pavucontrol.cc:197
+#: ../src/pavucontrol.cc:199
 msgid "Server info callback failure"
 msgstr "Server info spätné volanie zlyhalo"
 
-#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
+#: ../src/pavucontrol.cc:217 ../src/pavucontrol.cc:430
 #, c-format
 msgid "Failed to initialize stream_restore extension: %s"
 msgstr "Nepodarilo sa inicializovať stream_restore rozšírenie: %s"
@@ -245,102 +259,140 @@ msgstr "Spojenie zlyhalo"
 msgid "pa_context_set_card_profile_by_index() failed"
 msgstr "pa_context_set_card_profile_by_index() zlyhal"
 
-#: ../src/channelwidget.cc:99
-msgid "Volume Control Feedback Sound"
-msgstr "Ovládanie hlasitosti Feedback zvuku"
-
-#: ../src/channelwidget.cc:120
+#: ../src/channelwidget.cc:104
 msgid "<small>Silence</small>"
 msgstr "<small>Ticho</small>"
 
-#: ../src/channelwidget.cc:121
+#: ../src/channelwidget.cc:104
+#, fuzzy
+msgid "<small>Min</small>"
+msgstr "<small>Maximálne</small>"
+
+#: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
 msgstr "<small>Maximálne</small>"
 
-#: ../src/channelwidget.cc:125
+#: ../src/channelwidget.cc:109
 msgid "<small><i>Base</i></small>"
 msgstr "<small><i>Základné</i></small>"
 
-#: ../src/mainwindow.cc:238
+#: ../src/mainwindow.cc:269
 msgid "Failed to read data from stream"
 msgstr "Nepodarilo sa prečítať dáta z prúdu"
 
-#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
+#: ../src/mainwindow.cc:304 ../src/mainwindow.cc:341
 msgid "Peak detect"
 msgstr "Detekcia vrcholov"
 
-#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
+#: ../src/mainwindow.cc:305 ../src/mainwindow.cc:342
 msgid "Failed to create monitoring stream"
 msgstr "Nepodarilo sa vytvoriť monitorovací prúd"
 
-#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
+#: ../src/mainwindow.cc:313 ../src/mainwindow.cc:351
 msgid "Failed to connect monitoring stream"
 msgstr "Nepodarilo sa pripojiť monitorovací prúd"
 
-#: ../src/mainwindow.cc:566
+#: ../src/mainwindow.cc:610
 msgid "System Sounds"
 msgstr "Systémové zvuky"
 
-#: ../src/rolewidget.cc:66
+#: ../src/rolewidget.cc:71
 msgid "pa_ext_stream_restore_write() failed"
 msgstr "pa_ext_stream_restore_write() zlyhal"
 
-#: ../src/sinkinputwidget.cc:34 ../src/sourceoutputwidget.cc:34
-msgid "_Move Stream..."
-msgstr "_Presunúť prúd..."
+#: ../src/sinkinputwidget.cc:35
+msgid "on"
+msgstr ""
 
-#: ../src/sinkinputwidget.cc:35 ../src/sourceoutputwidget.cc:35
-msgid "_Terminate Stream"
+#: ../src/sinkinputwidget.cc:38
+#, fuzzy
+msgid "Terminate Playback"
 msgstr "_Ukončiť prúd"
 
 #: ../src/sinkinputwidget.cc:61
+msgid "Unknown output"
+msgstr ""
+
+#: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
 msgstr "pa_context_set_sink_input_volume() zlyhal"
 
-#: ../src/sinkinputwidget.cc:76
+#: ../src/sinkinputwidget.cc:87
 msgid "pa_context_set_sink_input_mute() failed"
 msgstr "pa_context_set_sink_input_mute() zlyhal"
 
-#: ../src/sinkinputwidget.cc:110
+#: ../src/sinkinputwidget.cc:97
 msgid "pa_context_kill_sink_input() failed"
 msgstr "pa_context_kill_sink_input() zlyhal"
 
-#: ../src/sinkinputwidget.cc:127
+#: ../src/sinkinputwidget.cc:133
 msgid "pa_context_move_sink_input_by_index() failed"
 msgstr "pa_context_move_sink_input_by_index() zlyhal"
 
-#: ../src/sinkwidget.cc:52
+#: ../src/sinkwidget.cc:48
 msgid "pa_context_set_sink_volume_by_index() failed"
 msgstr "pa_context_set_sink_volume_by_index() zlyhal"
 
-#: ../src/sinkwidget.cc:67
+#: ../src/sinkwidget.cc:63
+msgid "Volume Control Feedback Sound"
+msgstr "Ovládanie hlasitosti Feedback zvuku"
+
+#: ../src/sinkwidget.cc:80
 msgid "pa_context_set_sink_mute_by_index() failed"
 msgstr "pa_context_set_sink_mute_by_index() zlyhal"
 
-#: ../src/sinkwidget.cc:81
+#: ../src/sinkwidget.cc:94
 msgid "pa_context_set_default_sink() failed"
 msgstr "pa_context_set_default_sink() zlyhal"
 
-#: ../src/sourceoutputwidget.cc:60
+#: ../src/sinkwidget.cc:114
+#, fuzzy
+msgid "pa_context_set_sink_port_by_index() failed"
+msgstr "pa_context_set_sink_mute_by_index() zlyhal"
+
+#: ../src/sourceoutputwidget.cc:35
+msgid "from"
+msgstr ""
+
+#: ../src/sourceoutputwidget.cc:38
+#, fuzzy
+msgid "Terminate Recording"
+msgstr "_Nahrávanie"
+
+#: ../src/sourceoutputwidget.cc:61
+msgid "Unknown input"
+msgstr ""
+
+#: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
 msgstr "pa_context_kill_source_output() zlyhal"
 
-#: ../src/sourceoutputwidget.cc:101
+#: ../src/sourceoutputwidget.cc:108
 msgid "pa_context_move_source_output_by_index() failed"
 msgstr "pa_context_move_source_output_by_index() zlyhal"
 
-#: ../src/sourcewidget.cc:31
-msgid "_Default"
-msgstr "Pre_dvolené"
-
-#: ../src/sourcewidget.cc:52
+#: ../src/sourcewidget.cc:44
 msgid "pa_context_set_source_volume_by_index() failed"
 msgstr "pa_context_set_source_volume_by_index() zlyhal"
 
-#: ../src/sourcewidget.cc:67
+#: ../src/sourcewidget.cc:59
 msgid "pa_context_set_source_mute_by_index() failed"
 msgstr "pa_context_set_source_mute_by_index() zlyhal"
 
-#: ../src/sourcewidget.cc:81
+#: ../src/sourcewidget.cc:73
 msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() zlyhal"
+
+#: ../src/sourcewidget.cc:95
+#, fuzzy
+msgid "pa_context_set_source_port_by_index() failed"
+msgstr "pa_context_set_source_mute_by_index() zlyhal"
+
+#~ msgid "Open menu"
+#~ msgstr "Otvoriť menu"
+
+#~ msgid "_Move Stream..."
+#~ msgstr "_Presunúť prúd..."
+
+#~ msgid "_Default"
+#~ msgstr "Pre_dvolené"
