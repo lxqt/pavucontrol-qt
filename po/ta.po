@@ -1,14 +1,14 @@
-# translation of pavucontrol.master-tx.pavucontrol.po to Tamil
+# translation of pavucontrol.master-tx.ta.po to Tamil
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # I. Felix <ifelix@redhat.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: pavucontrol.master-tx.pavucontrol\n"
+"Project-Id-Version: pavucontrol.master-tx.ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-17 03:51+0200\n"
-"PO-Revision-Date: 2009-04-07 15:42+0530\n"
+"POT-Creation-Date: 2009-08-31 08:48+0000\n"
+"PO-Revision-Date: 2009-08-31 22:50+0530\n"
 "Last-Translator: I. Felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\\n\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -181,7 +182,7 @@ msgid "Server info callback failure"
 msgstr "சேவையக தகவலை மறுஅழைப்பதில் தோல்வி"
 
 #: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to initialize stream_restore extension: %s"
 msgstr "stream_restore விரிவாக்கத்தை துவக்க முடியவில்லை: %s"
 
@@ -255,15 +256,15 @@ msgstr "ஒலியளவு கட்டுப்பாடு பின்ன�
 
 #: ../src/channelwidget.cc:120
 msgid "<small>Silence</small>"
-msgstr ""
+msgstr "<small>அமைதி</small>"
 
 #: ../src/channelwidget.cc:121
 msgid "<small>Max</small>"
-msgstr ""
+msgstr "<small>அதிக</small>"
 
 #: ../src/channelwidget.cc:125
 msgid "<small><i>Base</i></small>"
-msgstr ""
+msgstr "<small><i>அடிப்படை</i></small>"
 
 #: ../src/mainwindow.cc:238
 msgid "Failed to read data from stream"
@@ -348,3 +349,4 @@ msgstr "pa_context_set_source_mute_by_index() தோல்வியடைந்�
 #: ../src/sourcewidget.cc:81
 msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() தோல்வியடைந்தது"
+

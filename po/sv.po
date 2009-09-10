@@ -1,14 +1,14 @@
 # Swedish translation for pavucontrol.
-# Copyright (C) 2008 Free Software Foundation, Inc.
+# Copyright (C) 2008, 2009 Free Software Foundation, Inc.
 # This file is distributed under the same license as the pavucontrol package.
-# Daniel Nylander <po@danielnylander.se>, 2008.
+# Daniel Nylander <po@danielnylander.se>, 2008, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-17 03:51+0200\n"
-"PO-Revision-Date: 2008-09-05 18:07+0100\n"
+"POT-Creation-Date: 2009-07-27 15:29+0000\n"
+"PO-Revision-Date: 2009-07-28 00:23+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -19,11 +19,13 @@ msgstr ""
 msgid "Adjust the volume level"
 msgstr "Justera volymnivån"
 
-#: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:472
+#: ../src/pavucontrol.desktop.in.h:2
+#: ../src/pavucontrol.cc:472
 msgid "PulseAudio Volume Control"
 msgstr "Volymkontroll för PulseAudio"
 
-#: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:30
+#: ../src/pavucontrol.desktop.in.h:3
+#: ../src/pavucontrol.glade.h:30
 msgid "Volume Control"
 msgstr "Volymkontroll"
 
@@ -33,9 +35,8 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Profile:</b>"
-msgstr "<b>V_isa:</b>"
+msgstr "<b>Profil:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>S_how:</b>"
@@ -63,7 +64,7 @@ msgstr "<i>Inget program spelar för närvarande inte in något ljud.</i>"
 
 #: ../src/pavucontrol.glade.h:10
 msgid "<i>No cards available for configuration</i>"
-msgstr ""
+msgstr "<i>Inga kort tillgängliga för konfiguration</i>"
 
 #: ../src/pavucontrol.glade.h:11
 msgid "<i>No input devices available</i>"
@@ -110,7 +111,7 @@ msgstr ""
 
 #: ../src/pavucontrol.glade.h:25
 msgid "Card Name"
-msgstr ""
+msgstr "Kortets namn"
 
 #: ../src/pavucontrol.glade.h:26
 msgid "Lock channels together"
@@ -130,7 +131,7 @@ msgstr "Strömtitel"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "_Configuration"
-msgstr ""
+msgstr "_Konfiguration"
 
 #: ../src/pavucontrol.glade.h:32
 msgid "_Input Devices"
@@ -142,16 +143,15 @@ msgstr "_Utgångsenheter"
 
 #: ../src/pavucontrol.glade.h:34
 msgid "_Playback"
-msgstr "_Uppspelning"
+msgstr "U_ppspelning"
 
 #: ../src/pavucontrol.glade.h:35
 msgid "_Recording"
-msgstr "_Inspelning"
+msgstr "I_nspelning"
 
 #: ../src/pavucontrol.cc:71
-#, fuzzy
 msgid "Card callback failure"
-msgstr "Fel vid källåterkoppling"
+msgstr "Kortåterkoppling misslyckades"
 
 #: ../src/pavucontrol.cc:90
 msgid "Sink callback failure"
@@ -177,10 +177,11 @@ msgstr "Fel vid klientåterkoppling"
 msgid "Server info callback failure"
 msgstr "Fel vid serverinformationsåterkoppling"
 
-#: ../src/pavucontrol.cc:215 ../src/pavucontrol.cc:430
-#, fuzzy, c-format
+#: ../src/pavucontrol.cc:215
+#: ../src/pavucontrol.cc:430
+#, c-format
 msgid "Failed to initialize stream_restore extension: %s"
-msgstr "Misslyckades med att initiera stream_restore-tillägg: %s"
+msgstr "Misslyckades med att initiera tillägget stream_restore: %s"
 
 #: ../src/pavucontrol.cc:235
 msgid "pa_ext_stream_restore_read() failed"
@@ -194,7 +195,8 @@ msgstr "pa_context_get_sink_info_by_index() misslyckades"
 msgid "pa_context_get_source_info_by_index() failed"
 msgstr "pa_context_get_source_info_by_index() misslyckades"
 
-#: ../src/pavucontrol.cc:278 ../src/pavucontrol.cc:291
+#: ../src/pavucontrol.cc:278
+#: ../src/pavucontrol.cc:291
 msgid "pa_context_get_sink_input_info() failed"
 msgstr "pa_context_get_sink_input_info() misslyckades"
 
@@ -202,14 +204,14 @@ msgstr "pa_context_get_sink_input_info() misslyckades"
 msgid "pa_context_get_client_info() failed"
 msgstr "pa_context_get_client_info() misslyckades"
 
-#: ../src/pavucontrol.cc:314 ../src/pavucontrol.cc:371
+#: ../src/pavucontrol.cc:314
+#: ../src/pavucontrol.cc:371
 msgid "pa_context_get_server_info() failed"
 msgstr "pa_context_get_server_info() misslyckades"
 
 #: ../src/pavucontrol.cc:327
-#, fuzzy
 msgid "pa_context_get_card_info_by_index() failed"
-msgstr "pa_context_get_source_info_by_index() misslyckades"
+msgstr "pa_context_get_card_info_by_index() misslyckades"
 
 #: ../src/pavucontrol.cc:362
 msgid "pa_context_subscribe() failed"
@@ -220,9 +222,8 @@ msgid "pa_context_client_info_list() failed"
 msgstr "pa_context_client_info_list() misslyckades"
 
 #: ../src/pavucontrol.cc:385
-#, fuzzy
 msgid "pa_context_get_card_info_list() failed"
-msgstr "pa_context_get_source_info_list() misslyckades"
+msgstr "pa_context_get_card_info_list() misslyckades"
 
 #: ../src/pavucontrol.cc:392
 msgid "pa_context_get_sink_info_list() failed"
@@ -245,9 +246,8 @@ msgid "Connection failed"
 msgstr "Anslutning misslyckades"
 
 #: ../src/cardwidget.cc:87
-#, fuzzy
 msgid "pa_context_set_card_profile_by_index() failed"
-msgstr "pa_context_get_source_info_by_index() misslyckades"
+msgstr "pa_context_set_card_profile_by_index() misslyckades"
 
 #: ../src/channelwidget.cc:99
 msgid "Volume Control Feedback Sound"
@@ -255,29 +255,32 @@ msgstr "Återkopplingsljud för volymkontroll"
 
 #: ../src/channelwidget.cc:120
 msgid "<small>Silence</small>"
-msgstr ""
+msgstr "<small>Tystnad</small>"
 
 #: ../src/channelwidget.cc:121
 msgid "<small>Max</small>"
-msgstr ""
+msgstr "<small>Max</small>"
 
 #: ../src/channelwidget.cc:125
 msgid "<small><i>Base</i></small>"
-msgstr ""
+msgstr "<small><i>Bas</i></small>"
 
 #: ../src/mainwindow.cc:238
 msgid "Failed to read data from stream"
 msgstr "Misslyckades med att läsa data från ström"
 
-#: ../src/mainwindow.cc:273 ../src/mainwindow.cc:310
+#: ../src/mainwindow.cc:273
+#: ../src/mainwindow.cc:310
 msgid "Peak detect"
 msgstr "Topp upptäcktes"
 
-#: ../src/mainwindow.cc:274 ../src/mainwindow.cc:311
+#: ../src/mainwindow.cc:274
+#: ../src/mainwindow.cc:311
 msgid "Failed to create monitoring stream"
 msgstr "Misslyckades med att skapa övervakningsström"
 
-#: ../src/mainwindow.cc:282 ../src/mainwindow.cc:320
+#: ../src/mainwindow.cc:282
+#: ../src/mainwindow.cc:320
 msgid "Failed to connect monitoring stream"
 msgstr "Misslyckades med att ansluta övervakningsström"
 
@@ -289,11 +292,13 @@ msgstr "Systemljud"
 msgid "pa_ext_stream_restore_write() failed"
 msgstr "pa_ext_stream_restore_write() misslyckades"
 
-#: ../src/sinkinputwidget.cc:34 ../src/sourceoutputwidget.cc:34
+#: ../src/sinkinputwidget.cc:34
+#: ../src/sourceoutputwidget.cc:34
 msgid "_Move Stream..."
 msgstr "_Flytta ström..."
 
-#: ../src/sinkinputwidget.cc:35 ../src/sourceoutputwidget.cc:35
+#: ../src/sinkinputwidget.cc:35
+#: ../src/sourceoutputwidget.cc:35
 msgid "_Terminate Stream"
 msgstr "_Terminera ström"
 
@@ -348,3 +353,4 @@ msgstr "pa_context_set_source_mute_by_index() misslyckades"
 #: ../src/sourcewidget.cc:81
 msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() misslyckades"
+
