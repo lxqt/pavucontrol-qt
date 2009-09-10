@@ -10,13 +10,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
-"PO-Revision-Date: 2009-04-14 19:40+0200\n"
-"Last-Translator: R.E. van der Luit <nippur@fedoraproject.org>\n"
-"Language-Team: Dutch <nippur@fedoraproject.org>\n"
+"POT-Creation-Date: 2009-09-10 08:40+0000\n"
+"PO-Revision-Date: 2009-09-10 16:13+0200\n"
+"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
+"Language-Team: nl <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding:  \n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../src/pavucontrol.desktop.in.h:1
@@ -37,9 +37,8 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Port:</b>"
-msgstr "<b>Profiel:</b>"
+msgstr "<b>Poort:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Profile:</b>"
@@ -121,9 +120,8 @@ msgid "Card Name"
 msgstr "Kaart Naam"
 
 #: ../src/pavucontrol.glade.h:27
-#, fuzzy
 msgid "Device"
-msgstr "I_nvoerapparaten"
+msgstr "Apparaat"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
@@ -135,7 +133,7 @@ msgstr "Audio dempen"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "Set as fallback"
-msgstr ""
+msgstr "Stel in als reserve"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
@@ -163,7 +161,7 @@ msgstr "_Opnemen"
 
 #: ../src/pavucontrol.glade.h:38
 msgid "direction"
-msgstr ""
+msgstr "richting"
 
 #: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
@@ -200,59 +198,59 @@ msgstr "Stream_restore-uitbreiding initialiseren mislukte: %s"
 
 #: ../src/pavucontrol.cc:235
 msgid "pa_ext_stream_restore_read() failed"
-msgstr "pa_ext_stream_restore_read() failed"
+msgstr "pa_ext_stream_restore_read() mislukte"
 
 #: ../src/pavucontrol.cc:252
 msgid "pa_context_get_sink_info_by_index() failed"
-msgstr "pa_context_get_sink_info_by_index() failed"
+msgstr "pa_context_get_sink_info_by_index() mislukte"
 
 #: ../src/pavucontrol.cc:265
 msgid "pa_context_get_source_info_by_index() failed"
-msgstr "pa_context_get_source_info_by_index() failed"
+msgstr "pa_context_get_source_info_by_index() mislukte"
 
 #: ../src/pavucontrol.cc:278 ../src/pavucontrol.cc:291
 msgid "pa_context_get_sink_input_info() failed"
-msgstr "pa_context_get_sink_input_info() failed"
+msgstr "pa_context_get_sink_input_info() mislukte"
 
 #: ../src/pavucontrol.cc:304
 msgid "pa_context_get_client_info() failed"
-msgstr "pa_context_get_client_info() failed"
+msgstr "pa_context_get_client_info() mislukte"
 
 #: ../src/pavucontrol.cc:314 ../src/pavucontrol.cc:371
 msgid "pa_context_get_server_info() failed"
-msgstr "pa_context_get_server_info() failed"
+msgstr "pa_context_get_server_info() mislukte"
 
 #: ../src/pavucontrol.cc:327
 msgid "pa_context_get_card_info_by_index() failed"
-msgstr "pa_context_get_card_info_by_index() mislukt"
+msgstr "pa_context_get_card_info_by_index() mislukte"
 
 #: ../src/pavucontrol.cc:362
 msgid "pa_context_subscribe() failed"
-msgstr "pa_context_subscribe() failed"
+msgstr "pa_context_subscribe() mislukte"
 
 #: ../src/pavucontrol.cc:378
 msgid "pa_context_client_info_list() failed"
-msgstr "pa_context_client_info_list() failed"
+msgstr "pa_context_client_info_list() mislukte"
 
 #: ../src/pavucontrol.cc:385
 msgid "pa_context_get_card_info_list() failed"
-msgstr "pa_context_get_card_info_list() mislukt"
+msgstr "pa_context_get_card_info_list() mislukte"
 
 #: ../src/pavucontrol.cc:392
 msgid "pa_context_get_sink_info_list() failed"
-msgstr "pa_context_get_sink_info_list() failed"
+msgstr "pa_context_get_sink_info_list() mislukte"
 
 #: ../src/pavucontrol.cc:399
 msgid "pa_context_get_source_info_list() failed"
-msgstr "pa_context_get_source_info_list() failed"
+msgstr "pa_context_get_source_info_list() mislukte"
 
 #: ../src/pavucontrol.cc:406
 msgid "pa_context_get_sink_input_info_list() failed"
-msgstr "pa_context_get_sink_input_info_list() failed"
+msgstr "pa_context_get_sink_input_info_list() mislukte"
 
 #: ../src/pavucontrol.cc:413
 msgid "pa_context_get_source_output_info_list() failed"
-msgstr "pa_context_get_source_output_info_list() failed"
+msgstr "pa_context_get_source_output_info_list() mislukte"
 
 #: ../src/pavucontrol.cc:437
 msgid "Connection failed"
@@ -267,13 +265,12 @@ msgid "<small>Silence</small>"
 msgstr "<small>Stilte</small>"
 
 #: ../src/channelwidget.cc:104
-#, fuzzy
 msgid "<small>Min</small>"
-msgstr "<small>Maximaal</small>"
+msgstr "<small>Min</small>"
 
 #: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
-msgstr "<small>Maximaal</small>"
+msgstr "<small>Max</small>"
 
 #: ../src/channelwidget.cc:109
 msgid "<small><i>Base</i></small>"
@@ -301,40 +298,39 @@ msgstr "Systeemgeluiden"
 
 #: ../src/rolewidget.cc:71
 msgid "pa_ext_stream_restore_write() failed"
-msgstr "pa_ext_stream_restore_write() failed"
+msgstr "pa_ext_stream_restore_write() mislukte"
 
 #: ../src/sinkinputwidget.cc:35
 msgid "on"
-msgstr ""
+msgstr "aan"
 
 #: ../src/sinkinputwidget.cc:38
-#, fuzzy
 msgid "Terminate Playback"
-msgstr "Stream af_breken"
+msgstr "Afspelen afbreken"
 
 #: ../src/sinkinputwidget.cc:61
 msgid "Unknown output"
-msgstr ""
+msgstr "Onbekende output"
 
 #: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
-msgstr "pa_context_set_sink_input_volume() failed"
+msgstr "pa_context_set_sink_input_volume() mislukte"
 
 #: ../src/sinkinputwidget.cc:87
 msgid "pa_context_set_sink_input_mute() failed"
-msgstr "pa_context_set_sink_input_mute() failed"
+msgstr "pa_context_set_sink_input_mute() mislukte"
 
 #: ../src/sinkinputwidget.cc:97
 msgid "pa_context_kill_sink_input() failed"
-msgstr "pa_context_kill_sink_input() failed"
+msgstr "pa_context_kill_sink_input() mislukte"
 
 #: ../src/sinkinputwidget.cc:133
 msgid "pa_context_move_sink_input_by_index() failed"
-msgstr "pa_context_move_sink_input_by_index() failed"
+msgstr "pa_context_move_sink_input_by_index() mislukte"
 
 #: ../src/sinkwidget.cc:48
 msgid "pa_context_set_sink_volume_by_index() failed"
-msgstr "pa_context_set_sink_volume_by_index() failed"
+msgstr "pa_context_set_sink_volume_by_index() mislukte"
 
 #: ../src/sinkwidget.cc:63
 msgid "Volume Control Feedback Sound"
@@ -342,54 +338,51 @@ msgstr "Terugkoppelingsgeluid volumeregeling"
 
 #: ../src/sinkwidget.cc:80
 msgid "pa_context_set_sink_mute_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() failed"
+msgstr "pa_context_set_sink_mute_by_index() mislukte"
 
 #: ../src/sinkwidget.cc:94
 msgid "pa_context_set_default_sink() failed"
-msgstr "pa_context_set_default_sink() failed"
+msgstr "pa_context_set_default_sink() mislukte"
 
 #: ../src/sinkwidget.cc:114
-#, fuzzy
 msgid "pa_context_set_sink_port_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() failed"
+msgstr "pa_context_set_sink_port_by_index() mislukte"
 
 #: ../src/sourceoutputwidget.cc:35
 msgid "from"
-msgstr ""
+msgstr "van"
 
 #: ../src/sourceoutputwidget.cc:38
-#, fuzzy
 msgid "Terminate Recording"
-msgstr "_Opnemen"
+msgstr "Beëindig opnemen"
 
 #: ../src/sourceoutputwidget.cc:61
 msgid "Unknown input"
-msgstr ""
+msgstr "Onbekende input"
 
 #: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
-msgstr "pa_context_kill_source_output() failed"
+msgstr "pa_context_kill_source_output() mislukte"
 
 #: ../src/sourceoutputwidget.cc:108
 msgid "pa_context_move_source_output_by_index() failed"
-msgstr "pa_context_move_source_output_by_index() failed"
+msgstr "pa_context_move_source_output_by_index() mislukte"
 
 #: ../src/sourcewidget.cc:44
 msgid "pa_context_set_source_volume_by_index() failed"
-msgstr "pa_context_set_source_volume_by_index() failed"
+msgstr "pa_context_set_source_volume_by_index() mislukte"
 
 #: ../src/sourcewidget.cc:59
 msgid "pa_context_set_source_mute_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() failed"
+msgstr "pa_context_set_source_mute_by_index() mislukte"
 
 #: ../src/sourcewidget.cc:73
 msgid "pa_context_set_default_source() failed"
-msgstr "pa_context_set_default_source() failed"
+msgstr "pa_context_set_default_source() mislukte"
 
 #: ../src/sourcewidget.cc:95
-#, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() failed"
+msgstr "pa_context_set_source_port_by_index() mislukte"
 
 #~ msgid "Open menu"
 #~ msgstr "Menu openen"
