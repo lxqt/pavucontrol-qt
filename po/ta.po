@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
-"PO-Revision-Date: 2009-08-31 22:50+0530\n"
+"POT-Creation-Date: 2009-09-10 08:40+0000\n"
+"PO-Revision-Date: 2009-09-10 15:58+0530\n"
 "Last-Translator: I. Felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\\n\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -39,9 +40,8 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Port:</b>"
-msgstr "<b>விவரக்குறிப்பு:</b>"
+msgstr "<b>துறை:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Profile:</b>"
@@ -123,9 +123,8 @@ msgid "Card Name"
 msgstr "அட்டையின் பெயர்"
 
 #: ../src/pavucontrol.glade.h:27
-#, fuzzy
 msgid "Device"
-msgstr "உள்வரும் சாதனங்கள் (_I)"
+msgstr "சாதனம்"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
@@ -137,7 +136,7 @@ msgstr "ஒலி நிறுத்தப்பட்டது"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "Set as fallback"
-msgstr ""
+msgstr "fallbackஎன அமை"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
@@ -165,7 +164,7 @@ msgstr "ஒலிப்பதிவு (_R)"
 
 #: ../src/pavucontrol.glade.h:38
 msgid "direction"
-msgstr ""
+msgstr "திசை"
 
 #: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
@@ -269,9 +268,8 @@ msgid "<small>Silence</small>"
 msgstr "<small>அமைதி</small>"
 
 #: ../src/channelwidget.cc:104
-#, fuzzy
 msgid "<small>Min</small>"
-msgstr "<small>அதிக</small>"
+msgstr "<small>குறைந்த</small>"
 
 #: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
@@ -307,16 +305,15 @@ msgstr "pa_ext_stream_restore_write() தோல்வியடைந்தது
 
 #: ../src/sinkinputwidget.cc:35
 msgid "on"
-msgstr ""
+msgstr "இல்"
 
 #: ../src/sinkinputwidget.cc:38
-#, fuzzy
 msgid "Terminate Playback"
-msgstr "ஸ்டிரிமை நீக்கு (_T)"
+msgstr "Playbackஐ நிறுத்து"
 
 #: ../src/sinkinputwidget.cc:61
 msgid "Unknown output"
-msgstr ""
+msgstr "தெரியாத வெளிப்பாடு"
 
 #: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
@@ -351,22 +348,20 @@ msgid "pa_context_set_default_sink() failed"
 msgstr "pa_context_set_default_sink() தோல்வியடைந்தது"
 
 #: ../src/sinkwidget.cc:114
-#, fuzzy
 msgid "pa_context_set_sink_port_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() தோல்வியடைந்தது"
+msgstr "pa_context_set_sink_port_by_index() தோல்வி"
 
 #: ../src/sourceoutputwidget.cc:35
 msgid "from"
-msgstr ""
+msgstr "இலிருந்து"
 
 #: ../src/sourceoutputwidget.cc:38
-#, fuzzy
 msgid "Terminate Recording"
-msgstr "ஒலிப்பதிவு (_R)"
+msgstr "ஒலிப்பதிவை நிறுத்து"
 
 #: ../src/sourceoutputwidget.cc:61
 msgid "Unknown input"
-msgstr ""
+msgstr "தெரியாத உள்ளீடு"
 
 #: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
@@ -389,15 +384,6 @@ msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() தோல்வியடைந்தது"
 
 #: ../src/sourcewidget.cc:95
-#, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() தோல்வியடைந்தது"
+msgstr "pa_context_set_source_port_by_index() தோல்வி"
 
-#~ msgid "Open menu"
-#~ msgstr "மெனுவைத் திற"
-
-#~ msgid "_Move Stream..."
-#~ msgstr "ஸ்ட்டிரிமை நகர்த்து...(_M)"
-
-#~ msgid "_Default"
-#~ msgstr "முன்னிருப்பு (_D)"
