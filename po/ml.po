@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-09-10 04:42+0000\n"
-"PO-Revision-Date: 2009-09-10 11:17+0530\n"
+"PO-Revision-Date: 2009-09-10 15:50+0530\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -348,7 +348,7 @@ msgstr "pa_context_set_sink_port_by_index() പരാജയപ്പെട്ട
 
 #: ../src/sourceoutputwidget.cc:35
 msgid "from"
-msgstr "എവിടെ നിന്നും"
+msgstr "നിന്നും"
 
 #: ../src/sourceoutputwidget.cc:38
 msgid "Terminate Recording"
