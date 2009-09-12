@@ -6,9 +6,9 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-09-10 04:15+0200\n"
-"PO-Revision-Date: 2009-04-14 17:04+0200\n"
+"PO-Revision-Date: 2009-09-12 21:13+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <pl@li.org>\n"
+"Language-Team: Polish <fedora-trans-pl@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,9 +31,8 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Port:</b>"
-msgstr "<b>Profil:</b>"
+msgstr "<b>Port:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Profile:</b>"
@@ -115,9 +114,8 @@ msgid "Card Name"
 msgstr "Nazwa karty"
 
 #: ../src/pavucontrol.glade.h:27
-#, fuzzy
 msgid "Device"
-msgstr "Urządzen_ia wejściowe"
+msgstr "Urządzenie"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
@@ -129,7 +127,7 @@ msgstr "Wyciszenie dźwięku"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "Set as fallback"
-msgstr ""
+msgstr "Jako zapasowe"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
@@ -157,7 +155,7 @@ msgstr "_Nagrywanie"
 
 #: ../src/pavucontrol.glade.h:38
 msgid "direction"
-msgstr ""
+msgstr "cel"
 
 #: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
@@ -261,9 +259,8 @@ msgid "<small>Silence</small>"
 msgstr "<small>Wycisz</small>"
 
 #: ../src/channelwidget.cc:104
-#, fuzzy
 msgid "<small>Min</small>"
-msgstr "<small>Maksimum</small>"
+msgstr "<small>Minimum</small>"
 
 #: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
@@ -299,16 +296,15 @@ msgstr "pa_ext_stream_restore_write() nie powiodło się"
 
 #: ../src/sinkinputwidget.cc:35
 msgid "on"
-msgstr ""
+msgstr "na"
 
 #: ../src/sinkinputwidget.cc:38
-#, fuzzy
 msgid "Terminate Playback"
-msgstr "Usuń s_trumień"
+msgstr "Zakończ odtwarzanie"
 
 #: ../src/sinkinputwidget.cc:61
 msgid "Unknown output"
-msgstr ""
+msgstr "Nieznane wyjście"
 
 #: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
@@ -343,22 +339,20 @@ msgid "pa_context_set_default_sink() failed"
 msgstr "pa_context_set_default_sink() nie powiodło się"
 
 #: ../src/sinkwidget.cc:114
-#, fuzzy
 msgid "pa_context_set_sink_port_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() nie powiodło się"
+msgstr "pa_context_set_sink_port_by_index() nie powiodło się"
 
 #: ../src/sourceoutputwidget.cc:35
 msgid "from"
-msgstr ""
+msgstr "z"
 
 #: ../src/sourceoutputwidget.cc:38
-#, fuzzy
 msgid "Terminate Recording"
-msgstr "_Nagrywanie"
+msgstr "Zakończ nagrywanie"
 
 #: ../src/sourceoutputwidget.cc:61
 msgid "Unknown input"
-msgstr ""
+msgstr "Nieznane wejście"
 
 #: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
@@ -381,15 +375,5 @@ msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() nie powiodło się"
 
 #: ../src/sourcewidget.cc:95
-#, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() nie powiodło się"
-
-#~ msgid "Open menu"
-#~ msgstr "Otwórz menu"
-
-#~ msgid "_Move Stream..."
-#~ msgstr "Przenieś stru_mień..."
-
-#~ msgid "_Default"
-#~ msgstr "_Domyślne"
+msgstr "pa_context_set_source_port_by_index() nie powiodło się"
