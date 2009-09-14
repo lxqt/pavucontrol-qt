@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
-"PO-Revision-Date: 2009-08-22 09:56+0300\n"
+"POT-Creation-Date: 2009-09-11 08:37+0000\n"
+"PO-Revision-Date: 2009-09-11 17:36+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../src/pavucontrol.desktop.in.h:1
 msgid "Adjust the volume level"
@@ -36,9 +36,8 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Port:</b>"
-msgstr "<b>Профіль:</b>"
+msgstr "<b>Порт:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Profile:</b>"
@@ -120,9 +119,8 @@ msgid "Card Name"
 msgstr "Назва карти"
 
 #: ../src/pavucontrol.glade.h:27
-#, fuzzy
 msgid "Device"
-msgstr "Пристрої _отримання"
+msgstr "Пристрій"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
@@ -134,7 +132,7 @@ msgstr "Вимкнути звук"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "Set as fallback"
-msgstr ""
+msgstr "Зробити резервним"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
@@ -162,7 +160,7 @@ msgstr "_Запис"
 
 #: ../src/pavucontrol.glade.h:38
 msgid "direction"
-msgstr ""
+msgstr "напрямок"
 
 #: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
@@ -267,9 +265,8 @@ msgid "<small>Silence</small>"
 msgstr "<small>Тиша</small>"
 
 #: ../src/channelwidget.cc:104
-#, fuzzy
 msgid "<small>Min</small>"
-msgstr "<small>Макс.</small>"
+msgstr "<small>Мін.</small>"
 
 #: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
@@ -305,16 +302,15 @@ msgstr "Спроба виконання pa_ext_stream_restore_write() була �
 
 #: ../src/sinkinputwidget.cc:35
 msgid "on"
-msgstr ""
+msgstr "на"
 
 #: ../src/sinkinputwidget.cc:38
-#, fuzzy
 msgid "Terminate Playback"
-msgstr "Пе_рервати потік"
+msgstr "Перервати відтворення"
 
 #: ../src/sinkinputwidget.cc:61
 msgid "Unknown output"
-msgstr ""
+msgstr "Невідомий пристрій відтворення"
 
 #: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
@@ -349,22 +345,20 @@ msgid "pa_context_set_default_sink() failed"
 msgstr "Спроба виконання pa_context_set_default_sink() була невдалою"
 
 #: ../src/sinkwidget.cc:114
-#, fuzzy
 msgid "pa_context_set_sink_port_by_index() failed"
-msgstr "Спроба виконання pa_context_set_sink_mute_by_index() була невдалою"
+msgstr "Спроба виконання pa_context_set_sink_port_by_index() була невдалою"
 
 #: ../src/sourceoutputwidget.cc:35
 msgid "from"
-msgstr ""
+msgstr "з"
 
 #: ../src/sourceoutputwidget.cc:38
-#, fuzzy
 msgid "Terminate Recording"
-msgstr "_Запис"
+msgstr "Перервати запис"
 
 #: ../src/sourceoutputwidget.cc:61
 msgid "Unknown input"
-msgstr ""
+msgstr "Невідоме джерело даних"
 
 #: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
@@ -388,9 +382,8 @@ msgid "pa_context_set_default_source() failed"
 msgstr "Спроба виконання pa_context_set_default_source() була невдалою"
 
 #: ../src/sourcewidget.cc:95
-#, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
-msgstr "Спроба виконання pa_context_set_source_mute_by_index() була невдалою"
+msgstr "Спроба виконання pa_context_set_source_port_by_index() була невдалою"
 
 #~ msgid "Open menu"
 #~ msgstr "Відкрити меню"
