@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
-"PO-Revision-Date: 2009-05-03 22:52+0100\n"
+"POT-Creation-Date: 2009-09-15 16:20+0000\n"
+"PO-Revision-Date: 2009-09-15 20:53+0100\n"
 "Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
 "Language-Team: Serbian (sr) <fedora-trans-sr@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -35,9 +35,8 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Port:</b>"
-msgstr "<b>Profil:</b>"
+msgstr "<b>Port:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Profile:</b>"
@@ -119,9 +118,8 @@ msgid "Card Name"
 msgstr "Ime kartice"
 
 #: ../src/pavucontrol.glade.h:27
-#, fuzzy
 msgid "Device"
-msgstr "_Ulazni uređaji"
+msgstr "Uređaj"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
@@ -133,7 +131,7 @@ msgstr "Nečujno"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "Set as fallback"
-msgstr ""
+msgstr "Postavi kao zamenu"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
@@ -161,7 +159,7 @@ msgstr "_Snimanje"
 
 #: ../src/pavucontrol.glade.h:38
 msgid "direction"
-msgstr ""
+msgstr "smer"
 
 #: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
@@ -265,9 +263,8 @@ msgid "<small>Silence</small>"
 msgstr "<small>Tišina</small>"
 
 #: ../src/channelwidget.cc:104
-#, fuzzy
 msgid "<small>Min</small>"
-msgstr "<small>Maks</small>"
+msgstr "<small>Min</small>"
 
 #: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
@@ -303,16 +300,15 @@ msgstr "Neuspela funkcija pa_ext_stream_restore_write()"
 
 #: ../src/sinkinputwidget.cc:35
 msgid "on"
-msgstr ""
+msgstr "na"
 
 #: ../src/sinkinputwidget.cc:38
-#, fuzzy
 msgid "Terminate Playback"
-msgstr "_Prekini tok"
+msgstr "Prekini reprodukciju"
 
 #: ../src/sinkinputwidget.cc:61
 msgid "Unknown output"
-msgstr ""
+msgstr "Nepoznat izlaz"
 
 #: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
@@ -347,22 +343,20 @@ msgid "pa_context_set_default_sink() failed"
 msgstr "Neuspela funkcija pa_context_set_default_sink()"
 
 #: ../src/sinkwidget.cc:114
-#, fuzzy
 msgid "pa_context_set_sink_port_by_index() failed"
-msgstr "Neuspela funkcija pa_context_set_sink_mute_by_index()"
+msgstr "Neuspela funkcija pa_context_set_sink_port_by_index()"
 
 #: ../src/sourceoutputwidget.cc:35
 msgid "from"
-msgstr ""
+msgstr "sa"
 
 #: ../src/sourceoutputwidget.cc:38
-#, fuzzy
 msgid "Terminate Recording"
-msgstr "_Snimanje"
+msgstr "Prekini snimanje"
 
 #: ../src/sourceoutputwidget.cc:61
 msgid "Unknown input"
-msgstr ""
+msgstr "Nepoznat ulaz"
 
 #: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
@@ -385,15 +379,5 @@ msgid "pa_context_set_default_source() failed"
 msgstr "Neuspela funkcija pa_context_set_default_source()"
 
 #: ../src/sourcewidget.cc:95
-#, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
-msgstr "Neuspela funkcija pa_context_set_source_mute_by_index()"
-
-#~ msgid "Open menu"
-#~ msgstr "Otvori meni"
-
-#~ msgid "_Move Stream..."
-#~ msgstr "_Premesti tok..."
-
-#~ msgid "_Default"
-#~ msgstr "_Podrazumevano"
+msgstr "Neuspela funkcija pa_context_set_source_port_by_index()"
