@@ -48,7 +48,7 @@ if test -d ../pulseaudio ; then
    PULSE_LIBS='-L$(top_srcdir)/../pulseaudio/src/.libs -lpulse -lpulse-mainloop-glib'
    echo "*** Found pulseaudio in ../pulseaudio, using that version ***"
 else
-   PKG_CHECK_MODULES(PULSE, [ libpulse >= 0.9.15 libpulse-mainloop-glib >= 0.9.15 ])
+   PKG_CHECK_MODULES(PULSE, [ libpulse >= 0.9.16 libpulse-mainloop-glib >= 0.9.16 ])
 fi
 
 AC_SUBST(PULSE_LIBS)
