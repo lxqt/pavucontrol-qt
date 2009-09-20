@@ -207,12 +207,9 @@ void DeviceWidget::renamePopup() {
     dialog->set_default_response(Gtk::RESPONSE_OK);
     if (Gtk::RESPONSE_OK == dialog->run()) {
         pa_operation* o;
-        pa_ext_device_manager_info info[1];
         gchar *key = g_markup_printf_escaped("%s:%s", mDeviceType.c_str(), name.c_str());
-        info[0].name = key;
-        info[0].description = renameText->get_text().c_str();
 
-        if (!(o = pa_ext_device_manager_write(get_context(), PA_UPDATE_REPLACE, info, 1, 1, NULL, NULL))) {
+        if (!(o = pa_ext_device_manager_set_device_description(get_context(), key, renameText->get_text().c_str(), NULL, NULL))) {
             show_error(_("pa_ext_device_manager_write() failed"));
             return;
         }
