@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
-"PO-Revision-Date: 2009-05-04 14:07+0200\n"
+"POT-Creation-Date: 2009-09-20 04:48+0000\n"
+"PO-Revision-Date: 2009-09-20 18:09+0200\n"
 "Last-Translator: Ondrej Šulek <feonsu@gmail.com>\n"
 "Language-Team: Slovak <fedora-trans-sk@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural= (n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: ../src/pavucontrol.desktop.in.h:1
 msgid "Adjust the volume level"
@@ -34,9 +34,8 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Port:</b>"
-msgstr "<b>Profil:</b>"
+msgstr "<b>Port:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Profile:</b>"
@@ -72,11 +71,11 @@ msgstr "<i>Žiadne karty nie sú dostupné na konfiguráciu</i>"
 
 #: ../src/pavucontrol.glade.h:12
 msgid "<i>No input devices available</i>"
-msgstr "<i>Nie sú dostupné žiadne vstupné zariadenia.</i>"
+msgstr "<i>Nie sú dostupné žiadne vstupné zariadenia</i>"
 
 #: ../src/pavucontrol.glade.h:13
 msgid "<i>No output devices available</i>"
-msgstr "<i>Nie sú dostupné žiadne výstupné zariadenia.</i>"
+msgstr "<i>Nie sú dostupné žiadne výstupné zariadenia</i>"
 
 #: ../src/pavucontrol.glade.h:14
 msgid ""
@@ -118,9 +117,8 @@ msgid "Card Name"
 msgstr "Názov karty"
 
 #: ../src/pavucontrol.glade.h:27
-#, fuzzy
 msgid "Device"
-msgstr "Vstupné zar_iadenia"
+msgstr "Zariadenie"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
@@ -132,7 +130,7 @@ msgstr "Stlmiť zvuk"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "Set as fallback"
-msgstr ""
+msgstr "Nastaviť ako záložné"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
@@ -160,7 +158,7 @@ msgstr "_Nahrávanie"
 
 #: ../src/pavucontrol.glade.h:38
 msgid "direction"
-msgstr ""
+msgstr "smer"
 
 #: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
@@ -264,17 +262,16 @@ msgid "<small>Silence</small>"
 msgstr "<small>Ticho</small>"
 
 #: ../src/channelwidget.cc:104
-#, fuzzy
 msgid "<small>Min</small>"
-msgstr "<small>Maximálne</small>"
+msgstr "<small>Minimum</small>"
 
 #: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
-msgstr "<small>Maximálne</small>"
+msgstr "<small>Maximum</small>"
 
 #: ../src/channelwidget.cc:109
 msgid "<small><i>Base</i></small>"
-msgstr "<small><i>Základné</i></small>"
+msgstr "<small><i>Základ</i></small>"
 
 #: ../src/mainwindow.cc:269
 msgid "Failed to read data from stream"
@@ -302,16 +299,15 @@ msgstr "pa_ext_stream_restore_write() zlyhal"
 
 #: ../src/sinkinputwidget.cc:35
 msgid "on"
-msgstr ""
+msgstr "na"
 
 #: ../src/sinkinputwidget.cc:38
-#, fuzzy
 msgid "Terminate Playback"
-msgstr "_Ukončiť prúd"
+msgstr "Ukončiť prehrávanie"
 
 #: ../src/sinkinputwidget.cc:61
 msgid "Unknown output"
-msgstr ""
+msgstr "Neznámy výstup"
 
 #: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
@@ -346,22 +342,20 @@ msgid "pa_context_set_default_sink() failed"
 msgstr "pa_context_set_default_sink() zlyhal"
 
 #: ../src/sinkwidget.cc:114
-#, fuzzy
 msgid "pa_context_set_sink_port_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() zlyhal"
+msgstr "pa_context_set_sink_port_by_index() zlyhal"
 
 #: ../src/sourceoutputwidget.cc:35
 msgid "from"
-msgstr ""
+msgstr "z"
 
 #: ../src/sourceoutputwidget.cc:38
-#, fuzzy
 msgid "Terminate Recording"
-msgstr "_Nahrávanie"
+msgstr "Ukončiť nahrávanie"
 
 #: ../src/sourceoutputwidget.cc:61
 msgid "Unknown input"
-msgstr ""
+msgstr "Neznámy vstup"
 
 #: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
@@ -384,9 +378,8 @@ msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() zlyhal"
 
 #: ../src/sourcewidget.cc:95
-#, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() zlyhal"
+msgstr "pa_context_set_source_port_by_index() zlyhal"
 
 #~ msgid "Open menu"
 #~ msgstr "Otvoriť menu"
