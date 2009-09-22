@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.kn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
-"PO-Revision-Date: 2009-04-14 11:07+0530\n"
+"POT-Creation-Date: 2009-09-21 08:49+0000\n"
+"PO-Revision-Date: 2009-09-22 15:34+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -35,9 +35,8 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Port:</b>"
-msgstr "<b>ಪ್ರೊಫೈಲ್:</b>"
+msgstr "<b>ಸಂಪರ್ಕಸ್ಥಾನ:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Profile:</b>"
@@ -119,9 +118,8 @@ msgid "Card Name"
 msgstr "ಕಾರ್ಡಿನ ಹೆಸರು"
 
 #: ../src/pavucontrol.glade.h:27
-#, fuzzy
 msgid "Device"
-msgstr "ಇನ್‌ಪುಟ್ ಸಾಧನಗಳು(_I)"
+msgstr "ಸಾಧನ"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
@@ -133,7 +131,7 @@ msgstr "ಆಡಿಯೋವನ್ನು ಮೂಕಗೊಳಿಸು"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "Set as fallback"
-msgstr ""
+msgstr "ಫಾಲ್‌ಬ್ಯಾಕ್ ಆಗಿ ಹೊಂದಿಸು"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
@@ -161,7 +159,7 @@ msgstr "ರೆಕಾರ್ಡ್ ಮಾಡುವಿಕೆ(_R)"
 
 #: ../src/pavucontrol.glade.h:38
 msgid "direction"
-msgstr ""
+msgstr "ದಿಕ್ಕು"
 
 #: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
@@ -265,9 +263,8 @@ msgid "<small>Silence</small>"
 msgstr "<small>ನಿಶ್ಯಬ್ಧ</small>"
 
 #: ../src/channelwidget.cc:104
-#, fuzzy
 msgid "<small>Min</small>"
-msgstr "<small>ಗರಿಷ್ಟ</small>"
+msgstr "<small>ಕನಿಷ್ಟ</small>"
 
 #: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
@@ -303,16 +300,15 @@ msgstr "pa_ext_stream_restore_write() ವಿಫಲಗೊಂಡಿದೆ"
 
 #: ../src/sinkinputwidget.cc:35
 msgid "on"
-msgstr ""
+msgstr "ಆನ್"
 
 #: ../src/sinkinputwidget.cc:38
-#, fuzzy
 msgid "Terminate Playback"
-msgstr "ಸ್ಟ್ರೀಮನ್ನು ಅಂತ್ಯಗೊಳಿಸು(_T)"
+msgstr "ಪ್ಲೇಬ್ಯಾಕನ್ನು ಅಂತ್ಯಗೊಳಿಸು"
 
 #: ../src/sinkinputwidget.cc:61
 msgid "Unknown output"
-msgstr ""
+msgstr "ಗೊತ್ತಿರದ ಔಟ್‌ಪುಟ್"
 
 #: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
@@ -347,22 +343,20 @@ msgid "pa_context_set_default_sink() failed"
 msgstr "pa_context_set_default_sink() ವಿಫಲಗೊಂಡಿದೆ"
 
 #: ../src/sinkwidget.cc:114
-#, fuzzy
 msgid "pa_context_set_sink_port_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() ವಿಫಲಗೊಂಡಿದೆ"
+msgstr "pa_context_set_sink_port_by_index() ವಿಫಲಗೊಂಡಿದೆ"
 
 #: ../src/sourceoutputwidget.cc:35
 msgid "from"
-msgstr ""
+msgstr "ಇಂದ"
 
 #: ../src/sourceoutputwidget.cc:38
-#, fuzzy
 msgid "Terminate Recording"
-msgstr "ರೆಕಾರ್ಡ್ ಮಾಡುವಿಕೆ(_R)"
+msgstr "ರೆಕಾರ್ಡ್ ಮಾಡುವಿಕೆಯನ್ನು ಅಂತ್ಯಗೊಳಿಸು"
 
 #: ../src/sourceoutputwidget.cc:61
 msgid "Unknown input"
-msgstr ""
+msgstr "ಗೊತ್ತಿರದ ಇನ್‌ಪುಟ್"
 
 #: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
@@ -385,15 +379,6 @@ msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() ವಿಫಲಗೊಂಡಿದೆ"
 
 #: ../src/sourcewidget.cc:95
-#, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() ವಿಫಲಗೊಂಡಿದೆ"
+msgstr "pa_context_set_source_port_by_index() ವಿಫಲಗೊಂಡಿದೆ"
 
-#~ msgid "Open menu"
-#~ msgstr "ಮೆನುವನ್ನು ತೆರೆ"
-
-#~ msgid "_Move Stream..."
-#~ msgstr "ಸ್ಟ್ರೀಮನ್ನು ಸ್ಥಳಾಂತರಿಸು(_M)..."
-
-#~ msgid "_Default"
-#~ msgstr "ಪೂರ್ವನಿಯೋಜಿತ(_D)"
