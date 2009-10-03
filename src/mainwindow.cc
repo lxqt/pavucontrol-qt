@@ -457,8 +457,16 @@ finish:
 }
 
 void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
+    const char *t;
     SinkInputWidget *w;
     bool is_new = false;
+
+    if ((t = pa_proplist_gets(info.proplist, "module-stream-restore.id"))) {
+        if (strcmp(t, "sink-input-by-media-role:event") == 0) {
+            g_debug(_("Ignoring sink-input due to it being designated as an event and thus handled by the Event widget"));
+            return;
+        }
+    }
 
     if (sinkInputWidgets.count(info.index))
         w = sinkInputWidgets[info.index];
