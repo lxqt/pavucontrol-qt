@@ -40,7 +40,7 @@ ChannelWidget::ChannelWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::
     x->get_widget("volumeScale", volumeScale);
 
     volumeScale->set_value(100.0);
-    volumeScale->set_increments(100.0/PA_VOLUME_NORM, 100.0/PA_VOLUME_NORM);
+    volumeScale->set_increments(1.0, 5.0);
 
     volumeScale->signal_value_changed().connect(sigc::mem_fun(*this, &ChannelWidget::onVolumeScaleValueChanged));
 }
