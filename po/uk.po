@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-11 08:37+0000\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: 2009-09-11 17:36+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../src/pavucontrol.desktop.in.h:1
 msgid "Adjust the volume level"
@@ -292,7 +292,13 @@ msgstr "Не вдалося створити потік для спостере�
 msgid "Failed to connect monitoring stream"
 msgstr "Не вдалося з’єднатися з потоком для спостереження"
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "Системні звуки"
 
@@ -384,6 +390,11 @@ msgstr "Спроба виконання pa_context_set_default_source() була
 #: ../src/sourcewidget.cc:95
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "Спроба виконання pa_context_set_source_port_by_index() була невдалою"
+
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "Перервати відтворення"
 
 #~ msgid "Open menu"
 #~ msgstr "Відкрити меню"

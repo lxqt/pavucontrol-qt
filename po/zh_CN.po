@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: 2009-04-01 21:43+1000\n"
 "Last-Translator: Leah Liu <lliu@redhat.com>\n"
 "Language-Team: Simplified Chinese <zh@li.org>\n"
@@ -292,7 +292,13 @@ msgstr "无法常见监视流媒体"
 msgid "Failed to connect monitoring stream"
 msgstr "无法连接到监视流媒体"
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "系统声音"
 
@@ -387,6 +393,11 @@ msgstr "pa_context_set_default_source() 失败"
 #, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "pa_context_set_source_mute_by_index() 失败"
+
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "结束流媒体(_T)"
 
 #~ msgid "Open menu"
 #~ msgstr "打开菜单"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: 2009-03-13 16:02+0700\n"
 "Last-Translator: Manatsawin Hanmongkolchai <manatsawin@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -292,7 +292,13 @@ msgstr ""
 msgid "Failed to connect monitoring stream"
 msgstr ""
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "เสียงของระบบ"
 
@@ -387,6 +393,11 @@ msgstr "pa_context_set_default_source() ไม่สำเร็จ"
 #, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "pa_context_set_source_mute_by_index() ไม่สำเร็จ"
+
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "_จบสตรีม"
 
 #~ msgid "Open menu"
 #~ msgstr "เปิดเมนู"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: 2008-09-22 01:14+0200\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -296,7 +296,13 @@ msgstr "Monitör akışı yaratılamadı"
 msgid "Failed to connect monitoring stream"
 msgstr "Monitör akışına bağlanılamadı"
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "Sistem Sesleri"
 
@@ -391,6 +397,11 @@ msgstr "pa_context_set_default_source() hatası"
 #, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "pa_context_set_source_mute_by_index() hatası"
+
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "Ses Akışını _Sonlandır..."
 
 #~ msgid "Open menu"
 #~ msgstr "Menüyü aç"

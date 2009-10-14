@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 08:40+0000\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: 2009-09-10 16:13+0200\n"
 "Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
 "Language-Team: nl <nl@li.org>\n"
@@ -292,7 +292,13 @@ msgstr "Starten van observatie-stream is mislukt"
 msgid "Failed to connect monitoring stream"
 msgstr "Verbinden met observatie-stream is mislukt"
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "Systeemgeluiden"
 
@@ -383,6 +389,11 @@ msgstr "pa_context_set_default_source() mislukte"
 #: ../src/sourcewidget.cc:95
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "pa_context_set_source_port_by_index() mislukte"
+
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "Afspelen afbreken"
 
 #~ msgid "Open menu"
 #~ msgstr "Menu openen"

@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-12 19:46+0000\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: 2009-09-12 21:04+0100\n"
 "Last-Translator: Agustí Grau <fletxa@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.net>\n"
@@ -302,7 +302,13 @@ msgstr "Ha fallat la creació del fluxe de monitorització"
 msgid "Failed to connect monitoring stream"
 msgstr "Ha fallat la connexió al fluxe de monitorització"
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "Sons del sistema"
 
@@ -394,3 +400,7 @@ msgstr "Ha fallat pa_context_set_default_source()"
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "Ha fallat pa_context_set_source_port_by_index()"
 
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "Finalitza la reproducció"

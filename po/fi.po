@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: git trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-15 07:48+0000\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: 2009-09-15 13:34+0300\n"
 "Last-Translator: Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>\n"
 "Language-Team: Finnish <laatu@lokalisointi.org>\n"
@@ -289,7 +289,13 @@ msgstr "Tarkkailuvirran luonti epäonnistui"
 msgid "Failed to connect monitoring stream"
 msgstr "Tarkkailuvirtaan yhdistäminen epäonnistui"
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "Järjestelmän äänet"
 
@@ -380,6 +386,11 @@ msgstr "pa_context_set_default_source() epäonnistui"
 #: ../src/sourcewidget.cc:95
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "pa_context_set_source_port_by_index() epäonnistui"
+
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "Lopeta toisto"
 
 #~ msgid "Open menu"
 #~ msgstr "Avaa valikko"

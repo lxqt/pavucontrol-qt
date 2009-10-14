@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.kn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-21 08:49+0000\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: 2009-09-22 15:34+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
@@ -290,7 +290,13 @@ msgstr "ಮೇಲ್ವಿಚಾರಣೆ ಮಾಡುವ ಸ್ಟ್ರೀಮ�
 msgid "Failed to connect monitoring stream"
 msgstr "ಮೇಲ್ವಿಚಾರಣೆ ಮಾಡುವ ಸ್ಟ್ರೀಮ್‌ನೊಂದಿಗೆ ಸಂಪರ್ಕಸಾಧಿಸುವಲ್ಲಿ ವಿಫಲಗೊಂಡಿದೆ"
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "ಗಣಕದ ಧ್ವನಿಗಳು"
 
@@ -382,3 +388,7 @@ msgstr "pa_context_set_default_source() ವಿಫಲಗೊಂಡಿದೆ"
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "pa_context_set_source_port_by_index() ವಿಫಲಗೊಂಡಿದೆ"
 
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "ಪ್ಲೇಬ್ಯಾಕನ್ನು ಅಂತ್ಯಗೊಳಿಸು"

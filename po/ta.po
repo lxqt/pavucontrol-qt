@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 08:40+0000\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: 2009-09-10 15:58+0530\n"
 "Last-Translator: I. Felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
@@ -295,7 +295,13 @@ msgstr "கண்காணிக்கும் ஸ்ட்ரீமை உர�
 msgid "Failed to connect monitoring stream"
 msgstr "கண்காணிக்கும் ஸ்ட்ரீமை இணைக்க முடியவில்லை"
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "கணினியின் ஒலிகள்"
 
@@ -387,3 +393,7 @@ msgstr "pa_context_set_default_source() தோல்வியடைந்தத�
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "pa_context_set_source_port_by_index() தோல்வி"
 
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "Playbackஐ நிறுத்து"

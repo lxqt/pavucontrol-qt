@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.ml\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:42+0000\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: 2009-09-10 15:50+0530\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
@@ -290,7 +290,13 @@ msgstr "മോണിറ്ററിങ് സ്ട്രീം ഉണ്ടാ�
 msgid "Failed to connect monitoring stream"
 msgstr "മോണിറ്ററിങ് സ്ട്രീം കണക്ട് ചെയ്യുന്നതില്‍ പരാജയപ്പെട്ടു"
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "സിസ്റ്റം ശബ്ദങ്ങള്‍"
 
@@ -382,3 +388,7 @@ msgstr "pa_context_set_default_source() പരാജയപ്പെട്ടു"
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "pa_context_set_source_port_by_index() പരാജയപ്പെട്ടു"
 
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "പ്ലേബാക്ക് നിര്‍ത്തുക"

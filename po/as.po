@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.pavucontrol.as\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: 2009-04-23 11:42+0530\n"
 "Last-Translator: Amitakhya Phukan <aphukan@fedoraproject.org>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
@@ -292,7 +292,13 @@ msgstr "monitoring stream নিৰ্মাণ কৰোঁতে ব্যৰ�
 msgid "Failed to connect monitoring stream"
 msgstr "monitoring stream লৈ সংয়োগ কৰিবলৈ অক্ষম"
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "ব্যৱস্থাপ্ৰণালীৰ শব্দ"
 
@@ -387,6 +393,11 @@ msgstr "pa_context_set_default_source() বিফল"
 #, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "pa_context_set_source_mute_by_index() বিফল"
+
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "স্ট্ৰিম বন্ধ কৰক (_T)"
 
 #~ msgid "Open menu"
 #~ msgstr "তালিকা খোলক"

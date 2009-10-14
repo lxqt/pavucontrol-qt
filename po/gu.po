@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pulseaudio-volume\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 08:40+0000\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: 2009-09-10 15:41+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
@@ -290,7 +290,13 @@ msgstr "મોનિટરીંગ સ્ટ્રીમને બનાવવ�
 msgid "Failed to connect monitoring stream"
 msgstr "મોનિટરીંગ સ્ટ્રીમને જોડવામાં નિષ્ફળ"
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "સિસ્ટમ સાઉન્ડો"
 
@@ -382,3 +388,7 @@ msgstr "pa_context_set_default_source() નિષ્ફળ"
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "pa_context_set_source_port_by_index() નિષ્ફળ"
 
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "પ્લેબેકનો અંત લાવો"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol.master-tx.pa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:42+0000\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: 2009-09-10 11:13+0530\n"
 "Last-Translator: Jaswinder Singh <jsingh@redhat.com>\n"
 "Language-Team: Punjabi <Punjabi-users@lists.sourceforge.net>\n"
@@ -292,7 +292,13 @@ msgstr "ਨਿਗਰਾਨੀ ਸਟਰੀਮ ਬਣਾਉਣ ਵਿੱਚ ਫ�
 msgid "Failed to connect monitoring stream"
 msgstr "ਨਿਗਰਾਨੀ ਸਟਰੀਮ ਨਾਲ ਕੁਨੈਕਟ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "ਸਿਸਟਮ ਸਾਊਂਡ"
 
@@ -384,3 +390,7 @@ msgstr "pa_context_set_default_source() ਫੇਲ੍ਹ ਹੈ"
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "pa_context_set_source_port_by_index() ਫੇਲ ਹੈ"
 
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "ਪਲੇਬੈਕ ਖਤਮ ਕਰੋ"

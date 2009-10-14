@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pulseaudio\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
+"POT-Creation-Date: 2009-10-14 17:10+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sergey Danilov <stiletto@stiletto.name>\n"
 "Language-Team: Russian <fedora-trans-ru@redhat.com>\n"
@@ -292,7 +292,13 @@ msgstr "Не удается создать поток мониторинга"
 msgid "Failed to connect monitoring stream"
 msgstr "Не удается присоединить поток мониторинга"
 
-#: ../src/mainwindow.cc:610
+#: ../src/mainwindow.cc:466
+msgid ""
+"Ignoring sink-input due to it being designated as an event and thus handled "
+"by the Event widget"
+msgstr ""
+
+#: ../src/mainwindow.cc:618
 msgid "System Sounds"
 msgstr "Системные звуки"
 
@@ -387,6 +393,11 @@ msgstr "Сбой pa_context_set_default_source()"
 #, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
 msgstr "Сбой pa_context_set_source_mute_by_index()"
+
+#: ../src/streamwidget.cc:45
+#, fuzzy
+msgid "Terminate"
+msgstr "П_рервать поток"
 
 #~ msgid "Open menu"
 #~ msgstr "Открыть меню"
