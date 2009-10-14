@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pavucontrol\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
-"PO-Revision-Date: 2009-03-19 21:04+0100\n"
+"POT-Creation-Date: 2009-09-12 19:46+0000\n"
+"PO-Revision-Date: 2009-09-12 21:04+0100\n"
 "Last-Translator: Agustí Grau <fletxa@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.net>\n"
 "MIME-Version: 1.0\n"
@@ -47,13 +47,12 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Port:</b>"
-msgstr "<b>_Perfil:</b>"
+msgstr "<b>Port:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Profile:</b>"
-msgstr "<b>_Perfil:</b>"
+msgstr "<b>Perfil:</b>"
 
 #: ../src/pavucontrol.glade.h:5
 msgid "<b>S_how:</b>"
@@ -131,9 +130,8 @@ msgid "Card Name"
 msgstr "Nom de la targeta"
 
 #: ../src/pavucontrol.glade.h:27
-#, fuzzy
 msgid "Device"
-msgstr "D_ispositius d'entrada"
+msgstr "Dispositiu"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
@@ -145,7 +143,7 @@ msgstr "Silencia"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "Set as fallback"
-msgstr ""
+msgstr "Estableix com a predeterminat"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
@@ -173,7 +171,7 @@ msgstr "En_registrament"
 
 #: ../src/pavucontrol.glade.h:38
 msgid "direction"
-msgstr ""
+msgstr "direcció"
 
 #: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
@@ -204,7 +202,7 @@ msgid "Server info callback failure"
 msgstr "Ha fallat la crida de retorn de la informació del servidor"
 
 #: ../src/pavucontrol.cc:217 ../src/pavucontrol.cc:430
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to initialize stream_restore extension: %s"
 msgstr "Ha fallat la inicialització de l'extensió stream_restore: %s"
 
@@ -274,19 +272,19 @@ msgstr "Ha fallat pa_context_set_card_profile_by_index()"
 
 #: ../src/channelwidget.cc:104
 msgid "<small>Silence</small>"
-msgstr ""
+msgstr "<small>Silenci</small>"
 
 #: ../src/channelwidget.cc:104
 msgid "<small>Min</small>"
-msgstr ""
+msgstr "<small>Min</small>"
 
 #: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
-msgstr ""
+msgstr "<small>Max</small>"
 
 #: ../src/channelwidget.cc:109
 msgid "<small><i>Base</i></small>"
-msgstr ""
+msgstr "<small><i>Base</i></small>"
 
 #: ../src/mainwindow.cc:269
 msgid "Failed to read data from stream"
@@ -314,16 +312,15 @@ msgstr "Ha fallat pa_ext_stream_restore_write()"
 
 #: ../src/sinkinputwidget.cc:35
 msgid "on"
-msgstr ""
+msgstr "a"
 
 #: ../src/sinkinputwidget.cc:38
-#, fuzzy
 msgid "Terminate Playback"
-msgstr "Finali_tza el fluxe"
+msgstr "Finalitza la reproducció"
 
 #: ../src/sinkinputwidget.cc:61
 msgid "Unknown output"
-msgstr ""
+msgstr "Sortida desconeguda"
 
 #: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
@@ -358,22 +355,20 @@ msgid "pa_context_set_default_sink() failed"
 msgstr "Ha fallat pa_context_set_default_sink()"
 
 #: ../src/sinkwidget.cc:114
-#, fuzzy
 msgid "pa_context_set_sink_port_by_index() failed"
-msgstr "Ha fallat pa_context_set_sink_mute_by_index()"
+msgstr "Ha fallat pa_context_set_sink_port_by_index()"
 
 #: ../src/sourceoutputwidget.cc:35
 msgid "from"
-msgstr ""
+msgstr "des de"
 
 #: ../src/sourceoutputwidget.cc:38
-#, fuzzy
 msgid "Terminate Recording"
-msgstr "En_registrament"
+msgstr "Termina l'enregistrament"
 
 #: ../src/sourceoutputwidget.cc:61
 msgid "Unknown input"
-msgstr ""
+msgstr "Entrada desconeguda"
 
 #: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
@@ -396,15 +391,6 @@ msgid "pa_context_set_default_source() failed"
 msgstr "Ha fallat pa_context_set_default_source()"
 
 #: ../src/sourcewidget.cc:95
-#, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
-msgstr "Ha fallat pa_context_set_source_mute_by_index()"
+msgstr "Ha fallat pa_context_set_source_port_by_index()"
 
-#~ msgid "Open menu"
-#~ msgstr "Obre el menú"
-
-#~ msgid "_Move Stream..."
-#~ msgstr "_Mou el fluxe..."
-
-#~ msgid "_Default"
-#~ msgstr "Per _defecte"

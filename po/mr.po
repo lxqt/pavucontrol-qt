@@ -1,16 +1,17 @@
-# translation of pavucontrol.master-tx.mr.po to marathi
+# translation of pavucontrol.master-tx.po to Marathi
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2009.
+# Sandeep Shedmake <sshedmak@redhat.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: pavucontrol.master-tx.mr\n"
+"Project-Id-Version: pavucontrol.master-tx\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
-"PO-Revision-Date: 2009-04-14 11:35+0530\n"
-"Last-Translator: Sandeep Shedmake <sandeep.shedmake@gmail.com>\n"
-"Language-Team: marathi\n"
+"POT-Creation-Date: 2009-09-10 08:40+0000\n"
+"PO-Revision-Date: 2009-09-10 16:27+0530\n"
+"Last-Translator: Sandeep Shedmake <sshedmak@redhat.com>\n"
+"Language-Team: Marathi <fedora-trans-mr@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,13 +36,12 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Port:</b>"
-msgstr "<b>संक्षिप्त माहिती:</b>"
+msgstr "<b>पोर्ट:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Profile:</b>"
-msgstr "<b>संक्षिप्त माहिती:</b>"
+msgstr "<b>प्रोफाइल:</b>"
 
 #: ../src/pavucontrol.glade.h:5
 msgid "<b>S_how:</b>"
@@ -119,9 +119,8 @@ msgid "Card Name"
 msgstr "कार्ड नाव"
 
 #: ../src/pavucontrol.glade.h:27
-#, fuzzy
 msgid "Device"
-msgstr "इनपुट साधन (_I)"
+msgstr "उपकरन"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
@@ -133,7 +132,7 @@ msgstr "ऑडिओ मंद करा"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "Set as fallback"
-msgstr ""
+msgstr "फॉलबॅक प्रमाणे सेट करा"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
@@ -161,7 +160,7 @@ msgstr "रेकॉर्डींग (_R)"
 
 #: ../src/pavucontrol.glade.h:38
 msgid "direction"
-msgstr ""
+msgstr "दिशा"
 
 #: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
@@ -265,9 +264,8 @@ msgid "<small>Silence</small>"
 msgstr "<small>गप्प</small>"
 
 #: ../src/channelwidget.cc:104
-#, fuzzy
 msgid "<small>Min</small>"
-msgstr "<small>कमाल</small>"
+msgstr "<small>किमान</small>"
 
 #: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
@@ -303,16 +301,15 @@ msgstr "pa_ext_stream_restore_write() अपयशी"
 
 #: ../src/sinkinputwidget.cc:35
 msgid "on"
-msgstr ""
+msgstr "चालू करा"
 
 #: ../src/sinkinputwidget.cc:38
-#, fuzzy
 msgid "Terminate Playback"
-msgstr "स्ट्रीम नष्ट करा (_T)"
+msgstr "प्लेबॅक बंद करा"
 
 #: ../src/sinkinputwidget.cc:61
 msgid "Unknown output"
-msgstr ""
+msgstr "अपरिचीत आऊटपुट"
 
 #: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
@@ -347,22 +344,20 @@ msgid "pa_context_set_default_sink() failed"
 msgstr "pa_context_set_default_sink() अपयशी"
 
 #: ../src/sinkwidget.cc:114
-#, fuzzy
 msgid "pa_context_set_sink_port_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() अपयशी"
+msgstr "pa_context_set_sink_port_by_index() अपयशी"
 
 #: ../src/sourceoutputwidget.cc:35
 msgid "from"
-msgstr ""
+msgstr "पासून"
 
 #: ../src/sourceoutputwidget.cc:38
-#, fuzzy
 msgid "Terminate Recording"
-msgstr "रेकॉर्डींग (_R)"
+msgstr "रेकॉर्डींग बंद करा"
 
 #: ../src/sourceoutputwidget.cc:61
 msgid "Unknown input"
-msgstr ""
+msgstr "अपरिचीत इंपुट"
 
 #: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
@@ -385,15 +380,6 @@ msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() अपयशी"
 
 #: ../src/sourcewidget.cc:95
-#, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() अपयशी"
+msgstr "pa_context_set_source_port_by_index() अपयशी"
 
-#~ msgid "Open menu"
-#~ msgstr "मेन्यू उघडा"
-
-#~ msgid "_Move Stream..."
-#~ msgstr "स्ट्रीम हलवा (_M)..."
-
-#~ msgid "_Default"
-#~ msgstr "मुलभूत (_D)"

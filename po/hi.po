@@ -1,21 +1,26 @@
-# translation of pavucontrol.master-tx.pavucontrol.po to Hindi
+# translation of pavucontrol.master-tx.po to Hindi
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Rajesh Ranjan <rajesh672@gmail.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: pavucontrol.master-tx.pavucontrol\n"
+"Project-Id-Version: pavucontrol.master-tx\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
-"PO-Revision-Date: 2009-06-05 11:42+0530\n"
+"POT-Creation-Date: 2009-09-21 08:49+0000\n"
+"PO-Revision-Date: 2009-09-21 18:25+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Hindi <hindi.sf.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
 "\n"
 
 #: ../src/pavucontrol.desktop.in.h:1
@@ -24,11 +29,11 @@ msgstr "आवाज़ स्तर निर्धारित करें"
 
 #: ../src/pavucontrol.desktop.in.h:2 ../src/pavucontrol.cc:476
 msgid "PulseAudio Volume Control"
-msgstr "पल्सऑडियो आवाज़ नियंत्रण"
+msgstr "पल्सऑडियो ध्वनि नियंत्रण"
 
 #: ../src/pavucontrol.desktop.in.h:3 ../src/pavucontrol.glade.h:32
 msgid "Volume Control"
-msgstr "आवाज़ नियंत्रण"
+msgstr "आवाज निर्धारक"
 
 #: ../src/pavucontrol.glade.h:2
 #, no-c-format
@@ -36,13 +41,12 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Port:</b>"
-msgstr "<b>प्रोफ़ाइल:</b>"
+msgstr "<b>पोर्ट:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Profile:</b>"
-msgstr "<b>प्रोफ़ाइल:</b>"
+msgstr "<b>Profile:</b>"
 
 #: ../src/pavucontrol.glade.h:5
 msgid "<b>S_how:</b>"
@@ -62,23 +66,23 @@ msgstr "<b>left-front</b>"
 
 #: ../src/pavucontrol.glade.h:9
 msgid "<i>No application is currently playing audio.</i>"
-msgstr "<i>कोई भी अनुप्रयोद अभी ऑडियो नहीं बजा रहा है.</i>"
+msgstr "<i>कोई अनुप्रयोग अभी ऑडियो नहीं बजा रहा है.</i>"
 
 #: ../src/pavucontrol.glade.h:10
 msgid "<i>No application is currently recording audio.</i>"
-msgstr "<i>कोई भी अनुप्रयोद अभी ऑडियो नहीं रिकार्ड कर रहा है.</i>"
+msgstr "<i>कोई अनुप्रयोग अभी ऑडियो नहीं रिकार्ड कर रहा है.</i>"
 
 #: ../src/pavucontrol.glade.h:11
 msgid "<i>No cards available for configuration</i>"
-msgstr "<i>विन्यास के लिए कोई कार्ड अभी उपलब्ध नहीं</i>"
+msgstr "<i>विन्यास के लिए कोई कार्ड उपलब्ध नहीं</i>"
 
 #: ../src/pavucontrol.glade.h:12
 msgid "<i>No input devices available</i>"
-msgstr "<i>कोई इनपुट युक्ति उपलब्ध नहीं</i>"
+msgstr "<i>कोई इनपुट आँकड़ा उपलब्ध नहीं</i>"
 
 #: ../src/pavucontrol.glade.h:13
 msgid "<i>No output devices available</i>"
-msgstr "<i>कोई आउटपुट युक्ति उपलब्ध नहीं</i>"
+msgstr "<i>कोई आउटपुट आँकड़ा उपलब्ध नहीं</i>"
 
 #: ../src/pavucontrol.glade.h:14
 msgid ""
@@ -89,9 +93,9 @@ msgid ""
 "Monitors"
 msgstr ""
 "सभी इनपुट युक्ति\n"
-"मॉनिटर को छोड़कर सभी\n"
+"सभी सिवाय मॉनिटर के\n"
 "हार्डवेयर इनपुट युक्ति\n"
-"आभासी इनपुट युक्ति\n"
+"वर्चुअल इनपुट युक्ति\n"
 "मॉनिटर"
 
 #: ../src/pavucontrol.glade.h:19
@@ -102,7 +106,7 @@ msgid ""
 msgstr ""
 "सभी आउटपुट युक्ति\n"
 "हार्डवेयर आउटपुट युक्ति\n"
-"आभासी आउटपुट युक्ति"
+"वर्चुअल आउटपुट युक्ति"
 
 #. Applications All streams
 #: ../src/pavucontrol.glade.h:23
@@ -113,20 +117,19 @@ msgid ""
 msgstr ""
 "सभी स्ट्रीम\n"
 "अनुप्रयोग\n"
-"आभासी स्ट्रीम"
+"वर्चुअल स्ट्रीम"
 
 #: ../src/pavucontrol.glade.h:26
 msgid "Card Name"
 msgstr "कार्ड नाम"
 
 #: ../src/pavucontrol.glade.h:27
-#, fuzzy
 msgid "Device"
-msgstr "इनपुट युक्ति (_I)"
+msgstr "युक्ति"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
-msgstr "चैनल एक साथ लॉक करें"
+msgstr "चैनल एकसाथ लॉक करें"
 
 #: ../src/pavucontrol.glade.h:29
 msgid "Mute audio"
@@ -134,7 +137,7 @@ msgstr "ऑडियो मूक करें"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "Set as fallback"
-msgstr ""
+msgstr "बतौर फॉलबैक सेट करें"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
@@ -142,11 +145,11 @@ msgstr "स्ट्रीम शीर्षक"
 
 #: ../src/pavucontrol.glade.h:33
 msgid "_Configuration"
-msgstr "विन्यास (_C)"
+msgstr "विन्यासन (_C)"
 
 #: ../src/pavucontrol.glade.h:34
 msgid "_Input Devices"
-msgstr "इनपुट युक्ति (_I)"
+msgstr "इनपुट युक्तियाँ (_I)"
 
 #: ../src/pavucontrol.glade.h:35
 msgid "_Output Devices"
@@ -162,11 +165,11 @@ msgstr "रिकॉर्ड कर रहा है (_R)"
 
 #: ../src/pavucontrol.glade.h:38
 msgid "direction"
-msgstr ""
+msgstr "दिशा"
 
 #: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
-msgstr "कार्ड कॉलबैक विफलता"
+msgstr "कॉर्ड कॉलबैक विफलता"
 
 #: ../src/pavucontrol.cc:92
 msgid "Sink callback failure"
@@ -186,7 +189,7 @@ msgstr "स्रोत आउटपुट कॉलबैक विफलता
 
 #: ../src/pavucontrol.cc:183
 msgid "Client callback failure"
-msgstr "क्लाएंट कॉलबैक विफलता"
+msgstr "क्लाइंट कॉलबैक विफलता"
 
 #: ../src/pavucontrol.cc:199
 msgid "Server info callback failure"
@@ -195,7 +198,7 @@ msgstr "सर्वर सूचना कॉलबैक विफलता"
 #: ../src/pavucontrol.cc:217 ../src/pavucontrol.cc:430
 #, c-format
 msgid "Failed to initialize stream_restore extension: %s"
-msgstr "stream_restore विस्तार आरंभीकरण में विफल: %s"
+msgstr "stream_restore विस्तार आरंभ करने में विफल: %s"
 
 #: ../src/pavucontrol.cc:235
 msgid "pa_ext_stream_restore_read() failed"
@@ -255,7 +258,7 @@ msgstr "pa_context_get_source_output_info_list() विफल"
 
 #: ../src/pavucontrol.cc:437
 msgid "Connection failed"
-msgstr "कनेक्शन विफल"
+msgstr "कनेक्शन असफल."
 
 #: ../src/cardwidget.cc:87
 msgid "pa_context_set_card_profile_by_index() failed"
@@ -266,9 +269,8 @@ msgid "<small>Silence</small>"
 msgstr "<small>मौन</small>"
 
 #: ../src/channelwidget.cc:104
-#, fuzzy
 msgid "<small>Min</small>"
-msgstr "<small>अधिकतम</small>"
+msgstr "<small>न्यूनतम</small>"
 
 #: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
@@ -276,27 +278,27 @@ msgstr "<small>अधिकतम</small>"
 
 #: ../src/channelwidget.cc:109
 msgid "<small><i>Base</i></small>"
-msgstr "<small><i>आधार</i></small>"
+msgstr "<small><i>Base</i></small>"
 
 #: ../src/mainwindow.cc:269
 msgid "Failed to read data from stream"
-msgstr "स्ट्रीम से आँकड़ा पढ़ने में विफल"
+msgstr "स्ट्रीम से आंकड़ा पढ़ने में विफल"
 
 #: ../src/mainwindow.cc:304 ../src/mainwindow.cc:341
 msgid "Peak detect"
-msgstr "व्यस्तता जाँच"
+msgstr "शीर्ष जाँच"
 
 #: ../src/mainwindow.cc:305 ../src/mainwindow.cc:342
 msgid "Failed to create monitoring stream"
-msgstr "मॉनिटरिंग स्ट्रीम बनाने में विफल"
+msgstr "मॉनिटरिंग स्ट्रीम से बनाने में विफल"
 
 #: ../src/mainwindow.cc:313 ../src/mainwindow.cc:351
 msgid "Failed to connect monitoring stream"
-msgstr "मॉनिटरिंग स्ट्रीम जोड़ने में विफल"
+msgstr "मॉनिटरिंग स्ट्रीम से कनेक्ट करने में विफल"
 
 #: ../src/mainwindow.cc:610
 msgid "System Sounds"
-msgstr "तंत्र ध्वनि"
+msgstr "सिस्टम ध्वनि"
 
 #: ../src/rolewidget.cc:71
 msgid "pa_ext_stream_restore_write() failed"
@@ -304,16 +306,15 @@ msgstr "pa_ext_stream_restore_write() विफल"
 
 #: ../src/sinkinputwidget.cc:35
 msgid "on"
-msgstr ""
+msgstr "चालू"
 
 #: ../src/sinkinputwidget.cc:38
-#, fuzzy
 msgid "Terminate Playback"
-msgstr "स्ट्रीम बंद करें (_T)"
+msgstr "गीतसूची रोकें"
 
 #: ../src/sinkinputwidget.cc:61
 msgid "Unknown output"
-msgstr ""
+msgstr "अनजान आउटपुट"
 
 #: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
@@ -337,7 +338,7 @@ msgstr "pa_context_set_sink_volume_by_index() विफल"
 
 #: ../src/sinkwidget.cc:63
 msgid "Volume Control Feedback Sound"
-msgstr "आवाज़ नियंत्रण फ़ीडबैक ध्वनि"
+msgstr "आवाज नियंत्रण फीडबैक ध्वनि"
 
 #: ../src/sinkwidget.cc:80
 msgid "pa_context_set_sink_mute_by_index() failed"
@@ -348,22 +349,20 @@ msgid "pa_context_set_default_sink() failed"
 msgstr "pa_context_set_default_sink() विफल"
 
 #: ../src/sinkwidget.cc:114
-#, fuzzy
 msgid "pa_context_set_sink_port_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() विफल"
+msgstr "pa_context_set_sink_port_by_index() विफल"
 
 #: ../src/sourceoutputwidget.cc:35
 msgid "from"
-msgstr ""
+msgstr "से"
 
 #: ../src/sourceoutputwidget.cc:38
-#, fuzzy
 msgid "Terminate Recording"
-msgstr "रिकॉर्ड कर रहा है (_R)"
+msgstr "रिकार्डिंग रोकें"
 
 #: ../src/sourceoutputwidget.cc:61
 msgid "Unknown input"
-msgstr ""
+msgstr "अनजान इनपुट"
 
 #: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
@@ -386,15 +385,6 @@ msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() विफल"
 
 #: ../src/sourcewidget.cc:95
-#, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() विफल"
+msgstr "pa_context_set_source_port_by_index() विफल"
 
-#~ msgid "Open menu"
-#~ msgstr "मेन्यू खोलें"
-
-#~ msgid "_Move Stream..."
-#~ msgstr "स्ट्रीम खिसकाएँ (_M)..."
-
-#~ msgid "_Default"
-#~ msgstr "तयशुदा (_D)"

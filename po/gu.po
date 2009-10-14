@@ -1,14 +1,14 @@
-# translation of gu.po to Gujarati
+# translation of Pulseaudio-volume.po to Gujarati
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Sweta Kothari <swkothar@redhat.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: gu\n"
+"Project-Id-Version: Pulseaudio-volume\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 04:15+0200\n"
-"PO-Revision-Date: 2009-04-14 11:24+0530\n"
+"POT-Creation-Date: 2009-09-10 08:40+0000\n"
+"PO-Revision-Date: 2009-09-10 15:41+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
 "MIME-Version: 1.0\n"
@@ -35,9 +35,8 @@ msgid "50%"
 msgstr "50%"
 
 #: ../src/pavucontrol.glade.h:3
-#, fuzzy
 msgid "<b>Port:</b>"
-msgstr "<b>રૂપરેખા:</b>"
+msgstr "<b>પોર્ટ:</b>"
 
 #: ../src/pavucontrol.glade.h:4
 msgid "<b>Profile:</b>"
@@ -119,9 +118,8 @@ msgid "Card Name"
 msgstr "કાર્ડ નામ"
 
 #: ../src/pavucontrol.glade.h:27
-#, fuzzy
 msgid "Device"
-msgstr "ઇનપુટ ઉપકરણો (_I)"
+msgstr "ઉપકરણ"
 
 #: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
@@ -133,7 +131,7 @@ msgstr "મૂંગુ ઓડિયો"
 
 #: ../src/pavucontrol.glade.h:30
 msgid "Set as fallback"
-msgstr ""
+msgstr "fallback તરીકે સુયોજિત કરો"
 
 #: ../src/pavucontrol.glade.h:31
 msgid "Stream Title"
@@ -161,7 +159,7 @@ msgstr "રેકોર્ડ કરી રહ્યા છે (_R)"
 
 #: ../src/pavucontrol.glade.h:38
 msgid "direction"
-msgstr ""
+msgstr "દિશા"
 
 #: ../src/pavucontrol.cc:73
 msgid "Card callback failure"
@@ -265,9 +263,8 @@ msgid "<small>Silence</small>"
 msgstr "<small>શાંત</small>"
 
 #: ../src/channelwidget.cc:104
-#, fuzzy
 msgid "<small>Min</small>"
-msgstr "<small>મહત્તમ</small>"
+msgstr "<small>ન્યૂનત્તમ</small>"
 
 #: ../src/channelwidget.cc:105
 msgid "<small>Max</small>"
@@ -303,16 +300,15 @@ msgstr "pa_ext_stream_restore_write() નિષ્ફળ"
 
 #: ../src/sinkinputwidget.cc:35
 msgid "on"
-msgstr ""
+msgstr "પર"
 
 #: ../src/sinkinputwidget.cc:38
-#, fuzzy
 msgid "Terminate Playback"
-msgstr "સ્ટ્રીમનો અંત લાવો (_T)"
+msgstr "પ્લેબેકનો અંત લાવો"
 
 #: ../src/sinkinputwidget.cc:61
 msgid "Unknown output"
-msgstr ""
+msgstr "અજ્ઞાત આઉટપુટ"
 
 #: ../src/sinkinputwidget.cc:72
 msgid "pa_context_set_sink_input_volume() failed"
@@ -347,22 +343,20 @@ msgid "pa_context_set_default_sink() failed"
 msgstr "pa_context_set_default_sink() નિષ્ફળ"
 
 #: ../src/sinkwidget.cc:114
-#, fuzzy
 msgid "pa_context_set_sink_port_by_index() failed"
-msgstr "pa_context_set_sink_mute_by_index() નિષ્ફળ"
+msgstr "pa_context_set_sink_port_by_index() નિષ્ફળ"
 
 #: ../src/sourceoutputwidget.cc:35
 msgid "from"
-msgstr ""
+msgstr "માંથી"
 
 #: ../src/sourceoutputwidget.cc:38
-#, fuzzy
 msgid "Terminate Recording"
-msgstr "રેકોર્ડ કરી રહ્યા છે (_R)"
+msgstr "રેકોર્ડીગનો અંત લાવી રહ્યા છે"
 
 #: ../src/sourceoutputwidget.cc:61
 msgid "Unknown input"
-msgstr ""
+msgstr "અજ્ઞાત ઇનપુટ"
 
 #: ../src/sourceoutputwidget.cc:71
 msgid "pa_context_kill_source_output() failed"
@@ -385,15 +379,6 @@ msgid "pa_context_set_default_source() failed"
 msgstr "pa_context_set_default_source() નિષ્ફળ"
 
 #: ../src/sourcewidget.cc:95
-#, fuzzy
 msgid "pa_context_set_source_port_by_index() failed"
-msgstr "pa_context_set_source_mute_by_index() નિષ્ફળ"
+msgstr "pa_context_set_source_port_by_index() નિષ્ફળ"
 
-#~ msgid "Open menu"
-#~ msgstr "મેનુ ખોલો"
-
-#~ msgid "_Move Stream..."
-#~ msgstr "સ્ટ્રીમને ખસેડો (_M)..."
-
-#~ msgid "_Default"
-#~ msgstr "મૂળભૂત (_D)"
