@@ -38,6 +38,10 @@ General Public License for more details.</p>
 
 <h2><a name="news">News</a></h2>
 
+<div class="news-date">Wed Oct 14
+2009: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-0.9.10.tar.gz">Version
+0.9.10</a> released; minor fixes; translation updates.</p>
+
 <div class="news-date">Thu Sep 10
 2009: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-0.9.9.tar.gz">Version
 0.9.9</a> released; allow configuring device ports; various updates.</p>
@@ -135,7 +139,7 @@ compilation and <tt>make install</tt> (as root) for installation of
 <pre>git clone git://git.0pointer.de/pavucontrol</pre>
 
 <hr/>
-<address class="grey">Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;, September 2009</address>
+<address class="grey">Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;, October 2009</address>
 
 </body>
 </html>
