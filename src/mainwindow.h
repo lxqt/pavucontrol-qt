@@ -80,7 +80,7 @@ public:
     void updateDeviceVisibility();
     void reallyUpdateDeviceVisibility();
     void createMonitorStreamForSource(uint32_t source_idx);
-    void createMonitorStreamForSinkInput(uint32_t sink_input_idx, uint32_t sink_idx);
+    void createMonitorStreamForSinkInput(SinkInputWidget* w, uint32_t sink_idx);
 
     void setIconFromProplist(Gtk::Image *icon, pa_proplist *l, const char *name);
 

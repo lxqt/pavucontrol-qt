@@ -43,6 +43,7 @@ public:
 
     pa_channel_map channelMap;
     pa_cvolume volume;
+    pa_stream *peak;
 
     ChannelWidget *channelWidgets[PA_CHANNELS_MAX];
 
