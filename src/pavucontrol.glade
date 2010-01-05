@@ -11,6 +11,7 @@
       <widget class="GtkVBox" id="vbox20">
         <property name="visible">True</property>
         <property name="border_width">12</property>
+        <property name="orientation">vertical</property>
         <property name="spacing">12</property>
         <child>
           <widget class="GtkNotebook" id="notebook">
@@ -20,6 +21,7 @@
             <child>
               <widget class="GtkVBox" id="vbox32">
                 <property name="visible">True</property>
+                <property name="orientation">vertical</property>
                 <child>
                   <widget class="GtkScrolledWindow" id="scrolledwindow5">
                     <property name="visible">True</property>
@@ -34,6 +36,7 @@
                         <child>
                           <widget class="GtkVBox" id="streamsVBox">
                             <property name="visible">True</property>
+                            <property name="orientation">vertical</property>
                             <child>
                               <widget class="GtkLabel" id="noStreamsLabel">
                                 <property name="visible">True</property>
@@ -115,6 +118,7 @@ Virtual Streams</property>
             <child>
               <widget class="GtkVBox" id="vbox2">
                 <property name="visible">True</property>
+                <property name="orientation">vertical</property>
                 <child>
                   <widget class="GtkScrolledWindow" id="scrolledwindow2">
                     <property name="visible">True</property>
@@ -129,6 +133,7 @@ Virtual Streams</property>
                         <child>
                           <widget class="GtkVBox" id="recsVBox">
                             <property name="visible">True</property>
+                            <property name="orientation">vertical</property>
                             <child>
                               <widget class="GtkLabel" id="noRecsLabel">
                                 <property name="visible">True</property>
@@ -214,6 +219,7 @@ Virtual Streams</property>
             <child>
               <widget class="GtkVBox" id="vbox30">
                 <property name="visible">True</property>
+                <property name="orientation">vertical</property>
                 <child>
                   <widget class="GtkScrolledWindow" id="scrolledwindow8">
                     <property name="visible">True</property>
@@ -228,6 +234,7 @@ Virtual Streams</property>
                         <child>
                           <widget class="GtkVBox" id="sinksVBox">
                             <property name="visible">True</property>
+                            <property name="orientation">vertical</property>
                             <child>
                               <widget class="GtkLabel" id="noSinksLabel">
                                 <property name="visible">True</property>
@@ -313,6 +320,7 @@ Virtual Output Devices</property>
             <child>
               <widget class="GtkVBox" id="vbox31">
                 <property name="visible">True</property>
+                <property name="orientation">vertical</property>
                 <child>
                   <widget class="GtkScrolledWindow" id="scrolledwindow7">
                     <property name="visible">True</property>
@@ -328,6 +336,7 @@ Virtual Output Devices</property>
                         <child>
                           <widget class="GtkVBox" id="sourcesVBox">
                             <property name="visible">True</property>
+                            <property name="orientation">vertical</property>
                             <child>
                               <widget class="GtkLabel" id="noSourcesLabel">
                                 <property name="visible">True</property>
@@ -415,6 +424,7 @@ Monitors</property>
             <child>
               <widget class="GtkVBox" id="vbox1">
                 <property name="visible">True</property>
+                <property name="orientation">vertical</property>
                 <child>
                   <widget class="GtkScrolledWindow" id="scrolledwindow1">
                     <property name="visible">True</property>
@@ -429,6 +439,7 @@ Monitors</property>
                         <child>
                           <widget class="GtkVBox" id="cardsVBox">
                             <property name="visible">True</property>
+                            <property name="orientation">vertical</property>
                             <child>
                               <widget class="GtkLabel" id="noCardsLabel">
                                 <property name="visible">True</property>
@@ -485,10 +496,12 @@ Monitors</property>
         <child>
           <widget class="GtkVBox" id="streamWidget2">
             <property name="visible">True</property>
+            <property name="orientation">vertical</property>
             <child>
               <widget class="GtkVBox" id="vbox26">
                 <property name="visible">True</property>
                 <property name="border_width">12</property>
+                <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
                   <widget class="GtkHBox" id="hbox1">
@@ -512,6 +525,7 @@ Monitors</property>
                           <widget class="GtkLabel" id="boldNameLabel">
                             <property name="visible">True</property>
                             <property name="use_markup">True</property>
+                            <property name="ellipsize">middle</property>
                           </widget>
                           <packing>
                             <property name="expand">False</property>
@@ -524,6 +538,7 @@ Monitors</property>
                             <property name="xalign">0</property>
                             <property name="label" translatable="yes">Stream Title</property>
                             <property name="use_markup">True</property>
+                            <property name="ellipsize">middle</property>
                           </widget>
                           <packing>
                             <property name="expand">False</property>
@@ -626,6 +641,7 @@ Monitors</property>
                 <child>
                   <widget class="GtkVBox" id="channelsVBox">
                     <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
                     <property name="spacing">6</property>
                     <child>
                       <placeholder/>
@@ -671,10 +687,12 @@ Monitors</property>
         <child>
           <widget class="GtkVBox" id="streamWidget2">
             <property name="visible">True</property>
+            <property name="orientation">vertical</property>
             <child>
               <widget class="GtkVBox" id="vbox26">
                 <property name="visible">True</property>
                 <property name="border_width">12</property>
+                <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
                   <widget class="GtkHBox" id="hbox1">
@@ -697,6 +715,7 @@ Monitors</property>
                           <widget class="GtkLabel" id="boldNameLabel">
                             <property name="visible">True</property>
                             <property name="use_markup">True</property>
+                            <property name="ellipsize">middle</property>
                           </widget>
                           <packing>
                             <property name="expand">False</property>
@@ -831,6 +850,7 @@ Monitors</property>
                 <child>
                   <widget class="GtkVBox" id="channelsVBox">
                     <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
                     <property name="spacing">6</property>
                     <child>
                       <placeholder/>
@@ -925,6 +945,7 @@ Monitors</property>
         <child>
           <widget class="GtkVBox" id="cardWidget1">
             <property name="visible">True</property>
+            <property name="orientation">vertical</property>
             <child>
               <widget class="GtkVBox" id="vbox7">
                 <property name="visible">True</property>
