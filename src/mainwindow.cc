@@ -541,6 +541,7 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
         recsVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
         w->clientIndex = info.client;
+        is_new = true;
     }
 
     w->updating = true;
