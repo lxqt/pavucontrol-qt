@@ -568,7 +568,7 @@ int main(int argc, char *argv[]) {
     Gtk::Main::run(*mainWindow);
     delete mainWindow;
 
-finish:
-    pa_context_unref(context);
+    if (context)
+        pa_context_unref(context);
     pa_glib_mainloop_free(m);
 }
