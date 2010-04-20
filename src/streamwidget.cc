@@ -31,8 +31,8 @@
 /*** StreamWidget ***/
 StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
     MinimalStreamWidget(cobject, x),
-    mpMainWindow(NULL),
-    peak(NULL) {
+    peak(NULL),
+    mpMainWindow(NULL) {
 
     x->get_widget("lockToggleButton", lockToggleButton);
     x->get_widget("muteToggleButton", muteToggleButton);
