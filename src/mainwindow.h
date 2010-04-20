@@ -55,6 +55,8 @@ public:
     void removeSourceOutput(uint32_t index);
     void removeClient(uint32_t index);
 
+    void removeAllWidgets();
+
     Gtk::Notebook *notebook;
     Gtk::VBox *streamsVBox, *recsVBox, *sinksVBox, *sourcesVBox, *cardsVBox;
     Gtk::Label *noStreamsLabel, *noRecsLabel, *noSinksLabel, *noSourcesLabel, *noCardsLabel;

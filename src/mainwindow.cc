@@ -896,6 +896,35 @@ void MainWindow::removeClient(uint32_t index) {
     clientNames.erase(index);
 }
 
+void MainWindow::removeAllWidgets() {
+    {
+        std::map<uint32_t, SinkInputWidget*>::iterator it;
+        for (it = sinkInputWidgets.begin(); it != sinkInputWidgets.end(); ++it)
+            removeSinkInput(it->first);
+    }{
+        std::map<uint32_t, SourceOutputWidget*>::iterator it;
+        for (it = sourceOutputWidgets.begin(); it != sourceOutputWidgets.end(); ++it)
+            removeSourceOutput(it->first);
+    }{
+        std::map<uint32_t, SinkWidget*>::iterator it;
+        for (it = sinkWidgets.begin(); it != sinkWidgets.end(); ++it)
+            removeSink(it->first);
+    }{
+        std::map<uint32_t, SourceWidget*>::iterator it;
+        for (it = sourceWidgets.begin(); it != sourceWidgets.end(); ++it)
+            removeSource(it->first);
+    }{
+        std::map<uint32_t, CardWidget*>::iterator it;
+        for (it = cardWidgets.begin(); it != cardWidgets.end(); ++it)
+           removeCard(it->first);
+    }{
+        std::map<uint32_t, char*>::iterator it;
+        for (it = clientNames.begin(); it != clientNames.end(); ++it)
+            removeSourceOutput(it->first);
+    }
+    deleteEventRoleWidget();
+}
+
 void MainWindow::onSinkTypeComboBoxChanged() {
     showSinkType = (SinkType) sinkTypeComboBox->get_active_row_number();
 
