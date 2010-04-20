@@ -484,6 +484,15 @@ Monitors</property>
             <property name="position">0</property>
           </packing>
         </child>
+        <child>
+          <widget class="GtkLabel" id="connectingLabel">
+            <property name="label" translatable="yes">&lt;i&gt;Establishing connection to PulseAudio. Please wait...&lt;/i&gt;</property>
+            <property name="use_markup">True</property>
+          </widget>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
       </widget>
     </child>
   </widget>

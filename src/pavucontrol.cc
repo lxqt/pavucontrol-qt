@@ -61,8 +61,10 @@ static void dec_outstanding(MainWindow *w) {
     if (n_outstanding <= 0)
         return;
 
-    if (--n_outstanding <= 0)
+    if (--n_outstanding <= 0) {
         w->get_window()->set_cursor();
+        w->setConnectionState(true);
+    }
 }
 
 void card_cb(pa_context *, const pa_card_info *i, int eol, void *userdata) {
@@ -492,6 +494,8 @@ void context_state_callback(pa_context *c, void *userdata) {
         case PA_CONTEXT_FAILED:
             g_debug(_("Connection failed, attempting reconnect"));
 
+            w->setConnectionState(false);
+
             w->removeAllWidgets();
             w->updateDeviceVisibility();
             pa_context_unref(context);
@@ -536,7 +540,6 @@ gboolean connect_to_pulse(gpointer userdata) {
         return false;
     }
 
-    g_debug(_("Initialised and connected our context"));
     return false;
 }
 

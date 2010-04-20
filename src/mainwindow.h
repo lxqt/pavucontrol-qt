@@ -59,7 +59,7 @@ public:
 
     Gtk::Notebook *notebook;
     Gtk::VBox *streamsVBox, *recsVBox, *sinksVBox, *sourcesVBox, *cardsVBox;
-    Gtk::Label *noStreamsLabel, *noRecsLabel, *noSinksLabel, *noSourcesLabel, *noCardsLabel;
+    Gtk::Label *noStreamsLabel, *noRecsLabel, *noSinksLabel, *noSourcesLabel, *noCardsLabel, *connectingLabel;
     Gtk::ComboBox *sinkInputTypeComboBox, *sourceOutputTypeComboBox, *sinkTypeComboBox, *sourceTypeComboBox;
 
     std::map<uint32_t, CardWidget*> cardWidgets;
@@ -79,6 +79,7 @@ public:
     virtual void onSinkTypeComboBoxChanged();
     virtual void onSourceTypeComboBoxChanged();
 
+    void setConnectionState(gboolean connected);
     void updateDeviceVisibility();
     void reallyUpdateDeviceVisibility();
     void createMonitorStreamForSource(uint32_t source_idx);
@@ -97,6 +98,9 @@ public:
 
 protected:
     virtual void on_realize();
+
+private:
+    gboolean m_connected;
 };
 
 

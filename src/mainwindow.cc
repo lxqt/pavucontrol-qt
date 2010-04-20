@@ -73,7 +73,8 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     showSourceOutputType(SOURCE_OUTPUT_CLIENT),
     showSourceType(SOURCE_NO_MONITOR),
     eventRoleWidget(NULL),
-    canRenameDevices(false) {
+    canRenameDevices(false),
+    m_connected(false) {
 
     x->get_widget("cardsVBox", cardsVBox);
     x->get_widget("streamsVBox", streamsVBox);
@@ -85,6 +86,7 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     x->get_widget("noRecsLabel", noRecsLabel);
     x->get_widget("noSinksLabel", noSinksLabel);
     x->get_widget("noSourcesLabel", noSourcesLabel);
+    x->get_widget("connectingLabel", connectingLabel);
     x->get_widget("sinkInputTypeComboBox", sinkInputTypeComboBox);
     x->get_widget("sourceOutputTypeComboBox", sourceOutputTypeComboBox);
     x->get_widget("sinkTypeComboBox", sinkTypeComboBox);
@@ -106,6 +108,10 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     sourceOutputTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceOutputTypeComboBoxChanged));
     sinkTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkTypeComboBoxChanged));
     sourceTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceTypeComboBoxChanged));
+
+    /* Hide first and show when we're connected */
+    notebook->hide();
+    connectingLabel->show();
 }
 
 MainWindow* MainWindow::create() {
@@ -718,6 +724,19 @@ gboolean idle_cb(gpointer data) {
     ((MainWindow*) data)->reallyUpdateDeviceVisibility();
     idle_source = 0;
     return FALSE;
+}
+
+void MainWindow::setConnectionState(gboolean connected) {
+    if (m_connected != connected) {
+        m_connected = connected;
+        if (m_connected) {
+            connectingLabel->hide();
+            notebook->show();
+        } else {
+            notebook->hide();
+            connectingLabel->show();
+        }
+    }
 }
 
 void MainWindow::updateDeviceVisibility() {
