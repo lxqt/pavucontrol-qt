@@ -372,6 +372,9 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
     }
 }
 
+/* Forward Declaration */
+gboolean connect_to_pulse(gpointer userdata);
+
 void context_state_callback(pa_context *c, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
@@ -487,7 +490,14 @@ void context_state_callback(pa_context *c, void *userdata) {
         }
 
         case PA_CONTEXT_FAILED:
-            show_error(_("Connection failed"));
+            g_debug(_("Connection failed, attempting reconnect"));
+
+            w->removeAllWidgets();
+            w->updateDeviceVisibility();
+            pa_context_unref(context);
+            context = NULL;
+
+            g_timeout_add_seconds(1, connect_to_pulse, w);
             return;
 
         case PA_CONTEXT_TERMINATED:
@@ -497,8 +507,15 @@ void context_state_callback(pa_context *c, void *userdata) {
     }
 }
 
-static pa_context* create_context(MainWindow* w) {
-    g_assert(api);
+pa_context* get_context(void) {
+  return context;
+}
+
+gboolean connect_to_pulse(gpointer userdata) {
+    MainWindow *w = static_cast<MainWindow*>(userdata);
+
+    if (context)
+        return false;
 
     pa_proplist *proplist = pa_proplist_new();
     pa_proplist_sets(proplist, PA_PROP_APPLICATION_NAME, _("PulseAudio Volume Control"));
@@ -506,18 +523,21 @@ static pa_context* create_context(MainWindow* w) {
     pa_proplist_sets(proplist, PA_PROP_APPLICATION_ICON_NAME, "audio-card");
     pa_proplist_sets(proplist, PA_PROP_APPLICATION_VERSION, PACKAGE_VERSION);
 
-    pa_context* c = pa_context_new_with_proplist(api, NULL, proplist);
-    g_assert(c);
+    context = pa_context_new_with_proplist(api, NULL, proplist);
+    g_assert(context);
 
     pa_proplist_free(proplist);
 
-    pa_context_set_state_callback(c, context_state_callback, w);
+    pa_context_set_state_callback(context, context_state_callback, w);
 
-    return c;
-}
+    if (pa_context_connect(context, NULL, PA_CONTEXT_NOFAIL, NULL) < 0) {
+        show_error(_("Fatal Error: Unable to connect context"));
+        Gtk::Main::quit();
+        return false;
+    }
 
-pa_context* get_context(void) {
-  return context;
+    g_debug(_("Initialised and connected our context"));
+    return false;
 }
 
 int main(int argc, char *argv[]) {
@@ -540,10 +560,7 @@ int main(int argc, char *argv[]) {
     api = pa_glib_mainloop_get_api(m);
     g_assert(api);
 
-    context = create_context(mainWindow);
-
-    if (pa_context_connect(context, NULL, (pa_context_flags_t) 0, NULL) < 0)
-        goto finish;
+    connect_to_pulse(mainWindow);
 
     Gtk::Main::run(*mainWindow);
     delete mainWindow;
