@@ -983,7 +983,7 @@ void MainWindow::removeAllWidgets() {
     for (std::map<uint32_t, CardWidget*>::iterator it = cardWidgets.begin(); it != cardWidgets.end(); ++it)
        removeCard(it->first);
     for (std::map<uint32_t, char*>::iterator it = clientNames.begin(); it != clientNames.end(); ++it)
-        removeSourceOutput(it->first);
+        removeClient(it->first);
     deleteEventRoleWidget();
 }
 
