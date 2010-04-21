@@ -101,6 +101,7 @@ protected:
 
 private:
     gboolean m_connected;
+    gchar* m_config_filename;
 };
 
 

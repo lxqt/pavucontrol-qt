@@ -74,7 +74,8 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     showSourceType(SOURCE_NO_MONITOR),
     eventRoleWidget(NULL),
     canRenameDevices(false),
-    m_connected(false) {
+    m_connected(false),
+    m_config_filename(NULL) {
 
     x->get_widget("cardsVBox", cardsVBox);
     x->get_widget("streamsVBox", streamsVBox);
@@ -109,6 +110,28 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
     sinkTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkTypeComboBoxChanged));
     sourceTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceTypeComboBoxChanged));
 
+    GKeyFile* config = g_key_file_new();
+    g_assert(config);
+    GKeyFileFlags flags = (GKeyFileFlags)( G_KEY_FILE_KEEP_COMMENTS | G_KEY_FILE_KEEP_TRANSLATIONS);
+    GError *err = NULL;
+    m_config_filename = g_strconcat(g_get_user_config_dir(), "/pavucontrol.ini", NULL);
+
+    /* Load the GKeyFile from keyfile.conf or return. */
+    if (g_key_file_load_from_file (config, m_config_filename, flags, &err)) {
+        int width  = g_key_file_get_integer(config, "window", "width", NULL);
+        int height = g_key_file_get_integer(config, "window", "height", NULL);
+
+        int default_width, default_height;
+        get_default_size(default_width, default_height);
+        if (width >= default_width && height >= default_height)
+            resize(width, height);
+    } else {
+        g_debug(_("Error reading config file %s: %s"), m_config_filename, err->message);
+        g_error_free(err);
+    }
+    g_key_file_free(config);
+
+
     /* Hide first and show when we're connected */
     notebook->hide();
     connectingLabel->show();
@@ -128,6 +151,38 @@ void MainWindow::on_realize() {
 }
 
 MainWindow::~MainWindow() {
+    GKeyFile* config = g_key_file_new();
+    g_assert(config);
+
+    int width, height;
+    get_size(width, height);
+    g_key_file_set_integer(config, "window", "width", width);
+    g_key_file_set_integer(config, "window", "height", height);
+
+    gsize filelen;
+    GError *err = NULL;
+    gchar *filedata = g_key_file_to_data(config, &filelen, &err);
+    if (err) {
+        show_error(_("Error saving preferences"));
+        g_error_free(err);
+        goto finish;
+    }
+
+    g_file_set_contents(m_config_filename, filedata, filelen, &err);
+    g_free(filedata);
+    if (err) {
+        gchar* msg = g_strconcat(_("Error writing config file %s"), m_config_filename, NULL);
+        show_error(msg);
+        g_free(msg);
+        g_error_free(err);
+        goto finish;
+    }
+
+finish:
+
+    g_key_file_free(config);
+    g_free(m_config_filename);
+
     while (!clientNames.empty()) {
         std::map<uint32_t, char*>::iterator i = clientNames.begin();
         g_free(i->second);
