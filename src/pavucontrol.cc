@@ -595,7 +595,7 @@ int main(int argc, char *argv[]) {
             pa_context_unref(context);
         pa_glib_mainloop_free(m);
     } catch ( const Glib::OptionError & e ) {
-        fprintf(stderr, options.get_help().c_str());
+        fprintf(stderr, "%s", options.get_help().c_str());
         return 1;
     }
 
