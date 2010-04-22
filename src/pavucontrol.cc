@@ -45,6 +45,7 @@
 static pa_context* context = NULL;
 static pa_mainloop_api* api = NULL;
 static int n_outstanding = 0;
+static int default_tab = 0;
 
 void show_error(const char *txt) {
     char buf[256];
@@ -159,15 +160,21 @@ void source_output_cb(pa_context *, const pa_source_output_info *i, int eol, voi
         if (n_outstanding > 0) {
             /* At this point all notebook pages have been populated, so
              * let's open one that isn't empty */
-
-            if (w->sinkInputWidgets.size() > 0)
-                w->notebook->set_current_page(0);
-            else if (w->sourceOutputWidgets.size() > 0)
-                w->notebook->set_current_page(1);
-            else if (w->sourceWidgets.size() > 0 && w->sinkWidgets.size() == 0)
-                w->notebook->set_current_page(3);
-            else
-                w->notebook->set_current_page(2);
+            if (default_tab != -1) {
+                if (default_tab < 1 || default_tab > w->notebook->get_n_pages()) {
+                    if (w->sinkInputWidgets.size() > 0)
+                        w->notebook->set_current_page(0);
+                    else if (w->sourceOutputWidgets.size() > 0)
+                        w->notebook->set_current_page(1);
+                    else if (w->sourceWidgets.size() > 0 && w->sinkWidgets.size() == 0)
+                        w->notebook->set_current_page(3);
+                    else
+                        w->notebook->set_current_page(2);
+                } else {
+                    w->notebook->set_current_page(default_tab - 1);
+                }
+                default_tab = -1;
+            }
         }
 
         dec_outstanding(w);
@@ -552,23 +559,45 @@ int main(int argc, char *argv[]) {
 
     signal(SIGPIPE, SIG_IGN);
 
-    Gtk::Main kit(argc, argv);
 
-    ca_context_set_driver(ca_gtk_context_get(), "pulse");
+    Glib::OptionContext options;
+    options.set_summary("PulseAudio Volume Control");
+    options.set_help_enabled();
 
-    MainWindow* mainWindow = MainWindow::create();
+    Glib::OptionGroup group("pulseaudio", "PAVUControl");
 
-    pa_glib_mainloop *m = pa_glib_mainloop_new(g_main_context_default());
-    g_assert(m);
-    api = pa_glib_mainloop_get_api(m);
-    g_assert(api);
+    Glib::OptionEntry entry;
+    entry.set_long_name("tab");
+    entry.set_short_name('t');
+    entry.set_description(_("Select a specific tab on load."));
+    group.add_entry(entry, default_tab);
 
-    connect_to_pulse(mainWindow);
+    options.set_main_group(group);
 
-    Gtk::Main::run(*mainWindow);
-    delete mainWindow;
+    try {
+        Gtk::Main kit(argc, argv, options);
 
-    if (context)
-        pa_context_unref(context);
-    pa_glib_mainloop_free(m);
+        ca_context_set_driver(ca_gtk_context_get(), "pulse");
+
+        MainWindow* mainWindow = MainWindow::create();
+
+        pa_glib_mainloop *m = pa_glib_mainloop_new(g_main_context_default());
+        g_assert(m);
+        api = pa_glib_mainloop_get_api(m);
+        g_assert(api);
+
+        connect_to_pulse(mainWindow);
+
+        Gtk::Main::run(*mainWindow);
+        delete mainWindow;
+
+        if (context)
+            pa_context_unref(context);
+        pa_glib_mainloop_free(m);
+    } catch ( const Glib::OptionError & e ) {
+        fprintf(stderr, options.get_help().c_str());
+        return 1;
+    }
+
+    return 0;
 }
