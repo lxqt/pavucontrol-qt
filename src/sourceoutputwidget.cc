@@ -36,6 +36,10 @@ SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefP
     g_free(txt);
 
     terminate.set_label(_("Terminate Recording"));
+
+    /* Source Outputs do not have volume controls */
+    muteToggleButton->hide();
+    lockToggleButton->hide();
 }
 
 SourceOutputWidget* SourceOutputWidget::create(MainWindow* mainWindow) {
