@@ -347,7 +347,7 @@ static void read_callback(pa_stream *s, size_t length, void *userdata) {
     w->updateVolumeMeter(pa_stream_get_device_index(s), pa_stream_get_monitor_stream(s), v);
 }
 
-void MainWindow::createMonitorStreamForSource(uint32_t source_idx) {
+pa_stream* MainWindow::createMonitorStreamForSource(uint32_t source_idx, uint32_t stream_idx = -1) {
     pa_stream *s;
     char t[16];
     pa_buffer_attr attr;
@@ -365,29 +365,24 @@ void MainWindow::createMonitorStreamForSource(uint32_t source_idx) {
 
     if (!(s = pa_stream_new(get_context(), _("Peak detect"), &ss, NULL))) {
         show_error(_("Failed to create monitoring stream"));
-        return;
+        return NULL;
     }
+
+    if (stream_idx != (uint32_t) -1)
+        pa_stream_set_monitor_stream(s, stream_idx);
 
     pa_stream_set_read_callback(s, read_callback, this);
     pa_stream_set_suspended_callback(s, suspended_callback, this);
 
-    if (pa_stream_connect_record(s, t, &attr, (pa_stream_flags_t) (PA_STREAM_DONT_MOVE|PA_STREAM_PEAK_DETECT|PA_STREAM_ADJUST_LATENCY)) < 0) {
+    if (pa_stream_connect_record(s, t, &attr, (pa_stream_flags_t) (PA_STREAM_DONT_INHIBIT_AUTO_SUSPEND|PA_STREAM_DONT_MOVE|PA_STREAM_PEAK_DETECT|PA_STREAM_ADJUST_LATENCY)) < 0) {
         show_error(_("Failed to connect monitoring stream"));
         pa_stream_unref(s);
-        return;
+        return NULL;
     }
+    return s;
 }
 
 void MainWindow::createMonitorStreamForSinkInput(SinkInputWidget* w, uint32_t sink_idx) {
-    char t[16];
-    pa_buffer_attr attr;
-    pa_sample_spec ss;
-    uint32_t monitor_source_idx;
-
-    ss.channels = 1;
-    ss.format = PA_SAMPLE_FLOAT32;
-    ss.rate = 25;
-
     if (!sinkWidgets.count(sink_idx))
         return;
 
@@ -396,29 +391,7 @@ void MainWindow::createMonitorStreamForSinkInput(SinkInputWidget* w, uint32_t si
         w->peak = NULL;
     }
 
-    monitor_source_idx = sinkWidgets[sink_idx]->monitor_index;
-
-    memset(&attr, 0, sizeof(attr));
-    attr.fragsize = sizeof(float);
-    attr.maxlength = (uint32_t) -1;
-
-    snprintf(t, sizeof(t), "%u", monitor_source_idx);
-
-    if (!(w->peak = pa_stream_new(get_context(), _("Peak detect"), &ss, NULL))) {
-        show_error(_("Failed to create monitoring stream"));
-        return;
-    }
-
-    pa_stream_set_monitor_stream(w->peak, w->index);
-    pa_stream_set_read_callback(w->peak, read_callback, this);
-    pa_stream_set_suspended_callback(w->peak, suspended_callback, this);
-
-    if (pa_stream_connect_record(w->peak, t, &attr, (pa_stream_flags_t) (PA_STREAM_DONT_MOVE|PA_STREAM_PEAK_DETECT|PA_STREAM_ADJUST_LATENCY)) < 0) {
-        show_error(_("Failed to connect monitoring stream"));
-        pa_stream_unref(w->peak);
-        w->peak = NULL;
-        return;
-    }
+    w->peak = createMonitorStreamForSource(sinkWidgets[sink_idx]->monitor_index, w->index);
 }
 
 void MainWindow::updateSource(const pa_source_info &info) {
