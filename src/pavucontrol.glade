@@ -235,7 +235,6 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="use_markup">True</property>
-                            <property name="ellipsize">middle</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -248,12 +247,11 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="xalign">0</property>
-                            <property name="label" translatable="yes">Stream Title</property>
+                            <property name="label" translatable="yes">Device Title</property>
                             <property name="use_markup">True</property>
-                            <property name="ellipsize">middle</property>
                           </object>
                           <packing>
-                            <property name="expand">True</property>
+                            <property name="expand">False</property>
                             <property name="fill">True</property>
                             <property name="position">1</property>
                           </packing>
@@ -1182,7 +1180,6 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="use_markup">True</property>
-                            <property name="ellipsize">middle</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -1197,7 +1194,6 @@
                             <property name="xalign">0</property>
                             <property name="label" translatable="yes">Stream Title</property>
                             <property name="use_markup">True</property>
-                            <property name="ellipsize">middle</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
