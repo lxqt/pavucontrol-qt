@@ -26,13 +26,13 @@
 
 #include "i18n.h"
 
-SourceWidget::SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
+SourceWidget::SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
     DeviceWidget(cobject, x) {
 }
 
 SourceWidget* SourceWidget::create(MainWindow* mainWindow) {
     SourceWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "deviceWidget");
+    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "deviceWidget");
     x->get_widget_derived("deviceWidget", w);
     w->init(mainWindow, "source");
     return w;

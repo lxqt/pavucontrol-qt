@@ -28,7 +28,7 @@
 
 #include "i18n.h"
 
-SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
+SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
     StreamWidget(cobject, x) {
 
     gchar *txt;
@@ -44,7 +44,7 @@ SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefP
 
 SourceOutputWidget* SourceOutputWidget::create(MainWindow* mainWindow) {
     SourceOutputWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "streamWidget");
+    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "streamWidget");
     x->get_widget_derived("streamWidget", w);
     w->init(mainWindow);
     return w;

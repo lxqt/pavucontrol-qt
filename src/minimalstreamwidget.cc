@@ -25,7 +25,7 @@
 #include "minimalstreamwidget.h"
 
 /*** MinimalStreamWidget ***/
-MinimalStreamWidget::MinimalStreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
+MinimalStreamWidget::MinimalStreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
     Gtk::VBox(cobject),
     peakProgressBar(),
     lastPeak(0),

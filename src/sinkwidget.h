@@ -27,7 +27,7 @@
 
 class SinkWidget : public DeviceWidget {
 public:
-    SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
+    SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
     static SinkWidget* create(MainWindow* mainWindow);
 
     SinkType type;

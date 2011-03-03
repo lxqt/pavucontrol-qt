@@ -28,7 +28,7 @@
 
 #include "i18n.h"
 
-SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
+SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
     StreamWidget(cobject, x) {
 
     gchar *txt;
@@ -40,7 +40,7 @@ SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gno
 
 SinkInputWidget* SinkInputWidget::create(MainWindow* mainWindow) {
     SinkInputWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "streamWidget");
+    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "streamWidget");
     x->get_widget_derived("streamWidget", w);
     w->init(mainWindow);
     return w;

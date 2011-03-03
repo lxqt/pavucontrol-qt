@@ -25,7 +25,7 @@
 
 class CardWidget : public Gtk::VBox {
 public:
-    CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
+    CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
     static CardWidget* create();
 
     Gtk::Label *nameLabel;

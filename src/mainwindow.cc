@@ -66,7 +66,7 @@ struct source_port_prio_compare {
     }
 };
 
-MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
+MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
     Gtk::Window(cobject),
     showSinkInputType(SINK_INPUT_CLIENT),
     showSinkType(SINK_ALL),
@@ -139,7 +139,12 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
 
 MainWindow* MainWindow::create() {
     MainWindow* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "mainWindow");
+    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create();
+    x->add_from_file(GLADE_FILE, "liststore1");
+    x->add_from_file(GLADE_FILE, "liststore2");
+    x->add_from_file(GLADE_FILE, "liststore3");
+    x->add_from_file(GLADE_FILE, "liststore4");
+    x->add_from_file(GLADE_FILE, "mainWindow");
     x->get_widget_derived("mainWindow", w);
     return w;
 }

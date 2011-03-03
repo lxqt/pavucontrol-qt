@@ -27,7 +27,6 @@
 #include <libintl.h>
 
 #include <gtkmm.h>
-#include <libglademm.h>
 
 #include <pulse/pulseaudio.h>
 

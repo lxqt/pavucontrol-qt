@@ -25,7 +25,7 @@
 
 class MinimalStreamWidget : public Gtk::VBox {
 public:
-    MinimalStreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
+    MinimalStreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
 
     Gtk::VBox *channelsVBox;
     Gtk::Label *nameLabel, *boldNameLabel;

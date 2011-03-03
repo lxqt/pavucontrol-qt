@@ -31,7 +31,7 @@
 #include "i18n.h"
 
 /*** DeviceWidget ***/
-DeviceWidget::DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
+DeviceWidget::DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
     MinimalStreamWidget(cobject, x)  {
 
     x->get_widget("lockToggleButton", lockToggleButton);
@@ -197,7 +197,7 @@ void DeviceWidget::renamePopup() {
     Gtk::Dialog* dialog;
     Gtk::Entry* renameText;
 
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "renameDialog");
+    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "renameDialog");
     x->get_widget("renameDialog", dialog);
     x->get_widget("renameText", renameText);
 

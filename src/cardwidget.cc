@@ -27,7 +27,7 @@
 #include "i18n.h"
 
 /*** CardWidget ***/
-CardWidget::CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
+CardWidget::CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
     Gtk::VBox(cobject) {
 
     x->get_widget("nameLabel", nameLabel);
@@ -43,7 +43,7 @@ CardWidget::CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade:
 
 CardWidget* CardWidget::create() {
     CardWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "cardWidget");
+    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "cardWidget");
     x->get_widget_derived("cardWidget", w);
     return w;
 }

@@ -27,7 +27,7 @@
 
 class SourceWidget : public DeviceWidget {
 public:
-    SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
+    SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
     static SourceWidget* create(MainWindow* mainWindow);
 
     SourceType type;

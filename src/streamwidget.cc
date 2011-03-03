@@ -29,7 +29,7 @@
 #include "i18n.h"
 
 /*** StreamWidget ***/
-StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
+StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
     MinimalStreamWidget(cobject, x),
     peak(NULL),
     mpMainWindow(NULL) {

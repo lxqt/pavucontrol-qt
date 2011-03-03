@@ -31,7 +31,7 @@ static bool show_decibel = true;
 
 /*** ChannelWidget ***/
 
-ChannelWidget::ChannelWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x) :
+ChannelWidget::ChannelWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
     Gtk::EventBox(cobject),
     volumeScaleEnabled(true) {
 
@@ -47,7 +47,9 @@ ChannelWidget::ChannelWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::
 
 ChannelWidget* ChannelWidget::create() {
     ChannelWidget* w;
-    Glib::RefPtr<Gnome::Glade::Xml> x = Gnome::Glade::Xml::create(GLADE_FILE, "channelWidget");
+    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create();
+    x->add_from_file(GLADE_FILE, "adjustment1");
+    x->add_from_file(GLADE_FILE, "channelWidget");
     x->get_widget_derived("channelWidget", w);
     return w;
 }

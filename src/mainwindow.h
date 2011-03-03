@@ -34,7 +34,7 @@ class RoleWidget;
 
 class MainWindow : public Gtk::Window {
 public:
-    MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
+    MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
     static MainWindow* create();
     virtual ~MainWindow();
 

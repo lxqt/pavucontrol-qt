@@ -29,7 +29,7 @@ class MainWindow;
 
 class SinkInputWidget : public StreamWidget {
 public:
-    SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
+    SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
     static SinkInputWidget* create(MainWindow* mainWindow);
     ~SinkInputWidget(void);
 

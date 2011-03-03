@@ -30,7 +30,7 @@ class ChannelWidget;
 
 class DeviceWidget : public MinimalStreamWidget {
 public:
-    DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
+    DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
     void init(MainWindow* mainWindow, Glib::ustring);
 
     void setChannelMap(const pa_channel_map &m, bool can_decibel);

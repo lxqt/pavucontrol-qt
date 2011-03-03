@@ -29,7 +29,7 @@ class MainWindow;
 
 class SourceOutputWidget : public StreamWidget {
 public:
-    SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& x);
+    SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
     static SourceOutputWidget* create(MainWindow* mainWindow);
     ~SourceOutputWidget(void);
 
