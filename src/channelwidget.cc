@@ -112,7 +112,3 @@ void ChannelWidget::setBaseVolume(pa_volume_t v) {
     }
 
 }
-
-void ChannelWidget::setSteps(unsigned n) {
-    /*volumeScale->set_increments(100.0/(n-1), 100.0/(n-1));*/
-}

@@ -139,12 +139,6 @@ void DeviceWidget::setBaseVolume(pa_volume_t v) {
         channelWidgets[channelMap.channels-1]->setBaseVolume(v);
 }
 
-void DeviceWidget::setSteps(unsigned n) {
-
-    for (int i = 0; i < channelMap.channels; i++)
-        channelWidgets[channelMap.channels-1]->setSteps(n);
-}
-
 void DeviceWidget::prepareMenu() {
     int idx = 0;
     int active_idx = -1;
