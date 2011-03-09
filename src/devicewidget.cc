@@ -77,6 +77,7 @@ void DeviceWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
         cw->channelLabel->set_markup(text);
         channelsVBox->pack_start(*cw, false, false, 0);
     }
+    channelWidgets[m.channels-1]->last = true;
 
     lockToggleButton->set_sensitive(m.channels > 1);
 }

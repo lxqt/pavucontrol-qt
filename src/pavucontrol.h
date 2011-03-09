@@ -34,6 +34,11 @@
 #define GLADE_FILE "pavucontrol.glade"
 #endif
 
+/* Can be removed when PulseAudio 0.9.23 or newer is required */
+#ifndef PA_VOLUME_UI_MAX
+# define PA_VOLUME_UI_MAX (pa_sw_volume_from_dB(+11.0))
+#endif
+
 enum SinkInputType {
     SINK_INPUT_ALL,
     SINK_INPUT_CLIENT,
