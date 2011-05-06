@@ -39,6 +39,8 @@
 # define PA_VOLUME_UI_MAX (pa_sw_volume_from_dB(+11.0))
 #endif
 
+#define HAVE_SOURCE_OUTPUT_VOLUMES PA_CHECK_VERSION(1,0,0)
+
 enum SinkInputType {
     SINK_INPUT_ALL,
     SINK_INPUT_CLIENT,

@@ -39,8 +39,8 @@ public:
     void setSinkIndex(uint32_t idx);
     uint32_t sinkIndex();
     virtual void executeVolumeUpdate();
-    virtual void onDeviceChangePopup();
     virtual void onMuteToggleButton();
+    virtual void onDeviceChangePopup();
     virtual void onKill();
 
 private:

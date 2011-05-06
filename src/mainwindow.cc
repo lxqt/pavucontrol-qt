@@ -606,6 +606,7 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
         w = sourceOutputWidgets[info.index];
     else {
         sourceOutputWidgets[info.index] = w = SourceOutputWidget::create(this);
+        w->setChannelMap(info.channel_map, true);
         recsVBox->pack_start(*w, false, false, 0);
         w->index = info.index;
         w->clientIndex = info.client;
@@ -630,6 +631,11 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
     }
 
     setIconFromProplist(w->iconImage, info.proplist, "audio-input-microphone");
+
+#if HAVE_SOURCE_OUTPUT_VOLUMES
+    w->setVolume(info.volume);
+    w->muteToggleButton->set_active(info.mute);
+#endif
 
     w->updating = false;
 

@@ -37,9 +37,11 @@ SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefP
 
     terminate.set_label(_("Terminate Recording"));
 
-    /* Source Outputs do not have volume controls */
+#if !HAVE_SOURCE_OUTPUT_VOLUMES
+    /* Source Outputs do not have volume controls in versions of PA < 1.0 */
     muteToggleButton->hide();
     lockToggleButton->hide();
+#endif
 }
 
 SourceOutputWidget* SourceOutputWidget::create(MainWindow* mainWindow) {
@@ -68,6 +70,34 @@ void SourceOutputWidget::setSourceIndex(uint32_t idx) {
 uint32_t SourceOutputWidget::sourceIndex() {
     return mSourceIndex;
 }
+
+#if HAVE_SOURCE_OUTPUT_VOLUMES
+void SourceOutputWidget::executeVolumeUpdate() {
+    pa_operation* o;
+
+    if (!(o = pa_context_set_source_output_volume(get_context(), index, &volume, NULL, NULL))) {
+        show_error(_("pa_context_set_source_output_volume() failed"));
+        return;
+    }
+
+    pa_operation_unref(o);
+}
+
+void SourceOutputWidget::onMuteToggleButton() {
+    StreamWidget::onMuteToggleButton();
+
+    if (updating)
+        return;
+
+    pa_operation* o;
+    if (!(o = pa_context_set_source_output_mute(get_context(), index, muteToggleButton->get_active(), NULL, NULL))) {
+        show_error(_("pa_context_set_source_output_mute() failed"));
+        return;
+    }
+
+    pa_operation_unref(o);
+}
+#endif
 
 void SourceOutputWidget::onKill() {
     pa_operation* o;

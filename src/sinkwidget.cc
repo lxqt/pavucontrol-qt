@@ -52,9 +52,9 @@ void SinkWidget::executeVolumeUpdate() {
 
     pa_operation_unref(o);
 
-    ca_context_playing(ca_gtk_context_get(), 2, &playing);
-    if (playing)
-        return;
+    //ca_context_playing(ca_gtk_context_get(), 2, &playing);
+    //if (playing)
+    //    return;
 
     snprintf(dev, sizeof(dev), "%lu", (unsigned long) index);
     ca_context_change_device(ca_gtk_context_get(), dev);
