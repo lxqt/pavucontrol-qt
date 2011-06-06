@@ -100,6 +100,7 @@ public:
 
 protected:
     virtual void on_realize();
+    virtual bool on_key_press_event(GdkEventKey* event);
 
 private:
     gboolean m_connected;

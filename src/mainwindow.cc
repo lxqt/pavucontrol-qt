@@ -159,6 +159,39 @@ void MainWindow::on_realize() {
 #endif /* HAVE_GTK3 */
 }
 
+bool MainWindow::on_key_press_event(GdkEventKey* event) {
+
+    if (GDK_KEY_Escape == event->keyval) {
+        Gtk::Main::quit();
+        return true;
+    }
+    if (event->state & GDK_CONTROL_MASK) {
+        switch (event->keyval) {
+            case GDK_KEY_KP_1:
+            case GDK_KEY_KP_2:
+            case GDK_KEY_KP_3:
+            case GDK_KEY_KP_4:
+            case GDK_KEY_KP_5:
+                notebook->set_current_page(event->keyval - GDK_KEY_KP_1);
+                return true;
+            case GDK_KEY_1:
+            case GDK_KEY_2:
+            case GDK_KEY_3:
+            case GDK_KEY_4:
+            case GDK_KEY_5:
+                notebook->set_current_page(event->keyval - GDK_KEY_1);
+                return true;
+            case GDK_KEY_W:
+            case GDK_KEY_Q:
+            case GDK_KEY_w:
+            case GDK_KEY_q:
+                Gtk::Main::quit();
+                return true;
+        }
+    }
+    return Gtk::Window::on_key_press_event(event);
+}
+
 MainWindow::~MainWindow() {
     GKeyFile* config = g_key_file_new();
     g_assert(config);
