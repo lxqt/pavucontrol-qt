@@ -967,6 +967,16 @@ void MainWindow::removeAllWidgets() {
     deleteEventRoleWidget();
 }
 
+void MainWindow::setConnectingMessage(const char *string) {
+    Glib::ustring markup = "<i>";
+    if (!string)
+        markup += _("Establishing connection to PulseAudio. Please wait...");
+    else
+        markup += string;
+    markup += "</i>";
+    connectingLabel->set_markup(markup);
+}
+
 void MainWindow::onSinkTypeComboBoxChanged() {
     showSinkType = (SinkType) sinkTypeComboBox->get_active_row_number();
 

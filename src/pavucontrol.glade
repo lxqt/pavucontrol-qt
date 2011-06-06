@@ -1069,7 +1069,7 @@
         <child>
           <object class="GtkLabel" id="connectingLabel">
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">&lt;i&gt;Establishing connection to PulseAudio. Please wait...&lt;/i&gt;</property>
+            <property name="label" translatable="no">...</property>
             <property name="use_markup">True</property>
           </object>
           <packing>

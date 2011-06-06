@@ -46,6 +46,7 @@ static pa_context* context = NULL;
 static pa_mainloop_api* api = NULL;
 static int n_outstanding = 0;
 static int default_tab = 0;
+static int reconnect_timeout = 1;
 
 void show_error(const char *txt) {
     char buf[256];
@@ -399,6 +400,8 @@ void context_state_callback(pa_context *c, void *userdata) {
         case PA_CONTEXT_READY: {
             pa_operation *o;
 
+            reconnect_timeout = 1;
+
             /* Create event widget immediately so it's first in the list */
             w->createEventRoleWidget();
 
@@ -499,8 +502,6 @@ void context_state_callback(pa_context *c, void *userdata) {
         }
 
         case PA_CONTEXT_FAILED:
-            g_debug(_("Connection failed, attempting reconnect"));
-
             w->setConnectionState(false);
 
             w->removeAllWidgets();
@@ -508,7 +509,10 @@ void context_state_callback(pa_context *c, void *userdata) {
             pa_context_unref(context);
             context = NULL;
 
-            g_timeout_add_seconds(1, connect_to_pulse, w);
+            if (reconnect_timeout > 0) {
+                g_debug(_("Connection failed, attempting reconnect"));
+                g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, w);
+            }
             return;
 
         case PA_CONTEXT_TERMINATED:
@@ -541,10 +545,21 @@ gboolean connect_to_pulse(gpointer userdata) {
 
     pa_context_set_state_callback(context, context_state_callback, w);
 
+    w->setConnectingMessage();
     if (pa_context_connect(context, NULL, PA_CONTEXT_NOFAIL, NULL) < 0) {
-        show_error(_("Fatal Error: Unable to connect context"));
-        Gtk::Main::quit();
-        return false;
+        if (pa_context_errno(context) == PA_ERR_INVALID) {
+            w->setConnectingMessage(_("Connection to PulseAudio failed. Automatic retry in 5s\n\n"
+                "In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Properties\n"
+                "or default-server in client.conf is misconfigured.\n"
+                "This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.\n"
+                "If this is the case, then PulseAudio should autospawn again, or if this is not configured you should\n"
+                "run start-pulseaudio-x11 manually."));
+            reconnect_timeout = 5;
+        }
+        else {
+            reconnect_timeout = -1;
+            Gtk::Main::quit();
+        }
     }
 
     return false;
@@ -587,8 +602,12 @@ int main(int argc, char *argv[]) {
         g_assert(api);
 
         connect_to_pulse(mainWindow);
+        if (reconnect_timeout >= 0)
+            Gtk::Main::run(*mainWindow);
 
-        Gtk::Main::run(*mainWindow);
+        if (reconnect_timeout < 0)
+            show_error(_("Fatal Error: Unable to connect to PulseAudio"));
+
         delete mainWindow;
 
         if (context)
