@@ -57,7 +57,7 @@ msgstr "<b>_Anzeigen:</b>"
 
 #: ../src/pavucontrol.glade.h:8
 msgid "<b>left-front</b>"
-msgstr "<b>vorne links</>"
+msgstr "<b>vorne links</b>"
 
 #: ../src/pavucontrol.glade.h:9
 msgid "<i>No application is currently playing audio.</i>"
