@@ -19,13 +19,13 @@
 # along with pavucontrol. If not, see <http://www.gnu.org/licenses/>.
 
 AC_PREREQ(2.62)
-AC_INIT([pavucontrol],[0.9.10],[mzcnihpbageby (at) 0pointer (dot) de])
+AC_INIT([pavucontrol],[0.99.1],[mzcnihpbageby (at) 0pointer (dot) de])
 AC_CONFIG_SRCDIR([src/pavucontrol.cc])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([foreign 1.9 -Wall])
 
-AC_SUBST(PACKAGE_URL, [http://0pointer.de/lennart/projects/pavucontrol/])
+AC_SUBST(PACKAGE_URL, [http://freedesktop.org/software/pulseaudio/pavucontrol/])
 
 if type -p stow > /dev/null && test -d /usr/local/stow ; then
    AC_MSG_NOTICE([*** Found /usr/local/stow: default install prefix set to /usr/local/stow/${PACKAGE_NAME}-${PACKAGE_VERSION} ***])

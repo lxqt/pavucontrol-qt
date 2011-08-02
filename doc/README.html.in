@@ -10,7 +10,7 @@
 <body>
 <h1><a name="top">PulseAudio Volume Control @PACKAGE_VERSION@</a></h1>
 
-<p><i>Copyright 2006-2009 Lennart Poettering &lt;@PACKAGE_BUGREPORT@&gt;</i></p>
+<p><i>Copyright 2006-2009 Lennart Poettering, 2009-2011 Colin Guthrie &lt;@PACKAGE_BUGREPORT@&gt;</i></p>
 
 <ul class="toc">
     <li><a href="#license">License</a></li>
@@ -37,6 +37,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 General Public License for more details.</p>
 
 <h2><a name="news">News</a></h2>
+
+<div class="news-date">Tue Aug 2
+2011: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-0.99.1.tar.gz">Version
+0.99.1</a> (v1 RC1) released; gtk3 support; source output volume support; key command handling; bugfixes.</p>
 
 <div class="news-date">Wed Oct 14
 2009: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-0.9.10.tar.gz">Version
