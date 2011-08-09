@@ -298,10 +298,10 @@ void MainWindow::updateCard(const pa_card_info &info) {
         updateDeviceVisibility();
 }
 
-void MainWindow::updateSink(const pa_sink_info &info) {
+bool MainWindow::updateSink(const pa_sink_info &info) {
     SinkWidget *w;
     bool is_new = false;
-    const char *icon;
+    const char *icon, *profile;
     std::set<pa_sink_port_info,sink_port_prio_compare> port_priorities;
 
     if (sinkWidgets.count(info.index))
@@ -348,12 +348,18 @@ void MainWindow::updateSink(const pa_sink_info &info) {
 
     w->activePort = info.active_port ? info.active_port->name : "";
 
+    /* Can we do digital? This is a hack just now... we should expose some nice properties to indicate we can do digitial*/
+    profile = pa_proplist_gets(info.proplist, "device.profile.name");
+    w->setDigital(profile && 0 == strncmp("iec958", profile, 6));
+
     w->updating = false;
 
     w->prepareMenu();
 
     if (is_new)
         updateDeviceVisibility();
+
+    return is_new;
 }
 
 static void suspended_callback(pa_stream *s, void *userdata) {
@@ -759,6 +765,38 @@ void MainWindow::updateRole(const pa_ext_stream_restore_info &info) {
     if (is_new)
         updateDeviceVisibility();
 }
+
+#if HAVE_EXT_DEVICE_RESTORE_API
+void MainWindow::updateDeviceInfo(const pa_ext_device_restore_info &info) {
+
+    if (sinkWidgets.count(info.index)) {
+        SinkWidget *w;
+        pa_format_info *format;
+
+        w = sinkWidgets[info.index];
+
+        w->updating = true;
+
+        /* Unselect everything */
+        for (int j = 1; j < PAVU_NUM_ENCODINGS; ++j)
+            w->encodings[j].widget->set_active(false);
+
+
+        for (uint8_t i = 0; i < info.n_formats; ++i) {
+            format = info.formats[i];
+            for (int j = 1; j < PAVU_NUM_ENCODINGS; ++j) {
+                if (format->encoding == w->encodings[j].encoding) {
+                    w->encodings[j].widget->set_active(true);
+                    break;
+                }
+            }
+        }
+
+        w->updating = false;
+    }
+}
+#endif
+
 
 void MainWindow::updateVolumeMeter(uint32_t source_index, uint32_t sink_input_idx, double v) {
 

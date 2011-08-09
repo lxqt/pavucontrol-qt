@@ -22,14 +22,47 @@
 #include <config.h>
 #endif
 
-#include <canberra-gtk.h>
-
 #include "sinkwidget.h"
+
+#include <canberra-gtk.h>
+#if HAVE_EXT_DEVICE_RESTORE_API
+#  include <pulse/format.h>
+#  include <pulse/ext-device-restore.h>
+#endif
 
 #include "i18n.h"
 
 SinkWidget::SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
     DeviceWidget(cobject, x) {
+#if HAVE_EXT_DEVICE_RESTORE_API
+    uint8_t i = 0;
+
+    x->get_widget("encodingSelect", encodingSelect);
+
+    encodings[i].encoding = PA_ENCODING_PCM;
+    x->get_widget("encodingFormatPCM", encodings[i].widget);
+    encodings[i].widget->signal_toggled().connect(sigc::mem_fun(*this, &SinkWidget::onEncodingsChange));
+
+    ++i;
+    encodings[i].encoding = PA_ENCODING_AC3_IEC61937;
+    x->get_widget("encodingFormatAC3", encodings[i].widget);
+    encodings[i].widget->signal_toggled().connect(sigc::mem_fun(*this, &SinkWidget::onEncodingsChange));
+
+    ++i;
+    encodings[i].encoding = PA_ENCODING_EAC3_IEC61937;
+    x->get_widget("encodingFormatEAC3", encodings[i].widget);
+    encodings[i].widget->signal_toggled().connect(sigc::mem_fun(*this, &SinkWidget::onEncodingsChange));
+
+    ++i;
+    encodings[i].encoding = PA_ENCODING_MPEG_IEC61937;
+    x->get_widget("encodingFormatMPEG", encodings[i].widget);
+    encodings[i].widget->signal_toggled().connect(sigc::mem_fun(*this, &SinkWidget::onEncodingsChange));
+
+    ++i;
+    encodings[i].encoding = PA_ENCODING_DTS_IEC61937;
+    x->get_widget("encodingFormatDTS", encodings[i].widget);
+    encodings[i].widget->signal_toggled().connect(sigc::mem_fun(*this, &SinkWidget::onEncodingsChange));
+#endif
 }
 
 SinkWidget* SinkWidget::create(MainWindow* mainWindow) {
@@ -119,4 +152,43 @@ void SinkWidget::onPortChange() {
             pa_operation_unref(o);
         }
     }
+}
+
+void SinkWidget::setDigital(bool digital) {
+#if HAVE_EXT_DEVICE_RESTORE_API
+    if (digital)
+        encodingSelect->show();
+    else
+        encodingSelect->hide();
+#endif
+}
+
+void SinkWidget::onEncodingsChange() {
+#if HAVE_EXT_DEVICE_RESTORE_API
+    pa_operation* o;
+    uint8_t n_formats = 0;
+    pa_format_info **formats;
+
+    if (updating)
+        return;
+
+    formats = (pa_format_info**)malloc(sizeof(pa_format_info*) * PAVU_NUM_ENCODINGS);
+
+    for (int i = 0; i < PAVU_NUM_ENCODINGS; ++i) {
+        if (encodings[i].widget->get_active()) {
+            formats[n_formats] = pa_format_info_new();
+            formats[n_formats]->encoding = encodings[i].encoding;
+            ++n_formats;
+        }
+    }
+
+    if (!(o = pa_ext_device_restore_save_sink_formats(get_context(), index, n_formats, formats, NULL, NULL))) {
+        show_error(_("pa_ext_device_restore_save_sink_formats() failed"));
+        free(formats);
+        return;
+    }
+
+    free(formats);
+    pa_operation_unref(o);
+#endif
 }

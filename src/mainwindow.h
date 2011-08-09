@@ -23,7 +23,9 @@
 
 #include "pavucontrol.h"
 #include <pulse/ext-stream-restore.h>
-
+#if HAVE_EXT_DEVICE_RESTORE_API
+#  include <pulse/ext-device-restore.h>
+#endif
 
 class CardWidget;
 class SinkWidget;
@@ -39,7 +41,7 @@ public:
     virtual ~MainWindow();
 
     void updateCard(const pa_card_info &info);
-    void updateSink(const pa_sink_info &info);
+    bool updateSink(const pa_sink_info &info);
     void updateSource(const pa_source_info &info);
     void updateSinkInput(const pa_sink_input_info &info);
     void updateSourceOutput(const pa_source_output_info &info);
@@ -47,6 +49,9 @@ public:
     void updateServer(const pa_server_info &info);
     void updateVolumeMeter(uint32_t source_index, uint32_t sink_input_index, double v);
     void updateRole(const pa_ext_stream_restore_info &info);
+#if HAVE_EXT_DEVICE_RESTORE_API
+    void updateDeviceInfo(const pa_ext_device_restore_info &info);
+#endif
 
     void removeCard(uint32_t index);
     void removeSink(uint32_t index);

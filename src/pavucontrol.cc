@@ -88,7 +88,11 @@ void card_cb(pa_context *, const pa_card_info *i, int eol, void *userdata) {
     w->updateCard(*i);
 }
 
-void sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata) {
+#if HAVE_EXT_DEVICE_RESTORE_API
+static void ext_device_restore_subscribe_cb(pa_context *c, uint32_t idx, void *userdata);
+#endif
+
+void sink_cb(pa_context *c, const pa_sink_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (eol < 0) {
@@ -104,7 +108,12 @@ void sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata) {
         return;
     }
 
+#if HAVE_EXT_DEVICE_RESTORE_API
+    if (w->updateSink(*i))
+        ext_device_restore_subscribe_cb(c, i->index, w);
+#else
     w->updateSink(*i);
+#endif
 }
 
 void source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata) {
@@ -250,6 +259,43 @@ static void ext_stream_restore_subscribe_cb(pa_context *c, void *userdata) {
 
     pa_operation_unref(o);
 }
+
+#if HAVE_EXT_DEVICE_RESTORE_API
+void ext_device_restore_read_cb(
+        pa_context *,
+        const pa_ext_device_restore_info *i,
+        int eol,
+        void *userdata) {
+
+    MainWindow *w = static_cast<MainWindow*>(userdata);
+
+    if (eol < 0) {
+        dec_outstanding(w);
+        g_debug(_("Failed to initialize device restore extension: %s"), pa_strerror(pa_context_errno(context)));
+        return;
+    }
+
+    if (eol > 0) {
+        dec_outstanding(w);
+        return;
+    }
+
+    /* Do something with a widget when this part is written */
+    w->updateDeviceInfo(*i);
+}
+
+static void ext_device_restore_subscribe_cb(pa_context *c, uint32_t idx, void *userdata) {
+    MainWindow *w = static_cast<MainWindow*>(userdata);
+    pa_operation *o;
+
+    if (!(o = pa_ext_device_restore_read_sink_formats(c, idx, ext_device_restore_read_cb, w))) {
+        show_error(_("pa_ext_device_restore_read_sink_formats() failed"));
+        return;
+    }
+
+    pa_operation_unref(o);
+}
+#endif
 
 void ext_device_manager_read_cb(
         pa_context *,
@@ -484,6 +530,21 @@ void context_state_callback(pa_context *c, void *userdata) {
 
             } else
                 g_debug(_("Failed to initialize stream_restore extension: %s"), pa_strerror(pa_context_errno(context)));
+
+#if HAVE_EXT_DEVICE_RESTORE_API
+            /* TODO Change this to just the test function */
+            if ((o = pa_ext_device_restore_read_sink_formats_all(c, ext_device_restore_read_cb, w))) {
+                pa_operation_unref(o);
+                n_outstanding++;
+
+                pa_ext_device_restore_set_subscribe_cb(c, ext_device_restore_subscribe_cb, w);
+
+                if ((o = pa_ext_device_restore_subscribe(c, 1, NULL, NULL)))
+                    pa_operation_unref(o);
+
+            } else
+                g_debug(_("Failed to initialize device restore extension: %s"), pa_strerror(pa_context_errno(context)));
+#endif
 
             if ((o = pa_ext_device_manager_read(c, ext_device_manager_read_cb, w))) {
                 pa_operation_unref(o);

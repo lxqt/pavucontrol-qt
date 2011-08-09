@@ -393,6 +393,91 @@
                   </packing>
                 </child>
                 <child>
+                  <object class="GtkTable" id="encodingSelect">
+                    <property name="can_focus">False</property>
+                    <property name="n_rows">2</property>
+                    <property name="n_columns">3</property>
+                    <child>
+                      <object class="GtkCheckButton" id="encodingFormatPCM">
+                        <property name="label" translatable="yes">PCM</property>
+                        <property name="visible">True</property>
+                        <property name="sensitive">False</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="active">True</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="encodingFormatAC3">
+                        <property name="label" translatable="yes">AC3</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="encodingFormatDTS">
+                        <property name="label" translatable="yes">DTS</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="encodingFormatEAC3">
+                        <property name="label" translatable="yes">EAC3</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="encodingFormatMPEG">
+                        <property name="label" translatable="yes">MPEG</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
                   <object class="GtkVBox" id="channelsVBox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
@@ -407,7 +492,7 @@
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">2</property>
+                    <property name="position">3</property>
                   </packing>
                 </child>
               </object>
@@ -1069,7 +1154,7 @@
         <child>
           <object class="GtkLabel" id="connectingLabel">
             <property name="can_focus">False</property>
-            <property name="label" translatable="no">...</property>
+            <property name="label">...</property>
             <property name="use_markup">True</property>
           </object>
           <packing>
@@ -1130,6 +1215,10 @@
             <property name="invisible_char">●</property>
             <property name="activates_default">True</property>
             <property name="width_chars">60</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">True</property>
+            <property name="secondary_icon_sensitive">True</property>
           </object>
           <packing>
             <property name="expand">True</property>
