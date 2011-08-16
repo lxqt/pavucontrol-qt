@@ -301,7 +301,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
 bool MainWindow::updateSink(const pa_sink_info &info) {
     SinkWidget *w;
     bool is_new = false;
-    const char *icon, *profile;
+    const char *icon;
     std::set<pa_sink_port_info,sink_port_prio_compare> port_priorities;
 
     if (sinkWidgets.count(info.index))
@@ -348,9 +348,7 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
 
     w->activePort = info.active_port ? info.active_port->name : "";
 
-    /* Can we do digital? This is a hack just now... we should expose some nice properties to indicate we can do digitial*/
-    profile = pa_proplist_gets(info.proplist, "device.profile.name");
-    w->setDigital(profile && 0 == strncmp("iec958", profile, 6));
+    w->setDigital(info.flags & PA_SINK_SET_FORMATS);
 
     w->updating = false;
 
