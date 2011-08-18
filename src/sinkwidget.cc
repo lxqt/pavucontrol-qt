@@ -182,7 +182,7 @@ void SinkWidget::onEncodingsChange() {
         }
     }
 
-    if (!(o = pa_ext_device_restore_save_sink_formats(get_context(), index, n_formats, formats, NULL, NULL))) {
+    if (!(o = pa_ext_device_restore_save_formats(get_context(), PA_DEVICE_TYPE_SINK, index, n_formats, formats, NULL, NULL))) {
         show_error(_("pa_ext_device_restore_save_sink_formats() failed"));
         free(formats);
         return;

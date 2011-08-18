@@ -89,7 +89,7 @@ void card_cb(pa_context *, const pa_card_info *i, int eol, void *userdata) {
 }
 
 #if HAVE_EXT_DEVICE_RESTORE_API
-static void ext_device_restore_subscribe_cb(pa_context *c, uint32_t idx, void *userdata);
+static void ext_device_restore_subscribe_cb(pa_context *c, pa_device_type_t type, uint32_t idx, void *userdata);
 #endif
 
 void sink_cb(pa_context *c, const pa_sink_info *i, int eol, void *userdata) {
@@ -110,7 +110,7 @@ void sink_cb(pa_context *c, const pa_sink_info *i, int eol, void *userdata) {
 
 #if HAVE_EXT_DEVICE_RESTORE_API
     if (w->updateSink(*i))
-        ext_device_restore_subscribe_cb(c, i->index, w);
+        ext_device_restore_subscribe_cb(c, PA_DEVICE_TYPE_SINK, i->index, w);
 #else
     w->updateSink(*i);
 #endif
@@ -284,11 +284,14 @@ void ext_device_restore_read_cb(
     w->updateDeviceInfo(*i);
 }
 
-static void ext_device_restore_subscribe_cb(pa_context *c, uint32_t idx, void *userdata) {
+static void ext_device_restore_subscribe_cb(pa_context *c, pa_device_type_t type, uint32_t idx, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
     pa_operation *o;
 
-    if (!(o = pa_ext_device_restore_read_sink_formats(c, idx, ext_device_restore_read_cb, w))) {
+    if (type != PA_DEVICE_TYPE_SINK)
+        return;
+
+    if (!(o = pa_ext_device_restore_read_formats(c, type, idx, ext_device_restore_read_cb, w))) {
         show_error(_("pa_ext_device_restore_read_sink_formats() failed"));
         return;
     }
@@ -533,7 +536,7 @@ void context_state_callback(pa_context *c, void *userdata) {
 
 #if HAVE_EXT_DEVICE_RESTORE_API
             /* TODO Change this to just the test function */
-            if ((o = pa_ext_device_restore_read_sink_formats_all(c, ext_device_restore_read_cb, w))) {
+            if ((o = pa_ext_device_restore_read_formats_all(c, ext_device_restore_read_cb, w))) {
                 pa_operation_unref(o);
                 n_outstanding++;
 
