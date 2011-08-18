@@ -348,7 +348,9 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
 
     w->activePort = info.active_port ? info.active_port->name : "";
 
+#ifdef PA_SINK_SET_FORMATS
     w->setDigital(info.flags & PA_SINK_SET_FORMATS);
+#endif
 
     w->updating = false;
 
