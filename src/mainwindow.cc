@@ -394,11 +394,12 @@ static void read_callback(pa_stream *s, size_t length, void *userdata) {
     w->updateVolumeMeter(pa_stream_get_device_index(s), pa_stream_get_monitor_stream(s), v);
 }
 
-pa_stream* MainWindow::createMonitorStreamForSource(uint32_t source_idx, uint32_t stream_idx = -1) {
+pa_stream* MainWindow::createMonitorStreamForSource(uint32_t source_idx, uint32_t stream_idx = -1, bool suspend = false) {
     pa_stream *s;
     char t[16];
     pa_buffer_attr attr;
     pa_sample_spec ss;
+    pa_stream_flags_t flags;
 
     ss.channels = 1;
     ss.format = PA_SAMPLE_FLOAT32;
@@ -421,7 +422,10 @@ pa_stream* MainWindow::createMonitorStreamForSource(uint32_t source_idx, uint32_
     pa_stream_set_read_callback(s, read_callback, this);
     pa_stream_set_suspended_callback(s, suspended_callback, this);
 
-    if (pa_stream_connect_record(s, t, &attr, (pa_stream_flags_t) (PA_STREAM_DONT_INHIBIT_AUTO_SUSPEND|PA_STREAM_DONT_MOVE|PA_STREAM_PEAK_DETECT|PA_STREAM_ADJUST_LATENCY)) < 0) {
+    flags = (pa_stream_flags_t) (PA_STREAM_DONT_MOVE | PA_STREAM_PEAK_DETECT | PA_STREAM_ADJUST_LATENCY |
+                                 (suspend ? PA_STREAM_DONT_INHIBIT_AUTO_SUSPEND : PA_STREAM_NOFLAGS));
+
+    if (pa_stream_connect_record(s, t, &attr, flags) < 0) {
         show_error(_("Failed to connect monitoring stream"));
         pa_stream_unref(s);
         return NULL;
@@ -459,7 +463,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
         w->setBaseVolume(info.base_volume);
 
         if (pa_context_get_server_protocol_version(get_context()) >= 13)
-            createMonitorStreamForSource(info.index);
+            createMonitorStreamForSource(info.index, -1, !!(info.flags & PA_SOURCE_NETWORK));
     }
 
     w->updating = true;
