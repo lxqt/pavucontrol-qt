@@ -4,6 +4,7 @@ src/pavucontrol.glade
 src/pavucontrol.cc
 src/cardwidget.cc
 src/channelwidget.cc
+src/devicewidget.cc
 src/mainwindow.cc
 src/rolewidget.cc
 src/sinkinputwidget.cc
