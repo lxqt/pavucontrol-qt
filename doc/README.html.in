@@ -38,6 +38,10 @@ General Public License for more details.</p>
 
 <h2><a name="news">News</a></h2>
 
+<div class="news-date">Tue Sep 27
+2011: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-1.0.tar.xz">Version
+1.0</a> released.</p>
+
 <div class="news-date">Thu Sep 15
 2011: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-0.99.2.tar.gz">Version
 0.99.2</a> (v1 RC2) released; digitial receiver UI.</p>
