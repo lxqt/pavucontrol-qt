@@ -15,6 +15,7 @@
       <object class="GtkEventBox" id="cardWidget">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="visible_window">False</property>
         <child>
           <object class="GtkVBox" id="cardWidget1">
             <property name="visible">True</property>
@@ -204,6 +205,7 @@
       <object class="GtkEventBox" id="deviceWidget">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="visible_window">False</property>
         <child>
           <object class="GtkVBox" id="streamWidget2">
             <property name="visible">True</property>
@@ -1237,6 +1239,7 @@
       <object class="GtkEventBox" id="streamWidget">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="visible_window">False</property>
         <child>
           <object class="GtkVBox" id="streamWidget2">
             <property name="visible">True</property>
