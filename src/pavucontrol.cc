@@ -46,6 +46,7 @@ static pa_context* context = NULL;
 static pa_mainloop_api* api = NULL;
 static int n_outstanding = 0;
 static int default_tab = 0;
+static bool retry = false;
 static int reconnect_timeout = 1;
 
 void show_error(const char *txt) {
@@ -621,8 +622,14 @@ gboolean connect_to_pulse(gpointer userdata) {
             reconnect_timeout = 5;
         }
         else {
-            reconnect_timeout = -1;
-            Gtk::Main::quit();
+            if(!retry) {
+                reconnect_timeout = -1;
+                Gtk::Main::quit();
+            } else {
+                g_debug(_("Connection failed, attempting reconnect"));
+                reconnect_timeout = 5;
+                g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, w);
+            }
         }
     }
 
@@ -650,6 +657,12 @@ int main(int argc, char *argv[]) {
     entry.set_short_name('t');
     entry.set_description(_("Select a specific tab on load."));
     group.add_entry(entry, default_tab);
+
+    Glib::OptionEntry entry2;
+    entry2.set_long_name("retry");
+    entry2.set_short_name('r');
+    entry2.set_description(_("Retry forever if pa quits (every 5 seconds)."));
+    group.add_entry(entry2, retry);
 
     options.set_main_group(group);
 
