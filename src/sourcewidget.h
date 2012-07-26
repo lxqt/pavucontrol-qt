@@ -31,7 +31,6 @@ public:
     static SourceWidget* create(MainWindow* mainWindow);
 
     SourceType type;
-    uint32_t index, card_index;
     bool can_decibel;
 
     virtual void onMuteToggleButton();

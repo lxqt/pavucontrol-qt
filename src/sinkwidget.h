@@ -41,7 +41,7 @@ public:
     static SinkWidget* create(MainWindow* mainWindow);
 
     SinkType type;
-    uint32_t index, monitor_index, card_index;
+    uint32_t monitor_index;
     bool can_decibel;
 
 #if HAVE_EXT_DEVICE_RESTORE_API

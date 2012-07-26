@@ -39,6 +39,7 @@ public:
 
     Glib::ustring name;
     Glib::ustring description;
+    uint32_t index, card_index;
 
     Gtk::ToggleButton *lockToggleButton, *muteToggleButton, *defaultToggleButton;
 
