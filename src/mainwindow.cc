@@ -290,6 +290,20 @@ void MainWindow::updateCard(const pa_card_info &info) {
 
     w->activeProfile = info.active_profile ? info.active_profile->name : "";
 
+    w->ports.clear();
+    for (uint32_t i = 0; i < info.n_ports; ++i) {
+        PortInfo p;
+
+        p.name = info.ports[i]->name;
+        p.description = info.ports[i]->description;
+        p.priority = info.ports[i]->priority;
+        p.available = info.ports[i]->available;
+        p.direction = info.ports[i]->direction;
+        p.latency_offset = info.ports[i]->latency_offset;
+
+        w->ports[p.name] = p;
+    }
+
     w->updating = false;
 
     w->prepareMenu();
