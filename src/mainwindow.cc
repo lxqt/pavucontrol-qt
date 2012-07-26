@@ -252,6 +252,17 @@ static void set_icon_name_fallback(Gtk::Image *i, const char *name, Gtk::IconSiz
     }
 }
 
+static void updatePorts(DeviceWidget *w, std::map<Glib::ustring, PortInfo> &ports) {
+    std::map<Glib::ustring, PortInfo>::iterator it;
+
+    it = ports.find(w->activePort);
+
+    if (it != ports.end()) {
+        PortInfo &activePort = it->second;
+        w->setLatencyOffset(activePort.latency_offset);
+    }
+}
+
 void MainWindow::updateCard(const pa_card_info &info) {
     CardWidget *w;
     bool is_new = false;
@@ -304,6 +315,37 @@ void MainWindow::updateCard(const pa_card_info &info) {
         w->ports[p.name] = p;
     }
 
+    /* Because the port info for sinks and sources is discontinued we need
+     * to update the port info for them here. */
+
+    if (w->hasSinks) {
+        std::map<uint32_t, SinkWidget*>::iterator it;
+
+        for (it = sinkWidgets.begin() ; it != sinkWidgets.end(); it++) {
+            SinkWidget *sw = (*it).second;
+
+            if (sw->card_index == w->index) {
+                sw->updating = true;
+                updatePorts(sw, w->ports);
+                sw->updating = false;
+            }
+        }
+    }
+
+    if (w->hasSources) {
+        std::map<uint32_t, SourceWidget*>::iterator it;
+
+        for (it = sourceWidgets.begin() ; it != sourceWidgets.end(); it++) {
+            SourceWidget *sw = (*it).second;
+
+            if (sw->card_index == w->index) {
+                sw->updating = true;
+                updatePorts(sw, w->ports);
+                sw->updating = false;
+            }
+        }
+    }
+
     w->updating = false;
 
     w->prepareMenu();
@@ -316,6 +358,7 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
     SinkWidget *w;
     bool is_new = false;
     const char *icon;
+    std::map<uint32_t, CardWidget*>::iterator cw;
     std::set<pa_sink_port_info,sink_port_prio_compare> port_priorities;
 
     if (sinkWidgets.count(info.index))
@@ -361,6 +404,11 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
         w->ports.push_back(std::pair<Glib::ustring,Glib::ustring>(i->name, i->description));
 
     w->activePort = info.active_port ? info.active_port->name : "";
+
+    cw = cardWidgets.find(info.card);
+
+    if (cw != cardWidgets.end())
+        updatePorts(w, cw->second->ports);
 
 #ifdef PA_SINK_SET_FORMATS
     w->setDigital(info.flags & PA_SINK_SET_FORMATS);
@@ -463,6 +511,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
     SourceWidget *w;
     bool is_new = false;
     const char *icon;
+    std::map<uint32_t, CardWidget*>::iterator cw;
     std::set<pa_source_port_info,source_port_prio_compare> port_priorities;
 
     if (sourceWidgets.count(info.index))
@@ -510,6 +559,11 @@ void MainWindow::updateSource(const pa_source_info &info) {
         w->ports.push_back(std::pair<Glib::ustring,Glib::ustring>(i->name, i->description));
 
     w->activePort = info.active_port ? info.active_port->name : "";
+
+    cw = cardWidgets.find(info.card);
+
+    if (cw != cardWidgets.end())
+        updatePorts(w, cw->second->ports);
 
     w->updating = false;
 

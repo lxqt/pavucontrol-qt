@@ -42,6 +42,9 @@ public:
     uint32_t index, card_index;
 
     Gtk::ToggleButton *lockToggleButton, *muteToggleButton, *defaultToggleButton;
+    Gtk::SpinButton *offsetButton;
+
+    bool offsetButtonEnabled;
 
     pa_channel_map channelMap;
     pa_cvolume volume;
@@ -52,6 +55,8 @@ public:
     virtual void onDefaultToggleButton();
     virtual void setDefault(bool isDefault);
     virtual bool onContextTriggerEvent(GdkEventButton*);
+    virtual void setLatencyOffset(int64_t offset);
+    void onOffsetChange();
 
     sigc::connection timeoutConnection;
 
@@ -75,7 +80,6 @@ protected:
     Gtk::Menu contextMenu;
     Gtk::MenuItem rename;
 
-
     /* Tree model columns */
     class ModelColumns : public Gtk::TreeModel::ColumnRecord
     {
@@ -90,9 +94,10 @@ protected:
 
     ModelColumns portModel;
 
-    Gtk::HBox *portSelect;
+    Gtk::HBox *portSelect, *offsetSelect;
     Gtk::ComboBox *portList;
     Glib::RefPtr<Gtk::ListStore> treeModel;
+    Glib::RefPtr<Gtk::Adjustment> offsetAdjustment;
 
 private:
     Glib::ustring mDeviceType;
