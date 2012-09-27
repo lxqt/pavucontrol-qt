@@ -677,7 +677,9 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
     bool is_new = false;
 
     if ((app = pa_proplist_gets(info.proplist, PA_PROP_APPLICATION_ID)))
-        if (strcmp(app, "org.PulseAudio.pavucontrol") == 0)
+        if (strcmp(app, "org.PulseAudio.pavucontrol") == 0
+            || strcmp(app, "org.gnome.VolumeControl") == 0
+            || strcmp(app, "org.kde.kmixd") == 0)
             return;
 
     if (sourceOutputWidgets.count(info.index))
