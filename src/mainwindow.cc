@@ -254,12 +254,36 @@ static void set_icon_name_fallback(Gtk::Image *i, const char *name, Gtk::IconSiz
 
 static void updatePorts(DeviceWidget *w, std::map<Glib::ustring, PortInfo> &ports) {
     std::map<Glib::ustring, PortInfo>::iterator it;
+    PortInfo p;
+
+    for (uint32_t i = 0; i < w->ports.size(); i++) {
+        Glib::ustring desc;
+        it = ports.find(w->ports[i].first);
+
+        if (it == ports.end())
+            continue;
+
+        p = (*it).second;
+        desc = p.description;
+
+        if (p.available == PA_PORT_AVAILABLE_YES)
+            desc +=  _(" (plugged in)");
+        else if (p.available == PA_PORT_AVAILABLE_NO) {
+            if (p.name == "analog-output-speaker" ||
+                p.name == "analog-input-microphone-internal")
+                desc += _(" (unavailable)");
+            else
+                desc += _(" (unplugged)");
+        }
+
+        w->ports[i].second = desc;
+    }
 
     it = ports.find(w->activePort);
 
     if (it != ports.end()) {
-        PortInfo &activePort = it->second;
-        w->setLatencyOffset(activePort.latency_offset);
+        p = (*it).second;
+        w->setLatencyOffset(p.latency_offset);
     }
 }
 
@@ -295,12 +319,6 @@ void MainWindow::updateCard(const pa_card_info &info) {
         profile_priorities.insert(info.profiles[i]);
     }
 
-    w->profiles.clear();
-    for (std::set<pa_card_profile_info>::iterator i = profile_priorities.begin(); i != profile_priorities.end(); ++i)
-        w->profiles.push_back(std::pair<Glib::ustring,Glib::ustring>(i->name, i->description));
-
-    w->activeProfile = info.active_profile ? info.active_profile->name : "";
-
     w->ports.clear();
     for (uint32_t i = 0; i < info.n_ports; ++i) {
         PortInfo p;
@@ -311,9 +329,38 @@ void MainWindow::updateCard(const pa_card_info &info) {
         p.available = info.ports[i]->available;
         p.direction = info.ports[i]->direction;
         p.latency_offset = info.ports[i]->latency_offset;
+        for (uint32_t j = 0; j < info.ports[i]->n_profiles; j++)
+            p.profiles.push_back(info.ports[i]->profiles[j]->name);
 
         w->ports[p.name] = p;
     }
+
+    w->profiles.clear();
+    for (std::set<pa_card_profile_info>::iterator profileIt = profile_priorities.begin(); profileIt != profile_priorities.end(); ++profileIt) {
+        bool hasNo = false, hasOther = false;
+        std::map<Glib::ustring, PortInfo>::iterator portIt;
+        Glib::ustring desc = profileIt->description;
+
+        for (portIt = w->ports.begin(); portIt != w->ports.end(); portIt++) {
+            PortInfo port = (*portIt).second;
+
+            if (std::find(port.profiles.begin(), port.profiles.end(), profileIt->name) == port.profiles.end())
+                continue;
+
+            if (port.available == PA_PORT_AVAILABLE_NO)
+                hasNo = true;
+            else {
+                hasOther = true;
+                break;
+            }
+        }
+        if (hasNo && !hasOther)
+            desc += _(" (unplugged)");
+
+        w->profiles.push_back(std::pair<Glib::ustring,Glib::ustring>(profileIt->name, desc));
+    }
+
+    w->activeProfile = info.active_profile ? info.active_profile->name : "";
 
     /* Because the port info for sinks and sources is discontinued we need
      * to update the port info for them here. */

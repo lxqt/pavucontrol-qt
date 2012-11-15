@@ -31,6 +31,7 @@ public:
       int available;
       int direction;
       int64_t latency_offset;
+      std::vector<Glib::ustring> profiles;
 };
 
 class CardWidget : public Gtk::VBox {
