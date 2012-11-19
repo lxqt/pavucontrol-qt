@@ -346,12 +346,12 @@ void MainWindow::updateCard(const pa_card_info &info) {
         }
     }
 
-    w->updating = false;
-
     w->prepareMenu();
 
     if (is_new)
         updateDeviceVisibility();
+
+    w->updating = false;
 }
 
 bool MainWindow::updateSink(const pa_sink_info &info) {
