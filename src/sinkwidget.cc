@@ -156,10 +156,13 @@ void SinkWidget::onPortChange() {
 
 void SinkWidget::setDigital(bool digital) {
 #if HAVE_EXT_DEVICE_RESTORE_API
-    if (digital)
+    if (digital) {
         encodingSelect->show();
-    else
+        advancedOptions->set_sensitive(true);
+    } else {
+        /* advancedOptions has sensitive=false by default */
         encodingSelect->hide();
+    }
 #endif
 }
 
