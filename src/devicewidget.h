@@ -94,6 +94,7 @@ protected:
 
     ModelColumns portModel;
 
+    Gtk::Expander *advancedOptions;
     Gtk::HBox *portSelect, *offsetSelect;
     Gtk::ComboBox *portList;
     Glib::RefPtr<Gtk::ListStore> treeModel;

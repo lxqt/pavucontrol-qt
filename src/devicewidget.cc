@@ -40,6 +40,7 @@ DeviceWidget::DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Buil
     x->get_widget("defaultToggleButton", defaultToggleButton);
     x->get_widget("portSelect", portSelect);
     x->get_widget("portList", portList);
+    x->get_widget("advancedOptions", advancedOptions);
     x->get_widget("offsetSelect", offsetSelect);
     x->get_widget("offsetButton", offsetButton);
 
@@ -194,13 +195,17 @@ void DeviceWidget::prepareMenu() {
     if (ports.size() > 0) {
         portSelect->show();
 
-        if (pa_context_get_server_protocol_version(get_context()) >= 27)
+        if (pa_context_get_server_protocol_version(get_context()) >= 27) {
             offsetSelect->show();
-        else
+            advancedOptions->set_sensitive(true);
+        } else {
+            /* advancedOptions has sensitive=false by default */
             offsetSelect->hide();
+        }
 
     } else {
         portSelect->hide();
+        advancedOptions->set_sensitive(false);
         offsetSelect->hide();
     }
 }
