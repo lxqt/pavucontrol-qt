@@ -263,7 +263,7 @@ static void updatePorts(DeviceWidget *w, std::map<Glib::ustring, PortInfo> &port
         if (it == ports.end())
             continue;
 
-        p = (*it).second;
+        p = it->second;
         desc = p.description;
 
         if (p.available == PA_PORT_AVAILABLE_YES)
@@ -282,7 +282,7 @@ static void updatePorts(DeviceWidget *w, std::map<Glib::ustring, PortInfo> &port
     it = ports.find(w->activePort);
 
     if (it != ports.end()) {
-        p = (*it).second;
+        p = it->second;
         w->setLatencyOffset(p.latency_offset);
     }
 }
@@ -342,7 +342,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
         Glib::ustring desc = profileIt->description;
 
         for (portIt = w->ports.begin(); portIt != w->ports.end(); portIt++) {
-            PortInfo port = (*portIt).second;
+            PortInfo port = portIt->second;
 
             if (std::find(port.profiles.begin(), port.profiles.end(), profileIt->name) == port.profiles.end())
                 continue;
@@ -369,7 +369,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
         std::map<uint32_t, SinkWidget*>::iterator it;
 
         for (it = sinkWidgets.begin() ; it != sinkWidgets.end(); it++) {
-            SinkWidget *sw = (*it).second;
+            SinkWidget *sw = it->second;
 
             if (sw->card_index == w->index) {
                 sw->updating = true;
@@ -383,7 +383,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
         std::map<uint32_t, SourceWidget*>::iterator it;
 
         for (it = sourceWidgets.begin() ; it != sourceWidgets.end(); it++) {
-            SourceWidget *sw = (*it).second;
+            SourceWidget *sw = it->second;
 
             if (sw->card_index == w->index) {
                 sw->updating = true;
