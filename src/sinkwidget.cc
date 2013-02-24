@@ -62,6 +62,18 @@ SinkWidget::SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>
     encodings[i].encoding = PA_ENCODING_DTS_IEC61937;
     x->get_widget("encodingFormatDTS", encodings[i].widget);
     encodings[i].widget->signal_toggled().connect(sigc::mem_fun(*this, &SinkWidget::onEncodingsChange));
+
+    ++i;
+    encodings[i].encoding = PA_ENCODING_INVALID;
+    x->get_widget("encodingFormatAAC", encodings[i].widget);
+    encodings[i].widget->set_sensitive(false);
+#ifdef PA_ENCODING_MPEG2_AAC_IEC61937
+    if (pa_context_get_server_protocol_version(get_context()) >= 28) {
+        encodings[i].encoding = PA_ENCODING_MPEG2_AAC_IEC61937;
+        encodings[i].widget->signal_toggled().connect(sigc::mem_fun(*this, &SinkWidget::onEncodingsChange));
+        encodings[i].widget->set_sensitive(true);
+    }
+#endif
 #endif
 }
 

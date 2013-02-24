@@ -427,9 +427,6 @@
                             <property name="n_rows">2</property>
                             <property name="n_columns">3</property>
                             <child>
-                              <placeholder/>
-                            </child>
-                            <child>
                               <object class="GtkCheckButton" id="encodingFormatPCM">
                                 <property name="label" translatable="yes">PCM</property>
                                 <property name="use_action_appearance">False</property>
@@ -495,6 +492,22 @@
                               <packing>
                                 <property name="left_attach">1</property>
                                 <property name="right_attach">2</property>
+                                <property name="top_attach">1</property>
+                                <property name="bottom_attach">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkCheckButton" id="encodingFormatAAC">
+                                <property name="label" translatable="yes">AAC</property>
+                                <property name="use_action_appearance">False</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">False</property>
+                                <property name="draw_indicator">True</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">2</property>
+                                <property name="right_attach">3</property>
                                 <property name="top_attach">1</property>
                                 <property name="bottom_attach">2</property>
                               </packing>
