@@ -51,10 +51,3 @@ fedora-snapshot: dist
 .PHONY: homepage
 
 ACLOCAL_AMFLAGS = -I m4
-
-dist-hook:
-	if test -d .git ; then \
-		git pull ; \
-		chmod u+w ${distdir}/ChangeLog || true ; \
-		git-changelog.perl > ${distdir}/ChangeLog ; \
-	fi
