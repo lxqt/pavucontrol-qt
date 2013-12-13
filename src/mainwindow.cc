@@ -431,6 +431,7 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
     w->boldNameLabel->set_text("");
     gchar *txt;
     w->nameLabel->set_markup(txt = g_markup_printf_escaped("%s", info.description));
+    w->nameLabel->set_tooltip_text(info.description);
     g_free(txt);
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
@@ -586,6 +587,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
     w->boldNameLabel->set_text("");
     gchar *txt;
     w->nameLabel->set_markup(txt = g_markup_printf_escaped("%s", info.description));
+    w->nameLabel->set_tooltip_text(info.description);
     g_free(txt);
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
@@ -707,6 +709,8 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
         w->nameLabel->set_label(info.name);
     }
 
+    w->nameLabel->set_tooltip_text(info.name);
+
     setIconFromProplist(w->iconImage, info.proplist, "audio-card");
 
     w->setVolume(info.volume);
@@ -758,6 +762,8 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
         w->boldNameLabel->set_text("");
         w->nameLabel->set_label(info.name);
     }
+
+    w->nameLabel->set_tooltip_text(info.name);
 
     setIconFromProplist(w->iconImage, info.proplist, "audio-input-microphone");
 
