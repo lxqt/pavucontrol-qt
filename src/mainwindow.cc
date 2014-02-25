@@ -137,7 +137,7 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>
     connectingLabel->show();
 }
 
-MainWindow* MainWindow::create() {
+MainWindow* MainWindow::create(bool maximize) {
     MainWindow* w;
     Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create();
     x->add_from_file(GLADE_FILE, "liststore1");
@@ -146,6 +146,8 @@ MainWindow* MainWindow::create() {
     x->add_from_file(GLADE_FILE, "liststore4");
     x->add_from_file(GLADE_FILE, "mainWindow");
     x->get_widget_derived("mainWindow", w);
+    if (w && maximize)
+        w->maximize();
     return w;
 }
 

@@ -664,6 +664,13 @@ int main(int argc, char *argv[]) {
     entry2.set_description(_("Retry forever if pa quits (every 5 seconds)."));
     group.add_entry(entry2, retry);
 
+    bool maximize = false;
+    Glib::OptionEntry entry3;
+    entry3.set_long_name("maximize");
+    entry3.set_short_name('m');
+    entry3.set_description(_("Maximize the window."));
+    group.add_entry(entry3, maximize);
+
     options.set_main_group(group);
 
     try {
@@ -671,7 +678,7 @@ int main(int argc, char *argv[]) {
 
         ca_context_set_driver(ca_gtk_context_get(), "pulse");
 
-        MainWindow* mainWindow = MainWindow::create();
+        MainWindow* mainWindow = MainWindow::create(maximize);
 
         pa_glib_mainloop *m = pa_glib_mainloop_new(g_main_context_default());
         g_assert(m);

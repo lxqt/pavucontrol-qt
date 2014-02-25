@@ -37,7 +37,7 @@ class RoleWidget;
 class MainWindow : public Gtk::Window {
 public:
     MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
-    static MainWindow* create();
+    static MainWindow* create(bool maximize);
     virtual ~MainWindow();
 
     void updateCard(const pa_card_info &info);
