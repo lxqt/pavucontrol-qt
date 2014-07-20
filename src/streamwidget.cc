@@ -31,7 +31,6 @@
 /*** StreamWidget ***/
 StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
     MinimalStreamWidget(cobject, x),
-    peak(NULL),
     mpMainWindow(NULL) {
 
     x->get_widget("lockToggleButton", lockToggleButton);

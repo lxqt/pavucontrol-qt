@@ -32,6 +32,7 @@ public:
     Gtk::Image *iconImage;
     Gtk::ProgressBar peakProgressBar;
     double lastPeak;
+    pa_stream *peak;
 
     bool updating;
 
@@ -42,6 +43,11 @@ public:
     bool volumeMeterEnabled;
     void enableVolumeMeter();
     void updatePeak(double v);
+    void setVolumeMeterVisible(bool v);
+
+private :
+    bool volumeMeterVisible;
+
 };
 
 #endif

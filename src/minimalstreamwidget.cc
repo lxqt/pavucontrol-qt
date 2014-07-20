@@ -29,8 +29,10 @@ MinimalStreamWidget::MinimalStreamWidget(BaseObjectType* cobject, const Glib::Re
     Gtk::VBox(cobject),
     peakProgressBar(),
     lastPeak(0),
+    peak(NULL),
     updating(false),
-    volumeMeterEnabled(false) {
+    volumeMeterEnabled(false),
+    volumeMeterVisible(true) {
 
     x->get_widget("channelsVBox", channelsVBox);
     x->get_widget("nameLabel", nameLabel);
@@ -69,6 +71,18 @@ void MinimalStreamWidget::enableVolumeMeter() {
         return;
 
     volumeMeterEnabled = true;
-    peakProgressBar.show();
+    if (volumeMeterVisible) {
+        peakProgressBar.show();
+    }
 }
 
+void MinimalStreamWidget::setVolumeMeterVisible(bool v) {
+    volumeMeterVisible = v;
+    if (v) {
+        if (volumeMeterEnabled) {
+            peakProgressBar.show();
+        }
+    } else {
+        peakProgressBar.hide();
+    }
+}

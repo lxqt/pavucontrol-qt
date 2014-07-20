@@ -93,6 +93,7 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>
     x->get_widget("sinkTypeComboBox", sinkTypeComboBox);
     x->get_widget("sourceTypeComboBox", sourceTypeComboBox);
     x->get_widget("notebook", notebook);
+    x->get_widget("showVolumeMetersCheckButton", showVolumeMetersCheckButton);
 
     cardsVBox->set_reallocate_redraws(true);
     sourcesVBox->set_reallocate_redraws(true);
@@ -109,6 +110,8 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>
     sourceOutputTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceOutputTypeComboBoxChanged));
     sinkTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkTypeComboBoxChanged));
     sourceTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceTypeComboBoxChanged));
+    showVolumeMetersCheckButton->signal_toggled().connect(sigc::mem_fun(*this, &MainWindow::onShowVolumeMetersCheckButtonToggled));
+
 
     GKeyFile* config = g_key_file_new();
     g_assert(config);
@@ -120,6 +123,13 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>
     if (g_key_file_load_from_file (config, m_config_filename, flags, &err)) {
         int width  = g_key_file_get_integer(config, "window", "width", NULL);
         int height = g_key_file_get_integer(config, "window", "height", NULL);
+
+        /* When upgrading from a previous version, set showVolumeMeters to TRUE
+         * (default from glade file), so users don't complain about missing
+         * volume meters. */
+        if (g_key_file_has_key(config, "window", "showVolumeMeters", NULL)) {
+            showVolumeMetersCheckButton->set_active(g_key_file_get_boolean(config, "window", "showVolumeMeters", NULL));
+        }
 
         int default_width, default_height;
         get_default_size(default_width, default_height);
@@ -238,6 +248,7 @@ MainWindow::~MainWindow() {
     g_key_file_set_integer(config, "window", "sourceOutputType", sourceOutputTypeComboBox->get_active_row_number());
     g_key_file_set_integer(config, "window", "sinkType", sinkTypeComboBox->get_active_row_number());
     g_key_file_set_integer(config, "window", "sourceType", sourceTypeComboBox->get_active_row_number());
+    g_key_file_set_integer(config, "window", "showVolumeMeters", showVolumeMetersCheckButton->get_active());
 
     gsize filelen;
     GError *err = NULL;
@@ -466,6 +477,7 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
         is_new = true;
 
         w->setBaseVolume(info.base_volume);
+        w->setVolumeMeterVisible(showVolumeMetersCheckButton->get_active());
     }
 
     w->updating = true;
@@ -588,7 +600,8 @@ pa_stream* MainWindow::createMonitorStreamForSource(uint32_t source_idx, uint32_
     pa_stream_set_suspended_callback(s, suspended_callback, this);
 
     flags = (pa_stream_flags_t) (PA_STREAM_DONT_MOVE | PA_STREAM_PEAK_DETECT | PA_STREAM_ADJUST_LATENCY |
-                                 (suspend ? PA_STREAM_DONT_INHIBIT_AUTO_SUSPEND : PA_STREAM_NOFLAGS));
+                                 (suspend ? PA_STREAM_DONT_INHIBIT_AUTO_SUSPEND : PA_STREAM_NOFLAGS) |
+                                 (!showVolumeMetersCheckButton->get_active() ? PA_STREAM_START_CORKED : PA_STREAM_NOFLAGS));
 
     if (pa_stream_connect_record(s, t, &attr, flags) < 0) {
         show_error(_("Failed to connect monitoring stream"));
@@ -628,9 +641,10 @@ void MainWindow::updateSource(const pa_source_info &info) {
         is_new = true;
 
         w->setBaseVolume(info.base_volume);
+        w->setVolumeMeterVisible(showVolumeMetersCheckButton->get_active());
 
         if (pa_context_get_server_protocol_version(get_context()) >= 13)
-            createMonitorStreamForSource(info.index, -1, !!(info.flags & PA_SOURCE_NETWORK));
+            w->peak = createMonitorStreamForSource(info.index, -1, !!(info.flags & PA_SOURCE_NETWORK));
     }
 
     w->updating = true;
@@ -744,6 +758,7 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
         w->index = info.index;
         w->clientIndex = info.client;
         is_new = true;
+        w->setVolumeMeterVisible(showVolumeMetersCheckButton->get_active());
 
         if (pa_context_get_server_protocol_version(get_context()) >= 13)
             createMonitorStreamForSinkInput(w, info.sink);
@@ -802,6 +817,7 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
         w->index = info.index;
         w->clientIndex = info.client;
         is_new = true;
+        w->setVolumeMeterVisible(showVolumeMetersCheckButton->get_active());
     }
 
     w->updating = true;
@@ -1276,4 +1292,47 @@ void MainWindow::onSourceOutputTypeComboBoxChanged() {
         sourceOutputTypeComboBox->set_active((int) SOURCE_OUTPUT_CLIENT);
 
     updateDeviceVisibility();
+}
+
+
+void MainWindow::onShowVolumeMetersCheckButtonToggled() {
+    bool state = showVolumeMetersCheckButton->get_active();
+    pa_operation *o;
+
+    for (std::map<uint32_t, SinkWidget*>::iterator it = sinkWidgets.begin() ; it != sinkWidgets.end(); it++) {
+        SinkWidget *sw = it->second;
+        if (sw->peak) {
+            o = pa_stream_cork(sw->peak, (int)!state, NULL, NULL);
+            if (o)
+                pa_operation_unref(o);
+        }
+        sw->setVolumeMeterVisible(state);
+    }
+    for (std::map<uint32_t, SourceWidget*>::iterator it = sourceWidgets.begin() ; it != sourceWidgets.end(); it++) {
+        SourceWidget *sw = it->second;
+        if (sw->peak) {
+            o = pa_stream_cork(sw->peak, (int)!state, NULL, NULL);
+            if (o)
+                pa_operation_unref(o);
+        }
+        sw->setVolumeMeterVisible(state);
+    }
+    for (std::map<uint32_t, SinkInputWidget*>::iterator it = sinkInputWidgets.begin() ; it != sinkInputWidgets.end(); it++) {
+        SinkInputWidget *sw = it->second;
+        if (sw->peak) {
+            o = pa_stream_cork(sw->peak, (int)!state, NULL, NULL);
+            if (o)
+                pa_operation_unref(o);
+        }
+        sw->setVolumeMeterVisible(state);
+    }
+    for (std::map<uint32_t, SourceOutputWidget*>::iterator it = sourceOutputWidgets.begin() ; it != sourceOutputWidgets.end(); it++) {
+        SourceOutputWidget *sw = it->second;
+        if (sw->peak) {
+            o = pa_stream_cork(sw->peak, (int)!state, NULL, NULL);
+            if (o)
+                pa_operation_unref(o);
+        }
+        sw->setVolumeMeterVisible(state);
+    }
 }

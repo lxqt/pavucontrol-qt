@@ -7,6 +7,66 @@
     <property name="value">44.2408370972</property>
     <property name="step_increment">5</property>
   </object>
+  <object class="GtkWindow" id="channelWindow">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">window2</property>
+    <child>
+      <object class="GtkHBox" id="channelWidget">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="spacing">6</property>
+        <child>
+          <object class="GtkLabel" id="channelLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="xalign">0</property>
+            <property name="yalign">0</property>
+            <property name="label" translatable="yes">&lt;b&gt;left-front&lt;/b&gt;</property>
+            <property name="use_markup">True</property>
+            <property name="width_chars">15</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHScale" id="volumeScale">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="adjustment">adjustment1</property>
+            <property name="digits">0</property>
+            <property name="draw_value">False</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="volumeLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="xalign">1</property>
+            <property name="yalign">0</property>
+            <property name="xpad">8</property>
+            <property name="label" translatable="yes">&lt;small&gt;50%&lt;/small&gt;</property>
+            <property name="use_markup">True</property>
+            <property name="justify">right</property>
+            <property name="width_chars">9</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
   <object class="GtkWindow" id="cardWindow">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -137,66 +197,6 @@
       </object>
     </child>
   </object>
-  <object class="GtkWindow" id="channelWindow">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="title" translatable="yes">window2</property>
-    <child>
-      <object class="GtkHBox" id="channelWidget">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="spacing">6</property>
-        <child>
-          <object class="GtkLabel" id="channelLabel">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="xalign">0</property>
-            <property name="yalign">0</property>
-            <property name="label" translatable="yes">&lt;b&gt;left-front&lt;/b&gt;</property>
-            <property name="use_markup">True</property>
-            <property name="width_chars">15</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkHScale" id="volumeScale">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="adjustment">adjustment1</property>
-            <property name="digits">0</property>
-            <property name="draw_value">False</property>
-          </object>
-          <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLabel" id="volumeLabel">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="xalign">1</property>
-            <property name="yalign">0</property>
-            <property name="xpad">8</property>
-            <property name="label" translatable="yes">&lt;small&gt;50%&lt;/small&gt;</property>
-            <property name="use_markup">True</property>
-            <property name="justify">right</property>
-            <property name="width_chars">9</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">2</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-  </object>
   <object class="GtkWindow" id="deviceWindow">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -278,7 +278,6 @@
                         <property name="spacing">3</property>
                         <child>
                           <object class="GtkToggleButton" id="muteToggleButton">
-                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
@@ -301,7 +300,6 @@
                         </child>
                         <child>
                           <object class="GtkToggleButton" id="lockToggleButton">
-                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
@@ -325,7 +323,6 @@
                         </child>
                         <child>
                           <object class="GtkToggleButton" id="defaultToggleButton">
-                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
@@ -430,7 +427,6 @@
                             <child>
                               <object class="GtkCheckButton" id="encodingFormatPCM">
                                 <property name="label" translatable="yes">PCM</property>
-                                <property name="use_action_appearance">False</property>
                                 <property name="visible">True</property>
                                 <property name="sensitive">False</property>
                                 <property name="can_focus">True</property>
@@ -442,7 +438,6 @@
                             <child>
                               <object class="GtkCheckButton" id="encodingFormatAC3">
                                 <property name="label" translatable="yes">AC3</property>
-                                <property name="use_action_appearance">False</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">False</property>
@@ -456,7 +451,6 @@
                             <child>
                               <object class="GtkCheckButton" id="encodingFormatDTS">
                                 <property name="label" translatable="yes">DTS</property>
-                                <property name="use_action_appearance">False</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">False</property>
@@ -470,7 +464,6 @@
                             <child>
                               <object class="GtkCheckButton" id="encodingFormatEAC3">
                                 <property name="label" translatable="yes">EAC3</property>
-                                <property name="use_action_appearance">False</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">False</property>
@@ -484,7 +477,6 @@
                             <child>
                               <object class="GtkCheckButton" id="encodingFormatMPEG">
                                 <property name="label" translatable="yes">MPEG</property>
-                                <property name="use_action_appearance">False</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">False</property>
@@ -500,7 +492,6 @@
                             <child>
                               <object class="GtkCheckButton" id="encodingFormatAAC">
                                 <property name="label" translatable="yes">AAC</property>
-                                <property name="use_action_appearance">False</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">False</property>
@@ -1193,23 +1184,71 @@
                         <property name="can_focus">False</property>
                         <property name="shadow_type">none</property>
                         <child>
-                          <object class="GtkVBox" id="cardsVBox">
+                          <object class="GtkVBox" id="vbox3">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <child>
-                              <object class="GtkLabel" id="noCardsLabel">
+                              <object class="GtkVBox" id="cardsVBox">
                                 <property name="visible">True</property>
-                                <property name="sensitive">False</property>
                                 <property name="can_focus">False</property>
-                                <property name="xpad">16</property>
-                                <property name="ypad">16</property>
-                                <property name="label" translatable="yes">&lt;i&gt;No cards available for configuration&lt;/i&gt;</property>
-                                <property name="use_markup">True</property>
+                                <child>
+                                  <object class="GtkLabel" id="noCardsLabel">
+                                    <property name="visible">True</property>
+                                    <property name="sensitive">False</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="xpad">16</property>
+                                    <property name="ypad">16</property>
+                                    <property name="label" translatable="yes">&lt;i&gt;No cards available for configuration&lt;/i&gt;</property>
+                                    <property name="use_markup">True</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">True</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
                                 <property name="fill">True</property>
                                 <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkVBox" id="vbox4">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <child>
+                                  <object class="GtkHSeparator" id="hseparator1">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkCheckButton" id="showVolumeMetersCheckButton">
+                                    <property name="label" translatable="yes">Show volume meters</property>
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">False</property>
+                                    <property name="active">True</property>
+                                    <property name="draw_indicator">True</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">True</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">1</property>
                               </packing>
                             </child>
                           </object>
@@ -1411,7 +1450,6 @@
                         <child>
                           <object class="GtkButton" id="deviceButton">
                             <property name="label" translatable="yes">Device</property>
-                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
@@ -1439,7 +1477,6 @@
                         <property name="spacing">3</property>
                         <child>
                           <object class="GtkToggleButton" id="muteToggleButton">
-                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
@@ -1462,7 +1499,6 @@
                         </child>
                         <child>
                           <object class="GtkToggleButton" id="lockToggleButton">
-                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
