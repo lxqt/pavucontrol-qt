@@ -53,6 +53,7 @@ ChannelWidget* ChannelWidget::create() {
     x->add_from_file(GLADE_FILE, "adjustment1");
     x->add_from_file(GLADE_FILE, "channelWidget");
     x->get_widget_derived("channelWidget", w);
+    w->reference();
     return w;
 }
 

@@ -77,6 +77,7 @@ void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
         snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_pretty_string(m.map[i]));
         cw->channelLabel->set_markup(text);
         channelsVBox->pack_start(*cw, false, false, 0);
+        cw->unreference();
     }
     channelWidgets[m.channels-1]->last = true;
     channelWidgets[m.channels-1]->setBaseVolume(PA_VOLUME_NORM);

@@ -82,6 +82,7 @@ SinkWidget* SinkWidget::create(MainWindow* mainWindow) {
     Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "deviceWidget");
     x->get_widget_derived("deviceWidget", w);
     w->init(mainWindow, "sink");
+    w->reference();
     return w;
 }
 

@@ -45,6 +45,7 @@ CardWidget* CardWidget::create() {
     CardWidget* w;
     Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "cardWidget");
     x->get_widget_derived("cardWidget", w);
+    w->reference();
     return w;
 }
 

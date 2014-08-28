@@ -300,6 +300,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
     else {
         cardWidgets[info.index] = w = CardWidget::create();
         cardsVBox->pack_start(*w, false, false, 0);
+        w->unreference();
         w->index = info.index;
         is_new = true;
     }
@@ -416,6 +417,7 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
         sinkWidgets[info.index] = w = SinkWidget::create(this);
         w->setChannelMap(info.channel_map, !!(info.flags & PA_SINK_DECIBEL_VOLUME));
         sinksVBox->pack_start(*w, false, false, 0);
+        w->unreference();
         w->index = info.index;
         w->monitor_index = info.monitor_source;
         is_new = true;
@@ -570,6 +572,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
         sourceWidgets[info.index] = w = SourceWidget::create(this);
         w->setChannelMap(info.channel_map, !!(info.flags & PA_SOURCE_DECIBEL_VOLUME));
         sourcesVBox->pack_start(*w, false, false, 0);
+        w->unreference();
         w->index = info.index;
         is_new = true;
 
@@ -686,6 +689,7 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
         sinkInputWidgets[info.index] = w = SinkInputWidget::create(this);
         w->setChannelMap(info.channel_map, true);
         streamsVBox->pack_start(*w, false, false, 0);
+        w->unreference();
         w->index = info.index;
         w->clientIndex = info.client;
         is_new = true;
@@ -743,6 +747,7 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
         w->setChannelMap(info.channel_map, true);
 #endif
         recsVBox->pack_start(*w, false, false, 0);
+        w->unreference();
         w->index = info.index;
         w->clientIndex = info.client;
         is_new = true;
@@ -838,6 +843,7 @@ bool MainWindow::createEventRoleWidget() {
 
     eventRoleWidget = RoleWidget::create();
     streamsVBox->pack_start(*eventRoleWidget, false, false, 0);
+    eventRoleWidget->unreference();
     eventRoleWidget->role = "sink-input-by-media-role:event";
     eventRoleWidget->setChannelMap(cm, true);
 

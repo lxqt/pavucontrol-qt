@@ -49,6 +49,7 @@ SourceOutputWidget* SourceOutputWidget::create(MainWindow* mainWindow) {
     Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "streamWidget");
     x->get_widget_derived("streamWidget", w);
     w->init(mainWindow);
+    w->reference();
     return w;
 }
 

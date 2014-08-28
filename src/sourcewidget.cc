@@ -35,6 +35,7 @@ SourceWidget* SourceWidget::create(MainWindow* mainWindow) {
     Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "deviceWidget");
     x->get_widget_derived("deviceWidget", w);
     w->init(mainWindow, "source");
+    w->reference();
     return w;
 }
 
