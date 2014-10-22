@@ -251,6 +251,8 @@ static void set_icon_name_fallback(Gtk::Image *i, const char *name, Gtk::IconSiz
             i->set(name);
     } catch (Gtk::IconThemeError &e) {
         i->set(name);
+    } catch (Gio::Error &e) {
+        i->set(name);
     }
 }
 
