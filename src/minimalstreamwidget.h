@@ -36,6 +36,7 @@ public:
     bool updating;
 
     virtual void onMuteToggleButton() = 0;
+    virtual void onLockToggleButton() = 0;
     virtual void updateChannelVolume(int channel, pa_volume_t v) = 0;
 
     bool volumeMeterEnabled;

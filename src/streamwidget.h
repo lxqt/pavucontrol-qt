@@ -37,6 +37,8 @@ public:
     void setVolume(const pa_cvolume &volume, bool force = false);
     virtual void updateChannelVolume(int channel, pa_volume_t v);
 
+    void hideLockedChannels(bool hide = true);
+
     Gtk::ToggleButton *lockToggleButton, *muteToggleButton;
     Gtk::Label *directionLabel;
     Gtk::Button *deviceButton;
@@ -48,6 +50,7 @@ public:
     ChannelWidget *channelWidgets[PA_CHANNELS_MAX];
 
     virtual void onMuteToggleButton();
+    virtual void onLockToggleButton();
     virtual void onDeviceChangePopup();
     virtual bool onContextTriggerEvent(GdkEventButton*);
 

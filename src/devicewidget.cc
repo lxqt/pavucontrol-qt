@@ -46,6 +46,7 @@ DeviceWidget::DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Buil
 
     this->signal_button_press_event().connect(sigc::mem_fun(*this, &DeviceWidget::onContextTriggerEvent));
     muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &DeviceWidget::onMuteToggleButton));
+    lockToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &DeviceWidget::onLockToggleButton));
     defaultToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &DeviceWidget::onDefaultToggleButton));
 
     rename.set_label(_("Rename Device..."));
@@ -94,6 +95,7 @@ void DeviceWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
     channelWidgets[m.channels-1]->last = true;
 
     lockToggleButton->set_sensitive(m.channels > 1);
+    hideLockedChannels(lockToggleButton->get_active());
 }
 
 void DeviceWidget::setVolume(const pa_cvolume &v, bool force) {
@@ -123,12 +125,23 @@ void DeviceWidget::updateChannelVolume(int channel, pa_volume_t v) {
         timeoutConnection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &DeviceWidget::timeoutEvent), 100);
 }
 
+void DeviceWidget::hideLockedChannels(bool hide) {
+    for (int i = 0; i < channelMap.channels - 1; i++)
+        channelWidgets[i]->set_visible(!hide);
+
+    channelWidgets[channelMap.channels - 1]->channelLabel->set_visible(!hide);
+}
+
 void DeviceWidget::onMuteToggleButton() {
 
     lockToggleButton->set_sensitive(!muteToggleButton->get_active());
 
     for (int i = 0; i < channelMap.channels; i++)
         channelWidgets[i]->set_sensitive(!muteToggleButton->get_active());
+}
+
+void DeviceWidget::onLockToggleButton() {
+    hideLockedChannels(lockToggleButton->get_active());
 }
 
 void DeviceWidget::onDefaultToggleButton() {
