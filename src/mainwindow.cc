@@ -125,6 +125,38 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>
         get_default_size(default_width, default_height);
         if (width >= default_width && height >= default_height)
             resize(width, height);
+
+        int sinkInputTypeSelection = g_key_file_get_integer(config, "window", "sinkInputType", &err);
+        if (err == NULL)
+            sinkInputTypeComboBox->set_active(sinkInputTypeSelection);
+        else {
+            g_error_free(err);
+            err = NULL;
+        }
+
+        int sourceOutputTypeSelection = g_key_file_get_integer(config, "window", "sourceOutputType", &err);
+        if (err == NULL)
+            sourceOutputTypeComboBox->set_active(sourceOutputTypeSelection);
+        else {
+            g_error_free(err);
+            err = NULL;
+        }
+
+        int sinkTypeSelection = g_key_file_get_integer(config, "window", "sinkType", &err);
+        if (err == NULL)
+            sinkTypeComboBox->set_active(sinkTypeSelection);
+        else {
+            g_error_free(err);
+            err = NULL;
+        }
+
+        int sourceTypeSelection = g_key_file_get_integer(config, "window", "sourceType", &err);
+        if (err == NULL)
+            sourceTypeComboBox->set_active(sourceTypeSelection);
+        else {
+            g_error_free(err);
+            err = NULL;
+        }
     } else {
         g_debug(_("Error reading config file %s: %s"), m_config_filename, err->message);
         g_error_free(err);
@@ -202,6 +234,10 @@ MainWindow::~MainWindow() {
     get_size(width, height);
     g_key_file_set_integer(config, "window", "width", width);
     g_key_file_set_integer(config, "window", "height", height);
+    g_key_file_set_integer(config, "window", "sinkInputType", sinkInputTypeComboBox->get_active_row_number());
+    g_key_file_set_integer(config, "window", "sourceOutputType", sourceOutputTypeComboBox->get_active_row_number());
+    g_key_file_set_integer(config, "window", "sinkType", sinkTypeComboBox->get_active_row_number());
+    g_key_file_set_integer(config, "window", "sourceType", sourceTypeComboBox->get_active_row_number());
 
     gsize filelen;
     GError *err = NULL;
