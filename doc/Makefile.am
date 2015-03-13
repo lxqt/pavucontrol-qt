@@ -26,7 +26,7 @@ if USE_LYNX
 dist_doc_DATA = README
 
 README: README.html
-	lynx --dump $^ | sed 's,file://localhost/.*/doc/README.html,README,' > $@
+	lynx --dump $^ | sed 's,file://.*/doc/README.html,README,' > $@
 
 MAINTAINERCLEANFILES += README
 CLEANFILES += README
