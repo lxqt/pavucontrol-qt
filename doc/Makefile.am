@@ -17,16 +17,18 @@
 # <http://www.gnu.org/licenses/>.
 
 dist_html_DATA = README.html style.css
-dist_doc_DATA = README
 EXTRA_DIST = README.html.in
 
-MAINTAINERCLEANFILES = README README.html
+MAINTAINERCLEANFILES = README.html
 CLEANFILES =
 
 if USE_LYNX
+dist_doc_DATA = README
+
 README: README.html
 	lynx --dump $^ | sed 's,file://localhost/.*/doc/README.html,README,' > $@
 
+MAINTAINERCLEANFILES += README
 CLEANFILES += README
 endif
 

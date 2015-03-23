@@ -18,20 +18,22 @@
 EXTRA_DIST = \
 	m4/ChangeLog \
 	bootstrap.sh \
-	README LICENSE \
+	LICENSE \
 	intltool-merge.in \
 	intltool-update.in \
 	intltool-extract.in
 
 SUBDIRS=src doc po
 
-MAINTAINERCLEANFILES=README
+if USE_LYNX
+EXTRA_DIST += README
+MAINTAINERCLEANFILES = README
 noinst_DATA = README
 
 README:
-	rm -f README
 	$(MAKE) -C doc README
-	cd $(srcdir) && ln -s doc/README README
+	ln -sf doc/README $(builddir)
+endif
 
 homepage: all dist
 	test -d $$HOME/homepage/private
