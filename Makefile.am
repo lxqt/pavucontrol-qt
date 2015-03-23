@@ -16,7 +16,6 @@
 # along with pavucontrol. If not, see <http://www.gnu.org/licenses/>.
 
 EXTRA_DIST = \
-	m4/ChangeLog \
 	bootstrap.sh \
 	LICENSE \
 	intltool-merge.in \
