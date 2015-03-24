@@ -38,6 +38,10 @@ General Public License for more details.</p>
 
 <h2><a name="news">News</a></h2>
 
+<div class="news-date">Tue Mar 24
+2015: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-3.0.tar.xz">Version
+3.0</a> released; improved error handling; remember device selection visibility; window sizing improvements.</p>
+
 <div class="news-date">Fri Mar 8
 2013: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-2.0.tar.xz">Version
 2.0</a> released.</p>
@@ -48,7 +52,7 @@ General Public License for more details.</p>
 
 <div class="news-date">Thu Sep 15
 2011: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-0.99.2.tar.gz">Version
-0.99.2</a> (v1 RC2) released; digitial receiver UI.</p>
+0.99.2</a> (v1 RC2) released; digital receiver UI.</p>
 
 <div class="news-date">Tue Aug 2
 2011: </div> <p class="news-text"><a href="@PACKAGE_URL@pavucontrol-0.99.1.tar.gz">Version
