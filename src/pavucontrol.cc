@@ -671,10 +671,21 @@ int main(int argc, char *argv[]) {
     entry3.set_description(_("Maximize the window."));
     group.add_entry(entry3, maximize);
 
+    bool version = false;
+    Glib::OptionEntry entry4;
+    entry4.set_long_name("version");
+    entry4.set_description(_("Show version"));
+    group.add_entry(entry4, version);
+
     options.set_main_group(group);
 
     try {
         Gtk::Main kit(argc, argv, options);
+
+        if (version) {
+            printf("%s\n", PACKAGE_STRING);
+            return 0;
+        }
 
         ca_context_set_driver(ca_gtk_context_get(), "pulse");
 
