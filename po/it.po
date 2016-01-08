@@ -136,7 +136,7 @@ msgstr "_Ingressi"
 # (ndt) suggerimento
 #: ../src/pavucontrol.glade.h:28
 msgid "Lock channels together"
-msgstr "Blocca i canali"
+msgstr "Blocca insieme i canali"
 
 # (ndt) suggerimento
 #: ../src/pavucontrol.glade.h:29
