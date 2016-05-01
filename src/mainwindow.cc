@@ -290,7 +290,7 @@ static void set_icon_name_fallback(Gtk::Image *i, const char *name, Gtk::IconSiz
     theme = Gtk::IconTheme::get_default();
 
     try {
-        pixbuf = theme->load_icon(name, width, Gtk::ICON_LOOKUP_GENERIC_FALLBACK);
+        pixbuf = theme->load_icon(name, width, Gtk::ICON_LOOKUP_GENERIC_FALLBACK | Gtk::ICON_LOOKUP_FORCE_SIZE);
 
         if (pixbuf)
             i->set(pixbuf);
