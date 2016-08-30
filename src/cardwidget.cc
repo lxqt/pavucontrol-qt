@@ -27,26 +27,10 @@
 #include "i18n.h"
 
 /*** CardWidget ***/
-CardWidget::CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
-    Gtk::VBox(cobject) {
-
-    x->get_widget("nameLabel", nameLabel);
-    x->get_widget("profileList", profileList);
-    x->get_widget("iconImage", iconImage);
-
-    treeModel = Gtk::ListStore::create(profileModel);
-    profileList->set_model(treeModel);
-    profileList->pack_start(profileModel.desc);
-
-    profileList->signal_changed().connect( sigc::mem_fun(*this, &CardWidget::onProfileChange));
-}
-
-CardWidget* CardWidget::create() {
-    CardWidget* w;
-    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "cardWidget");
-    x->get_widget_derived("cardWidget", w);
-    w->reference();
-    return w;
+CardWidget::CardWidget(QWidget* parent) :
+    QWidget(parent) {
+    ui.setupUi(this);
+    // profileList->signal_changed().connect( sigc::mem_fun(*this, &CardWidget::onProfileChange));
 }
 
 
@@ -54,42 +38,38 @@ void CardWidget::prepareMenu() {
     int idx = 0;
     int active_idx = -1;
 
-    treeModel->clear();
-    /* Fill the ComboBox's Tree Model */
+    ui.profileList->clear();
+    /* Fill the ComboBox */
     for (uint32_t i = 0; i < profiles.size(); ++i) {
-        Gtk::TreeModel::Row row = *(treeModel->append());
-        row[profileModel.name] = profiles[i].first;
-        row[profileModel.desc] = profiles[i].second;
-        if (profiles[i].first == activeProfile)
+        const auto& profile = profiles[i];
+        QByteArray name = profile.first.c_str();
+        QString desc = QString::fromUtf8(profile.second.c_str());
+        ui.profileList->addItem(desc, name);
+        if (profile.first == activeProfile)
           active_idx = idx;
         idx++;
     }
 
     if (active_idx >= 0)
-        profileList->set_active(active_idx);
+        ui.profileList->setCurrentIndex(active_idx);
+
 }
 
 void CardWidget::onProfileChange() {
-    Gtk::TreeModel::iterator iter;
-
     if (updating)
         return;
 
-    iter = profileList->get_active();
-    if (iter)
-    {
-        Gtk::TreeModel::Row row = *iter;
-        if (row)
-        {
-          pa_operation* o;
-          Glib::ustring profile = row[profileModel.name];
+    int active = ui.profileList->currentIndex();
+    if (active != -1) {
+        QString desc = ui.profileList->itemText(active);
+        QByteArray name = ui.profileList->itemData(active).toByteArray();
+        pa_operation* o;
 
-          if (!(o = pa_context_set_card_profile_by_index(get_context(), index, profile.c_str(), NULL, NULL))) {
-              show_error(_("pa_context_set_card_profile_by_index() failed"));
-              return;
-          }
-
-          pa_operation_unref(o);
+        if (!(o = pa_context_set_card_profile_by_index(get_context(), index, name.constData(), NULL, NULL))) {
+            show_error(_("pa_context_set_card_profile_by_index() failed"));
+            return;
         }
+
+        pa_operation_unref(o);
     }
 }

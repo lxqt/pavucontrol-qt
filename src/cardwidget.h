@@ -22,6 +22,8 @@
 #define cardwidget_h
 
 #include "pavucontrol.h"
+#include "ui_cardwidget.h"
+#include <QWidget>
 
 class PortInfo {
 public:
@@ -34,15 +36,11 @@ public:
       std::vector<Glib::ustring> profiles;
 };
 
-#if 0
-class CardWidget : public Gtk::VBox {
+class CardWidget : public QWidget {
+    Q_OBJECT
 public:
-    CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
-    static CardWidget* create();
+    CardWidget(QWidget *parent=nullptr);
 
-    Gtk::Label *nameLabel;
-    Gtk::Menu menu;
-    Gtk::Image *iconImage;
     Glib::ustring name;
     uint32_t index;
     bool updating;
@@ -55,26 +53,10 @@ public:
 
     void prepareMenu();
 
+    Ui::CardWidget ui;
 protected:
   virtual void onProfileChange();
 
-  /* Tree model columns */
-  class ModelColumns : public Gtk::TreeModel::ColumnRecord
-  {
-  public:
-
-    ModelColumns()
-    { add(name); add(desc); }
-
-    Gtk::TreeModelColumn<Glib::ustring> name;
-    Gtk::TreeModelColumn<Glib::ustring> desc;
-  };
-
-  ModelColumns profileModel;
-
-  Gtk::ComboBox *profileList;
-  Glib::RefPtr<Gtk::ListStore> treeModel;
 };
-#endif
 
 #endif

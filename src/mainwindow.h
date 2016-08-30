@@ -87,12 +87,14 @@ public:
     SourceOutputType showSourceOutputType;
     SourceType showSourceType;
 
-    virtual void onSinkInputTypeComboBoxChanged();
-    virtual void onSourceOutputTypeComboBoxChanged();
-    virtual void onSinkTypeComboBoxChanged();
-    virtual void onSourceTypeComboBoxChanged();
-    virtual void onShowVolumeMetersCheckButtonToggled();
+protected Q_SLOTS:
+    virtual void onSinkInputTypeComboBoxChanged(int index);
+    virtual void onSourceOutputTypeComboBoxChanged(int index);
+    virtual void onSinkTypeComboBoxChanged(int index);
+    virtual void onSourceTypeComboBoxChanged(int index);
+    virtual void onShowVolumeMetersCheckButtonToggled(bool toggled);
 
+public:
     void setConnectionState(gboolean connected);
     void updateDeviceVisibility();
     void reallyUpdateDeviceVisibility();

@@ -9,11 +9,13 @@ include_directories(
 
 set(pavucontrol-qt_HDRS
     mainwindow.h
+    cardwidget.h
 )
 
 set(pavucontrol-qt_SRCS
     pavucontrol.cc
     mainwindow.cc
+    cardwidget.cc
 )
 
 set(pavucontrol-qt_UI
