@@ -55,7 +55,7 @@ public:
 
     Ui::CardWidget ui;
 protected:
-  virtual void onProfileChange();
+  virtual void onProfileChange(int active);
 
 };
 

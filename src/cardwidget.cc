@@ -30,7 +30,7 @@
 CardWidget::CardWidget(QWidget* parent) :
     QWidget(parent) {
     ui.setupUi(this);
-    // profileList->signal_changed().connect( sigc::mem_fun(*this, &CardWidget::onProfileChange));
+    connect(ui.profileList, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &CardWidget::onProfileChange);
 }
 
 
@@ -55,11 +55,10 @@ void CardWidget::prepareMenu() {
 
 }
 
-void CardWidget::onProfileChange() {
+void CardWidget::onProfileChange(int active) {
     if (updating)
         return;
 
-    int active = ui.profileList->currentIndex();
     if (active != -1) {
         QString desc = ui.profileList->itemText(active);
         QByteArray name = ui.profileList->itemData(active).toByteArray();

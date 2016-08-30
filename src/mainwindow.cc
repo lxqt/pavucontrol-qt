@@ -243,32 +243,6 @@ finish:
     }
 }
 
-#if 0
-static void set_icon_name_fallback(Gtk::Image *i, const char *name, Gtk::IconSize size) {
-    Glib::RefPtr<Gtk::IconTheme> theme;
-    Glib::RefPtr<Gdk::Pixbuf> pixbuf;
-    gint width = 24, height = 24;
-
-    Gtk::IconSize::lookup(size, width, height);
-    theme = Gtk::IconTheme::get_default();
-
-    try {
-        pixbuf = theme->load_icon(name, width, Gtk::ICON_LOOKUP_GENERIC_FALLBACK | Gtk::ICON_LOOKUP_FORCE_SIZE);
-
-        if (pixbuf)
-            i->set(pixbuf);
-        else
-            i->set(name);
-    } catch (Gtk::IconThemeError &e) {
-        i->set(name);
-    } catch (Gio::Error &e) {
-        i->set(name);
-    } catch (Gdk::PixbufError &e) {
-        i->set(name);
-    }
-}
-#endif
-
 class DeviceWidget;
 static void updatePorts(DeviceWidget *w, std::map<Glib::ustring, PortInfo> &ports) {
 #if 0
@@ -329,7 +303,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
     w->ui.nameLabel->setText(QString::fromUtf8(w->name.c_str()));
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
-    // set_icon_name_fallback(w->iconImage, icon ? icon : "audio-card", Gtk::ICON_SIZE_SMALL_TOOLBAR);
+    // FIXME: set_icon_name_fallback(w->iconImage, icon ? icon : "audio-card", Gtk::ICON_SIZE_SMALL_TOOLBAR);
 
     w->hasSinks = w->hasSources = false;
     profile_priorities.clear();
