@@ -34,6 +34,7 @@ public:
       std::vector<Glib::ustring> profiles;
 };
 
+#if 0
 class CardWidget : public Gtk::VBox {
 public:
     CardWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
@@ -74,5 +75,6 @@ protected:
   Gtk::ComboBox *profileList;
   Glib::RefPtr<Gtk::ListStore> treeModel;
 };
+#endif
 
 #endif

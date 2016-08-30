@@ -22,15 +22,18 @@
 #include <config.h>
 #endif
 
+#define PACKAGE_VERSION "0.1"
+
 #include <pulse/pulseaudio.h>
 #include <pulse/glib-mainloop.h>
 #include <pulse/ext-stream-restore.h>
 #include <pulse/ext-device-manager.h>
 
-#include <canberra-gtk.h>
+// #include <canberra-gtk.h>
 
 #include "pavucontrol.h"
 #include "i18n.h"
+/*
 #include "minimalstreamwidget.h"
 #include "channelwidget.h"
 #include "streamwidget.h"
@@ -40,7 +43,10 @@
 #include "sinkinputwidget.h"
 #include "sourceoutputwidget.h"
 #include "rolewidget.h"
+*/
 #include "mainwindow.h"
+#include <QMessageBox>
+#include <QApplication>
 
 static pa_context* context = NULL;
 static pa_mainloop_api* api = NULL;
@@ -54,10 +60,8 @@ void show_error(const char *txt) {
 
     snprintf(buf, sizeof(buf), "%s: %s", txt, pa_strerror(pa_context_errno(context)));
 
-    Gtk::MessageDialog dialog(buf, false, Gtk::MESSAGE_ERROR, Gtk::BUTTONS_CLOSE, true);
-    dialog.run();
-
-    Gtk::Main::quit();
+    QMessageBox::critical(nullptr, QObject::tr("Error"), QString::fromUtf8(buf));
+    qApp->quit();
 }
 
 static void dec_outstanding(MainWindow *w) {
@@ -65,7 +69,7 @@ static void dec_outstanding(MainWindow *w) {
         return;
 
     if (--n_outstanding <= 0) {
-        w->get_window()->set_cursor();
+        // w->get_window()->set_cursor();
         w->setConnectionState(true);
     }
 }
@@ -108,7 +112,6 @@ void sink_cb(pa_context *c, const pa_sink_info *i, int eol, void *userdata) {
         dec_outstanding(w);
         return;
     }
-
 #if HAVE_EXT_DEVICE_RESTORE_API
     if (w->updateSink(*i))
         ext_device_restore_subscribe_cb(c, PA_DEVICE_TYPE_SINK, i->index, w);
@@ -172,6 +175,7 @@ void source_output_cb(pa_context *, const pa_source_output_info *i, int eol, voi
             /* At this point all notebook pages have been populated, so
              * let's open one that isn't empty */
             if (default_tab != -1) {
+#if 0
                 if (default_tab < 1 || default_tab > w->notebook->get_n_pages()) {
                     if (w->sinkInputWidgets.size() > 0)
                         w->notebook->set_current_page(0);
@@ -184,6 +188,7 @@ void source_output_cb(pa_context *, const pa_source_output_info *i, int eol, voi
                 } else {
                     w->notebook->set_current_page(default_tab - 1);
                 }
+#endif
                 default_tab = -1;
             }
         }
@@ -582,7 +587,7 @@ void context_state_callback(pa_context *c, void *userdata) {
 
         case PA_CONTEXT_TERMINATED:
         default:
-            Gtk::Main::quit();
+            qApp->quit();
             return;
     }
 }
@@ -610,25 +615,27 @@ gboolean connect_to_pulse(gpointer userdata) {
 
     pa_context_set_state_callback(context, context_state_callback, w);
 
-    w->setConnectingMessage();
+    // w->setConnectingMessage();
     if (pa_context_connect(context, NULL, PA_CONTEXT_NOFAIL, NULL) < 0) {
         if (pa_context_errno(context) == PA_ERR_INVALID) {
+/*
             w->setConnectingMessage(_("Connection to PulseAudio failed. Automatic retry in 5s\n\n"
                 "In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Properties\n"
                 "or default-server in client.conf is misconfigured.\n"
                 "This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.\n"
                 "If this is the case, then PulseAudio should autospawn again, or if this is not configured you should\n"
                 "run start-pulseaudio-x11 manually."));
+*/
             reconnect_timeout = 5;
         }
         else {
             if(!retry) {
                 reconnect_timeout = -1;
-                Gtk::Main::quit();
+                qApp->quit();
             } else {
                 g_debug(_("Connection failed, attempting reconnect"));
                 reconnect_timeout = 5;
-                g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, w);
+                g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, userdata);
             }
         }
     }
@@ -679,39 +686,31 @@ int main(int argc, char *argv[]) {
 
     options.set_main_group(group);
 
-    try {
-        Gtk::Main kit(argc, argv, options);
+    QApplication app(argc, argv);
+    // ca_context_set_driver(ca_gtk_context_get(), "pulse");
 
-        if (version) {
-            printf("%s\n", PACKAGE_STRING);
-            return 0;
-        }
+    // MainWindow* mainWindow = MainWindow::create(maximize);
+    MainWindow* mainWindow = new MainWindow();
 
-        ca_context_set_driver(ca_gtk_context_get(), "pulse");
+    pa_glib_mainloop *m = pa_glib_mainloop_new(g_main_context_default());
+    g_assert(m);
+    api = pa_glib_mainloop_get_api(m);
+    g_assert(api);
 
-        MainWindow* mainWindow = MainWindow::create(maximize);
-
-        pa_glib_mainloop *m = pa_glib_mainloop_new(g_main_context_default());
-        g_assert(m);
-        api = pa_glib_mainloop_get_api(m);
-        g_assert(api);
-
-        connect_to_pulse(mainWindow);
-        if (reconnect_timeout >= 0)
-            Gtk::Main::run(*mainWindow);
-
-        if (reconnect_timeout < 0)
-            show_error(_("Fatal Error: Unable to connect to PulseAudio"));
-
-        delete mainWindow;
-
-        if (context)
-            pa_context_unref(context);
-        pa_glib_mainloop_free(m);
-    } catch ( const Glib::OptionError & e ) {
-        fprintf(stderr, "%s", options.get_help().c_str());
-        return 1;
+    connect_to_pulse(mainWindow);
+    if (reconnect_timeout >= 0) {
+        mainWindow->show();
+        app.exec();
     }
+
+    if (reconnect_timeout < 0)
+        show_error(_("Fatal Error: Unable to connect to PulseAudio"));
+
+    delete mainWindow;
+
+    if (context)
+        pa_context_unref(context);
+    pa_glib_mainloop_free(m);
 
     return 0;
 }

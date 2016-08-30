@@ -27,6 +27,9 @@
 #  include <pulse/ext-device-restore.h>
 #endif
 
+#include <QDialog>
+#include "ui_mainwindow.h"
+
 class CardWidget;
 class SinkWidget;
 class SourceWidget;
@@ -34,10 +37,12 @@ class SinkInputWidget;
 class SourceOutputWidget;
 class RoleWidget;
 
-class MainWindow : public Gtk::Window {
+class MainWindow : public QDialog {
+    Q_OBJECT
 public:
-    MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
-    static MainWindow* create(bool maximize);
+    MainWindow();
+    // MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
+    // static MainWindow* create(bool maximize);
     virtual ~MainWindow();
 
     void updateCard(const pa_card_info &info);
@@ -63,20 +68,20 @@ public:
     void removeAllWidgets();
 
     void setConnectingMessage(const char *string = NULL);
-
+#if 0
     Gtk::Notebook *notebook;
     Gtk::VBox *streamsVBox, *recsVBox, *sinksVBox, *sourcesVBox, *cardsVBox;
     Gtk::Label *noStreamsLabel, *noRecsLabel, *noSinksLabel, *noSourcesLabel, *noCardsLabel, *connectingLabel;
     Gtk::ComboBox *sinkInputTypeComboBox, *sourceOutputTypeComboBox, *sinkTypeComboBox, *sourceTypeComboBox;
     Gtk::CheckButton *showVolumeMetersCheckButton;
-
+#endif
     std::map<uint32_t, CardWidget*> cardWidgets;
     std::map<uint32_t, SinkWidget*> sinkWidgets;
     std::map<uint32_t, SourceWidget*> sourceWidgets;
     std::map<uint32_t, SinkInputWidget*> sinkInputWidgets;
     std::map<uint32_t, SourceOutputWidget*> sourceOutputWidgets;
-    std::map<uint32_t, char*> clientNames;
 
+    std::map<uint32_t, char*> clientNames;
     SinkInputType showSinkInputType;
     SinkType showSinkType;
     SourceOutputType showSourceOutputType;
@@ -94,7 +99,7 @@ public:
     pa_stream* createMonitorStreamForSource(uint32_t source_idx, uint32_t stream_idx, bool suspend);
     void createMonitorStreamForSinkInput(SinkInputWidget* w, uint32_t sink_idx);
 
-    void setIconFromProplist(Gtk::Image *icon, pa_proplist *l, const char *name);
+    // void setIconFromProplist(Gtk::Image *icon, pa_proplist *l, const char *name);
 
     RoleWidget *eventRoleWidget;
 
@@ -107,11 +112,12 @@ public:
 
 protected:
     virtual void on_realize();
-    virtual bool on_key_press_event(GdkEventKey* event);
+    // virtual bool on_key_press_event(GdkEventKey* event);
 
 private:
     gboolean m_connected;
     gchar* m_config_filename;
+    Ui::MainWindow ui;
 };
 
 

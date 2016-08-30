@@ -25,14 +25,14 @@
 #include <set>
 
 #include "mainwindow.h"
-
 #include "cardwidget.h"
+/*
 #include "sinkwidget.h"
 #include "sourcewidget.h"
 #include "sinkinputwidget.h"
 #include "sourceoutputwidget.h"
 #include "rolewidget.h"
-
+*/
 #include "i18n.h"
 
 /* Used for profile sorting */
@@ -66,106 +66,85 @@ struct source_port_prio_compare {
     }
 };
 
-MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
-    Gtk::Window(cobject),
+MainWindow::MainWindow():
+    QDialog(),
     showSinkInputType(SINK_INPUT_CLIENT),
     showSinkType(SINK_ALL),
     showSourceOutputType(SOURCE_OUTPUT_CLIENT),
     showSourceType(SOURCE_NO_MONITOR),
-    eventRoleWidget(NULL),
+    eventRoleWidget(nullptr),
     canRenameDevices(false),
     m_connected(false),
-    m_config_filename(NULL) {
+    m_config_filename(nullptr) {
 
-    x->get_widget("cardsVBox", cardsVBox);
-    x->get_widget("streamsVBox", streamsVBox);
-    x->get_widget("recsVBox", recsVBox);
-    x->get_widget("sinksVBox", sinksVBox);
-    x->get_widget("sourcesVBox", sourcesVBox);
-    x->get_widget("noCardsLabel", noCardsLabel);
-    x->get_widget("noStreamsLabel", noStreamsLabel);
-    x->get_widget("noRecsLabel", noRecsLabel);
-    x->get_widget("noSinksLabel", noSinksLabel);
-    x->get_widget("noSourcesLabel", noSourcesLabel);
-    x->get_widget("connectingLabel", connectingLabel);
-    x->get_widget("sinkInputTypeComboBox", sinkInputTypeComboBox);
-    x->get_widget("sourceOutputTypeComboBox", sourceOutputTypeComboBox);
-    x->get_widget("sinkTypeComboBox", sinkTypeComboBox);
-    x->get_widget("sourceTypeComboBox", sourceTypeComboBox);
-    x->get_widget("notebook", notebook);
-    x->get_widget("showVolumeMetersCheckButton", showVolumeMetersCheckButton);
+    ui.setupUi(this);
 
-    cardsVBox->set_reallocate_redraws(true);
-    sourcesVBox->set_reallocate_redraws(true);
-    streamsVBox->set_reallocate_redraws(true);
-    recsVBox->set_reallocate_redraws(true);
-    sinksVBox->set_reallocate_redraws(true);
+    ui.sinkInputTypeComboBox->setCurrentIndex((int) showSinkInputType);
+    ui.sourceOutputTypeComboBox->setCurrentIndex((int) showSourceOutputType);
+    ui.sinkTypeComboBox->setCurrentIndex((int) showSinkType);
+    ui.sourceTypeComboBox->setCurrentIndex((int) showSourceType);
 
-    sinkInputTypeComboBox->set_active((int) showSinkInputType);
-    sourceOutputTypeComboBox->set_active((int) showSourceOutputType);
-    sinkTypeComboBox->set_active((int) showSinkType);
-    sourceTypeComboBox->set_active((int) showSourceType);
-
-    sinkInputTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkInputTypeComboBoxChanged));
-    sourceOutputTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceOutputTypeComboBoxChanged));
-    sinkTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkTypeComboBoxChanged));
-    sourceTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceTypeComboBoxChanged));
-    showVolumeMetersCheckButton->signal_toggled().connect(sigc::mem_fun(*this, &MainWindow::onShowVolumeMetersCheckButtonToggled));
-
+#if 0
+    ui.sinkInputTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkInputTypeComboBoxChanged));
+    ui.sourceOutputTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceOutputTypeComboBoxChanged));
+    ui.sinkTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSinkTypeComboBoxChanged));
+    ui.sourceTypeComboBox->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::onSourceTypeComboBoxChanged));
+    ui.showVolumeMetersCheckButton->signal_toggled().connect(sigc::mem_fun(*this, &MainWindow::onShowVolumeMetersCheckButtonToggled));
+#endif
 
     GKeyFile* config = g_key_file_new();
     g_assert(config);
     GKeyFileFlags flags = (GKeyFileFlags)( G_KEY_FILE_KEEP_COMMENTS | G_KEY_FILE_KEEP_TRANSLATIONS);
-    GError *err = NULL;
-    m_config_filename = g_strconcat(g_get_user_config_dir(), "/pavucontrol.ini", NULL);
+    GError *err = nullptr;
+    m_config_filename = g_strconcat(g_get_user_config_dir(), "/pavucontrol.ini", nullptr);
 
     /* Load the GKeyFile from keyfile.conf or return. */
     if (g_key_file_load_from_file (config, m_config_filename, flags, &err)) {
-        int width  = g_key_file_get_integer(config, "window", "width", NULL);
-        int height = g_key_file_get_integer(config, "window", "height", NULL);
+        int width  = g_key_file_get_integer(config, "window", "width", nullptr);
+        int height = g_key_file_get_integer(config, "window", "height", nullptr);
 
         /* When upgrading from a previous version, set showVolumeMeters to TRUE
          * (default from glade file), so users don't complain about missing
          * volume meters. */
-        if (g_key_file_has_key(config, "window", "showVolumeMeters", NULL)) {
-            showVolumeMetersCheckButton->set_active(g_key_file_get_boolean(config, "window", "showVolumeMeters", NULL));
+        if (g_key_file_has_key(config, "window", "showVolumeMeters", nullptr)) {
+            ui.showVolumeMetersCheckButton->setChecked(g_key_file_get_boolean(config, "window", "showVolumeMeters", nullptr));
         }
-
+#if 0
         int default_width, default_height;
         get_default_size(default_width, default_height);
         if (width >= default_width && height >= default_height)
             resize(width, height);
-
+#endif
         int sinkInputTypeSelection = g_key_file_get_integer(config, "window", "sinkInputType", &err);
-        if (err == NULL)
-            sinkInputTypeComboBox->set_active(sinkInputTypeSelection);
+        if (err == nullptr)
+            ui.sinkInputTypeComboBox->setCurrentIndex(sinkInputTypeSelection);
         else {
             g_error_free(err);
-            err = NULL;
+            err = nullptr;
         }
 
         int sourceOutputTypeSelection = g_key_file_get_integer(config, "window", "sourceOutputType", &err);
-        if (err == NULL)
-            sourceOutputTypeComboBox->set_active(sourceOutputTypeSelection);
+        if (err == nullptr)
+            ui.sourceOutputTypeComboBox->setCurrentIndex(sourceOutputTypeSelection);
         else {
             g_error_free(err);
-            err = NULL;
+            err = nullptr;
         }
 
         int sinkTypeSelection = g_key_file_get_integer(config, "window", "sinkType", &err);
-        if (err == NULL)
-            sinkTypeComboBox->set_active(sinkTypeSelection);
+        if (err == nullptr)
+            ui.sinkTypeComboBox->setCurrentIndex(sinkTypeSelection);
         else {
             g_error_free(err);
-            err = NULL;
+            err = nullptr;
         }
 
         int sourceTypeSelection = g_key_file_get_integer(config, "window", "sourceType", &err);
-        if (err == NULL)
-            sourceTypeComboBox->set_active(sourceTypeSelection);
+        if (err == nullptr)
+            ui.sourceTypeComboBox->setCurrentIndex(sourceTypeSelection);
         else {
             g_error_free(err);
-            err = NULL;
+            err = nullptr;
         }
     } else {
         g_debug(_("Error reading config file %s: %s"), m_config_filename, err->message);
@@ -175,10 +154,11 @@ MainWindow::MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>
 
 
     /* Hide first and show when we're connected */
-    notebook->hide();
-    connectingLabel->show();
+    ui.notebook->hide();
+    ui.connectingLabel->show();
 }
 
+#if 0
 MainWindow* MainWindow::create(bool maximize) {
     MainWindow* w;
     Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create();
@@ -192,17 +172,18 @@ MainWindow* MainWindow::create(bool maximize) {
         w->maximize();
     return w;
 }
+#endif
 
 void MainWindow::on_realize() {
-    Gtk::Window::on_realize();
+#if 0
 
-#ifdef HAVE_GTK3
+    Gtk::Window::on_realize();
     get_window()->set_cursor(Gdk::Cursor::create(Gdk::WATCH));
-#else
-    get_window()->set_cursor(Gdk::Cursor(Gdk::WATCH));
-#endif /* HAVE_GTK3 */
+
+#endif
 }
 
+#if 0
 bool MainWindow::on_key_press_event(GdkEventKey* event) {
 
     if (GDK_KEY_Escape == event->keyval) {
@@ -216,14 +197,14 @@ bool MainWindow::on_key_press_event(GdkEventKey* event) {
             case GDK_KEY_KP_3:
             case GDK_KEY_KP_4:
             case GDK_KEY_KP_5:
-                notebook->set_current_page(event->keyval - GDK_KEY_KP_1);
+                ui.notebook->set_current_page(event->keyval - GDK_KEY_KP_1);
                 return true;
             case GDK_KEY_1:
             case GDK_KEY_2:
             case GDK_KEY_3:
             case GDK_KEY_4:
             case GDK_KEY_5:
-                notebook->set_current_page(event->keyval - GDK_KEY_1);
+                ui.notebook->set_current_page(event->keyval - GDK_KEY_1);
                 return true;
             case GDK_KEY_W:
             case GDK_KEY_Q:
@@ -235,23 +216,22 @@ bool MainWindow::on_key_press_event(GdkEventKey* event) {
     }
     return Gtk::Window::on_key_press_event(event);
 }
+#endif
 
 MainWindow::~MainWindow() {
     GKeyFile* config = g_key_file_new();
     g_assert(config);
-
-    int width, height;
-    get_size(width, height);
-    g_key_file_set_integer(config, "window", "width", width);
-    g_key_file_set_integer(config, "window", "height", height);
-    g_key_file_set_integer(config, "window", "sinkInputType", sinkInputTypeComboBox->get_active_row_number());
-    g_key_file_set_integer(config, "window", "sourceOutputType", sourceOutputTypeComboBox->get_active_row_number());
-    g_key_file_set_integer(config, "window", "sinkType", sinkTypeComboBox->get_active_row_number());
-    g_key_file_set_integer(config, "window", "sourceType", sourceTypeComboBox->get_active_row_number());
-    g_key_file_set_integer(config, "window", "showVolumeMeters", showVolumeMetersCheckButton->get_active());
-
+#if 0
+    g_key_file_set_integer(config, "window", "width", width());
+    g_key_file_set_integer(config, "window", "height", height());
+    g_key_file_set_integer(config, "window", "sinkInputType", ui.sinkInputTypeComboBox->currentIndex());
+    g_key_file_set_integer(config, "window", "sourceOutputType", ui.sourceOutputTypeComboBox->currentIndex());
+    g_key_file_set_integer(config, "window", "sinkType", ui.sinkTypeComboBox->currentIndex());
+    g_key_file_set_integer(config, "window", "sourceType", ui.sourceTypeComboBox->currentIndex());
+    g_key_file_set_integer(config, "window", "showVolumeMeters", ui.showVolumeMetersCheckButton->get_active());
+#endif
     gsize filelen;
-    GError *err = NULL;
+    GError *err = nullptr;
     gchar *filedata = g_key_file_to_data(config, &filelen, &err);
     if (err) {
         show_error(_("Error saving preferences"));
@@ -262,7 +242,7 @@ MainWindow::~MainWindow() {
     g_file_set_contents(m_config_filename, filedata, filelen, &err);
     g_free(filedata);
     if (err) {
-        gchar* msg = g_strconcat(_("Error writing config file %s"), m_config_filename, NULL);
+        gchar* msg = g_strconcat(_("Error writing config file %s"), m_config_filename, nullptr);
         show_error(msg);
         g_free(msg);
         g_error_free(err);
@@ -281,6 +261,7 @@ finish:
     }
 }
 
+#if 0
 static void set_icon_name_fallback(Gtk::Image *i, const char *name, Gtk::IconSize size) {
     Glib::RefPtr<Gtk::IconTheme> theme;
     Glib::RefPtr<Gdk::Pixbuf> pixbuf;
@@ -304,8 +285,11 @@ static void set_icon_name_fallback(Gtk::Image *i, const char *name, Gtk::IconSiz
         i->set(name);
     }
 }
+#endif
 
+class DeviceWidget;
 static void updatePorts(DeviceWidget *w, std::map<Glib::ustring, PortInfo> &ports) {
+#if 0
     std::map<Glib::ustring, PortInfo>::iterator it;
     PortInfo p;
 
@@ -338,9 +322,11 @@ static void updatePorts(DeviceWidget *w, std::map<Glib::ustring, PortInfo> &port
         p = it->second;
         w->setLatencyOffset(p.latency_offset);
     }
+#endif
 }
 
 void MainWindow::updateCard(const pa_card_info &info) {
+#if 0
     CardWidget *w;
     bool is_new = false;
     const char *description, *icon;
@@ -456,11 +442,13 @@ void MainWindow::updateCard(const pa_card_info &info) {
         updateDeviceVisibility();
 
     w->updating = false;
+#endif
 }
 
 bool MainWindow::updateSink(const pa_sink_info &info) {
     SinkWidget *w;
     bool is_new = false;
+#if 0
     const char *icon;
     std::map<uint32_t, CardWidget*>::iterator cw;
     std::set<pa_sink_port_info,sink_port_prio_compare> port_priorities;
@@ -497,7 +485,7 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
     set_icon_name_fallback(w->iconImage, icon ? icon : "audio-card", Gtk::ICON_SIZE_SMALL_TOOLBAR);
 
     w->setVolume(info.volume);
-    w->muteToggleButton->set_active(info.mute);
+    w->muteToggleButton->setCurrentIndex(info.mute);
 
     w->setDefault(w->name == defaultSinkName);
 
@@ -527,7 +515,7 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
 
     if (is_new)
         updateDeviceVisibility();
-
+#endif
     return is_new;
 }
 
@@ -549,7 +537,7 @@ static void read_callback(pa_stream *s, size_t length, void *userdata) {
     }
 
     if (!data) {
-        /* NULL data means either a hole or empty buffer.
+        /* nullptr data means either a hole or empty buffer.
          * Only drop the stream when there is a hole (length > 0) */
         if (length)
             pa_stream_drop(s);
@@ -588,9 +576,9 @@ pa_stream* MainWindow::createMonitorStreamForSource(uint32_t source_idx, uint32_
 
     snprintf(t, sizeof(t), "%u", source_idx);
 
-    if (!(s = pa_stream_new(get_context(), _("Peak detect"), &ss, NULL))) {
+    if (!(s = pa_stream_new(get_context(), _("Peak detect"), &ss, nullptr))) {
         show_error(_("Failed to create monitoring stream"));
-        return NULL;
+        return nullptr;
     }
 
     if (stream_idx != (uint32_t) -1)
@@ -599,6 +587,7 @@ pa_stream* MainWindow::createMonitorStreamForSource(uint32_t source_idx, uint32_
     pa_stream_set_read_callback(s, read_callback, this);
     pa_stream_set_suspended_callback(s, suspended_callback, this);
 
+#if 0
     flags = (pa_stream_flags_t) (PA_STREAM_DONT_MOVE | PA_STREAM_PEAK_DETECT | PA_STREAM_ADJUST_LATENCY |
                                  (suspend ? PA_STREAM_DONT_INHIBIT_AUTO_SUSPEND : PA_STREAM_NOFLAGS) |
                                  (!showVolumeMetersCheckButton->get_active() ? PA_STREAM_START_CORKED : PA_STREAM_NOFLAGS));
@@ -606,24 +595,28 @@ pa_stream* MainWindow::createMonitorStreamForSource(uint32_t source_idx, uint32_
     if (pa_stream_connect_record(s, t, &attr, flags) < 0) {
         show_error(_("Failed to connect monitoring stream"));
         pa_stream_unref(s);
-        return NULL;
+        return nullptr;
     }
+#endif
     return s;
 }
 
 void MainWindow::createMonitorStreamForSinkInput(SinkInputWidget* w, uint32_t sink_idx) {
+#if 0
     if (!sinkWidgets.count(sink_idx))
         return;
 
     if (w->peak) {
         pa_stream_disconnect(w->peak);
-        w->peak = NULL;
+        w->peak = nullptr;
     }
 
     w->peak = createMonitorStreamForSource(sinkWidgets[sink_idx]->monitor_index, w->index);
+#endif
 }
 
 void MainWindow::updateSource(const pa_source_info &info) {
+#if 0
     SourceWidget *w;
     bool is_new = false;
     const char *icon;
@@ -664,7 +657,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
     set_icon_name_fallback(w->iconImage, icon ? icon : "audio-input-microphone", Gtk::ICON_SIZE_SMALL_TOOLBAR);
 
     w->setVolume(info.volume);
-    w->muteToggleButton->set_active(info.mute);
+    w->muteToggleButton->setCurrentIndex(info.mute);
 
     w->setDefault(w->name == defaultSourceName);
 
@@ -690,8 +683,10 @@ void MainWindow::updateSource(const pa_source_info &info) {
 
     if (is_new)
         updateDeviceVisibility();
+#endif
 }
 
+#if 0
 void MainWindow::setIconFromProplist(Gtk::Image *icon, pa_proplist *l, const char *def) {
     const char *t;
 
@@ -732,8 +727,10 @@ finish:
 
     set_icon_name_fallback(icon, t, Gtk::ICON_SIZE_SMALL_TOOLBAR);
 }
+#endif
 
 void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
+#if 0
     const char *t;
     SinkInputWidget *w;
     bool is_new = false;
@@ -786,15 +783,17 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
     setIconFromProplist(w->iconImage, info.proplist, "audio-card");
 
     w->setVolume(info.volume);
-    w->muteToggleButton->set_active(info.mute);
+    w->muteToggleButton->setCurrentIndex(info.mute);
 
     w->updating = false;
 
     if (is_new)
         updateDeviceVisibility();
+#endif
 }
 
 void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
+#if 0
     SourceOutputWidget *w;
     const char *app;
     bool is_new = false;
@@ -843,17 +842,18 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
 
 #if HAVE_SOURCE_OUTPUT_VOLUMES
     w->setVolume(info.volume);
-    w->muteToggleButton->set_active(info.mute);
+    w->muteToggleButton->setCurrentIndex(info.mute);
 #endif
 
     w->updating = false;
 
     if (is_new)
         updateDeviceVisibility();
+#endif
 }
 
 void MainWindow::updateClient(const pa_client_info &info) {
-
+#if 0
     g_free(clientNames[info.index]);
     clientNames[info.index] = g_strdup(info.name);
 
@@ -869,10 +869,11 @@ void MainWindow::updateClient(const pa_client_info &info) {
             g_free(txt);
         }
     }
+#endif
 }
 
 void MainWindow::updateServer(const pa_server_info &info) {
-
+#if 0
     defaultSourceName = info.default_source_name ? info.default_source_name : "";
     defaultSinkName = info.default_sink_name ? info.default_sink_name : "";
 
@@ -898,9 +899,11 @@ void MainWindow::updateServer(const pa_server_info &info) {
         w->setDefault(w->name == defaultSourceName);
         w->updating = false;
     }
+#endif
 }
 
 bool MainWindow::createEventRoleWidget() {
+#if 0
     if (eventRoleWidget)
         return FALSE;
 
@@ -928,22 +931,23 @@ bool MainWindow::createEventRoleWidget() {
     volume.values[0] = PA_VOLUME_NORM;
 
     eventRoleWidget->setVolume(volume);
-    eventRoleWidget->muteToggleButton->set_active(false);
+    eventRoleWidget->muteToggleButton->setCurrentIndex(false);
 
     eventRoleWidget->updating = false;
-
+#endif
     return TRUE;
 }
 
 void MainWindow::deleteEventRoleWidget() {
-
+#if 0
     if (eventRoleWidget)
         delete eventRoleWidget;
-
-    eventRoleWidget = NULL;
+#endif
+    eventRoleWidget = nullptr;
 }
 
 void MainWindow::updateRole(const pa_ext_stream_restore_info &info) {
+#if 0
     pa_cvolume volume;
     bool is_new = false;
 
@@ -960,17 +964,18 @@ void MainWindow::updateRole(const pa_ext_stream_restore_info &info) {
     volume.values[0] = pa_cvolume_max(&info.volume);
 
     eventRoleWidget->setVolume(volume);
-    eventRoleWidget->muteToggleButton->set_active(info.mute);
+    eventRoleWidget->muteToggleButton->setCurrentIndex(info.mute);
 
     eventRoleWidget->updating = false;
 
     if (is_new)
         updateDeviceVisibility();
+#endif
 }
 
 #if HAVE_EXT_DEVICE_RESTORE_API
 void MainWindow::updateDeviceInfo(const pa_ext_device_restore_info &info) {
-
+#if 0
     if (sinkWidgets.count(info.index)) {
         SinkWidget *w;
         pa_format_info *format;
@@ -981,14 +986,14 @@ void MainWindow::updateDeviceInfo(const pa_ext_device_restore_info &info) {
 
         /* Unselect everything */
         for (int j = 1; j < PAVU_NUM_ENCODINGS; ++j)
-            w->encodings[j].widget->set_active(false);
+            w->encodings[j].widget->setCurrentIndex(false);
 
 
         for (uint8_t i = 0; i < info.n_formats; ++i) {
             format = info.formats[i];
             for (int j = 1; j < PAVU_NUM_ENCODINGS; ++j) {
                 if (format->encoding == w->encodings[j].encoding) {
-                    w->encodings[j].widget->set_active(true);
+                    w->encodings[j].widget->setCurrentIndex(true);
                     break;
                 }
             }
@@ -996,12 +1001,13 @@ void MainWindow::updateDeviceInfo(const pa_ext_device_restore_info &info) {
 
         w->updating = false;
     }
+#endif
 }
 #endif
 
 
 void MainWindow::updateVolumeMeter(uint32_t source_index, uint32_t sink_input_idx, double v) {
-
+#if 0
     if (sink_input_idx != PA_INVALID_INDEX) {
         SinkInputWidget *w;
 
@@ -1033,6 +1039,7 @@ void MainWindow::updateVolumeMeter(uint32_t source_index, uint32_t sink_input_id
                 w->updatePeak(v);
         }
     }
+#endif
 }
 
 static guint idle_source = 0;
@@ -1047,11 +1054,11 @@ void MainWindow::setConnectionState(gboolean connected) {
     if (m_connected != connected) {
         m_connected = connected;
         if (m_connected) {
-            connectingLabel->hide();
-            notebook->show();
+            ui.connectingLabel->hide();
+            ui.notebook->show();
         } else {
-            notebook->hide();
-            connectingLabel->show();
+            ui.notebook->hide();
+            ui.connectingLabel->show();
         }
     }
 }
@@ -1065,6 +1072,7 @@ void MainWindow::updateDeviceVisibility() {
 }
 
 void MainWindow::reallyUpdateDeviceVisibility() {
+#if 0
     bool is_empty = true;
 
     for (std::map<uint32_t, SinkInputWidget*>::iterator i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
@@ -1180,51 +1188,62 @@ void MainWindow::reallyUpdateDeviceVisibility() {
     recsVBox->show();
     cardsVBox->hide();
     cardsVBox->show();
+#endif
 }
 
 void MainWindow::removeCard(uint32_t index) {
+#if 0
     if (!cardWidgets.count(index))
         return;
 
     delete cardWidgets[index];
     cardWidgets.erase(index);
     updateDeviceVisibility();
+#endif
 }
 
 void MainWindow::removeSink(uint32_t index) {
+#if 0
     if (!sinkWidgets.count(index))
         return;
 
     delete sinkWidgets[index];
     sinkWidgets.erase(index);
     updateDeviceVisibility();
+#endif
 }
 
 void MainWindow::removeSource(uint32_t index) {
+#if 0
     if (!sourceWidgets.count(index))
         return;
 
     delete sourceWidgets[index];
     sourceWidgets.erase(index);
     updateDeviceVisibility();
+#endif
 }
 
 void MainWindow::removeSinkInput(uint32_t index) {
+#if 0
     if (!sinkInputWidgets.count(index))
         return;
 
     delete sinkInputWidgets[index];
     sinkInputWidgets.erase(index);
     updateDeviceVisibility();
+#endif
 }
 
 void MainWindow::removeSourceOutput(uint32_t index) {
+#if 0
     if (!sourceOutputWidgets.count(index))
         return;
 
     delete sourceOutputWidgets[index];
     sourceOutputWidgets.erase(index);
     updateDeviceVisibility();
+#endif
 }
 
 void MainWindow::removeClient(uint32_t index) {
@@ -1255,54 +1274,55 @@ void MainWindow::setConnectingMessage(const char *string) {
     else
         markup += string;
     markup += "</i>";
-    connectingLabel->set_markup(markup);
+    ui.connectingLabel->setText(QString::fromUtf8(markup.c_str()));
 }
 
 void MainWindow::onSinkTypeComboBoxChanged() {
-    showSinkType = (SinkType) sinkTypeComboBox->get_active_row_number();
+    showSinkType = (SinkType) ui.sinkTypeComboBox->currentIndex();
 
     if (showSinkType == (SinkType) -1)
-        sinkTypeComboBox->set_active((int) SINK_ALL);
+        ui.sinkTypeComboBox->setCurrentIndex((int) SINK_ALL);
 
     updateDeviceVisibility();
 }
 
 void MainWindow::onSourceTypeComboBoxChanged() {
-    showSourceType = (SourceType) sourceTypeComboBox->get_active_row_number();
+    showSourceType = (SourceType) ui.sourceTypeComboBox->currentIndex();
 
     if (showSourceType == (SourceType) -1)
-        sourceTypeComboBox->set_active((int) SOURCE_NO_MONITOR);
+        ui.sourceTypeComboBox->setCurrentIndex((int) SOURCE_NO_MONITOR);
 
     updateDeviceVisibility();
 }
 
 void MainWindow::onSinkInputTypeComboBoxChanged() {
-    showSinkInputType = (SinkInputType) sinkInputTypeComboBox->get_active_row_number();
+    showSinkInputType = (SinkInputType) ui.sinkInputTypeComboBox->currentIndex();
 
     if (showSinkInputType == (SinkInputType) -1)
-        sinkInputTypeComboBox->set_active((int) SINK_INPUT_CLIENT);
+        ui.sinkInputTypeComboBox->setCurrentIndex((int) SINK_INPUT_CLIENT);
 
     updateDeviceVisibility();
 }
 
 void MainWindow::onSourceOutputTypeComboBoxChanged() {
-    showSourceOutputType = (SourceOutputType) sourceOutputTypeComboBox->get_active_row_number();
+    showSourceOutputType = (SourceOutputType) ui.sourceOutputTypeComboBox->currentIndex();
 
     if (showSourceOutputType == (SourceOutputType) -1)
-        sourceOutputTypeComboBox->set_active((int) SOURCE_OUTPUT_CLIENT);
+        ui.sourceOutputTypeComboBox->setCurrentIndex((int) SOURCE_OUTPUT_CLIENT);
 
     updateDeviceVisibility();
 }
 
 
 void MainWindow::onShowVolumeMetersCheckButtonToggled() {
-    bool state = showVolumeMetersCheckButton->get_active();
+#if 0
+    bool state = ui.showVolumeMetersCheckButton->get_active();
     pa_operation *o;
 
     for (std::map<uint32_t, SinkWidget*>::iterator it = sinkWidgets.begin() ; it != sinkWidgets.end(); it++) {
         SinkWidget *sw = it->second;
         if (sw->peak) {
-            o = pa_stream_cork(sw->peak, (int)!state, NULL, NULL);
+            o = pa_stream_cork(sw->peak, (int)!state, nullptr, nullptr);
             if (o)
                 pa_operation_unref(o);
         }
@@ -1311,7 +1331,7 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled() {
     for (std::map<uint32_t, SourceWidget*>::iterator it = sourceWidgets.begin() ; it != sourceWidgets.end(); it++) {
         SourceWidget *sw = it->second;
         if (sw->peak) {
-            o = pa_stream_cork(sw->peak, (int)!state, NULL, NULL);
+            o = pa_stream_cork(sw->peak, (int)!state, nullptr, nullptr);
             if (o)
                 pa_operation_unref(o);
         }
@@ -1320,7 +1340,7 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled() {
     for (std::map<uint32_t, SinkInputWidget*>::iterator it = sinkInputWidgets.begin() ; it != sinkInputWidgets.end(); it++) {
         SinkInputWidget *sw = it->second;
         if (sw->peak) {
-            o = pa_stream_cork(sw->peak, (int)!state, NULL, NULL);
+            o = pa_stream_cork(sw->peak, (int)!state, nullptr, nullptr);
             if (o)
                 pa_operation_unref(o);
         }
@@ -1329,10 +1349,11 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled() {
     for (std::map<uint32_t, SourceOutputWidget*>::iterator it = sourceOutputWidgets.begin() ; it != sourceOutputWidgets.end(); it++) {
         SourceOutputWidget *sw = it->second;
         if (sw->peak) {
-            o = pa_stream_cork(sw->peak, (int)!state, NULL, NULL);
+            o = pa_stream_cork(sw->peak, (int)!state, nullptr, nullptr);
             if (o)
                 pa_operation_unref(o);
         }
         sw->setVolumeMeterVisible(state);
     }
+#endif
 }

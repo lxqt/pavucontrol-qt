@@ -20,6 +20,9 @@
   along with pavucontrol. If not, see <http://www.gnu.org/licenses/>.
 ***/
 
+#define GETTEXT_PACKAGE "pavucontrol"
+
+
 #if !defined(GETTEXT_PACKAGE)
 #error "Something is very wrong here, config.h needs to be included first"
 #endif
