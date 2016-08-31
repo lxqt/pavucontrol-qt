@@ -449,9 +449,16 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
         port_priorities.insert(*info.ports[i]);
     }
 
-    w->ports.clear();
+    std::vector< std::pair<Glib::ustring,Glib::ustring> > old_ports;
+    old_ports.swap(w->ports);
+    std::stable_sort(old_ports.begin(), old_ports.end());
+    // w->ports.clear();
     for (std::set<pa_sink_port_info>::iterator i = port_priorities.begin(); i != port_priorities.end(); ++i)
         w->ports.push_back(std::pair<Glib::ustring,Glib::ustring>(i->name, i->description));
+    std::stable_sort(w->ports.begin(), w->ports.end());
+    // check if the list is really changed
+    // FIXME: this is inefficient. Fix it later.
+    bool ports_changed = (w->ports != old_ports);
 
     w->activePort = info.active_port ? info.active_port->name : "";
 
@@ -466,7 +473,9 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
 
     w->updating = false;
 
-    w->prepareMenu();
+    if(ports_changed) {
+        w->prepareMenu();
+    }
 
     if (is_new)
         updateDeviceVisibility();
@@ -616,9 +625,17 @@ void MainWindow::updateSource(const pa_source_info &info) {
         port_priorities.insert(*info.ports[i]);
     }
 
-    w->ports.clear();
+
+    std::vector< std::pair<Glib::ustring,Glib::ustring> > old_ports;
+    old_ports.swap(w->ports);
+    std::stable_sort(old_ports.begin(), old_ports.end());
+    // w->ports.clear();
     for (std::set<pa_source_port_info>::iterator i = port_priorities.begin(); i != port_priorities.end(); ++i)
         w->ports.push_back(std::pair<Glib::ustring,Glib::ustring>(i->name, i->description));
+    std::stable_sort(w->ports.begin(), w->ports.end());
+    // check if the list is really changed
+    // FIXME: this is inefficient. Fix it later.
+    bool ports_changed = (w->ports != old_ports);
 
     w->activePort = info.active_port ? info.active_port->name : "";
 
@@ -629,7 +646,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
 
     w->updating = false;
 
-    w->prepareMenu();
+    if(ports_changed)
+        w->prepareMenu();
 
     if (is_new)
         updateDeviceVisibility();

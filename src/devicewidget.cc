@@ -41,6 +41,10 @@ DeviceWidget::DeviceWidget(MainWindow* parent, Glib::ustring deviceType) :
     advancedWidget->hide();
     initPeakProgressBar(channelsVBox);
 
+    timeout.setSingleShot(true);
+    timeout.setInterval(100);
+    connect(&timeout, &QTimer::timeout, this, &DeviceWidget::timeoutEvent);
+
     // FIXME: this->signal_button_press_event().connect(sigc::mem_fun(*this, &DeviceWidget::onContextTriggerEvent));
     connect(muteToggleButton, &QPushButton::toggled, this, &DeviceWidget::onMuteToggleButton);
     connect(lockToggleButton, &QPushButton::toggled, this, &DeviceWidget::onLockToggleButton);
@@ -90,7 +94,7 @@ void DeviceWidget::setVolume(const pa_cvolume &v, bool force) {
 
     volume = v;
 
-    if (timeoutConnection.empty() || force) { /* do not update the volume when a volume change is still in flux */
+    if (!timeout.isActive() || force) { /* do not update the volume when a volume change is still in flux */
         for (int i = 0; i < volume.channels; i++)
             channelWidgets[i]->setVolume(volume.values[i]);
     }
@@ -108,8 +112,9 @@ void DeviceWidget::updateChannelVolume(int channel, pa_volume_t v) {
 
     setVolume(n, true);
 
-    if (timeoutConnection.empty())
-        timeoutConnection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &DeviceWidget::timeoutEvent), 100);
+    if (!timeout.isActive()) {
+        timeout.start();
+    }
 }
 
 void DeviceWidget::hideLockedChannels(bool hide) {
@@ -162,6 +167,7 @@ void DeviceWidget::setDefault(bool isDefault) {
 
 bool DeviceWidget::timeoutEvent() {
     executeVolumeUpdate();
+    qDebug("TIMEOUT!");
     return false;
 }
 
@@ -185,7 +191,7 @@ void DeviceWidget::prepareMenu() {
     int active_idx = -1;
 
     portList->clear();
-    /* Fill the ComboBox's Tree Model */
+    /* Fill the ComboBox's Model */
     for (uint32_t i = 0; i < ports.size(); ++i) {
         QByteArray name = ports[i].first.c_str();
         QString desc = ports[i].second.c_str();

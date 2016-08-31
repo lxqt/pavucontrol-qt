@@ -25,6 +25,8 @@
 
 #include "minimalstreamwidget.h"
 #include "ui_devicewidget.h"
+#include <QTimer>
+#include <vector>
 
 class MainWindow;
 class ChannelWidget;
@@ -44,11 +46,6 @@ public:
     Glib::ustring description;
     uint32_t index, card_index;
 
-    /*
-    Gtk::ToggleButton *lockToggleButton, *muteToggleButton, *defaultToggleButton;
-    Gtk::SpinButton *offsetButton;
-    */
-
     bool offsetButtonEnabled;
 
     pa_channel_map channelMap;
@@ -64,12 +61,10 @@ public Q_SLOTS:
     // virtual bool onContextTriggerEvent(GdkEventButton*);
     virtual void setLatencyOffset(int64_t offset);
     void onOffsetChange();
+    bool timeoutEvent();
 
 public:
-
-    sigc::connection timeoutConnection;
-
-    bool timeoutEvent();
+    QTimer timeout;
 
     virtual void executeVolumeUpdate();
     virtual void setBaseVolume(pa_volume_t v);
