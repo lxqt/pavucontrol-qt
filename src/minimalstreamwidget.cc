@@ -23,28 +23,25 @@
 #endif
 
 #include "minimalstreamwidget.h"
+#include <QVBoxLayout>
+#include <QProgressBar>
+#include <QDebug>
 
 /*** MinimalStreamWidget ***/
 MinimalStreamWidget::MinimalStreamWidget(QWidget *parent) :
     QWidget(parent),
-    peakProgressBar(nullptr),
+    peakProgressBar(new QProgressBar(this)),
     lastPeak(0),
     peak(NULL),
     updating(false),
     volumeMeterEnabled(false),
     volumeMeterVisible(true) {
-#if 0
-    x->get_widget("channelsVBox", channelsVBox);
-    x->get_widget("nameLabel", nameLabel);
-    x->get_widget("boldNameLabel", boldNameLabel);
-    x->get_widget("iconImage", iconImage);
 
-    peakProgressBar.set_size_request(-1, 10);
-    channelsVBox->pack_end(peakProgressBar, false, false);
+    peakProgressBar->hide();
+}
 
-    peakProgressBar.hide();
-#endif
-
+void MinimalStreamWidget::initPeakProgressBar(QVBoxLayout* channelsVBox) {
+    channelsVBox->addWidget(peakProgressBar);
 }
 
 #define DECAY_STEP .04
@@ -56,15 +53,16 @@ void MinimalStreamWidget::updatePeak(double v) {
             v = lastPeak - DECAY_STEP;
 
     lastPeak = v;
-#if 0
+
     if (v >= 0) {
-        peakProgressBar.set_sensitive(TRUE);
-        peakProgressBar.set_fraction(v);
+        peakProgressBar->setEnabled(TRUE);
+        int value = qRound(v * peakProgressBar->maximum());
+        peakProgressBar->setValue(value);
     } else {
-        peakProgressBar.set_sensitive(FALSE);
-        peakProgressBar.set_fraction(0);
+        peakProgressBar->setEnabled(FALSE);
+        peakProgressBar->setValue(0);
     }
-#endif
+
     enableVolumeMeter();
 }
 
@@ -74,7 +72,7 @@ void MinimalStreamWidget::enableVolumeMeter() {
 
     volumeMeterEnabled = true;
     if (volumeMeterVisible) {
-//        peakProgressBar.show();
+        peakProgressBar->show();
     }
 }
 
@@ -82,9 +80,9 @@ void MinimalStreamWidget::setVolumeMeterVisible(bool v) {
     volumeMeterVisible = v;
     if (v) {
         if (volumeMeterEnabled) {
-//            peakProgressBar.show();
+            peakProgressBar->show();
         }
     } else {
-//        peakProgressBar.hide();
+        peakProgressBar->hide();
     }
 }

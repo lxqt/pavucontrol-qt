@@ -32,8 +32,7 @@ class ChannelWidget;
 class DeviceWidget : public MinimalStreamWidget, public Ui::DeviceWidget {
     Q_OBJECT
 public:
-    DeviceWidget(QWidget* parent=nullptr);
-    void init(MainWindow* mainWindow, Glib::ustring);
+    DeviceWidget(MainWindow *parent, Glib::ustring deviceType = "");
 
     void setChannelMap(const pa_channel_map &m, bool can_decibel);
     void setVolume(const pa_cvolume &volume, bool force = false);
@@ -57,6 +56,7 @@ public:
 
     ChannelWidget *channelWidgets[PA_CHANNELS_MAX];
 
+public Q_SLOTS:
     virtual void onMuteToggleButton();
     virtual void onLockToggleButton();
     virtual void onDefaultToggleButton();
@@ -64,6 +64,8 @@ public:
     // virtual bool onContextTriggerEvent(GdkEventButton*);
     virtual void setLatencyOffset(int64_t offset);
     void onOffsetChange();
+
+public:
 
     sigc::connection timeoutConnection;
 
@@ -86,27 +88,6 @@ protected:
 
     // Gtk::Menu contextMenu;
     // Gtk::MenuItem rename;
-
-#if 0
-    /* Tree model columns */
-    class ModelColumns : public Gtk::TreeModel::ColumnRecord
-    {
-      public:
-
-        ModelColumns()
-        { add(name); add(desc); }
-
-        Gtk::TreeModelColumn<Glib::ustring> name;
-        Gtk::TreeModelColumn<Glib::ustring> desc;
-    };
-
-    ModelColumns portModel;
-    Gtk::Expander *advancedOptions;
-    Gtk::HBox *portSelect, *offsetSelect;
-    Gtk::ComboBox *portList;
-    Glib::RefPtr<Gtk::ListStore> treeModel;
-    Glib::RefPtr<Gtk::Adjustment> offsetAdjustment;
-#endif
 
 private:
     Glib::ustring mDeviceType;

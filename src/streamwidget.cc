@@ -29,22 +29,23 @@
 #include "i18n.h"
 
 /*** StreamWidget ***/
-StreamWidget::StreamWidget(QWidget* parent) :
+StreamWidget::StreamWidget(MainWindow *parent) :
     MinimalStreamWidget(parent),
-    mpMainWindow(NULL) {
+    mpMainWindow(parent) {
 
     setupUi(this);
+    initPeakProgressBar(channelsVBox);
+
+    timeout.setSingleShot(true);
+    timeout.setInterval(100);
+    connect(&timeout, &QTimer::timeout, this, &StreamWidget::timeoutEvent);
+
+//    this->signal_button_press_event().connect(sigc::mem_fun(*this, &StreamWidget::onContextTriggerEvent));
+    connect(muteToggleButton, &QPushButton::toggled, this, &StreamWidget::onMuteToggleButton);
+    connect(lockToggleButton, &QPushButton::toggled, this, &StreamWidget::onLockToggleButton);
+//    connect(deviceButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onDeviceChangePopup));
 
 #if 0
-    x->get_widget("lockToggleButton", lockToggleButton);
-    x->get_widget("muteToggleButton", muteToggleButton);
-    x->get_widget("directionLabel", directionLabel);
-    x->get_widget("deviceButton", deviceButton);
-
-    this->signal_button_press_event().connect(sigc::mem_fun(*this, &StreamWidget::onContextTriggerEvent));
-    muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onMuteToggleButton));
-    lockToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onLockToggleButton));
-    deviceButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onDeviceChangePopup));
 
     terminate.set_label(_("Terminate"));
     terminate.signal_activate().connect(sigc::mem_fun(*this, &StreamWidget::onKill));
@@ -55,10 +56,6 @@ StreamWidget::StreamWidget(QWidget* parent) :
         channelWidgets[i] = NULL;
 }
 
-
-void StreamWidget::init(MainWindow* mainWindow) {
-    mpMainWindow = mainWindow;
-}
 
 #if 0
 bool StreamWidget::onContextTriggerEvent(GdkEventButton* event) {
@@ -94,12 +91,11 @@ void StreamWidget::setVolume(const pa_cvolume &v, bool force) {
     g_assert(v.channels == channelMap.channels);
 
     volume = v;
-#if 0
-    if (timeoutConnection.empty() || force) { /* do not update the volume when a volume change is still in flux */
+
+    if (!timeout.isActive() || force) { /* do not update the volume when a volume change is still in flux */
         for (int i = 0; i < volume.channels; i++)
             channelWidgets[i]->setVolume(volume.values[i]);
     }
-#endif
 }
 
 void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
@@ -115,8 +111,9 @@ void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
 
     setVolume(n, true);
 
-//    if (timeoutConnection.empty())
-//        timeoutConnection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &StreamWidget::timeoutEvent), 100);
+    if(!timeout.isActive()) {
+        timeout.start();
+    }
 }
 
 void StreamWidget::hideLockedChannels(bool hide) {

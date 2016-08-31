@@ -30,7 +30,7 @@ class MainWindow;
 class SinkInputWidget : public StreamWidget {
     Q_OBJECT
 public:
-    SinkInputWidget(QWidget* parent=nullptr);
+    SinkInputWidget(MainWindow *parent);
     ~SinkInputWidget(void);
 
     SinkInputType type;

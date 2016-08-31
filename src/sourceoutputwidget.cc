@@ -28,7 +28,7 @@
 
 #include "i18n.h"
 
-SourceOutputWidget::SourceOutputWidget(QWidget *parent) :
+SourceOutputWidget::SourceOutputWidget(MainWindow *parent) :
     StreamWidget(parent) {
 
     gchar *txt;

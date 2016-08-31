@@ -25,18 +25,14 @@
 #include <QWidget>
 
 class QProgressBar;
+class QVBoxLayout;
 
 class MinimalStreamWidget : public QWidget {
     Q_OBJECT
 public:
-    MinimalStreamWidget(QWidget* parent=nullptr);
+    MinimalStreamWidget(QWidget* parent = nullptr);
+    void initPeakProgressBar(QVBoxLayout* channelsVBox);
 
-    /*
-    Gtk::VBox *channelsVBox;
-    Gtk::Label *nameLabel, *boldNameLabel;
-    Gtk::Image *iconImage;
-    Gtk::ProgressBar peakProgressBar;
-    */
     QProgressBar* peakProgressBar;
     double lastPeak;
     pa_stream *peak;

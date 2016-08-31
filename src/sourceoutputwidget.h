@@ -30,7 +30,7 @@ class MainWindow;
 class SourceOutputWidget : public StreamWidget {
     Q_OBJECT
 public:
-    SourceOutputWidget(QWidget* parent = nullptr);
+    SourceOutputWidget(MainWindow *parent);
     ~SourceOutputWidget(void);
 
     SourceOutputType type;

@@ -14,7 +14,9 @@
    <string>Volume Control</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="multimedia-volume-control"/>
+   <iconset theme="multimedia-volume-control">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -37,8 +39,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>730</width>
-            <height>423</height>
+            <width>722</width>
+            <height>428</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -61,7 +63,23 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QComboBox" name="sinkInputTypeComboBox"/>
+        <widget class="QComboBox" name="sinkInputTypeComboBox">
+         <item>
+          <property name="text">
+           <string>All Streams</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Applications</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Virtual Streams</string>
+          </property>
+         </item>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -80,8 +98,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>730</width>
-            <height>423</height>
+            <width>722</width>
+            <height>428</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -104,7 +122,23 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QComboBox" name="sourceOutputTypeComboBox"/>
+        <widget class="QComboBox" name="sourceOutputTypeComboBox">
+         <item>
+          <property name="text">
+           <string>All Streams</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Applications</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Virtual Streams</string>
+          </property>
+         </item>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -123,8 +157,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>730</width>
-            <height>423</height>
+            <width>722</width>
+            <height>428</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -147,7 +181,23 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QComboBox" name="sinkTypeComboBox"/>
+        <widget class="QComboBox" name="sinkTypeComboBox">
+         <item>
+          <property name="text">
+           <string>All Output Devices</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Hardware Output Devices</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Virtual Output Devices</string>
+          </property>
+         </item>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -166,8 +216,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>730</width>
-            <height>423</height>
+            <width>722</width>
+            <height>428</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -190,7 +240,33 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QComboBox" name="sourceTypeComboBox"/>
+        <widget class="QComboBox" name="sourceTypeComboBox">
+         <item>
+          <property name="text">
+           <string>All Input Devices</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>All Except Monitors</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Hardware Input Devices</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Virtual Input Devices</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Monitors</string>
+          </property>
+         </item>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -209,8 +285,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>730</width>
-            <height>433</height>
+            <width>722</width>
+            <height>432</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_6">

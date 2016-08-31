@@ -175,20 +175,18 @@ void source_output_cb(pa_context *, const pa_source_output_info *i, int eol, voi
             /* At this point all notebook pages have been populated, so
              * let's open one that isn't empty */
             if (default_tab != -1) {
-#if 0
-                if (default_tab < 1 || default_tab > w->notebook->get_n_pages()) {
+                if (default_tab < 1 || default_tab > w->notebook->count()) {
                     if (w->sinkInputWidgets.size() > 0)
-                        w->notebook->set_current_page(0);
+                        w->notebook->setCurrentIndex(0);
                     else if (w->sourceOutputWidgets.size() > 0)
-                        w->notebook->set_current_page(1);
+                        w->notebook->setCurrentIndex(1);
                     else if (w->sourceWidgets.size() > 0 && w->sinkWidgets.size() == 0)
-                        w->notebook->set_current_page(3);
+                        w->notebook->setCurrentIndex(3);
                     else
-                        w->notebook->set_current_page(2);
+                        w->notebook->setCurrentIndex(2);
                 } else {
-                    w->notebook->set_current_page(default_tab - 1);
+                    w->notebook->setCurrentIndex(default_tab - 1);
                 }
-#endif
                 default_tab = -1;
             }
         }

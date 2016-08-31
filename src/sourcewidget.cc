@@ -26,8 +26,8 @@
 
 #include "i18n.h"
 
-SourceWidget::SourceWidget(QWidget *parent) :
-    DeviceWidget(parent) {
+SourceWidget::SourceWidget(MainWindow *parent) :
+    DeviceWidget(parent, "source") {
 }
 
 void SourceWidget::executeVolumeUpdate() {
@@ -70,28 +70,19 @@ void SourceWidget::onDefaultToggleButton() {
 }
 
 void SourceWidget::onPortChange() {
-#if 0
-  Gtk::TreeModel::iterator iter;
-
-  if (updating)
-    return;
-
-  iter = portList->get_active();
-  if (iter)
-  {
-    Gtk::TreeModel::Row row = *iter;
-    if (row)
-    {
-      pa_operation* o;
-      Glib::ustring port = row[portModel.name];
-
-      if (!(o = pa_context_set_source_port_by_index(get_context(), index, port.c_str(), NULL, NULL))) {
-        show_error(_("pa_context_set_source_port_by_index() failed"));
+    if (updating)
         return;
-      }
 
-      pa_operation_unref(o);
+    int current = portList->currentIndex();
+    if (current != -1) {
+        pa_operation* o;
+        QByteArray port = portList->itemData(current).toByteArray();
+
+        if (!(o = pa_context_set_source_port_by_index(get_context(), index, port.constData(), NULL, NULL))) {
+            show_error(_("pa_context_set_source_port_by_index() failed"));
+        return;
     }
-  }
-#endif
+
+    pa_operation_unref(o);
+    }
 }

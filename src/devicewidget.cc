@@ -31,52 +31,39 @@
 #include "i18n.h"
 
 /*** DeviceWidget ***/
-DeviceWidget::DeviceWidget(QWidget* parent) :
+DeviceWidget::DeviceWidget(MainWindow* parent, Glib::ustring deviceType) :
     MinimalStreamWidget(parent),
+    mpMainWindow(parent),
+    mDeviceType(deviceType),
     offsetButtonEnabled(false) {
 
     setupUi(this);
     advancedWidget->hide();
+    initPeakProgressBar(channelsVBox);
+
+    // FIXME: this->signal_button_press_event().connect(sigc::mem_fun(*this, &DeviceWidget::onContextTriggerEvent));
+    connect(muteToggleButton, &QPushButton::toggled, this, &DeviceWidget::onMuteToggleButton);
+    connect(lockToggleButton, &QPushButton::toggled, this, &DeviceWidget::onLockToggleButton);
+    connect(defaultToggleButton, &QPushButton::toggled, this, &DeviceWidget::onDefaultToggleButton);
 
 #if 0
-    x->get_widget("lockToggleButton", lockToggleButton);
-    x->get_widget("muteToggleButton", muteToggleButton);
-    x->get_widget("defaultToggleButton", defaultToggleButton);
-    x->get_widget("portSelect", portSelect);
-    x->get_widget("portList", portList);
-    x->get_widget("advancedOptions", advancedOptions);
-    x->get_widget("offsetSelect", offsetSelect);
-    x->get_widget("offsetButton", offsetButton);
-
-    this->signal_button_press_event().connect(sigc::mem_fun(*this, &DeviceWidget::onContextTriggerEvent));
-    muteToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &DeviceWidget::onMuteToggleButton));
-    lockToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &DeviceWidget::onLockToggleButton));
-    defaultToggleButton->signal_clicked().connect(sigc::mem_fun(*this, &DeviceWidget::onDefaultToggleButton));
 
     rename.set_label(_("Rename Device..."));
     rename.signal_activate().connect(sigc::mem_fun(*this, &DeviceWidget::renamePopup));
     contextMenu.append(rename);
     contextMenu.show_all();
+#endif
 
-    treeModel = Gtk::ListStore::create(portModel);
-    portList->set_model(treeModel);
-    portList->pack_start(portModel.desc);
-
-    portList->signal_changed().connect(sigc::mem_fun(*this, &DeviceWidget::onPortChange));
-    offsetButton->signal_value_changed().connect(sigc::mem_fun(*this, &DeviceWidget::onOffsetChange));
+    connect(portList, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &DeviceWidget::onPortChange);
+    connect(offsetButton, static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &DeviceWidget::onOffsetChange);
 
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
         channelWidgets[i] = NULL;
 
 
-    offsetAdjustment = Gtk::Adjustment::create(0.0, -2000.0, 2000.0, 10.0, 50.0, 0.0);
-    offsetButton->configure(offsetAdjustment, 0, 2);
-#endif
-}
-
-void DeviceWidget::init(MainWindow* mainWindow, Glib::ustring deviceType) {
-    mpMainWindow = mainWindow;
-    mDeviceType = deviceType;
+    // FIXME:
+//    offsetAdjustment = Gtk::Adjustment::create(0.0, -2000.0, 2000.0, 10.0, 50.0, 0.0);
+//    offsetButton->configure(offsetAdjustment, 0, 2);
 }
 
 void DeviceWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
@@ -196,20 +183,20 @@ void DeviceWidget::setBaseVolume(pa_volume_t v) {
 void DeviceWidget::prepareMenu() {
     int idx = 0;
     int active_idx = -1;
-#if 0
-    treeModel->clear();
+
+    portList->clear();
     /* Fill the ComboBox's Tree Model */
     for (uint32_t i = 0; i < ports.size(); ++i) {
-        Gtk::TreeModel::Row row = *(treeModel->append());
-        row[portModel.name] = ports[i].first;
-        row[portModel.desc] = ports[i].second;
+        QByteArray name = ports[i].first.c_str();
+        QString desc = ports[i].second.c_str();
+        portList->addItem(desc, name);
         if (ports[i].first == activePort)
             active_idx = idx;
         idx++;
     }
 
     if (active_idx >= 0)
-        portList->setChecked(active_idx);
+        portList->setCurrentIndex(active_idx);
 
     if (ports.size() > 0) {
         portSelect->show();
@@ -227,7 +214,6 @@ void DeviceWidget::prepareMenu() {
         advancedOptions->setEnabled(false);
         offsetSelect->hide();
     }
-#endif
 }
 
 #if 0

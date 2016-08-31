@@ -66,13 +66,7 @@ public:
     void removeAllWidgets();
 
     void setConnectingMessage(const char *string = NULL);
-#if 0
-    Gtk::Notebook *notebook;
-    Gtk::VBox *streamsVBox, *recsVBox, *sinksVBox, *sourcesVBox, *cardsVBox;
-    Gtk::Label *noStreamsLabel, *noRecsLabel, *noSinksLabel, *noSourcesLabel, *noCardsLabel, *connectingLabel;
-    Gtk::ComboBox *sinkInputTypeComboBox, *sourceOutputTypeComboBox, *sinkTypeComboBox, *sourceTypeComboBox;
-    Gtk::CheckButton *showVolumeMetersCheckButton;
-#endif
+
     std::map<uint32_t, CardWidget*> cardWidgets;
     std::map<uint32_t, SinkWidget*> sinkWidgets;
     std::map<uint32_t, SourceWidget*> sourceWidgets;
@@ -99,7 +93,7 @@ public:
     pa_stream* createMonitorStreamForSource(uint32_t source_idx, uint32_t stream_idx, bool suspend);
     void createMonitorStreamForSinkInput(SinkInputWidget* w, uint32_t sink_idx);
 
-    // void setIconFromProplist(Gtk::Image *icon, pa_proplist *l, const char *name);
+    void setIconFromProplist(QLabel *icon, pa_proplist *l, const char *name);
 
     RoleWidget *eventRoleWidget;
 

@@ -28,7 +28,7 @@
 class RoleWidget : public StreamWidget {
     Q_OBJECT
 public:
-    RoleWidget(QWidget* parent=nullptr);
+    RoleWidget(MainWindow* parent);
 
     Glib::ustring role;
     Glib::ustring device;

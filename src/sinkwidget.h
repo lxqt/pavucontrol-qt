@@ -23,23 +23,25 @@
 
 #include "pavucontrol.h"
 #include "devicewidget.h"
-#include <QPushButton>
+
 
 #if HAVE_EXT_DEVICE_RESTORE_API
 #  include <pulse/format.h>
 
 #  define PAVU_NUM_ENCODINGS 6
 
+class QCheckBox;
+
 typedef struct {
     pa_encoding encoding;
-    QPushButton *widget;
+    QCheckBox *widget;
 } encodingList;
 #endif
 
 class SinkWidget : public DeviceWidget {
     Q_OBJECT
 public:
-    SinkWidget(QWidget* parent = nullptr);
+    SinkWidget(MainWindow *parent);
 
     SinkType type;
     uint32_t monitor_index;
@@ -54,7 +56,7 @@ public:
     virtual void onDefaultToggleButton();
     void setDigital(bool);
 
-protected:
+protected Q_SLOTS:
     virtual void onPortChange();
     virtual void onEncodingsChange();
 };

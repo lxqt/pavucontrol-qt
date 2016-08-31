@@ -32,6 +32,8 @@
 #include "sourceoutputwidget.h"
 #include "rolewidget.h"
 #include "i18n.h"
+#include <QIcon>
+#include <QStyle>
 
 /* Used for profile sorting */
 struct profile_prio_compare {
@@ -277,6 +279,13 @@ static void updatePorts(DeviceWidget *w, std::map<Glib::ustring, PortInfo> &port
     }
 }
 
+static void setIconByName(QLabel* label, const char* name) {
+    QIcon icon = QIcon::fromTheme(name);
+    int size = label->style()->pixelMetric(QStyle::PM_ButtonIconSize);
+    QPixmap pix = icon.pixmap(size, size);
+    label->setPixmap(pix);
+}
+
 void MainWindow::updateCard(const pa_card_info &info) {
     CardWidget *w;
     bool is_new = false;
@@ -299,7 +308,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
     w->nameLabel->setText(QString::fromUtf8(w->name.c_str()));
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
-    // FIXME: set_icon_name_fallback(w->iconImage, icon ? icon : "audio-card", Gtk::ICON_SIZE_SMALL_TOOLBAR);
+    setIconByName(w->iconImage, icon ? icon : "audio-card");
 
     w->hasSinks = w->hasSources = false;
     profile_priorities.clear();
@@ -423,14 +432,12 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
 
     w->boldNameLabel->setText("");
     gchar *txt;
-#if 0
     w->nameLabel->setText(txt = g_markup_printf_escaped("%s", info.description));
     w->nameLabel->setToolTip(info.description);
-#endif
     g_free(txt);
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
-    // set_icon_name_fallback(w->iconImage, icon ? icon : "audio-card", Gtk::ICON_SIZE_SMALL_TOOLBAR);
+    setIconByName(w->iconImage, icon ? icon : "audio-card");
 
     w->setVolume(info.volume);
     w->muteToggleButton->setChecked(info.mute);
@@ -592,14 +599,12 @@ void MainWindow::updateSource(const pa_source_info &info) {
 
     w->boldNameLabel->setText("");
     gchar *txt;
-#if 0
     w->nameLabel->setText(txt = g_markup_printf_escaped("%s", info.description));
     w->nameLabel->setToolTip(info.description);
-#endif
     g_free(txt);
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
-    // set_icon_name_fallback(w->iconImage, icon ? icon : "audio-input-microphone", Gtk::ICON_SIZE_SMALL_TOOLBAR);
+    setIconByName(w->iconImage, icon ? icon : "audio-input-microphone");
 
     w->setVolume(info.volume);
     w->muteToggleButton->setChecked(info.mute);
@@ -630,8 +635,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
         updateDeviceVisibility();
 }
 
-#if 0
-void MainWindow::setIconFromProplist(Gtk::Image *icon, pa_proplist *l, const char *def) {
+
+void MainWindow::setIconFromProplist(QLabel *icon, pa_proplist *l, const char *def) {
     const char *t;
 
     if ((t = pa_proplist_gets(l, PA_PROP_MEDIA_ICON_NAME)))
@@ -669,9 +674,9 @@ void MainWindow::setIconFromProplist(Gtk::Image *icon, pa_proplist *l, const cha
 
 finish:
 
-    set_icon_name_fallback(icon, t, Gtk::ICON_SIZE_SMALL_TOOLBAR);
+    setIconByName(icon, t);
 }
-#endif
+
 
 void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
     const char *t;
@@ -723,7 +728,7 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
 
     w->nameLabel->setToolTip(info.name);
 
-    // setIconFromProplist(w->iconImage, info.proplist, "audio-card");
+    setIconFromProplist(w->iconImage, info.proplist, "audio-card");
 
     w->setVolume(info.volume);
     w->muteToggleButton->setChecked(info.mute);
@@ -779,7 +784,7 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
 
     w->nameLabel->setToolTip(info.name);
 
-    // setIconFromProplist(w->iconImage, info.proplist, "audio-input-microphone");
+    setIconFromProplist(w->iconImage, info.proplist, "audio-input-microphone");
 
 #if HAVE_SOURCE_OUTPUT_VOLUMES
     w->setVolume(info.volume);
@@ -793,7 +798,6 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
 }
 
 void MainWindow::updateClient(const pa_client_info &info) {
-#if 0
     g_free(clientNames[info.index]);
     clientNames[info.index] = g_strdup(info.name);
 
@@ -809,7 +813,6 @@ void MainWindow::updateClient(const pa_client_info &info) {
             g_free(txt);
         }
     }
-#endif
 }
 
 void MainWindow::updateServer(const pa_server_info &info) {
@@ -1126,14 +1129,12 @@ void MainWindow::removeCard(uint32_t index) {
 }
 
 void MainWindow::removeSink(uint32_t index) {
-#if 0
     if (!sinkWidgets.count(index))
         return;
 
     delete sinkWidgets[index];
     sinkWidgets.erase(index);
     updateDeviceVisibility();
-#endif
 }
 
 void MainWindow::removeSource(uint32_t index) {

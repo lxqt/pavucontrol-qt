@@ -28,7 +28,7 @@
 
 #include "i18n.h"
 
-RoleWidget::RoleWidget(QWidget *parent) :
+RoleWidget::RoleWidget(MainWindow *parent) :
     StreamWidget(parent) {
 
     lockToggleButton->hide();

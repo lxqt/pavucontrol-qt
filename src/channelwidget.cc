@@ -37,11 +37,11 @@ ChannelWidget::ChannelWidget(QWidget* parent) :
 
     setupUi(this);
 
-    volumeScale->setMinimum((double)PA_VOLUME_MUTED);
-    volumeScale->setMaximum((double)PA_VOLUME_UI_MAX);
-    volumeScale->setValue((double)PA_VOLUME_NORM);
-    volumeScale->setSingleStep(((double)PA_VOLUME_NORM)/100.0);
-    volumeScale->setPageStep(((double)PA_VOLUME_NORM)/20.0);
+    volumeScale->setMinimum(PA_VOLUME_MUTED);
+    volumeScale->setMaximum(PA_VOLUME_UI_MAX);
+    volumeScale->setValue(PA_VOLUME_NORM);
+    volumeScale->setSingleStep(qRound((double)PA_VOLUME_NORM)/100.0);
+    volumeScale->setPageStep(qRound((double)PA_VOLUME_NORM)/20.0);
     setBaseVolume(PA_VOLUME_NORM);
 
     connect(volumeScale, &QSlider::valueChanged, this, &ChannelWidget::onVolumeScaleValueChanged);
@@ -80,6 +80,7 @@ void ChannelWidget::onVolumeScaleValueChanged(int value) {
     minimalStreamWidget->updateChannelVolume(channel, volume);
 }
 
+/*
 void ChannelWidget::set_sensitive(bool enabled) {
     setEnabled(enabled);
 
@@ -87,9 +88,10 @@ void ChannelWidget::set_sensitive(bool enabled) {
     volumeLabel->setEnabled(enabled);
     volumeScale->setEnabled(enabled);
 }
+*/
 
 void ChannelWidget::setBaseVolume(pa_volume_t v) {
-#if 0
+#if 0  // FIXME: Qt does not support this functionality
     gtk_scale_clear_marks(GTK_SCALE(volumeScale->gobj()));
 
     gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), (double)PA_VOLUME_MUTED, (GtkPositionType) GTK_POS_BOTTOM,

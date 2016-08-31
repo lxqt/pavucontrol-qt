@@ -28,7 +28,7 @@
 
 #include "i18n.h"
 
-SinkInputWidget::SinkInputWidget(QWidget *parent) :
+SinkInputWidget::SinkInputWidget(MainWindow *parent) :
     StreamWidget(parent) {
 
     gchar *txt;

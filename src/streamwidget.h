@@ -25,6 +25,7 @@
 
 #include "minimalstreamwidget.h"
 #include "ui_streamwidget.h"
+#include <QTimer>
 
 class MainWindow;
 class ChannelWidget;
@@ -32,20 +33,13 @@ class ChannelWidget;
 class StreamWidget : public MinimalStreamWidget, public Ui::StreamWidget {
     Q_OBJECT
 public:
-    StreamWidget(QWidget* parent=nullptr);
-    void init(MainWindow* mainWindow);
+    StreamWidget(MainWindow *parent);
 
     void setChannelMap(const pa_channel_map &m, bool can_decibel);
     void setVolume(const pa_cvolume &volume, bool force = false);
     virtual void updateChannelVolume(int channel, pa_volume_t v);
 
     void hideLockedChannels(bool hide = true);
-
-    /*
-    Gtk::ToggleButton *lockToggleButton, *muteToggleButton;
-    Gtk::Label *directionLabel;
-    Gtk::Button *deviceButton;
-    */
 
     pa_channel_map channelMap;
     pa_cvolume volume;
@@ -57,7 +51,7 @@ public:
     virtual void onDeviceChangePopup();
     // virtual bool onContextTriggerEvent(GdkEventButton*);
 
-    // sigc::connection timeoutConnection;
+    QTimer timeout;
 
     bool timeoutEvent();
 

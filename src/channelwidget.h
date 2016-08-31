@@ -44,7 +44,7 @@ public:
     bool volumeScaleEnabled;
     bool last;
 
-    virtual void set_sensitive(bool enabled);
+    //virtual void set_sensitive(bool enabled);
     virtual void setBaseVolume(pa_volume_t);
 };
 

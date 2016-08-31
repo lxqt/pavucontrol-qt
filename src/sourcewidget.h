@@ -28,7 +28,7 @@
 class SourceWidget : public DeviceWidget {
     Q_OBJECT
 public:
-    SourceWidget(QWidget* parent = nullptr);
+    SourceWidget(MainWindow *parent);
     static SourceWidget* create(MainWindow* mainWindow);
 
     SourceType type;
