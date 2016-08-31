@@ -77,6 +77,8 @@ target_link_libraries(pavucontrol-qt
     ${GLIB_LDFLAGS}
 )
 
+lxqt_enable_target_exceptions(pavucontrol-qt PRIVATE)
+
 INSTALL(TARGETS
     pavucontrol-qt
     RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
