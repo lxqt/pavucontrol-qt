@@ -22,15 +22,22 @@
 #define minimalstreamwidget_h
 
 #include "pavucontrol.h"
+#include <QWidget>
 
-class MinimalStreamWidget : public Gtk::VBox {
+class QProgressBar;
+
+class MinimalStreamWidget : public QWidget {
+    Q_OBJECT
 public:
-    MinimalStreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
+    MinimalStreamWidget(QWidget* parent=nullptr);
 
+    /*
     Gtk::VBox *channelsVBox;
     Gtk::Label *nameLabel, *boldNameLabel;
     Gtk::Image *iconImage;
     Gtk::ProgressBar peakProgressBar;
+    */
+    QProgressBar* peakProgressBar;
     double lastPeak;
     pa_stream *peak;
 

@@ -31,10 +31,10 @@
 #include "i18n.h"
 
 /*** DeviceWidget ***/
-DeviceWidget::DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
-    MinimalStreamWidget(cobject, x),
+DeviceWidget::DeviceWidget(QWidget* parent) :
+    MinimalStreamWidget(parent),
     offsetButtonEnabled(false) {
-
+#if 0
     x->get_widget("lockToggleButton", lockToggleButton);
     x->get_widget("muteToggleButton", muteToggleButton);
     x->get_widget("defaultToggleButton", defaultToggleButton);
@@ -64,13 +64,10 @@ DeviceWidget::DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Buil
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
         channelWidgets[i] = NULL;
 
-#ifdef HAVE_GTK3
+
     offsetAdjustment = Gtk::Adjustment::create(0.0, -2000.0, 2000.0, 10.0, 50.0, 0.0);
     offsetButton->configure(offsetAdjustment, 0, 2);
-#else
-    offsetAdjustment = new Gtk::Adjustment(0.0, -2000.0, 2000.0, 10.0, 50.0, 0.0);
-    offsetButton->configure(*offsetAdjustment, 0.0, 2);
-#endif  /* HAVE_GTK3 */
+#endif
 }
 
 void DeviceWidget::init(MainWindow* mainWindow, Glib::ustring deviceType) {
@@ -82,20 +79,19 @@ void DeviceWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
     channelMap = m;
 
     for (int i = 0; i < m.channels; i++) {
-        ChannelWidget *cw = channelWidgets[i] = ChannelWidget::create();
+        ChannelWidget *cw = channelWidgets[i] = new ChannelWidget(this);
         cw->channel = i;
         cw->can_decibel = can_decibel;
         cw->minimalStreamWidget = this;
         char text[64];
         snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_pretty_string(m.map[i]));
-        cw->channelLabel->set_markup(text);
-        channelsVBox->pack_start(*cw, false, false, 0);
-        cw->unreference();
+        cw->channelLabel->setText(QString::fromUtf8(text));
+        channelsVBox->layout()->addWidget(cw);
     }
     channelWidgets[m.channels-1]->last = true;
 
-    lockToggleButton->set_sensitive(m.channels > 1);
-    hideLockedChannels(lockToggleButton->get_active());
+    lockToggleButton->setEnabled(m.channels > 1);
+    hideLockedChannels(lockToggleButton->isChecked());
 }
 
 void DeviceWidget::setVolume(const pa_cvolume &v, bool force) {
@@ -114,7 +110,7 @@ void DeviceWidget::updateChannelVolume(int channel, pa_volume_t v) {
     g_assert(channel < volume.channels);
 
     n = volume;
-    if (lockToggleButton->get_active())
+    if (lockToggleButton->isChecked())
         pa_cvolume_set(&n, n.channels, v);
     else
         n.values[channel] = v;
@@ -127,21 +123,21 @@ void DeviceWidget::updateChannelVolume(int channel, pa_volume_t v) {
 
 void DeviceWidget::hideLockedChannels(bool hide) {
     for (int i = 0; i < channelMap.channels - 1; i++)
-        channelWidgets[i]->set_visible(!hide);
+        channelWidgets[i]->setVisible(!hide);
 
-    channelWidgets[channelMap.channels - 1]->channelLabel->set_visible(!hide);
+    channelWidgets[channelMap.channels - 1]->channelLabel->setVisible(!hide);
 }
 
 void DeviceWidget::onMuteToggleButton() {
 
-    lockToggleButton->set_sensitive(!muteToggleButton->get_active());
+    lockToggleButton->setEnabled(!muteToggleButton->isChecked());
 
     for (int i = 0; i < channelMap.channels; i++)
-        channelWidgets[i]->set_sensitive(!muteToggleButton->get_active());
+        channelWidgets[i]->setEnabled(!muteToggleButton->isChecked());
 }
 
 void DeviceWidget::onLockToggleButton() {
-    hideLockedChannels(lockToggleButton->get_active());
+    hideLockedChannels(lockToggleButton->isChecked());
 }
 
 void DeviceWidget::onDefaultToggleButton() {
@@ -156,7 +152,7 @@ void DeviceWidget::onOffsetChange() {
     if (!offsetButtonEnabled)
         return;
 
-    offset = offsetButton->get_value() * 1000.0;
+    offset = offsetButton->value() * 1000.0;
     card_stream << card_index;
     card_name = card_stream.str();
 
@@ -169,8 +165,8 @@ void DeviceWidget::onOffsetChange() {
 }
 
 void DeviceWidget::setDefault(bool isDefault) {
-    defaultToggleButton->set_active(isDefault);
-    /*defaultToggleButton->set_sensitive(!isDefault);*/
+    defaultToggleButton->setChecked(isDefault);
+    /*defaultToggleButton->setEnabled(!isDefault);*/
 }
 
 bool DeviceWidget::timeoutEvent() {
@@ -183,7 +179,7 @@ void DeviceWidget::executeVolumeUpdate() {
 
 void DeviceWidget::setLatencyOffset(int64_t offset) {
     offsetButtonEnabled = false;
-    offsetButton->set_value(offset / 1000.0);
+    offsetButton->setValue(offset / 1000.0);
     offsetButtonEnabled = true;
 }
 
@@ -196,7 +192,7 @@ void DeviceWidget::setBaseVolume(pa_volume_t v) {
 void DeviceWidget::prepareMenu() {
     int idx = 0;
     int active_idx = -1;
-
+#if 0
     treeModel->clear();
     /* Fill the ComboBox's Tree Model */
     for (uint32_t i = 0; i < ports.size(); ++i) {
@@ -209,14 +205,14 @@ void DeviceWidget::prepareMenu() {
     }
 
     if (active_idx >= 0)
-        portList->set_active(active_idx);
+        portList->setChecked(active_idx);
 
     if (ports.size() > 0) {
         portSelect->show();
 
         if (pa_context_get_server_protocol_version(get_context()) >= 27) {
             offsetSelect->show();
-            advancedOptions->set_sensitive(true);
+            advancedOptions->setEnabled(true);
         } else {
             /* advancedOptions has sensitive=false by default */
             offsetSelect->hide();
@@ -224,11 +220,13 @@ void DeviceWidget::prepareMenu() {
 
     } else {
         portSelect->hide();
-        advancedOptions->set_sensitive(false);
+        advancedOptions->setEnabled(false);
         offsetSelect->hide();
     }
+#endif
 }
 
+#if 0
 bool DeviceWidget::onContextTriggerEvent(GdkEventButton* event) {
     if (GDK_BUTTON_PRESS == event->type && 3 == event->button) {
         contextMenu.popup(event->button, event->time);
@@ -237,11 +235,12 @@ bool DeviceWidget::onContextTriggerEvent(GdkEventButton* event) {
 
     return false;
 }
+#endif
 
 void DeviceWidget::renamePopup() {
     if (updating)
         return;
-
+#if 0
     if (!mpMainWindow->canRenameDevices) {
         Gtk::MessageDialog dialog(
             *mpMainWindow,
@@ -278,4 +277,5 @@ void DeviceWidget::renamePopup() {
         g_free(key);
     }
     delete dialog;
+#endif
 }

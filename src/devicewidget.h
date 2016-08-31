@@ -24,13 +24,15 @@
 #include "pavucontrol.h"
 
 #include "minimalstreamwidget.h"
+#include "ui_devicewidget.h"
 
 class MainWindow;
 class ChannelWidget;
 
-class DeviceWidget : public MinimalStreamWidget {
+class DeviceWidget : public MinimalStreamWidget, public Ui::DeviceWidget {
+    Q_OBJECT
 public:
-    DeviceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
+    DeviceWidget(QWidget* parent=nullptr);
     void init(MainWindow* mainWindow, Glib::ustring);
 
     void setChannelMap(const pa_channel_map &m, bool can_decibel);
@@ -43,8 +45,10 @@ public:
     Glib::ustring description;
     uint32_t index, card_index;
 
+    /*
     Gtk::ToggleButton *lockToggleButton, *muteToggleButton, *defaultToggleButton;
     Gtk::SpinButton *offsetButton;
+    */
 
     bool offsetButtonEnabled;
 
@@ -57,7 +61,7 @@ public:
     virtual void onLockToggleButton();
     virtual void onDefaultToggleButton();
     virtual void setDefault(bool isDefault);
-    virtual bool onContextTriggerEvent(GdkEventButton*);
+    // virtual bool onContextTriggerEvent(GdkEventButton*);
     virtual void setLatencyOffset(int64_t offset);
     void onOffsetChange();
 
@@ -80,9 +84,10 @@ protected:
 
     virtual void onPortChange() = 0;
 
-    Gtk::Menu contextMenu;
-    Gtk::MenuItem rename;
+    // Gtk::Menu contextMenu;
+    // Gtk::MenuItem rename;
 
+#if 0
     /* Tree model columns */
     class ModelColumns : public Gtk::TreeModel::ColumnRecord
     {
@@ -96,16 +101,12 @@ protected:
     };
 
     ModelColumns portModel;
-
     Gtk::Expander *advancedOptions;
     Gtk::HBox *portSelect, *offsetSelect;
     Gtk::ComboBox *portList;
     Glib::RefPtr<Gtk::ListStore> treeModel;
-#ifdef HAVE_GTK3
     Glib::RefPtr<Gtk::Adjustment> offsetAdjustment;
-#else
-    Gtk::Adjustment *offsetAdjustment;
-#endif /* HAVE_GTK3 */
+#endif
 
 private:
     Glib::ustring mDeviceType;

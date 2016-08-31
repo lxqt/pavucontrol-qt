@@ -22,25 +22,24 @@
 #define channelwidget_h
 
 #include "pavucontrol.h"
+#include "ui_channelwidget.h"
 
 class MinimalStreamWidget;
 
-class ChannelWidget : public Gtk::EventBox {
+class ChannelWidget : public QWidget, public Ui::ChannelWidget {
+    Q_OBJECT
 public:
-    ChannelWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
-    static ChannelWidget* create();
+    ChannelWidget(QWidget* parent=nullptr);
 
     void setVolume(pa_volume_t volume);
-
-    Gtk::Label *channelLabel;
-    Gtk::Label *volumeLabel;
-    Gtk::HScale *volumeScale;
 
     int channel;
     MinimalStreamWidget *minimalStreamWidget;
 
-    void onVolumeScaleValueChanged();
+protected Q_SLOTS:
+    void onVolumeScaleValueChanged(int value);
 
+public:
     bool can_decibel;
     bool volumeScaleEnabled;
     bool last;

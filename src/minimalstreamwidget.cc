@@ -25,15 +25,15 @@
 #include "minimalstreamwidget.h"
 
 /*** MinimalStreamWidget ***/
-MinimalStreamWidget::MinimalStreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
-    Gtk::VBox(cobject),
-    peakProgressBar(),
+MinimalStreamWidget::MinimalStreamWidget(QWidget *parent) :
+    QWidget(parent),
+    peakProgressBar(nullptr),
     lastPeak(0),
     peak(NULL),
     updating(false),
     volumeMeterEnabled(false),
     volumeMeterVisible(true) {
-
+#if 0
     x->get_widget("channelsVBox", channelsVBox);
     x->get_widget("nameLabel", nameLabel);
     x->get_widget("boldNameLabel", boldNameLabel);
@@ -43,6 +43,8 @@ MinimalStreamWidget::MinimalStreamWidget(BaseObjectType* cobject, const Glib::Re
     channelsVBox->pack_end(peakProgressBar, false, false);
 
     peakProgressBar.hide();
+#endif
+
 }
 
 #define DECAY_STEP .04
@@ -54,7 +56,7 @@ void MinimalStreamWidget::updatePeak(double v) {
             v = lastPeak - DECAY_STEP;
 
     lastPeak = v;
-
+#if 0
     if (v >= 0) {
         peakProgressBar.set_sensitive(TRUE);
         peakProgressBar.set_fraction(v);
@@ -62,7 +64,7 @@ void MinimalStreamWidget::updatePeak(double v) {
         peakProgressBar.set_sensitive(FALSE);
         peakProgressBar.set_fraction(0);
     }
-
+#endif
     enableVolumeMeter();
 }
 
@@ -72,7 +74,7 @@ void MinimalStreamWidget::enableVolumeMeter() {
 
     volumeMeterEnabled = true;
     if (volumeMeterVisible) {
-        peakProgressBar.show();
+//        peakProgressBar.show();
     }
 }
 
@@ -80,9 +82,9 @@ void MinimalStreamWidget::setVolumeMeterVisible(bool v) {
     volumeMeterVisible = v;
     if (v) {
         if (volumeMeterEnabled) {
-            peakProgressBar.show();
+//            peakProgressBar.show();
         }
     } else {
-        peakProgressBar.hide();
+//        peakProgressBar.hide();
     }
 }

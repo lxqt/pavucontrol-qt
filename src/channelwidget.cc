@@ -29,32 +29,20 @@
 
 /*** ChannelWidget ***/
 
-ChannelWidget::ChannelWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
-    Gtk::EventBox(cobject),
+ChannelWidget::ChannelWidget(QWidget* parent) :
+    QWidget(parent),
     can_decibel(false),
     volumeScaleEnabled(true),
     last(false) {
 
-    x->get_widget("channelLabel", channelLabel);
-    x->get_widget("volumeLabel", volumeLabel);
-    x->get_widget("volumeScale", volumeScale);
-
-    volumeScale->set_range((double)PA_VOLUME_MUTED, (double)PA_VOLUME_UI_MAX);
-    volumeScale->set_value((double)PA_VOLUME_NORM);
-    volumeScale->set_increments(((double)PA_VOLUME_NORM)/100.0, ((double)PA_VOLUME_NORM)/20.0);
+    volumeScale->setMinimum((double)PA_VOLUME_MUTED);
+    volumeScale->setMaximum((double)PA_VOLUME_UI_MAX);
+    volumeScale->setValue((double)PA_VOLUME_NORM);
+    volumeScale->setSingleStep(((double)PA_VOLUME_NORM)/100.0);
+    volumeScale->setPageStep(((double)PA_VOLUME_NORM)/20.0);
     setBaseVolume(PA_VOLUME_NORM);
 
-    volumeScale->signal_value_changed().connect(sigc::mem_fun(*this, &ChannelWidget::onVolumeScaleValueChanged));
-}
-
-ChannelWidget* ChannelWidget::create() {
-    ChannelWidget* w;
-    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create();
-    x->add_from_file(GLADE_FILE, "adjustment1");
-    x->add_from_file(GLADE_FILE, "channelWidget");
-    x->get_widget_derived("channelWidget", w);
-    w->reference();
-    return w;
+    connect(volumeScale, &QSlider::valueChanged, this, &ChannelWidget::onVolumeScaleValueChanged);
 }
 
 void ChannelWidget::setVolume(pa_volume_t volume) {
@@ -71,14 +59,14 @@ void ChannelWidget::setVolume(pa_volume_t volume) {
     }
     else
         snprintf(txt, sizeof(txt), "%0.0f%%", v);
-    volumeLabel->set_markup(txt);
+    volumeLabel->setText(QString::fromUtf8(txt));
 
     volumeScaleEnabled = false;
-    volumeScale->set_value(volume > PA_VOLUME_UI_MAX ? PA_VOLUME_UI_MAX : volume);
+    volumeScale->setValue(volume > PA_VOLUME_UI_MAX ? PA_VOLUME_UI_MAX : volume);
     volumeScaleEnabled = true;
 }
 
-void ChannelWidget::onVolumeScaleValueChanged() {
+void ChannelWidget::onVolumeScaleValueChanged(int value) {
 
     if (!volumeScaleEnabled)
         return;
@@ -86,30 +74,30 @@ void ChannelWidget::onVolumeScaleValueChanged() {
     if (minimalStreamWidget->updating)
         return;
 
-    pa_volume_t volume = (pa_volume_t) volumeScale->get_value();
+    pa_volume_t volume = (pa_volume_t) volumeScale->value();
     minimalStreamWidget->updateChannelVolume(channel, volume);
 }
 
 void ChannelWidget::set_sensitive(bool enabled) {
-    Gtk::EventBox::set_sensitive(enabled);
+    setEnabled(enabled);
 
-    channelLabel->set_sensitive(enabled);
-    volumeLabel->set_sensitive(enabled);
-    volumeScale->set_sensitive(enabled);
+    channelLabel->setEnabled(enabled);
+    volumeLabel->setEnabled(enabled);
+    volumeScale->setEnabled(enabled);
 }
 
 void ChannelWidget::setBaseVolume(pa_volume_t v) {
-
+#if 0
     gtk_scale_clear_marks(GTK_SCALE(volumeScale->gobj()));
 
     gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), (double)PA_VOLUME_MUTED, (GtkPositionType) GTK_POS_BOTTOM,
                        last ? (can_decibel ? _("<small>Silence</small>") : _("<small>Min</small>")) : NULL);
     gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), (double)PA_VOLUME_NORM, (GtkPositionType) GTK_POS_BOTTOM,
                        last ? _("<small>100% (0dB)</small>") : NULL);
-
     if (v > PA_VOLUME_MUTED && v < PA_VOLUME_NORM) {
         gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), (double)v, (GtkPositionType) GTK_POS_BOTTOM,
                            last ? _("<small><i>Base</i></small>") : NULL);
     }
+#endif
 
 }
