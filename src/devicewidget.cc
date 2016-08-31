@@ -34,6 +34,10 @@
 DeviceWidget::DeviceWidget(QWidget* parent) :
     MinimalStreamWidget(parent),
     offsetButtonEnabled(false) {
+
+    setupUi(this);
+    advancedWidget->hide();
+
 #if 0
     x->get_widget("lockToggleButton", lockToggleButton);
     x->get_widget("muteToggleButton", muteToggleButton);
@@ -86,7 +90,7 @@ void DeviceWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
         char text[64];
         snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_pretty_string(m.map[i]));
         cw->channelLabel->setText(QString::fromUtf8(text));
-        channelsVBox->layout()->addWidget(cw);
+        channelsVBox->addWidget(cw);
     }
     channelWidgets[m.channels-1]->last = true;
 

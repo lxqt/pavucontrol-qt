@@ -28,9 +28,9 @@
 class MainWindow;
 
 class SinkInputWidget : public StreamWidget {
+    Q_OBJECT
 public:
-    SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
-    static SinkInputWidget* create(MainWindow* mainWindow);
+    SinkInputWidget(QWidget* parent=nullptr);
     ~SinkInputWidget(void);
 
     SinkInputType type;
@@ -48,8 +48,8 @@ private:
 
     void clearMenu();
     void buildMenu();
-
-    Gtk::Menu menu;
+#if 0
+    // Gtk::Menu menu;
 
     struct SinkMenuItem {
       SinkMenuItem(SinkInputWidget *w, const char *label, uint32_t i, bool active) :
@@ -68,6 +68,7 @@ private:
     };
 
     std::map<uint32_t, SinkMenuItem*> sinkMenuItems;
+#endif
 };
 
 #endif

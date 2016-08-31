@@ -28,14 +28,14 @@
 
 #include "i18n.h"
 
-SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
-    StreamWidget(cobject, x) {
+SourceOutputWidget::SourceOutputWidget(QWidget *parent) :
+    StreamWidget(parent) {
 
     gchar *txt;
-    directionLabel->set_label(txt = g_markup_printf_escaped("<i>%s</i>", _("from")));
+    directionLabel->setText(txt = g_markup_printf_escaped("<i>%s</i>", _("from")));
     g_free(txt);
 
-    terminate.set_label(_("Terminate Recording"));
+    // terminate.set_label(_("Terminate Recording"));
 
 #if !HAVE_SOURCE_OUTPUT_VOLUMES
     /* Source Outputs do not have volume controls in versions of PA < 1.0 */
@@ -44,14 +44,6 @@ SourceOutputWidget::SourceOutputWidget(BaseObjectType* cobject, const Glib::RefP
 #endif
 }
 
-SourceOutputWidget* SourceOutputWidget::create(MainWindow* mainWindow) {
-    SourceOutputWidget* w;
-    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "streamWidget");
-    x->get_widget_derived("streamWidget", w);
-    w->init(mainWindow);
-    w->reference();
-    return w;
-}
 
 SourceOutputWidget::~SourceOutputWidget(void) {
   clearMenu();
@@ -62,10 +54,10 @@ void SourceOutputWidget::setSourceIndex(uint32_t idx) {
 
     if (mpMainWindow->sourceWidgets.count(idx)) {
       SourceWidget *w = mpMainWindow->sourceWidgets[idx];
-      deviceButton->set_label(w->description.c_str());
+      deviceButton->setText(w->description.c_str());
     }
     else
-      deviceButton->set_label(_("Unknown input"));
+      deviceButton->setText(_("Unknown input"));
 }
 
 uint32_t SourceOutputWidget::sourceIndex() {
@@ -91,7 +83,7 @@ void SourceOutputWidget::onMuteToggleButton() {
         return;
 
     pa_operation* o;
-    if (!(o = pa_context_set_source_output_mute(get_context(), index, muteToggleButton->get_active(), NULL, NULL))) {
+    if (!(o = pa_context_set_source_output_mute(get_context(), index, muteToggleButton->isChecked(), NULL, NULL))) {
         show_error(_("pa_context_set_source_output_mute() failed"));
         return;
     }
@@ -112,23 +104,29 @@ void SourceOutputWidget::onKill() {
 
 
 void SourceOutputWidget::clearMenu() {
+#if 0
   while (!sourceMenuItems.empty()) {
     std::map<uint32_t, SourceMenuItem*>::iterator i = sourceMenuItems.begin();
     delete i->second;
     sourceMenuItems.erase(i);
   }
+#endif
 }
 
 void SourceOutputWidget::buildMenu() {
+#if 0
   for (std::map<uint32_t, SourceWidget*>::iterator i = mpMainWindow->sourceWidgets.begin(); i != mpMainWindow->sourceWidgets.end(); ++i) {
     SourceMenuItem *m;
     sourceMenuItems[i->second->index] = m = new SourceMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == mSourceIndex);
     menu.append(m->menuItem);
   }
   menu.show_all();
+#endif
 }
 
+#if 0
 void SourceOutputWidget::SourceMenuItem::onToggle() {
+
   if (widget->updating)
     return;
 
@@ -146,9 +144,10 @@ void SourceOutputWidget::SourceMenuItem::onToggle() {
 
   pa_operation_unref(o);
 }
+#endif
 
 void SourceOutputWidget::onDeviceChangePopup() {
     clearMenu();
     buildMenu();
-    menu.popup(1, 0);
+//    menu.popup(1, 0);
 }

@@ -24,13 +24,15 @@
 #include "pavucontrol.h"
 
 #include "minimalstreamwidget.h"
+#include "ui_streamwidget.h"
 
 class MainWindow;
 class ChannelWidget;
 
-class StreamWidget : public MinimalStreamWidget {
+class StreamWidget : public MinimalStreamWidget, public Ui::StreamWidget {
+    Q_OBJECT
 public:
-    StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
+    StreamWidget(QWidget* parent=nullptr);
     void init(MainWindow* mainWindow);
 
     void setChannelMap(const pa_channel_map &m, bool can_decibel);
@@ -39,9 +41,11 @@ public:
 
     void hideLockedChannels(bool hide = true);
 
+    /*
     Gtk::ToggleButton *lockToggleButton, *muteToggleButton;
     Gtk::Label *directionLabel;
     Gtk::Button *deviceButton;
+    */
 
     pa_channel_map channelMap;
     pa_cvolume volume;
@@ -51,9 +55,9 @@ public:
     virtual void onMuteToggleButton();
     virtual void onLockToggleButton();
     virtual void onDeviceChangePopup();
-    virtual bool onContextTriggerEvent(GdkEventButton*);
+    // virtual bool onContextTriggerEvent(GdkEventButton*);
 
-    sigc::connection timeoutConnection;
+    // sigc::connection timeoutConnection;
 
     bool timeoutEvent();
 
@@ -63,8 +67,8 @@ public:
 protected:
     MainWindow* mpMainWindow;
 
-    Gtk::Menu contextMenu;
-    Gtk::MenuItem terminate;
+    // Gtk::Menu contextMenu;
+    // Gtk::MenuItem terminate;
 };
 
 #endif

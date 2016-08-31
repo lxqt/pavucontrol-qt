@@ -36,10 +36,10 @@ public:
       std::vector<Glib::ustring> profiles;
 };
 
-class CardWidget : public QWidget {
+class CardWidget : public QWidget, public Ui::CardWidget {
     Q_OBJECT
 public:
-    CardWidget(QWidget *parent=nullptr);
+    CardWidget(QWidget *parent = nullptr);
 
     Glib::ustring name;
     uint32_t index;
@@ -53,7 +53,6 @@ public:
 
     void prepareMenu();
 
-    Ui::CardWidget ui;
 protected:
   virtual void onProfileChange(int active);
 

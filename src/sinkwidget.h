@@ -23,6 +23,7 @@
 
 #include "pavucontrol.h"
 #include "devicewidget.h"
+#include <QPushButton>
 
 #if HAVE_EXT_DEVICE_RESTORE_API
 #  include <pulse/format.h>
@@ -31,14 +32,14 @@
 
 typedef struct {
     pa_encoding encoding;
-    Gtk::CheckButton *widget;
+    QPushButton *widget;
 } encodingList;
 #endif
 
 class SinkWidget : public DeviceWidget {
+    Q_OBJECT
 public:
-    SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
-    static SinkWidget* create(MainWindow* mainWindow);
+    SinkWidget(QWidget* parent = nullptr);
 
     SinkType type;
     uint32_t monitor_index;
@@ -46,7 +47,6 @@ public:
 
 #if HAVE_EXT_DEVICE_RESTORE_API
     encodingList encodings[PAVU_NUM_ENCODINGS];
-    Gtk::Table *encodingSelect;
 #endif
 
     virtual void onMuteToggleButton();

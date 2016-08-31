@@ -37,12 +37,10 @@ class SinkInputWidget;
 class SourceOutputWidget;
 class RoleWidget;
 
-class MainWindow : public QDialog {
+class MainWindow : public QDialog, public Ui::MainWindow {
     Q_OBJECT
 public:
     MainWindow();
-    // MainWindow(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
-    // static MainWindow* create(bool maximize);
     virtual ~MainWindow();
 
     void updateCard(const pa_card_info &info);
@@ -119,7 +117,6 @@ protected:
 private:
     gboolean m_connected;
     gchar* m_config_filename;
-    Ui::MainWindow ui;
 };
 
 

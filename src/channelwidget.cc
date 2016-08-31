@@ -35,6 +35,8 @@ ChannelWidget::ChannelWidget(QWidget* parent) :
     volumeScaleEnabled(true),
     last(false) {
 
+    setupUi(this);
+
     volumeScale->setMinimum((double)PA_VOLUME_MUTED);
     volumeScale->setMaximum((double)PA_VOLUME_UI_MAX);
     volumeScale->setValue((double)PA_VOLUME_NORM);

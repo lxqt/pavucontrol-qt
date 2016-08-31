@@ -8,20 +8,33 @@ include_directories(
 )
 
 set(pavucontrol-qt_HDRS
+    pavucontrol.h
     mainwindow.h
     cardwidget.h
-    minimalstreamwidget.h
     channelwidget.h
     devicewidget.h
+    minimalstreamwidget.h
+    rolewidget.h
+    sinkinputwidget.h
+    sinkwidget.h
+    sourceoutputwidget.h
+    sourcewidget.h
+    streamwidget.h
 )
 
 set(pavucontrol-qt_SRCS
     pavucontrol.cc
     mainwindow.cc
     cardwidget.cc
-    minimalstreamwidget.cc
     channelwidget.cc
     devicewidget.cc
+    minimalstreamwidget.cc
+    rolewidget.cc
+    sinkinputwidget.cc
+    sinkwidget.cc
+    sourceoutputwidget.cc
+    sourcewidget.cc
+    streamwidget.cc
 )
 
 set(pavucontrol-qt_UI

@@ -29,10 +29,13 @@
 #include "i18n.h"
 
 /*** StreamWidget ***/
-StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
-    MinimalStreamWidget(cobject, x),
+StreamWidget::StreamWidget(QWidget* parent) :
+    MinimalStreamWidget(parent),
     mpMainWindow(NULL) {
 
+    setupUi(this);
+
+#if 0
     x->get_widget("lockToggleButton", lockToggleButton);
     x->get_widget("muteToggleButton", muteToggleButton);
     x->get_widget("directionLabel", directionLabel);
@@ -47,7 +50,7 @@ StreamWidget::StreamWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Buil
     terminate.signal_activate().connect(sigc::mem_fun(*this, &StreamWidget::onKill));
     contextMenu.append(terminate);
     contextMenu.show_all();
-
+#endif
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
         channelWidgets[i] = NULL;
 }
@@ -57,6 +60,7 @@ void StreamWidget::init(MainWindow* mainWindow) {
     mpMainWindow = mainWindow;
 }
 
+#if 0
 bool StreamWidget::onContextTriggerEvent(GdkEventButton* event) {
     if (GDK_BUTTON_PRESS == event->type && 3 == event->button) {
         contextMenu.popup(event->button, event->time);
@@ -64,37 +68,38 @@ bool StreamWidget::onContextTriggerEvent(GdkEventButton* event) {
     }
     return false;
 }
+#endif
 
 void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
     channelMap = m;
 
     for (int i = 0; i < m.channels; i++) {
-        ChannelWidget *cw = channelWidgets[i] = ChannelWidget::create();
+        ChannelWidget *cw = channelWidgets[i] = new ChannelWidget(this);
         cw->channel = i;
         cw->can_decibel = can_decibel;
         cw->minimalStreamWidget = this;
         char text[64];
         snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_pretty_string(m.map[i]));
-        cw->channelLabel->set_markup(text);
-        channelsVBox->pack_start(*cw, false, false, 0);
-        cw->unreference();
+        cw->channelLabel->setText(QString::fromUtf8(text));
+        channelsVBox->addWidget(cw);
     }
     channelWidgets[m.channels-1]->last = true;
     channelWidgets[m.channels-1]->setBaseVolume(PA_VOLUME_NORM);
 
-    lockToggleButton->set_sensitive(m.channels > 1);
-    hideLockedChannels(lockToggleButton->get_active());
+    lockToggleButton->setEnabled(m.channels > 1);
+    hideLockedChannels(lockToggleButton->isChecked());
 }
 
 void StreamWidget::setVolume(const pa_cvolume &v, bool force) {
     g_assert(v.channels == channelMap.channels);
 
     volume = v;
-
+#if 0
     if (timeoutConnection.empty() || force) { /* do not update the volume when a volume change is still in flux */
         for (int i = 0; i < volume.channels; i++)
             channelWidgets[i]->setVolume(volume.values[i]);
     }
+#endif
 }
 
 void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
@@ -102,7 +107,7 @@ void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
     g_assert(channel < volume.channels);
 
     n = volume;
-    if (lockToggleButton->get_active()) {
+    if (lockToggleButton->isChecked()) {
         for (int i = 0; i < n.channels; i++)
             n.values[i] = v;
     } else
@@ -110,27 +115,27 @@ void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
 
     setVolume(n, true);
 
-    if (timeoutConnection.empty())
-        timeoutConnection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &StreamWidget::timeoutEvent), 100);
+//    if (timeoutConnection.empty())
+//        timeoutConnection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &StreamWidget::timeoutEvent), 100);
 }
 
 void StreamWidget::hideLockedChannels(bool hide) {
     for (int i = 0; i < channelMap.channels - 1; i++)
-        channelWidgets[i]->set_visible(!hide);
+        channelWidgets[i]->setVisible(!hide);
 
-    channelWidgets[channelMap.channels - 1]->channelLabel->set_visible(!hide);
+    channelWidgets[channelMap.channels - 1]->channelLabel->setVisible(!hide);
 }
 
 void StreamWidget::onMuteToggleButton() {
 
-    lockToggleButton->set_sensitive(!muteToggleButton->get_active());
+    lockToggleButton->setEnabled(!muteToggleButton->isChecked());
 
     for (int i = 0; i < channelMap.channels; i++)
-        channelWidgets[i]->set_sensitive(!muteToggleButton->get_active());
+        channelWidgets[i]->setEnabled(!muteToggleButton->isChecked());
 }
 
 void StreamWidget::onLockToggleButton() {
-    hideLockedChannels(lockToggleButton->get_active());
+    hideLockedChannels(lockToggleButton->isChecked());
 }
 
 bool StreamWidget::timeoutEvent() {

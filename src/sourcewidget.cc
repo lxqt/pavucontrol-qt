@@ -26,17 +26,8 @@
 
 #include "i18n.h"
 
-SourceWidget::SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
-    DeviceWidget(cobject, x) {
-}
-
-SourceWidget* SourceWidget::create(MainWindow* mainWindow) {
-    SourceWidget* w;
-    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "deviceWidget");
-    x->get_widget_derived("deviceWidget", w);
-    w->init(mainWindow, "source");
-    w->reference();
-    return w;
+SourceWidget::SourceWidget(QWidget *parent) :
+    DeviceWidget(parent) {
 }
 
 void SourceWidget::executeVolumeUpdate() {
@@ -57,7 +48,7 @@ void SourceWidget::onMuteToggleButton() {
         return;
 
     pa_operation* o;
-    if (!(o = pa_context_set_source_mute_by_index(get_context(), index, muteToggleButton->get_active(), NULL, NULL))) {
+    if (!(o = pa_context_set_source_mute_by_index(get_context(), index, muteToggleButton->isChecked(), NULL, NULL))) {
         show_error(_("pa_context_set_source_mute_by_index() failed"));
         return;
     }
@@ -79,6 +70,7 @@ void SourceWidget::onDefaultToggleButton() {
 }
 
 void SourceWidget::onPortChange() {
+#if 0
   Gtk::TreeModel::iterator iter;
 
   if (updating)
@@ -101,4 +93,5 @@ void SourceWidget::onPortChange() {
       pa_operation_unref(o);
     }
   }
+#endif
 }

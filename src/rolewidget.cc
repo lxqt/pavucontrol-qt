@@ -28,25 +28,19 @@
 
 #include "i18n.h"
 
-RoleWidget::RoleWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
-    StreamWidget(cobject, x) {
+RoleWidget::RoleWidget(QWidget *parent) :
+    StreamWidget(parent) {
 
     lockToggleButton->hide();
     directionLabel->hide();
     deviceButton->hide();
 }
 
-RoleWidget* RoleWidget::create() {
-    RoleWidget* w;
-    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "streamWidget");
-    x->get_widget_derived("streamWidget", w);
-    w->reference();
-    return w;
-}
-
+/*
 bool RoleWidget::onContextTriggerEvent(GdkEventButton*) {
     return false;
 }
+*/
 
 void RoleWidget::onMuteToggleButton() {
     StreamWidget::onMuteToggleButton();
@@ -65,7 +59,7 @@ void RoleWidget::executeVolumeUpdate() {
     info.channel_map.map[0] = PA_CHANNEL_POSITION_MONO;
     info.volume = volume;
     info.device = device == "" ? NULL : device.c_str();
-    info.mute = muteToggleButton->get_active();
+    info.mute = muteToggleButton->isChecked();
 
     pa_operation* o;
     if (!(o = pa_ext_stream_restore_write(get_context(), PA_UPDATE_REPLACE, &info, 1, TRUE, NULL, NULL))) {

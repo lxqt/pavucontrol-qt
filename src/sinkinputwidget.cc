@@ -28,23 +28,14 @@
 
 #include "i18n.h"
 
-SinkInputWidget::SinkInputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
-    StreamWidget(cobject, x) {
+SinkInputWidget::SinkInputWidget(QWidget *parent) :
+    StreamWidget(parent) {
 
     gchar *txt;
-    directionLabel->set_label(txt = g_markup_printf_escaped("<i>%s</i>", _("on")));
+    directionLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped("<i>%s</i>", _("on"))));
     g_free(txt);
 
-    terminate.set_label(_("Terminate Playback"));
-}
-
-SinkInputWidget* SinkInputWidget::create(MainWindow* mainWindow) {
-    SinkInputWidget* w;
-    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "streamWidget");
-    x->get_widget_derived("streamWidget", w);
-    w->init(mainWindow);
-    w->reference();
-    return w;
+    // terminate.setText(_("Terminate Playback"));
 }
 
 SinkInputWidget::~SinkInputWidget(void) {
@@ -56,10 +47,10 @@ void SinkInputWidget::setSinkIndex(uint32_t idx) {
 
     if (mpMainWindow->sinkWidgets.count(idx)) {
         SinkWidget *w = mpMainWindow->sinkWidgets[idx];
-        deviceButton->set_label(w->description.c_str());
+        deviceButton->setText(w->description.c_str());
     }
     else
-        deviceButton->set_label(_("Unknown output"));
+        deviceButton->setText(_("Unknown output"));
 }
 
 uint32_t SinkInputWidget::sinkIndex() {
@@ -84,7 +75,7 @@ void SinkInputWidget::onMuteToggleButton() {
         return;
 
     pa_operation* o;
-    if (!(o = pa_context_set_sink_input_mute(get_context(), index, muteToggleButton->get_active(), NULL, NULL))) {
+    if (!(o = pa_context_set_sink_input_mute(get_context(), index, muteToggleButton->isChecked(), NULL, NULL))) {
         show_error(_("pa_context_set_sink_input_mute() failed"));
         return;
     }
@@ -103,22 +94,27 @@ void SinkInputWidget::onKill() {
 }
 
 void SinkInputWidget::clearMenu() {
+#if 0
   while (!sinkMenuItems.empty()) {
     std::map<uint32_t, SinkMenuItem*>::iterator i = sinkMenuItems.begin();
     delete i->second;
     sinkMenuItems.erase(i);
   }
+#endif
 }
 
 void SinkInputWidget::buildMenu() {
+#if 0
   for (std::map<uint32_t, SinkWidget*>::iterator i = mpMainWindow->sinkWidgets.begin(); i != mpMainWindow->sinkWidgets.end(); ++i) {
     SinkMenuItem *m;
     sinkMenuItems[i->second->index] = m = new SinkMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == mSinkIndex);
     menu.append(m->menuItem);
   }
   menu.show_all();
+#endif
 }
 
+#if 0
 void SinkInputWidget::SinkMenuItem::onToggle() {
   if (widget->updating)
     return;
@@ -138,8 +134,10 @@ void SinkInputWidget::SinkMenuItem::onToggle() {
   pa_operation_unref(o);
 }
 
+#endif
+
 void SinkInputWidget::onDeviceChangePopup() {
     clearMenu();
     buildMenu();
-    menu.popup(1, 0);
+    // menu.popup(1, 0);
 }

@@ -24,7 +24,7 @@
 
 #include "sinkwidget.h"
 
-#include <canberra-gtk.h>
+// #include <canberra-gtk.h>
 #if HAVE_EXT_DEVICE_RESTORE_API
 #  include <pulse/format.h>
 #  include <pulse/ext-device-restore.h>
@@ -32,8 +32,9 @@
 
 #include "i18n.h"
 
-SinkWidget::SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x) :
-    DeviceWidget(cobject, x) {
+SinkWidget::SinkWidget(QWidget* parent) :
+    DeviceWidget(parent) {
+#if 0
 #if HAVE_EXT_DEVICE_RESTORE_API
     uint8_t i = 0;
 
@@ -66,24 +67,17 @@ SinkWidget::SinkWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>
     ++i;
     encodings[i].encoding = PA_ENCODING_INVALID;
     x->get_widget("encodingFormatAAC", encodings[i].widget);
-    encodings[i].widget->set_sensitive(false);
+    encodings[i].widget->setEnabled(false);
 #ifdef PA_ENCODING_MPEG2_AAC_IEC61937
     if (pa_context_get_server_protocol_version(get_context()) >= 28) {
         encodings[i].encoding = PA_ENCODING_MPEG2_AAC_IEC61937;
         encodings[i].widget->signal_toggled().connect(sigc::mem_fun(*this, &SinkWidget::onEncodingsChange));
-        encodings[i].widget->set_sensitive(true);
+        encodings[i].widget->setEnabled(true);
     }
 #endif
 #endif
-}
 
-SinkWidget* SinkWidget::create(MainWindow* mainWindow) {
-    SinkWidget* w;
-    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "deviceWidget");
-    x->get_widget_derived("deviceWidget", w);
-    w->init(mainWindow, "sink");
-    w->reference();
-    return w;
+#endif
 }
 
 void SinkWidget::executeVolumeUpdate() {
@@ -97,7 +91,7 @@ void SinkWidget::executeVolumeUpdate() {
     }
 
     pa_operation_unref(o);
-
+#if 0
     ca_context_playing(ca_gtk_context_get(), 2, &playing);
     if (playing)
         return;
@@ -114,6 +108,7 @@ void SinkWidget::executeVolumeUpdate() {
                            NULL);
 
     ca_context_change_device(ca_gtk_context_get(), NULL);
+#endif
 }
 
 void SinkWidget::onMuteToggleButton() {
@@ -123,7 +118,7 @@ void SinkWidget::onMuteToggleButton() {
         return;
 
     pa_operation* o;
-    if (!(o = pa_context_set_sink_mute_by_index(get_context(), index, muteToggleButton->get_active(), NULL, NULL))) {
+    if (!(o = pa_context_set_sink_mute_by_index(get_context(), index, muteToggleButton->isChecked(), NULL, NULL))) {
         show_error(_("pa_context_set_sink_mute_by_index() failed"));
         return;
     }
@@ -145,6 +140,7 @@ void SinkWidget::onDefaultToggleButton() {
 }
 
 void SinkWidget::onPortChange() {
+#if 0
     Gtk::TreeModel::iterator iter;
 
     if (updating)
@@ -165,13 +161,14 @@ void SinkWidget::onPortChange() {
             pa_operation_unref(o);
         }
     }
+#endif
 }
 
 void SinkWidget::setDigital(bool digital) {
 #if HAVE_EXT_DEVICE_RESTORE_API
     if (digital) {
         encodingSelect->show();
-        advancedOptions->set_sensitive(true);
+        advancedOptions->setChecked(true);
     } else {
         /* advancedOptions has sensitive=false by default */
         encodingSelect->hide();
@@ -191,7 +188,7 @@ void SinkWidget::onEncodingsChange() {
     formats = (pa_format_info**)malloc(sizeof(pa_format_info*) * PAVU_NUM_ENCODINGS);
 
     for (int i = 0; i < PAVU_NUM_ENCODINGS; ++i) {
-        if (encodings[i].widget->get_active()) {
+        if (encodings[i].widget->isChecked()) {
             formats[n_formats] = pa_format_info_new();
             formats[n_formats]->encoding = encodings[i].encoding;
             ++n_formats;

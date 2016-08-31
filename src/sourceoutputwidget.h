@@ -28,9 +28,9 @@
 class MainWindow;
 
 class SourceOutputWidget : public StreamWidget {
+    Q_OBJECT
 public:
-    SourceOutputWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
-    static SourceOutputWidget* create(MainWindow* mainWindow);
+    SourceOutputWidget(QWidget* parent = nullptr);
     ~SourceOutputWidget(void);
 
     SourceOutputType type;
@@ -51,8 +51,8 @@ private:
     void clearMenu();
     void buildMenu();
 
-    Gtk::Menu menu;
-
+    // Gtk::Menu menu;
+#if 0
     struct SourceMenuItem {
       SourceMenuItem(SourceOutputWidget *w, const char *label, uint32_t i, bool active) :
       widget(w),
@@ -70,6 +70,7 @@ private:
     };
 
     std::map<uint32_t, SourceMenuItem*> sourceMenuItems;
+#endif
 };
 
 #endif

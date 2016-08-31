@@ -26,16 +26,16 @@
 #include "streamwidget.h"
 
 class RoleWidget : public StreamWidget {
+    Q_OBJECT
 public:
-    RoleWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
-    static RoleWidget* create();
+    RoleWidget(QWidget* parent=nullptr);
 
     Glib::ustring role;
     Glib::ustring device;
 
     virtual void onMuteToggleButton();
     virtual void executeVolumeUpdate();
-    virtual bool onContextTriggerEvent(GdkEventButton*);
+    // virtual bool onContextTriggerEvent(GdkEventButton*);
 };
 
 #endif

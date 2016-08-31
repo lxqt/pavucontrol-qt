@@ -26,8 +26,9 @@
 #include "devicewidget.h"
 
 class SourceWidget : public DeviceWidget {
+    Q_OBJECT
 public:
-    SourceWidget(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& x);
+    SourceWidget(QWidget* parent = nullptr);
     static SourceWidget* create(MainWindow* mainWindow);
 
     SourceType type;
