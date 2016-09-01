@@ -169,7 +169,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
+        <source>&amp;Playback</source>
         <translation>Re_producció</translation>
     </message>
     <message>
@@ -205,7 +205,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
+        <source>&amp;Recording</source>
         <translation>En_registrament</translation>
     </message>
     <message>
@@ -215,7 +215,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
+        <source>&amp;Output Devices</source>
         <translation>Dispositius de s_ortida</translation>
     </message>
     <message>
@@ -240,7 +240,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
+        <source>&amp;Input Devices</source>
         <translation>D_ispositius d&apos;entrada</translation>
     </message>
     <message>
@@ -275,8 +275,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
-        <translation>_Configuració</translation>
+        <source>&amp;Configuration</source>
+        <translation>&amp;Configuració</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="296"/>

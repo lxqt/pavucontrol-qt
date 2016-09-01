@@ -175,7 +175,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
+        <source>&amp;Playback</source>
         <translation>_Αναπαραγωγή</translation>
     </message>
     <message>
@@ -212,7 +212,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
+        <source>&amp;Recording</source>
         <translation>Εγγρα_φή</translation>
     </message>
     <message>
@@ -223,7 +223,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
+        <source>&amp;Output Devices</source>
         <translation>Συσκευές εξό_δου</translation>
     </message>
     <message>
@@ -248,7 +248,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
+        <source>&amp;Input Devices</source>
         <translation>Συσκευές _εισόδου</translation>
     </message>
     <message>
@@ -283,7 +283,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
+        <source>&amp;Configuration</source>
         <translation>
             </translation>
     </message>

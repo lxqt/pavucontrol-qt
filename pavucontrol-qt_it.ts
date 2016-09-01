@@ -169,8 +169,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
-        <translation>_Riproduzione</translation>
+        <source>&amp;Playback</source>
+        <translation>&amp;Riproduzione</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="50"/>
@@ -205,8 +205,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
-        <translation>_Registrazione</translation>
+        <source>&amp;Recording</source>
+        <translation>&amp;Registrazione</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="109"/>
@@ -215,8 +215,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
-        <translation>_Uscite</translation>
+        <source>&amp;Output Devices</source>
+        <translation>&amp;Uscite</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="168"/>
@@ -240,8 +240,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
-        <translation>_Ingressi</translation>
+        <source>&amp;Input Devices</source>
+        <translation>&amp;Ingressi</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="227"/>
@@ -275,7 +275,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
+        <source>&amp;Configuration</source>
         <translation>C_onfigurazione</translation>
     </message>
     <message>
@@ -712,7 +712,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="50"/>
         <source>Device</source>
-        <translation>_Ingressi</translation>
+        <translation>&amp;Ingressi</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="72"/>

@@ -172,7 +172,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
+        <source>&amp;Playback</source>
         <translation>_เล่น</translation>
     </message>
     <message>
@@ -208,7 +208,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
+        <source>&amp;Recording</source>
         <translation>_บันทึกเสียง</translation>
     </message>
     <message>
@@ -218,7 +218,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
+        <source>&amp;Output Devices</source>
         <translation>อุปกรณ์เ_อาท์พุต</translation>
     </message>
     <message>
@@ -243,7 +243,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
+        <source>&amp;Input Devices</source>
         <translation>_อุปกรณ์รับเข้า</translation>
     </message>
     <message>
@@ -278,7 +278,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
+        <source>&amp;Configuration</source>
         <translation>_การตั้งค่า</translation>
     </message>
     <message>

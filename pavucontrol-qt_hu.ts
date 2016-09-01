@@ -169,8 +169,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
-        <translation>_Lejátszás</translation>
+        <source>&amp;Playback</source>
+        <translation>&amp;Lejátszás</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="50"/>
@@ -205,8 +205,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
-        <translation>_Felvétel</translation>
+        <source>&amp;Recording</source>
+        <translation>&amp;Felvétel</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="109"/>
@@ -215,8 +215,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
-        <translation>_Kimeneti eszközök</translation>
+        <source>&amp;Output Devices</source>
+        <translation>&amp;Kimeneti eszközök</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="168"/>
@@ -240,7 +240,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
+        <source>&amp;Input Devices</source>
         <translation>B_emeneti eszközök</translation>
     </message>
     <message>
@@ -275,8 +275,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
-        <translation>_Beállítások</translation>
+        <source>&amp;Configuration</source>
+        <translation>&amp;Beállítások</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="296"/>

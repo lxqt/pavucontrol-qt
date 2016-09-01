@@ -169,7 +169,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
+        <source>&amp;Playback</source>
         <translation>U_ppspelning</translation>
     </message>
     <message>
@@ -205,7 +205,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
+        <source>&amp;Recording</source>
         <translation>I_nspelning</translation>
     </message>
     <message>
@@ -215,8 +215,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
-        <translation>_Utgångsenheter</translation>
+        <source>&amp;Output Devices</source>
+        <translation>&amp;Utgångsenheter</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="168"/>
@@ -240,8 +240,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
-        <translation>_Ingångsenheter</translation>
+        <source>&amp;Input Devices</source>
+        <translation>&amp;Ingångsenheter</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="227"/>
@@ -275,8 +275,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
-        <translation>_Konfiguration</translation>
+        <source>&amp;Configuration</source>
+        <translation>&amp;Konfiguration</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="296"/>
@@ -712,7 +712,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="50"/>
         <source>Device</source>
-        <translation>_Ingångsenheter</translation>
+        <translation>&amp;Ingångsenheter</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="72"/>
@@ -722,7 +722,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.cc" line="49"/>
         <source>Terminate</source>
-        <translation>_Terminera ström</translation>
+        <translation>&amp;Terminera ström</translation>
     </message>
 </context>
 </TS>

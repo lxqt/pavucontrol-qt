@@ -169,8 +169,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
-        <translation>_Přehrávání</translation>
+        <source>&amp;Playback</source>
+        <translation>&amp;Přehrávání</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="50"/>
@@ -205,8 +205,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
-        <translation>_Nahrávání</translation>
+        <source>&amp;Recording</source>
+        <translation>&amp;Nahrávání</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="109"/>
@@ -215,8 +215,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
-        <translation>_Výstupní zařízení</translation>
+        <source>&amp;Output Devices</source>
+        <translation>&amp;Výstupní zařízení</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="168"/>
@@ -240,7 +240,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
+        <source>&amp;Input Devices</source>
         <translation>V_stupní zařízení</translation>
     </message>
     <message>
@@ -275,7 +275,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
+        <source>&amp;Configuration</source>
         <translation>N_astavení</translation>
     </message>
     <message>

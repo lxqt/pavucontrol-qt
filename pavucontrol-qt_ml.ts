@@ -169,7 +169,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
+        <source>&amp;Playback</source>
         <translation>_പ്ലേബാക്ക്</translation>
     </message>
     <message>
@@ -205,7 +205,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
+        <source>&amp;Recording</source>
         <translation>_റിക്കോര്‍ഡ് ചെയ്യുന്നു</translation>
     </message>
     <message>
@@ -215,7 +215,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
+        <source>&amp;Output Devices</source>
         <translation>_ഔട്ട്പുട്ട് ഡിവൈസുകള്‍</translation>
     </message>
     <message>
@@ -240,7 +240,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
+        <source>&amp;Input Devices</source>
         <translation>_ഇന്‍പുട്ട് ഡിവൈസുകള്‍</translation>
     </message>
     <message>
@@ -275,7 +275,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
+        <source>&amp;Configuration</source>
         <translation>_ക്രമീകരണം</translation>
     </message>
     <message>

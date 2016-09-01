@@ -173,7 +173,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
+        <source>&amp;Playback</source>
         <translation>Ça_lma</translation>
     </message>
     <message>
@@ -209,8 +209,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
-        <translation>_Kayıt</translation>
+        <source>&amp;Recording</source>
+        <translation>&amp;Kayıt</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="109"/>
@@ -219,7 +219,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
+        <source>&amp;Output Devices</source>
         <translation>Çı_kış Aygıtları</translation>
     </message>
     <message>
@@ -244,8 +244,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
-        <translation>_Giriş Aygıtları</translation>
+        <source>&amp;Input Devices</source>
+        <translation>&amp;Giriş Aygıtları</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="227"/>
@@ -279,7 +279,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
+        <source>&amp;Configuration</source>
         <translation>
             </translation>
     </message>
@@ -718,7 +718,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="50"/>
         <source>Device</source>
-        <translation>_Giriş Aygıtları</translation>
+        <translation>&amp;Giriş Aygıtları</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="72"/>
@@ -728,7 +728,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.cc" line="49"/>
         <source>Terminate</source>
-        <translation>Ses Akışını _Sonlandır...</translation>
+        <translation>Ses Akışını &amp;Sonlandır...</translation>
     </message>
 </context>
 </TS>

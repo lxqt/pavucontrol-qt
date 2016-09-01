@@ -169,7 +169,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
+        <source>&amp;Playback</source>
         <translation>O_dtwarzanie</translation>
     </message>
     <message>
@@ -205,8 +205,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
-        <translation>_Nagrywanie</translation>
+        <source>&amp;Recording</source>
+        <translation>&amp;Nagrywanie</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="109"/>
@@ -215,7 +215,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
+        <source>&amp;Output Devices</source>
         <translation>Urządzenia wyjści_owe</translation>
     </message>
     <message>
@@ -240,7 +240,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
+        <source>&amp;Input Devices</source>
         <translation>Urządzen_ia wejściowe</translation>
     </message>
     <message>
@@ -275,8 +275,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
-        <translation>_Konfiguracja</translation>
+        <source>&amp;Configuration</source>
+        <translation>&amp;Konfiguracja</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="296"/>

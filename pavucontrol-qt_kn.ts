@@ -169,8 +169,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
-        <translation>ಪ್ಲೇಬ್ಯಾಕ್‌(_P)</translation>
+        <source>&amp;Playback</source>
+        <translation>ಪ್ಲೇಬ್ಯಾಕ್‌(&amp;P)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="50"/>
@@ -205,8 +205,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
-        <translation>ರೆಕಾರ್ಡ್ ಮಾಡುವಿಕೆ(_R)</translation>
+        <source>&amp;Recording</source>
+        <translation>ರೆಕಾರ್ಡ್ ಮಾಡುವಿಕೆ(&amp;R)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="109"/>
@@ -215,8 +215,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
-        <translation>ಔಟ್‌ಪುಟ್ ಸಾಧನಗಳು(_O)</translation>
+        <source>&amp;Output Devices</source>
+        <translation>ಔಟ್‌ಪುಟ್ ಸಾಧನಗಳು(&amp;O)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="168"/>
@@ -240,8 +240,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
-        <translation>ಇನ್‌ಪುಟ್ ಸಾಧನಗಳು(_I)</translation>
+        <source>&amp;Input Devices</source>
+        <translation>ಇನ್‌ಪುಟ್ ಸಾಧನಗಳು(&amp;I)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="227"/>
@@ -275,8 +275,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
-        <translation>ಸಂರಚನೆ(_C)</translation>
+        <source>&amp;Configuration</source>
+        <translation>ಸಂರಚನೆ(&amp;C)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="296"/>

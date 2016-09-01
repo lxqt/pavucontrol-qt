@@ -169,8 +169,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
-        <translation>ପଛକୁ ଚଲାଇବା (_P)</translation>
+        <source>&amp;Playback</source>
+        <translation>ପଛକୁ ଚଲାଇବା (&amp;P)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="50"/>
@@ -205,8 +205,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
-        <translation>ଲିପିବଦ୍ଧ କରୁଅଛି (_R)</translation>
+        <source>&amp;Recording</source>
+        <translation>ଲିପିବଦ୍ଧ କରୁଅଛି (&amp;R)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="109"/>
@@ -215,8 +215,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
-        <translation>ନିର୍ଗମ ଉପକରଣଗୁଡ଼ିକ (_O)</translation>
+        <source>&amp;Output Devices</source>
+        <translation>ନିର୍ଗମ ଉପକରଣଗୁଡ଼ିକ (&amp;O)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="168"/>
@@ -240,8 +240,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
-        <translation>ନିବେଶ ଉପକରଣଗୁଡ଼ିକ (_I)</translation>
+        <source>&amp;Input Devices</source>
+        <translation>ନିବେଶ ଉପକରଣଗୁଡ଼ିକ (&amp;I)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="227"/>
@@ -275,8 +275,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
-        <translation>ସଂରଚନା (_C)</translation>
+        <source>&amp;Configuration</source>
+        <translation>ସଂରଚନା (&amp;C)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="296"/>

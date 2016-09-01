@@ -169,8 +169,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
-        <translation>再生(_P)</translation>
+        <source>&amp;Playback</source>
+        <translation>再生(&amp;P)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="50"/>
@@ -205,8 +205,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
-        <translation>録音(_R)</translation>
+        <source>&amp;Recording</source>
+        <translation>録音(&amp;R)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="109"/>
@@ -215,8 +215,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
-        <translation>出力装置(_O)</translation>
+        <source>&amp;Output Devices</source>
+        <translation>出力装置(&amp;O)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="168"/>
@@ -240,8 +240,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
-        <translation>入力装置(_I)</translation>
+        <source>&amp;Input Devices</source>
+        <translation>入力装置(&amp;I)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="227"/>
@@ -275,8 +275,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
-        <translation>設定(_C)</translation>
+        <source>&amp;Configuration</source>
+        <translation>設定(&amp;C)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="296"/>

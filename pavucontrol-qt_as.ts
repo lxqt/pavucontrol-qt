@@ -169,8 +169,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
-        <source>_Playback</source>
-        <translation>প্লেবেক (_P)</translation>
+        <source>&amp;Playback</source>
+        <translation>প্লেবেক (&amp;P)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="50"/>
@@ -205,8 +205,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
-        <source>_Recording</source>
-        <translation>ৰেকৰ্ডিং (_R)</translation>
+        <source>&amp;Recording</source>
+        <translation>ৰেকৰ্ডিং (&amp;R)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="109"/>
@@ -215,8 +215,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
-        <source>_Output Devices</source>
-        <translation>নিৰ্গম যন্ত্ৰ (_O)</translation>
+        <source>&amp;Output Devices</source>
+        <translation>নিৰ্গম যন্ত্ৰ (&amp;O)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="168"/>
@@ -240,8 +240,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
-        <source>_Input Devices</source>
-        <translation>নিবেশ যন্ত্ৰ (_I)</translation>
+        <source>&amp;Input Devices</source>
+        <translation>নিবেশ যন্ত্ৰ (&amp;I)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="227"/>
@@ -275,8 +275,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
-        <source>_Configuration</source>
-        <translation>বিন্যাস (_C)</translation>
+        <source>&amp;Configuration</source>
+        <translation>বিন্যাস (&amp;C)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="296"/>
@@ -712,7 +712,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="50"/>
         <source>Device</source>
-        <translation>নিবেশ যন্ত্ৰ (_I)</translation>
+        <translation>নিবেশ যন্ত্ৰ (&amp;I)</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="72"/>
@@ -722,7 +722,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.cc" line="49"/>
         <source>Terminate</source>
-        <translation>স্ট্ৰিম বন্ধ কৰক (_T)</translation>
+        <translation>স্ট্ৰিম বন্ধ কৰক (&amp;T)</translation>
     </message>
 </context>
 </TS>
