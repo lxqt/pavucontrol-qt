@@ -24,8 +24,6 @@
 
 #include "cardwidget.h"
 
-#include "i18n.h"
-
 /*** CardWidget ***/
 CardWidget::CardWidget(QWidget* parent) :
     QWidget(parent) {
@@ -65,7 +63,7 @@ void CardWidget::onProfileChange(int active) {
         pa_operation* o;
 
         if (!(o = pa_context_set_card_profile_by_index(get_context(), index, name.constData(), NULL, NULL))) {
-            show_error(_("pa_context_set_card_profile_by_index() failed"));
+            show_error(tr("pa_context_set_card_profile_by_index() failed").toUtf8().constData());
             return;
         }
 

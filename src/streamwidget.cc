@@ -26,7 +26,6 @@
 #include "mainwindow.h"
 #include "channelwidget.h"
 
-#include "i18n.h"
 
 /*** StreamWidget ***/
 StreamWidget::StreamWidget(MainWindow *parent) :
@@ -47,7 +46,7 @@ StreamWidget::StreamWidget(MainWindow *parent) :
 
 #if 0
 
-    terminate.set_label(_("Terminate"));
+    terminate.set_label(tr("Terminate").toUtf8().constData());
     terminate.signal_activate().connect(sigc::mem_fun(*this, &StreamWidget::onKill));
     contextMenu.append(terminate);
     contextMenu.show_all();

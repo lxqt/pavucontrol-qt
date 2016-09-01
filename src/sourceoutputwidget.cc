@@ -26,16 +26,14 @@
 #include "mainwindow.h"
 #include "sourcewidget.h"
 
-#include "i18n.h"
-
 SourceOutputWidget::SourceOutputWidget(MainWindow *parent) :
     StreamWidget(parent) {
 
     gchar *txt;
-    directionLabel->setText(txt = g_markup_printf_escaped("<i>%s</i>", _("from")));
+    directionLabel->setText(txt = g_markup_printf_escaped("<i>%s</i>", tr("from").toUtf8().constData()));
     g_free(txt);
 
-    // terminate.set_label(_("Terminate Recording"));
+    // terminate.set_label(tr("Terminate Recording").toUtf8().constData());
 
 #if !HAVE_SOURCE_OUTPUT_VOLUMES
     /* Source Outputs do not have volume controls in versions of PA < 1.0 */
@@ -57,7 +55,7 @@ void SourceOutputWidget::setSourceIndex(uint32_t idx) {
       deviceButton->setText(w->description.c_str());
     }
     else
-      deviceButton->setText(_("Unknown input"));
+      deviceButton->setText(tr("Unknown input").toUtf8().constData());
 }
 
 uint32_t SourceOutputWidget::sourceIndex() {
@@ -69,7 +67,7 @@ void SourceOutputWidget::executeVolumeUpdate() {
     pa_operation* o;
 
     if (!(o = pa_context_set_source_output_volume(get_context(), index, &volume, NULL, NULL))) {
-        show_error(_("pa_context_set_source_output_volume() failed"));
+        show_error(tr("pa_context_set_source_output_volume() failed").toUtf8().constData());
         return;
     }
 
@@ -84,7 +82,7 @@ void SourceOutputWidget::onMuteToggleButton() {
 
     pa_operation* o;
     if (!(o = pa_context_set_source_output_mute(get_context(), index, muteToggleButton->isChecked(), NULL, NULL))) {
-        show_error(_("pa_context_set_source_output_mute() failed"));
+        show_error(tr("pa_context_set_source_output_mute() failed").toUtf8().constData());
         return;
     }
 
@@ -95,7 +93,7 @@ void SourceOutputWidget::onMuteToggleButton() {
 void SourceOutputWidget::onKill() {
     pa_operation* o;
     if (!(o = pa_context_kill_source_output(get_context(), index, NULL, NULL))) {
-        show_error(_("pa_context_kill_source_output() failed"));
+        show_error(tr("pa_context_kill_source_output() failed").toUtf8().constData());
         return;
     }
 
@@ -138,7 +136,7 @@ void SourceOutputWidget::SourceMenuItem::onToggle() {
 
   pa_operation* o;
   if (!(o = pa_context_move_source_output_by_index(get_context(), widget->index, index, NULL, NULL))) {
-    show_error(_("pa_context_move_source_output_by_index() failed"));
+    show_error(tr("pa_context_move_source_output_by_index() failed").toUtf8().constData());
     return;
   }
 

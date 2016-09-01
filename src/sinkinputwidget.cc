@@ -26,16 +26,15 @@
 #include "mainwindow.h"
 #include "sinkwidget.h"
 
-#include "i18n.h"
 
 SinkInputWidget::SinkInputWidget(MainWindow *parent) :
     StreamWidget(parent) {
 
     gchar *txt;
-    directionLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped("<i>%s</i>", _("on"))));
+    directionLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped("<i>%s</i>", tr("on").toUtf8().constData())));
     g_free(txt);
 
-    // terminate.setText(_("Terminate Playback"));
+    // terminate.setText(tr("Terminate Playback").toUtf8().constData());
 }
 
 SinkInputWidget::~SinkInputWidget(void) {
@@ -50,7 +49,7 @@ void SinkInputWidget::setSinkIndex(uint32_t idx) {
         deviceButton->setText(w->description.c_str());
     }
     else
-        deviceButton->setText(_("Unknown output"));
+        deviceButton->setText(tr("Unknown output").toUtf8().constData());
 }
 
 uint32_t SinkInputWidget::sinkIndex() {
@@ -61,7 +60,7 @@ void SinkInputWidget::executeVolumeUpdate() {
     pa_operation* o;
 
     if (!(o = pa_context_set_sink_input_volume(get_context(), index, &volume, NULL, NULL))) {
-        show_error(_("pa_context_set_sink_input_volume() failed"));
+        show_error(tr("pa_context_set_sink_input_volume() failed").toUtf8().constData());
         return;
     }
 
@@ -76,7 +75,7 @@ void SinkInputWidget::onMuteToggleButton() {
 
     pa_operation* o;
     if (!(o = pa_context_set_sink_input_mute(get_context(), index, muteToggleButton->isChecked(), NULL, NULL))) {
-        show_error(_("pa_context_set_sink_input_mute() failed"));
+        show_error(tr("pa_context_set_sink_input_mute() failed").toUtf8().constData());
         return;
     }
 
@@ -86,7 +85,7 @@ void SinkInputWidget::onMuteToggleButton() {
 void SinkInputWidget::onKill() {
     pa_operation* o;
     if (!(o = pa_context_kill_sink_input(get_context(), index, NULL, NULL))) {
-        show_error(_("pa_context_kill_sink_input() failed"));
+        show_error(tr("pa_context_kill_sink_input() failed").toUtf8().constData());
         return;
     }
 
@@ -127,7 +126,7 @@ void SinkInputWidget::SinkMenuItem::onToggle() {
 
   pa_operation* o;
   if (!(o = pa_context_move_sink_input_by_index(get_context(), widget->index, index, NULL, NULL))) {
-    show_error(_("pa_context_move_sink_input_by_index() failed"));
+    show_error(tr("pa_context_move_sink_input_by_index() failed").toUtf8().constData());
     return;
   }
 

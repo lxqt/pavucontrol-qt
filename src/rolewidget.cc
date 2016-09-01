@@ -26,8 +26,6 @@
 
 #include <pulse/ext-stream-restore.h>
 
-#include "i18n.h"
-
 RoleWidget::RoleWidget(MainWindow *parent) :
     StreamWidget(parent) {
 
@@ -63,7 +61,7 @@ void RoleWidget::executeVolumeUpdate() {
 
     pa_operation* o;
     if (!(o = pa_ext_stream_restore_write(get_context(), PA_UPDATE_REPLACE, &info, 1, TRUE, NULL, NULL))) {
-        show_error(_("pa_ext_stream_restore_write() failed"));
+        show_error(tr("pa_ext_stream_restore_write() failed").toUtf8().constData());
         return;
     }
 

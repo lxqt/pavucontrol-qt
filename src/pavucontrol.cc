@@ -32,8 +32,6 @@
 // #include <canberra-gtk.h>
 
 #include "pavucontrol.h"
-#include "i18n.h"
-/*
 #include "minimalstreamwidget.h"
 #include "channelwidget.h"
 #include "streamwidget.h"
@@ -43,7 +41,6 @@
 #include "sinkinputwidget.h"
 #include "sourceoutputwidget.h"
 #include "rolewidget.h"
-*/
 #include "mainwindow.h"
 #include <QMessageBox>
 #include <QApplication>
@@ -60,7 +57,7 @@ void show_error(const char *txt) {
 
     snprintf(buf, sizeof(buf), "%s: %s", txt, pa_strerror(pa_context_errno(context)));
 
-    QMessageBox::critical(nullptr, QObject::tr("Error"), QString::fromUtf8(buf));
+    QMessageBox::critical(nullptr, QObject::QObject::tr("Error"), QString::fromUtf8(buf));
     qApp->quit();
 }
 
@@ -81,7 +78,7 @@ void card_cb(pa_context *, const pa_card_info *i, int eol, void *userdata) {
         if (pa_context_errno(context) == PA_ERR_NOENTITY)
             return;
 
-        show_error(_("Card callback failure"));
+        show_error(QObject::tr("Card callback failure").toUtf8().constData());
         return;
     }
 
@@ -104,7 +101,7 @@ void sink_cb(pa_context *c, const pa_sink_info *i, int eol, void *userdata) {
         if (pa_context_errno(context) == PA_ERR_NOENTITY)
             return;
 
-        show_error(_("Sink callback failure"));
+        show_error(QObject::tr("Sink callback failure").toUtf8().constData());
         return;
     }
 
@@ -127,7 +124,7 @@ void source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata) {
         if (pa_context_errno(context) == PA_ERR_NOENTITY)
             return;
 
-        show_error(_("Source callback failure"));
+        show_error(QObject::tr("Source callback failure").toUtf8().constData());
         return;
     }
 
@@ -146,7 +143,7 @@ void sink_input_cb(pa_context *, const pa_sink_input_info *i, int eol, void *use
         if (pa_context_errno(context) == PA_ERR_NOENTITY)
             return;
 
-        show_error(_("Sink input callback failure"));
+        show_error(QObject::tr("Sink input callback failure").toUtf8().constData());
         return;
     }
 
@@ -165,7 +162,7 @@ void source_output_cb(pa_context *, const pa_source_output_info *i, int eol, voi
         if (pa_context_errno(context) == PA_ERR_NOENTITY)
             return;
 
-        show_error(_("Source output callback failure"));
+        show_error(QObject::tr("Source output callback failure").toUtf8().constData());
         return;
     }
 
@@ -205,7 +202,7 @@ void client_cb(pa_context *, const pa_client_info *i, int eol, void *userdata) {
         if (pa_context_errno(context) == PA_ERR_NOENTITY)
             return;
 
-        show_error(_("Client callback failure"));
+        show_error(QObject::tr("Client callback failure").toUtf8().constData());
         return;
     }
 
@@ -221,7 +218,7 @@ void server_info_cb(pa_context *, const pa_server_info *i, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
     if (!i) {
-        show_error(_("Server info callback failure"));
+        show_error(QObject::tr("Server info callback failure").toUtf8().constData());
         return;
     }
 
@@ -239,7 +236,7 @@ void ext_stream_restore_read_cb(
 
     if (eol < 0) {
         dec_outstanding(w);
-        g_debug(_("Failed to initialize stream_restore extension: %s"), pa_strerror(pa_context_errno(context)));
+        g_debug(QObject::tr("Failed to initialize stream_restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
         w->deleteEventRoleWidget();
         return;
     }
@@ -257,7 +254,7 @@ static void ext_stream_restore_subscribe_cb(pa_context *c, void *userdata) {
     pa_operation *o;
 
     if (!(o = pa_ext_stream_restore_read(c, ext_stream_restore_read_cb, w))) {
-        show_error(_("pa_ext_stream_restore_read() failed"));
+        show_error(QObject::tr("pa_ext_stream_restore_read() failed").toUtf8().constData());
         return;
     }
 
@@ -275,7 +272,7 @@ void ext_device_restore_read_cb(
 
     if (eol < 0) {
         dec_outstanding(w);
-        g_debug(_("Failed to initialize device restore extension: %s"), pa_strerror(pa_context_errno(context)));
+        g_debug(QObject::tr("Failed to initialize device restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
         return;
     }
 
@@ -296,7 +293,7 @@ static void ext_device_restore_subscribe_cb(pa_context *c, pa_device_type_t type
         return;
 
     if (!(o = pa_ext_device_restore_read_formats(c, type, idx, ext_device_restore_read_cb, w))) {
-        show_error(_("pa_ext_device_restore_read_sink_formats() failed"));
+        show_error(QObject::tr("pa_ext_device_restore_read_sink_formats() failed").toUtf8().constData());
         return;
     }
 
@@ -314,7 +311,7 @@ void ext_device_manager_read_cb(
 
     if (eol < 0) {
         dec_outstanding(w);
-        g_debug(_("Failed to initialize device manager extension: %s"), pa_strerror(pa_context_errno(context)));
+        g_debug(QObject::tr("Failed to initialize device manager extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
         return;
     }
 
@@ -333,7 +330,7 @@ static void ext_device_manager_subscribe_cb(pa_context *c, void *userdata) {
     pa_operation *o;
 
     if (!(o = pa_ext_device_manager_read(c, ext_device_manager_read_cb, w))) {
-        show_error(_("pa_ext_device_manager_read() failed"));
+        show_error(QObject::tr("pa_ext_device_manager_read() failed").toUtf8().constData());
         return;
     }
 
@@ -350,7 +347,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_sink_info_by_index(c, index, sink_cb, w))) {
-                    show_error(_("pa_context_get_sink_info_by_index() failed"));
+                    show_error(QObject::tr("pa_context_get_sink_info_by_index() failed").toUtf8().constData());
                     return;
                 }
                 pa_operation_unref(o);
@@ -363,7 +360,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_source_info_by_index(c, index, source_cb, w))) {
-                    show_error(_("pa_context_get_source_info_by_index() failed"));
+                    show_error(QObject::tr("pa_context_get_source_info_by_index() failed").toUtf8().constData());
                     return;
                 }
                 pa_operation_unref(o);
@@ -376,7 +373,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_sink_input_info(c, index, sink_input_cb, w))) {
-                    show_error(_("pa_context_get_sink_input_info() failed"));
+                    show_error(QObject::tr("pa_context_get_sink_input_info() failed").toUtf8().constData());
                     return;
                 }
                 pa_operation_unref(o);
@@ -389,7 +386,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_source_output_info(c, index, source_output_cb, w))) {
-                    show_error(_("pa_context_get_sink_input_info() failed"));
+                    show_error(QObject::tr("pa_context_get_sink_input_info() failed").toUtf8().constData());
                     return;
                 }
                 pa_operation_unref(o);
@@ -402,7 +399,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_client_info(c, index, client_cb, w))) {
-                    show_error(_("pa_context_get_client_info() failed"));
+                    show_error(QObject::tr("pa_context_get_client_info() failed").toUtf8().constData());
                     return;
                 }
                 pa_operation_unref(o);
@@ -412,7 +409,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
         case PA_SUBSCRIPTION_EVENT_SERVER: {
                 pa_operation *o;
                 if (!(o = pa_context_get_server_info(c, server_info_cb, w))) {
-                    show_error(_("pa_context_get_server_info() failed"));
+                    show_error(QObject::tr("pa_context_get_server_info() failed").toUtf8().constData());
                     return;
                 }
                 pa_operation_unref(o);
@@ -425,7 +422,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
             else {
                 pa_operation *o;
                 if (!(o = pa_context_get_card_info_by_index(c, index, card_cb, w))) {
-                    show_error(_("pa_context_get_card_info_by_index() failed"));
+                    show_error(QObject::tr("pa_context_get_card_info_by_index() failed").toUtf8().constData());
                     return;
                 }
                 pa_operation_unref(o);
@@ -468,7 +465,7 @@ void context_state_callback(pa_context *c, void *userdata) {
                                             PA_SUBSCRIPTION_MASK_CLIENT|
                                             PA_SUBSCRIPTION_MASK_SERVER|
                                             PA_SUBSCRIPTION_MASK_CARD), NULL, NULL))) {
-                show_error(_("pa_context_subscribe() failed"));
+                show_error(QObject::tr("pa_context_subscribe() failed").toUtf8().constData());
                 return;
             }
             pa_operation_unref(o);
@@ -477,49 +474,49 @@ void context_state_callback(pa_context *c, void *userdata) {
             n_outstanding = 0;
 
             if (!(o = pa_context_get_server_info(c, server_info_cb, w))) {
-                show_error(_("pa_context_get_server_info() failed"));
+                show_error(QObject::tr("pa_context_get_server_info() failed").toUtf8().constData());
                 return;
             }
             pa_operation_unref(o);
             n_outstanding++;
 
             if (!(o = pa_context_get_client_info_list(c, client_cb, w))) {
-                show_error(_("pa_context_client_info_list() failed"));
+                show_error(QObject::tr("pa_context_client_info_list() failed").toUtf8().constData());
                 return;
             }
             pa_operation_unref(o);
             n_outstanding++;
 
             if (!(o = pa_context_get_card_info_list(c, card_cb, w))) {
-                show_error(_("pa_context_get_card_info_list() failed"));
+                show_error(QObject::tr("pa_context_get_card_info_list() failed").toUtf8().constData());
                 return;
             }
             pa_operation_unref(o);
             n_outstanding++;
 
             if (!(o = pa_context_get_sink_info_list(c, sink_cb, w))) {
-                show_error(_("pa_context_get_sink_info_list() failed"));
+                show_error(QObject::tr("pa_context_get_sink_info_list() failed").toUtf8().constData());
                 return;
             }
             pa_operation_unref(o);
             n_outstanding++;
 
             if (!(o = pa_context_get_source_info_list(c, source_cb, w))) {
-                show_error(_("pa_context_get_source_info_list() failed"));
+                show_error(QObject::tr("pa_context_get_source_info_list() failed").toUtf8().constData());
                 return;
             }
             pa_operation_unref(o);
             n_outstanding++;
 
             if (!(o = pa_context_get_sink_input_info_list(c, sink_input_cb, w))) {
-                show_error(_("pa_context_get_sink_input_info_list() failed"));
+                show_error(QObject::tr("pa_context_get_sink_input_info_list() failed").toUtf8().constData());
                 return;
             }
             pa_operation_unref(o);
             n_outstanding++;
 
             if (!(o = pa_context_get_source_output_info_list(c, source_output_cb, w))) {
-                show_error(_("pa_context_get_source_output_info_list() failed"));
+                show_error(QObject::tr("pa_context_get_source_output_info_list() failed").toUtf8().constData());
                 return;
             }
             pa_operation_unref(o);
@@ -536,7 +533,7 @@ void context_state_callback(pa_context *c, void *userdata) {
                     pa_operation_unref(o);
 
             } else
-                g_debug(_("Failed to initialize stream_restore extension: %s"), pa_strerror(pa_context_errno(context)));
+                g_debug(QObject::tr("Failed to initialize stream_restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
 
 #if HAVE_EXT_DEVICE_RESTORE_API
             /* TODO Change this to just the test function */
@@ -550,7 +547,7 @@ void context_state_callback(pa_context *c, void *userdata) {
                     pa_operation_unref(o);
 
             } else
-                g_debug(_("Failed to initialize device restore extension: %s"), pa_strerror(pa_context_errno(context)));
+                g_debug(QObject::tr("Failed to initialize device restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
 #endif
 
             if ((o = pa_ext_device_manager_read(c, ext_device_manager_read_cb, w))) {
@@ -563,7 +560,7 @@ void context_state_callback(pa_context *c, void *userdata) {
                     pa_operation_unref(o);
 
             } else
-                g_debug(_("Failed to initialize device manager extension: %s"), pa_strerror(pa_context_errno(context)));
+                g_debug(QObject::tr("Failed to initialize device manager extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
 
 
             break;
@@ -578,7 +575,7 @@ void context_state_callback(pa_context *c, void *userdata) {
             context = NULL;
 
             if (reconnect_timeout > 0) {
-                g_debug(_("Connection failed, attempting reconnect"));
+                g_debug(QObject::tr("Connection failed, attempting reconnect").toUtf8().constData());
                 g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, w);
             }
             return;
@@ -601,7 +598,7 @@ gboolean connect_to_pulse(gpointer userdata) {
         return false;
 
     pa_proplist *proplist = pa_proplist_new();
-    pa_proplist_sets(proplist, PA_PROP_APPLICATION_NAME, _("PulseAudio Volume Control"));
+    pa_proplist_sets(proplist, PA_PROP_APPLICATION_NAME, QObject::tr("PulseAudio Volume Control").toUtf8().constData());
     pa_proplist_sets(proplist, PA_PROP_APPLICATION_ID, "org.PulseAudio.pavucontrol");
     pa_proplist_sets(proplist, PA_PROP_APPLICATION_ICON_NAME, "audio-card");
     pa_proplist_sets(proplist, PA_PROP_APPLICATION_VERSION, PACKAGE_VERSION);
@@ -616,12 +613,12 @@ gboolean connect_to_pulse(gpointer userdata) {
     w->setConnectingMessage();
     if (pa_context_connect(context, NULL, PA_CONTEXT_NOFAIL, NULL) < 0) {
         if (pa_context_errno(context) == PA_ERR_INVALID) {
-            w->setConnectingMessage(_("Connection to PulseAudio failed. Automatic retry in 5s\n\n"
+            w->setConnectingMessage(QObject::tr("Connection to PulseAudio failed. Automatic retry in 5s\n\n"
                 "In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Properties\n"
                 "or default-server in client.conf is misconfigured.\n"
                 "This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.\n"
                 "If this is the case, then PulseAudio should autospawn again, or if this is not configured you should\n"
-                "run start-pulseaudio-x11 manually."));
+                "run start-pulseaudio-x11 manually.").toUtf8().constData());
             reconnect_timeout = 5;
         }
         else {
@@ -629,7 +626,7 @@ gboolean connect_to_pulse(gpointer userdata) {
                 reconnect_timeout = -1;
                 qApp->quit();
             } else {
-                g_debug(_("Connection failed, attempting reconnect"));
+                g_debug(QObject::tr("Connection failed, attempting reconnect").toUtf8().constData());
                 reconnect_timeout = 5;
                 g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, userdata);
             }
@@ -640,11 +637,6 @@ gboolean connect_to_pulse(gpointer userdata) {
 }
 
 int main(int argc, char *argv[]) {
-
-    /* Initialize the i18n stuff */
-    bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR);
-    bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
-    textdomain(GETTEXT_PACKAGE);
 
     signal(SIGPIPE, SIG_IGN);
 
@@ -658,26 +650,26 @@ int main(int argc, char *argv[]) {
     Glib::OptionEntry entry;
     entry.set_long_name("tab");
     entry.set_short_name('t');
-    entry.set_description(_("Select a specific tab on load."));
+    entry.set_description(QObject::tr("Select a specific tab on load.").toUtf8().constData());
     group.add_entry(entry, default_tab);
 
     Glib::OptionEntry entry2;
     entry2.set_long_name("retry");
     entry2.set_short_name('r');
-    entry2.set_description(_("Retry forever if pa quits (every 5 seconds)."));
+    entry2.set_description(QObject::tr("Retry forever if pa quits (every 5 seconds).").toUtf8().constData());
     group.add_entry(entry2, retry);
 
     bool maximize = false;
     Glib::OptionEntry entry3;
     entry3.set_long_name("maximize");
     entry3.set_short_name('m');
-    entry3.set_description(_("Maximize the window."));
+    entry3.set_description(QObject::tr("Maximize the window.").toUtf8().constData());
     group.add_entry(entry3, maximize);
 
     bool version = false;
     Glib::OptionEntry entry4;
     entry4.set_long_name("version");
-    entry4.set_description(_("Show version"));
+    entry4.set_description(QObject::tr("Show version").toUtf8().constData());
     group.add_entry(entry4, version);
 
     options.set_main_group(group);
@@ -700,7 +692,7 @@ int main(int argc, char *argv[]) {
     }
 
     if (reconnect_timeout < 0)
-        show_error(_("Fatal Error: Unable to connect to PulseAudio"));
+        show_error(QObject::tr("Fatal Error: Unable to connect to PulseAudio").toUtf8().constData());
 
     delete mainWindow;
 

@@ -28,8 +28,6 @@
 #include "devicewidget.h"
 #include "channelwidget.h"
 
-#include "i18n.h"
-
 /*** DeviceWidget ***/
 DeviceWidget::DeviceWidget(MainWindow* parent, Glib::ustring deviceType) :
     MinimalStreamWidget(parent),
@@ -52,7 +50,7 @@ DeviceWidget::DeviceWidget(MainWindow* parent, Glib::ustring deviceType) :
 
 #if 0
 
-    rename.set_label(_("Rename Device..."));
+    rename.set_label(tr("Rename Device...").toUtf8().constData());
     rename.signal_activate().connect(sigc::mem_fun(*this, &DeviceWidget::renamePopup));
     contextMenu.append(rename);
     contextMenu.show_all();
@@ -154,7 +152,7 @@ void DeviceWidget::onOffsetChange() {
 
     if (!(o = pa_context_set_port_latency_offset(get_context(),
             card_name.c_str(), activePort.c_str(), offset, NULL, NULL))) {
-        show_error(_("pa_context_set_port_latency_offset() failed"));
+        show_error(tr("pa_context_set_port_latency_offset() failed").toUtf8().constData());
         return;
     }
     pa_operation_unref(o);
@@ -240,12 +238,12 @@ void DeviceWidget::renamePopup() {
     if (!mpMainWindow->canRenameDevices) {
         Gtk::MessageDialog dialog(
             *mpMainWindow,
-            _("Sorry, but device renaming is not supported."),
+            tr("Sorry, but device renaming is not supported.").toUtf8().constData(),
             false,
             Gtk::MESSAGE_WARNING,
             Gtk::BUTTONS_OK,
             true);
-        dialog.set_secondary_text(_("You need to load module-device-manager in the PulseAudio server in order to rename devices"));
+        dialog.set_secondary_text(tr("You need to load module-device-manager in the PulseAudio server in order to rename devices").toUtf8().constData());
         dialog.run();
         return;
     }
@@ -266,7 +264,7 @@ void DeviceWidget::renamePopup() {
         gchar *key = g_markup_printf_escaped("%s:%s", mDeviceType.c_str(), name.c_str());
 
         if (!(o = pa_ext_device_manager_set_device_description(get_context(), key, renameText->get_text().c_str(), NULL, NULL))) {
-            show_error(_("pa_ext_device_manager_write() failed"));
+            show_error(tr("pa_ext_device_manager_write() failed").toUtf8().constData());
             return;
         }
         pa_operation_unref(o);

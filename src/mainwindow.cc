@@ -31,7 +31,6 @@
 #include "sinkinputwidget.h"
 #include "sourceoutputwidget.h"
 #include "rolewidget.h"
-#include "i18n.h"
 #include <QIcon>
 #include <QStyle>
 
@@ -145,7 +144,7 @@ MainWindow::MainWindow():
             err = nullptr;
         }
     } else {
-        g_debug(_("Error reading config file %s: %s"), m_config_filename, err->message);
+        g_debug(tr("Error reading config file %s: %s").toUtf8().constData(), m_config_filename, err->message);
         g_error_free(err);
     }
     g_key_file_free(config);
@@ -216,7 +215,7 @@ MainWindow::~MainWindow() {
     GError *err = nullptr;
     gchar *filedata = g_key_file_to_data(config, &filelen, &err);
     if (err) {
-        show_error(_("Error saving preferences"));
+        show_error(tr("Error saving preferences").toUtf8().constData());
         g_error_free(err);
         goto finish;
     }
@@ -224,7 +223,7 @@ MainWindow::~MainWindow() {
     g_file_set_contents(m_config_filename, filedata, filelen, &err);
     g_free(filedata);
     if (err) {
-        gchar* msg = g_strconcat(_("Error writing config file %s"), m_config_filename, nullptr);
+        gchar* msg = g_strconcat(tr("Error writing config file %s").toUtf8().constData(), m_config_filename, nullptr);
         show_error(msg);
         g_free(msg);
         g_error_free(err);
@@ -259,13 +258,13 @@ static void updatePorts(DeviceWidget *w, std::map<Glib::ustring, PortInfo> &port
         desc = p.description;
 
         if (p.available == PA_PORT_AVAILABLE_YES)
-            desc +=  _(" (plugged in)");
+            desc +=  MainWindow::tr(" (plugged in)").toUtf8().constData();
         else if (p.available == PA_PORT_AVAILABLE_NO) {
             if (p.name == "analog-output-speaker" ||
                 p.name == "analog-input-microphone-internal")
-                desc += _(" (unavailable)");
+                desc += MainWindow::tr(" (unavailable)").toUtf8().constData();
             else
-                desc += _(" (unplugged)");
+                desc += MainWindow::tr(" (unplugged)").toUtf8().constData();
         }
 
         w->ports[i].second = desc;
@@ -354,10 +353,10 @@ void MainWindow::updateCard(const pa_card_info &info) {
             }
         }
         if (hasNo && !hasOther)
-            desc += _(" (unplugged)");
+            desc += tr(" (unplugged)").toUtf8().constData();
 
         if (!profileIt->available)
-            desc += _(" (unavailable)");
+            desc += tr(" (unavailable)").toUtf8().constData();
 
         w->profiles.push_back(std::pair<Glib::ustring,Glib::ustring>(profileIt->name, desc));
     }
@@ -496,7 +495,7 @@ static void read_callback(pa_stream *s, size_t length, void *userdata) {
     double v;
 
     if (pa_stream_peek(s, &data, &length) < 0) {
-        show_error(_("Failed to read data from stream"));
+        show_error(MainWindow::tr("Failed to read data from stream").toUtf8().constData());
         return;
     }
 
@@ -540,8 +539,8 @@ pa_stream* MainWindow::createMonitorStreamForSource(uint32_t source_idx, uint32_
 
     snprintf(t, sizeof(t), "%u", source_idx);
 
-    if (!(s = pa_stream_new(get_context(), _("Peak detect"), &ss, nullptr))) {
-        show_error(_("Failed to create monitoring stream"));
+    if (!(s = pa_stream_new(get_context(), tr("Peak detect").toUtf8().constData(), &ss, nullptr))) {
+        show_error(tr("Failed to create monitoring stream").toUtf8().constData());
         return nullptr;
     }
 
@@ -556,7 +555,7 @@ pa_stream* MainWindow::createMonitorStreamForSource(uint32_t source_idx, uint32_
                                  (!showVolumeMetersCheckButton->isChecked() ? PA_STREAM_START_CORKED : PA_STREAM_NOFLAGS));
 
     if (pa_stream_connect_record(s, t, &attr, flags) < 0) {
-        show_error(_("Failed to connect monitoring stream"));
+        show_error(tr("Failed to connect monitoring stream").toUtf8().constData());
         pa_stream_unref(s);
         return nullptr;
     }
@@ -703,7 +702,7 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
 
     if ((t = pa_proplist_gets(info.proplist, "module-stream-restore.id"))) {
         if (strcmp(t, "sink-input-by-media-role:event") == 0) {
-            g_debug(_("Ignoring sink-input due to it being designated as an event and thus handled by the Event widget"));
+            g_debug(tr("Ignoring sink-input due to it being designated as an event and thus handled by the Event widget").toUtf8().constData());
             return;
         }
     }
@@ -875,7 +874,7 @@ bool MainWindow::createEventRoleWidget() {
     eventRoleWidget->setChannelMap(cm, true);
 
     eventRoleWidget->boldNameLabel->setText("");
-    eventRoleWidget->nameLabel->setText(_("System Sounds"));
+    eventRoleWidget->nameLabel->setText(tr("System Sounds").toUtf8().constData());
 
     // eventRoleWidget->iconImage->set_from_icon_name("multimedia-volume-control", Gtk::ICON_SIZE_SMALL_TOOLBAR);
 
@@ -1206,7 +1205,7 @@ void MainWindow::removeAllWidgets() {
 void MainWindow::setConnectingMessage(const char *string) {
     Glib::ustring markup = "<i>";
     if (!string)
-        markup += _("Establishing connection to PulseAudio. Please wait...");
+        markup += tr("Establishing connection to PulseAudio. Please wait...").toUtf8().constData();
     else
         markup += string;
     markup += "</i>";

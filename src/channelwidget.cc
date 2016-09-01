@@ -25,8 +25,6 @@
 #include "channelwidget.h"
 #include "minimalstreamwidget.h"
 
-#include "i18n.h"
-
 /*** ChannelWidget ***/
 
 ChannelWidget::ChannelWidget(QWidget* parent) :
@@ -95,12 +93,12 @@ void ChannelWidget::setBaseVolume(pa_volume_t v) {
     gtk_scale_clear_marks(GTK_SCALE(volumeScale->gobj()));
 
     gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), (double)PA_VOLUME_MUTED, (GtkPositionType) GTK_POS_BOTTOM,
-                       last ? (can_decibel ? _("<small>Silence</small>") : _("<small>Min</small>")) : NULL);
+                       last ? (can_decibel ? tr("<small>Silence</small>").toUtf8().constData() : tr("<small>Min</small>").toUtf8().constData()) : NULL);
     gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), (double)PA_VOLUME_NORM, (GtkPositionType) GTK_POS_BOTTOM,
-                       last ? _("<small>100% (0dB)</small>") : NULL);
+                       last ? tr("<small>100% (0dB)</small>").toUtf8().constData() : NULL);
     if (v > PA_VOLUME_MUTED && v < PA_VOLUME_NORM) {
         gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), (double)v, (GtkPositionType) GTK_POS_BOTTOM,
-                           last ? _("<small><i>Base</i></small>") : NULL);
+                           last ? tr("<small><i>Base</i></small>").toUtf8().constData() : NULL);
     }
 #endif
 
