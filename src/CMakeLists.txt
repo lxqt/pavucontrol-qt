@@ -38,7 +38,11 @@ set(pavucontrol-qt_SRCS
 )
 
 set(pavucontrol-qt_UI
-    src/wmselectdialog.ui
+    cardwidget.ui
+    channelwidget.ui
+    devicewidget.ui
+    mainwindow.ui
+    streamwidget.ui
 )
 
 # Translations
