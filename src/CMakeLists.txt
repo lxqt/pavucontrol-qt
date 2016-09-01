@@ -65,13 +65,15 @@ lxqt_translate_ts(pavucontrol-qt_QM_FILES
         ${TRANSLATIONS_REFSPEC}
 )
 lxqt_translate_desktop(DESKTOP_FILES
-    SOURCES pavucontrol-qt.desktop.in
+    SOURCES
+    pavucontrol-qt.desktop.in
 )
 
 add_executable(pavucontrol-qt
     ${pavucontrol-qt_SRCS}
     ${pavucontrol-qt_QM_FILES}
     ${pavucontrol-qt_QM_LOADER}
+    ${DESKTOP_FILES}
 )
 set_property(
      TARGET pavucontrol-qt APPEND
@@ -86,8 +88,14 @@ target_link_libraries(pavucontrol-qt
     ${GLIB_LIBRARIES}
 )
 
-INSTALL(TARGETS
+install(TARGETS
     pavucontrol-qt
     RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+    COMPONENT Runtime
+)
+
+install(FILES
+    ${DESKTOP_FILES}
+    DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/applications"
     COMPONENT Runtime
 )
