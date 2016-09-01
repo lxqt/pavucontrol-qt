@@ -54,31 +54,36 @@ lxqt_translate_ts(pavucontrol-qt_QM_FILES
         ${pavucontrol-qt_SRCS}
         ${pavucontrol-qt_UI}
     INSTALL_DIR
-        "${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}"
-    # PULL_TRANSLATIONS
-    #     ${PULL_TRANSLATIONS}
+        "${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}/translations"
+    PULL_TRANSLATIONS
+        ${PULL_TRANSLATIONS}
     CLEAN_TRANSLATIONS
         ${CLEAN_TRANSLATIONS}
     TRANSLATIONS_REPO
         ${TRANSLATIONS_REPO}
     TRANSLATIONS_REFSPEC
         ${TRANSLATIONS_REFSPEC}
-    REPO_SUBDIR
-        "pavucontrol-qt/${PROJECT_NAME}"
 )
-# lxqt_app_translation_loader(pavucontrol-qt_QM_LOADER ${PROJECT_NAME})
+lxqt_translate_desktop(DESKTOP_FILES
+    SOURCES pavucontrol-qt.desktop.in
+)
 
 add_executable(pavucontrol-qt
     ${pavucontrol-qt_SRCS}
     ${pavucontrol-qt_QM_FILES}
     ${pavucontrol-qt_QM_LOADER}
 )
+set_property(
+     TARGET pavucontrol-qt APPEND
+     PROPERTY COMPILE_DEFINITIONS
+     PAVUCONTROL_QT_DATA_DIR="${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}"
+)
 
 target_link_libraries(pavucontrol-qt
     Qt5::Widgets
     Qt5::DBus
-    ${PULSE_LDFLAGS}
-    ${GLIB_LDFLAGS}
+    ${PULSE_LIBRARIES}
+    ${GLIB_LIBRARIES}
 )
 
 INSTALL(TARGETS

@@ -26,7 +26,7 @@
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>_Playback</string>
+       <string>&amp;Playback</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0" colspan="2">
@@ -85,7 +85,7 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>_Recording</string>
+       <string>&amp;Recording</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0" colspan="2">
@@ -144,7 +144,7 @@
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>_Output Devices</string>
+       <string>&amp;Output Devices</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0" colspan="2">
@@ -203,7 +203,7 @@
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
-       <string>_Input Devices</string>
+       <string>&amp;Input Devices</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="0" column="0" colspan="2">
@@ -272,7 +272,7 @@
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
-       <string>_Configuration</string>
+       <string>&amp;Configuration</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_7">
        <item>

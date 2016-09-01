@@ -13,8 +13,6 @@ set(CMAKE_AUTOUIC ON)
 include(GNUInstallDirs)
 
 find_package(Qt5Widgets REQUIRED QUIET)
-# find_package(Qt5DBus REQUIRED QUIET)
-# find_package(Qt5X11Extras REQUIRED QUIET)
 find_package(Qt5LinguistTools REQUIRED QUIET)
 
 find_package(lxqt REQUIRED QUIET)

@@ -44,6 +44,9 @@
 #include "mainwindow.h"
 #include <QMessageBox>
 #include <QApplication>
+#include <QLocale>
+#include <QLibraryInfo>
+#include <QTranslator>
 
 static pa_context* context = NULL;
 static pa_mainloop_api* api = NULL;
@@ -57,7 +60,7 @@ void show_error(const char *txt) {
 
     snprintf(buf, sizeof(buf), "%s: %s", txt, pa_strerror(pa_context_errno(context)));
 
-    QMessageBox::critical(nullptr, QObject::QObject::tr("Error"), QString::fromUtf8(buf));
+    QMessageBox::critical(nullptr, QObject::tr("Error"), QString::fromUtf8(buf));
     qApp->quit();
 }
 
@@ -640,6 +643,17 @@ int main(int argc, char *argv[]) {
 
     signal(SIGPIPE, SIG_IGN);
 
+    QApplication app(argc, argv);
+
+    QString locale = QLocale::system().name();
+    QTranslator qtTranslator;
+    if(qtTranslator.load("qt_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        qApp->installTranslator(&qtTranslator);
+
+    QTranslator appTranslator;
+    qDebug(PAVUCONTROL_QT_DATA_DIR "/translations");
+    if(appTranslator.load("pavucontrol-qt_" + locale, PAVUCONTROL_QT_DATA_DIR "/translations"))
+        qApp->installTranslator(&appTranslator);
 
     Glib::OptionContext options;
     options.set_summary("PulseAudio Volume Control");
@@ -674,7 +688,6 @@ int main(int argc, char *argv[]) {
 
     options.set_main_group(group);
 
-    QApplication app(argc, argv);
     // ca_context_set_driver(ca_gtk_context_get(), "pulse");
 
     // MainWindow* mainWindow = MainWindow::create(maximize);
