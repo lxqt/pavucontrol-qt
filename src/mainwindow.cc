@@ -243,12 +243,12 @@ finish:
 }
 
 class DeviceWidget;
-static void updatePorts(DeviceWidget *w, std::map<Glib::ustring, PortInfo> &ports) {
-    std::map<Glib::ustring, PortInfo>::iterator it;
+static void updatePorts(DeviceWidget *w, std::map<QByteArray, PortInfo> &ports) {
+    std::map<QByteArray, PortInfo>::iterator it;
     PortInfo p;
 
     for (uint32_t i = 0; i < w->ports.size(); i++) {
-        Glib::ustring desc;
+        QByteArray desc;
         it = ports.find(w->ports[i].first);
 
         if (it == ports.end())
@@ -304,7 +304,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
 
     description = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_DESCRIPTION);
     w->name = description ? description : info.name;
-    w->nameLabel->setText(QString::fromUtf8(w->name.c_str()));
+    w->nameLabel->setText(w->name);
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
     setIconByName(w->iconImage, icon ? icon : "audio-card");
@@ -336,8 +336,8 @@ void MainWindow::updateCard(const pa_card_info &info) {
     w->profiles.clear();
     for (std::set<pa_card_profile_info2>::iterator profileIt = profile_priorities.begin(); profileIt != profile_priorities.end(); ++profileIt) {
         bool hasNo = false, hasOther = false;
-        std::map<Glib::ustring, PortInfo>::iterator portIt;
-        Glib::ustring desc = profileIt->description;
+        std::map<QByteArray, PortInfo>::iterator portIt;
+        QByteArray desc = profileIt->description;
 
         for (portIt = w->ports.begin(); portIt != w->ports.end(); portIt++) {
             PortInfo port = portIt->second;
@@ -358,7 +358,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
         if (!profileIt->available)
             desc += tr(" (unavailable)").toUtf8().constData();
 
-        w->profiles.push_back(std::pair<Glib::ustring,Glib::ustring>(profileIt->name, desc));
+        w->profiles.push_back(std::pair<QByteArray,QByteArray>(profileIt->name, desc));
     }
 
     w->activeProfile = info.active_profile ? info.active_profile->name : "";
@@ -448,12 +448,12 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
         port_priorities.insert(*info.ports[i]);
     }
 
-    std::vector< std::pair<Glib::ustring,Glib::ustring> > old_ports;
+    std::vector< std::pair<QByteArray,QByteArray> > old_ports;
     old_ports.swap(w->ports);
     std::stable_sort(old_ports.begin(), old_ports.end());
     // w->ports.clear();
     for (std::set<pa_sink_port_info>::iterator i = port_priorities.begin(); i != port_priorities.end(); ++i)
-        w->ports.push_back(std::pair<Glib::ustring,Glib::ustring>(i->name, i->description));
+        w->ports.push_back(std::pair<QByteArray,QByteArray>(i->name, i->description));
     std::stable_sort(w->ports.begin(), w->ports.end());
     // check if the list is really changed
     // FIXME: this is inefficient. Fix it later.
@@ -625,12 +625,12 @@ void MainWindow::updateSource(const pa_source_info &info) {
     }
 
 
-    std::vector< std::pair<Glib::ustring,Glib::ustring> > old_ports;
+    std::vector< std::pair<QByteArray,QByteArray> > old_ports;
     old_ports.swap(w->ports);
     std::stable_sort(old_ports.begin(), old_ports.end());
     // w->ports.clear();
     for (std::set<pa_source_port_info>::iterator i = port_priorities.begin(); i != port_priorities.end(); ++i)
-        w->ports.push_back(std::pair<Glib::ustring,Glib::ustring>(i->name, i->description));
+        w->ports.push_back(std::pair<QByteArray,QByteArray>(i->name, i->description));
     std::stable_sort(w->ports.begin(), w->ports.end());
     // check if the list is really changed
     // FIXME: this is inefficient. Fix it later.
@@ -1203,13 +1203,13 @@ void MainWindow::removeAllWidgets() {
 }
 
 void MainWindow::setConnectingMessage(const char *string) {
-    Glib::ustring markup = "<i>";
+    QByteArray markup = "<i>";
     if (!string)
         markup += tr("Establishing connection to PulseAudio. Please wait...").toUtf8().constData();
     else
         markup += string;
     markup += "</i>";
-    connectingLabel->setText(QString::fromUtf8(markup.c_str()));
+    connectingLabel->setText(QString::fromUtf8(markup));
 }
 
 void MainWindow::onSinkTypeComboBoxChanged(int index) {

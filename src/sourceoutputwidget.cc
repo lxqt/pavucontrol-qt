@@ -52,7 +52,7 @@ void SourceOutputWidget::setSourceIndex(uint32_t idx) {
 
     if (mpMainWindow->sourceWidgets.count(idx)) {
       SourceWidget *w = mpMainWindow->sourceWidgets[idx];
-      deviceButton->setText(w->description.c_str());
+      deviceButton->setText(w->description);
     }
     else
       deviceButton->setText(tr("Unknown input").toUtf8().constData());
@@ -115,7 +115,7 @@ void SourceOutputWidget::buildMenu() {
 #if 0
   for (std::map<uint32_t, SourceWidget*>::iterator i = mpMainWindow->sourceWidgets.begin(); i != mpMainWindow->sourceWidgets.end(); ++i) {
     SourceMenuItem *m;
-    sourceMenuItems[i->second->index] = m = new SourceMenuItem(this, i->second->description.c_str(), i->second->index, i->second->index == mSourceIndex);
+    sourceMenuItems[i->second->index] = m = new SourceMenuItem(this, i->second->description, i->second->index, i->second->index == mSourceIndex);
     menu.append(m->menuItem);
   }
   menu.show_all();

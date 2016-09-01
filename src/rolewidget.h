@@ -30,8 +30,8 @@ class RoleWidget : public StreamWidget {
 public:
     RoleWidget(MainWindow* parent);
 
-    Glib::ustring role;
-    Glib::ustring device;
+    QByteArray role;
+    QByteArray device;
 
     virtual void onMuteToggleButton();
     virtual void executeVolumeUpdate();

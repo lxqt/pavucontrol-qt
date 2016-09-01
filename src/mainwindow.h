@@ -100,7 +100,7 @@ public:
     bool createEventRoleWidget();
     void deleteEventRoleWidget();
 
-    Glib::ustring defaultSinkName, defaultSourceName;
+    QByteArray defaultSinkName, defaultSourceName;
 
     bool canRenameDevices;
 

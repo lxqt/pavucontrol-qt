@@ -47,6 +47,8 @@
 #include <QLocale>
 #include <QLibraryInfo>
 #include <QTranslator>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
 
 static pa_context* context = NULL;
 static pa_mainloop_api* api = NULL;
@@ -651,47 +653,34 @@ int main(int argc, char *argv[]) {
         qApp->installTranslator(&qtTranslator);
 
     QTranslator appTranslator;
-    qDebug(PAVUCONTROL_QT_DATA_DIR "/translations");
     if(appTranslator.load("pavucontrol-qt_" + locale, PAVUCONTROL_QT_DATA_DIR "/translations"))
         qApp->installTranslator(&appTranslator);
 
-    Glib::OptionContext options;
-    options.set_summary("PulseAudio Volume Control");
-    options.set_help_enabled();
+    QCommandLineParser parser;
+    parser.setApplicationDescription(QObject::tr("PulseAudio Volume Control"));
+    parser.addHelpOption();
 
-    Glib::OptionGroup group("pulseaudio", "PAVUControl");
+    QCommandLineOption tabOption(QStringList() << "tab" << "t", QObject::tr("Select a specific tab on load."), "tab");
+    parser.addOption(tabOption);
 
-    Glib::OptionEntry entry;
-    entry.set_long_name("tab");
-    entry.set_short_name('t');
-    entry.set_description(QObject::tr("Select a specific tab on load.").toUtf8().constData());
-    group.add_entry(entry, default_tab);
+    QCommandLineOption retryOption(QStringList() << "retry" << "r", QObject::tr("Retry forever if pa quits (every 5 seconds)."));
+    parser.addOption(retryOption);
 
-    Glib::OptionEntry entry2;
-    entry2.set_long_name("retry");
-    entry2.set_short_name('r');
-    entry2.set_description(QObject::tr("Retry forever if pa quits (every 5 seconds).").toUtf8().constData());
-    group.add_entry(entry2, retry);
+    QCommandLineOption maximizeOption(QStringList() << "maximize" << "m", QObject::tr("Maximize the window."));
+    parser.addOption(maximizeOption);
 
-    bool maximize = false;
-    Glib::OptionEntry entry3;
-    entry3.set_long_name("maximize");
-    entry3.set_short_name('m');
-    entry3.set_description(QObject::tr("Maximize the window.").toUtf8().constData());
-    group.add_entry(entry3, maximize);
+    // QCommandLineOption versionOption("version", QObject::tr("Show version"));
+    // parser.addOption(versionOption);
 
-    bool version = false;
-    Glib::OptionEntry entry4;
-    entry4.set_long_name("version");
-    entry4.set_description(QObject::tr("Show version").toUtf8().constData());
-    group.add_entry(entry4, version);
-
-    options.set_main_group(group);
+    parser.process(app);
+    default_tab = parser.value(tabOption).toInt();
+    retry = parser.isSet(retryOption);
 
     // ca_context_set_driver(ca_gtk_context_get(), "pulse");
 
-    // MainWindow* mainWindow = MainWindow::create(maximize);
     MainWindow* mainWindow = new MainWindow();
+    if(parser.isSet(maximizeOption))
+        mainWindow->showMaximized();
 
     pa_glib_mainloop *m = pa_glib_mainloop_new(g_main_context_default());
     g_assert(m);

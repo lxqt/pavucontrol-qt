@@ -27,9 +27,10 @@
 #include "mainwindow.h"
 #include "devicewidget.h"
 #include "channelwidget.h"
+#include <sstream>
 
 /*** DeviceWidget ***/
-DeviceWidget::DeviceWidget(MainWindow* parent, Glib::ustring deviceType) :
+DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
     MinimalStreamWidget(parent),
     mpMainWindow(parent),
     mDeviceType(deviceType),
@@ -141,17 +142,17 @@ void DeviceWidget::onOffsetChange() {
     pa_operation *o;
     int64_t offset;
     std::ostringstream card_stream;
-    Glib::ustring card_name;
+    QByteArray card_name;
 
     if (!offsetButtonEnabled)
         return;
 
     offset = offsetButton->value() * 1000.0;
     card_stream << card_index;
-    card_name = card_stream.str();
+    card_name = QByteArray::fromStdString(card_stream.str());
 
     if (!(o = pa_context_set_port_latency_offset(get_context(),
-            card_name.c_str(), activePort.c_str(), offset, NULL, NULL))) {
+            card_name, activePort, offset, NULL, NULL))) {
         show_error(tr("pa_context_set_port_latency_offset() failed").toUtf8().constData());
         return;
     }
@@ -191,8 +192,8 @@ void DeviceWidget::prepareMenu() {
     portList->clear();
     /* Fill the ComboBox's Model */
     for (uint32_t i = 0; i < ports.size(); ++i) {
-        QByteArray name = ports[i].first.c_str();
-        QString desc = ports[i].second.c_str();
+        QByteArray name = ports[i].first;
+        QString desc = ports[i].second;
         portList->addItem(desc, name);
         if (ports[i].first == activePort)
             active_idx = idx;
@@ -261,9 +262,9 @@ void DeviceWidget::renamePopup() {
     dialog->set_default_response(Gtk::RESPONSE_OK);
     if (Gtk::RESPONSE_OK == dialog->run()) {
         pa_operation* o;
-        gchar *key = g_markup_printf_escaped("%s:%s", mDeviceType.c_str(), name.c_str());
+        gchar *key = g_markup_printf_escaped("%s:%s", mDeviceType, name);
 
-        if (!(o = pa_ext_device_manager_set_device_description(get_context(), key, renameText->get_text().c_str(), NULL, NULL))) {
+        if (!(o = pa_ext_device_manager_set_device_description(get_context(), key, renameText->get_text(), NULL, NULL))) {
             show_error(tr("pa_ext_device_manager_write() failed").toUtf8().constData());
             return;
         }

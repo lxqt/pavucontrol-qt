@@ -30,7 +30,6 @@ pkg_check_modules(
 pkg_check_modules(
     GLIB REQUIRED
     glib-2.0
-    glibmm-2.4  # c++ binding for glib
 )
 
 add_subdirectory(src)

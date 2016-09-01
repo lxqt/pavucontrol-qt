@@ -27,13 +27,13 @@
 
 class PortInfo {
 public:
-      Glib::ustring name;
-      Glib::ustring description;
+      QByteArray name;
+      QByteArray description;
       uint32_t priority;
       int available;
       int direction;
       int64_t latency_offset;
-      std::vector<Glib::ustring> profiles;
+      std::vector<QByteArray> profiles;
 };
 
 class CardWidget : public QWidget, public Ui::CardWidget {
@@ -41,13 +41,13 @@ class CardWidget : public QWidget, public Ui::CardWidget {
 public:
     CardWidget(QWidget *parent = nullptr);
 
-    Glib::ustring name;
+    QByteArray name;
     uint32_t index;
     bool updating;
 
-    std::vector< std::pair<Glib::ustring,Glib::ustring> > profiles;
-    std::map<Glib::ustring, PortInfo> ports;
-    Glib::ustring activeProfile;
+    std::vector< std::pair<QByteArray,QByteArray> > profiles;
+    std::map<QByteArray, PortInfo> ports;
+    QByteArray activeProfile;
     bool hasSinks;
     bool hasSources;
 

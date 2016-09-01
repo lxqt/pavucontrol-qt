@@ -23,17 +23,9 @@
 
 #include <signal.h>
 #include <string.h>
-
-#include <libintl.h>
-
-// #include <gtkmm.h>
-#include <glibmm.h>
+#include <glib.h>
 
 #include <pulse/pulseaudio.h>
-
-#ifndef GLADE_FILE
-#define GLADE_FILE "pavucontrol.glade"
-#endif
 
 /* Can be removed when PulseAudio 0.9.23 or newer is required */
 #ifndef PA_VOLUME_UI_MAX

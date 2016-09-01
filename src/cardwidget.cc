@@ -40,8 +40,8 @@ void CardWidget::prepareMenu() {
     /* Fill the ComboBox */
     for (uint32_t i = 0; i < profiles.size(); ++i) {
         const auto& profile = profiles[i];
-        QByteArray name = profile.first.c_str();
-        QString desc = QString::fromUtf8(profile.second.c_str());
+        QByteArray name = profile.first;
+        QString desc = QString::fromUtf8(profile.second);
         profileList->addItem(desc, name);
         if (profile.first == activeProfile)
           active_idx = idx;

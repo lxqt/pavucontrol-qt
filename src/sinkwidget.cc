@@ -127,7 +127,7 @@ void SinkWidget::onDefaultToggleButton() {
     if (updating)
         return;
 
-    if (!(o = pa_context_set_default_sink(get_context(), name.c_str(), NULL, NULL))) {
+    if (!(o = pa_context_set_default_sink(get_context(), name, NULL, NULL))) {
         show_error(tr("pa_context_set_default_sink() failed").toUtf8().constData());
         return;
     }

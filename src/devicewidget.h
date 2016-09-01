@@ -34,7 +34,7 @@ class ChannelWidget;
 class DeviceWidget : public MinimalStreamWidget, public Ui::DeviceWidget {
     Q_OBJECT
 public:
-    DeviceWidget(MainWindow *parent, Glib::ustring deviceType = "");
+    DeviceWidget(MainWindow *parent, QByteArray deviceType = "");
 
     void setChannelMap(const pa_channel_map &m, bool can_decibel);
     void setVolume(const pa_cvolume &volume, bool force = false);
@@ -42,8 +42,8 @@ public:
 
     void hideLockedChannels(bool hide = true);
 
-    Glib::ustring name;
-    Glib::ustring description;
+    QByteArray name;
+    QByteArray description;
     uint32_t index, card_index;
 
     bool offsetButtonEnabled;
@@ -69,8 +69,8 @@ public:
     virtual void executeVolumeUpdate();
     virtual void setBaseVolume(pa_volume_t v);
 
-    std::vector< std::pair<Glib::ustring,Glib::ustring> > ports;
-    Glib::ustring activePort;
+    std::vector< std::pair<QByteArray,QByteArray> > ports;
+    QByteArray activePort;
 
     void prepareMenu();
 
@@ -85,7 +85,7 @@ protected:
     // Gtk::MenuItem rename;
 
 private:
-    Glib::ustring mDeviceType;
+    QByteArray mDeviceType;
 
 };
 
