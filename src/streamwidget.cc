@@ -40,8 +40,8 @@ StreamWidget::StreamWidget(MainWindow *parent) :
     connect(&timeout, &QTimer::timeout, this, &StreamWidget::timeoutEvent);
 
 //    this->signal_button_press_event().connect(sigc::mem_fun(*this, &StreamWidget::onContextTriggerEvent));
-    connect(muteToggleButton, &QPushButton::toggled, this, &StreamWidget::onMuteToggleButton);
-    connect(lockToggleButton, &QPushButton::toggled, this, &StreamWidget::onLockToggleButton);
+    connect(muteToggleButton, &QToolButton::toggled, this, &StreamWidget::onMuteToggleButton);
+    connect(lockToggleButton, &QToolButton::toggled, this, &StreamWidget::onLockToggleButton);
 //    connect(deviceButton->signal_clicked().connect(sigc::mem_fun(*this, &StreamWidget::onDeviceChangePopup));
 
 #if 0

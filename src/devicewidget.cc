@@ -45,9 +45,9 @@ DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
     connect(&timeout, &QTimer::timeout, this, &DeviceWidget::timeoutEvent);
 
     // FIXME: this->signal_button_press_event().connect(sigc::mem_fun(*this, &DeviceWidget::onContextTriggerEvent));
-    connect(muteToggleButton, &QPushButton::toggled, this, &DeviceWidget::onMuteToggleButton);
-    connect(lockToggleButton, &QPushButton::toggled, this, &DeviceWidget::onLockToggleButton);
-    connect(defaultToggleButton, &QPushButton::toggled, this, &DeviceWidget::onDefaultToggleButton);
+    connect(muteToggleButton, &QToolButton::toggled, this, &DeviceWidget::onMuteToggleButton);
+    connect(lockToggleButton, &QToolButton::toggled, this, &DeviceWidget::onLockToggleButton);
+    connect(defaultToggleButton, &QToolButton::toggled, this, &DeviceWidget::onDefaultToggleButton);
 
 #if 0
 

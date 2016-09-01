@@ -19,7 +19,7 @@
      <item>
       <widget class="QLabel" name="iconImage">
        <property name="text">
-        <string>icon</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -38,14 +38,12 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="muteToggleButton">
-       <property name="text">
-        <string/>
+      <widget class="QToolButton" name="muteToggleButton">
+       <property name="toolTip">
+        <string>Mute audio</string>
        </property>
        <property name="icon">
-        <iconset theme="audio-volume-muted">
-         <normaloff/>
-        </iconset>
+        <iconset theme="audio-volume-muted"/>
        </property>
        <property name="checkable">
         <bool>true</bool>
@@ -53,9 +51,9 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="lockToggleButton">
-       <property name="text">
-        <string>lock</string>
+      <widget class="QToolButton" name="lockToggleButton">
+       <property name="toolTip">
+        <string>Lock channels together</string>
        </property>
        <property name="checkable">
         <bool>true</bool>
@@ -63,14 +61,12 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="defaultToggleButton">
-       <property name="text">
-        <string/>
+      <widget class="QToolButton" name="defaultToggleButton">
+       <property name="toolTip">
+        <string>Set as fallback</string>
        </property>
        <property name="icon">
-        <iconset theme="emblem-default">
-         <normaloff/>
-        </iconset>
+        <iconset theme="applications-multimedia"/>
        </property>
        <property name="checkable">
         <bool>true</bool>
