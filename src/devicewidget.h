@@ -29,7 +29,7 @@
 #include <vector>
 
 class MainWindow;
-class ChannelWidget;
+class Channel;
 
 class DeviceWidget : public MinimalStreamWidget, public Ui::DeviceWidget {
     Q_OBJECT
@@ -51,7 +51,7 @@ public:
     pa_channel_map channelMap;
     pa_cvolume volume;
 
-    ChannelWidget *channelWidgets[PA_CHANNELS_MAX];
+    Channel *channels[PA_CHANNELS_MAX];
 
 public Q_SLOTS:
     virtual void onMuteToggleButton();

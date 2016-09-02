@@ -22,18 +22,28 @@
 #include <config.h>
 #endif
 
-#include "channelwidget.h"
+#include <QGridLayout>
+#include <QLabel>
+#include <QSlider>
+#include "channel.h"
 #include "minimalstreamwidget.h"
 
 /*** ChannelWidget ***/
 
-ChannelWidget::ChannelWidget(QWidget* parent) :
-    QWidget(parent),
+Channel::Channel(QGridLayout* parent) :
+    QObject(parent),
     can_decibel(false),
     volumeScaleEnabled(true),
-    last(false) {
+    last(false)
+{
+    channelLabel = new QLabel(nullptr);
+    volumeScale = new QSlider(Qt::Horizontal, nullptr);
+    volumeLabel = new QLabel(nullptr);
 
-    setupUi(this);
+    const int row = parent->rowCount();
+    parent->addWidget(channelLabel, row, 0);
+    parent->addWidget(volumeScale, row, 1);
+    parent->addWidget(volumeLabel, row, 2);
 
     volumeScale->setMinimum(PA_VOLUME_MUTED);
     volumeScale->setMaximum(PA_VOLUME_UI_MAX);
@@ -42,10 +52,10 @@ ChannelWidget::ChannelWidget(QWidget* parent) :
     volumeScale->setPageStep(qRound((double)PA_VOLUME_NORM)/20.0);
     setBaseVolume(PA_VOLUME_NORM);
 
-    connect(volumeScale, &QSlider::valueChanged, this, &ChannelWidget::onVolumeScaleValueChanged);
+    connect(volumeScale, &QSlider::valueChanged, this, &Channel::onVolumeScaleValueChanged);
 }
 
-void ChannelWidget::setVolume(pa_volume_t volume) {
+void Channel::setVolume(pa_volume_t volume) {
     double v;
     char txt[64];
 
@@ -66,7 +76,21 @@ void ChannelWidget::setVolume(pa_volume_t volume) {
     volumeScaleEnabled = true;
 }
 
-void ChannelWidget::onVolumeScaleValueChanged(int value) {
+void Channel::setVisible(bool visible)
+{
+    channelLabel->setVisible(visible);
+    volumeScale->setVisible(visible);
+    volumeLabel->setVisible(visible);
+}
+
+void Channel::setEnabled(bool enabled)
+{
+    channelLabel->setEnabled(enabled);
+    volumeScale->setEnabled(enabled);
+    volumeLabel->setEnabled(enabled);
+}
+
+void Channel::onVolumeScaleValueChanged(int value) {
 
     if (!volumeScaleEnabled)
         return;
@@ -79,7 +103,7 @@ void ChannelWidget::onVolumeScaleValueChanged(int value) {
 }
 
 /*
-void ChannelWidget::set_sensitive(bool enabled) {
+void Channel::set_sensitive(bool enabled) {
     setEnabled(enabled);
 
     channelLabel->setEnabled(enabled);
@@ -88,7 +112,7 @@ void ChannelWidget::set_sensitive(bool enabled) {
 }
 */
 
-void ChannelWidget::setBaseVolume(pa_volume_t v) {
+void Channel::setBaseVolume(pa_volume_t v) {
 #if 0  // FIXME: Qt does not support this functionality
     gtk_scale_clear_marks(GTK_SCALE(volumeScale->gobj()));
 

@@ -92,7 +92,7 @@
     </widget>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="channelsVBox"/>
+    <layout class="QGridLayout" name="channelsGrid"/>
    </item>
    <item>
     <widget class="QCheckBox" name="advancedOptions">

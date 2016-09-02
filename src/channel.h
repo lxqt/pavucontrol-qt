@@ -18,20 +18,25 @@
   along with pavucontrol. If not, see <http://www.gnu.org/licenses/>.
 ***/
 
-#ifndef channelwidget_h
-#define channelwidget_h
+#ifndef channel_h
+#define channel_h
 
+#include <QObject>
 #include "pavucontrol.h"
-#include "ui_channelwidget.h"
 
+class QGridLayout;
+class QLabel;
+class QSlider;
 class MinimalStreamWidget;
 
-class ChannelWidget : public QWidget, public Ui::ChannelWidget {
+class Channel : public QObject {
     Q_OBJECT
 public:
-    ChannelWidget(QWidget* parent=nullptr);
+    Channel(QGridLayout* parent=nullptr);
 
     void setVolume(pa_volume_t volume);
+    void setVisible(bool visible);
+    void setEnabled(bool enabled);
 
     int channel;
     MinimalStreamWidget *minimalStreamWidget;
@@ -43,6 +48,10 @@ public:
     bool can_decibel;
     bool volumeScaleEnabled;
     bool last;
+
+    QLabel *channelLabel;
+    QSlider *volumeScale;
+    QLabel *volumeLabel;
 
     //virtual void set_sensitive(bool enabled);
     virtual void setBaseVolume(pa_volume_t);

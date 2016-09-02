@@ -26,8 +26,9 @@
 
 #include "mainwindow.h"
 #include "devicewidget.h"
-#include "channelwidget.h"
+#include "channel.h"
 #include <sstream>
+#include <QLabel>
 
 /*** DeviceWidget ***/
 DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
@@ -38,7 +39,7 @@ DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
 
     setupUi(this);
     advancedWidget->hide();
-    initPeakProgressBar(channelsVBox);
+    initPeakProgressBar(channelsGrid);
 
     timeout.setSingleShot(true);
     timeout.setInterval(100);
@@ -61,7 +62,7 @@ DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
     connect(offsetButton, static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &DeviceWidget::onOffsetChange);
 
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
-        channelWidgets[i] = NULL;
+        channels[i] = NULL;
 
 
     // FIXME:
@@ -73,16 +74,15 @@ void DeviceWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
     channelMap = m;
 
     for (int i = 0; i < m.channels; i++) {
-        ChannelWidget *cw = channelWidgets[i] = new ChannelWidget(this);
-        cw->channel = i;
-        cw->can_decibel = can_decibel;
-        cw->minimalStreamWidget = this;
+        Channel *ch = channels[i] = new Channel(channelsGrid);
+        ch->channel = i;
+        ch->can_decibel = can_decibel;
+        ch->minimalStreamWidget = this;
         char text[64];
         snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_pretty_string(m.map[i]));
-        cw->channelLabel->setText(QString::fromUtf8(text));
-        channelsVBox->addWidget(cw);
+        ch->channelLabel->setText(QString::fromUtf8(text));
     }
-    channelWidgets[m.channels-1]->last = true;
+    channels[m.channels-1]->last = true;
 
     lockToggleButton->setEnabled(m.channels > 1);
     hideLockedChannels(lockToggleButton->isChecked());
@@ -95,7 +95,7 @@ void DeviceWidget::setVolume(const pa_cvolume &v, bool force) {
 
     if (!timeout.isActive() || force) { /* do not update the volume when a volume change is still in flux */
         for (int i = 0; i < volume.channels; i++)
-            channelWidgets[i]->setVolume(volume.values[i]);
+            channels[i]->setVolume(volume.values[i]);
     }
 }
 
@@ -118,9 +118,9 @@ void DeviceWidget::updateChannelVolume(int channel, pa_volume_t v) {
 
 void DeviceWidget::hideLockedChannels(bool hide) {
     for (int i = 0; i < channelMap.channels - 1; i++)
-        channelWidgets[i]->setVisible(!hide);
+        channels[i]->setVisible(!hide);
 
-    channelWidgets[channelMap.channels - 1]->channelLabel->setVisible(!hide);
+    channels[channelMap.channels - 1]->channelLabel->setVisible(!hide);
 }
 
 void DeviceWidget::onMuteToggleButton() {
@@ -128,7 +128,7 @@ void DeviceWidget::onMuteToggleButton() {
     lockToggleButton->setEnabled(!muteToggleButton->isChecked());
 
     for (int i = 0; i < channelMap.channels; i++)
-        channelWidgets[i]->setEnabled(!muteToggleButton->isChecked());
+        channels[i]->setEnabled(!muteToggleButton->isChecked());
 }
 
 void DeviceWidget::onLockToggleButton() {
@@ -182,7 +182,7 @@ void DeviceWidget::setLatencyOffset(int64_t offset) {
 void DeviceWidget::setBaseVolume(pa_volume_t v) {
 
     for (int i = 0; i < channelMap.channels; i++)
-        channelWidgets[i]->setBaseVolume(v);
+        channels[i]->setBaseVolume(v);
 }
 
 void DeviceWidget::prepareMenu() {

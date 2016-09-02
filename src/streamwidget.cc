@@ -24,7 +24,7 @@
 
 #include "streamwidget.h"
 #include "mainwindow.h"
-#include "channelwidget.h"
+#include "channel.h"
 
 
 /*** StreamWidget ***/
@@ -33,7 +33,7 @@ StreamWidget::StreamWidget(MainWindow *parent) :
     mpMainWindow(parent) {
 
     setupUi(this);
-    initPeakProgressBar(channelsVBox);
+    initPeakProgressBar(channelsGrid);
 
     timeout.setSingleShot(true);
     timeout.setInterval(100);
@@ -52,7 +52,7 @@ StreamWidget::StreamWidget(MainWindow *parent) :
     contextMenu.show_all();
 #endif
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
-        channelWidgets[i] = NULL;
+        channels[i] = NULL;
 }
 
 
@@ -70,17 +70,16 @@ void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
     channelMap = m;
 
     for (int i = 0; i < m.channels; i++) {
-        ChannelWidget *cw = channelWidgets[i] = new ChannelWidget(this);
-        cw->channel = i;
-        cw->can_decibel = can_decibel;
-        cw->minimalStreamWidget = this;
+        Channel *ch = channels[i] = new Channel(channelsGrid);
+        ch->channel = i;
+        ch->can_decibel = can_decibel;
+        ch->minimalStreamWidget = this;
         char text[64];
         snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_pretty_string(m.map[i]));
-        cw->channelLabel->setText(QString::fromUtf8(text));
-        channelsVBox->addWidget(cw);
+        ch->channelLabel->setText(QString::fromUtf8(text));
     }
-    channelWidgets[m.channels-1]->last = true;
-    channelWidgets[m.channels-1]->setBaseVolume(PA_VOLUME_NORM);
+    channels[m.channels-1]->last = true;
+    channels[m.channels-1]->setBaseVolume(PA_VOLUME_NORM);
 
     lockToggleButton->setEnabled(m.channels > 1);
     hideLockedChannels(lockToggleButton->isChecked());
@@ -93,7 +92,7 @@ void StreamWidget::setVolume(const pa_cvolume &v, bool force) {
 
     if (!timeout.isActive() || force) { /* do not update the volume when a volume change is still in flux */
         for (int i = 0; i < volume.channels; i++)
-            channelWidgets[i]->setVolume(volume.values[i]);
+            channels[i]->setVolume(volume.values[i]);
     }
 }
 
@@ -117,9 +116,9 @@ void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
 
 void StreamWidget::hideLockedChannels(bool hide) {
     for (int i = 0; i < channelMap.channels - 1; i++)
-        channelWidgets[i]->setVisible(!hide);
+        channels[i]->setVisible(!hide);
 
-    channelWidgets[channelMap.channels - 1]->channelLabel->setVisible(!hide);
+    channels[channelMap.channels - 1]->channelLabel->setVisible(!hide);
 }
 
 void StreamWidget::onMuteToggleButton() {
@@ -127,7 +126,7 @@ void StreamWidget::onMuteToggleButton() {
     lockToggleButton->setEnabled(!muteToggleButton->isChecked());
 
     for (int i = 0; i < channelMap.channels; i++)
-        channelWidgets[i]->setEnabled(!muteToggleButton->isChecked());
+        channels[i]->setEnabled(!muteToggleButton->isChecked());
 }
 
 void StreamWidget::onLockToggleButton() {

@@ -33,7 +33,7 @@
 
 #include "pavucontrol.h"
 #include "minimalstreamwidget.h"
-#include "channelwidget.h"
+#include "channel.h"
 #include "streamwidget.h"
 #include "cardwidget.h"
 #include "sinkwidget.h"

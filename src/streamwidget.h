@@ -28,7 +28,7 @@
 #include <QTimer>
 
 class MainWindow;
-class ChannelWidget;
+class Channel;
 
 class StreamWidget : public MinimalStreamWidget, public Ui::StreamWidget {
     Q_OBJECT
@@ -44,7 +44,7 @@ public:
     pa_channel_map channelMap;
     pa_cvolume volume;
 
-    ChannelWidget *channelWidgets[PA_CHANNELS_MAX];
+    Channel *channels[PA_CHANNELS_MAX];
 
     virtual void onMuteToggleButton();
     virtual void onLockToggleButton();

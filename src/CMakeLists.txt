@@ -11,7 +11,7 @@ set(pavucontrol-qt_HDRS
     pavucontrol.h
     mainwindow.h
     cardwidget.h
-    channelwidget.h
+    channel.h
     devicewidget.h
     minimalstreamwidget.h
     rolewidget.h
@@ -26,7 +26,7 @@ set(pavucontrol-qt_SRCS
     pavucontrol.cc
     mainwindow.cc
     cardwidget.cc
-    channelwidget.cc
+    channel.cc
     devicewidget.cc
     minimalstreamwidget.cc
     rolewidget.cc
@@ -39,7 +39,6 @@ set(pavucontrol-qt_SRCS
 
 set(pavucontrol-qt_UI
     cardwidget.ui
-    channelwidget.ui
     devicewidget.ui
     mainwindow.ui
     streamwidget.ui

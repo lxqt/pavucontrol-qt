@@ -23,7 +23,7 @@
 #endif
 
 #include "minimalstreamwidget.h"
-#include <QVBoxLayout>
+#include <QGridLayout>
 #include <QProgressBar>
 #include <QDebug>
 
@@ -40,8 +40,8 @@ MinimalStreamWidget::MinimalStreamWidget(QWidget *parent) :
     peakProgressBar->hide();
 }
 
-void MinimalStreamWidget::initPeakProgressBar(QVBoxLayout* channelsVBox) {
-    channelsVBox->addWidget(peakProgressBar);
+void MinimalStreamWidget::initPeakProgressBar(QGridLayout* channelsGrid) {
+    channelsGrid->addWidget(peakProgressBar, channelsGrid->rowCount(), 0, 1, -1);
 }
 
 #define DECAY_STEP .04
