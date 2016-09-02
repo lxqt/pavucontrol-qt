@@ -37,6 +37,8 @@ MinimalStreamWidget::MinimalStreamWidget(QWidget *parent) :
     volumeMeterEnabled(false),
     volumeMeterVisible(true) {
 
+    peakProgressBar->setTextVisible(false);
+    peakProgressBar->setMaximumHeight(4 /* FIXME: hardcoded */);
     peakProgressBar->hide();
 }
 
