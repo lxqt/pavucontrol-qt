@@ -109,8 +109,14 @@
         <layout class="QGridLayout" name="gridLayout">
          <item row="0" column="0">
           <widget class="QCheckBox" name="encodingFormatPCM">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="text">
             <string>PCM</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
