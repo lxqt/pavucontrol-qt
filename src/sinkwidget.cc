@@ -156,7 +156,6 @@ void SinkWidget::setDigital(bool digital) {
 #if HAVE_EXT_DEVICE_RESTORE_API
     if (digital) {
         encodingSelect->show();
-        advancedOptions->setChecked(true);
     } else {
         /* advancedOptions has sensitive=false by default */
         encodingSelect->hide();
