@@ -112,6 +112,9 @@
    </item>
    <item>
     <widget class="QCheckBox" name="advancedOptions">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="text">
       <string>Show advanced options</string>
      </property>
