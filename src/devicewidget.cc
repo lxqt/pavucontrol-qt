@@ -33,9 +33,9 @@
 /*** DeviceWidget ***/
 DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
     MinimalStreamWidget(parent),
+    offsetButtonEnabled(false),
     mpMainWindow(parent),
-    mDeviceType(deviceType),
-    offsetButtonEnabled(false) {
+    mDeviceType(deviceType) {
 
     setupUi(this);
     advancedWidget->hide();

@@ -580,7 +580,7 @@ void context_state_callback(pa_context *c, void *userdata) {
             context = NULL;
 
             if (reconnect_timeout > 0) {
-                g_debug(QObject::tr("Connection failed, attempting reconnect").toUtf8().constData());
+                g_debug("%s", QObject::tr("Connection failed, attempting reconnect").toUtf8().constData());
                 g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, w);
             }
             return;
@@ -631,7 +631,7 @@ gboolean connect_to_pulse(gpointer userdata) {
                 reconnect_timeout = -1;
                 qApp->quit();
             } else {
-                g_debug(QObject::tr("Connection failed, attempting reconnect").toUtf8().constData());
+                g_debug("%s", QObject::tr("Connection failed, attempting reconnect").toUtf8().constData());
                 reconnect_timeout = 5;
                 g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, userdata);
             }

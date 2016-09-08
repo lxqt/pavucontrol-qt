@@ -77,33 +77,12 @@ SinkWidget::SinkWidget(MainWindow *parent) :
 
 void SinkWidget::executeVolumeUpdate() {
     pa_operation* o;
-    char dev[64];
-    int playing = 0;
-
     if (!(o = pa_context_set_sink_volume_by_index(get_context(), index, &volume, NULL, NULL))) {
         show_error(tr("pa_context_set_sink_volume_by_index() failed").toUtf8().constData());
         return;
     }
 
     pa_operation_unref(o);
-#if 0
-    ca_context_playing(ca_gtk_context_get(), 2, &playing);
-    if (playing)
-        return;
-
-    snprintf(dev, sizeof(dev), "%lu", (unsigned long) index);
-    ca_context_change_device(ca_gtk_context_get(), dev);
-
-    ca_gtk_play_for_widget(GTK_WIDGET(gobj()),
-                           2,
-                           CA_PROP_EVENT_DESCRIPTION, tr("Volume Control Feedback Sound").toUtf8().constData(),
-                           CA_PROP_EVENT_ID, "audio-volume-change",
-                           CA_PROP_CANBERRA_CACHE_CONTROL, "permanent",
-                           CA_PROP_CANBERRA_ENABLE, "1",
-                           NULL);
-
-    ca_context_change_device(ca_gtk_context_get(), NULL);
-#endif
 }
 
 void SinkWidget::onMuteToggleButton() {

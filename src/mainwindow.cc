@@ -106,12 +106,11 @@ MainWindow::MainWindow():
         if (g_key_file_has_key(config, "window", "showVolumeMeters", nullptr)) {
             showVolumeMetersCheckButton->setChecked(g_key_file_get_boolean(config, "window", "showVolumeMeters", nullptr));
         }
-#if 0
-        int default_width, default_height;
-        get_default_size(default_width, default_height);
-        if (width >= default_width && height >= default_height)
+
+        const QSize default_size = size(); // widget is resized in setupUi based on values in *.ui
+        if (width >= default_size.width() && height >= default_size.height())
             resize(width, height);
-#endif
+
         int sinkInputTypeSelection = g_key_file_get_integer(config, "window", "sinkInputType", &err);
         if (err == nullptr)
             sinkInputTypeComboBox->setCurrentIndex(sinkInputTypeSelection);
@@ -684,7 +683,7 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
 
     if ((t = pa_proplist_gets(info.proplist, "module-stream-restore.id"))) {
         if (strcmp(t, "sink-input-by-media-role:event") == 0) {
-            g_debug(tr("Ignoring sink-input due to it being designated as an event and thus handled by the Event widget").toUtf8().constData());
+            g_debug("%s", tr("Ignoring sink-input due to it being designated as an event and thus handled by the Event widget").toUtf8().constData());
             return;
         }
     }
