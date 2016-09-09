@@ -36,7 +36,7 @@ SourceOutputWidget::SourceOutputWidget(MainWindow *parent) :
     directionLabel->setText(txt = g_markup_printf_escaped("<i>%s</i>", tr("from").toUtf8().constData()));
     g_free(txt);
 
-    // terminate.set_label(tr("Terminate Recording").toUtf8().constData());
+    terminate->setText(tr("Terminate Recording"));
 
 #if !HAVE_SOURCE_OUTPUT_VOLUMES
     /* Source Outputs do not have volume controls in versions of PA < 1.0 */

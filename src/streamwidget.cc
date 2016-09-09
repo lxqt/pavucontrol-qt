@@ -30,7 +30,8 @@
 /*** StreamWidget ***/
 StreamWidget::StreamWidget(MainWindow *parent) :
     MinimalStreamWidget(parent),
-    mpMainWindow(parent) {
+    mpMainWindow(parent),
+    terminate{new QAction{tr("Terminate"), this}} {
 
     setupUi(this);
     initPeakProgressBar(channelsGrid);
@@ -43,7 +44,6 @@ StreamWidget::StreamWidget(MainWindow *parent) :
     connect(lockToggleButton, &QToolButton::toggled, this, &StreamWidget::onLockToggleButton);
     connect(deviceButton, &QAbstractButton::released, this, &StreamWidget::onDeviceChangePopup);
 
-    QAction * terminate = new QAction{tr("Terminate"), this};
     connect(terminate, &QAction::triggered, this, &StreamWidget::onKill);
     addAction(terminate);
     setContextMenuPolicy(Qt::ActionsContextMenu);

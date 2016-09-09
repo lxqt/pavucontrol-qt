@@ -36,7 +36,7 @@ SinkInputWidget::SinkInputWidget(MainWindow *parent) :
     directionLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped("<i>%s</i>", tr("on").toUtf8().constData())));
     g_free(txt);
 
-    // terminate.setText(tr("Terminate Playback").toUtf8().constData());
+    terminate->setText(tr("Terminate Playback"));
 }
 
 SinkInputWidget::~SinkInputWidget(void) {

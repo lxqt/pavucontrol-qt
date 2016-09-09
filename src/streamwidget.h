@@ -60,6 +60,8 @@ public:
 
 protected:
     MainWindow* mpMainWindow;
+
+    QAction * terminate;
 };
 
 #endif
