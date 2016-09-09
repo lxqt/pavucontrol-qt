@@ -25,9 +25,12 @@
 #include "sourceoutputwidget.h"
 #include "mainwindow.h"
 #include "sourcewidget.h"
+#include <QMenu>
 
 SourceOutputWidget::SourceOutputWidget(MainWindow *parent) :
-    StreamWidget(parent) {
+    StreamWidget(parent),
+    menu{new QMenu{this}}
+{
 
     gchar *txt;
     directionLabel->setText(txt = g_markup_printf_escaped("<i>%s</i>", tr("from").toUtf8().constData()));
@@ -44,7 +47,6 @@ SourceOutputWidget::SourceOutputWidget(MainWindow *parent) :
 
 
 SourceOutputWidget::~SourceOutputWidget(void) {
-  clearMenu();
 }
 
 void SourceOutputWidget::setSourceIndex(uint32_t idx) {
@@ -101,34 +103,18 @@ void SourceOutputWidget::onKill() {
 }
 
 
-void SourceOutputWidget::clearMenu() {
-#if 0
-  while (!sourceMenuItems.empty()) {
-    std::map<uint32_t, SourceMenuItem*>::iterator i = sourceMenuItems.begin();
-    delete i->second;
-    sourceMenuItems.erase(i);
-  }
-#endif
-}
-
 void SourceOutputWidget::buildMenu() {
-#if 0
   for (std::map<uint32_t, SourceWidget*>::iterator i = mpMainWindow->sourceWidgets.begin(); i != mpMainWindow->sourceWidgets.end(); ++i) {
-    SourceMenuItem *m;
-    sourceMenuItems[i->second->index] = m = new SourceMenuItem(this, i->second->description, i->second->index, i->second->index == mSourceIndex);
-    menu.append(m->menuItem);
+      menu->addAction(new SourceMenuItem{this, i->second->description, i->second->index, i->second->index == mSourceIndex, menu});
   }
-  menu.show_all();
-#endif
 }
 
-#if 0
 void SourceOutputWidget::SourceMenuItem::onToggle() {
 
   if (widget->updating)
     return;
 
-  if (!menuItem.get_active())
+  if (!isChecked())
     return;
 
   /*if (!mpMainWindow->sourceWidgets.count(widget->index))
@@ -142,10 +128,9 @@ void SourceOutputWidget::SourceMenuItem::onToggle() {
 
   pa_operation_unref(o);
 }
-#endif
 
 void SourceOutputWidget::onDeviceChangePopup() {
-    clearMenu();
+    menu->clear();
     buildMenu();
-//    menu.popup(1, 0);
+    menu->popup(QCursor::pos());
 }

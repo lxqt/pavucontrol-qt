@@ -26,6 +26,7 @@
 #include "streamwidget.h"
 
 class MainWindow;
+class QMenu;
 
 class SourceOutputWidget : public StreamWidget {
     Q_OBJECT
@@ -51,26 +52,28 @@ private:
     void clearMenu();
     void buildMenu();
 
-    // Gtk::Menu menu;
-#if 0
-    struct SourceMenuItem {
-      SourceMenuItem(SourceOutputWidget *w, const char *label, uint32_t i, bool active) :
-      widget(w),
-      menuItem(label),
-      index(i) {
-        menuItem.set_active(active);
-        menuItem.set_draw_as_radio(true);
-        menuItem.signal_toggled().connect(sigc::mem_fun(*this, &SourceMenuItem::onToggle));
-      }
+    QMenu * menu;
 
-      SourceOutputWidget *widget;
-      Gtk::CheckMenuItem menuItem;
-      uint32_t index;
-      void onToggle();
+    struct SourceMenuItem : public QAction
+    {
+        SourceMenuItem(SourceOutputWidget *w
+                , const char *label
+                , uint32_t i
+                , bool active
+                , QObject * parent = nullptr)
+            : QAction{label, parent}
+            , widget(w)
+            , index(i)
+        {
+            setCheckable(true);
+            setChecked(active);
+            connect(this, &QAction::toggled, [this] { onToggle(); });
+        }
+
+        SourceOutputWidget *widget;
+        uint32_t index;
+        void onToggle();
     };
-
-    std::map<uint32_t, SourceMenuItem*> sourceMenuItems;
-#endif
 };
 
 #endif
