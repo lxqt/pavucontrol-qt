@@ -25,10 +25,12 @@
 #include "sinkinputwidget.h"
 #include "mainwindow.h"
 #include "sinkwidget.h"
+#include <QMenu>
 
 
 SinkInputWidget::SinkInputWidget(MainWindow *parent) :
-    StreamWidget(parent) {
+    StreamWidget(parent),
+    menu{new QMenu{this}} {
 
     gchar *txt;
     directionLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped("<i>%s</i>", tr("on").toUtf8().constData())));
@@ -38,7 +40,6 @@ SinkInputWidget::SinkInputWidget(MainWindow *parent) :
 }
 
 SinkInputWidget::~SinkInputWidget(void) {
-    clearMenu();
 }
 
 void SinkInputWidget::setSinkIndex(uint32_t idx) {
@@ -92,33 +93,17 @@ void SinkInputWidget::onKill() {
     pa_operation_unref(o);
 }
 
-void SinkInputWidget::clearMenu() {
-#if 0
-  while (!sinkMenuItems.empty()) {
-    std::map<uint32_t, SinkMenuItem*>::iterator i = sinkMenuItems.begin();
-    delete i->second;
-    sinkMenuItems.erase(i);
-  }
-#endif
-}
-
 void SinkInputWidget::buildMenu() {
-#if 0
   for (std::map<uint32_t, SinkWidget*>::iterator i = mpMainWindow->sinkWidgets.begin(); i != mpMainWindow->sinkWidgets.end(); ++i) {
-    SinkMenuItem *m;
-    sinkMenuItems[i->second->index] = m = new SinkMenuItem(this, i->second->description, i->second->index, i->second->index == mSinkIndex);
-    menu.append(m->menuItem);
+      menu->addAction(new SinkMenuItem{this, i->second->description, i->second->index, i->second->index == mSinkIndex, menu});
   }
-  menu.show_all();
-#endif
 }
 
-#if 0
 void SinkInputWidget::SinkMenuItem::onToggle() {
   if (widget->updating)
     return;
 
-  if (!menuItem.get_active())
+  if (!isChecked())
     return;
 
   /*if (!mpMainWindow->sinkWidgets.count(widget->index))
@@ -133,10 +118,8 @@ void SinkInputWidget::SinkMenuItem::onToggle() {
   pa_operation_unref(o);
 }
 
-#endif
-
 void SinkInputWidget::onDeviceChangePopup() {
-    clearMenu();
+    menu->clear();
     buildMenu();
-    // menu.popup(1, 0);
+    menu->popup(QCursor::pos());
 }

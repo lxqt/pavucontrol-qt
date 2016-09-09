@@ -26,6 +26,7 @@
 #include "streamwidget.h"
 
 class MainWindow;
+class QMenu;
 
 class SinkInputWidget : public StreamWidget {
     Q_OBJECT
@@ -46,29 +47,30 @@ public:
 private:
     uint32_t mSinkIndex;
 
-    void clearMenu();
     void buildMenu();
-#if 0
-    // Gtk::Menu menu;
 
-    struct SinkMenuItem {
-      SinkMenuItem(SinkInputWidget *w, const char *label, uint32_t i, bool active) :
-      widget(w),
-      menuItem(label),
-      index(i) {
-        menuItem.set_active(active);
-        menuItem.set_draw_as_radio(true);
-        menuItem.signal_toggled().connect(sigc::mem_fun(*this, &SinkMenuItem::onToggle));
-      }
+    QMenu * menu;
 
-      SinkInputWidget *widget;
-      Gtk::CheckMenuItem menuItem;
-      uint32_t index;
-      void onToggle();
+    struct SinkMenuItem : public QAction
+    {
+        SinkMenuItem(SinkInputWidget *w
+                , const char *label
+                , uint32_t i
+                , bool active
+                , QObject * parent = nullptr)
+            : QAction(label, parent)
+            , widget(w)
+            , index(i)
+        {
+            setCheckable(true);
+            setChecked(active);
+            connect(this, &QAction::toggled, [this] { onToggle(); });
+        }
+
+        SinkInputWidget *widget;
+        uint32_t index;
+        void onToggle();
     };
-
-    std::map<uint32_t, SinkMenuItem*> sinkMenuItems;
-#endif
 };
 
 #endif
