@@ -32,13 +32,8 @@ RoleWidget::RoleWidget(MainWindow *parent) :
     lockToggleButton->hide();
     directionLabel->hide();
     deviceButton->hide();
+    setContextMenuPolicy(Qt::DefaultContextMenu);
 }
-
-/*
-bool RoleWidget::onContextTriggerEvent(GdkEventButton*) {
-    return false;
-}
-*/
 
 void RoleWidget::onMuteToggleButton() {
     StreamWidget::onMuteToggleButton();

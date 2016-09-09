@@ -39,32 +39,18 @@ StreamWidget::StreamWidget(MainWindow *parent) :
     timeout.setInterval(100);
     connect(&timeout, &QTimer::timeout, this, &StreamWidget::timeoutEvent);
 
-//    this->signal_button_press_event().connect(sigc::mem_fun(*this, &StreamWidget::onContextTriggerEvent));
     connect(muteToggleButton, &QToolButton::toggled, this, &StreamWidget::onMuteToggleButton);
     connect(lockToggleButton, &QToolButton::toggled, this, &StreamWidget::onLockToggleButton);
     connect(deviceButton, &QAbstractButton::released, this, &StreamWidget::onDeviceChangePopup);
 
-#if 0
+    QAction * terminate = new QAction{tr("Terminate"), this};
+    connect(terminate, &QAction::triggered, this, &StreamWidget::onKill);
+    addAction(terminate);
+    setContextMenuPolicy(Qt::ActionsContextMenu);
 
-    terminate.set_label(tr("Terminate").toUtf8().constData());
-    terminate.signal_activate().connect(sigc::mem_fun(*this, &StreamWidget::onKill));
-    contextMenu.append(terminate);
-    contextMenu.show_all();
-#endif
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
         channels[i] = NULL;
 }
-
-
-#if 0
-bool StreamWidget::onContextTriggerEvent(GdkEventButton* event) {
-    if (GDK_BUTTON_PRESS == event->type && 3 == event->button) {
-        contextMenu.popup(event->button, event->time);
-        return true;
-    }
-    return false;
-}
-#endif
 
 void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
     channelMap = m;

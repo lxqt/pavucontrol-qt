@@ -60,9 +60,6 @@ public:
 
 protected:
     MainWindow* mpMainWindow;
-
-    // Gtk::Menu contextMenu;
-    // Gtk::MenuItem terminate;
 };
 
 #endif
