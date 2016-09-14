@@ -11,8 +11,7 @@
     <message>
         <location filename="../cardwidget.ui" line="29"/>
         <source>Card Name</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="38"/>
@@ -22,8 +21,7 @@
     <message>
         <location filename="../cardwidget.cc" line="66"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -36,8 +34,7 @@
     <message>
         <location filename="../channelwidget.ui" line="20"/>
         <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="34"/>
@@ -47,14 +44,12 @@
     <message>
         <location filename="../channelwidget.cc" line="96"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="96"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="98"/>
@@ -64,8 +59,7 @@
     <message>
         <location filename="../channelwidget.cc" line="101"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -181,8 +175,7 @@
     <message>
         <location filename="../mainwindow.ui" line="50"/>
         <source>&lt;i&gt;No application is currently playing audio.&lt;/i&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="61"/>
@@ -218,8 +211,7 @@
     <message>
         <location filename="../mainwindow.ui" line="109"/>
         <source>&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
@@ -284,14 +276,12 @@
     <message>
         <location filename="../mainwindow.ui" line="275"/>
         <source>&amp;Configuration</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="296"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="307"/>
@@ -338,32 +328,27 @@
     <message>
         <location filename="../mainwindow.cc" line="498"/>
         <source>Failed to read data from stream</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="542"/>
         <source>Peak detect</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="543"/>
         <source>Failed to create monitoring stream</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="558"/>
         <source>Failed to connect monitoring stream</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="705"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="877"/>
@@ -386,57 +371,48 @@
     <message>
         <location filename="../pavucontrol.cc" line="81"/>
         <source>Card callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="104"/>
         <source>Sink callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="127"/>
         <source>Source callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="146"/>
         <source>Sink input callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="165"/>
         <source>Source output callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="205"/>
         <source>Client callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="221"/>
         <source>Server info callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="239"/>
         <location filename="../pavucontrol.cc" line="536"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="257"/>
         <source>pa_ext_stream_restore_read() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="275"/>
@@ -463,82 +439,69 @@
     <message>
         <location filename="../pavucontrol.cc" line="350"/>
         <source>pa_context_get_sink_info_by_index() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="363"/>
         <source>pa_context_get_source_info_by_index() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="376"/>
         <location filename="../pavucontrol.cc" line="389"/>
         <source>pa_context_get_sink_input_info() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="402"/>
         <source>pa_context_get_client_info() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="412"/>
         <location filename="../pavucontrol.cc" line="477"/>
         <source>pa_context_get_server_info() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="425"/>
         <source>pa_context_get_card_info_by_index() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="468"/>
         <source>pa_context_subscribe() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="484"/>
         <source>pa_context_client_info_list() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="491"/>
         <source>pa_context_get_card_info_list() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="498"/>
         <source>pa_context_get_sink_info_list() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="505"/>
         <source>pa_context_get_source_info_list() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="512"/>
         <source>pa_context_get_sink_input_info_list() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="519"/>
         <source>pa_context_get_source_output_info_list() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="578"/>
@@ -593,8 +556,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../rolewidget.cc" line="64"/>
         <source>pa_ext_stream_restore_write() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -602,38 +564,32 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="34"/>
         <source>on</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="52"/>
         <source>Unknown output</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="63"/>
         <source>pa_context_set_sink_input_volume() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="78"/>
         <source>pa_context_set_sink_input_mute() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="88"/>
         <source>pa_context_kill_sink_input() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="129"/>
         <source>pa_context_move_sink_input_by_index() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -641,8 +597,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkwidget.cc" line="84"/>
         <source>pa_context_set_sink_volume_by_index() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="99"/>
@@ -652,20 +607,17 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkwidget.cc" line="117"/>
         <source>pa_context_set_sink_mute_by_index() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="131"/>
         <source>pa_context_set_default_sink() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="147"/>
         <source>pa_context_set_sink_port_by_index() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="187"/>
@@ -678,14 +630,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="33"/>
         <source>from</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="58"/>
         <source>Unknown input</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="70"/>
@@ -700,14 +650,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="96"/>
         <source>pa_context_kill_source_output() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="139"/>
         <source>pa_context_move_source_output_by_index() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -715,26 +663,22 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourcewidget.cc" line="35"/>
         <source>pa_context_set_source_volume_by_index() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="50"/>
         <source>pa_context_set_source_mute_by_index() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="64"/>
         <source>pa_context_set_default_source() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="80"/>
         <source>pa_context_set_source_port_by_index() failed</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -757,8 +701,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="43"/>
         <source>direction</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="50"/>

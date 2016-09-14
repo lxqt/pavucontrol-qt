@@ -11,8 +11,7 @@
     <message>
         <location filename="../cardwidget.ui" line="29"/>
         <source>Card Name</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="38"/>
@@ -45,14 +44,12 @@
     <message>
         <location filename="../channelwidget.cc" line="96"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="96"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="98"/>
@@ -62,8 +59,7 @@
     <message>
         <location filename="../channelwidget.cc" line="101"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -280,14 +276,12 @@
     <message>
         <location filename="../mainwindow.ui" line="275"/>
         <source>&amp;Configuration</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="296"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="307"/>
@@ -354,8 +348,7 @@
     <message>
         <location filename="../mainwindow.cc" line="705"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="877"/>
@@ -571,14 +564,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="34"/>
         <source>on</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="52"/>
         <source>Unknown output</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="63"/>
@@ -639,14 +630,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="33"/>
         <source>from</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="58"/>
         <source>Unknown input</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="70"/>
@@ -712,8 +701,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="43"/>
         <source>direction</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="50"/>

@@ -44,14 +44,12 @@
     <message>
         <location filename="../channelwidget.cc" line="96"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="96"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="98"/>
@@ -61,8 +59,7 @@
     <message>
         <location filename="../channelwidget.cc" line="101"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -341,20 +338,17 @@
     <message>
         <location filename="../mainwindow.cc" line="543"/>
         <source>Failed to create monitoring stream</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="558"/>
         <source>Failed to connect monitoring stream</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="705"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="877"/>
@@ -377,44 +371,37 @@
     <message>
         <location filename="../pavucontrol.cc" line="81"/>
         <source>Card callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="104"/>
         <source>Sink callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="127"/>
         <source>Source callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="146"/>
         <source>Sink input callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="165"/>
         <source>Source output callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="205"/>
         <source>Client callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="221"/>
         <source>Server info callback failure</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="239"/>
@@ -577,14 +564,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="34"/>
         <source>on</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="52"/>
         <source>Unknown output</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="63"/>
@@ -617,8 +602,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkwidget.cc" line="99"/>
         <source>Volume Control Feedback Sound</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="117"/>
@@ -646,14 +630,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="33"/>
         <source>from</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="58"/>
         <source>Unknown input</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="70"/>
@@ -719,8 +701,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="43"/>
         <source>direction</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="50"/>

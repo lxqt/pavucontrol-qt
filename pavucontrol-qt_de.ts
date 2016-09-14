@@ -216,7 +216,7 @@
     <message>
         <location filename="../mainwindow.ui" line="147"/>
         <source>&amp;Output Devices</source>
-        <translation>A_usgabegeräte</translation>
+        <translation>A&amp;usgabegeräte</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="168"/>
@@ -348,8 +348,7 @@
     <message>
         <location filename="../mainwindow.cc" line="705"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="877"/>
