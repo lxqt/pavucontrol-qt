@@ -166,7 +166,6 @@ void DeviceWidget::setDefault(bool isDefault) {
 
 bool DeviceWidget::timeoutEvent() {
     executeVolumeUpdate();
-    qDebug("TIMEOUT!");
     return false;
 }
 
