@@ -38,8 +38,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>730</width>
-            <height>423</height>
+            <width>724</width>
+            <height>35</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -63,7 +63,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>Show:</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Show:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -103,8 +103,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>730</width>
-            <height>423</height>
+            <width>724</width>
+            <height>35</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -128,7 +128,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Show:</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Show:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -168,8 +168,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>730</width>
-            <height>423</height>
+            <width>724</width>
+            <height>35</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -193,7 +193,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>Show:</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Show:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -233,8 +233,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>730</width>
-            <height>423</height>
+            <width>724</width>
+            <height>35</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -258,7 +258,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>Show:</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Show:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -308,8 +308,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>730</width>
-            <height>433</height>
+            <width>724</width>
+            <height>35</height>
            </rect>
           </property>
           <property name="sizePolicy">
