@@ -857,7 +857,7 @@ bool MainWindow::createEventRoleWidget() {
     eventRoleWidget->boldNameLabel->setText("");
     eventRoleWidget->nameLabel->setText(tr("System Sounds").toUtf8().constData());
 
-    // eventRoleWidget->iconImage->set_from_icon_name("multimedia-volume-control", Gtk::ICON_SIZE_SMALL_TOOLBAR);
+    setIconByName(eventRoleWidget->iconImage, "multimedia-volume-control");
 
     eventRoleWidget->device = "";
 
