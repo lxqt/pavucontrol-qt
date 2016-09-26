@@ -13,7 +13,7 @@ The software belongs to the LXQt project but its usage isn't limited to this des
 ### Compiling source code
 
 Runtime dependencies are qtbase and PulseAudio client library libpulse.   
-Additional build dependencies are CMake, xdg-user-dirs and [liblxqt](https://github.com/lxde/liblxqt) as well as optionally Git to pull latest VCS checkouts. The localization files were outsourced to repository [lxqt-l10n](https://github.com/lxde/lxqt-l10n) so the corresponding dependencies are needed, too. Please refer to this repository's `README.md` for further information.   
+Additional build dependencies are CMake and [liblxqt](https://github.com/lxde/liblxqt) as well as optionally Git to pull latest VCS checkouts. The localization files were outsourced to repository [lxqt-l10n](https://github.com/lxde/lxqt-l10n) so the corresponding dependencies are needed, too. Please refer to this repository's `README.md` for further information.
 
 Code configuration is handled by CMake. CMake variable `CMAKE_INSTALL_PREFIX` has to be set to `/usr` on most operating systems.   
 

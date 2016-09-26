@@ -16,7 +16,6 @@ find_package(Qt5Widgets REQUIRED QUIET)
 find_package(Qt5LinguistTools REQUIRED QUIET)
 
 find_package(lxqt REQUIRED QUIET)
-find_package(XdgUserDirs REQUIRED QUIET)
 
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
 include(LXQtTranslate)
