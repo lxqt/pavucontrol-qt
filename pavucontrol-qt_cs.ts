@@ -6,7 +6,7 @@
     <message>
         <location filename="../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="29"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../cardwidget.ui" line="38"/>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil:</translation>
     </message>
     <message>
         <location filename="../cardwidget.cc" line="66"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="96"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../channelwidget.cc" line="98"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;100% (0 dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="101"/>
@@ -67,22 +67,22 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="22"/>
         <source>icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikona</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Název zařízení</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="58"/>
         <source>lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Zámek</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="88"/>
@@ -92,72 +92,72 @@
     <message>
         <location filename="../devicewidget.ui" line="104"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat pokročilé volby</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="117"/>
         <source>PCM</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="124"/>
         <source>AC3</source>
-        <translation type="unfinished"></translation>
+        <translation>AC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="131"/>
         <source>EAC3</source>
-        <translation type="unfinished"></translation>
+        <translation>EAC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="138"/>
         <source>DTS</source>
-        <translation type="unfinished"></translation>
+        <translation>DTS</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="145"/>
         <source>MPEG</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="152"/>
         <source>AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>AAC</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="165"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Posun prodlevy:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> ms</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="53"/>
         <source>Rename Device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Přejmenovat zařízení...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_port_latency_offset() selhalo</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="241"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Promiňte, přejmenování zařízení není podporováno.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="246"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Pro přejmenovávání zařízení je potřeba do serveru PulseAudio nahrát modul správce zařízení</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="267"/>
         <source>pa_ext_device_manager_write() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_write() selhalo</translation>
     </message>
 </context>
 <context>
@@ -183,25 +183,25 @@
         <location filename="../mainwindow.ui" line="179"/>
         <location filename="../mainwindow.ui" line="238"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="69"/>
         <location filename="../mainwindow.ui" line="128"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Všechny proudy</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="133"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Programy</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="138"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuální proudy</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
@@ -211,7 +211,7 @@
     <message>
         <location filename="../mainwindow.ui" line="109"/>
         <source>&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Žádná aplikace momentálně nenahrává zvuk.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Žádný program nyní nenahrává zvuk.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
@@ -226,22 +226,22 @@
     <message>
         <location filename="../mainwindow.ui" line="187"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Všechna výstupní zařízení</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="192"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Fyzická výstupní zařízení</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="197"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuální výstupní zařízení</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
         <source>&amp;Input Devices</source>
-        <translation>V_stupní zařízení</translation>
+        <translation>&amp;Vstupní zařízení</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="227"/>
@@ -251,32 +251,32 @@
     <message>
         <location filename="../mainwindow.ui" line="246"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Všechna vstupní zařízení</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="251"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Vše vyjma obrazovek</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="256"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Fyzická vstupní zařízení</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="261"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuální vstupní zařízení</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="266"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrazovky</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
         <source>&amp;Configuration</source>
-        <translation>N_astavení</translation>
+        <translation>&amp;Nastavení</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="296"/>
@@ -286,44 +286,44 @@
     <message>
         <location filename="../mainwindow.ui" line="307"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat měřidla hlasitosti</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="318"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="147"/>
         <source>Error reading config file %s: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při čtení souboru s nastavením %s: %s</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="218"/>
         <source>Error saving preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při ukládání nastavení</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="226"/>
         <source>Error writing config file %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při zápisu souboru s nastavením %s</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="261"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> (zastrčeno)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="265"/>
         <location filename="../mainwindow.cc" line="359"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> (nedostupné)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="267"/>
         <location filename="../mainwindow.cc" line="356"/>
         <source> (unplugged)</source>
-        <translation type="unfinished"></translation>
+        <translation> (vytaženo)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="498"/>
@@ -338,12 +338,12 @@
     <message>
         <location filename="../mainwindow.cc" line="543"/>
         <source>Failed to create monitoring stream</source>
-        <translation>Nepodařilo se vytvořit monitorovací proud</translation>
+        <translation>Nepodařilo se vytvořit sledovací proud</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="558"/>
         <source>Failed to connect monitoring stream</source>
-        <translation>Nepodařilo se připojit monitorovací proud</translation>
+        <translation>Nepodařilo se připojit sledovací proud</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="705"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1208"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Zřizuje se spojení s PulseAudio. Počkejte, prosím, ...</translation>
     </message>
 </context>
 <context>
@@ -366,7 +366,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="60"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="81"/>
@@ -407,7 +407,7 @@
         <location filename="../pavucontrol.cc" line="239"/>
         <location filename="../pavucontrol.cc" line="536"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>Nepodařilo se spustit rozšíření stream_restore: %s</translation>
+        <translation>Nepodařilo se spustit rozšíření obnovení proudu: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="257"/>
@@ -418,23 +418,23 @@
         <location filename="../pavucontrol.cc" line="275"/>
         <location filename="../pavucontrol.cc" line="550"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se spustit rozšíření obnovení zařízení: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="296"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_read_sink_formats() selhalo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="314"/>
         <location filename="../pavucontrol.cc" line="563"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se spustit rozšíření správce zařízení: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="333"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_read() selhalo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="350"/>
@@ -507,7 +507,7 @@
         <location filename="../pavucontrol.cc" line="578"/>
         <location filename="../pavucontrol.cc" line="629"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Spojení selhalo. Pokus o opětovné připojení</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="601"/>
@@ -528,27 +528,27 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../pavucontrol.cc" line="653"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat při nahrání určitou kartu.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="659"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation type="unfinished"></translation>
+        <translation>Opakovat pořád, pokud PulseAudio skončí (každých 5 sekund).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="666"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvětšit okno.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Show version</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat verzi</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="695"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>Vážná chyba: Nelze se spojit s PulseAudio</translation>
     </message>
 </context>
 <context>
@@ -622,7 +622,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkwidget.cc" line="187"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_save_sink_formats() selhalo</translation>
     </message>
 </context>
 <context>
@@ -640,12 +640,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="70"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_volume() selhalo</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="85"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_mute() selhalo</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="96"/>
@@ -686,17 +686,17 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="22"/>
         <source>icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikona</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Název zařízení</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="43"/>
@@ -711,12 +711,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="72"/>
         <source>lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Zámek</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="49"/>
         <source>Terminate</source>
-        <translation>Ukončit přehrávání</translation>
+        <translation>Ukončit</translation>
     </message>
 </context>
 </TS>
