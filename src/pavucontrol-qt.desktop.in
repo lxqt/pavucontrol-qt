@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=Qt PulseAudio Volume Control
+Name=PulseAudio Volume Control (Qt)
 GenericName=Volume Control
 Comment=Adjust the volume level
 Exec=pavucontrol-qt
