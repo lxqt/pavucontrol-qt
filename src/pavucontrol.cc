@@ -49,6 +49,7 @@
 #include <QTranslator>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
+#include "uniqueapplication.h"
 
 static pa_context* context = NULL;
 static pa_mainloop_api* api = NULL;
@@ -645,7 +646,11 @@ int main(int argc, char *argv[]) {
 
     signal(SIGPIPE, SIG_IGN);
 
-    QApplication app(argc, argv);
+    UniqueApplication app(argc, argv);
+
+    if(app.active())
+        return 0;
+
 
     QString locale = QLocale::system().name();
     QTranslator qtTranslator;
