@@ -6,7 +6,7 @@
     <message>
         <location filename="../../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../../cardwidget.ui" line="29"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../../cardwidget.ui" line="38"/>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Профиль:</translation>
     </message>
     <message>
         <location filename="../../cardwidget.cc" line="66"/>
@@ -41,22 +41,22 @@
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Тишина&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Тишина&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Максимум&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Минимум&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;100% (0дБ)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;База&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;База&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -83,22 +83,22 @@
     <message>
         <location filename="../../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя устройства</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Выключить звук</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Связать каналы вместе</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="85"/>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать расширенные настройки</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="172"/>
@@ -158,32 +158,32 @@
     <message>
         <location filename="../../devicewidget.cc" line="40"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Переименовать устройство...</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="154"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Сбой pa_context_set_port_latency_offset()</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="225"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Простите, но переименование устройств не поддерживается.</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="226"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Чтобы переименовывать устройства, вам необходимо загрузить module-device-manager в сервер PulseAudio</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="232"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Переименовать устройство %1 в:</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="239"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Сбой pa_ext_device_manager_set_device_description()</translation>
     </message>
 </context>
 <context>
@@ -209,30 +209,30 @@
         <location filename="../../mainwindow.ui" line="196"/>
         <location filename="../../mainwindow.ui" line="261"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать:</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="74"/>
         <location filename="../../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Все потоки</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="79"/>
         <location filename="../../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Приложения</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="84"/>
         <location filename="../../mainwindow.ui" line="149"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Виртуальные потоки</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="93"/>
         <source>&amp;Recording</source>
-        <translation>_Запись</translation>
+        <translation>&amp;Запись</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="120"/>
@@ -242,7 +242,7 @@
     <message>
         <location filename="../../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>Устройства В_ывода</translation>
+        <translation>Устройства В&amp;ывода</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="185"/>
@@ -252,22 +252,22 @@
     <message>
         <location filename="../../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Все устройства вывода</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Аппаратные устройства вывода</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="214"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Виртуальные устройства вывода</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>Устройства В_вода</translation>
+        <translation>Устройства &amp;Ввода</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="250"/>
@@ -277,32 +277,32 @@
     <message>
         <location filename="../../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Все устройства ввода</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Все кроме мониторов</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Аппаратные устройства ввода</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Виртуальные устройства ввода</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Мониторы</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="298"/>
         <source>&amp;Configuration</source>
-        <translation>_Конфигурация</translation>
+        <translation>&amp;Конфигурация</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="325"/>
@@ -312,29 +312,29 @@
     <message>
         <location filename="../../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>Показывать измерители громкости</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="347"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> (подключено)</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="163"/>
         <location filename="../../mainwindow.cc" line="257"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> (недоступно)</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="165"/>
         <location filename="../../mainwindow.cc" line="254"/>
         <source> (unplugged)</source>
-        <translation type="unfinished"></translation>
+        <translation> (отключено)</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="386"/>
@@ -359,7 +359,7 @@
     <message>
         <location filename="../../mainwindow.cc" line="585"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Входные данные приёмника игнорируются, так как они рассматриваются как событие и будут обработаны виджетом событий</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="757"/>
@@ -369,7 +369,7 @@
     <message>
         <location filename="../../mainwindow.cc" line="1088"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Установление соединения с PulseAudio. Подождите...</translation>
     </message>
 </context>
 <context>
@@ -377,7 +377,7 @@
     <message>
         <location filename="../../pavucontrol.cc" line="67"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="88"/>
@@ -429,23 +429,23 @@
         <location filename="../../pavucontrol.cc" line="282"/>
         <location filename="../../pavucontrol.cc" line="557"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Сбой инициализации расширения восстановления устройства: %s</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="303"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Сбой pa_ext_device_restore_read_sink_formats()</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="321"/>
         <location filename="../../pavucontrol.cc" line="570"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Сбой инициализации расширения диспетчера устройств: %s</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="340"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Сбой pa_ext_device_manager_read()</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="357"/>
@@ -518,7 +518,7 @@
         <location filename="../../pavucontrol.cc" line="585"/>
         <location filename="../../pavucontrol.cc" line="636"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка подключения, пытаюсь переподключит</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="608"/>
@@ -540,22 +540,22 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../pavucontrol.cc" line="676"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать вкладку на загрузку.</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="679"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторять вечно, если pa завершит работу (каждые 5 секунд).</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="682"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Распахнуть окно.</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="707"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>Критическая ошибка: Невозможно подключиться к PulseAudio</translation>
     </message>
 </context>
 <context>
@@ -571,7 +571,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sinkinputwidget.cc" line="36"/>
         <source>on</source>
-        <translation type="unfinished"></translation>
+        <translation>вкл.</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="39"/>
@@ -581,7 +581,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sinkinputwidget.cc" line="53"/>
         <source>Unknown output</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизвестный вывод</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="64"/>
@@ -633,7 +633,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sinkwidget.cc" line="166"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Сбой pa_ext_device_restore_save_sink_formats()</translation>
     </message>
 </context>
 <context>
@@ -641,27 +641,27 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="36"/>
         <source>from</source>
-        <translation type="unfinished"></translation>
+        <translation>из</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Прервать запись</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="60"/>
         <source>Unknown input</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизвестный вывод</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="72"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Сбой pa_context_set_source_output_volume()</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="87"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Сбой pa_context_set_source_output_mute()</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="98"/>
@@ -702,32 +702,32 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Название устройства</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="52"/>
         <source>direction</source>
-        <translation type="unfinished"></translation>
+        <translation>направление</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>устройство</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Выключить звук</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Связать каналы вместе</translation>
     </message>
     <message>
         <source>Device</source>
