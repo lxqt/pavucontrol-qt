@@ -6,7 +6,7 @@
     <message>
         <location filename="../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="29"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../cardwidget.ui" line="38"/>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Perfil:</translation>
     </message>
     <message>
         <location filename="../cardwidget.cc" line="66"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="96"/>
@@ -49,17 +49,17 @@
     <message>
         <location filename="../channelwidget.cc" line="96"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation>&lt;small&gt;Min&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Mín.&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="98"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;100% (0dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="101"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation>&lt;small&gt;&lt;i&gt;Baixos&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -67,97 +67,97 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="22"/>
         <source>icon</source>
-        <translation type="unfinished"></translation>
+        <translation>ícone</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Título do dispositivo</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="58"/>
         <source>lock</source>
-        <translation type="unfinished"></translation>
+        <translation>bloquear</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="88"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Porto:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Porta:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="104"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar opções avançadas</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="117"/>
         <source>PCM</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="124"/>
         <source>AC3</source>
-        <translation type="unfinished"></translation>
+        <translation>AC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="131"/>
         <source>EAC3</source>
-        <translation type="unfinished"></translation>
+        <translation>EAC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="138"/>
         <source>DTS</source>
-        <translation type="unfinished"></translation>
+        <translation>DTS</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="145"/>
         <source>MPEG</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="152"/>
         <source>AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>AAC</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="165"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Desvio de latência:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> ms</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="53"/>
         <source>Rename Device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Renomear dispositivo...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_port_latency_offset() falhou</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="241"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desculpe mas não é possível renomear dispositivos.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="246"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Tem que ativar module-device-manager no servidor PulseAudio para poder renomear dispositivos</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="267"/>
         <source>pa_ext_device_manager_write() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_write() falhou</translation>
     </message>
 </context>
 <context>
@@ -165,17 +165,17 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>Volume Control</source>
-        <translation>Controlo de Volume</translation>
+        <translation>Controlo de volume</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="29"/>
         <source>&amp;Playback</source>
-        <translation>&amp;Reprodução</translation>
+        <translation>Re&amp;produção</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="50"/>
         <source>&lt;i&gt;No application is currently playing audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Nenhuma aplicação está actualmente a reproduzir áudio.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Não existem aplicações a reproduzir áudio.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="61"/>
@@ -183,95 +183,95 @@
         <location filename="../mainwindow.ui" line="179"/>
         <location filename="../mainwindow.ui" line="238"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="69"/>
         <location filename="../mainwindow.ui" line="128"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos os fluxos</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="133"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplicações</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="138"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Fluxos virtuais</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
         <source>&amp;Recording</source>
-        <translation>A &amp;Gravar</translation>
+        <translation>G&amp;ravação</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="109"/>
         <source>&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Nenhuma aplicação está actualmente a gravar áudio.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Não existem aplicações a gravar áudio.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
         <source>&amp;Output Devices</source>
-        <translation>Dispositivos de &amp;Saída</translation>
+        <translation>Disp&amp;ositivos de saída</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="168"/>
         <source>&lt;i&gt;No output devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Não está disponível nenhum dispositivo de saída&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Não existem dispositivos de saída&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="187"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos os dispositivos de saída</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="192"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivos de hardware</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="197"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivos virtuais</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
         <source>&amp;Input Devices</source>
-        <translation>Dispositivos de &amp;Entrada</translation>
+        <translation>Dispos&amp;itivos de entrada</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="227"/>
         <source>&lt;i&gt;No input devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Não está disponível nenhum dispositivo de entrada&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Não existem dispositivos de entrada&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="246"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos os dispositivos de entrada</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="251"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos exceto os monitores</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="256"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivos de hardware</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="261"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivos virtuais</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="266"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Monitores</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
@@ -281,84 +281,84 @@
     <message>
         <location filename="../mainwindow.ui" line="296"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Não está disponível nenhuma placa para configuração&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Não existem placas para configuração&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="307"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar medidores de volume</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="318"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="147"/>
         <source>Error reading config file %s: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro ao ler o ficheiro %s: %s</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="218"/>
         <source>Error saving preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro ao guardar as preferências</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="226"/>
         <source>Error writing config file %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro ao escrever o ficheiro %s</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="261"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> (conectado)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="265"/>
         <location filename="../mainwindow.cc" line="359"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> (disponível)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="267"/>
         <location filename="../mainwindow.cc" line="356"/>
         <source> (unplugged)</source>
-        <translation type="unfinished"></translation>
+        <translation> (não conectado)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="498"/>
         <source>Failed to read data from stream</source>
-        <translation>Falha ao ler dados do fluxo</translation>
+        <translation>Falha ao ler os dados do fluxo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="542"/>
         <source>Peak detect</source>
-        <translation>Detectado pico</translation>
+        <translation>Detetado pico</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="543"/>
         <source>Failed to create monitoring stream</source>
-        <translation>Falha ao criar um stream de monitorização</translation>
+        <translation>Falha ao criar o fluxo de monitorização</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="558"/>
         <source>Failed to connect monitoring stream</source>
-        <translation>Falha ao ligar o fluxo de monitorização</translation>
+        <translation>Falha ao conectar o fluxo de monitorização</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="705"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Por ter sido designado como um evento, &apos;sink-output&apos; será ignorado e gerido pelo widget de eventos</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="877"/>
         <source>System Sounds</source>
-        <translation>Sons do Sistema</translation>
+        <translation>Sons do sistema</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="1208"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>A estabelecer ligação ao servidor PulseAudio. Aguarde...</translation>
     </message>
 </context>
 <context>
@@ -366,48 +366,48 @@
     <message>
         <location filename="../pavucontrol.cc" line="60"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="81"/>
         <source>Card callback failure</source>
-        <translation>Falha no callback da placa</translation>
+        <translation>Falha no &apos;callback&apos; da placa</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="104"/>
         <source>Sink callback failure</source>
-        <translation>Sincronização &apos;callback&apos; falhou</translation>
+        <translation>Falha no &apos;callback&apos; do &apos;sink&apos;</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="127"/>
         <source>Source callback failure</source>
-        <translation>Falhou &apos;callback&apos; do código</translation>
+        <translation>Falha no &apos;callback&apos; da fonte</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="146"/>
         <source>Sink input callback failure</source>
-        <translation>Falhou entrada de sincronização &apos;callback&apos; </translation>
+        <translation>Falha no &apos;callback&apos; de entrada do &apos;sink&apos;</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="165"/>
         <source>Source output callback failure</source>
-        <translation>Falhou &apos;callback&apos; de saída</translation>
+        <translation>Falha no &apos;callback&apos; do destino</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="205"/>
         <source>Client callback failure</source>
-        <translation>Falhou &apos;callback&apos; do cliente</translation>
+        <translation>Falha no &apos;callback&apos; do cliente</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="221"/>
         <source>Server info callback failure</source>
-        <translation> Falhou &apos;callback&apos; de informação do servidor</translation>
+        <translation>Falha no &apos;callback&apos; da info do servidor</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="239"/>
         <location filename="../pavucontrol.cc" line="536"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>Falha ao inicializar a extensão de &quot;stream_restore&quot;: %s</translation>
+        <translation>Falha ao iniciar a extensão &apos;stream_restore&apos;: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="257"/>
@@ -418,23 +418,23 @@
         <location filename="../pavucontrol.cc" line="275"/>
         <location filename="../pavucontrol.cc" line="550"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha ao iniciar a extensão de restauro de dispositivos: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="296"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_read_sink_formats() falhou</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="314"/>
         <location filename="../pavucontrol.cc" line="563"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha ao iniciar a extensão de gestão de dispositivos: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="333"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_read() falhou</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="350"/>
@@ -507,12 +507,12 @@
         <location filename="../pavucontrol.cc" line="578"/>
         <location filename="../pavucontrol.cc" line="629"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha de ligação, a tentar novamente</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="601"/>
         <source>PulseAudio Volume Control</source>
-        <translation>Controlo de Volume PulseAudio</translation>
+        <translation>Controlo de volume PulseAudio</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="616"/>
@@ -523,32 +523,38 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha ao estabelecer ligação ao PulseAudio. Nova tentativa dentro de 5 segundos.
+
+É possível que a variável PULSE_SERVER do ambiente//X11 Root Window Properties ou
+que o servidor padrão definido em client.conf não estejam configurados corretamente.
+Esta situação pode ter tido origem num encerramento abrupto do servidor PulseAudio no sistema root do X11.
+Se for este o caso, o PulseAudio deverá ser reiniciado automaticamente. No entanto, se o PulseAudio não
+for reiniciado automaticamente, deve executar o comando start-pulseaudio-x11.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="653"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecione o separador a carregar automaticamente.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="659"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation type="unfinished"></translation>
+        <translation>Tentar novamente se o PulseAudio encerrar (a cada 5 segundos).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="666"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximizar a janela.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Show version</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar versão</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="695"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro fatal: incapaz de estabelecer a ligação ao PulseAudio</translation>
     </message>
 </context>
 <context>
@@ -569,7 +575,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="52"/>
         <source>Unknown output</source>
-        <translation>Resultado desconhecido</translation>
+        <translation>Saída desconhecida</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="63"/>
@@ -602,7 +608,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkwidget.cc" line="99"/>
         <source>Volume Control Feedback Sound</source>
-        <translation>Controlo de Volume Som Feedbak</translation>
+        <translation>Som de retorno do controlo de volume</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="117"/>
@@ -622,7 +628,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkwidget.cc" line="187"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_save_sink_formats() falhou</translation>
     </message>
 </context>
 <context>
@@ -640,12 +646,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="70"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_volume() falhou</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="85"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_mute() falhou</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="96"/>
@@ -686,37 +692,37 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="22"/>
         <source>icon</source>
-        <translation type="unfinished"></translation>
+        <translation>ícone</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Título do dispositivo</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="43"/>
         <source>direction</source>
-        <translation>direcção</translation>
+        <translation>direção</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="50"/>
         <source>Device</source>
-        <translation>Dispositivos</translation>
+        <translation>Dispositivo</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="72"/>
         <source>lock</source>
-        <translation type="unfinished"></translation>
+        <translation>bloquear</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="49"/>
         <source>Terminate</source>
-        <translation>Terminar a reprodução</translation>
+        <translation>Terminar</translation>
     </message>
 </context>
 </TS>
