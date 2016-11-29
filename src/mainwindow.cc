@@ -33,6 +33,7 @@
 #include "rolewidget.h"
 #include <QIcon>
 #include <QStyle>
+#include <QSettings>
 
 /* Used for profile sorting */
 struct profile_prio_compare {
@@ -89,65 +90,30 @@ MainWindow::MainWindow():
     connect(sourceTypeComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::onSourceTypeComboBoxChanged);
     connect(showVolumeMetersCheckButton, &QCheckBox::toggled, this, &MainWindow::onShowVolumeMetersCheckButtonToggled);
 
-    GKeyFile* config = g_key_file_new();
-    g_assert(config);
-    GKeyFileFlags flags = (GKeyFileFlags)( G_KEY_FILE_KEEP_COMMENTS | G_KEY_FILE_KEEP_TRANSLATIONS);
-    GError *err = nullptr;
-    m_config_filename = g_strconcat(g_get_user_config_dir(), "/pavucontrol.ini", nullptr);
+    const QSettings config;
 
-    /* Load the GKeyFile from keyfile.conf or return. */
-    if (g_key_file_load_from_file (config, m_config_filename, flags, &err)) {
-        int width  = g_key_file_get_integer(config, "window", "width", nullptr);
-        int height = g_key_file_get_integer(config, "window", "height", nullptr);
+    showVolumeMetersCheckButton->setChecked(config.value("window/showVolumeMeters", true).toBool());
 
-        /* When upgrading from a previous version, set showVolumeMeters to TRUE
-         * (default from glade file), so users don't complain about missing
-         * volume meters. */
-        if (g_key_file_has_key(config, "window", "showVolumeMeters", nullptr)) {
-            showVolumeMetersCheckButton->setChecked(g_key_file_get_boolean(config, "window", "showVolumeMeters", nullptr));
-        }
+    const QSize last_size  = config.value("window/size").toSize();
+    const QSize default_size = size(); // widget is resized in setupUi based on values in *.ui
+    if (last_size.width() >= default_size.width() && last_size.height() >= default_size.height())
+        resize(last_size);
 
-        const QSize default_size = size(); // widget is resized in setupUi based on values in *.ui
-        if (width >= default_size.width() && height >= default_size.height())
-            resize(width, height);
+    const QVariant sinkInputTypeSelection = config.value("window/sinkInputType");
+    if (sinkInputTypeSelection.isValid())
+        sinkInputTypeComboBox->setCurrentIndex(sinkInputTypeSelection.toInt());
 
-        int sinkInputTypeSelection = g_key_file_get_integer(config, "window", "sinkInputType", &err);
-        if (err == nullptr)
-            sinkInputTypeComboBox->setCurrentIndex(sinkInputTypeSelection);
-        else {
-            g_error_free(err);
-            err = nullptr;
-        }
+    const QVariant sourceOutputTypeSelection = config.value("window/sourceOutputType");
+    if (sourceOutputTypeSelection.isValid())
+        sourceOutputTypeComboBox->setCurrentIndex(sourceOutputTypeSelection.toInt());
 
-        int sourceOutputTypeSelection = g_key_file_get_integer(config, "window", "sourceOutputType", &err);
-        if (err == nullptr)
-            sourceOutputTypeComboBox->setCurrentIndex(sourceOutputTypeSelection);
-        else {
-            g_error_free(err);
-            err = nullptr;
-        }
+    const QVariant sinkTypeSelection = config.value("window/sinkType");
+    if (sinkTypeSelection.isValid())
+        sinkTypeComboBox->setCurrentIndex(sinkTypeSelection.toInt());
 
-        int sinkTypeSelection = g_key_file_get_integer(config, "window", "sinkType", &err);
-        if (err == nullptr)
-            sinkTypeComboBox->setCurrentIndex(sinkTypeSelection);
-        else {
-            g_error_free(err);
-            err = nullptr;
-        }
-
-        int sourceTypeSelection = g_key_file_get_integer(config, "window", "sourceType", &err);
-        if (err == nullptr)
-            sourceTypeComboBox->setCurrentIndex(sourceTypeSelection);
-        else {
-            g_error_free(err);
-            err = nullptr;
-        }
-    } else {
-        g_debug(tr("Error reading config file %s: %s").toUtf8().constData(), m_config_filename, err->message);
-        g_error_free(err);
-    }
-    g_key_file_free(config);
-
+    const QVariant sourceTypeSelection = config.value("window/sourceType");
+    if (sourceTypeSelection.isValid())
+        sourceTypeComboBox->setCurrentIndex(sourceTypeSelection.toInt());
 
     /* Hide first and show when we're connected */
     notebook->hide();
@@ -199,40 +165,13 @@ bool MainWindow::on_key_press_event(GdkEventKey* event) {
 #endif
 
 MainWindow::~MainWindow() {
-    GKeyFile* config = g_key_file_new();
-    g_assert(config);
-
-    g_key_file_set_integer(config, "window", "width", width());
-    g_key_file_set_integer(config, "window", "height", height());
-    g_key_file_set_integer(config, "window", "sinkInputType", sinkInputTypeComboBox->currentIndex());
-    g_key_file_set_integer(config, "window", "sourceOutputType", sourceOutputTypeComboBox->currentIndex());
-    g_key_file_set_integer(config, "window", "sinkType", sinkTypeComboBox->currentIndex());
-    g_key_file_set_integer(config, "window", "sourceType", sourceTypeComboBox->currentIndex());
-    g_key_file_set_integer(config, "window", "showVolumeMeters", showVolumeMetersCheckButton->isChecked());
-
-    gsize filelen;
-    GError *err = nullptr;
-    gchar *filedata = g_key_file_to_data(config, &filelen, &err);
-    if (err) {
-        show_error(tr("Error saving preferences").toUtf8().constData());
-        g_error_free(err);
-        goto finish;
-    }
-
-    g_file_set_contents(m_config_filename, filedata, filelen, &err);
-    g_free(filedata);
-    if (err) {
-        gchar* msg = g_strconcat(tr("Error writing config file %s").toUtf8().constData(), m_config_filename, nullptr);
-        show_error(msg);
-        g_free(msg);
-        g_error_free(err);
-        goto finish;
-    }
-
-finish:
-
-    g_key_file_free(config);
-    g_free(m_config_filename);
+    QSettings config;
+    config.setValue("window/size", size());
+    config.setValue("window/sinkInputType", sinkInputTypeComboBox->currentIndex());
+    config.setValue("window/sourceOutputType", sourceOutputTypeComboBox->currentIndex());
+    config.setValue("window/sinkType", sinkTypeComboBox->currentIndex());
+    config.setValue("window/sourceType", sourceTypeComboBox->currentIndex());
+    config.setValue("window/showVolumeMeters", showVolumeMetersCheckButton->isChecked());
 
     while (!clientNames.empty()) {
         std::map<uint32_t, char*>::iterator i = clientNames.begin();
