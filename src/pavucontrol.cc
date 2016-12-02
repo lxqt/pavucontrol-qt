@@ -50,6 +50,7 @@
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 #include "uniqueapplication.h"
+#include <QString>
 
 static pa_context* context = NULL;
 static pa_mainloop_api* api = NULL;
@@ -650,6 +651,8 @@ int main(int argc, char *argv[]) {
 
     if(app.active())
         return 0;
+
+    app.setOrganizationName(QStringLiteral("pavucontrol-qt"));
 
 
     QString locale = QLocale::system().name();
