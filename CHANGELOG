@@ -1,7 +1,20 @@
 
-pavucontrol-qt-0.1.0 / 2016-09-24
+pavucontrol-qt-0.2.0 / 2016-12-11
 =================================
 
+  * Use QSettings for storing configuration
+  * Create pavucontrol-qt_pt.desktop
+  * Use the new lxqt-build-tools package
+  * - Add a simple single instance controller to avoid run multiple simultaneous applications
+  * Use same approach as avidemux
+  * Simply differentiate the namnig to avoid menu duplication
+  * CMakeLists: Remove XdgUserDirs requirement
+  * mainwindow: Set icon for eventRoleWidget
+
+0.1.0 / 2016-09-24
+==================
+
+  * Release 0.1.0: Add changelog
   * devicewidget: Remove debug
   * Address compiler warnings
   * streamwidget: Fix specific termination text
