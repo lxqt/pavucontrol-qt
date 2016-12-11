@@ -2,6 +2,7 @@
 pavucontrol-qt-0.2.0 / 2016-12-11
 =================================
 
+  * Release 0.2.0: Update changelog
   * Use QSettings for storing configuration
   * Create pavucontrol-qt_pt.desktop
   * Use the new lxqt-build-tools package
