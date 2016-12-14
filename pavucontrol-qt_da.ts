@@ -6,7 +6,7 @@
     <message>
         <location filename="../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formular</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="29"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../cardwidget.ui" line="38"/>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil:</translation>
     </message>
     <message>
         <location filename="../cardwidget.cc" line="66"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formular</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="96"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation>&lt;small&gt;Stilhed&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Lydløs&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="96"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../channelwidget.cc" line="98"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;100% (0dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="101"/>
@@ -67,22 +67,22 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formular</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="22"/>
         <source>icon</source>
-        <translation type="unfinished"></translation>
+        <translation>ikon</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Enhedens titel</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="58"/>
         <source>lock</source>
-        <translation type="unfinished"></translation>
+        <translation>lås</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="88"/>
@@ -92,72 +92,72 @@
     <message>
         <location filename="../devicewidget.ui" line="104"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis avanceret valgmuligheder</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="117"/>
         <source>PCM</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="124"/>
         <source>AC3</source>
-        <translation type="unfinished"></translation>
+        <translation>AC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="131"/>
         <source>EAC3</source>
-        <translation type="unfinished"></translation>
+        <translation>EAC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="138"/>
         <source>DTS</source>
-        <translation type="unfinished"></translation>
+        <translation>DTS</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="145"/>
         <source>MPEG</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="152"/>
         <source>AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>AAC</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="165"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Forsinkelsesforskydning:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> ms</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="53"/>
         <source>Rename Device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Omdøb enhed...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_port_latency_offset() fejlede</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="241"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beklager, men omdøbning af enhed understøttes ikke.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="246"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan indlæse module-device-manager i PulseAudio-servere for at kunne omdøbe enheder</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="267"/>
         <source>pa_ext_device_manager_write() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_write() fejlede</translation>
     </message>
 </context>
 <context>
@@ -183,25 +183,25 @@
         <location filename="../mainwindow.ui" line="179"/>
         <location filename="../mainwindow.ui" line="238"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="69"/>
         <location filename="../mainwindow.ui" line="128"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle strømme</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="133"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Programmer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="138"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuelle strømme</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
@@ -216,27 +216,27 @@
     <message>
         <location filename="../mainwindow.ui" line="147"/>
         <source>&amp;Output Devices</source>
-        <translation>&amp;Uddataenheder</translation>
+        <translation>&amp;Output-enheder</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="168"/>
         <source>&lt;i&gt;No output devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Ingen uddataenheder tilgængelige&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Ingen output-enheder tilgængelige&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="187"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle output-enheder</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="192"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Hardware output-enheder</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="197"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuelle output-enheder</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
@@ -251,27 +251,27 @@
     <message>
         <location filename="../mainwindow.ui" line="246"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle input-enheder</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="251"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle, undtagen monitorer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="256"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Hardware input-enheder</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="261"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuelle input-enheder</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="266"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Monitorer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
@@ -286,44 +286,44 @@
     <message>
         <location filename="../mainwindow.ui" line="307"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis lydstyrke-metre</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="318"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="147"/>
         <source>Error reading config file %s: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Fejl ved læsning af konfiguratonsfilen %s: %s</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="218"/>
         <source>Error saving preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Fejl ved gemning af præferencer</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="226"/>
         <source>Error writing config file %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Fejl ved skrivning af konfigurationsfilen %s</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="261"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> (tilkoblet)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="265"/>
         <location filename="../mainwindow.cc" line="359"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> (utilgængelig)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="267"/>
         <location filename="../mainwindow.cc" line="356"/>
         <source> (unplugged)</source>
-        <translation type="unfinished"></translation>
+        <translation> (frakoblet)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="498"/>
@@ -348,7 +348,7 @@
     <message>
         <location filename="../mainwindow.cc" line="705"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorerer sink-input da det bliver udpeget som en begivenhed og derfor håndteret af Event-widget&apos;en</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="877"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1208"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Etablerer forbindelse til PulseAudio. Vent venligst...</translation>
     </message>
 </context>
 <context>
@@ -366,7 +366,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="60"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fejl</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="81"/>
@@ -391,7 +391,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="165"/>
         <source>Source output callback failure</source>
-        <translation>Tilbagekaldsfejl for kildeuddata</translation>
+        <translation>Tilbagekaldsfejl for kilde-output</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="205"/>
@@ -418,23 +418,23 @@
         <location filename="../pavucontrol.cc" line="275"/>
         <location filename="../pavucontrol.cc" line="550"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke initialisere device restore-udvidelse: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="296"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_read_sink_formats() fejlede</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="314"/>
         <location filename="../pavucontrol.cc" line="563"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke initiere device manager-udvidelse: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="333"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_read() fejlede</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="350"/>
@@ -507,7 +507,7 @@
         <location filename="../pavucontrol.cc" line="578"/>
         <location filename="../pavucontrol.cc" line="629"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Forbindelsen fejlede, forsøger at oprette forbindelsen igen</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="601"/>
@@ -523,32 +523,38 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Forbindelsen til PulseAudio fejlede. Forsøger automatisk igen om 5 sekunder
+
+I dette tilfælde er det sansynligvis på grund af at PULSE_SERVER i miljøet/X11 rod-vindue-egenskaber
+eller default-server i client.conf er fejlkonfigureret.
+Dette kan også ske når PulseAudio holder op med at virke og efterlod gamle detaljer i X11 rod-vinduet.
+Hvis dette er tilfældet, bør PulseAudio automatisk genopstå og hvis dette ikke er konfigureret skal du
+køre start-pulseaudio-x11 manuelt.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="653"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg et bestemt faneblad ved start.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="659"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation type="unfinished"></translation>
+        <translation>Gentag uendeligt hvis pa afslutter (hvert 5. sekund).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="666"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimer vinduet.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Show version</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis version</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="695"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>Fatal fejl: kan ikke oprette forbindelse til PulseAudio</translation>
     </message>
 </context>
 <context>
@@ -622,7 +628,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkwidget.cc" line="187"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_save_sink_formats() fejlede</translation>
     </message>
 </context>
 <context>
@@ -640,12 +646,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="70"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_volume() fejlede</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="85"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_mute() fejlede</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="96"/>
@@ -686,17 +692,17 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formular</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="22"/>
         <source>icon</source>
-        <translation type="unfinished"></translation>
+        <translation>ikon</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Enhedens titel</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="43"/>
@@ -711,7 +717,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="72"/>
         <source>lock</source>
-        <translation type="unfinished"></translation>
+        <translation>lås</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="49"/>
