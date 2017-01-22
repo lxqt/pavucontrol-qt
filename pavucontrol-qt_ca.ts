@@ -6,7 +6,7 @@
     <message>
         <location filename="../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="29"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../cardwidget.ui" line="38"/>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Perfil:</translation>
     </message>
     <message>
         <location filename="../cardwidget.cc" line="66"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="96"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../channelwidget.cc" line="98"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;100% (0 dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.cc" line="101"/>
@@ -67,22 +67,22 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="22"/>
         <source>icon</source>
-        <translation type="unfinished"></translation>
+        <translation>icona</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Títol del dispositiu</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="58"/>
         <source>lock</source>
-        <translation type="unfinished"></translation>
+        <translation>bloqueig</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="88"/>
@@ -92,72 +92,72 @@
     <message>
         <location filename="../devicewidget.ui" line="104"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra les opcions avançades</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="117"/>
         <source>PCM</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="124"/>
         <source>AC3</source>
-        <translation type="unfinished"></translation>
+        <translation>AC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="131"/>
         <source>EAC3</source>
-        <translation type="unfinished"></translation>
+        <translation>EAC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="138"/>
         <source>DTS</source>
-        <translation type="unfinished"></translation>
+        <translation>DTS</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="145"/>
         <source>MPEG</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="152"/>
         <source>AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>AAC</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="165"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Desplaçament de la latència:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> ms</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="53"/>
         <source>Rename Device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Reanomena el dispositiu...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha fallat pa_context_set_port_latency_offset()</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="241"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ho sentim, però el reanomenament del dispositiu no és compatible.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="246"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Heu de carregar el mòdul del gestor de disposutius al servidor de PulseAudio per a reanomenar dispositius</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="267"/>
         <source>pa_ext_device_manager_write() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha fallat pa_ext_device_manager_write()</translation>
     </message>
 </context>
 <context>
@@ -170,7 +170,7 @@
     <message>
         <location filename="../mainwindow.ui" line="29"/>
         <source>&amp;Playback</source>
-        <translation>Re_producció</translation>
+        <translation>Re&amp;producció</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="50"/>
@@ -183,30 +183,30 @@
         <location filename="../mainwindow.ui" line="179"/>
         <location filename="../mainwindow.ui" line="238"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="69"/>
         <location filename="../mainwindow.ui" line="128"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Totes les transmissions</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="133"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplicacions</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="138"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Transmissions virtuals</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
         <source>&amp;Recording</source>
-        <translation>En_registrament</translation>
+        <translation>En&amp;registrament</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="109"/>
@@ -216,7 +216,7 @@
     <message>
         <location filename="../mainwindow.ui" line="147"/>
         <source>&amp;Output Devices</source>
-        <translation>Dispositius de s_ortida</translation>
+        <translation>Dispositius de s&amp;ortida</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="168"/>
@@ -226,22 +226,22 @@
     <message>
         <location filename="../mainwindow.ui" line="187"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Tots els dispositius de sortida</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="192"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositius de sortida de maquinari</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="197"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositius de sortida virtuals</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
         <source>&amp;Input Devices</source>
-        <translation>D_ispositius d&apos;entrada</translation>
+        <translation>D&amp;ispositius d&apos;entrada</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="227"/>
@@ -251,27 +251,27 @@
     <message>
         <location filename="../mainwindow.ui" line="246"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Tots els dispositius d&apos;entrada</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="251"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Tots excepte els monitors</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="256"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositius d&apos;entrada de maquinari</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="261"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositius d&apos;entrada virtuals</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="266"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Monitors</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
@@ -291,7 +291,7 @@
     <message>
         <location filename="../mainwindow.ui" line="318"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="147"/>
@@ -366,7 +366,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="60"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="81"/>
@@ -538,12 +538,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../pavucontrol.cc" line="666"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximitza la finestra.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Show version</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra la versió</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="695"/>
@@ -622,7 +622,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkwidget.cc" line="187"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha fallat pa_ext_device_restore_save_sink_formats()</translation>
     </message>
 </context>
 <context>
@@ -640,12 +640,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="70"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha fallat pa_context_set_source_output_volume()</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="85"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha fallat pa_context_set_source_output_mute()</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="96"/>
@@ -686,17 +686,17 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="22"/>
         <source>icon</source>
-        <translation type="unfinished"></translation>
+        <translation>icona</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Títol del dispositiu</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="43"/>
@@ -711,7 +711,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="72"/>
         <source>lock</source>
-        <translation type="unfinished"></translation>
+        <translation>bloqueig</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="49"/>
