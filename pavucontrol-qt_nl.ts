@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1208"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation>Verbinding met PulseAdio wordt tot stand gebracht. Even geduld a.u.b...</translation>
+        <translation>Verbinding met PulseAudio wordt tot stand gebracht. Even geduld a.u.b...</translation>
     </message>
 </context>
 <context>
