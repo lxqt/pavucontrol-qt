@@ -152,7 +152,7 @@
     <message>
         <location filename="../devicewidget.cc" line="246"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation>Heu de carregar el mòdul del gestor de disposutius al servidor de PulseAudio per a reanomenar dispositius</translation>
+        <translation>Heu de carregar el mòdul del gestor de dispositius al servidor de PulseAudio per a reanomenar dispositius</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="267"/>
@@ -175,7 +175,7 @@
     <message>
         <location filename="../mainwindow.ui" line="50"/>
         <source>&lt;i&gt;No application is currently playing audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Cap aplicació està reproduïnt àudio actualment&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Cap aplicació està reproduint àudio actualment&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="61"/>
@@ -281,12 +281,12 @@
     <message>
         <location filename="../mainwindow.ui" line="296"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation>&lt;i&gt;No hi han targetes disponibles per a configurar&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;No hi ha cap targeta disponible per a la configuració&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="307"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra les mètriques del volum</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="318"/>
@@ -296,39 +296,39 @@
     <message>
         <location filename="../mainwindow.cc" line="147"/>
         <source>Error reading config file %s: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Error en llegir el fitxer de configuració %s: %s</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="218"/>
         <source>Error saving preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Error en desar les preferències</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="226"/>
         <source>Error writing config file %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Error en escriure el fitxer de configuració %s</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="261"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> (endollat)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="265"/>
         <location filename="../mainwindow.cc" line="359"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> (no disponible)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="267"/>
         <location filename="../mainwindow.cc" line="356"/>
         <source> (unplugged)</source>
-        <translation type="unfinished"></translation>
+        <translation> (desendollat)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="498"/>
         <source>Failed to read data from stream</source>
-        <translation>Ha fallat la lectura del fluxe</translation>
+        <translation>No s&apos;han pogut llegir les dades del flux</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="542"/>
@@ -338,17 +338,17 @@
     <message>
         <location filename="../mainwindow.cc" line="543"/>
         <source>Failed to create monitoring stream</source>
-        <translation>Ha fallat la creació del fluxe de monitorització</translation>
+        <translation>No s&apos;ha pogut crear el flux de monitoratge</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="558"/>
         <source>Failed to connect monitoring stream</source>
-        <translation>Ha fallat la connexió al fluxe de monitorització</translation>
+        <translation>No s&apos;ha pogut connectar al flux de monitoratge</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="705"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;ignora l&apos;entrada sink a causa que és designada com a un esdeveniment i per tant tractada pel giny d&apos;esdeveniments</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="877"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1208"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;està establint la connexió a PulseAudio. Espereu...</translation>
     </message>
 </context>
 <context>
@@ -407,7 +407,7 @@
         <location filename="../pavucontrol.cc" line="239"/>
         <location filename="../pavucontrol.cc" line="536"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>Ha fallat la inicialització de l&apos;extensió stream_restore: %s</translation>
+        <translation>No s&apos;ha pogut inicialitzar l&apos;extensió stream_restore: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="257"/>
@@ -418,23 +418,23 @@
         <location filename="../pavucontrol.cc" line="275"/>
         <location filename="../pavucontrol.cc" line="550"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>No s&apos;ha pogut inicialitzar l&apos;extensió de restauració de dispositius: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="296"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha fallat pa_ext_device_restore_read_sink_formats()</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="314"/>
         <location filename="../pavucontrol.cc" line="563"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>No s&apos;ha pogut inicialitzar l&apos;extensió del gestor de dispositius: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="333"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha fallat pa_ext_device_manager_read()</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="350"/>
@@ -507,7 +507,7 @@
         <location filename="../pavucontrol.cc" line="578"/>
         <location filename="../pavucontrol.cc" line="629"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>La conneció ha fallat, s&apos;intenta la reconnexió</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="601"/>
@@ -523,17 +523,23 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha fallat la connexió a PulseAudio. Reintent automàtic en 5 s
+
+En aquest cas, això és probablement a causa de PULSE_SERVER a l&apos;entorn o a les propietats de la finestra arrel de X11,
+o bé el servidor predeterminat està configurat de forma incorrecta al client.conf.
+Aquesta situació també pot donar-se quan PulseAudio s&apos;estrella i perd els detalls de l&apos;estat a la finestra arrel de X11.
+Si aquest és el cas, llavors PulseAudio s&apos;hauria d&apos;autogenerar un altre cop, o bé si això no estigués configurat hauríeu
+d&apos;executar manualment-pulseaudio-x11.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="653"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona una pestanya específica amb la càrrega.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="659"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation type="unfinished"></translation>
+        <translation>Torna a intentar-ho per sempre si pa surt (cada 5 segons).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="666"/>
@@ -548,7 +554,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../pavucontrol.cc" line="695"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>Error fatal: no s&apos;ha pogut connectar a PulseAudio</translation>
     </message>
 </context>
 <context>
