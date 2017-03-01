@@ -81,8 +81,7 @@ protected:
 
     virtual void onPortChange() = 0;
 
-    // Gtk::Menu contextMenu;
-    // Gtk::MenuItem rename;
+    QAction * rename;
 
 private:
     QByteArray mDeviceType;

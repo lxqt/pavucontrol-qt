@@ -29,12 +29,15 @@
 #include "channel.h"
 #include <sstream>
 #include <QLabel>
+#include <QMessageBox>
+#include <QInputDialog>
 
 /*** DeviceWidget ***/
 DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
     MinimalStreamWidget(parent),
     offsetButtonEnabled(false),
     mpMainWindow(parent),
+    rename{new QAction{tr("Rename device..."), this}},
     mDeviceType(deviceType) {
 
     setupUi(this);
@@ -45,18 +48,13 @@ DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
     timeout.setInterval(100);
     connect(&timeout, &QTimer::timeout, this, &DeviceWidget::timeoutEvent);
 
-    // FIXME: this->signal_button_press_event().connect(sigc::mem_fun(*this, &DeviceWidget::onContextTriggerEvent));
     connect(muteToggleButton, &QToolButton::toggled, this, &DeviceWidget::onMuteToggleButton);
     connect(lockToggleButton, &QToolButton::toggled, this, &DeviceWidget::onLockToggleButton);
     connect(defaultToggleButton, &QToolButton::toggled, this, &DeviceWidget::onDefaultToggleButton);
 
-#if 0
-
-    rename.set_label(tr("Rename Device...").toUtf8().constData());
-    rename.signal_activate().connect(sigc::mem_fun(*this, &DeviceWidget::renamePopup));
-    contextMenu.append(rename);
-    contextMenu.show_all();
-#endif
+    connect(rename, &QAction::triggered, this, &DeviceWidget::renamePopup);
+    addAction(rename);
+    setContextMenuPolicy(Qt::ActionsContextMenu);
 
     connect(portList, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &DeviceWidget::onPortChange);
     connect(offsetButton, static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &DeviceWidget::onOffsetChange);
@@ -220,56 +218,27 @@ void DeviceWidget::prepareMenu() {
     }
 }
 
-#if 0
-bool DeviceWidget::onContextTriggerEvent(GdkEventButton* event) {
-    if (GDK_BUTTON_PRESS == event->type && 3 == event->button) {
-        contextMenu.popup(event->button, event->time);
-        return true;
-    }
-
-    return false;
-}
-#endif
-
 void DeviceWidget::renamePopup() {
     if (updating)
         return;
-#if 0
     if (!mpMainWindow->canRenameDevices) {
-        Gtk::MessageDialog dialog(
-            *mpMainWindow,
-            tr("Sorry, but device renaming is not supported.").toUtf8().constData(),
-            false,
-            Gtk::MESSAGE_WARNING,
-            Gtk::BUTTONS_OK,
-            true);
-        dialog.set_secondary_text(tr("You need to load module-device-manager in the PulseAudio server in order to rename devices").toUtf8().constData());
-        dialog.run();
+        QMessageBox::warning(this, tr("Sorry, but device renaming is not supported.")
+                , tr("You need to load module-device-manager in the PulseAudio server in order to rename devices"));
         return;
     }
 
-    Gtk::Dialog* dialog;
-    Gtk::Entry* renameText;
-
-    Glib::RefPtr<Gtk::Builder> x = Gtk::Builder::create_from_file(GLADE_FILE, "renameDialog");
-    x->get_widget("renameDialog", dialog);
-    x->get_widget("renameText", renameText);
-
-    renameText->set_text(description);
-    dialog->add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
-    dialog->add_button(Gtk::Stock::OK, Gtk::RESPONSE_OK);
-    dialog->set_default_response(Gtk::RESPONSE_OK);
-    if (Gtk::RESPONSE_OK == dialog->run()) {
+    const QString old_name = description.constData();
+    bool ok;
+    const QString new_name = QInputDialog::getText(this, QCoreApplication::organizationName(), tr("Rename device %1 to:").arg(old_name)
+            , QLineEdit::Normal, old_name, &ok);
+    if (ok && new_name != old_name) {
         pa_operation* o;
-        gchar *key = g_markup_printf_escaped("%s:%s", mDeviceType, name);
+        gchar *key = g_markup_printf_escaped("%s:%s", mDeviceType.constData(), name.constData());
 
-        if (!(o = pa_ext_device_manager_set_device_description(get_context(), key, renameText->get_text(), NULL, NULL))) {
-            show_error(tr("pa_ext_device_manager_write() failed").toUtf8().constData());
-            return;
-        }
-        pa_operation_unref(o);
+        if (!(o = pa_ext_device_manager_set_device_description(get_context(), key, new_name.toUtf8().constData(), NULL, NULL)))
+            show_error(tr("pa_ext_device_manager_set_device_description() failed").toUtf8().constData());
+        else
+            pa_operation_unref(o);
         g_free(key);
     }
-    delete dialog;
-#endif
 }
