@@ -100,8 +100,7 @@ MainWindow::MainWindow():
     showVolumeMetersCheckButton->setChecked(config.value("window/showVolumeMeters", true).toBool());
 
     const QSize last_size  = config.value("window/size").toSize();
-    const QSize default_size = size(); // widget is resized in setupUi based on values in *.ui
-    if (last_size.width() >= default_size.width() && last_size.height() >= default_size.height())
+    if (last_size.isValid())
         resize(last_size);
 
     const QVariant sinkInputTypeSelection = config.value("window/sinkInputType");
