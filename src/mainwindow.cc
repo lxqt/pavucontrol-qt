@@ -90,6 +90,11 @@ MainWindow::MainWindow():
     connect(sourceTypeComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::onSourceTypeComboBoxChanged);
     connect(showVolumeMetersCheckButton, &QCheckBox::toggled, this, &MainWindow::onShowVolumeMetersCheckButtonToggled);
 
+    QAction * quit = new QAction{this};
+    connect(quit, &QAction::triggered, this, &QWidget::close);
+    quit->setShortcut(QKeySequence::Quit);
+    addAction(quit);
+
     const QSettings config;
 
     showVolumeMetersCheckButton->setChecked(config.value("window/showVolumeMeters", true).toBool());
