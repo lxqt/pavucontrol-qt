@@ -43,6 +43,7 @@ public:
 
 protected Q_SLOTS:
     void onVolumeScaleValueChanged(int value);
+    void onVolumeScaleSliderMoved(int value);
 
 public:
     bool can_decibel;

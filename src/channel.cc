@@ -29,6 +29,7 @@
 #include "channel.h"
 #include "minimalstreamwidget.h"
 
+constexpr int SLIDER_SNAP = 2;
 static inline int paVolume2Percent(pa_volume_t vol)
 {
     if (vol > PA_VOLUME_UI_MAX)
@@ -69,15 +70,16 @@ Channel::Channel(QGridLayout* parent) :
     volumeLabel->setAlignment(Qt::AlignHCenter);
     volumeLabel->setTextFormat(Qt::RichText);
 
-    volumeScale->setMinimum(paVolume2Percent(PA_VOLUME_MUTED));
-    volumeScale->setMaximum(paVolume2Percent(PA_VOLUME_UI_MAX));
+    volumeScale->setRange(paVolume2Percent(PA_VOLUME_MUTED), paVolume2Percent(PA_VOLUME_UI_MAX));
     volumeScale->setValue(paVolume2Percent(PA_VOLUME_NORM));
     volumeScale->setPageStep(5);
     volumeScale->setTickInterval(paVolume2Percent(PA_VOLUME_NORM));
     volumeScale->setTickPosition(QSlider::TicksBelow);
+    volumeScale->setTracking(false);
     setBaseVolume(PA_VOLUME_NORM);
 
     connect(volumeScale, &QSlider::valueChanged, this, &Channel::onVolumeScaleValueChanged);
+    connect(volumeScale, &QSlider::sliderMoved, this, &Channel::onVolumeScaleSliderMoved);
 }
 
 void Channel::setVolume(pa_volume_t volume) {
@@ -118,6 +120,26 @@ void Channel::onVolumeScaleValueChanged(int value) {
         return;
 
     minimalStreamWidget->updateChannelVolume(channel, percent2PaVolume(value));
+}
+
+void Channel::onVolumeScaleSliderMoved(int value)
+{
+    if (!volumeScaleEnabled)
+        return;
+
+    if (minimalStreamWidget->updating)
+        return;
+
+    const int current_value = volumeScale->value();
+    if (current_value == 100 && qAbs(value - current_value) <= SLIDER_SNAP)
+    {
+        volumeScale->blockSignals(true);
+        volumeScale->setSliderPosition(current_value);
+        volumeScale->blockSignals(false);
+        return;
+    }
+
+    volumeScale->setValue(value);
 }
 
 /*
