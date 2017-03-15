@@ -111,7 +111,11 @@
     </widget>
    </item>
    <item>
-    <layout class="QGridLayout" name="channelsGrid"/>
+    <layout class="QGridLayout" name="channelsGrid">
+     <property name="horizontalSpacing">
+      <number>0</number>
+     </property>
+    </layout>
    </item>
    <item>
     <widget class="QCheckBox" name="advancedOptions">

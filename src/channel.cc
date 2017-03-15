@@ -25,6 +25,7 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QSlider>
+#include <QFontMetrics>
 #include "channel.h"
 #include "minimalstreamwidget.h"
 
@@ -57,6 +58,17 @@ Channel::Channel(QGridLayout* parent) :
     parent->addWidget(volumeScale, row, 1);
     parent->addWidget(volumeLabel, row, 2);
 
+    // make the info font smaller
+    QFont label_font = volumeLabel->font();
+    if (label_font.pixelSize() == -1)
+        label_font.setPointSizeF(label_font.pointSizeF() * 0.8);
+    else
+        label_font.setPixelSize(qRound(static_cast<double>(label_font.pixelSize()) * 0.8));
+    volumeLabel->setFont(label_font);
+    volumeLabel->setFixedWidth(QFontMetrics{volumeLabel->font()}.size(Qt::TextSingleLine, QStringLiteral("100%(-99.99dB)")).width());
+    volumeLabel->setAlignment(Qt::AlignHCenter);
+    volumeLabel->setTextFormat(Qt::RichText);
+
     volumeScale->setMinimum(paVolume2Percent(PA_VOLUME_MUTED));
     volumeScale->setMaximum(paVolume2Percent(PA_VOLUME_UI_MAX));
     volumeScale->setValue(paVolume2Percent(PA_VOLUME_NORM));
@@ -69,20 +81,14 @@ Channel::Channel(QGridLayout* parent) :
 }
 
 void Channel::setVolume(pa_volume_t volume) {
-    int v;
-    char txt[64];
-
-    v = paVolume2Percent(volume);
+    const int v = paVolume2Percent(volume);
     if (can_decibel) {
-        double dB = pa_sw_volume_to_dB(volume);
-        if (dB > PA_DECIBEL_MININFTY)
-            snprintf(txt, sizeof(txt), "<small>%d%% (%0.2fdB)</small>", v, dB);
-        else
-            snprintf(txt, sizeof(txt), "<small>%d%% (-&#8734;dB)</small>", v);
+        const double dB = pa_sw_volume_to_dB(volume);
+        volumeLabel->setText(tr("%1% (%2dB)", "volume slider label [X% (YdB)]").arg(v)
+                .arg(dB > PA_DECIBEL_MININFTY ? QString::asprintf("%0.2f", dB) : QStringLiteral("-&#8734;")));
     }
     else
-        snprintf(txt, sizeof(txt), "%d%%", v);
-    volumeLabel->setText(QString::fromUtf8(txt));
+        volumeLabel->setText(tr("%1%", "volume slider label [X%]").arg(v));
 
     volumeScaleEnabled = false;
     volumeScale->setValue(v);
