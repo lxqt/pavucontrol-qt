@@ -117,7 +117,7 @@ void Channel::onVolumeScaleValueChanged(int value) {
     if (minimalStreamWidget->updating)
         return;
 
-    minimalStreamWidget->updateChannelVolume(channel, percent2PaVolume(volumeScale->value()));
+    minimalStreamWidget->updateChannelVolume(channel, percent2PaVolume(value));
 }
 
 /*
@@ -130,7 +130,7 @@ void Channel::set_sensitive(bool enabled) {
 }
 */
 
-void Channel::setBaseVolume(pa_volume_t v) {
+void Channel::setBaseVolume(pa_volume_t /*v*/) {
 #if 0  // FIXME: Qt does not support this functionality
     gtk_scale_clear_marks(GTK_SCALE(volumeScale->gobj()));
 
