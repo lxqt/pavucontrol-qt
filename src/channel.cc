@@ -28,6 +28,18 @@
 #include "channel.h"
 #include "minimalstreamwidget.h"
 
+static inline int paVolume2Percent(pa_volume_t vol)
+{
+    if (vol > PA_VOLUME_UI_MAX)
+        vol = PA_VOLUME_UI_MAX;
+    return qRound(static_cast<double>(vol - PA_VOLUME_MUTED) / PA_VOLUME_NORM * 100);
+}
+
+static inline pa_volume_t percent2PaVolume(int percent)
+{
+    return PA_VOLUME_MUTED + qRound(static_cast<double>(percent) / 100 * PA_VOLUME_NORM);
+}
+
 /*** ChannelWidget ***/
 
 Channel::Channel(QGridLayout* parent) :
@@ -45,34 +57,33 @@ Channel::Channel(QGridLayout* parent) :
     parent->addWidget(volumeScale, row, 1);
     parent->addWidget(volumeLabel, row, 2);
 
-    volumeScale->setMinimum(PA_VOLUME_MUTED);
-    volumeScale->setMaximum(PA_VOLUME_UI_MAX);
-    volumeScale->setValue(PA_VOLUME_NORM);
-    volumeScale->setSingleStep(qRound((double)PA_VOLUME_NORM)/100.0);
-    volumeScale->setPageStep(qRound((double)PA_VOLUME_NORM)/20.0);
+    volumeScale->setMinimum(paVolume2Percent(PA_VOLUME_MUTED));
+    volumeScale->setMaximum(paVolume2Percent(PA_VOLUME_UI_MAX));
+    volumeScale->setValue(paVolume2Percent(PA_VOLUME_NORM));
+    volumeScale->setPageStep(5);
     setBaseVolume(PA_VOLUME_NORM);
 
     connect(volumeScale, &QSlider::valueChanged, this, &Channel::onVolumeScaleValueChanged);
 }
 
 void Channel::setVolume(pa_volume_t volume) {
-    double v;
+    int v;
     char txt[64];
 
-    v = ((gdouble) volume * 100) / PA_VOLUME_NORM;
+    v = paVolume2Percent(volume);
     if (can_decibel) {
         double dB = pa_sw_volume_to_dB(volume);
         if (dB > PA_DECIBEL_MININFTY)
-            snprintf(txt, sizeof(txt), "<small>%0.0f%% (%0.2fdB)</small>", v, dB);
+            snprintf(txt, sizeof(txt), "<small>%d%% (%0.2fdB)</small>", v, dB);
         else
-            snprintf(txt, sizeof(txt), "<small>%0.0f%% (-&#8734;dB)</small>", v);
+            snprintf(txt, sizeof(txt), "<small>%d%% (-&#8734;dB)</small>", v);
     }
     else
-        snprintf(txt, sizeof(txt), "%0.0f%%", v);
+        snprintf(txt, sizeof(txt), "%d%%", v);
     volumeLabel->setText(QString::fromUtf8(txt));
 
     volumeScaleEnabled = false;
-    volumeScale->setValue(volume > PA_VOLUME_UI_MAX ? PA_VOLUME_UI_MAX : volume);
+    volumeScale->setValue(v);
     volumeScaleEnabled = true;
 }
 
@@ -98,8 +109,7 @@ void Channel::onVolumeScaleValueChanged(int value) {
     if (minimalStreamWidget->updating)
         return;
 
-    pa_volume_t volume = (pa_volume_t) volumeScale->value();
-    minimalStreamWidget->updateChannelVolume(channel, volume);
+    minimalStreamWidget->updateChannelVolume(channel, percent2PaVolume(volumeScale->value()));
 }
 
 /*
