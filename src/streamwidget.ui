@@ -79,7 +79,7 @@
         <string>Lock channels together</string>
        </property>
        <property name="icon">
-        <iconset theme="changes-prevent"/>
+        <iconset theme="changes-prevent-symbolic"/>
        </property>
        <property name="checkable">
         <bool>true</bool>
