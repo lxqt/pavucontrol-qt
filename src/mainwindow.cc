@@ -124,50 +124,6 @@ MainWindow::MainWindow():
     connectingLabel->show();
 }
 
-void MainWindow::on_realize() {
-#if 0
-
-    Gtk::Window::on_realize();
-    get_window()->set_cursor(Gdk::Cursor::create(Gdk::WATCH));
-
-#endif
-}
-
-#if 0
-bool MainWindow::on_key_press_event(GdkEventKey* event) {
-
-    if (GDK_KEY_Escape == event->keyval) {
-        Gtk::Main::quit();
-        return true;
-    }
-    if (event->state & GDK_CONTROL_MASK) {
-        switch (event->keyval) {
-            case GDK_KEY_KP_1:
-            case GDK_KEY_KP_2:
-            case GDK_KEY_KP_3:
-            case GDK_KEY_KP_4:
-            case GDK_KEY_KP_5:
-                notebook->set_current_page(event->keyval - GDK_KEY_KP_1);
-                return true;
-            case GDK_KEY_1:
-            case GDK_KEY_2:
-            case GDK_KEY_3:
-            case GDK_KEY_4:
-            case GDK_KEY_5:
-                notebook->set_current_page(event->keyval - GDK_KEY_1);
-                return true;
-            case GDK_KEY_W:
-            case GDK_KEY_Q:
-            case GDK_KEY_w:
-            case GDK_KEY_q:
-                Gtk::Main::quit();
-                return true;
-        }
-    }
-    return Gtk::Window::on_key_press_event(event);
-}
-#endif
-
 MainWindow::~MainWindow() {
     QSettings config;
     config.setValue("window/size", size());
