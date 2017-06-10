@@ -668,6 +668,11 @@ int main(int argc, char *argv[]) {
     parser.setApplicationDescription(QObject::tr("PulseAudio Volume Control"));
     parser.addHelpOption();
 
+    const QString VERINFO = QStringLiteral(PAVUCONTROLQT_VERSION
+                                           "\nQt        " QT_VERSION_STR);
+    app.setApplicationVersion(VERINFO);
+    parser.addVersionOption();
+
     QCommandLineOption tabOption(QStringList() << "tab" << "t", QObject::tr("Select a specific tab on load."), "tab");
     parser.addOption(tabOption);
 
@@ -676,9 +681,6 @@ int main(int argc, char *argv[]) {
 
     QCommandLineOption maximizeOption(QStringList() << "maximize" << "m", QObject::tr("Maximize the window."));
     parser.addOption(maximizeOption);
-
-    // QCommandLineOption versionOption("version", QObject::tr("Show version"));
-    // parser.addOption(versionOption);
 
     parser.process(app);
     default_tab = parser.value(tabOption).toInt();
