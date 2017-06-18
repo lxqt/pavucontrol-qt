@@ -16,7 +16,7 @@
     <message>
         <location filename="../cardwidget.ui" line="38"/>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil:</translation>
     </message>
     <message>
         <location filename="../cardwidget.cc" line="66"/>
@@ -72,7 +72,7 @@
     <message>
         <location filename="../devicewidget.ui" line="22"/>
         <source>icon</source>
-        <translation type="unfinished"></translation>
+        <translation>ikona</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../devicewidget.ui" line="104"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż zaawansowane opcje</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="117"/>
@@ -132,7 +132,7 @@
     <message>
         <location filename="../devicewidget.ui" line="172"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> ms</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="53"/>
@@ -183,7 +183,7 @@
         <location filename="../mainwindow.ui" line="179"/>
         <location filename="../mainwindow.ui" line="238"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="69"/>
@@ -286,12 +286,12 @@
     <message>
         <location filename="../mainwindow.ui" line="307"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż wskaźniki poziom głośności</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="318"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="147"/>
@@ -366,7 +366,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="60"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="81"/>
@@ -543,7 +543,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Show version</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż wersję</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="695"/>
@@ -691,7 +691,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="22"/>
         <source>icon</source>
-        <translation type="unfinished"></translation>
+        <translation>ikona</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="36"/>
