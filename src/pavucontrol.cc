@@ -653,7 +653,7 @@ int main(int argc, char *argv[]) {
         return 0;
 
     app.setOrganizationName(QStringLiteral("pavucontrol-qt"));
-
+    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
     QString locale = QLocale::system().name();
     QTranslator qtTranslator;
