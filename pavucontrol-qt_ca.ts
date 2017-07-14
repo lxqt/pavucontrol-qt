@@ -30,64 +30,64 @@
         <location filename="../../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1% (%2 dB)</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1%</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Silenci&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Silenci&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Min&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Mín.&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;100% (0 dB)&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;100% (0 dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
     <name>ChannelWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;esquerra-davant&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;esquerra-davant&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;50%&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
     <message>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;Silenci&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Silenci&lt;/small&gt;</translation>
     </message>
     <message>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;Min&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Min&lt;/small&gt;</translation>
     </message>
     <message>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;100% (0 dB)&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;100% (0 dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -99,7 +99,7 @@
     </message>
     <message>
         <source>icon</source>
-        <translation type="vanished">icona</translation>
+        <translation>icona</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="36"/>
@@ -108,22 +108,22 @@
     </message>
     <message>
         <source>lock</source>
-        <translation type="vanished">bloqueig</translation>
+        <translation>bloqueig</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Silencia l&apos;àudio</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Bloqueja els canals junts</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Estableix com a alternativa</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="103"/>
@@ -177,12 +177,12 @@
     </message>
     <message>
         <source>Rename Device...</source>
-        <translation type="vanished">Reanomena el dispositiu...</translation>
+        <translation>Reanomena el dispositiu...</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="40"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Reanomena el dispositiu...</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="154"/>
@@ -202,16 +202,16 @@
     <message>
         <location filename="../../devicewidget.cc" line="232"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Reanomena el dispositiu %1 a:</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="239"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha fallat pa_ext_device_manager_set_device_description()</translation>
     </message>
     <message>
         <source>pa_ext_device_manager_write() failed</source>
-        <translation type="vanished">Ha fallat pa_ext_device_manager_write()</translation>
+        <translation>Ha fallat pa_ext_device_manager_write()</translation>
     </message>
 </context>
 <context>
@@ -349,15 +349,15 @@
     </message>
     <message>
         <source>Error reading config file %s: %s</source>
-        <translation type="vanished">Error en llegir el fitxer de configuració %s: %s</translation>
+        <translation>Error en llegir el fitxer de configuració %s: %s</translation>
     </message>
     <message>
         <source>Error saving preferences</source>
-        <translation type="vanished">Error en desar les preferències</translation>
+        <translation>Error en desar les preferències</translation>
     </message>
     <message>
         <source>Error writing config file %s</source>
-        <translation type="vanished">Error en escriure el fitxer de configuració %s</translation>
+        <translation>Error en escriure el fitxer de configuració %s</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="159"/>
@@ -600,7 +600,7 @@ d&apos;executar manualment-pulseaudio-x11.</translation>
     </message>
     <message>
         <source>Show version</source>
-        <translation type="vanished">Mostra la versió</translation>
+        <translation>Mostra la versió</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="707"/>
@@ -626,7 +626,7 @@ d&apos;executar manualment-pulseaudio-x11.</translation>
     <message>
         <location filename="../../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Acaba la reproducció</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="53"/>
@@ -663,7 +663,7 @@ d&apos;executar manualment-pulseaudio-x11.</translation>
     </message>
     <message>
         <source>Volume Control Feedback Sound</source>
-        <translation type="vanished">Control del volum de la realimentació del so</translation>
+        <translation>Control del volum de la realimentació del so</translation>
     </message>
     <message>
         <location filename="../../sinkwidget.cc" line="96"/>
@@ -696,7 +696,7 @@ d&apos;executar manualment-pulseaudio-x11.</translation>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Acaba l&apos;enregistrament</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="60"/>
@@ -756,7 +756,7 @@ d&apos;executar manualment-pulseaudio-x11.</translation>
     </message>
     <message>
         <source>icon</source>
-        <translation type="vanished">icona</translation>
+        <translation>icona</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="32"/>
@@ -771,25 +771,25 @@ d&apos;executar manualment-pulseaudio-x11.</translation>
     <message>
         <location filename="../../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>dispositiu</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Silencia l&apos;àudio</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Bloqueja els canals junts</translation>
     </message>
     <message>
         <source>Device</source>
-        <translation type="vanished">Dispositiu</translation>
+        <translation>Dispositiu</translation>
     </message>
     <message>
         <source>lock</source>
-        <translation type="vanished">bloqueig</translation>
+        <translation>bloqueig</translation>
     </message>
     <message>
         <location filename="../../streamwidget.cc" line="34"/>
