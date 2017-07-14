@@ -105,17 +105,17 @@
     <message>
         <location filename="../../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Wycisz dźwięk</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Zablokuj kanały</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustaw jako zapasowe</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="103"/>
@@ -174,7 +174,7 @@
     <message>
         <location filename="../../devicewidget.cc" line="40"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Zmień nazwę…</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="154"/>
@@ -194,7 +194,7 @@
     <message>
         <location filename="../../devicewidget.cc" line="232"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zmień nazwę urządzenia %1 na:</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="239"/>
@@ -757,17 +757,17 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>urządzenie</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Wycisz dźwięk</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Zablokuj kanały</translation>
     </message>
     <message>
         <source>Device</source>
