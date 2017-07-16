@@ -30,33 +30,33 @@
         <location filename="../../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1% (%2dB)</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1%</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Tyla&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Tyla&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Min.&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Min.&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;100% (0dB)&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;100% (0dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;Pagrindas&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Pagrindas&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -113,17 +113,17 @@
     <message>
         <location filename="../../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Nutildyti garsą</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Užrakinti kanalus kartu</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Nustatyti kaip atsarginį</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="103"/>
@@ -182,7 +182,7 @@
     <message>
         <location filename="../../devicewidget.cc" line="40"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Pervadinti įrenginį...</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="154"/>
@@ -202,12 +202,12 @@
     <message>
         <location filename="../../devicewidget.cc" line="232"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pervadinti įrenginį %1 į:</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="239"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_set_device_description() nepavyko</translation>
     </message>
     <message>
         <source>pa_ext_device_manager_write() failed</source>
@@ -296,22 +296,22 @@
     <message>
         <location filename="../../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Atkūrimas</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="93"/>
         <source>&amp;Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Į&amp;rašymas</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Išve&amp;sties įrenginiai</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Įvest&amp;ies įrenginiai</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="250"/>
@@ -346,7 +346,7 @@
     <message>
         <location filename="../../mainwindow.ui" line="298"/>
         <source>&amp;Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Konfigūracija</translation>
     </message>
     <message>
         <source>_Configuration</source>
@@ -647,7 +647,7 @@ sukonfigūruota, tuomet jūs turėtumėte paleisti start-pulseaudio-x11 rankiniu
     <message>
         <location filename="../../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Nutraukti atkūrimą</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="53"/>
@@ -717,7 +717,7 @@ sukonfigūruota, tuomet jūs turėtumėte paleisti start-pulseaudio-x11 rankiniu
     <message>
         <location filename="../../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Nutraukti įrašymą</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="60"/>
@@ -792,17 +792,17 @@ sukonfigūruota, tuomet jūs turėtumėte paleisti start-pulseaudio-x11 rankiniu
     <message>
         <location filename="../../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>įrenginys</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Nutildyti garsą</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Užrakinti kanalus kartu</translation>
     </message>
     <message>
         <source>Device</source>
