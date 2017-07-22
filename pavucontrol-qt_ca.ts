@@ -63,31 +63,31 @@
     <name>ChannelWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulari</translation>
+        <translation type="vanished">Formulari</translation>
     </message>
     <message>
         <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation>&lt;b&gt;esquerra-davant&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;esquerra-davant&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
+        <translation type="vanished">&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
     <message>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation>&lt;small&gt;Silenci&lt;/small&gt;</translation>
+        <translation type="vanished">&lt;small&gt;Silenci&lt;/small&gt;</translation>
     </message>
     <message>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation>&lt;small&gt;Min&lt;/small&gt;</translation>
+        <translation type="vanished">&lt;small&gt;Min&lt;/small&gt;</translation>
     </message>
     <message>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation>&lt;small&gt;100% (0 dB)&lt;/small&gt;</translation>
+        <translation type="vanished">&lt;small&gt;100% (0 dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation type="vanished">&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -99,7 +99,7 @@
     </message>
     <message>
         <source>icon</source>
-        <translation>icona</translation>
+        <translation type="vanished">icona</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="36"/>
@@ -108,7 +108,7 @@
     </message>
     <message>
         <source>lock</source>
-        <translation>bloqueig</translation>
+        <translation type="vanished">bloqueig</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="56"/>
@@ -177,7 +177,7 @@
     </message>
     <message>
         <source>Rename Device...</source>
-        <translation>Reanomena el dispositiu...</translation>
+        <translation type="vanished">Reanomena el dispositiu...</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="40"/>
@@ -211,7 +211,7 @@
     </message>
     <message>
         <source>pa_ext_device_manager_write() failed</source>
-        <translation>Ha fallat pa_ext_device_manager_write()</translation>
+        <translation type="vanished">Ha fallat pa_ext_device_manager_write()</translation>
     </message>
 </context>
 <context>
@@ -349,15 +349,15 @@
     </message>
     <message>
         <source>Error reading config file %s: %s</source>
-        <translation>Error en llegir el fitxer de configuració %s: %s</translation>
+        <translation type="vanished">Error en llegir el fitxer de configuració %s: %s</translation>
     </message>
     <message>
         <source>Error saving preferences</source>
-        <translation>Error en desar les preferències</translation>
+        <translation type="vanished">Error en desar les preferències</translation>
     </message>
     <message>
         <source>Error writing config file %s</source>
-        <translation>Error en escriure el fitxer de configuració %s</translation>
+        <translation type="vanished">Error en escriure el fitxer de configuració %s</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="159"/>
@@ -600,7 +600,7 @@ d&apos;executar manualment-pulseaudio-x11.</translation>
     </message>
     <message>
         <source>Show version</source>
-        <translation>Mostra la versió</translation>
+        <translation type="vanished">Mostra la versió</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="707"/>
@@ -663,7 +663,7 @@ d&apos;executar manualment-pulseaudio-x11.</translation>
     </message>
     <message>
         <source>Volume Control Feedback Sound</source>
-        <translation>Control del volum de la realimentació del so</translation>
+        <translation type="vanished">Control del volum de la realimentació del so</translation>
     </message>
     <message>
         <location filename="../../sinkwidget.cc" line="96"/>
@@ -756,7 +756,7 @@ d&apos;executar manualment-pulseaudio-x11.</translation>
     </message>
     <message>
         <source>icon</source>
-        <translation>icona</translation>
+        <translation type="vanished">icona</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="32"/>
@@ -785,11 +785,11 @@ d&apos;executar manualment-pulseaudio-x11.</translation>
     </message>
     <message>
         <source>Device</source>
-        <translation>Dispositiu</translation>
+        <translation type="vanished">Dispositiu</translation>
     </message>
     <message>
         <source>lock</source>
-        <translation>bloqueig</translation>
+        <translation type="vanished">bloqueig</translation>
     </message>
     <message>
         <location filename="../../streamwidget.cc" line="34"/>
