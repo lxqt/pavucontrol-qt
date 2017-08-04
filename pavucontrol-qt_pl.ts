@@ -6,7 +6,7 @@
     <message>
         <location filename="../../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <location filename="../../cardwidget.ui" line="29"/>
@@ -30,33 +30,33 @@
         <location filename="../../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1% (%2dB)</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1%</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Cisza&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Cisza&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Minimum&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Minimum&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;100% (0 dB)&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;100% (0 dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;Podstawa&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Podstawa&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -91,7 +91,7 @@
     <message>
         <location filename="../../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>icon</source>
@@ -199,7 +199,7 @@
     <message>
         <location filename="../../devicewidget.cc" line="239"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_set_device_description() nie powiodło się</translation>
     </message>
     <message>
         <source>pa_ext_device_manager_write() failed</source>
@@ -612,7 +612,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Wymuś zatrzymanie odtwarzania</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="53"/>
@@ -682,7 +682,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Wymuś zatrzymanie nagrywania</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="60"/>
@@ -738,7 +738,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>icon</source>
