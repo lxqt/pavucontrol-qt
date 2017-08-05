@@ -169,7 +169,7 @@
     </message>
     <message>
         <source>Rename Device...</source>
-        <translation type="vanished">Zmień nazwę urządzenia...</translation>
+        <translation type="vanished">Zmień nazwę urządzenia…</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="40"/>
@@ -216,7 +216,7 @@
     <message>
         <location filename="../../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation>O_dtwarzanie</translation>
+        <translation>O&amp;dtwarzanie</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="55"/>
@@ -262,7 +262,7 @@
     <message>
         <location filename="../../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>Urządzenia wyjści_owe</translation>
+        <translation>Urządzenia wyjści&amp;owe</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="185"/>
@@ -287,7 +287,7 @@
     <message>
         <location filename="../../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>Urządzen_ia wejściowe</translation>
+        <translation>Urządzen&amp;ia wejściowe</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="250"/>
@@ -401,7 +401,7 @@
     <message>
         <location filename="../../mainwindow.cc" line="1088"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation>Ustalanie połączenia z usługą PulseAudio. Proszę czekać...</translation>
+        <translation>Ustalanie połączenia z usługą PulseAudio. Proszę czekać…</translation>
     </message>
 </context>
 <context>
@@ -567,7 +567,13 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Połączenie z PulseAudio nie powiodło się. Zostanie ponowione w ciągu 5 sekund
+
+Prawdopodobnie jest to spowodowane nieprawidłową konfiguracją PULSE_SERVER w ustawieniach środowiska/
+X11 lub domyślnego serwera w client.conf.
+Może to się również wydarzyć, jeżeli PulseAudio został zatrzymany i pozostawił nieaktualne informacje. W tym
+przypadku PulseAudio powinien uruchomić się automaycznie, lub (jeżeli ta opcja nie jest skonfigurowana) powinieneś
+uruchomić pulseaudio-x11 ręcznie.</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="676"/>
