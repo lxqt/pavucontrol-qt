@@ -323,7 +323,7 @@ start-qt / 2016-08-31
   * Remove the minimalStreamWindow. It's no longer used
   * Updated Polish translation
   * use the server provided icons
-  * Initialise our dropdown at contruction and just repopulate it when the cardinfo callback is received
+  * Initialise our dropdown at construction and just repopulate it when the cardinfo callback is received
   * various small glade updates
   * fix version of libcanberra dependency, fixes PA bug #494
   * Fix the number of outstanding operations.
