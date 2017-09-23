@@ -30,64 +30,33 @@
         <location filename="../../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation>etiket til lydstyrkeskyder [X% (YdB)]</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation>etiket til lydstyrkeskyder [X%]</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Lydløs&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Lydløs&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Min.&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Min.&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;100% (0dB)&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;100% (0dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;Basis&lt;/i&gt;&lt;/small&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>ChannelWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Formular</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;venstre-front&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;50%&lt;/small&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;Lydløs&lt;/small&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;Min.&lt;/small&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;100% (0dB)&lt;/small&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;&lt;i&gt;Basis&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Basis&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -98,32 +67,24 @@
         <translation>Formular</translation>
     </message>
     <message>
-        <source>icon</source>
-        <translation type="vanished">ikon</translation>
-    </message>
-    <message>
         <location filename="../../devicewidget.ui" line="36"/>
         <source>Device Title</source>
         <translation>Enhedens titel</translation>
     </message>
     <message>
-        <source>lock</source>
-        <translation type="vanished">lås</translation>
-    </message>
-    <message>
         <location filename="../../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Mute lyd</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Lås kanaler sammen</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Sæt som tilbagefald</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="103"/>
@@ -176,13 +137,9 @@
         <translation> ms</translation>
     </message>
     <message>
-        <source>Rename Device...</source>
-        <translation type="vanished">Omdøb enhed...</translation>
-    </message>
-    <message>
         <location filename="../../devicewidget.cc" line="40"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Omdøb enhed...</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="154"/>
@@ -202,16 +159,12 @@
     <message>
         <location filename="../../devicewidget.cc" line="232"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Omdøb enhed %1 til:</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="239"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>pa_ext_device_manager_write() failed</source>
-        <translation type="vanished">pa_ext_device_manager_write() fejlede</translation>
+        <translation>pa_ext_device_manager_set_device_description() fejlede</translation>
     </message>
 </context>
 <context>
@@ -346,18 +299,6 @@
         <location filename="../../mainwindow.ui" line="347"/>
         <source>...</source>
         <translation>...</translation>
-    </message>
-    <message>
-        <source>Error reading config file %s: %s</source>
-        <translation type="vanished">Fejl ved læsning af konfiguratonsfilen %s: %s</translation>
-    </message>
-    <message>
-        <source>Error saving preferences</source>
-        <translation type="vanished">Fejl ved gemning af præferencer</translation>
-    </message>
-    <message>
-        <source>Error writing config file %s</source>
-        <translation type="vanished">Fejl ved skrivning af konfigurationsfilen %s</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="159"/>
@@ -599,10 +540,6 @@ køre start-pulseaudio-x11 manuelt.</translation>
         <translation>Maksimer vinduet.</translation>
     </message>
     <message>
-        <source>Show version</source>
-        <translation type="vanished">Vis version</translation>
-    </message>
-    <message>
         <location filename="../../pavucontrol.cc" line="707"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Fatal fejl: kan ikke oprette forbindelse til PulseAudio</translation>
@@ -626,7 +563,7 @@ køre start-pulseaudio-x11 manuelt.</translation>
     <message>
         <location filename="../../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Afslut afspilning</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="53"/>
@@ -662,10 +599,6 @@ køre start-pulseaudio-x11 manuelt.</translation>
         <translation>pa_context_set_sink_volume_by_index() fejlede</translation>
     </message>
     <message>
-        <source>Volume Control Feedback Sound</source>
-        <translation type="vanished">Lydstyrkekontrol feedbacklyd</translation>
-    </message>
-    <message>
         <location filename="../../sinkwidget.cc" line="96"/>
         <source>pa_context_set_sink_mute_by_index() failed</source>
         <translation>pa_context_set_sink_mute_by_index() fejlede</translation>
@@ -696,7 +629,7 @@ køre start-pulseaudio-x11 manuelt.</translation>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Afslut optagelse</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="60"/>
@@ -755,10 +688,6 @@ køre start-pulseaudio-x11 manuelt.</translation>
         <translation>Formular</translation>
     </message>
     <message>
-        <source>icon</source>
-        <translation type="vanished">ikon</translation>
-    </message>
-    <message>
         <location filename="../../streamwidget.ui" line="32"/>
         <source>Device Title</source>
         <translation>Enhedens titel</translation>
@@ -771,25 +700,17 @@ køre start-pulseaudio-x11 manuelt.</translation>
     <message>
         <location filename="../../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>enhed</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Mute lyd</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Device</source>
-        <translation type="vanished">Enhed</translation>
-    </message>
-    <message>
-        <source>lock</source>
-        <translation type="vanished">lås</translation>
+        <translation>Lås kanaler sammen</translation>
     </message>
     <message>
         <location filename="../../streamwidget.cc" line="34"/>
