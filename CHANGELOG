@@ -1,7 +1,33 @@
 
-pavucontrol-qt-0.2.0 / 2016-12-11
+pavucontrol-qt-0.3.0 / 2017-09-24
 =================================
 
+  * Bump version to 0.3.0
+  * correct spelling mistake
+  * Added Lithuanian .desktop file
+  * liblxqt make no sense here
+  * Copied issue template
+  * set Qt::AA_UseHighDpiPixmaps to true
+  * Added version to cli options
+  * Added default CMAKE_BUILD_TYPE and versioning
+  * added pl.desktop
+  * ui: Use "changes-prevent-symbolic" icon
+  * MainWindow: Remove old GTK remnants
+  * Add Catalan translation
+  * Channel: Add slider snapping to 100%
+  * Channel: Address compiler warnings
+  * Channel: Align slider controls correclty
+  * Channel: Add ticks to volume slider
+  * Channel: Use percentage for volume scale
+  * devicewidgte: Re-add device renaming
+  * MainWindow: Force using the size from previous run
+  * MainWindow: Add quit shortcut
+  * Added pavucontrol-qt_da.desktop
+
+0.2.0 / 2016-12-11
+==================
+
+  * Release 0.2.0: Update changelog
   * Release 0.2.0: Update changelog
   * Use QSettings for storing configuration
   * Create pavucontrol-qt_pt.desktop
@@ -323,7 +349,7 @@ start-qt / 2016-08-31
   * Remove the minimalStreamWindow. It's no longer used
   * Updated Polish translation
   * use the server provided icons
-  * Initialise our dropdown at construction and just repopulate it when the cardinfo callback is received
+  * Initialise our dropdown at contruction and just repopulate it when the cardinfo callback is received
   * various small glade updates
   * fix version of libcanberra dependency, fixes PA bug #494
   * Fix the number of outstanding operations.
