@@ -30,13 +30,13 @@
         <location filename="../../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1% (%2dB)</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1%</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
@@ -62,16 +62,19 @@
 <context>
     <name>ChannelWidget</name>
     <message>
+        <location filename="../../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="vanished">Dialogue</translation>
+        <translation>Dialogue</translation>
     </message>
     <message>
+        <location filename="../../channelwidget.ui" line="20"/>
         <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;avant-gauche&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;avant-gauche&lt;/b&gt;</translation>
     </message>
     <message>
+        <location filename="../../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;50%&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -152,13 +155,9 @@
         <translation> ms</translation>
     </message>
     <message>
-        <source>Rename Device...</source>
-        <translation type="vanished">Renommer le périphérique ...</translation>
-    </message>
-    <message>
         <location filename="../../devicewidget.cc" line="40"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer le périphérique...</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="154"/>
@@ -178,16 +177,12 @@
     <message>
         <location filename="../../devicewidget.cc" line="232"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer le périphérique %1 an :</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="239"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>pa_ext_device_manager_write() failed</source>
-        <translation type="vanished">échec de pa_ext_device_manager_write()</translation>
+        <translation>Echec de pa_ext_device_manager_set_device_description()</translation>
     </message>
 </context>
 <context>
@@ -322,18 +317,6 @@
         <location filename="../../mainwindow.ui" line="347"/>
         <source>...</source>
         <translation>...</translation>
-    </message>
-    <message>
-        <source>Error reading config file %s: %s</source>
-        <translation type="vanished">Erreur de lecture du fichier de configuration %s : %s</translation>
-    </message>
-    <message>
-        <source>Error saving preferences</source>
-        <translation type="vanished">Erreur d&apos;enregistrement des préférences</translation>
-    </message>
-    <message>
-        <source>Error writing config file %s</source>
-        <translation type="vanished">Erreur d&apos;écriture du fichier de configuration %s</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="159"/>
@@ -591,16 +574,6 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
 <context>
     <name>SinkInputWidget</name>
     <message>
-        <location filename="../../sinkinputwidget.cc" line="36"/>
-        <source>on</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../sinkinputwidget.cc" line="39"/>
-        <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../sinkinputwidget.cc" line="53"/>
         <source>Unknown output</source>
         <translation>Sortie inconnue</translation>
@@ -656,16 +629,6 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
 </context>
 <context>
     <name>SourceOutputWidget</name>
-    <message>
-        <location filename="../../sourceoutputwidget.cc" line="36"/>
-        <source>from</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../sourceoutputwidget.cc" line="39"/>
-        <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="60"/>
         <source>Unknown input</source>
