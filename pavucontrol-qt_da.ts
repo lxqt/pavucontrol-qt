@@ -21,7 +21,7 @@
     <message>
         <location filename="../../cardwidget.cc" line="66"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
-        <translation>pa_context_set_card_profile_by_index() fejlede</translation>
+        <translation>pa_context_set_card_profile_by_index() mislykkedes</translation>
     </message>
 </context>
 <context>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation>Sæt som tilbagefald</translation>
+        <translation>Sæt som reserve</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="103"/>
@@ -129,7 +129,7 @@
     <message>
         <location filename="../../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Forsinkelsesforskydning:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Forskydning af forsinkelse:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="245"/>
@@ -144,7 +144,7 @@
     <message>
         <location filename="../../devicewidget.cc" line="154"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation>pa_context_set_port_latency_offset() fejlede</translation>
+        <translation>pa_context_set_port_latency_offset() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="225"/>
@@ -164,7 +164,7 @@
     <message>
         <location filename="../../devicewidget.cc" line="239"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation>pa_ext_device_manager_set_device_description() fejlede</translation>
+        <translation>pa_ext_device_manager_set_device_description() mislykkedes</translation>
     </message>
 </context>
 <context>
@@ -213,7 +213,7 @@
     <message>
         <location filename="../../mainwindow.ui" line="93"/>
         <source>&amp;Recording</source>
-        <translation>&amp;Optager</translation>
+        <translation>&amp;Optagelse</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="120"/>
@@ -248,12 +248,12 @@
     <message>
         <location filename="../../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>&amp;Inddataenheder</translation>
+        <translation>&amp;input-enheder</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="250"/>
         <source>&lt;i&gt;No input devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Ingen inddataenheder tilgængelige&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Ingen input-enheder tilgængelige&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="269"/>
@@ -378,7 +378,7 @@
     <message>
         <location filename="../../pavucontrol.cc" line="153"/>
         <source>Sink input callback failure</source>
-        <translation>Tilbagekaldsfejl for sinkinddata</translation>
+        <translation>Tilbagekaldsfejl for sinkinput</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="172"/>
@@ -404,7 +404,7 @@
     <message>
         <location filename="../../pavucontrol.cc" line="264"/>
         <source>pa_ext_stream_restore_read() failed</source>
-        <translation>pa_ext_stream_restore_read() fejlede</translation>
+        <translation>pa_ext_stream_restore_read() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="282"/>
@@ -415,7 +415,7 @@
     <message>
         <location filename="../../pavucontrol.cc" line="303"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation>pa_ext_device_restore_read_sink_formats() fejlede</translation>
+        <translation>pa_ext_device_restore_read_sink_formats() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="321"/>
@@ -426,80 +426,80 @@
     <message>
         <location filename="../../pavucontrol.cc" line="340"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation>pa_ext_device_manager_read() fejlede</translation>
+        <translation>pa_ext_device_manager_read() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="357"/>
         <source>pa_context_get_sink_info_by_index() failed</source>
-        <translation>pa_context_get_sink_info_by_index() fejlede</translation>
+        <translation>pa_context_get_sink_info_by_index() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="370"/>
         <source>pa_context_get_source_info_by_index() failed</source>
-        <translation>pa_context_get_source_info_by_index() fejlede</translation>
+        <translation>pa_context_get_source_info_by_index() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="383"/>
         <location filename="../../pavucontrol.cc" line="396"/>
         <source>pa_context_get_sink_input_info() failed</source>
-        <translation>pa_context_get_sink_input_info() fejlede</translation>
+        <translation>pa_context_get_sink_input_info() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="409"/>
         <source>pa_context_get_client_info() failed</source>
-        <translation>pa_context_get_client_info() fejlede</translation>
+        <translation>pa_context_get_client_info() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="419"/>
         <location filename="../../pavucontrol.cc" line="484"/>
         <source>pa_context_get_server_info() failed</source>
-        <translation>pa_context_get_server_info() fejlede</translation>
+        <translation>pa_context_get_server_info() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="432"/>
         <source>pa_context_get_card_info_by_index() failed</source>
-        <translation>pa_context_get_card_info_by_index() fejlede</translation>
+        <translation>pa_context_get_card_info_by_index() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="475"/>
         <source>pa_context_subscribe() failed</source>
-        <translation>pa_context_subscribe() fejlede</translation>
+        <translation>pa_context_subscribe() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="491"/>
         <source>pa_context_client_info_list() failed</source>
-        <translation>pa_context_client_info_list() fejlede</translation>
+        <translation>pa_context_client_info_list() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="498"/>
         <source>pa_context_get_card_info_list() failed</source>
-        <translation>pa_context_get_card_info_list() fejlede</translation>
+        <translation>pa_context_get_card_info_list() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="505"/>
         <source>pa_context_get_sink_info_list() failed</source>
-        <translation>pa_context_get_sink_info_list() fejlede</translation>
+        <translation>pa_context_get_sink_info_list() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="512"/>
         <source>pa_context_get_source_info_list() failed</source>
-        <translation>pa_context_get_source_info_list() fejlede</translation>
+        <translation>pa_context_get_source_info_list() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="519"/>
         <source>pa_context_get_sink_input_info_list() failed</source>
-        <translation>pa_context_get_sink_input_info_list() fejlede</translation>
+        <translation>pa_context_get_sink_input_info_list() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="526"/>
         <source>pa_context_get_source_output_info_list() failed</source>
-        <translation>pa_context_get_source_output_info_list() fejlede</translation>
+        <translation>pa_context_get_source_output_info_list() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="585"/>
         <location filename="../../pavucontrol.cc" line="636"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation>Forbindelsen fejlede, forsøger at oprette forbindelsen igen</translation>
+        <translation>Forbindelsen mislykkedes, forsøger at oprette forbindelsen igen</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="608"/>
@@ -516,7 +516,7 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation>Forbindelsen til PulseAudio fejlede. Forsøger automatisk igen om 5 sekunder
+        <translation>Forbindelsen til PulseAudio mislykkedes. Forsøger automatisk igen om 5 sekunder
 
 I dette tilfælde er det sansynligvis på grund af at PULSE_SERVER i miljøet/X11 rod-vindue-egenskaber
 eller default-server i client.conf er fejlkonfigureret.
@@ -550,7 +550,7 @@ køre start-pulseaudio-x11 manuelt.</translation>
     <message>
         <location filename="../../rolewidget.cc" line="59"/>
         <source>pa_ext_stream_restore_write() failed</source>
-        <translation>pa_ext_stream_restore_write() fejlede</translation>
+        <translation>pa_ext_stream_restore_write() mislykkedes</translation>
     </message>
 </context>
 <context>
@@ -573,22 +573,22 @@ køre start-pulseaudio-x11 manuelt.</translation>
     <message>
         <location filename="../../sinkinputwidget.cc" line="64"/>
         <source>pa_context_set_sink_input_volume() failed</source>
-        <translation>pa_context_set_sink_input_volume() fejlede</translation>
+        <translation>pa_context_set_sink_input_volume() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="79"/>
         <source>pa_context_set_sink_input_mute() failed</source>
-        <translation>pa_context_set_sink_input_mute() fejlede</translation>
+        <translation>pa_context_set_sink_input_mute() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="89"/>
         <source>pa_context_kill_sink_input() failed</source>
-        <translation>pa_context_kill_sink_input() fejlede</translation>
+        <translation>pa_context_kill_sink_input() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="114"/>
         <source>pa_context_move_sink_input_by_index() failed</source>
-        <translation>pa_context_move_sink_input_by_index() fejlede</translation>
+        <translation>pa_context_move_sink_input_by_index() mislykkedes</translation>
     </message>
 </context>
 <context>
@@ -596,27 +596,27 @@ køre start-pulseaudio-x11 manuelt.</translation>
     <message>
         <location filename="../../sinkwidget.cc" line="81"/>
         <source>pa_context_set_sink_volume_by_index() failed</source>
-        <translation>pa_context_set_sink_volume_by_index() fejlede</translation>
+        <translation>pa_context_set_sink_volume_by_index() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../sinkwidget.cc" line="96"/>
         <source>pa_context_set_sink_mute_by_index() failed</source>
-        <translation>pa_context_set_sink_mute_by_index() fejlede</translation>
+        <translation>pa_context_set_sink_mute_by_index() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../sinkwidget.cc" line="110"/>
         <source>pa_context_set_default_sink() failed</source>
-        <translation>pa_context_set_default_sink() fejlede</translation>
+        <translation>pa_context_set_default_sink() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../sinkwidget.cc" line="126"/>
         <source>pa_context_set_sink_port_by_index() failed</source>
-        <translation>pa_context_set_sink_port_by_index() fejlede</translation>
+        <translation>pa_context_set_sink_port_by_index() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../sinkwidget.cc" line="166"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation>pa_ext_device_restore_save_sink_formats() fejlede</translation>
+        <translation>pa_ext_device_restore_save_sink_formats() mislykkedes</translation>
     </message>
 </context>
 <context>
@@ -639,22 +639,22 @@ køre start-pulseaudio-x11 manuelt.</translation>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="72"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation>pa_context_set_source_output_volume() fejlede</translation>
+        <translation>pa_context_set_source_output_volume() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="87"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation>pa_context_set_source_output_mute() fejlede</translation>
+        <translation>pa_context_set_source_output_mute() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="98"/>
         <source>pa_context_kill_source_output() failed</source>
-        <translation>pa_context_kill_source_output() fejlede</translation>
+        <translation>pa_context_kill_source_output() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="125"/>
         <source>pa_context_move_source_output_by_index() failed</source>
-        <translation>pa_context_move_source_output_by_index() fejlede</translation>
+        <translation>pa_context_move_source_output_by_index() mislykkedes</translation>
     </message>
 </context>
 <context>
@@ -662,22 +662,22 @@ køre start-pulseaudio-x11 manuelt.</translation>
     <message>
         <location filename="../../sourcewidget.cc" line="35"/>
         <source>pa_context_set_source_volume_by_index() failed</source>
-        <translation>pa_context_set_source_volume_by_index() fejlede</translation>
+        <translation>pa_context_set_source_volume_by_index() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../sourcewidget.cc" line="50"/>
         <source>pa_context_set_source_mute_by_index() failed</source>
-        <translation>pa_context_set_source_mute_by_index() fejlede</translation>
+        <translation>pa_context_set_source_mute_by_index() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../sourcewidget.cc" line="64"/>
         <source>pa_context_set_default_source() failed</source>
-        <translation>pa_context_set_default_source() fejlede</translation>
+        <translation>pa_context_set_default_source() mislykkedes</translation>
     </message>
     <message>
         <location filename="../../sourcewidget.cc" line="80"/>
         <source>pa_context_set_source_port_by_index() failed</source>
-        <translation>pa_context_set_source_port_by_index() fejlede</translation>
+        <translation>pa_context_set_source_port_by_index() mislykkedes</translation>
     </message>
 </context>
 <context>
