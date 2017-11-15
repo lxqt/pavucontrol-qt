@@ -6,7 +6,7 @@
     <message>
         <location filename="../../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <location filename="../../cardwidget.ui" line="29"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../../cardwidget.ui" line="38"/>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>プロフィール:</translation>
     </message>
     <message>
         <location filename="../../cardwidget.cc" line="66"/>
@@ -41,12 +41,12 @@
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;沈黙&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;沈黙&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;最小&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;最小&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="162"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;ベース&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;ベース&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -83,27 +83,27 @@
     <message>
         <location filename="../../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>デバイス名</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>音声をミュート</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="103"/>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>高度なオプションを表示</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="172"/>
@@ -158,7 +158,7 @@
     <message>
         <location filename="../../devicewidget.cc" line="40"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>デバイスの名前を変更...</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="154"/>
@@ -168,17 +168,17 @@
     <message>
         <location filename="../../devicewidget.cc" line="225"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>申し訳ありません、デバイスの名前の変更はサポートしていません。</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="226"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>デバイスの名前の変更するためPulseAudio サーバーのデバイスマネージャーをロードする費用があります</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="232"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>デバイス %1 の名前の変更:</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="239"/>
@@ -252,17 +252,17 @@
     <message>
         <location filename="../../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>全ての出力デバイス</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>ハードウェア出力デバイス</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="214"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>仮想出力デバイス</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="223"/>
@@ -277,7 +277,7 @@
     <message>
         <location filename="../../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>全ての入力デバイス</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="274"/>
@@ -287,17 +287,17 @@
     <message>
         <location filename="../../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>ハードウェア入力デバイス</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>仮想入力デバイス</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>モニター</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="298"/>
@@ -312,7 +312,7 @@
     <message>
         <location filename="../../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>音量メーターの設定</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="347"/>
@@ -369,7 +369,7 @@
     <message>
         <location filename="../../mainwindow.cc" line="1088"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>PulseAudioとの接続を確立中。少々お待ちください...</translation>
     </message>
 </context>
 <context>
@@ -377,7 +377,7 @@
     <message>
         <location filename="../../pavucontrol.cc" line="67"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="88"/>
