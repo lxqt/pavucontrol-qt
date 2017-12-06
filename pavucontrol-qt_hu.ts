@@ -6,17 +6,17 @@
     <message>
         <location filename="../../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Űrlap</translation>
     </message>
     <message>
         <location filename="../../cardwidget.ui" line="29"/>
         <source>Card Name</source>
-        <translation>Kártya neve</translation>
+        <translation>Kártyanév</translation>
     </message>
     <message>
         <location filename="../../cardwidget.ui" line="38"/>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../cardwidget.cc" line="66"/>
@@ -30,52 +30,33 @@
         <location filename="../../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Némítva&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Csöndes&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Minimum&lt;/small&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;Alapbeállítás&lt;/i&gt;&lt;/small&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>ChannelWidget</name>
-    <message>
-        <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;bal első&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;Némítva&lt;/small&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;Minimum&lt;/small&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;&lt;i&gt;Alapbeállítás&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Alap&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -83,107 +64,107 @@
     <message>
         <location filename="../../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Űrlap</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Eszköz cím</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Némítás</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Csatornák összekapcsolása</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Tartaléknak vesz</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Port:&lt;/b&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Haladó beállítások</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="172"/>
         <source>PCM</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="182"/>
         <source>AC3</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="189"/>
         <source>EAC3</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="196"/>
         <source>DTS</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="203"/>
         <source>MPEG</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="210"/>
         <source>AAC</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Késleltetés:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="40"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eszköz átnevezése...</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="154"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="225"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sajnos az átnevezés nem támogatott.</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="226"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Az eszközkezelővel be kell betölteni a Pulseaudio szerverbe a load-device-manager modult az átnevezéshez</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="232"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>A %1 eszköz átnevezése erre:</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="239"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -192,11 +173,6 @@
         <location filename="../../mainwindow.ui" line="14"/>
         <source>Volume Control</source>
         <translation>Hangerőszabályzó</translation>
-    </message>
-    <message>
-        <location filename="../../mainwindow.ui" line="28"/>
-        <source>&amp;Playback</source>
-        <translation>&amp;Lejátszás</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="55"/>
@@ -209,40 +185,30 @@
         <location filename="../../mainwindow.ui" line="196"/>
         <location filename="../../mainwindow.ui" line="261"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>Látható:</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="74"/>
         <location filename="../../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Minden adatfolyam</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="79"/>
         <location filename="../../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Alkalmazások</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="84"/>
         <location filename="../../mainwindow.ui" line="149"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../mainwindow.ui" line="93"/>
-        <source>&amp;Recording</source>
-        <translation>&amp;Felvétel</translation>
+        <translation>Virtuális adatfolyamok</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="120"/>
         <source>&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Jelenleg egy alkalmazás sem vesz fel hangot.&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../mainwindow.ui" line="158"/>
-        <source>&amp;Output Devices</source>
-        <translation>&amp;Kimeneti eszközök</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="185"/>
@@ -252,22 +218,37 @@
     <message>
         <location filename="../../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Minden kimeneti eszköz</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Hardveres kimeneti eszközök</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="214"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuális kimeneti eszközök</translation>
+    </message>
+    <message>
+        <location filename="../../mainwindow.ui" line="28"/>
+        <source>&amp;Playback</source>
+        <translation>Leját&amp;szás</translation>
+    </message>
+    <message>
+        <location filename="../../mainwindow.ui" line="93"/>
+        <source>&amp;Recording</source>
+        <translation>&amp;Felvétel</translation>
+    </message>
+    <message>
+        <location filename="../../mainwindow.ui" line="158"/>
+        <source>&amp;Output Devices</source>
+        <translation>&amp;Kimeneti eszközök</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>B_emeneti eszközök</translation>
+        <translation>Bemenet&amp;i eszközök</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="250"/>
@@ -277,27 +258,27 @@
     <message>
         <location filename="../../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Minden bemeneti eszköz</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Minden a monitorokat kivéve</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Hardveres bemeneti eszközök</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuális bementi eszközök</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Monitorok</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="298"/>
@@ -312,29 +293,29 @@
     <message>
         <location filename="../../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>hangerőszabályzók láthatók</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="347"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> (csatlakoztatva)</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="163"/>
         <location filename="../../mainwindow.cc" line="257"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> (elérhetetlen)</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="165"/>
         <location filename="../../mainwindow.cc" line="254"/>
         <source> (unplugged)</source>
-        <translation type="unfinished"></translation>
+        <translation> (nem csatlakoztatott)</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="386"/>
@@ -359,7 +340,7 @@
     <message>
         <location filename="../../mainwindow.cc" line="585"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>A nyelő bemenet nincs figyelembevéve, mivel ezt az &quot;eseménykezelő&quot; végzi</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="757"/>
@@ -369,7 +350,7 @@
     <message>
         <location filename="../../mainwindow.cc" line="1088"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapcsolódás a PulseAudio-hoz. Türelem...</translation>
     </message>
 </context>
 <context>
@@ -377,7 +358,7 @@
     <message>
         <location filename="../../pavucontrol.cc" line="67"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="88"/>
@@ -407,12 +388,12 @@
     <message>
         <location filename="../../pavucontrol.cc" line="212"/>
         <source>Client callback failure</source>
-        <translation>Függvényvisszatérési hiba a kliensen</translation>
+        <translation>Függvényvisszatérési hiba a kliensnél</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="228"/>
         <source>Server info callback failure</source>
-        <translation>Függvényvisszatérési hiba a kiszolgálóinformációkban</translation>
+        <translation>Függvényvisszatérési hiba a kiszolgálónál</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="246"/>
@@ -429,23 +410,23 @@
         <location filename="../../pavucontrol.cc" line="282"/>
         <location filename="../../pavucontrol.cc" line="557"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>A „device-restor eextension: %s indítása meghiúsult</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="303"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>A „pa_ext_stream_restore_read_sink_formats()” függvényhívás meghiúsult</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="321"/>
         <location filename="../../pavucontrol.cc" line="570"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>A device manager extension: %s indítása meghiúsult</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="340"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>A „pa_ext_device_manager_read()” függvényhívás meghiúsult</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="357"/>
@@ -492,7 +473,7 @@
     <message>
         <location filename="../../pavucontrol.cc" line="498"/>
         <source>pa_context_get_card_info_list() failed</source>
-        <translation>A „pa_context_get_card_info_list()” függvényhívás meghiúsult</translation>
+        <translation>A „pa_context_get_card_info_list() függvényhívás meghiúsult</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="505"/>
@@ -518,7 +499,7 @@
         <location filename="../../pavucontrol.cc" line="585"/>
         <location filename="../../pavucontrol.cc" line="636"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Csatlakozás sikertelen, újrapróbáljuk</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="608"/>
@@ -535,27 +516,33 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>A PulseAudio csatlakozás sikertelen. Automata újra próbálkozás 5 mp.múlva
+
+Lehet, hogy a PULSE_SERVER az X11 Root Window Tulajdonság ablakban
+, vagy a client.conf -ban a z alapértelmezett szerver nincs jól van beállítva.
+Ez akkor is előállhat, ha a Pulseaudio összeomolván az X11 Gyökér ablakban romokat hagy.
+Ekkor, ha a PulseAudo nem éled fel újra, vagy rosszul van beállítva, kézzel kell a
+pulseaoudio-x11 -et elindítani.</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="676"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>Válaszd a megfelelő fület a betöltéshez.</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="679"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation type="unfinished"></translation>
+        <translation>MIndig újrapróbálkozik, ha a pa kilép (5 másodpercenként).</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="682"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ablakhoz nagyít.</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="707"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>Végzetes hiba: A PulseAudo csatlakozás sikertelen</translation>
     </message>
 </context>
 <context>
@@ -571,12 +558,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sinkinputwidget.cc" line="36"/>
         <source>on</source>
-        <translation>eszköz:</translation>
+        <translation>eszköz</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Lejátszás leállítása</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="53"/>
@@ -596,7 +583,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sinkinputwidget.cc" line="89"/>
         <source>pa_context_kill_sink_input() failed</source>
-        <translation>pa_context_kill_sink_input() meghiúsult</translation>
+        <translation>pa_context_kill_sink_input() meghiúsu</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="114"/>
@@ -610,10 +597,6 @@ run start-pulseaudio-x11 manually.</source>
         <location filename="../../sinkwidget.cc" line="81"/>
         <source>pa_context_set_sink_volume_by_index() failed</source>
         <translation>pa_context_set_sink_volume_by_index() meghiúsult</translation>
-    </message>
-    <message>
-        <source>Volume Control Feedback Sound</source>
-        <translation type="vanished">Hangerőszabályzó visszajelzési hang</translation>
     </message>
     <message>
         <location filename="../../sinkwidget.cc" line="96"/>
@@ -633,7 +616,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sinkwidget.cc" line="166"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_save_sink_formats() meghiúsult</translation>
     </message>
 </context>
 <context>
@@ -641,12 +624,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="36"/>
         <source>from</source>
-        <translation>bemenet:</translation>
+        <translation>bemenet</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Felvétel leállítása</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="60"/>
@@ -656,12 +639,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="72"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_volume() meghiúsult</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="87"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_mute() meghiúsult</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="98"/>
@@ -702,41 +685,37 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Ürlap</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Eszköz név</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="52"/>
         <source>direction</source>
-        <translation>irány:</translation>
+        <translation>irány</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>eszköz</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Némítás</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Device</source>
-        <translation type="vanished">Eszköz</translation>
+        <translation>Csatornák összekapcsolása</translation>
     </message>
     <message>
         <location filename="../../streamwidget.cc" line="34"/>
         <source>Terminate</source>
-        <translation>Lejátszás befejezése</translation>
+        <translation>Kilövés</translation>
     </message>
 </context>
 </TS>
