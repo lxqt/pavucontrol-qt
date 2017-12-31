@@ -6,22 +6,22 @@
     <message>
         <location filename="../../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Φόρμα</translation>
     </message>
     <message>
         <location filename="../../cardwidget.ui" line="29"/>
         <source>Card Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα κάρτας</translation>
     </message>
     <message>
         <location filename="../../cardwidget.ui" line="38"/>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ταυτότητα:</translation>
     </message>
     <message>
         <location filename="../../cardwidget.cc" line="66"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_card_profile_by_index() απέτυχε</translation>
     </message>
 </context>
 <context>
@@ -30,33 +30,33 @@
         <location filename="../../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1% (%2dB)</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1%</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;Σίγαση&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;Ελάχ&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;100% (0dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;&lt;i&gt;Βάση&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -64,107 +64,107 @@
     <message>
         <location filename="../../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Φόρμα</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Τίτλος συσκευής</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Σίγαση ήχου</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Κλείδωμα των καναλιών μαζί</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Ορισμός ως συσκευή μετάπτωσης</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Εμφά_νιση:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Θύρα:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Προβολή προηγμένων επιλογών</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="172"/>
         <source>PCM</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="182"/>
         <source>AC3</source>
-        <translation type="unfinished"></translation>
+        <translation>AC3</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="189"/>
         <source>EAC3</source>
-        <translation type="unfinished"></translation>
+        <translation>EAC3</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="196"/>
         <source>DTS</source>
-        <translation type="unfinished"></translation>
+        <translation>DTS</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="203"/>
         <source>MPEG</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="210"/>
         <source>AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>AAC</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Μετατόπιση του λανθάνοντος χρόνου:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> ms</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="40"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Μετονομασία συσκευής...</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="154"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_port_latency_offset() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="225"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Λυπάμαι, αλλά η μετονομασία της συσκευής δεν υποστηρίζεται.</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="226"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Πρέπει να φορτώσετε το module-device-manager στον εξυπηρετητή PulseAudio προκειμένου να μετονομάσετε συσκευές</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="232"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Μετονομασία της συσκευής %1 σε:</translation>
     </message>
     <message>
         <location filename="../../devicewidget.cc" line="239"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_ext_device_manager_set_device_description() απέτυχε</translation>
     </message>
 </context>
 <context>
@@ -177,12 +177,12 @@
     <message>
         <location filename="../../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation>_Αναπαραγωγή</translation>
+        <translation>&amp;Αναπαραγωγή</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="55"/>
         <source>&lt;i&gt;No application is currently playing audio.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Καμιά εφαρμογή δεν αναπαράγει ήχο αυτήν την στιγμή.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="66"/>
@@ -190,40 +190,40 @@
         <location filename="../../mainwindow.ui" line="196"/>
         <location filename="../../mainwindow.ui" line="261"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση:</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="74"/>
         <location filename="../../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Όλες οι ροές</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="79"/>
         <location filename="../../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Εφαρμογές</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="84"/>
         <location filename="../../mainwindow.ui" line="149"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Εικονικές ροές</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="93"/>
         <source>&amp;Recording</source>
-        <translation>Εγγρα_φή</translation>
+        <translation>&amp;Ηχογράφηση</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="120"/>
         <source>&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Καμιά εφαρμογή δεν ηχογραφεί αυτήν την στιγμή.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>Συσκευές εξό_δου</translation>
+        <translation>Συσκευές ε&amp;ξόδου</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="185"/>
@@ -233,22 +233,22 @@
     <message>
         <location filename="../../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Όλες οι συσκευές εξόδου</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Συσκευές εξόδου υλικού</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="214"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Εικονικές συσκευές εξόδου</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>Συσκευές _εισόδου</translation>
+        <translation>&amp;Συσκευές εισόδου</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="250"/>
@@ -258,89 +258,89 @@
     <message>
         <location filename="../../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Όλες οι συσκευές εισόδου</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Όλες εκτός των οθονών</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Συσκευές εισόδου υλικού</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Εικονικές συσκευές εισόδου</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Οθόνες</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="298"/>
         <source>&amp;Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Διαμόρφωση</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="325"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Δεν υπάρχουν διαθέσιμες κάρτες για διαμόρφωση&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση των μετρητών έντασης</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="347"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> (συνδεδεμένο)</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="163"/>
         <location filename="../../mainwindow.cc" line="257"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> (μη διαθέσιμο)</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="165"/>
         <location filename="../../mainwindow.cc" line="254"/>
         <source> (unplugged)</source>
-        <translation type="unfinished"></translation>
+        <translation> (αποσυνδεδεμένο)</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="386"/>
         <source>Failed to read data from stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία ανάγνωσης δεδομένων από την ροή</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="430"/>
         <source>Peak detect</source>
-        <translation type="unfinished"></translation>
+        <translation>Εντοπισμός αιχμής</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="431"/>
         <source>Failed to create monitoring stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία δημιουργίας της ροής εποπτείας</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="446"/>
         <source>Failed to connect monitoring stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία σύνδεσης της ροής εποπτείας</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="585"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Αγνόηση του αποδέκτη εισόδου διότι είναι καθορισμένη ως ένα συμβάν και ως εκ τούτου διαχειρίζεται από το συστατικό των συμβάντων</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="757"/>
@@ -350,7 +350,7 @@
     <message>
         <location filename="../../mainwindow.cc" line="1088"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Εδραίωση της σύνδεσης με το PulseAudio. Παρακαλώ περιμένετε...</translation>
     </message>
 </context>
 <context>
@@ -358,148 +358,148 @@
     <message>
         <location filename="../../pavucontrol.cc" line="67"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Σφάλμα</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="88"/>
         <source>Card callback failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία επανάκλησης κάρτας</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="111"/>
         <source>Sink callback failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία επανάκλησης αποδέκτη</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="134"/>
         <source>Source callback failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία επανάκλησης πηγής</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="153"/>
         <source>Sink input callback failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία επανάκλησης αποδέκτη εισόδου</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="172"/>
         <source>Source output callback failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία επανάκλησης πηγής εξόδου</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="212"/>
         <source>Client callback failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία επανάκλησης πελάτη</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="228"/>
         <source>Server info callback failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία επανάκλησης πληροφοριών εξυπηρετητή</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="246"/>
         <location filename="../../pavucontrol.cc" line="543"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία αρχικοποίησης της επέκτασης επαναφοράς ροής: %s</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="264"/>
         <source>pa_ext_stream_restore_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_ext_stream_restore_read() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="282"/>
         <location filename="../../pavucontrol.cc" line="557"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία αρχικοποίησης της επέκτασης επαναφοράς συσκευής: %s</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="303"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_ext_device_restore_read_sink_formats() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="321"/>
         <location filename="../../pavucontrol.cc" line="570"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία αρχικοποίησης της επέκτασης διαχειριστή συσκευών: %s</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="340"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_ext_device_manager_read() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="357"/>
         <source>pa_context_get_sink_info_by_index() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_get_sink_info_by_index() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="370"/>
         <source>pa_context_get_source_info_by_index() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_get_source_info_by_index() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="383"/>
         <location filename="../../pavucontrol.cc" line="396"/>
         <source>pa_context_get_sink_input_info() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_get_sink_input_info() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="409"/>
         <source>pa_context_get_client_info() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_get_client_info() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="419"/>
         <location filename="../../pavucontrol.cc" line="484"/>
         <source>pa_context_get_server_info() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_get_server_info() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="432"/>
         <source>pa_context_get_card_info_by_index() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_get_card_info_by_index() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="475"/>
         <source>pa_context_subscribe() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_subscribe() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="491"/>
         <source>pa_context_client_info_list() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_client_info_list() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="498"/>
         <source>pa_context_get_card_info_list() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_get_card_info_list() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="505"/>
         <source>pa_context_get_sink_info_list() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_get_sink_info_list() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="512"/>
         <source>pa_context_get_source_info_list() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_get_source_info_list() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="519"/>
         <source>pa_context_get_sink_input_info_list() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_get_sink_input_info_list() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="526"/>
         <source>pa_context_get_source_output_info_list() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_get_source_output_info_list() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="585"/>
         <location filename="../../pavucontrol.cc" line="636"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία της σύνδεσης, προσπάθεια επανασύνδεσης</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="608"/>
@@ -516,27 +516,32 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η σύνδεση στο PulseAudio απέτυχε. Αυτόματη επανάληψη σε 5 δευτ.
+
+Αυτό μπορεί να συμβαίνει διότι ο PULSE_SERVER είναι κακώς διαμορφωμένος στο παράθυρο διαχειριστή Ιδιότητες Environment/X11
+ή το default-server στο client.conf.
+Αυτή η κατάσταση συναντάται επίσης μετά από κατάρρευση του PulseAudio και παραμονή υπολειμμάτων στο παράθυρο διαχειριστή X11.
+Αν πρόκειται για αυτήν την περίπτωση, τότε το PulseAudio θα πρέπει να αυτοδημιουργηθεί εκ νέου, ή αν αυτό δεν έχει ρυθμιστεί θα πρέπει να εκτελέσετε χειροκίνητα το start-pulseaudio-x11.</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="676"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλογή μιας συγκεκριμένης καρτέλας κατά την φόρτωση.</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="679"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation type="unfinished"></translation>
+        <translation>Επαναφορά αέναα κατά την εγκατάλειψη του pa (κάθε 5 δευτερόλεπτα).</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="682"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Μεγιστοποίηση του παράθυρου.</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="707"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανεπανόρθωτο σφάλμα: Αδύνατη η σύνδεση στο PulseAudio</translation>
     </message>
 </context>
 <context>
@@ -544,7 +549,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../rolewidget.cc" line="59"/>
         <source>pa_ext_stream_restore_write() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_ext_stream_restore_write() απέτυχε</translation>
     </message>
 </context>
 <context>
@@ -552,37 +557,37 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sinkinputwidget.cc" line="36"/>
         <source>on</source>
-        <translation type="unfinished"></translation>
+        <translation>σε</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Τερματισμός αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="53"/>
         <source>Unknown output</source>
-        <translation type="unfinished"></translation>
+        <translation>Άγνωστη έξοδος</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="64"/>
         <source>pa_context_set_sink_input_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_sink_input_volume() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="79"/>
         <source>pa_context_set_sink_input_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_sink_input_mute() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="89"/>
         <source>pa_context_kill_sink_input() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_kill_sink_input() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="114"/>
         <source>pa_context_move_sink_input_by_index() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_move_sink_input_by_index() απέτυχε</translation>
     </message>
 </context>
 <context>
@@ -590,7 +595,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sinkwidget.cc" line="81"/>
         <source>pa_context_set_sink_volume_by_index() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_sink_volume_by_index() απέτυχε</translation>
     </message>
     <message>
         <source>Volume Control Feedback Sound</source>
@@ -599,22 +604,22 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sinkwidget.cc" line="96"/>
         <source>pa_context_set_sink_mute_by_index() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_sink_mute_by_index() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../sinkwidget.cc" line="110"/>
         <source>pa_context_set_default_sink() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_default_sink() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../sinkwidget.cc" line="126"/>
         <source>pa_context_set_sink_port_by_index() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_sink_port_by_index() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../sinkwidget.cc" line="166"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_ext_device_restore_save_sink_formats() απέτυχε</translation>
     </message>
 </context>
 <context>
@@ -622,37 +627,37 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="36"/>
         <source>from</source>
-        <translation type="unfinished"></translation>
+        <translation>από</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Τερματισμός ηχογράφησης</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="60"/>
         <source>Unknown input</source>
-        <translation type="unfinished"></translation>
+        <translation>Άγνωστη είσοδος</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="72"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_source_output_volume() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="87"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_source_output_mute() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="98"/>
         <source>pa_context_kill_source_output() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_kill_source_output() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="125"/>
         <source>pa_context_move_source_output_by_index() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_move_source_output_by_index() απέτυχε</translation>
     </message>
 </context>
 <context>
@@ -660,22 +665,22 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../sourcewidget.cc" line="35"/>
         <source>pa_context_set_source_volume_by_index() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_source_volume_by_index() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../sourcewidget.cc" line="50"/>
         <source>pa_context_set_source_mute_by_index() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_source_mute_by_index() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../sourcewidget.cc" line="64"/>
         <source>pa_context_set_default_source() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_default_source() απέτυχε</translation>
     </message>
     <message>
         <location filename="../../sourcewidget.cc" line="80"/>
         <source>pa_context_set_source_port_by_index() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>το pa_context_set_source_port_by_index() απέτυχε</translation>
     </message>
 </context>
 <context>
@@ -683,32 +688,32 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Φόρμα</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Τίτλος συσκευής</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="52"/>
         <source>direction</source>
-        <translation type="unfinished"></translation>
+        <translation>κατεύθυνση</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>συσκευή</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Σίγαση ήχου</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Κλείδωμα των καναλιών μαζί</translation>
     </message>
     <message>
         <source>Device</source>
@@ -717,7 +722,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../streamwidget.cc" line="34"/>
         <source>Terminate</source>
-        <translation>Εγγρα_φή</translation>
+        <translation>Τερματισμός</translation>
     </message>
 </context>
 </TS>
