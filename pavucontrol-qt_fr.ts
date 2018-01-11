@@ -62,19 +62,16 @@
 <context>
     <name>ChannelWidget</name>
     <message>
-        <location filename="../../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation>Dialogue</translation>
+        <translation type="vanished">Dialogue</translation>
     </message>
     <message>
-        <location filename="../../channelwidget.ui" line="20"/>
         <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation>&lt;b&gt;avant-gauche&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;avant-gauche&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
+        <translation type="vanished">&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -574,6 +571,16 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
 <context>
     <name>SinkInputWidget</name>
     <message>
+        <location filename="../../sinkinputwidget.cc" line="36"/>
+        <source>on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../sinkinputwidget.cc" line="39"/>
+        <source>Terminate Playback</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../sinkinputwidget.cc" line="53"/>
         <source>Unknown output</source>
         <translation>Sortie inconnue</translation>
@@ -629,6 +636,16 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
 </context>
 <context>
     <name>SourceOutputWidget</name>
+    <message>
+        <location filename="../../sourceoutputwidget.cc" line="36"/>
+        <source>from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../sourceoutputwidget.cc" line="39"/>
+        <source>Terminate Recording</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="60"/>
         <source>Unknown input</source>

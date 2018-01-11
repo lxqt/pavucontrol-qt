@@ -702,12 +702,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">フォーム</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">デバイス名</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="52"/>
@@ -722,7 +722,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">音声をミュート</translation>
     </message>
     <message>
         <location filename="../../streamwidget.ui" line="79"/>
