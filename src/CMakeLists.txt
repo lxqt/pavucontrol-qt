@@ -35,7 +35,6 @@ set(pavucontrol-qt_SRCS
     sourceoutputwidget.cc
     sourcewidget.cc
     streamwidget.cc
-    uniqueapplication.cc
 )
 
 set(pavucontrol-qt_UI
