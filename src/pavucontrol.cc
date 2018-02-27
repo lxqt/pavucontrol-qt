@@ -49,7 +49,6 @@
 #include <QTranslator>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
-#include "uniqueapplication.h"
 #include <QString>
 
 static pa_context* context = NULL;
@@ -647,10 +646,7 @@ int main(int argc, char *argv[]) {
 
     signal(SIGPIPE, SIG_IGN);
 
-    UniqueApplication app(argc, argv);
-
-    if(app.active())
-        return 0;
+    QApplication app(argc, argv);
 
     app.setOrganizationName(QStringLiteral("pavucontrol-qt"));
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
