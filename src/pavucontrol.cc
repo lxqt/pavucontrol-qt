@@ -58,6 +58,178 @@ static int default_tab = 0;
 static bool retry = false;
 static int reconnect_timeout = 1;
 
+struct QtPaMainLoop;
+
+//class TimerEventWrapper : public QObject
+//{
+//    Q_OBJECT
+//
+//public:
+//    pa_time_event_cb callback;
+//    pa_usec_t paTime;
+//    void *userData;
+//    pa_time_event_destroy_cb_t destroyCallback = 0;
+//    const timeval *timeVal;
+//    int timerId;
+//
+//    TimerEventWrapper(QtPaEventLoop *eventloop, pa_time_event *paEvent) : m_eventloop(eventloop) m_paEvent(paEvent) {
+//    }
+//
+//protected:
+//    timerEvent(QTimerEvent *event) {
+//        // FIXME: check time
+//        timeval tv;
+//        callback(eventLoop, reinterpret_cast<pa_time_event*>(this), timeVal, userData);
+//    }
+//
+//
+//private:
+//    QtPaEventLoop *m_eventloop;
+//    pa_time_event *m_paEvent;
+//};
+//
+//class DeferredEventWrapper : public QObject
+//{
+//    Q_OBJECT
+//
+//public:
+//    pa_defer_event_cb_t callback;
+//    void *userData;
+//    pa_defer_event_destroy_cb_t destroyCallback;
+//
+//    TimerEventWrapper(QtPaEventLoop *eventloop : m_eventloop(eventloop) {
+//    }
+//
+//    void dispatch() {
+//        callback(m_eventLoop, this, userData);
+//    }
+//
+//private:
+//    QtPaEventLoop *m_eventloop;
+//};
+
+//class IoEventWrapper : public QObject
+//{
+//    Q_OBJECT
+//
+//public:
+//    pa_defer_event_cb_t callback;
+//    void *userData;
+//    pa_defer_event_destroy_cb_t destroyCallback;
+//    QSocketNotifier socketNotifier;
+//
+//    TimerEventWrapper(QtPaEventLoop *eventloop, pa_time_event *paEvent) : m_eventloop(eventloop) m_paEvent(paEvent) {
+//    }
+//
+//    void dispatch() {
+//        callback(m_eventLoop, m_paEvent, userData);
+//    }
+//
+//private:
+//    QtPaEventLoop *m_eventloop;
+//    pa_defer_event *m_paEvent;
+//};
+
+struct QtPaMainLoop
+{
+    //static QSet<TimerEventWrapper*> timerWrappers;
+    //static QSet<IoEventWrapper*> ioWrappers;
+    //static QSet<DeferredEventWrapper*> deferWrappers;
+
+    //QHash<pa_io_event*, QSocketNotifier*> ioNotifiers;
+    //QHash<pa_time_event*, QAbstractEventDispatcher::TimerInfo> timers;
+    //QHash<pa_defer_event*, DeferredEvent*> deferredEvents;
+
+    static pa_time_event *newTimer(pa_mainloop_api *a, const struct timeval *tv, pa_time_event_cb_t callback, void *userdata) {
+        QTimer *timer = new QTimer();
+        timer->setProperty("PA_USERDATA", QVariant::fromValue(userdata));
+        timer->setParent(qApp);
+        //timer->setParent(reinterpret_cast<QtPaMainLoop*>(a));
+        timer->setSingleShot(true);
+
+        int interval = tv->tv_sec * 1000;
+        Qt::TimerType timerType = Qt::VeryCoarseTimer;
+        if (tv->tv_usec) {
+            interval += tv->tv_usec / 1000;
+            timerType = Qt::PreciseTimer;
+        }
+        timer->setTimerType(timerType);
+        QObject::connect(timer, &QTimer::timeout, [=]() {
+            callback(a, reinterpret_cast<pa_time_event*>(timer), tv, userdata);
+        });
+        timer->start(interval);
+
+        return reinterpret_cast<pa_time_event*>(timer);
+    }
+
+    void restartTimer(pa_time_event *e, timeval *tv) {
+        QTimer *timer = reinterpret_cast<QTimer*>(e);
+        int interval = tv->tv_sec * 1000;
+        Qt::TimerType timerType = Qt::VeryCoarseTimer;
+        if (tv->tv_usec) {
+            interval += tv->tv_usec / 1000;
+            timerType = Qt::PreciseTimer;
+        }
+        timer->setTimerType(timerType);
+        timer->start(interval);
+    }
+
+    void freeTimer(pa_time_event *e) {
+        QTimer *timer = reinterpret_cast<QTimer*>(e);
+        delete timer;
+    }
+
+    void timerSetDestructor(pa_time_event *e, pa_time_event_destroy_cb_t destructor) {
+        QTimer *timer = reinterpret_cast<QTimer*>(e);
+        QObject::connect(timer, &QTimer::timeout, [=]() {
+            destructor(reinterpret_cast<pa_mainloop_api*>(timer->parent()), e, qvariant_cast<void*>(timer->property("PA_USERDATA")));
+        });
+    }
+
+    pa_io_event *newIoEvent(pa_mainloop_api*a, int fd, pa_io_event_flags_t events, pa_io_event_cb_t cb, void *userdata) {
+    }
+
+    //static pa_timer_event *newTimer(pa_mainloop_api *a, const struct timeval *tv, pa_time_event_cb_t callback, void *userdata) {
+    //    TimerEventWrapper *wrapper = new TimerEventWrapper(this);
+    //    wrapper->callback = callback;
+    //    wrapper->userData = userdata;
+    //    wrapper->timeVal = tv;
+    //    int interval = tv->tv_sec * 1000;
+    //    Qt::TimerType timerType = Qt::VeryCoarseTimer;
+    //    if (tv->tv_usec) {
+    //        interval += tv->tv_usec / 1000;
+    //        timerType = Qt::PreciseTimer;
+    //    }
+    //    wrapper->timerId = qApp->eventDispatcher()->registerTimer(interval, timerType, wrapper);
+
+    //    timerWrappers->insert(wrapper);
+
+    //    return reinterpret_cast<pa_timer_event*>(wrapper);
+    //}
+    //void restartTimer(pa_time_event *e, timeval *tv) {
+    //    TimerEventWrapper *wrapper = reinterpret_cast<TimerEventWrapper*>(e);
+
+    //    qApp->eventDispatcher()->unregisterTimer(wrapper->timerId);
+
+    //    wrapper->timeVal = tv;
+    //    int interval = tv->tv_sec * 1000;
+    //    Qt::TimerType timerType = Qt::VeryCoarseTimer;
+    //    if (tv->tv_usec) {
+    //        interval += tv->tv_usec / 1000;
+    //        timerType = Qt::PreciseTimer;
+    //    }
+
+    //    wrapper->timerId = qApp->eventDispatcher()->registerTimer(interval, timerType, wrapper);
+    //}
+
+    //void freeTimer(pa_time_event *e) {
+    //    TimerEventWrapper *wrapper = reinterpret_cast<TimerEventWrapper*>(e);
+    //    timerWrappers->remove(wrapper);
+    //    qApp->eventDispatcher()->unregisterTimer(wrapper->timerId);
+    //    wrapper->deleteLater();
+    //}
+};
+
 void show_error(const char *txt) {
     char buf[256];
 
