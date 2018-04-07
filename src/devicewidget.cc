@@ -31,6 +31,7 @@
 #include <QLabel>
 #include <QMessageBox>
 #include <QInputDialog>
+#include <QAction>
 
 /*** DeviceWidget ***/
 DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :

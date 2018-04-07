@@ -26,6 +26,7 @@
 #include "minimalstreamwidget.h"
 #include "ui_streamwidget.h"
 #include <QTimer>
+#include <QAction>
 
 class MainWindow;
 class Channel;

@@ -21,8 +21,9 @@
 #ifndef sourceoutputwidget_h
 #define sourceoutputwidget_h
 
-#include "pavucontrol.h"
+#include <QAction>
 
+#include "pavucontrol.h"
 #include "streamwidget.h"
 
 class MainWindow;
