@@ -83,8 +83,8 @@ set_property(
 target_link_libraries(pavucontrol-qt
     Qt5::Widgets
     Qt5::DBus
-    ${PULSE_LIBRARIES}
-    ${GLIB_LIBRARIES}
+    ${PULSE_LDFLAGS}
+    ${GLIB_LDFLAGS}
 )
 
 install(TARGETS
