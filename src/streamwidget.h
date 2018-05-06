@@ -29,6 +29,7 @@
 
 class MainWindow;
 class Channel;
+class QAction;
 
 class StreamWidget : public MinimalStreamWidget, public Ui::StreamWidget {
     Q_OBJECT

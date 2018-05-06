@@ -28,6 +28,7 @@
 #include "devicewidget.h"
 #include "channel.h"
 #include <sstream>
+#include <QAction>
 #include <QLabel>
 #include <QMessageBox>
 #include <QInputDialog>

@@ -24,6 +24,7 @@
 #include "pavucontrol.h"
 
 #include "streamwidget.h"
+#include <QAction>
 
 class MainWindow;
 class QMenu;
