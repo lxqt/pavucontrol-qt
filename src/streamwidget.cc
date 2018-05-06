@@ -25,7 +25,7 @@
 #include "streamwidget.h"
 #include "mainwindow.h"
 #include "channel.h"
-
+#include <QAction>
 
 /*** StreamWidget ***/
 StreamWidget::StreamWidget(MainWindow *parent) :

@@ -30,6 +30,7 @@
 
 class MainWindow;
 class Channel;
+class QAction;
 
 class DeviceWidget : public MinimalStreamWidget, public Ui::DeviceWidget {
     Q_OBJECT
