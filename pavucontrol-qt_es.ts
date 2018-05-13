@@ -11,7 +11,7 @@
     <message>
         <location filename="../../cardwidget.ui" line="29"/>
         <source>Card Name</source>
-        <translation>Nombre de la placa</translation>
+        <translation>Nombre de la tarjeta</translation>
     </message>
     <message>
         <location filename="../../cardwidget.ui" line="38"/>
@@ -282,7 +282,7 @@
     <message>
         <location filename="../../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation>Todos excepto monitores</translation>
+        <translation>Todos excepto los monitores</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="279"/>
@@ -307,7 +307,7 @@
     <message>
         <location filename="../../mainwindow.ui" line="325"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation>&lt;i&gt;No hay placas disponibles para configurar&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;No hay tarjetas disponibles para configurar&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../../mainwindow.ui" line="336"/>
@@ -339,7 +339,7 @@
     <message>
         <location filename="../../mainwindow.cc" line="386"/>
         <source>Failed to read data from stream</source>
-        <translation>Fallo al leer datos desde el flujo</translation>
+        <translation>Fallo al leer datos del flujo</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cc" line="430"/>
@@ -382,7 +382,7 @@
     <message>
         <location filename="../../pavucontrol.cc" line="88"/>
         <source>Card callback failure</source>
-        <translation>Fallo en la llamada de respuesta de la placa</translation>
+        <translation>Fallo en la llamada de respuesta de la tarjeta</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="111"/>
