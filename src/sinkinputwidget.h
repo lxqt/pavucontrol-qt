@@ -21,8 +21,9 @@
 #ifndef sinkinputwidget_h
 #define sinkinputwidget_h
 
-#include "pavucontrol.h"
+#include <QAction>
 
+#include "pavucontrol.h"
 #include "streamwidget.h"
 #include <QAction>
 
