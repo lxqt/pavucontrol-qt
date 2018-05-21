@@ -1,7 +1,21 @@
 
-pavucontrol-qt-0.3.0 / 2017-09-24
+pavucontrol-qt-0.4.0 / 2018-05-21
 =================================
 
+  * Bumped minor version to 4
+  * Spanish translation update
+  * Qt5.11 beta: xxxwidget: include QAction explicitely
+  * CMake: Prevent in-source builds
+  * build: Use pkg-config's *_LDFLAGS
+  * fix http -> https
+  * Fixed mentions of LXDE
+  * pavucontrol: Remove unique application constraint
+  * Add Simplified Chinese desktop entry
+
+0.3.0 / 2017-09-24
+==================
+
+  * Release 0.3.0: Update changelog
   * Bump version to 0.3.0
   * correct spelling mistake
   * Added Lithuanian .desktop file
