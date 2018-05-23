@@ -62,16 +62,19 @@
 <context>
     <name>ChannelWidget</name>
     <message>
+        <location filename="../../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="vanished">Dialogue</translation>
+        <translation>Dialogue</translation>
     </message>
     <message>
+        <location filename="../../channelwidget.ui" line="20"/>
         <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;avant-gauche&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;avant-gauche&lt;/b&gt;</translation>
     </message>
     <message>
+        <location filename="../../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="vanished">&lt;small&gt;50%&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -152,32 +155,32 @@
         <translation> ms</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="40"/>
+        <location filename="../../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
         <translation>Renommer le périphérique...</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="154"/>
+        <location filename="../../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
         <translation>échec de pa_context_set_port_latency_offset()</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="225"/>
+        <location filename="../../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
         <translation>Désolé, mais renommer le périphérique n&apos;est pas possible.</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="226"/>
+        <location filename="../../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
         <translation>Vous devez charger module-device-manager dans le serveur PulseAudio afin de pouvoir renommer les périphériques</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="232"/>
+        <location filename="../../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
         <translation>Renommer le périphérique %1 an :</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="239"/>
+        <location filename="../../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
         <translation>Echec de pa_ext_device_manager_set_device_description()</translation>
     </message>
@@ -371,159 +374,159 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../pavucontrol.cc" line="67"/>
+        <location filename="../../pavucontrol.cc" line="66"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="88"/>
+        <location filename="../../pavucontrol.cc" line="87"/>
         <source>Card callback failure</source>
         <translation>Échec de la fonction de rappel de la carte</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="111"/>
+        <location filename="../../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
         <translation>Échec du rappel de la destination</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="134"/>
+        <location filename="../../pavucontrol.cc" line="133"/>
         <source>Source callback failure</source>
         <translation>Échec du rappel de la source</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="153"/>
+        <location filename="../../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
         <translation>Échec du rappel de l&apos;entrée de la destination</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="172"/>
+        <location filename="../../pavucontrol.cc" line="171"/>
         <source>Source output callback failure</source>
         <translation>Échec du rappel de la sortie de la source</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="212"/>
+        <location filename="../../pavucontrol.cc" line="211"/>
         <source>Client callback failure</source>
         <translation>Échec du rappel du client</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="228"/>
+        <location filename="../../pavucontrol.cc" line="227"/>
         <source>Server info callback failure</source>
         <translation>Échec du rappel des informations sur le serveur</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="246"/>
-        <location filename="../../pavucontrol.cc" line="543"/>
+        <location filename="../../pavucontrol.cc" line="245"/>
+        <location filename="../../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
         <translation>Impossible d&apos;initialiser l&apos;extension stream_restore : %s</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="264"/>
+        <location filename="../../pavucontrol.cc" line="263"/>
         <source>pa_ext_stream_restore_read() failed</source>
         <translation>Échec de pa_ext_stream_restore_read()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="282"/>
-        <location filename="../../pavucontrol.cc" line="557"/>
+        <location filename="../../pavucontrol.cc" line="281"/>
+        <location filename="../../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
         <translation>Échec d&apos;initialisation de l&apos;extension de la restauration du périphérique : %s</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="303"/>
+        <location filename="../../pavucontrol.cc" line="302"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
         <translation>Échec de pa_ext_device_restore_read_sink_formats()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="321"/>
-        <location filename="../../pavucontrol.cc" line="570"/>
+        <location filename="../../pavucontrol.cc" line="320"/>
+        <location filename="../../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
         <translation>Échec de l&apos;initialisation de l&apos;extension du gestionnaire de périphérique : %s</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="340"/>
+        <location filename="../../pavucontrol.cc" line="339"/>
         <source>pa_ext_device_manager_read() failed</source>
         <translation>Échec de pa_ext_device_manager_read()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="357"/>
+        <location filename="../../pavucontrol.cc" line="356"/>
         <source>pa_context_get_sink_info_by_index() failed</source>
         <translation>Échec de pa_context_get_sink_info_by_index()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="370"/>
+        <location filename="../../pavucontrol.cc" line="369"/>
         <source>pa_context_get_source_info_by_index() failed</source>
         <translation>Échec de pa_context_get_source_info_by_index()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="383"/>
-        <location filename="../../pavucontrol.cc" line="396"/>
+        <location filename="../../pavucontrol.cc" line="382"/>
+        <location filename="../../pavucontrol.cc" line="395"/>
         <source>pa_context_get_sink_input_info() failed</source>
         <translation>Échec de pa_context_get_sink_input_info()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="409"/>
+        <location filename="../../pavucontrol.cc" line="408"/>
         <source>pa_context_get_client_info() failed</source>
         <translation>Échec de pa_context_get_client_info()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="419"/>
-        <location filename="../../pavucontrol.cc" line="484"/>
+        <location filename="../../pavucontrol.cc" line="418"/>
+        <location filename="../../pavucontrol.cc" line="483"/>
         <source>pa_context_get_server_info() failed</source>
         <translation>Échec de pa_context_get_server_info()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="432"/>
+        <location filename="../../pavucontrol.cc" line="431"/>
         <source>pa_context_get_card_info_by_index() failed</source>
         <translation>Échec de pa_context_get_card_info_by_index()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="475"/>
+        <location filename="../../pavucontrol.cc" line="474"/>
         <source>pa_context_subscribe() failed</source>
         <translation>Échec de pa_context_subscribe()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="491"/>
+        <location filename="../../pavucontrol.cc" line="490"/>
         <source>pa_context_client_info_list() failed</source>
         <translation>Échec de pa_context_client_info_list()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="498"/>
+        <location filename="../../pavucontrol.cc" line="497"/>
         <source>pa_context_get_card_info_list() failed</source>
         <translation>Échec de pa_context_get_card_info_list()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="505"/>
+        <location filename="../../pavucontrol.cc" line="504"/>
         <source>pa_context_get_sink_info_list() failed</source>
         <translation>Échec de pa_context_get_sink_info_list()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="512"/>
+        <location filename="../../pavucontrol.cc" line="511"/>
         <source>pa_context_get_source_info_list() failed</source>
         <translation>Échec de pa_context_get_source_info_list()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="519"/>
+        <location filename="../../pavucontrol.cc" line="518"/>
         <source>pa_context_get_sink_input_info_list() failed</source>
         <translation>Échec de pa_context_get_sink_input_info_list()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="526"/>
+        <location filename="../../pavucontrol.cc" line="525"/>
         <source>pa_context_get_source_output_info_list() failed</source>
         <translation>Échec de pa_context_get_source_output_info_list()</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="585"/>
-        <location filename="../../pavucontrol.cc" line="636"/>
+        <location filename="../../pavucontrol.cc" line="584"/>
+        <location filename="../../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
         <translation>Échec de la connexion, essai de reconnection</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="608"/>
-        <location filename="../../pavucontrol.cc" line="668"/>
+        <location filename="../../pavucontrol.cc" line="607"/>
+        <location filename="../../pavucontrol.cc" line="664"/>
         <source>PulseAudio Volume Control</source>
         <translation>Contrôle du volume PulseAudio</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="623"/>
+        <location filename="../../pavucontrol.cc" line="622"/>
         <source>Connection to PulseAudio failed. Automatic retry in 5s
 
 In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Properties
@@ -540,22 +543,22 @@ Dans ce cas PulseAudio devrait auto-engendrer à nouveau, ou si ce n&apos;est pa
 exécuter start-pulseaudio-x11 manuellement.</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="676"/>
+        <location filename="../../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
         <translation>Sélectionnez un onglet spécifique lors du chargement.</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="679"/>
+        <location filename="../../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Toujours réessayer si pa quitte (toutes les 5s).</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="682"/>
+        <location filename="../../pavucontrol.cc" line="678"/>
         <source>Maximize the window.</source>
         <translation>Maximiser la fenêtre.</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="707"/>
+        <location filename="../../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Erreur fatale : connexion impossible à PulseAudio</translation>
     </message>
@@ -573,12 +576,12 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
     <message>
         <location filename="../../sinkinputwidget.cc" line="36"/>
         <source>on</source>
-        <translation type="unfinished"></translation>
+        <translation>en fonction</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminer lecture</translation>
     </message>
     <message>
         <location filename="../../sinkinputwidget.cc" line="53"/>
@@ -639,12 +642,12 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="36"/>
         <source>from</source>
-        <translation type="unfinished"></translation>
+        <translation>de</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminer enregistrement</translation>
     </message>
     <message>
         <location filename="../../sourceoutputwidget.cc" line="60"/>
