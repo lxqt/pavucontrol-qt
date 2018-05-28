@@ -62,19 +62,16 @@
 <context>
     <name>ChannelWidget</name>
     <message>
-        <location filename="../../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation>Dialogue</translation>
+        <translation type="vanished">Dialogue</translation>
     </message>
     <message>
-        <location filename="../../channelwidget.ui" line="20"/>
         <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation>&lt;b&gt;avant-gauche&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;avant-gauche&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
+        <translation type="vanished">&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -107,7 +104,7 @@
     <message>
         <location filename="../../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Port :&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Port&#xa0;:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../devicewidget.ui" line="126"/>
@@ -417,7 +414,7 @@
         <location filename="../../pavucontrol.cc" line="245"/>
         <location filename="../../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>Impossible d&apos;initialiser l&apos;extension stream_restore : %s</translation>
+        <translation>Impossible d&apos;initialiser l&apos;extension stream_restore&#xa0;: %s</translation>
     </message>
     <message>
         <location filename="../../pavucontrol.cc" line="263"/>

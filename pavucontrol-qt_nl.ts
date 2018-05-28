@@ -180,32 +180,32 @@
         <translation type="vanished">Apparaat hernoemen...</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="40"/>
+        <location filename="../../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="154"/>
+        <location filename="../../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
         <translation>pa_context_set_port_latency_offset() mislukt</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="225"/>
+        <location filename="../../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
         <translation>Helaas wordt hernoemen van het apparaat niet ondersteund.</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="226"/>
+        <location filename="../../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
         <translation>U dient module-device-manager te laden in de PulseAudio-server, om apparaten te hernoemen</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="232"/>
+        <location filename="../../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="239"/>
+        <location filename="../../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -415,159 +415,159 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../pavucontrol.cc" line="67"/>
+        <location filename="../../pavucontrol.cc" line="66"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="88"/>
+        <location filename="../../pavucontrol.cc" line="87"/>
         <source>Card callback failure</source>
         <translation>&apos;Callback&apos;-fout van kaart</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="111"/>
+        <location filename="../../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
         <translation>&apos;Sink callback&apos;-fout</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="134"/>
+        <location filename="../../pavucontrol.cc" line="133"/>
         <source>Source callback failure</source>
         <translation>&apos;Source callback&apos;-fout</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="153"/>
+        <location filename="../../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
         <translation>&apos;Sink input callback&apos;-fout</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="172"/>
+        <location filename="../../pavucontrol.cc" line="171"/>
         <source>Source output callback failure</source>
         <translation>&apos;Source output callback&apos;-fout</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="212"/>
+        <location filename="../../pavucontrol.cc" line="211"/>
         <source>Client callback failure</source>
         <translation>&apos;Client callback&apos;-fout</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="228"/>
+        <location filename="../../pavucontrol.cc" line="227"/>
         <source>Server info callback failure</source>
         <translation>&apos;Server info callback&apos;-fout</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="246"/>
-        <location filename="../../pavucontrol.cc" line="543"/>
+        <location filename="../../pavucontrol.cc" line="245"/>
+        <location filename="../../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
         <translation>Kon de extensie voor stroomherstel niet starten: %s</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="264"/>
+        <location filename="../../pavucontrol.cc" line="263"/>
         <source>pa_ext_stream_restore_read() failed</source>
         <translation>pa_ext_stream_restore_read() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="282"/>
-        <location filename="../../pavucontrol.cc" line="557"/>
+        <location filename="../../pavucontrol.cc" line="281"/>
+        <location filename="../../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
         <translation>Kon de extensie voor apparaatherstel niet starten: %s</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="303"/>
+        <location filename="../../pavucontrol.cc" line="302"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
         <translation>pa_ext_device_restore_read_sink_formats() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="321"/>
-        <location filename="../../pavucontrol.cc" line="570"/>
+        <location filename="../../pavucontrol.cc" line="320"/>
+        <location filename="../../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
         <translation>Kon de extensie voor apparaatbeheer niet starten: %s</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="340"/>
+        <location filename="../../pavucontrol.cc" line="339"/>
         <source>pa_ext_device_manager_read() failed</source>
         <translation>pa_ext_device_manager_read() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="357"/>
+        <location filename="../../pavucontrol.cc" line="356"/>
         <source>pa_context_get_sink_info_by_index() failed</source>
         <translation>pa_context_get_sink_info_by_index() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="370"/>
+        <location filename="../../pavucontrol.cc" line="369"/>
         <source>pa_context_get_source_info_by_index() failed</source>
         <translation>pa_context_get_source_info_by_index() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="383"/>
-        <location filename="../../pavucontrol.cc" line="396"/>
+        <location filename="../../pavucontrol.cc" line="382"/>
+        <location filename="../../pavucontrol.cc" line="395"/>
         <source>pa_context_get_sink_input_info() failed</source>
         <translation>pa_context_get_sink_input_info() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="409"/>
+        <location filename="../../pavucontrol.cc" line="408"/>
         <source>pa_context_get_client_info() failed</source>
         <translation>pa_context_get_client_info() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="419"/>
-        <location filename="../../pavucontrol.cc" line="484"/>
+        <location filename="../../pavucontrol.cc" line="418"/>
+        <location filename="../../pavucontrol.cc" line="483"/>
         <source>pa_context_get_server_info() failed</source>
         <translation>pa_context_get_server_info() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="432"/>
+        <location filename="../../pavucontrol.cc" line="431"/>
         <source>pa_context_get_card_info_by_index() failed</source>
         <translation>pa_context_get_card_info_by_index() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="475"/>
+        <location filename="../../pavucontrol.cc" line="474"/>
         <source>pa_context_subscribe() failed</source>
         <translation>pa_context_subscribe() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="491"/>
+        <location filename="../../pavucontrol.cc" line="490"/>
         <source>pa_context_client_info_list() failed</source>
         <translation>pa_context_client_info_list() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="498"/>
+        <location filename="../../pavucontrol.cc" line="497"/>
         <source>pa_context_get_card_info_list() failed</source>
         <translation>pa_context_get_card_info_list() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="505"/>
+        <location filename="../../pavucontrol.cc" line="504"/>
         <source>pa_context_get_sink_info_list() failed</source>
         <translation>pa_context_get_sink_info_list() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="512"/>
+        <location filename="../../pavucontrol.cc" line="511"/>
         <source>pa_context_get_source_info_list() failed</source>
         <translation>pa_context_get_source_info_list() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="519"/>
+        <location filename="../../pavucontrol.cc" line="518"/>
         <source>pa_context_get_sink_input_info_list() failed</source>
         <translation>pa_context_get_sink_input_info_list() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="526"/>
+        <location filename="../../pavucontrol.cc" line="525"/>
         <source>pa_context_get_source_output_info_list() failed</source>
         <translation>pa_context_get_source_output_info_list() mislukt</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="585"/>
-        <location filename="../../pavucontrol.cc" line="636"/>
+        <location filename="../../pavucontrol.cc" line="584"/>
+        <location filename="../../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
         <translation>Verbinding mislukt, bezig met nieuwe verbindingspoging</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="608"/>
-        <location filename="../../pavucontrol.cc" line="668"/>
+        <location filename="../../pavucontrol.cc" line="607"/>
+        <location filename="../../pavucontrol.cc" line="664"/>
         <source>PulseAudio Volume Control</source>
         <translation>PulseAudio volumebeheer</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="623"/>
+        <location filename="../../pavucontrol.cc" line="622"/>
         <source>Connection to PulseAudio failed. Automatic retry in 5s
 
 In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Properties
@@ -581,17 +581,17 @@ In dit geval is de oorzaak waarschijnlijk dat PULSE_SERVER verkeerd is ingesteld
 Deze situatie kan ook ontstaan wanneer PulseAudio is vastgelopen en verouderde details heeft achtergelaten in het X11-rootvenster. Indien dat het geval is, dan zou PulseAudio automatisch moeten herstarten, of als dat niet zo is ingesteld, moet u handmatig start-pulseaudio-x11 uitvoeren.</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="676"/>
+        <location filename="../../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
         <translation>Kies een specifiek tabblad om automatisch te laden.</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="679"/>
+        <location filename="../../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Probeer steeds opnieuw indien pulseaudio stopt (elke 5 seconden).</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="682"/>
+        <location filename="../../pavucontrol.cc" line="678"/>
         <source>Maximize the window.</source>
         <translation>Maximaliseer het venster.</translation>
     </message>
@@ -600,7 +600,7 @@ Deze situatie kan ook ontstaan wanneer PulseAudio is vastgelopen en verouderde d
         <translation type="vanished">Toon versie</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="707"/>
+        <location filename="../../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Fatale fout: kon niet verbinden met PulseAudio</translation>
     </message>

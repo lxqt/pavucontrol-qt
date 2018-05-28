@@ -144,32 +144,32 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="40"/>
+        <location filename="../../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
         <translation>重命名设备...</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="154"/>
+        <location filename="../../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
         <translation>pa_context_set_port_latency_offset() 失败</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="225"/>
+        <location filename="../../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
         <translation>抱歉，不支持设备重命名。</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="226"/>
+        <location filename="../../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
         <translation>要重命名设备，您需要在 PulseAudio 服务器中加载模块设备管理器</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="232"/>
+        <location filename="../../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
         <translation>重命名设备 %1 为:</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="239"/>
+        <location filename="../../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
         <translation>pa_ext_device_manager_set_device_description() 失败</translation>
     </message>
@@ -363,159 +363,159 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../pavucontrol.cc" line="67"/>
+        <location filename="../../pavucontrol.cc" line="66"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="88"/>
+        <location filename="../../pavucontrol.cc" line="87"/>
         <source>Card callback failure</source>
         <translation>声卡回叫失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="111"/>
+        <location filename="../../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
         <translation>Sink 回叫失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="134"/>
+        <location filename="../../pavucontrol.cc" line="133"/>
         <source>Source callback failure</source>
         <translation>源回叫失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="153"/>
+        <location filename="../../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
         <translation>Sink 输入回叫失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="172"/>
+        <location filename="../../pavucontrol.cc" line="171"/>
         <source>Source output callback failure</source>
         <translation>源输出回叫失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="212"/>
+        <location filename="../../pavucontrol.cc" line="211"/>
         <source>Client callback failure</source>
         <translation>客户端回叫失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="228"/>
+        <location filename="../../pavucontrol.cc" line="227"/>
         <source>Server info callback failure</source>
         <translation>服务器信息回叫失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="246"/>
-        <location filename="../../pavucontrol.cc" line="543"/>
+        <location filename="../../pavucontrol.cc" line="245"/>
+        <location filename="../../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
         <translation>无法初始化 stream_restore 扩展：%s</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="264"/>
+        <location filename="../../pavucontrol.cc" line="263"/>
         <source>pa_ext_stream_restore_read() failed</source>
         <translation>pa_ext_stream_restore_read() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="282"/>
-        <location filename="../../pavucontrol.cc" line="557"/>
+        <location filename="../../pavucontrol.cc" line="281"/>
+        <location filename="../../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
         <translation>初始化设备恢复扩展失败：%s</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="303"/>
+        <location filename="../../pavucontrol.cc" line="302"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
         <translation>pa_ext_device_restore_read_sink_formats() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="321"/>
-        <location filename="../../pavucontrol.cc" line="570"/>
+        <location filename="../../pavucontrol.cc" line="320"/>
+        <location filename="../../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
         <translation>初始化设备管理器扩展失败：%s</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="340"/>
+        <location filename="../../pavucontrol.cc" line="339"/>
         <source>pa_ext_device_manager_read() failed</source>
         <translation>pa_ext_device_manager_read() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="357"/>
+        <location filename="../../pavucontrol.cc" line="356"/>
         <source>pa_context_get_sink_info_by_index() failed</source>
         <translation>pa_context_get_sink_info_by_index() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="370"/>
+        <location filename="../../pavucontrol.cc" line="369"/>
         <source>pa_context_get_source_info_by_index() failed</source>
         <translation>pa_context_get_source_info_by_index() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="383"/>
-        <location filename="../../pavucontrol.cc" line="396"/>
+        <location filename="../../pavucontrol.cc" line="382"/>
+        <location filename="../../pavucontrol.cc" line="395"/>
         <source>pa_context_get_sink_input_info() failed</source>
         <translation>pa_context_get_sink_input_info() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="409"/>
+        <location filename="../../pavucontrol.cc" line="408"/>
         <source>pa_context_get_client_info() failed</source>
         <translation>pa_context_get_client_info() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="419"/>
-        <location filename="../../pavucontrol.cc" line="484"/>
+        <location filename="../../pavucontrol.cc" line="418"/>
+        <location filename="../../pavucontrol.cc" line="483"/>
         <source>pa_context_get_server_info() failed</source>
         <translation>pa_context_get_server_info() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="432"/>
+        <location filename="../../pavucontrol.cc" line="431"/>
         <source>pa_context_get_card_info_by_index() failed</source>
         <translation>pa_context_get_card_info_by_index() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="475"/>
+        <location filename="../../pavucontrol.cc" line="474"/>
         <source>pa_context_subscribe() failed</source>
         <translation>pa_context_subscribe() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="491"/>
+        <location filename="../../pavucontrol.cc" line="490"/>
         <source>pa_context_client_info_list() failed</source>
         <translation>pa_context_client_info_list() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="498"/>
+        <location filename="../../pavucontrol.cc" line="497"/>
         <source>pa_context_get_card_info_list() failed</source>
         <translation>pa_context_get_card_info_list() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="505"/>
+        <location filename="../../pavucontrol.cc" line="504"/>
         <source>pa_context_get_sink_info_list() failed</source>
         <translation>pa_context_get_sink_info_list() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="512"/>
+        <location filename="../../pavucontrol.cc" line="511"/>
         <source>pa_context_get_source_info_list() failed</source>
         <translation>pa_context_get_source_info_list() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="519"/>
+        <location filename="../../pavucontrol.cc" line="518"/>
         <source>pa_context_get_sink_input_info_list() failed</source>
         <translation>pa_context_get_sink_input_info_list() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="526"/>
+        <location filename="../../pavucontrol.cc" line="525"/>
         <source>pa_context_get_source_output_info_list() failed</source>
         <translation>pa_context_get_source_output_info_list() 失败</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="585"/>
-        <location filename="../../pavucontrol.cc" line="636"/>
+        <location filename="../../pavucontrol.cc" line="584"/>
+        <location filename="../../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
         <translation>连接失败，尝试重新连接</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="608"/>
-        <location filename="../../pavucontrol.cc" line="668"/>
+        <location filename="../../pavucontrol.cc" line="607"/>
+        <location filename="../../pavucontrol.cc" line="664"/>
         <source>PulseAudio Volume Control</source>
         <translation>PulseAudio 音量控制</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="623"/>
+        <location filename="../../pavucontrol.cc" line="622"/>
         <source>Connection to PulseAudio failed. Automatic retry in 5s
 
 In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Properties
@@ -530,22 +530,22 @@ run start-pulseaudio-x11 manually.</source>
 若如此，则 PulseAudio 应自动重启，否则您应手动运行 start-pulseaudio-x11 manually。</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="676"/>
+        <location filename="../../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
         <translation>选择加载特定标签。</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="679"/>
+        <location filename="../../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>如果 pa 退出，永远尝试（每 5 秒）。</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="682"/>
+        <location filename="../../pavucontrol.cc" line="678"/>
         <source>Maximize the window.</source>
         <translation>最大化窗口。</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="707"/>
+        <location filename="../../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>严重错误：无法连接 PulseAudio</translation>
     </message>

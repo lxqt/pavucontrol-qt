@@ -137,32 +137,32 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="40"/>
+        <location filename="../../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
         <translation>Eszköz átnevezése...</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="154"/>
+        <location filename="../../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="225"/>
+        <location filename="../../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
         <translation>Sajnos az átnevezés nem támogatott.</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="226"/>
+        <location filename="../../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
         <translation>Az eszközkezelővel be kell betölteni a Pulseaudio szerverbe a load-device-manager modult az átnevezéshez</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="232"/>
+        <location filename="../../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
         <translation>A %1 eszköz átnevezése erre:</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="239"/>
+        <location filename="../../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
         <translation></translation>
     </message>
@@ -356,159 +356,159 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../pavucontrol.cc" line="67"/>
+        <location filename="../../pavucontrol.cc" line="66"/>
         <source>Error</source>
         <translation>Hiba</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="88"/>
+        <location filename="../../pavucontrol.cc" line="87"/>
         <source>Card callback failure</source>
         <translation>Függvényvisszatérési hiba a kártyán</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="111"/>
+        <location filename="../../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
         <translation>Függvényvisszatérési hiba a nyelőn</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="134"/>
+        <location filename="../../pavucontrol.cc" line="133"/>
         <source>Source callback failure</source>
         <translation>Függvényvisszatérési hiba a forráson</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="153"/>
+        <location filename="../../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
         <translation>Függvényvisszatérési hiba a nyelő bemenetén</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="172"/>
+        <location filename="../../pavucontrol.cc" line="171"/>
         <source>Source output callback failure</source>
         <translation>Függvényvisszatérési hiba a forrás kimenetén</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="212"/>
+        <location filename="../../pavucontrol.cc" line="211"/>
         <source>Client callback failure</source>
         <translation>Függvényvisszatérési hiba a kliensnél</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="228"/>
+        <location filename="../../pavucontrol.cc" line="227"/>
         <source>Server info callback failure</source>
         <translation>Függvényvisszatérési hiba a kiszolgálónál</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="246"/>
-        <location filename="../../pavucontrol.cc" line="543"/>
+        <location filename="../../pavucontrol.cc" line="245"/>
+        <location filename="../../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
         <translation>Az adatfolyam visszaállítása (stream_restore) kiterjesztés előkészítése meghiúsult: %s</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="264"/>
+        <location filename="../../pavucontrol.cc" line="263"/>
         <source>pa_ext_stream_restore_read() failed</source>
         <translation>A „pa_ext_stream_restore_read()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="282"/>
-        <location filename="../../pavucontrol.cc" line="557"/>
+        <location filename="../../pavucontrol.cc" line="281"/>
+        <location filename="../../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
         <translation>A „device-restor eextension: %s indítása meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="303"/>
+        <location filename="../../pavucontrol.cc" line="302"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
         <translation>A „pa_ext_stream_restore_read_sink_formats()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="321"/>
-        <location filename="../../pavucontrol.cc" line="570"/>
+        <location filename="../../pavucontrol.cc" line="320"/>
+        <location filename="../../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
         <translation>A device manager extension: %s indítása meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="340"/>
+        <location filename="../../pavucontrol.cc" line="339"/>
         <source>pa_ext_device_manager_read() failed</source>
         <translation>A „pa_ext_device_manager_read()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="357"/>
+        <location filename="../../pavucontrol.cc" line="356"/>
         <source>pa_context_get_sink_info_by_index() failed</source>
         <translation>A „pa_context_get_sink_info_by_index()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="370"/>
+        <location filename="../../pavucontrol.cc" line="369"/>
         <source>pa_context_get_source_info_by_index() failed</source>
         <translation>A „pa_context_get_source_info_by_index()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="383"/>
-        <location filename="../../pavucontrol.cc" line="396"/>
+        <location filename="../../pavucontrol.cc" line="382"/>
+        <location filename="../../pavucontrol.cc" line="395"/>
         <source>pa_context_get_sink_input_info() failed</source>
         <translation>A „pa_context_get_sink_input_info()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="409"/>
+        <location filename="../../pavucontrol.cc" line="408"/>
         <source>pa_context_get_client_info() failed</source>
         <translation>A „pa_context_get_client_info()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="419"/>
-        <location filename="../../pavucontrol.cc" line="484"/>
+        <location filename="../../pavucontrol.cc" line="418"/>
+        <location filename="../../pavucontrol.cc" line="483"/>
         <source>pa_context_get_server_info() failed</source>
         <translation>A „pa_context_get_server_info()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="432"/>
+        <location filename="../../pavucontrol.cc" line="431"/>
         <source>pa_context_get_card_info_by_index() failed</source>
         <translation>A „pa_context_get_card_info_by_index()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="475"/>
+        <location filename="../../pavucontrol.cc" line="474"/>
         <source>pa_context_subscribe() failed</source>
         <translation>A „pa_context_subscribe()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="491"/>
+        <location filename="../../pavucontrol.cc" line="490"/>
         <source>pa_context_client_info_list() failed</source>
         <translation>A „pa_context_client_info_list()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="498"/>
+        <location filename="../../pavucontrol.cc" line="497"/>
         <source>pa_context_get_card_info_list() failed</source>
         <translation>A „pa_context_get_card_info_list() függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="505"/>
+        <location filename="../../pavucontrol.cc" line="504"/>
         <source>pa_context_get_sink_info_list() failed</source>
         <translation>A „pa_context_get_sink_info_list()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="512"/>
+        <location filename="../../pavucontrol.cc" line="511"/>
         <source>pa_context_get_source_info_list() failed</source>
         <translation>A „pa_context_get_source_info_list()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="519"/>
+        <location filename="../../pavucontrol.cc" line="518"/>
         <source>pa_context_get_sink_input_info_list() failed</source>
         <translation>A „pa_context_get_sink_input_info_list()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="526"/>
+        <location filename="../../pavucontrol.cc" line="525"/>
         <source>pa_context_get_source_output_info_list() failed</source>
         <translation>A „pa_context_get_source_output_info_list()” függvényhívás meghiúsult</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="585"/>
-        <location filename="../../pavucontrol.cc" line="636"/>
+        <location filename="../../pavucontrol.cc" line="584"/>
+        <location filename="../../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
         <translation>Csatlakozás sikertelen, újrapróbáljuk</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="608"/>
-        <location filename="../../pavucontrol.cc" line="668"/>
+        <location filename="../../pavucontrol.cc" line="607"/>
+        <location filename="../../pavucontrol.cc" line="664"/>
         <source>PulseAudio Volume Control</source>
         <translation>PulseAudio hangerőszabályzó</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="623"/>
+        <location filename="../../pavucontrol.cc" line="622"/>
         <source>Connection to PulseAudio failed. Automatic retry in 5s
 
 In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Properties
@@ -525,22 +525,22 @@ Ekkor, ha a PulseAudo nem éled fel újra, vagy rosszul van beállítva, kézzel
 pulseaoudio-x11 -et elindítani.</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="676"/>
+        <location filename="../../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
         <translation>Válaszd a megfelelő fület a betöltéshez.</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="679"/>
+        <location filename="../../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>MIndig újrapróbálkozik, ha a pa kilép (5 másodpercenként).</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="682"/>
+        <location filename="../../pavucontrol.cc" line="678"/>
         <source>Maximize the window.</source>
         <translation>Ablakhoz nagyít.</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="707"/>
+        <location filename="../../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Végzetes hiba: A PulseAudo csatlakozás sikertelen</translation>
     </message>

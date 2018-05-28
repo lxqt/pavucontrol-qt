@@ -137,32 +137,32 @@
         <translation> ms</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="40"/>
+        <location filename="../../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
         <translation>Μετονομασία συσκευής...</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="154"/>
+        <location filename="../../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
         <translation>το pa_context_set_port_latency_offset() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="225"/>
+        <location filename="../../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
         <translation>Λυπάμαι, αλλά η μετονομασία της συσκευής δεν υποστηρίζεται.</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="226"/>
+        <location filename="../../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
         <translation>Πρέπει να φορτώσετε το module-device-manager στον εξυπηρετητή PulseAudio προκειμένου να μετονομάσετε συσκευές</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="232"/>
+        <location filename="../../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
         <translation>Μετονομασία της συσκευής %1 σε:</translation>
     </message>
     <message>
-        <location filename="../../devicewidget.cc" line="239"/>
+        <location filename="../../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
         <translation>το pa_ext_device_manager_set_device_description() απέτυχε</translation>
     </message>
@@ -356,159 +356,159 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../pavucontrol.cc" line="67"/>
+        <location filename="../../pavucontrol.cc" line="66"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="88"/>
+        <location filename="../../pavucontrol.cc" line="87"/>
         <source>Card callback failure</source>
         <translation>Αποτυχία επανάκλησης κάρτας</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="111"/>
+        <location filename="../../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
         <translation>Αποτυχία επανάκλησης αποδέκτη</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="134"/>
+        <location filename="../../pavucontrol.cc" line="133"/>
         <source>Source callback failure</source>
         <translation>Αποτυχία επανάκλησης πηγής</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="153"/>
+        <location filename="../../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
         <translation>Αποτυχία επανάκλησης αποδέκτη εισόδου</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="172"/>
+        <location filename="../../pavucontrol.cc" line="171"/>
         <source>Source output callback failure</source>
         <translation>Αποτυχία επανάκλησης πηγής εξόδου</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="212"/>
+        <location filename="../../pavucontrol.cc" line="211"/>
         <source>Client callback failure</source>
         <translation>Αποτυχία επανάκλησης πελάτη</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="228"/>
+        <location filename="../../pavucontrol.cc" line="227"/>
         <source>Server info callback failure</source>
         <translation>Αποτυχία επανάκλησης πληροφοριών εξυπηρετητή</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="246"/>
-        <location filename="../../pavucontrol.cc" line="543"/>
+        <location filename="../../pavucontrol.cc" line="245"/>
+        <location filename="../../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
         <translation>Αποτυχία αρχικοποίησης της επέκτασης επαναφοράς ροής: %s</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="264"/>
+        <location filename="../../pavucontrol.cc" line="263"/>
         <source>pa_ext_stream_restore_read() failed</source>
         <translation>το pa_ext_stream_restore_read() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="282"/>
-        <location filename="../../pavucontrol.cc" line="557"/>
+        <location filename="../../pavucontrol.cc" line="281"/>
+        <location filename="../../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
         <translation>Αποτυχία αρχικοποίησης της επέκτασης επαναφοράς συσκευής: %s</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="303"/>
+        <location filename="../../pavucontrol.cc" line="302"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
         <translation>το pa_ext_device_restore_read_sink_formats() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="321"/>
-        <location filename="../../pavucontrol.cc" line="570"/>
+        <location filename="../../pavucontrol.cc" line="320"/>
+        <location filename="../../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
         <translation>Αποτυχία αρχικοποίησης της επέκτασης διαχειριστή συσκευών: %s</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="340"/>
+        <location filename="../../pavucontrol.cc" line="339"/>
         <source>pa_ext_device_manager_read() failed</source>
         <translation>το pa_ext_device_manager_read() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="357"/>
+        <location filename="../../pavucontrol.cc" line="356"/>
         <source>pa_context_get_sink_info_by_index() failed</source>
         <translation>το pa_context_get_sink_info_by_index() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="370"/>
+        <location filename="../../pavucontrol.cc" line="369"/>
         <source>pa_context_get_source_info_by_index() failed</source>
         <translation>το pa_context_get_source_info_by_index() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="383"/>
-        <location filename="../../pavucontrol.cc" line="396"/>
+        <location filename="../../pavucontrol.cc" line="382"/>
+        <location filename="../../pavucontrol.cc" line="395"/>
         <source>pa_context_get_sink_input_info() failed</source>
         <translation>το pa_context_get_sink_input_info() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="409"/>
+        <location filename="../../pavucontrol.cc" line="408"/>
         <source>pa_context_get_client_info() failed</source>
         <translation>το pa_context_get_client_info() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="419"/>
-        <location filename="../../pavucontrol.cc" line="484"/>
+        <location filename="../../pavucontrol.cc" line="418"/>
+        <location filename="../../pavucontrol.cc" line="483"/>
         <source>pa_context_get_server_info() failed</source>
         <translation>το pa_context_get_server_info() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="432"/>
+        <location filename="../../pavucontrol.cc" line="431"/>
         <source>pa_context_get_card_info_by_index() failed</source>
         <translation>το pa_context_get_card_info_by_index() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="475"/>
+        <location filename="../../pavucontrol.cc" line="474"/>
         <source>pa_context_subscribe() failed</source>
         <translation>το pa_context_subscribe() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="491"/>
+        <location filename="../../pavucontrol.cc" line="490"/>
         <source>pa_context_client_info_list() failed</source>
         <translation>το pa_context_client_info_list() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="498"/>
+        <location filename="../../pavucontrol.cc" line="497"/>
         <source>pa_context_get_card_info_list() failed</source>
         <translation>το pa_context_get_card_info_list() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="505"/>
+        <location filename="../../pavucontrol.cc" line="504"/>
         <source>pa_context_get_sink_info_list() failed</source>
         <translation>το pa_context_get_sink_info_list() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="512"/>
+        <location filename="../../pavucontrol.cc" line="511"/>
         <source>pa_context_get_source_info_list() failed</source>
         <translation>το pa_context_get_source_info_list() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="519"/>
+        <location filename="../../pavucontrol.cc" line="518"/>
         <source>pa_context_get_sink_input_info_list() failed</source>
         <translation>το pa_context_get_sink_input_info_list() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="526"/>
+        <location filename="../../pavucontrol.cc" line="525"/>
         <source>pa_context_get_source_output_info_list() failed</source>
         <translation>το pa_context_get_source_output_info_list() απέτυχε</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="585"/>
-        <location filename="../../pavucontrol.cc" line="636"/>
+        <location filename="../../pavucontrol.cc" line="584"/>
+        <location filename="../../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
         <translation>Αποτυχία της σύνδεσης, προσπάθεια επανασύνδεσης</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="608"/>
-        <location filename="../../pavucontrol.cc" line="668"/>
+        <location filename="../../pavucontrol.cc" line="607"/>
+        <location filename="../../pavucontrol.cc" line="664"/>
         <source>PulseAudio Volume Control</source>
         <translation>Έλεγχος έντασης ήχου PulseAudio</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="623"/>
+        <location filename="../../pavucontrol.cc" line="622"/>
         <source>Connection to PulseAudio failed. Automatic retry in 5s
 
 In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Properties
@@ -524,22 +524,22 @@ run start-pulseaudio-x11 manually.</source>
 Αν πρόκειται για αυτήν την περίπτωση, τότε το PulseAudio θα πρέπει να αυτοδημιουργηθεί εκ νέου, ή αν αυτό δεν έχει ρυθμιστεί θα πρέπει να εκτελέσετε χειροκίνητα το start-pulseaudio-x11.</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="676"/>
+        <location filename="../../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
         <translation>Επιλογή μιας συγκεκριμένης καρτέλας κατά την φόρτωση.</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="679"/>
+        <location filename="../../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Επαναφορά αέναα κατά την εγκατάλειψη του pa (κάθε 5 δευτερόλεπτα).</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="682"/>
+        <location filename="../../pavucontrol.cc" line="678"/>
         <source>Maximize the window.</source>
         <translation>Μεγιστοποίηση του παράθυρου.</translation>
     </message>
     <message>
-        <location filename="../../pavucontrol.cc" line="707"/>
+        <location filename="../../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Ανεπανόρθωτο σφάλμα: Αδύνατη η σύνδεση στο PulseAudio</translation>
     </message>
