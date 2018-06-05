@@ -54,15 +54,8 @@ lxqt_translate_ts(pavucontrol-qt_QM_FILES
         ${pavucontrol-qt_UI}
     INSTALL_DIR
         "${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}/translations"
-    PULL_TRANSLATIONS
-        ${PULL_TRANSLATIONS}
-    CLEAN_TRANSLATIONS
-        ${CLEAN_TRANSLATIONS}
-    TRANSLATIONS_REPO
-        ${TRANSLATIONS_REPO}
-    TRANSLATIONS_REFSPEC
-        ${TRANSLATIONS_REFSPEC}
 )
+
 lxqt_translate_desktop(DESKTOP_FILES
     SOURCES
     pavucontrol-qt.desktop.in
