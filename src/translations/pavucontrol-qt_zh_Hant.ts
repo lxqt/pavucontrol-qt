@@ -6,22 +6,22 @@
     <message>
         <location filename="../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation></translation>
+        <translation>表單</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="29"/>
         <source>Card Name</source>
-        <translation></translation>
+        <translation>音效卡名稱</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="38"/>
         <source>Profile:</source>
-        <translation></translation>
+        <translation type="unfinished">Profile:</translation>
     </message>
     <message>
         <location filename="../cardwidget.cc" line="66"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
-        <translation></translation>
+        <translation>pa_context_set_card_profile_by_index() 失敗</translation>
     </message>
 </context>
 <context>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation></translation>
+        <translation type="unfinished">&lt;small&gt;寂靜&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation></translation>
+        <translation type="unfinished">&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -64,27 +64,27 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation></translation>
+        <translation>表單</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation></translation>
+        <translation>裝置標題</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation></translation>
+        <translation>靜音</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation></translation>
+        <translation>同時鎖定兩聲道</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation></translation>
+        <translation type="unfinished">Set as fallback</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation></translation>
+        <translation>顯示進階選項</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
@@ -139,7 +139,7 @@
     <message>
         <location filename="../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
-        <translation></translation>
+        <translation>重新命名裝置...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
