@@ -46,7 +46,7 @@
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation></translation>
+        <translation>&lt;small&gt;最小&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="162"/>
@@ -89,7 +89,7 @@
     <message>
         <location filename="../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;埠：&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="126"/>
@@ -134,7 +134,7 @@
     <message>
         <location filename="../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation></translation>
+        <translation> 毫秒</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="41"/>
@@ -283,12 +283,12 @@
     <message>
         <location filename="../mainwindow.ui" line="298"/>
         <source>&amp;Configuration</source>
-        <translation></translation>
+        <translation>配置 (&amp;C)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="325"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation>&lt;i&gt;沒有可配置的卡&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;沒有可配置的音效卡&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="336"/>
@@ -330,17 +330,17 @@
     <message>
         <location filename="../mainwindow.cc" line="431"/>
         <source>Failed to create monitoring stream</source>
-        <translation>無法新增顯示器串流</translation>
+        <translation>無法新增監控串流</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="446"/>
         <source>Failed to connect monitoring stream</source>
-        <translation>無法連結顯示器串流</translation>
+        <translation>無法連結監控串流</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="585"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation>忽略sink-input，因為他被設計為事件且被事件小工具處理</translation>
+        <translation>忽略sink-input，由於它被設計為事件，因此歸「事件小工具」處理</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="757"/>
@@ -520,7 +520,7 @@ run start-pulseaudio-x11 manually.</source>
 
 這個情況像是因為環境/X11主視窗內容的PULSE_SERVER
 或是client.conf的default-server被配置錯誤。
-這個情況也可能發生在PulseAudio意外中止在X11主視窗遺留舊的詳細資訊。
+這個情況也可能發生在PulseAudio意外中止時，在X11主視窗遺留舊的詳細資訊。
 若是上述的情況，PulseAudio必須要再次autospawn，又或是這沒有被配置，你應該
 手動啟動start-pulseaudio-x11。</translation>
     </message>
@@ -558,7 +558,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="36"/>
         <source>on</source>
-        <translation></translation>
+        <translation>開啟</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
@@ -695,7 +695,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="52"/>
         <source>direction</source>
-        <translation></translation>
+        <translation>方向</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="59"/>
@@ -710,7 +710,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation>一起鎖定聲道</translation>
+        <translation>同時鎖定兩聲道</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
