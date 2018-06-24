@@ -177,7 +177,7 @@
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation>Gerät %1 umbenennen zu:</translation>
+        <translation>Gerät %1 umbenennen nach:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
