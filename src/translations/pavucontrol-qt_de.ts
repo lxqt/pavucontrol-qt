@@ -167,7 +167,7 @@
     <message>
         <location filename="../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation>Sorry, aber Geräteumbenennung wird nicht unterstützt.</translation>
+        <translation>Verzeihung, aber Geräteumbenennung wird nicht unterstützt.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
