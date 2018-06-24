@@ -256,7 +256,7 @@
     <message>
         <location filename="../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Hardware Ausgabe Geräte</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="214"/>
