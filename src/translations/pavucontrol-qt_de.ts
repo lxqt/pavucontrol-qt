@@ -92,7 +92,7 @@
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation>Audio stumm schalten</translation>
+        <translation>Audio stummschalten</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
