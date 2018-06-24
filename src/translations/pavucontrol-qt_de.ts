@@ -261,7 +261,7 @@
     <message>
         <location filename="../mainwindow.ui" line="214"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuelle Ausgabe Geräte</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="223"/>
