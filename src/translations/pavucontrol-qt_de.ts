@@ -661,7 +661,7 @@ Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn autom
     <message>
         <location filename="../sourceoutputwidget.cc" line="87"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_mute() fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="98"/>
