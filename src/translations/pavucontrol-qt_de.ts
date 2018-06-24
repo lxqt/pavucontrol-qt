@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1088"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Errichte Verbindung zu PulseAudio. Bitte warten...</translation>
     </message>
 </context>
 <context>
@@ -428,7 +428,7 @@
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisierung der Gerätewiderherstellungserweiterung fehlgeschlagen: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
