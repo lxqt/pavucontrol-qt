@@ -539,8 +539,7 @@ run start-pulseaudio-x11 manually.</source>
 In diesem Fall ist es wahrscheinlich, dass PULSE_SERVER in der Umgebung/X11 Root Fenster Eigenschaften
 oder default-server in client.conf fehlconfiguriert ist.
 Diese Situation kann auch entstehen, wenn PulseAudio abgestürzt ist und alte Details im X11 Root Fenster hinterlassen hat.
-Wenn das der Fall ist, dann sollte PulsAudio wieder automatisch gestartet werden, oder wenn es nicht konfiguriert ist, dann sollte man start-pulseaudio-x11 manuell ausführen.
-</translation>
+Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn automatisches Starten nicht konfiguriert ist, ist &apos;start-pulseaudio-x11&apos; manuell auszuführen.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
