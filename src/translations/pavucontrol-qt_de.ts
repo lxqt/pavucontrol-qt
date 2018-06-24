@@ -534,7 +534,13 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbindung zu PulseAudio fehlgeschlagen. Automatische Wiederholung in 5s
+
+In diesem Fall ist es wahrscheinlich, dass PULSE_SERVER in der Umgebung/X11 Root Fenster Eigenschaften
+oder default-server in client.conf fehlconfiguriert ist.
+Diese Situation kann auch entstehen, wenn PulseAudio abgestürzt ist und alte Details im X11 Root Fenster hinterlassen hat.
+Wenn das der Fall ist, dann sollte PulsAudio wieder automatisch gestartet werden, oder wenn es nicht konfiguriert ist, dann sollte man start-pulseaudio-x11 manuell ausführen.
+</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
