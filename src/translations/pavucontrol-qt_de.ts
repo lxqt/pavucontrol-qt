@@ -549,7 +549,7 @@ Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn autom
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation>Wiederholen für immer wenn pa sich beendet (alle 5 Sekunden). </translation>
+        <translation>Wiederhole für immer, wenn pa sich beendet (alle 5 Sekunden).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="678"/>
