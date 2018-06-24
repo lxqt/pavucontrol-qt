@@ -248,17 +248,17 @@
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>&amp;input-enheder</translation>
+        <translation>&amp;inputenheder</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
         <source>&lt;i&gt;No input devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Ingen input-enheder tilgængelige&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Ingen inputenheder tilgængelige&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation>Alle input-enheder</translation>
+        <translation>Alle inputenheder</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="274"/>
@@ -268,12 +268,12 @@
     <message>
         <location filename="../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation>Hardware input-enheder</translation>
+        <translation>Hardware inputenheder</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation>Virtuelle input-enheder</translation>
+        <translation>Virtuelle inputenheder</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="289"/>
@@ -723,7 +723,7 @@ køre start-pulseaudio-x11 manuelt.</translation>
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">Formular</translation>
+        <translation>Formular</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -733,7 +733,7 @@ køre start-pulseaudio-x11 manuelt.</translation>
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
 </context>
 </TS>
