@@ -633,7 +633,7 @@ Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn autom
     <message>
         <location filename="../sinkwidget.cc" line="166"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_save_sink_formats() fehlgeschlagen</translation>
     </message>
 </context>
 <context>
