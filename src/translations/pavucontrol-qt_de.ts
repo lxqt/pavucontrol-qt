@@ -276,7 +276,7 @@
     <message>
         <location filename="../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation>Alle Eingabe Geräte</translation>
+        <translation>Alle Eingabegeräte</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="274"/>
