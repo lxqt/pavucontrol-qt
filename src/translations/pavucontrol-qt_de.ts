@@ -311,7 +311,7 @@
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige Lautstärkemesser</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="585"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignoriere sink-input weil es als ein Ereignis festgelegt wurde und somit vom Ereignis Widget gehandhabt wird</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="757"/>
