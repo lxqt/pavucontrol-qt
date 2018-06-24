@@ -428,7 +428,7 @@
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation>Initialisierung der Gerätewiderherstellungserweiterung fehlgeschlagen: %s</translation>
+        <translation>Initialisierung der Gerätewiederherstellungserweiterung fehlgeschlagen: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
