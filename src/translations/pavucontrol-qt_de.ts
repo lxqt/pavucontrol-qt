@@ -433,7 +433,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_read_sink_formats() fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="320"/>
