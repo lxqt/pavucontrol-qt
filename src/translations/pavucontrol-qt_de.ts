@@ -97,7 +97,7 @@
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanäle zusammenschließen</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
@@ -147,7 +147,7 @@
     <message>
         <location filename="../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Latenz Versatz:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="245"/>
