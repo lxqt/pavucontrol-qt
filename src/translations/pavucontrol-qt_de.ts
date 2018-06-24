@@ -291,7 +291,7 @@
     <message>
         <location filename="../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuelle Eingabe Geräte</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="289"/>
