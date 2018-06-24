@@ -444,7 +444,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_read() fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="356"/>
