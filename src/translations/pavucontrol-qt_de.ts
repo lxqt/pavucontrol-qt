@@ -439,7 +439,7 @@
         <location filename="../pavucontrol.cc" line="320"/>
         <location filename="../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisierung der Gerätemanagererweiterung fehlgeschlagen: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
