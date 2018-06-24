@@ -517,7 +517,7 @@
         <location filename="../pavucontrol.cc" line="584"/>
         <location filename="../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation>Verbindung fehlgeschlagen, versuche wieder zu verbinden</translation>
+        <translation>Verbindung fehlgeschlagen, versuche erneut zu verbinden</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
