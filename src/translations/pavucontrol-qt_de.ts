@@ -281,12 +281,12 @@
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle außer Monitore</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Hardware Eingabe Geräte</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="284"/>
