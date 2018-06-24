@@ -722,7 +722,7 @@ Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn autom
     <message>
         <location filename="../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation>Audio stumm schalten</translation>
+        <translation>Audio stummschalten</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
