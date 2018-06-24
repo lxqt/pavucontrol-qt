@@ -172,12 +172,12 @@
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Es muss der module-device-manager im PulseAudio Server geladen sein um Geräte umzubenennen</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerät %1 umbenennen zu:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
