@@ -182,7 +182,7 @@
     <message>
         <location filename="../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_set_device_description() fehlgeschlagen</translation>
     </message>
 </context>
 <context>
@@ -251,7 +251,7 @@
     <message>
         <location filename="../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Ausgabe Geräte</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="209"/>
