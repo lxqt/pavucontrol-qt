@@ -286,7 +286,7 @@
     <message>
         <location filename="../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation>Hardware Eingabe Geräte</translation>
+        <translation>Hardware Eingabegeräte</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="284"/>
