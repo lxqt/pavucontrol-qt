@@ -306,7 +306,7 @@
     <message>
         <location filename="../mainwindow.ui" line="325"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Keine Karten zur Konfiguration vorhanden&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Keine Karten zum Konfigurieren verfügbar.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="336"/>
