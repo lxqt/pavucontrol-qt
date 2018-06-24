@@ -727,7 +727,7 @@ Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn autom
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanäle zusammenschließen</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
