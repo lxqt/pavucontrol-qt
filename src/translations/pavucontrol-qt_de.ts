@@ -251,7 +251,7 @@
     <message>
         <location filename="../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation>Alle Ausgabe Geräte</translation>
+        <translation>Alle Ausgabegeräte</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="209"/>
