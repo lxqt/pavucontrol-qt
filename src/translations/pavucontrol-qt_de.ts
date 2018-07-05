@@ -87,7 +87,7 @@
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation>Gerätename</translation>
+        <translation>Gerätetitel</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="56"/>
@@ -707,7 +707,7 @@ Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn autom
     <message>
         <location filename="../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation>Gerätename</translation>
+        <translation>Gerätetitel</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="52"/>
