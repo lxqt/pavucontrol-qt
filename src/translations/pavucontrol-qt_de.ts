@@ -41,12 +41,12 @@
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Stumm&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Stumm&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Minimum&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Minimum&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="162"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;Basis&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Basis&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -87,7 +87,7 @@
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation>Gerät Titel</translation>
+        <translation>Gerätename</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="56"/>
@@ -102,7 +102,7 @@
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Als Rückfallebene setzen</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Erweiterte Einstellungen anzeigen</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
@@ -208,7 +208,7 @@
         <location filename="../mainwindow.ui" line="196"/>
         <location filename="../mainwindow.ui" line="261"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="74"/>
@@ -544,7 +544,7 @@ Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn autom
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine bestimmte Registerkarte beim Start auswählen.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
@@ -707,7 +707,7 @@ Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn autom
     <message>
         <location filename="../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerätename</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="52"/>
