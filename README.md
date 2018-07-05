@@ -27,4 +27,11 @@ This project was launched in August 2016 and binary packages are rare so far. On
 
 In LXQt sessions the binary is placed in sub-menu "Sound & Video" of the panel's main menu.   
 
-The usage itself should be self-explanatory.   
+The usage itself should be self-explanatory.
+
+
+### Translation (Weblate)
+
+<a href="https://weblate.lxqt.org/projects/lxqt/pavucontrol-qt/">
+<img src="https://weblate.lxqt.org/widgets/lxqt/-/pavucontrol-qt/multi-auto.svg" alt="Translation status" />
+</a>
