@@ -554,7 +554,7 @@ Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn autom
     <message>
         <location filename="../pavucontrol.cc" line="678"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenster maximieren.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="703"/>
@@ -580,7 +580,7 @@ Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn autom
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Wiedergabe beenden</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
@@ -646,7 +646,7 @@ Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn autom
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Aufnahme beenden</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="60"/>
@@ -717,7 +717,7 @@ Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn autom
     <message>
         <location filename="../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerät</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="66"/>
