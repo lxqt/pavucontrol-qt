@@ -21,7 +21,7 @@
     <message>
         <location filename="../cardwidget.cc" line="66"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
-        <translation>pa_context_set_card_profile_by_index() selhalo</translation>
+        <translation>funkce pa_context_set_card_profile_by_index() neproběhla úspěšně</translation>
     </message>
 </context>
 <context>
@@ -92,17 +92,17 @@
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Ztlumit zvuk</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Ovládat všechny kanály společně</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit jako náhradní</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation>Ukázat pokročilé volby</translation>
+        <translation>Zobrazit pokročilé volby</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
@@ -157,17 +157,17 @@
     <message>
         <location filename="../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Přejmenovat zařízení…</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation>pa_context_set_port_latency_offset() selhalo</translation>
+        <translation>funkce pa_context_set_port_latency_offset() neproběhla úspěšně</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation>Promiňte, přejmenování zařízení není podporováno.</translation>
+        <translation>Omlouváme se, ale přejmenování zařízení není podporováno.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
@@ -177,12 +177,12 @@
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Přejmenovat zařízení %1 na:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>funkce pa_ext_device_manager_set_device_description() neproběhla úspěšně</translation>
     </message>
 </context>
 <context>
@@ -311,17 +311,17 @@
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation>Ukázat měřidla hlasitosti</translation>
+        <translation>Zobrazovat ukazatele hlasitosti</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation> (zastrčeno)</translation>
+        <translation> (zapojeno)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
@@ -333,7 +333,7 @@
         <location filename="../mainwindow.cc" line="165"/>
         <location filename="../mainwindow.cc" line="254"/>
         <source> (unplugged)</source>
-        <translation> (vytaženo)</translation>
+        <translation> (vypojeno)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="386"/>
@@ -343,7 +343,7 @@
     <message>
         <location filename="../mainwindow.cc" line="430"/>
         <source>Peak detect</source>
-        <translation>Rozpoznání vrcholů</translation>
+        <translation>Rozpoznání špiček</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="431"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1088"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation>Zřizuje se spojení s PulseAudio. Počkejte, prosím, ...</translation>
+        <translation>Zřizuje se spojení s PulseAudio. Čekejte…</translation>
     </message>
 </context>
 <context>
@@ -381,37 +381,37 @@
     <message>
         <location filename="../pavucontrol.cc" line="87"/>
         <source>Card callback failure</source>
-        <translation>Zpětné volání karty selhalo</translation>
+        <translation>Zpětné volání karty se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
-        <translation>Cílové zpětné volání selhalo</translation>
+        <translation>Cílové zpětné volání se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="133"/>
         <source>Source callback failure</source>
-        <translation>Zdrojové zpětné volání selhalo</translation>
+        <translation>Zdrojové zpětné volání se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
-        <translation>Cílové vstupní zpětné volání selhalo</translation>
+        <translation>Cílové vstupní zpětné volání se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="171"/>
         <source>Source output callback failure</source>
-        <translation>Zdrojové výstupní zpětné volání selhalo</translation>
+        <translation>Zdrojové výstupní zpětné volání se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="211"/>
         <source>Client callback failure</source>
-        <translation>Zpětné volání klienta selhalo</translation>
+        <translation>Zpětné volání klienta se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="227"/>
         <source>Server info callback failure</source>
-        <translation>Zpětné volání serverových informací selhalo</translation>
+        <translation>Zpětné volání serverových informací se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="245"/>
@@ -422,7 +422,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="263"/>
         <source>pa_ext_stream_restore_read() failed</source>
-        <translation>pa_ext_stream_restore_read() selhalo</translation>
+        <translation>volání funkce pa_ext_stream_restore_read() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="281"/>
@@ -433,7 +433,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation>pa_ext_device_restore_read_sink_formats() selhalo</translation>
+        <translation>volání funkce pa_ext_device_restore_read_sink_formats() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="320"/>
@@ -444,80 +444,80 @@
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation>pa_ext_device_manager_read() selhalo</translation>
+        <translation>volání funkce pa_ext_device_manager_read() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="356"/>
         <source>pa_context_get_sink_info_by_index() failed</source>
-        <translation>pa_context_get_sink_info_by_index() selhalo</translation>
+        <translation>volání funkce pa_context_get_sink_info_by_index() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="369"/>
         <source>pa_context_get_source_info_by_index() failed</source>
-        <translation>pa_context_get_source_info_by_index() selhalo</translation>
+        <translation>volání funkce pa_context_get_source_info_by_index() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="382"/>
         <location filename="../pavucontrol.cc" line="395"/>
         <source>pa_context_get_sink_input_info() failed</source>
-        <translation>pa_context_get_sink_input_info() selhalo</translation>
+        <translation>volání funkce pa_context_get_sink_input_info() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="408"/>
         <source>pa_context_get_client_info() failed</source>
-        <translation>pa_context_get_client_info() selhalo</translation>
+        <translation>volání funkce pa_context_get_client_info() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="418"/>
         <location filename="../pavucontrol.cc" line="483"/>
         <source>pa_context_get_server_info() failed</source>
-        <translation>pa_context_get_server_info() selhalo</translation>
+        <translation>volání funkce pa_context_get_server_info() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="431"/>
         <source>pa_context_get_card_info_by_index() failed</source>
-        <translation>pa_context_get_card_info_by_index() selhalo</translation>
+        <translation>volání funkce pa_context_get_card_info_by_index() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="474"/>
         <source>pa_context_subscribe() failed</source>
-        <translation>pa_context_subscribe() selhalo</translation>
+        <translation>volání funkce pa_context_subscribe() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="490"/>
         <source>pa_context_client_info_list() failed</source>
-        <translation>pa_context_client_info_list() selhalo</translation>
+        <translation>volání funkce pa_context_client_info_list() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="497"/>
         <source>pa_context_get_card_info_list() failed</source>
-        <translation>pa_context_get_card_info_list() selhalo</translation>
+        <translation>volání funkce pa_context_get_card_info_list() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="504"/>
         <source>pa_context_get_sink_info_list() failed</source>
-        <translation>pa_context_get_sink_info_list() selhalo</translation>
+        <translation>volání funkce pa_context_get_sink_info_list() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="511"/>
         <source>pa_context_get_source_info_list() failed</source>
-        <translation>pa_context_get_source_info_list() selhalo</translation>
+        <translation>volání funkce pa_context_get_source_info_list() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="518"/>
         <source>pa_context_get_sink_input_info_list() failed</source>
-        <translation>pa_context_get_sink_input_info_list() selhalo</translation>
+        <translation>volání funkce pa_context_get_sink_input_info_list() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="525"/>
         <source>pa_context_get_source_output_info_list() failed</source>
-        <translation>pa_context_get_source_output_info_list() selhalo</translation>
+        <translation>volání funkce pa_context_get_source_output_info_list() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="584"/>
         <location filename="../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation>Spojení selhalo. Pokus o opětovné připojení</translation>
+        <translation>Spojení se nezdařilo, pokouší se o opětovné připojení</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
@@ -562,7 +562,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../rolewidget.cc" line="59"/>
         <source>pa_ext_stream_restore_write() failed</source>
-        <translation>pa_ext_stream_restore_write() selhalo</translation>
+        <translation>volání funkce pa_ext_stream_restore_write() se nezdařilo</translation>
     </message>
 </context>
 <context>
@@ -575,7 +575,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukončit přehrávání</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
@@ -585,22 +585,22 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="64"/>
         <source>pa_context_set_sink_input_volume() failed</source>
-        <translation>pa_context_set_sink_input_volume() selhalo</translation>
+        <translation>volání funkce pa_context_set_sink_input_volume() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="79"/>
         <source>pa_context_set_sink_input_mute() failed</source>
-        <translation>pa_context_set_sink_input_mute() selhalo</translation>
+        <translation>volání funkce pa_context_set_sink_input_mute() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="89"/>
         <source>pa_context_kill_sink_input() failed</source>
-        <translation>pa_context_kill_sink_input() selhalo</translation>
+        <translation>volání funkce pa_context_kill_sink_input() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="114"/>
         <source>pa_context_move_sink_input_by_index() failed</source>
-        <translation>pa_context_move_sink_input_by_index() selhalo</translation>
+        <translation>volání funkce pa_context_move_sink_input_by_index() se nezdařilo</translation>
     </message>
 </context>
 <context>
@@ -608,27 +608,27 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkwidget.cc" line="81"/>
         <source>pa_context_set_sink_volume_by_index() failed</source>
-        <translation>pa_context_set_sink_volume_by_index() selhalo</translation>
+        <translation>volání funkce pa_context_set_sink_volume_by_index() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="96"/>
         <source>pa_context_set_sink_mute_by_index() failed</source>
-        <translation>pa_context_set_sink_mute_by_index() selhalo</translation>
+        <translation>volání funkce pa_context_set_sink_mute_by_index() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="110"/>
         <source>pa_context_set_default_sink() failed</source>
-        <translation>pa_context_set_default_sink() selhalo</translation>
+        <translation>volání funkce pa_context_set_default_sink() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="126"/>
         <source>pa_context_set_sink_port_by_index() failed</source>
-        <translation>pa_context_set_sink_port_by_index() selhalo</translation>
+        <translation>volání funkce pa_context_set_sink_port_by_index() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="166"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation>pa_ext_device_restore_save_sink_formats() selhalo</translation>
+        <translation>volání funkce pa_ext_device_restore_save_sink_formats() se nezdařilo</translation>
     </message>
 </context>
 <context>
@@ -641,7 +641,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukončit nahrávání</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="60"/>
@@ -651,22 +651,22 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="72"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation>pa_context_set_source_output_volume() selhalo</translation>
+        <translation>volání funkce pa_context_set_source_output_volume() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="87"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation>pa_context_set_source_output_mute() selhalo</translation>
+        <translation>volání funkce pa_context_set_source_output_mute() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="98"/>
         <source>pa_context_kill_source_output() failed</source>
-        <translation>pa_context_kill_source_output() selhalo</translation>
+        <translation>volání funkce pa_context_kill_source_output() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="125"/>
         <source>pa_context_move_source_output_by_index() failed</source>
-        <translation>pa_context_move_source_output_by_index() selhalo</translation>
+        <translation>volání funkce pa_context_move_source_output_by_index() se nezdařilo</translation>
     </message>
 </context>
 <context>
@@ -674,22 +674,22 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourcewidget.cc" line="35"/>
         <source>pa_context_set_source_volume_by_index() failed</source>
-        <translation>pa_context_set_source_volume_by_index() selhalo</translation>
+        <translation>volání funkce pa_context_set_source_volume_by_index() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="50"/>
         <source>pa_context_set_source_mute_by_index() failed</source>
-        <translation>pa_context_set_source_mute_by_index() selhalo</translation>
+        <translation>volání funkce pa_context_set_source_mute_by_index() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="64"/>
         <source>pa_context_set_default_source() failed</source>
-        <translation>pa_context_set_default_source() selhalo</translation>
+        <translation>volání funkce pa_context_set_default_source() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="80"/>
         <source>pa_context_set_source_port_by_index() failed</source>
-        <translation>pa_context_set_source_port_by_index() selhalo</translation>
+        <translation>volání funkce pa_context_set_source_port_by_index() se nezdařilo</translation>
     </message>
 </context>
 <context>
@@ -712,17 +712,17 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>zařízení</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Ztlumit zvuk</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Ovládat kanály společně</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
