@@ -30,33 +30,33 @@
         <location filename="../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1% (%2dB)</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1%</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Ticho&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Ticho&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Min.&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Min.&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;100% (0 dB)&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;100% (0 dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;Základní&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Základ&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="585"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignoruje se vstup do odchodu protože je označen jako událost a proto obsloužen obslužným prvkem pro události</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="757"/>
@@ -534,7 +534,13 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spojení s PulseAudio vypadlo. Pokus o automatické opětovné navázání za 5s
+
+V tomto případě je to nejspíš proto, že je chybně nastavená proměnná PULSE_SERVER v
+Prostředí/Vlastnosti X11 kořenového okna nebo je v client.conf chybně nastaven parametr default-server.
+Tato situace také může nastat když PulseAudio spadne a zanechá visící podrobnosti v kořenovém okně X11.
+Pokud tomu je tak, PulseAudio by se mělo automaticky znovu spustit, nebo pokud tak není nastavené,
+je třeba ručně spustit start-pulseaudio-x11.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
