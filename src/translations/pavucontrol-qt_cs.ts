@@ -21,7 +21,7 @@
     <message>
         <location filename="../cardwidget.cc" line="66"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
-        <translation>funkce pa_context_set_card_profile_by_index() neproběhla úspěšně</translation>
+        <translation>volání funkce pa_context_set_card_profile_by_index() neproběhlo úspěšně</translation>
     </message>
 </context>
 <context>
@@ -162,7 +162,7 @@
     <message>
         <location filename="../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation>funkce pa_context_set_port_latency_offset() neproběhla úspěšně</translation>
+        <translation>volání funkce pa_context_set_port_latency_offset() neproběhlo úspěšně</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="226"/>
@@ -172,7 +172,7 @@
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation>Pro přejmenovávání zařízení je potřeba do serveru PulseAudio nahrát modul správce zařízení</translation>
+        <translation>Pro přejmenovávání zařízení je potřeba do zvukového serveru PulseAudio nahrát modul module-device-manager (správa zařízení)</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
@@ -182,7 +182,7 @@
     <message>
         <location filename="../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation>funkce pa_ext_device_manager_set_device_description() neproběhla úspěšně</translation>
+        <translation>volání funkce pa_ext_device_manager_set_device_description() neproběhlo úspěšně</translation>
     </message>
 </context>
 <context>
@@ -220,7 +220,7 @@
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation>Programy</translation>
+        <translation>Aplikace</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="84"/>
@@ -231,12 +231,12 @@
     <message>
         <location filename="../mainwindow.ui" line="93"/>
         <source>&amp;Recording</source>
-        <translation>&amp;Nahrávání</translation>
+        <translation>Nah&amp;rávání</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="120"/>
         <source>&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Žádný program nyní nenahrává zvuk.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Žádná aplikace momentálně nenahrává zvuk.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
@@ -246,7 +246,7 @@
     <message>
         <location filename="../mainwindow.ui" line="185"/>
         <source>&lt;i&gt;No output devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Nejsou dostupná žádná výstupní zařízení.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Nejsou k dispozici žádná výstupní zařízení.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="204"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../mainwindow.ui" line="250"/>
         <source>&lt;i&gt;No input devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Nejsou dostupná žádná vstupní zařízení.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Nejsou k dispozici žádná vstupní zařízení.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="269"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation>Vše vyjma obrazovek</translation>
+        <translation>Vše vyjma monitorů</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
@@ -296,7 +296,7 @@
     <message>
         <location filename="../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation>Obrazovky</translation>
+        <translation>Monitory</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="298"/>
@@ -306,7 +306,7 @@
     <message>
         <location filename="../mainwindow.ui" line="325"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Nelze nastavit žádné karty&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Nejsou k dispozici žádná zvuková zařízení, která by bylo možné nastavovat&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="336"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1088"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation>Zřizuje se spojení s PulseAudio. Čekejte…</translation>
+        <translation>Navazuje se spojení s PulseAudio. Čekejte…</translation>
     </message>
 </context>
 <context>
@@ -417,7 +417,7 @@
         <location filename="../pavucontrol.cc" line="245"/>
         <location filename="../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>Nepodařilo se spustit rozšíření obnovení proudu: %s</translation>
+        <translation>Nepodařilo se spustit rozšíření stream_restore (obnovení proudu): %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="263"/>
@@ -439,7 +439,7 @@
         <location filename="../pavucontrol.cc" line="320"/>
         <location filename="../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation>Nepodařilo se spustit rozšíření správce zařízení: %s</translation>
+        <translation>Nepodařilo se spustit rozšíření pro správu zařízení: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
@@ -545,7 +545,7 @@ je třeba ručně spustit start-pulseaudio-x11.</translation>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
-        <translation>Vybrat při nahrání určitou kartu.</translation>
+        <translation>Vybrat při načtení konkrétní kartu.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
@@ -560,7 +560,7 @@ je třeba ručně spustit start-pulseaudio-x11.</translation>
     <message>
         <location filename="../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation>Vážná chyba: Nelze se spojit s PulseAudio</translation>
+        <translation>Vážná chyba: nedaří se spojit s PulseAudio</translation>
     </message>
 </context>
 <context>
