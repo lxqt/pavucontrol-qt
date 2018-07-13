@@ -16,12 +16,12 @@
     <message>
         <location filename="../cardwidget.ui" line="38"/>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Perfil:</translation>
     </message>
     <message>
         <location filename="../cardwidget.cc" line="66"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
-        <translation>pa_context_set_card_profile_by_index() falhou</translation>
+        <translation>Falha ao trocar o perfil da placa de som</translation>
     </message>
 </context>
 <context>
