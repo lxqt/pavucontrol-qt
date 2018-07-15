@@ -97,7 +97,7 @@
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation>Ovládat všechny kanály společně</translation>
+        <translation>Ovládat kanály společně</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
@@ -343,7 +343,7 @@
     <message>
         <location filename="../mainwindow.cc" line="430"/>
         <source>Peak detect</source>
-        <translation>Rozpoznání špiček</translation>
+        <translation>Rozpoznávání špiček</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="431"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="585"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation>Ignoruje se vstup do odchodu protože je označen jako událost a proto obsloužen obslužným prvkem pro události</translation>
+        <translation>Ignoruje se vstup do odchodu protože je označen jako událost a proto obsloužen ovládacím prvkem pro události</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="757"/>
@@ -417,7 +417,7 @@
         <location filename="../pavucontrol.cc" line="245"/>
         <location filename="../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>Nepodařilo se spustit rozšíření stream_restore (obnovení proudu): %s</translation>
+        <translation>Nepodařilo se inicializovat rozšíření stream_restore (obnovení proudu): %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="263"/>
@@ -428,7 +428,7 @@
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation>Nepodařilo se spustit rozšíření obnovení zařízení: %s</translation>
+        <translation>Nepodařilo se inicializovat rozšíření pro obnovení zařízení: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
@@ -517,7 +517,7 @@
         <location filename="../pavucontrol.cc" line="584"/>
         <location filename="../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation>Spojení se nezdařilo, pokouší se o opětovné připojení</translation>
+        <translation>Spojení se nezdařilo, probíhá pokus o opětovné připojení</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
@@ -534,7 +534,7 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation>Spojení s PulseAudio vypadlo. Pokus o automatické opětovné navázání za 5s
+        <translation>Spojení s PulseAudio vypadlo. Pokus o automatické opětovné navázání za 5 s
 
 V tomto případě je to nejspíš proto, že je chybně nastavená proměnná PULSE_SERVER v
 Prostředí/Vlastnosti X11 kořenového okna nebo je v client.conf chybně nastaven parametr default-server.
@@ -545,17 +545,17 @@ je třeba ručně spustit start-pulseaudio-x11.</translation>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
-        <translation>Vybrat při načtení konkrétní kartu.</translation>
+        <translation>Při načítání vybrat konkrétní kartu.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation>Opakovat pořád, pokud PulseAudio skončí (každých 5 sekund).</translation>
+        <translation>Pokud PulseAudio skončí, opakovat pořád (každých 5 sekund).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="678"/>
         <source>Maximize the window.</source>
-        <translation>Zvětšit okno.</translation>
+        <translation>Maximalizovat okno.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="703"/>
