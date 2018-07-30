@@ -1,6 +1,5 @@
+build
 *~
-Makefile
-Makefile.in
 .deps
 *.tar.gz
 *.swp
