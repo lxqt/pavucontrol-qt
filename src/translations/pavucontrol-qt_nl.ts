@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="585"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation>De &apos;sink-input&apos; wordt genegeerd, aangezien die is aangewezen als gebeurtenis en dus wordt afgehandeld door het Event-bedieningselement.</translation>
+        <translation>De &apos;sink-input&apos; wordt genegeerd, aangezien die is aangewezen als gebeurtenis en dus wordt afgehandeld door het Event-bedieningselement</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="757"/>
