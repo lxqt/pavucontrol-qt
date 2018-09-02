@@ -30,13 +30,13 @@
         <location filename="../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1% (%2дБ)</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1%</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -102,7 +102,7 @@
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Установить как резервное</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -117,42 +117,42 @@
     <message>
         <location filename="../devicewidget.ui" line="172"/>
         <source>PCM</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="182"/>
         <source>AC3</source>
-        <translation type="unfinished"></translation>
+        <translation>AC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="189"/>
         <source>EAC3</source>
-        <translation type="unfinished"></translation>
+        <translation>EAC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="196"/>
         <source>DTS</source>
-        <translation type="unfinished"></translation>
+        <translation>DTS</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="203"/>
         <source>MPEG</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="210"/>
         <source>AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>AAC</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Время задержки:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> мс</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="41"/>
@@ -534,7 +534,14 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось подключиться к PulseAudio. Повторная попытка через 5 с
+
+В данном случае это вероятно вызвано неверным значением PULSE_SERVER в свойствах
+корневого окна, в переменных окружения или в ключе default-server в client.conf.
+Эта ситуация также может возникнуть, если PulseAudio аварийно завершилась и свойства
+корневого окна X11 содержат устаревшую информацию.
+В этом случае PulseAudio должна запуститься снова; если же система так не настроена,
+вы должны запустить start-pulseaudio-x11 вручную.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
@@ -575,7 +582,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Прервать воспроизведение</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
