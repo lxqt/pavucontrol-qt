@@ -6,7 +6,7 @@
     <message>
         <location filename="../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="29"/>
@@ -30,13 +30,13 @@
         <location filename="../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1% (%2dB)</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1%</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;1100% (0dB)&lt;/small&gt;2</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="165"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;150%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -82,27 +82,27 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Título do Dispositivo</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudo</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Travar canais juntos</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Definir como reserva</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -112,77 +112,77 @@
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar opções avançadas</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
         <source>PCM</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="182"/>
         <source>AC3</source>
-        <translation type="unfinished"></translation>
+        <translation>AC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="189"/>
         <source>EAC3</source>
-        <translation type="unfinished"></translation>
+        <translation>EAC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="196"/>
         <source>DTS</source>
-        <translation type="unfinished"></translation>
+        <translation>DTS</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="203"/>
         <source>MPEG</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="210"/>
         <source>AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>AAC</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Nível de Latência&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> .ms</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Renomear dispositivo...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_port_latency_offset() falhou</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desculpe, mas não é possível renomear dispositivos.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Você precisa recarregar o módulo de gerenciamento de dispositivos no servidor PulseAudio para conseguir renomear dispositivos</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Renomear dispositivo %1 para:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_set_device_description() falhou</translation>
     </message>
 </context>
 <context>
@@ -208,7 +208,7 @@
         <location filename="../mainwindow.ui" line="196"/>
         <location filename="../mainwindow.ui" line="261"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>Exibir:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="74"/>
@@ -220,7 +220,7 @@
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplicações</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="84"/>
@@ -251,17 +251,17 @@
     <message>
         <location filename="../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Todas as saídas de dispositivos</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Saídas de dispositivos de hardware</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="214"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Saídas de dispositivos virtuais</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="223"/>
@@ -276,27 +276,27 @@
     <message>
         <location filename="../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Todas as entradas de dispositivos</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Todas exceto monitores</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Entradas de dispositivos de hardware</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Entradas de dispositivos virtuais</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Monitores</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="298"/>
