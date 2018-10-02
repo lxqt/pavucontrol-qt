@@ -11,7 +11,7 @@
     <message>
         <location filename="../cardwidget.ui" line="29"/>
         <source>Card Name</source>
-        <translation>Nome da placa</translation>
+        <translation>Nome da Placa</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="38"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation>&lt;small&gt;1100% (0dB)&lt;/small&gt;2</translation>
+        <translation>&lt;small&gt;100% (0dB)&lt;/small&gt;2</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="165"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation>&lt;small&gt;150%&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation>Mudo</translation>
+        <translation>Áudio Mudo</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
@@ -147,12 +147,12 @@
     <message>
         <location filename="../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Nível de Latência&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Compensação de Latência&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation> .ms</translation>
+        <translation> ms</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="41"/>
@@ -167,7 +167,7 @@
     <message>
         <location filename="../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation>Desculpe, mas não é possível renomear dispositivos.</translation>
+        <translation>Desculpe, mas a renomeação do dispositivo não é suportada.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
@@ -376,7 +376,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="66"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="87"/>
