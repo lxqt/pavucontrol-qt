@@ -27,7 +27,10 @@
 #  include <pulse/ext-device-restore.h>
 #endif
 
+#include <QCloseEvent>
 #include <QDialog>
+#include <QMenu>
+#include <QSystemTrayIcon>
 #include "ui_mainwindow.h"
 
 class CardWidget;
@@ -86,6 +89,12 @@ protected Q_SLOTS:
     virtual void onSourceTypeComboBoxChanged(int index);
     virtual void onShowVolumeMetersCheckButtonToggled(bool toggled);
 
+protected:
+    void closeEvent(QCloseEvent *event);
+
+private slots:
+    void quit();
+
 public:
     void setConnectionState(gboolean connected);
     void updateDeviceVisibility();
@@ -100,11 +109,20 @@ public:
     bool createEventRoleWidget();
     void deleteEventRoleWidget();
 
+    void createTrayIcon();
+    void setVisible(bool);
+
     QByteArray defaultSinkName, defaultSourceName;
 
     bool canRenameDevices;
 
 private:
+    QAction minimizeAction;
+    QAction restoreAction;
+    QAction quitAction;
+    QSystemTrayIcon trayIcon;
+    QMenu trayIconMenu;
+
     gboolean m_connected;
     gchar* m_config_filename;
 };

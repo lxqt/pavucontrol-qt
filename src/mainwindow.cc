@@ -34,6 +34,7 @@
 #include <QIcon>
 #include <QStyle>
 #include <QSettings>
+#include <QCloseEvent>
 
 /* Used for profile sorting */
 struct profile_prio_compare {
@@ -118,6 +119,8 @@ MainWindow::MainWindow():
     const QVariant sourceTypeSelection = config.value("window/sourceType");
     if (sourceTypeSelection.isValid())
         sourceTypeComboBox->setCurrentIndex(sourceTypeSelection.toInt());
+
+    createTrayIcon();
 
     /* Hide first and show when we're connected */
     notebook->hide();
@@ -1169,4 +1172,51 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled(bool toggled) {
         }
         sw->setVolumeMeterVisible(state);
     }
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+	if(trayIcon.isVisible()) {
+		hide();
+		event->ignore();
+	}
+	else
+		quit();
+}
+
+void MainWindow::quit()
+{
+	exit(0);
+}
+
+void MainWindow::setVisible(bool visible) {
+	minimizeAction.setEnabled(visible);
+	restoreAction.setEnabled(!visible);
+	QDialog::setVisible(visible);
+}
+
+void MainWindow::createTrayIcon() {
+    if (!QSystemTrayIcon::isSystemTrayAvailable())
+        return;
+
+    quitAction.setText(tr("&Quit"));
+    restoreAction.setText(tr("&Restore"));
+    minimizeAction.setText(tr("Mi&nimize"));
+
+    connect(&minimizeAction, SIGNAL(triggered()), this, SLOT(hide()));
+    connect(&restoreAction, SIGNAL(triggered()), this, SLOT(showNormal()));
+    connect(&quitAction, SIGNAL(triggered()), this, SLOT(quit()));
+
+    trayIconMenu.addAction(&minimizeAction);
+    trayIconMenu.addAction(&restoreAction);
+    trayIconMenu.addSeparator();
+    trayIconMenu.addAction(&quitAction);
+
+    QIcon icon;
+    QSize sz(16,16);
+    icon.addPixmap(style()->standardIcon(QStyle::SP_MediaVolume).pixmap(sz));
+
+    trayIcon.setIcon(icon);
+    trayIcon.setContextMenu(&trayIconMenu);
+    trayIcon.show();
 }
