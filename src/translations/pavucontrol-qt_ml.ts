@@ -195,7 +195,7 @@
     <message>
         <location filename="../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation>_പ്ലേബാക്ക്</translation>
+        <translation>&amp;പ്ലേബാക്ക്</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="55"/>
@@ -231,7 +231,7 @@
     <message>
         <location filename="../mainwindow.ui" line="93"/>
         <source>&amp;Recording</source>
-        <translation>_റിക്കോര്‍ഡ് ചെയ്യുന്നു</translation>
+        <translation>&amp;റിക്കോര്‍ഡ് ചെയ്യുന്നു</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="120"/>
@@ -301,7 +301,7 @@
     <message>
         <location filename="../mainwindow.ui" line="298"/>
         <source>&amp;Configuration</source>
-        <translation>_ക്രമീകരണം</translation>
+        <translation>&amp;ക്രമീകരണം</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="325"/>
