@@ -241,7 +241,7 @@
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>Dispositivos de _saída</translation>
+        <translation>Dispositivos de &amp;saída</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>Dispositivos de _entrada</translation>
+        <translation>Dispositivos de &amp;entrada</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
