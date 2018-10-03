@@ -195,7 +195,7 @@
     <message>
         <location filename="../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation>_Репродукција</translation>
+        <translation>&amp;Репродукција</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="55"/>
@@ -231,7 +231,7 @@
     <message>
         <location filename="../mainwindow.ui" line="93"/>
         <source>&amp;Recording</source>
-        <translation>_Снимање</translation>
+        <translation>&amp;Снимање</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="120"/>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>_Излазни уређаји</translation>
+        <translation>&amp;Излазни уређаји</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>_Улазни уређаји</translation>
+        <translation>&amp;Улазни уређаји</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
@@ -301,7 +301,7 @@
     <message>
         <location filename="../mainwindow.ui" line="298"/>
         <source>&amp;Configuration</source>
-        <translation>_Подешавања</translation>
+        <translation>&amp;Подешавања</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="325"/>
