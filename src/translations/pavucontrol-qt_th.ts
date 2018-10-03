@@ -195,7 +195,7 @@
     <message>
         <location filename="../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation>_เล่น</translation>
+        <translation>@เล่น</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="55"/>
@@ -231,7 +231,7 @@
     <message>
         <location filename="../mainwindow.ui" line="93"/>
         <source>&amp;Recording</source>
-        <translation>_บันทึกเสียง</translation>
+        <translation>&amp;บันทึกเสียง</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="120"/>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>อุปกรณ์เ_อาท์พุต</translation>
+        <translation>อุปกรณ์เ&amp;อาท์พุต</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>_อุปกรณ์รับเข้า</translation>
+        <translation>&amp;อุปกรณ์รับเข้า</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
@@ -301,7 +301,7 @@
     <message>
         <location filename="../mainwindow.ui" line="298"/>
         <source>&amp;Configuration</source>
-        <translation>_การตั้งค่า</translation>
+        <translation>&amp;การตั้งค่า</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="325"/>
