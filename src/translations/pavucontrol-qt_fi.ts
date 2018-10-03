@@ -241,7 +241,7 @@
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>Ul_ostulolaitteet</translation>
+        <translation>Ul&amp;ostulolaitteet</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>S_isääntulolaitteet</translation>
+        <translation>S&amp;isääntulolaitteet</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
