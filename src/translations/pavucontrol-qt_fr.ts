@@ -107,7 +107,7 @@
     <message>
         <location filename="../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Port&#xa0;:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Port :&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="126"/>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>Périphériques de _s&amp;ortie</translation>
+        <translation>Périphériques de s&amp;ortie</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
@@ -417,7 +417,7 @@
         <location filename="../pavucontrol.cc" line="245"/>
         <location filename="../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>Impossible d&apos;initialiser l&apos;extension stream_restore&#xa0;: %s</translation>
+        <translation>Impossible d&apos;initialiser l&apos;extension stream_restore : %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="263"/>
