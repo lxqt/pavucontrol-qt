@@ -266,7 +266,7 @@
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>Vstupné zar_iadenia</translation>
+        <translation>Vstupné zar&amp;iadenia</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
