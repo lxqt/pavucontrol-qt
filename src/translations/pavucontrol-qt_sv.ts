@@ -195,7 +195,7 @@
     <message>
         <location filename="../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation>U_ppspelning</translation>
+        <translation>U&amp;ppspelning</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="55"/>
@@ -231,7 +231,7 @@
     <message>
         <location filename="../mainwindow.ui" line="93"/>
         <source>&amp;Recording</source>
-        <translation>I_nspelning</translation>
+        <translation>I&amp;nspelning</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="120"/>
@@ -727,7 +727,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
         <source>Terminate</source>
-        <translation>&amp;Terminera ström</translation>
+        <translation>Terminera ström</translation>
     </message>
 </context>
 </TS>
