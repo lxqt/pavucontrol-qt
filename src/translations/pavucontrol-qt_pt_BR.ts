@@ -41,12 +41,12 @@
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Silencioso&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Silêncio&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Min&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Mín&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="162"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;Básico&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -214,7 +214,7 @@
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos os fluxos</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
@@ -226,7 +226,7 @@
         <location filename="../mainwindow.ui" line="84"/>
         <location filename="../mainwindow.ui" line="149"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Fluxos virtuais</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="93"/>
@@ -251,17 +251,17 @@
     <message>
         <location filename="../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation>Todas as saídas de dispositivos</translation>
+        <translation>Todos os dispositivos de saída</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation>Saídas de dispositivos de hardware</translation>
+        <translation>Dispositivos de Saída de Hardware</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="214"/>
         <source>Virtual Output Devices</source>
-        <translation>Saídas de dispositivos virtuais</translation>
+        <translation>Dispositivos de Saída Virtual</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="223"/>
@@ -276,22 +276,22 @@
     <message>
         <location filename="../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation>Todas as entradas de dispositivos</translation>
+        <translation>Todos Dispositivos de Entradas</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation>Todas exceto monitores</translation>
+        <translation>Todos exceto monitores</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation>Entradas de dispositivos de hardware</translation>
+        <translation>Dispositivos de entrada de hardware</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation>Entradas de dispositivos virtuais</translation>
+        <translation>Dispositivos de entrada virtual</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="289"/>
@@ -311,29 +311,29 @@
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>Exibir medidor de volume</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> (plugado)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
         <location filename="../mainwindow.cc" line="257"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> (indisponível)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
         <location filename="../mainwindow.cc" line="254"/>
         <source> (unplugged)</source>
-        <translation type="unfinished"></translation>
+        <translation> (desplugado)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="386"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="585"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorando a entrada do coletor devido a ele ser designado como um evento e, portanto, manipulado pelo Evento widget</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="757"/>
@@ -391,7 +391,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="133"/>
         <source>Source callback failure</source>
-        <translation>Chamada da fonte de retorno falhou</translation>
+        <translation>Chamada de retorno da fonte falhou</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="152"/>
@@ -570,7 +570,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="36"/>
         <source>on</source>
-        <translation>em</translation>
+        <translation>ligado</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
@@ -727,7 +727,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
         <source>Terminate</source>
-        <translation>Terminar reprodução</translation>
+        <translation>Terminar</translation>
     </message>
 </context>
 </TS>
