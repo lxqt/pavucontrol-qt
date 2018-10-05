@@ -258,6 +258,8 @@ void MainWindow::updateCard(const pa_card_info &info) {
             desc += tr(" (unavailable)").toUtf8().constData();
 
         w->profiles.push_back(std::pair<QByteArray,QByteArray>(p_profile->name, desc));
+        if (p_profile->n_sinks == 0 && p_profile->n_sources == 0)
+            w->noInOutProfile = p_profile->name;
     }
 
     w->activeProfile = info.active_profile ? info.active_profile->name : "";

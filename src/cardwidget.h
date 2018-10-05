@@ -48,13 +48,17 @@ public:
     std::vector< std::pair<QByteArray,QByteArray> > profiles;
     std::map<QByteArray, PortInfo> ports;
     QByteArray activeProfile;
+    QByteArray noInOutProfile;
+    QByteArray lastActiveProfile;
     bool hasSinks;
     bool hasSources;
 
     void prepareMenu();
 
 protected:
-  virtual void onProfileChange(int active);
+    void changeProfile(const QByteArray & name);
+    void onProfileChange(int active);
+    void onProfileCheck(bool on);
 
 };
 
