@@ -37,12 +37,12 @@
 
 /* Used for profile sorting */
 struct profile_prio_compare {
-    bool operator() (const pa_card_profile_info2& lhs, const pa_card_profile_info2& rhs) const {
+    bool operator() (pa_card_profile_info2 const * const lhs, pa_card_profile_info2 const * const rhs) const {
 
-        if (lhs.priority == rhs.priority)
-            return strcmp(lhs.name, rhs.name) > 0;
+        if (lhs->priority == rhs->priority)
+            return strcmp(lhs->name, rhs->name) > 0;
 
-        return lhs.priority > rhs.priority;
+        return lhs->priority > rhs->priority;
     }
 };
 
@@ -187,7 +187,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
     CardWidget *w;
     bool is_new = false;
     const char *description, *icon;
-    std::set<pa_card_profile_info2,profile_prio_compare> profile_priorities;
+    std::set<pa_card_profile_info2 *, profile_prio_compare> profile_priorities;
 
     if (cardWidgets.count(info.index))
         w = cardWidgets[info.index];
@@ -212,7 +212,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
     for (pa_card_profile_info2 ** p_profile = info.profiles2; *p_profile != nullptr; ++p_profile) {
         w->hasSinks = w->hasSinks || ((*p_profile)->n_sinks > 0);
         w->hasSources = w->hasSources || ((*p_profile)->n_sources > 0);
-        profile_priorities.insert(**p_profile);
+        profile_priorities.insert(*p_profile);
     }
 
     w->ports.clear();
@@ -232,15 +232,16 @@ void MainWindow::updateCard(const pa_card_info &info) {
     }
 
     w->profiles.clear();
-    for (std::set<pa_card_profile_info2>::iterator profileIt = profile_priorities.begin(); profileIt != profile_priorities.end(); ++profileIt) {
+    for (auto profileIt = profile_priorities.cbegin(); profileIt != profile_priorities.cend(); ++profileIt) {
         bool hasNo = false, hasOther = false;
+        pa_card_profile_info2 const * const p_profile = *profileIt;
         std::map<QByteArray, PortInfo>::iterator portIt;
-        QByteArray desc = profileIt->description;
+        QByteArray desc = p_profile->description;
 
         for (portIt = w->ports.begin(); portIt != w->ports.end(); portIt++) {
             PortInfo port = portIt->second;
 
-            if (std::find(port.profiles.begin(), port.profiles.end(), profileIt->name) == port.profiles.end())
+            if (std::find(port.profiles.begin(), port.profiles.end(), p_profile->name) == port.profiles.end())
                 continue;
 
             if (port.available == PA_PORT_AVAILABLE_NO)
@@ -253,10 +254,10 @@ void MainWindow::updateCard(const pa_card_info &info) {
         if (hasNo && !hasOther)
             desc += tr(" (unplugged)").toUtf8().constData();
 
-        if (!profileIt->available)
+        if (!p_profile->available)
             desc += tr(" (unavailable)").toUtf8().constData();
 
-        w->profiles.push_back(std::pair<QByteArray,QByteArray>(profileIt->name, desc));
+        w->profiles.push_back(std::pair<QByteArray,QByteArray>(p_profile->name, desc));
     }
 
     w->activeProfile = info.active_profile ? info.active_profile->name : "";
