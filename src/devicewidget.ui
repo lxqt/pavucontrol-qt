@@ -96,7 +96,7 @@
    </item>
    <item>
     <widget class="QWidget" name="portSelect" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1">
       <item>
        <widget class="QLabel" name="label_3">
         <property name="text">
