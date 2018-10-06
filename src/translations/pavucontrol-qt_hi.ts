@@ -69,7 +69,7 @@
     <message>
         <location filename="../channelwidget.ui" line="20"/>
         <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation>&lt;b&gt;left-front&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;बायां-सामने&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="34"/>
