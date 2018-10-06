@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1088"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Estabelecendo conexão ao PulseAudio. Por favor, aguarde...</translation>
     </message>
 </context>
 <context>
@@ -428,23 +428,23 @@
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha ao inicializar a extensão de restauração do dispositivo: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_read_sink_formats() falhou</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="320"/>
         <location filename="../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha ao inicializar a extensão do gerenciador de dispositivos: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_read() falhou</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="356"/>
@@ -517,7 +517,7 @@
         <location filename="../pavucontrol.cc" line="584"/>
         <location filename="../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha na conexão, tentando reconectar</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
@@ -534,7 +534,13 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>A conexão com o PulseAudio falhou. Tentar novamente em 5s
+
+Nesse caso, isso é provável porque o servidor PULSE nas propriedades da janela Environment/X11 Root
+ou o servidor padrão em client.conf está configurado incorretamente.
+Esta situação também pode surgir quando o PulseAudio caiu e deixou detalhes obsoletos na janela X11 Root.
+Se esse for o caso, o PulseAudio deverá ser novamente exibido automaticamente ou, se isso não
+executar, iniciar pulseaudio-x11 manualmente.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
