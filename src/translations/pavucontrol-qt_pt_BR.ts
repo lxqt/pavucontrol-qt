@@ -545,22 +545,22 @@ executar, iniciar pulseaudio-x11 manualmente.</translation>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecionar uma aba especifica ao carregar.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation type="unfinished"></translation>
+        <translation>Tentar para sempre se o pa fechar (a cada 5 segundos).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="678"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximizar a janela.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro Fatal: Não foi possível conectar ao PulseAudio</translation>
     </message>
 </context>
 <context>
@@ -581,7 +581,7 @@ executar, iniciar pulseaudio-x11 manualmente.</translation>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Finalizar Reprodução</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
@@ -634,7 +634,7 @@ executar, iniciar pulseaudio-x11 manualmente.</translation>
     <message>
         <location filename="../sinkwidget.cc" line="166"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_save_sink_formats() falhou</translation>
     </message>
 </context>
 <context>
@@ -647,7 +647,7 @@ executar, iniciar pulseaudio-x11 manualmente.</translation>
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Finalizar Gravação</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="60"/>
@@ -657,12 +657,12 @@ executar, iniciar pulseaudio-x11 manualmente.</translation>
     <message>
         <location filename="../sourceoutputwidget.cc" line="72"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_volume() falhou</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="87"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_mute() falhou</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="98"/>
@@ -703,12 +703,12 @@ executar, iniciar pulseaudio-x11 manualmente.</translation>
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome do Dispositivo</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="52"/>
@@ -718,17 +718,17 @@ executar, iniciar pulseaudio-x11 manualmente.</translation>
     <message>
         <location filename="../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>dispositivo</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudo</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Sincronizar canais</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
