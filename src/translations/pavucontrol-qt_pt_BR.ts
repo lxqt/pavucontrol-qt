@@ -21,7 +21,7 @@
     <message>
         <location filename="../cardwidget.cc" line="66"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
-        <translation>Falha ao trocar o perfil da placa de som</translation>
+        <translation>pa_context_set_card_profile_by_index() falhou</translation>
     </message>
 </context>
 <context>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Volume&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -534,13 +534,13 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation>A conexão com o PulseAudio falhou. Tentar novamente em 5s
+        <translation>A conexão com o PulseAudio falhou. Tentando novamente em 5s
 
-Nesse caso, isso é provável porque o servidor PULSE nas propriedades da janela Environment/X11 Root
-ou o servidor padrão em client.conf está configurado incorretamente.
-Esta situação também pode surgir quando o PulseAudio caiu e deixou detalhes obsoletos na janela X11 Root.
+Nesse caso é provável que PULSE_SERVER nas propriedades da janela Environment/X11 Root
+ou defaul.server em client.conf está configurado incorretamente.
+Esta situação também pode surgir quando o PulseAudio falhou e deixou detalhes obsoletos na janela X11 Root.
 Se esse for o caso, o PulseAudio deverá ser novamente exibido automaticamente ou, se isso não
-executar, iniciar pulseaudio-x11 manualmente.</translation>
+executar, iniciar start-pulseaudio-x11 manualmente.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
