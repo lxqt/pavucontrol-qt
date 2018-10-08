@@ -90,7 +90,6 @@ MainWindow::MainWindow():
     connect(sinkTypeComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::onSinkTypeComboBoxChanged);
     connect(sourceTypeComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::onSourceTypeComboBoxChanged);
     connect(showVolumeMetersCheckButton, &QCheckBox::toggled, this, &MainWindow::onShowVolumeMetersCheckButtonToggled);
-    connect(enableSystrayCheckButton, SIGNAL(clicked()), this, SLOT(toggleSystray()));
 
     QAction * quit = new QAction{this};
     connect(quit, &QAction::triggered, this, &QWidget::close);
@@ -124,11 +123,10 @@ MainWindow::MainWindow():
     const QVariant useSystray = config.value("systray/enabled");
     if(useSystray.isValid())
     {
-        if(true == useSystray.toBool()) {
-            createTrayIcon();
+        if(true == useSystray.toBool())
             enableSystrayCheckButton->setChecked(true);
-        }
-        else { // grey out options if systray is disabled
+        else {
+            enableSystrayCheckButton->setChecked(false);
             startInSystrayCheckButton->setDisabled(true);
             closeToSystrayCheckButton->setDisabled(true);
         }
@@ -148,6 +146,7 @@ MainWindow::MainWindow():
         closeToSystrayCheckButton->setChecked(closeToSystray.toBool());
 
     createTrayIcon();
+    
     /* Hide first and show when we're connected */
     notebook->hide();
     connectingLabel->show();
@@ -1235,6 +1234,9 @@ void MainWindow::createTrayIcon() {
     connect(&minimizeAction, SIGNAL(triggered()), this, SLOT(hide()));
     connect(&restoreAction, SIGNAL(triggered()), this, SLOT(showNormal()));
     connect(&quitAction, SIGNAL(triggered()), this, SLOT(quit()));
+    connect(&trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+                this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+    connect(enableSystrayCheckButton, SIGNAL(clicked()), this, SLOT(toggleSystrayOption()));
 
     trayIconMenu.addAction(&minimizeAction);
     trayIconMenu.addAction(&restoreAction);
@@ -1251,7 +1253,7 @@ void MainWindow::createTrayIcon() {
         trayIcon.show();
 }
 
-void MainWindow::toggleSystray(){
+void MainWindow::toggleSystrayOption(){
     if(trayIcon.isVisible()){
         trayIcon.hide();
         startInSystrayCheckButton->setDisabled(true);
@@ -1261,6 +1263,22 @@ void MainWindow::toggleSystray(){
         startInSystrayCheckButton->setDisabled(false);
         closeToSystrayCheckButton->setDisabled(false);
         trayIcon.show();
+    }
+}
+
+void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason){
+    switch(reason)
+    {
+    case QSystemTrayIcon::Trigger:
+    case QSystemTrayIcon::DoubleClick:
+        // todo: add mute toggle here
+        break;
+    case QSystemTrayIcon::MiddleClick:
+        setVisible(!QDialog::isVisible());
+        break;
+    default:
+        // todo: figure out how QEvent::Wheel works and add volume up/down
+        break;
     }
 }
 

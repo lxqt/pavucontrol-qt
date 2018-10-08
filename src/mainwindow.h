@@ -117,7 +117,8 @@ public:
     bool canRenameDevices;
 
 private slots:
-    void toggleSystray();
+    void toggleSystrayOption();
+    void iconActivated(QSystemTrayIcon::ActivationReason reason);
     void quit();
 
 private:
