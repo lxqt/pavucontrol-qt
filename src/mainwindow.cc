@@ -1244,7 +1244,7 @@ void MainWindow::createTrayIcon() {
     trayIconMenu.addAction(&quitAction);
 
     QIcon icon;
-    QSize sz(16,16);
+    QSize sz(256,256);
     icon.addPixmap(style()->standardIcon(QStyle::SP_MediaVolume).pixmap(sz));
 
     trayIcon.setIcon(icon);
