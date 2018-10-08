@@ -90,6 +90,7 @@ MainWindow::MainWindow():
     connect(sinkTypeComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::onSinkTypeComboBoxChanged);
     connect(sourceTypeComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::onSourceTypeComboBoxChanged);
     connect(showVolumeMetersCheckButton, &QCheckBox::toggled, this, &MainWindow::onShowVolumeMetersCheckButtonToggled);
+    connect(enableSystrayCheckButton, SIGNAL(clicked()), this, SLOT(toggleSystray()));
 
     QAction * quit = new QAction{this};
     connect(quit, &QAction::triggered, this, &QWidget::close);
@@ -119,7 +120,7 @@ MainWindow::MainWindow():
     const QVariant sourceTypeSelection = config.value("window/sourceType");
     if (sourceTypeSelection.isValid())
         sourceTypeComboBox->setCurrentIndex(sourceTypeSelection.toInt());
-    
+
     const QVariant useSystray = config.value("systray/enabled");
     if(useSystray.isValid())
     {
@@ -146,6 +147,7 @@ MainWindow::MainWindow():
     if(closeToSystray.isValid())
         closeToSystrayCheckButton->setChecked(closeToSystray.toBool());
 
+    createTrayIcon();
     /* Hide first and show when we're connected */
     notebook->hide();
     connectingLabel->show();
@@ -1223,8 +1225,9 @@ void MainWindow::setVisible(bool visible) {
 }
 
 void MainWindow::createTrayIcon() {
-    if (systrayInitialized || !QSystemTrayIcon::isSystemTrayAvailable())
+    if (!QSystemTrayIcon::isSystemTrayAvailable())
         return;
+
     systrayInitialized = true;
 
     quitAction.setText(tr("&Quit"));
@@ -1246,7 +1249,26 @@ void MainWindow::createTrayIcon() {
 
     trayIcon.setIcon(icon);
     trayIcon.setContextMenu(&trayIconMenu);
-    trayIcon.show();
+    if(systrayEnabled())
+        trayIcon.show();
+}
+
+void MainWindow::toggleSystray(){
+    if(trayIcon.isVisible()){
+        trayIcon.hide();
+        startInSystrayCheckButton->setDisabled(true);
+        closeToSystrayCheckButton->setDisabled(true);
+    }
+    else {
+        startInSystrayCheckButton->setDisabled(false);
+        closeToSystrayCheckButton->setDisabled(false);
+        trayIcon.show();
+    }
+}
+
+bool MainWindow::startToTrayEnabled(){
+    return enableSystrayCheckButton->isChecked()
+        && startInSystrayCheckButton->isChecked();
 }
 
 bool MainWindow::systrayEnabled(){

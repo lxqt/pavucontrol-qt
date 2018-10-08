@@ -83,6 +83,7 @@ public:
     SourceType showSourceType;
     
     bool systrayEnabled();
+    bool startToTrayEnabled();
 
 protected Q_SLOTS:
     virtual void onSinkInputTypeComboBoxChanged(int index);
@@ -116,6 +117,7 @@ public:
     bool canRenameDevices;
 
 private slots:
+    void toggleSystray();
     void quit();
 
 private:

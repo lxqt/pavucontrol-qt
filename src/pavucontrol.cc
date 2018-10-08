@@ -701,7 +701,7 @@ int main(int argc, char *argv[]) {
 
     connect_to_pulse(mainWindow);
     if (reconnect_timeout >= 0) {
-        if(mainWindow->systrayEnabled() == false)
+        if(mainWindow->startToTrayEnabled() == false)
             mainWindow->show();
         app.exec();
     }
