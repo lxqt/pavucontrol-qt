@@ -82,7 +82,6 @@ public:
     SourceOutputType showSourceOutputType;
     SourceType showSourceType;
     
-    bool systrayEnabled();
     bool startToTrayEnabled();
 
 protected Q_SLOTS:
@@ -127,6 +126,7 @@ private:
     QAction quitAction;
     QSystemTrayIcon trayIcon;
     QMenu trayIconMenu;
+    bool systrayEnabled();
 
     gboolean m_connected;
     gchar* m_config_filename;

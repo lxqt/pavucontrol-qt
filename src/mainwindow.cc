@@ -34,7 +34,6 @@
 #include <QIcon>
 #include <QStyle>
 #include <QSettings>
-#include <QCloseEvent>
 
 /* Used for profile sorting */
 struct profile_prio_compare {
@@ -121,8 +120,7 @@ MainWindow::MainWindow():
         sourceTypeComboBox->setCurrentIndex(sourceTypeSelection.toInt());
 
     const QVariant useSystray = config.value("systray/enabled");
-    if(useSystray.isValid())
-    {
+    if(useSystray.isValid()) {
         if(true == useSystray.toBool())
             enableSystrayCheckButton->setChecked(true);
         else {
@@ -131,8 +129,7 @@ MainWindow::MainWindow():
             closeToSystrayCheckButton->setDisabled(true);
         }
     }
-    else // first run - grey out options
-    {
+    else { // first run - grey out options
         startInSystrayCheckButton->setDisabled(true);
         closeToSystrayCheckButton->setDisabled(true);
     }
