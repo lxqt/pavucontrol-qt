@@ -119,8 +119,32 @@ MainWindow::MainWindow():
     const QVariant sourceTypeSelection = config.value("window/sourceType");
     if (sourceTypeSelection.isValid())
         sourceTypeComboBox->setCurrentIndex(sourceTypeSelection.toInt());
+    
+    const QVariant useSystray = config.value("systray/enabled");
+    if(useSystray.isValid())
+    {
+        if(true == useSystray.toBool()) {
+            createTrayIcon();
+            enableSystrayCheckButton->setChecked(true);
+        }
+        else { // grey out options if systray is disabled
+            startInSystrayCheckButton->setDisabled(true);
+            closeToSystrayCheckButton->setDisabled(true);
+        }
+    }
+    else // first run - grey out options
+    {
+        startInSystrayCheckButton->setDisabled(true);
+        closeToSystrayCheckButton->setDisabled(true);
+    }
 
-    createTrayIcon();
+    const QVariant startInTray = config.value("systray/startInTray");
+    if(startInTray.isValid())
+        startInSystrayCheckButton->setChecked(startInTray.toBool());
+
+    const QVariant closeToSystray = config.value("systray/closeToTray");
+    if(closeToSystray.isValid())
+        closeToSystrayCheckButton->setChecked(closeToSystray.toBool());
 
     /* Hide first and show when we're connected */
     notebook->hide();
@@ -135,6 +159,9 @@ MainWindow::~MainWindow() {
     config.setValue("window/sinkType", sinkTypeComboBox->currentIndex());
     config.setValue("window/sourceType", sourceTypeComboBox->currentIndex());
     config.setValue("window/showVolumeMeters", showVolumeMetersCheckButton->isChecked());
+    config.setValue("systray/enabled", enableSystrayCheckButton->isChecked());
+    config.setValue("systray/closeToTray", closeToSystrayCheckButton->isChecked());
+    config.setValue("systray/startInTray", startInSystrayCheckButton->isChecked());
 
     while (!clientNames.empty()) {
         std::map<uint32_t, char*>::iterator i = clientNames.begin();
@@ -1176,28 +1203,29 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled(bool toggled) {
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-	if(trayIcon.isVisible()) {
-		hide();
-		event->ignore();
-	}
-	else
-		quit();
+    if(trayIcon.isVisible() && closeToSystrayCheckButton->isChecked()) {
+        hide();
+        event->ignore();
+    }
+    else
+        quit();
 }
 
 void MainWindow::quit()
 {
-	exit(0);
+    QCoreApplication::quit();
 }
 
 void MainWindow::setVisible(bool visible) {
-	minimizeAction.setEnabled(visible);
-	restoreAction.setEnabled(!visible);
-	QDialog::setVisible(visible);
+    minimizeAction.setEnabled(visible);
+    restoreAction.setEnabled(!visible);
+    QDialog::setVisible(visible);
 }
 
 void MainWindow::createTrayIcon() {
-    if (!QSystemTrayIcon::isSystemTrayAvailable())
+    if (systrayInitialized || !QSystemTrayIcon::isSystemTrayAvailable())
         return;
+    systrayInitialized = true;
 
     quitAction.setText(tr("&Quit"));
     restoreAction.setText(tr("&Restore"));
@@ -1219,4 +1247,8 @@ void MainWindow::createTrayIcon() {
     trayIcon.setIcon(icon);
     trayIcon.setContextMenu(&trayIconMenu);
     trayIcon.show();
+}
+
+bool MainWindow::systrayEnabled(){
+    return enableSystrayCheckButton->isChecked();
 }

@@ -81,6 +81,8 @@ public:
     SinkType showSinkType;
     SourceOutputType showSourceOutputType;
     SourceType showSourceType;
+    
+    bool systrayEnabled();
 
 protected Q_SLOTS:
     virtual void onSinkInputTypeComboBoxChanged(int index);
@@ -91,9 +93,6 @@ protected Q_SLOTS:
 
 protected:
     void closeEvent(QCloseEvent *event);
-
-private slots:
-    void quit();
 
 public:
     void setConnectionState(gboolean connected);
@@ -116,12 +115,16 @@ public:
 
     bool canRenameDevices;
 
+private slots:
+    void quit();
+
 private:
     QAction minimizeAction;
     QAction restoreAction;
     QAction quitAction;
     QSystemTrayIcon trayIcon;
     QMenu trayIconMenu;
+    bool systrayInitialized;
 
     gboolean m_connected;
     gchar* m_config_filename;

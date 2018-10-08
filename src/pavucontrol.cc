@@ -678,6 +678,9 @@ int main(int argc, char *argv[]) {
     QCommandLineOption maximizeOption(QStringList() << "maximize" << "m", QObject::tr("Maximize the window."));
     parser.addOption(maximizeOption);
 
+    QCommandLineOption daemonizeOption(QStringList() << "daemonize" << "d", QObject::tr("Start in background (systray)."));
+    parser.addOption(daemonizeOption);
+
     parser.process(app);
     default_tab = parser.value(tabOption).toInt();
     retry = parser.isSet(retryOption);
@@ -688,6 +691,9 @@ int main(int argc, char *argv[]) {
     if(parser.isSet(maximizeOption))
         mainWindow->showMaximized();
 
+    if(parser.isSet(daemonizeOption))
+        mainWindow->createTrayIcon();
+
     pa_glib_mainloop *m = pa_glib_mainloop_new(g_main_context_default());
     g_assert(m);
     api = pa_glib_mainloop_get_api(m);
@@ -695,7 +701,8 @@ int main(int argc, char *argv[]) {
 
     connect_to_pulse(mainWindow);
     if (reconnect_timeout >= 0) {
-        mainWindow->show();
+        if(mainWindow->systrayEnabled() == false)
+            mainWindow->show();
         app.exec();
     }
 
