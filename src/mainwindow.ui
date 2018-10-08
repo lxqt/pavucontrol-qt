@@ -354,7 +354,7 @@
        <item>
         <widget class="QCheckBox" name="closeToSystrayCheckButton">
          <property name="text">
-                 <string>Close/minimize to notification area</string>
+          <string>Close/minimize to notification area</string>
          </property>
         </widget>
        </item>
