@@ -1228,8 +1228,6 @@ void MainWindow::createTrayIcon() {
     if (!QSystemTrayIcon::isSystemTrayAvailable())
         return;
 
-    systrayInitialized = true;
-
     quitAction.setText(tr("&Quit"));
     restoreAction.setText(tr("&Restore"));
     minimizeAction.setText(tr("Mi&nimize"));

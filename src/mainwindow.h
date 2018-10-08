@@ -126,7 +126,6 @@ private:
     QAction quitAction;
     QSystemTrayIcon trayIcon;
     QMenu trayIconMenu;
-    bool systrayInitialized;
 
     gboolean m_connected;
     gchar* m_config_filename;
