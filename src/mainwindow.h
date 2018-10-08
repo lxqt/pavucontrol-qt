@@ -118,7 +118,6 @@ public:
 
 private slots:
     void toggleSystray();
-    //void toggleCloseToTray();
     void quit();
 
 private:
