@@ -195,7 +195,7 @@
     <message>
         <location filename="../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation>_Проигрывание</translation>
+        <translation>&amp;Проигрывание</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="55"/>
@@ -734,7 +734,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
         <source>Terminate</source>
-        <translation>П_рервать поток</translation>
+        <translation>Прервать поток</translation>
     </message>
 </context>
 </TS>

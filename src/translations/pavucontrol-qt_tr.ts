@@ -195,7 +195,7 @@
     <message>
         <location filename="../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation>Ça_lma</translation>
+        <translation>Ça&amp;lma</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="55"/>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>Çı_kış Aygıtları</translation>
+        <translation>Çı&amp;kış Aygıtları</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
