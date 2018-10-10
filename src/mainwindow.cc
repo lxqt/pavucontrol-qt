@@ -121,7 +121,7 @@ MainWindow::MainWindow():
 
     const QVariant useSystray = config.value("systray/enabled");
     if(useSystray.isValid()) {
-        if(true == useSystray.toBool())
+        if(useSystray.toBool())
             enableSystrayCheckButton->setChecked(true);
         else {
             enableSystrayCheckButton->setChecked(false);
