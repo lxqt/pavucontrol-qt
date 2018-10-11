@@ -1241,11 +1241,11 @@ void MainWindow::createTrayIcon() {
     systrayIconMenu.addSeparator();
     systrayIconMenu.addAction(&systrayQuitAction);
 
-    QIcon icon;
     QSize sz(256,256);
-    icon.addPixmap(style()->standardIcon(QStyle::SP_MediaVolume).pixmap(sz));
+    systrayIcons[NOT_MUTED].addPixmap(style()->standardIcon(QStyle::SP_MediaVolume).pixmap(sz));
+    systrayIcons[MUTED].addPixmap(style()->standardIcon(QStyle::SP_MediaVolumeMuted).pixmap(sz));
 
-    systrayIcon.setIcon(icon);
+    systrayIcon.setIcon(systrayIcons[NOT_MUTED]);
     systrayIcon.setContextMenu(&systrayIconMenu);
     if(systrayEnabled())
         systrayIcon.show();
@@ -1263,12 +1263,32 @@ void MainWindow::toggleSystrayOption(){
     }
 }
 
+void MainWindow::systrayMuteToggle()
+{
+    static bool muted = false;
+    static std::map<uint32_t, bool> restore_mute_state;
+    
+    for (std::map<uint32_t, SinkWidget*>::iterator it = sinkWidgets.begin(); it != sinkWidgets.end(); ++it) {
+        if(!muted) {
+            restore_mute_state[it->first] =  it->second->muteToggleButton->isChecked();
+            it->second->muteToggleButton->setChecked(true);
+            systrayIcon.setIcon(systrayIcons[MUTED]);
+        } else {
+            if(restore_mute_state.find(it->first) != restore_mute_state.end())
+                it->second->muteToggleButton->setChecked(restore_mute_state[it->first]);
+            systrayIcon.setIcon(systrayIcons[NOT_MUTED]);
+        }
+        it->second->onMuteToggleButton();
+    }
+    muted = !muted;
+}
+
 void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason){
     switch(reason)
     {
     case QSystemTrayIcon::Trigger:
     case QSystemTrayIcon::DoubleClick:
-        // todo: add mute toggle here
+        systrayMuteToggle();
         break;
     case QSystemTrayIcon::MiddleClick:
         setVisible(!QDialog::isVisible());

@@ -127,7 +127,12 @@ private:
     QAction systrayQuitAction;
     QSystemTrayIcon systrayIcon;
     QMenu systrayIconMenu;
+    
+    enum { NOT_MUTED, MUTED };
+    QIcon systrayIcons[2];
+
     bool systrayEnabled();
+    void systrayMuteToggle();
 
     gboolean m_connected;
     gchar* m_config_filename;
