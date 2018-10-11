@@ -27,7 +27,10 @@
 #  include <pulse/ext-device-restore.h>
 #endif
 
+#include <QCloseEvent>
 #include <QDialog>
+#include <QMenu>
+#include <QSystemTrayIcon>
 #include "ui_mainwindow.h"
 
 class CardWidget;
@@ -78,6 +81,8 @@ public:
     SinkType showSinkType;
     SourceOutputType showSourceOutputType;
     SourceType showSourceType;
+    
+    bool startToTrayEnabled();
 
 protected Q_SLOTS:
     virtual void onSinkInputTypeComboBoxChanged(int index);
@@ -85,6 +90,10 @@ protected Q_SLOTS:
     virtual void onSinkTypeComboBoxChanged(int index);
     virtual void onSourceTypeComboBoxChanged(int index);
     virtual void onShowVolumeMetersCheckButtonToggled(bool toggled);
+
+protected:
+    void closeEvent(QCloseEvent *event);
+    bool eventFilter(QObject *obj, QEvent *event);
 
 public:
     void setConnectionState(gboolean connected);
@@ -100,11 +109,32 @@ public:
     bool createEventRoleWidget();
     void deleteEventRoleWidget();
 
+    void createTrayIcon();
+    void setVisible(bool);
+
     QByteArray defaultSinkName, defaultSourceName;
 
     bool canRenameDevices;
 
+private slots:
+    void toggleSystrayOption();
+    void iconActivated(QSystemTrayIcon::ActivationReason reason);
+    void quit();
+
 private:
+    QAction systrayMinimizeAction;
+    QAction systrayRestoreAction;
+    QAction systrayQuitAction;
+    QSystemTrayIcon systrayIcon;
+    QMenu systrayIconMenu;
+    
+    enum { NOT_MUTED, MUTED };
+    QIcon systrayIcons[2];
+
+    bool systrayEnabled();
+    void systrayMuteToggle();
+    void systrayVolumeChange(int step);
+
     gboolean m_connected;
     gchar* m_config_filename;
 };

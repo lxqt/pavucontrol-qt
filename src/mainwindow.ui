@@ -337,6 +337,27 @@
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QCheckBox" name="enableSystrayCheckButton">
+         <property name="text">
+          <string>Show icon in notification area</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="startInSystrayCheckButton">
+         <property name="text">
+          <string>Start in notification area</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="closeToSystrayCheckButton">
+         <property name="text">
+          <string>Close/minimize to notification area</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>
