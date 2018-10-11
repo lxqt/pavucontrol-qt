@@ -93,6 +93,7 @@ protected Q_SLOTS:
 
 protected:
     void closeEvent(QCloseEvent *event);
+    bool eventFilter(QObject *obj, QEvent *event);
 
 public:
     void setConnectionState(gboolean connected);

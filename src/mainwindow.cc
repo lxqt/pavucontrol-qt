@@ -95,6 +95,8 @@ MainWindow::MainWindow():
     quit->setShortcut(QKeySequence::Quit);
     addAction(quit);
 
+    qApp->installEventFilter(this);
+
     const QSettings config;
 
     showVolumeMetersCheckButton->setChecked(config.value("window/showVolumeMeters", true).toBool());
@@ -1274,9 +1276,19 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason){
         setVisible(!QDialog::isVisible());
         break;
     default:
-        // todo: figure out how QEvent::Wheel works and add volume up/down
         break;
     }
+}
+
+bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
+    if(obj == &trayIcon && event->type() == QEvent::Wheel) {
+        QWheelEvent *wheelEvent = static_cast<QWheelEvent *>(event);
+	if(wheelEvent->delta() > 0)
+	    ; // TODO: increase volume by step
+        else
+	    ; // TODO: decrease volume by step
+    }
+    return false;
 }
 
 bool MainWindow::startToTrayEnabled(){
