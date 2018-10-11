@@ -1203,7 +1203,7 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled(bool toggled) {
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    if(trayIcon.isVisible() && closeToSystrayCheckButton->isChecked()) {
+    if(systrayIcon.isVisible() && closeToSystrayCheckButton->isChecked()) {
         hide();
         event->ignore();
     }
@@ -1217,8 +1217,8 @@ void MainWindow::quit()
 }
 
 void MainWindow::setVisible(bool visible) {
-    minimizeAction.setEnabled(visible);
-    restoreAction.setEnabled(!visible);
+    systrayMinimizeAction.setEnabled(visible);
+    systrayRestoreAction.setEnabled(!visible);
     QDialog::setVisible(visible);
 }
 
@@ -1226,42 +1226,42 @@ void MainWindow::createTrayIcon() {
     if (!QSystemTrayIcon::isSystemTrayAvailable())
         return;
 
-    quitAction.setText(tr("&Quit"));
-    restoreAction.setText(tr("&Restore"));
-    minimizeAction.setText(tr("Mi&nimize"));
+    systrayQuitAction.setText(tr("&Quit"));
+    systrayRestoreAction.setText(tr("&Restore"));
+    systrayMinimizeAction.setText(tr("Mi&nimize"));
 
-    connect(&minimizeAction, SIGNAL(triggered()), this, SLOT(hide()));
-    connect(&restoreAction, SIGNAL(triggered()), this, SLOT(showNormal()));
-    connect(&quitAction, SIGNAL(triggered()), this, SLOT(quit()));
-    connect(&trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+    connect(&systrayMinimizeAction, SIGNAL(triggered()), this, SLOT(hide()));
+    connect(&systrayRestoreAction, SIGNAL(triggered()), this, SLOT(showNormal()));
+    connect(&systrayQuitAction, SIGNAL(triggered()), this, SLOT(quit()));
+    connect(&systrayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
                 this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
     connect(enableSystrayCheckButton, SIGNAL(clicked()), this, SLOT(toggleSystrayOption()));
 
-    trayIconMenu.addAction(&minimizeAction);
-    trayIconMenu.addAction(&restoreAction);
-    trayIconMenu.addSeparator();
-    trayIconMenu.addAction(&quitAction);
+    systrayIconMenu.addAction(&systrayMinimizeAction);
+    systrayIconMenu.addAction(&systrayRestoreAction);
+    systrayIconMenu.addSeparator();
+    systrayIconMenu.addAction(&systrayQuitAction);
 
     QIcon icon;
     QSize sz(256,256);
     icon.addPixmap(style()->standardIcon(QStyle::SP_MediaVolume).pixmap(sz));
 
-    trayIcon.setIcon(icon);
-    trayIcon.setContextMenu(&trayIconMenu);
+    systrayIcon.setIcon(icon);
+    systrayIcon.setContextMenu(&systrayIconMenu);
     if(systrayEnabled())
-        trayIcon.show();
+        systrayIcon.show();
 }
 
 void MainWindow::toggleSystrayOption(){
-    if(trayIcon.isVisible()){
-        trayIcon.hide();
+    if(systrayIcon.isVisible()){
+        systrayIcon.hide();
         startInSystrayCheckButton->setDisabled(true);
         closeToSystrayCheckButton->setDisabled(true);
     }
     else {
         startInSystrayCheckButton->setDisabled(false);
         closeToSystrayCheckButton->setDisabled(false);
-        trayIcon.show();
+        systrayIcon.show();
     }
 }
 
@@ -1281,7 +1281,7 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason){
 }
 
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
-    if(obj == &trayIcon && event->type() == QEvent::Wheel) {
+    if(obj == &systrayIcon && event->type() == QEvent::Wheel) {
         QWheelEvent *wheelEvent = static_cast<QWheelEvent *>(event);
 	if(wheelEvent->delta() > 0)
 	    ; // TODO: increase volume by step

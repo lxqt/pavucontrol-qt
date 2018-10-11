@@ -122,11 +122,11 @@ private slots:
     void quit();
 
 private:
-    QAction minimizeAction;
-    QAction restoreAction;
-    QAction quitAction;
-    QSystemTrayIcon trayIcon;
-    QMenu trayIconMenu;
+    QAction systrayMinimizeAction;
+    QAction systrayRestoreAction;
+    QAction systrayQuitAction;
+    QSystemTrayIcon systrayIcon;
+    QMenu systrayIconMenu;
     bool systrayEnabled();
 
     gboolean m_connected;
