@@ -130,8 +130,7 @@ MainWindow::MainWindow():
             startInSystrayCheckButton->setDisabled(true);
             closeToSystrayCheckButton->setDisabled(true);
         }
-    }
-    else { // first run - grey out options
+    } else { // first run - grey out options
         startInSystrayCheckButton->setDisabled(true);
         closeToSystrayCheckButton->setDisabled(true);
     }
@@ -1257,8 +1256,7 @@ void MainWindow::toggleSystrayOption(){
         systrayIcon.hide();
         startInSystrayCheckButton->setDisabled(true);
         closeToSystrayCheckButton->setDisabled(true);
-    }
-    else {
+    } else {
         startInSystrayCheckButton->setDisabled(false);
         closeToSystrayCheckButton->setDisabled(false);
         systrayIcon.show();
