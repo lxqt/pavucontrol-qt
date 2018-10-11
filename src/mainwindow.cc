@@ -31,6 +31,7 @@
 #include "sinkinputwidget.h"
 #include "sourceoutputwidget.h"
 #include "rolewidget.h"
+#include "channel.h"
 #include <QIcon>
 #include <QStyle>
 #include <QSettings>
@@ -1285,6 +1286,22 @@ void MainWindow::systrayMuteToggle()
     muted = !muted;
 }
 
+void MainWindow::systrayVolumeChange(int step)
+{
+    for (std::map<uint32_t, SinkWidget*>::iterator it = sinkWidgets.begin(); it != sinkWidgets.end(); ++it) {
+        DeviceWidget* w = dynamic_cast<DeviceWidget*>(it->second);
+        if(!w || !w->channels | !w->channels[0])
+                continue;
+        Channel *c = w->channels[0];
+        QSlider *vs = c->volumeScale;
+        int vol = vs->value();
+        int max = vs->maximum();
+        int min = vs->minimum();
+        double single_percent_step = (double)(max-min) / 100;
+        vs->setValue(vol + step*single_percent_step);
+    }
+}
+
 void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason){
     switch(reason)
     {
@@ -1304,9 +1321,9 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
     if(obj == &systrayIcon && event->type() == QEvent::Wheel) {
         QWheelEvent *wheelEvent = static_cast<QWheelEvent *>(event);
 	if(wheelEvent->delta() > 0)
-	    ; // TODO: increase volume by step
+            systrayVolumeChange(5);
         else
-	    ; // TODO: decrease volume by step
+            systrayVolumeChange(-5);
     }
     return false;
 }
