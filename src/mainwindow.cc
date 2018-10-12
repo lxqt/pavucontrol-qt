@@ -150,7 +150,6 @@ MainWindow::~MainWindow() {
     config.setValue("systray/startInTray", startInSystrayCheckButton->isChecked());
 
     if(systray) {
-        qApp->removeEventFilter(systray);
         delete systray;
     }
 
@@ -1217,7 +1216,6 @@ void MainWindow::toggleSystray() {
         return;
 
     if(systray) {
-        qApp->removeEventFilter(systray);
         delete systray;
         systray = nullptr;
         startInSystrayCheckButton->setDisabled(true);
@@ -1226,7 +1224,6 @@ void MainWindow::toggleSystray() {
         systray = new Systray(this);
         if(!systray)
             return;
-        qApp->installEventFilter(systray);
         startInSystrayCheckButton->setDisabled(false);
         closeToSystrayCheckButton->setDisabled(false);
     }

@@ -26,7 +26,13 @@ Systray::Systray(MainWindow *parent) :
 
     setIcon(systrayIcons[NOT_MUTED]);
     setContextMenu(&systrayIconMenu);
+    
+    qApp->installEventFilter(this);
     show();
+}
+
+Systray::~Systray() {
+    qApp->removeEventFilter(this);
 }
 
 void Systray::muteToggle()
