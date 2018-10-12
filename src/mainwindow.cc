@@ -149,8 +149,10 @@ MainWindow::~MainWindow() {
     config.setValue("systray/closeToTray", closeToSystrayCheckButton->isChecked());
     config.setValue("systray/startInTray", startInSystrayCheckButton->isChecked());
 
-    if(systray)
+    if(systray) {
+        qApp->removeEventFilter(systray);
         delete systray;
+    }
 
     while (!clientNames.empty()) {
         std::map<uint32_t, char*>::iterator i = clientNames.begin();
