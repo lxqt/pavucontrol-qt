@@ -1254,16 +1254,16 @@ void MainWindow::toggleSystrayOption(){
 void MainWindow::systrayMuteToggle()
 {
     static bool muted = false;
-    static std::map<uint32_t, bool> restore_mute_state;
+    static std::map<uint32_t, bool> restoreMuteState;
     
     for (std::map<uint32_t, SinkWidget*>::iterator it = sinkWidgets.begin(); it != sinkWidgets.end(); ++it) {
         QToolButton *sinkMuteToggleButton = it->second->muteToggleButton;
         if(!muted) {
-            restore_mute_state[it->first] =  sinkMuteToggleButton->isChecked();
+            restoreMuteState[it->first] =  sinkMuteToggleButton->isChecked();
             sinkMuteToggleButton->setChecked(true);
         } else {
-            if(restore_mute_state.find(it->first) != restore_mute_state.end())
-                sinkMuteToggleButton->setChecked(restore_mute_state[it->first]);
+            if(restoreMuteState.find(it->first) != restoreMuteState.end())
+                sinkMuteToggleButton->setChecked(restoreMuteState[it->first]);
             else
                 continue; // skip unnecessary state update, we aren't restoring anything
         }
