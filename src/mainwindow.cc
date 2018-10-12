@@ -122,7 +122,7 @@ MainWindow::MainWindow():
     if (sourceTypeSelection.isValid())
         sourceTypeComboBox->setCurrentIndex(sourceTypeSelection.toInt());
 
-    const QVariant useSystray = config.value("systray/enabled");
+    const QVariant useSystray = config.value("systray/enabled", false);
     if(useSystray.isValid()) {
         if(useSystray.toBool())
             enableSystrayCheckButton->setChecked(true);
@@ -136,11 +136,11 @@ MainWindow::MainWindow():
         closeToSystrayCheckButton->setDisabled(true);
     }
 
-    const QVariant startInTray = config.value("systray/startInTray");
+    const QVariant startInTray = config.value("systray/startInTray", false);
     if(startInTray.isValid())
         startInSystrayCheckButton->setChecked(startInTray.toBool());
 
-    const QVariant closeToSystray = config.value("systray/closeToTray");
+    const QVariant closeToSystray = config.value("systray/closeToTray", false);
     if(closeToSystray.isValid())
         closeToSystrayCheckButton->setChecked(closeToSystray.toBool());
 
