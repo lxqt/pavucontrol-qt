@@ -29,9 +29,9 @@
 
 #include <QCloseEvent>
 #include <QDialog>
-#include <QMenu>
 #include <QSystemTrayIcon>
 #include "ui_mainwindow.h"
+#include "systray.h"
 
 class CardWidget;
 class SinkWidget;
@@ -39,13 +39,7 @@ class SourceWidget;
 class SinkInputWidget;
 class SourceOutputWidget;
 class RoleWidget;
-class MainWindow;
-
-struct Systray : public QSystemTrayIcon {
-    Systray(MainWindow *parent) : mw(parent) {}
-    bool eventFilter(QObject *obj, QEvent *event);
-    MainWindow *mw;
-};
+class Systray;
 
 class MainWindow : public QDialog, public Ui::MainWindow {
     Q_OBJECT
@@ -88,8 +82,9 @@ public:
     SinkType showSinkType;
     SourceOutputType showSourceOutputType;
     SourceType showSourceType;
-    
+
     bool startToTrayEnabled();
+    void quit();
 
 protected Q_SLOTS:
     virtual void onSinkInputTypeComboBoxChanged(int index);
@@ -97,8 +92,7 @@ protected Q_SLOTS:
     virtual void onSinkTypeComboBoxChanged(int index);
     virtual void onSourceTypeComboBoxChanged(int index);
     virtual void onShowVolumeMetersCheckButtonToggled(bool toggled);
-
-protected:
+    void toggleSystray();
     void closeEvent(QCloseEvent *event);
 
 public:
@@ -115,32 +109,14 @@ public:
     bool createEventRoleWidget();
     void deleteEventRoleWidget();
 
-    void createTrayIcon();
-    void setVisible(bool);
-    void systrayVolumeChange(int step);
+    void setVisible(bool visibility);
 
     QByteArray defaultSinkName, defaultSourceName;
 
     bool canRenameDevices;
 
-private slots:
-    void toggleSystrayOption();
-    void iconActivated(QSystemTrayIcon::ActivationReason reason);
-    void quit();
-
 private:
-    QAction systrayMinimizeAction;
-    QAction systrayRestoreAction;
-    QAction systrayQuitAction;
-    Systray systrayIcon;
-    QMenu systrayIconMenu;
-    
-    enum { NOT_MUTED, MUTED };
-    QIcon systrayIcons[2];
-
-    bool systrayEnabled();
-    void systrayMuteToggle();
-
+    Systray *systray;
     gboolean m_connected;
     gchar* m_config_filename;
 };

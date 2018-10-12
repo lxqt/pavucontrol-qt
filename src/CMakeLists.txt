@@ -20,6 +20,7 @@ set(pavucontrol-qt_HDRS
     sourceoutputwidget.h
     sourcewidget.h
     streamwidget.h
+    systray.h
 )
 
 set(pavucontrol-qt_SRCS
@@ -35,6 +36,7 @@ set(pavucontrol-qt_SRCS
     sourceoutputwidget.cc
     sourcewidget.cc
     streamwidget.cc
+    systray.cc
 )
 
 set(pavucontrol-qt_UI

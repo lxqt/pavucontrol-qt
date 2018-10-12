@@ -31,7 +31,6 @@
 #include "sinkinputwidget.h"
 #include "sourceoutputwidget.h"
 #include "rolewidget.h"
-#include "channel.h"
 #include <QIcon>
 #include <QStyle>
 #include <QSettings>
@@ -75,8 +74,8 @@ MainWindow::MainWindow():
     showSourceType(SOURCE_NO_MONITOR),
     eventRoleWidget(nullptr),
     canRenameDevices(false),
+    systray(nullptr),
     m_connected(false),
-    systrayIcon(this),
     m_config_filename(nullptr) {
 
     setupUi(this);
@@ -91,6 +90,7 @@ MainWindow::MainWindow():
     connect(sinkTypeComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::onSinkTypeComboBoxChanged);
     connect(sourceTypeComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::onSourceTypeComboBoxChanged);
     connect(showVolumeMetersCheckButton, &QCheckBox::toggled, this, &MainWindow::onShowVolumeMetersCheckButtonToggled);
+    connect(enableSystrayCheckButton, &QCheckBox::clicked, this, &MainWindow::toggleSystray);
 
     QAction * quit = new QAction{this};
     connect(quit, &QAction::triggered, this, &QWidget::close);
@@ -124,14 +124,14 @@ MainWindow::MainWindow():
     enableSystrayCheckButton->setChecked(config.value("systray/enabled", false).toBool());
     startInSystrayCheckButton->setChecked(config.value("systray/startInTray", false).toBool());
     closeToSystrayCheckButton->setChecked(config.value("systray/closeToTray", false).toBool());
-    
-    if(!enableSystrayCheckButton->isChecked()) {
+
+    if(enableSystrayCheckButton->isChecked())
+        toggleSystray();
+    else {
         startInSystrayCheckButton->setDisabled(true);
         closeToSystrayCheckButton->setDisabled(true);
     }
 
-    createTrayIcon();
-    
     /* Hide first and show when we're connected */
     notebook->hide();
     connectingLabel->show();
@@ -1187,9 +1187,8 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled(bool toggled) {
     }
 }
 
-void MainWindow::closeEvent(QCloseEvent *event)
-{
-    if(systrayIcon.isVisible() && closeToSystrayCheckButton->isChecked()) {
+void MainWindow::closeEvent(QCloseEvent *event) {
+    if(systray && systray->isVisible() && closeToSystrayCheckButton->isChecked()) {
         hide();
         event->ignore();
     }
@@ -1203,113 +1202,29 @@ void MainWindow::quit()
 }
 
 void MainWindow::setVisible(bool visible) {
-    systrayMinimizeAction.setEnabled(visible);
-    systrayRestoreAction.setEnabled(!visible);
+    if(systray)
+        systray->setVisible(visible);
     QDialog::setVisible(visible);
 }
 
-void MainWindow::createTrayIcon() {
+void MainWindow::toggleSystray() {
     if (!QSystemTrayIcon::isSystemTrayAvailable())
         return;
-    
-    qApp->installEventFilter(&systrayIcon);
 
-    systrayQuitAction.setText(tr("&Quit"));
-    systrayRestoreAction.setText(tr("&Restore"));
-    systrayMinimizeAction.setText(tr("Mi&nimize"));
-
-    connect(&systrayMinimizeAction, &QAction::triggered, this, &MainWindow::hide);
-    connect(&systrayRestoreAction, &QAction::triggered, this, &MainWindow::showNormal);
-    connect(&systrayQuitAction, &QAction::triggered, this, &MainWindow::quit);
-    connect(&systrayIcon, &QSystemTrayIcon::activated, this, &MainWindow::iconActivated);
-    connect(enableSystrayCheckButton, &QCheckBox::clicked, this, &MainWindow::toggleSystrayOption);
-
-    systrayIconMenu.addAction(&systrayMinimizeAction);
-    systrayIconMenu.addAction(&systrayRestoreAction);
-    systrayIconMenu.addSeparator();
-    systrayIconMenu.addAction(&systrayQuitAction);
-
-    QSize sz(256,256);
-    systrayIcons[NOT_MUTED].addPixmap(style()->standardIcon(QStyle::SP_MediaVolume).pixmap(sz));
-    systrayIcons[MUTED].addPixmap(style()->standardIcon(QStyle::SP_MediaVolumeMuted).pixmap(sz));
-
-    systrayIcon.setIcon(systrayIcons[NOT_MUTED]);
-    systrayIcon.setContextMenu(&systrayIconMenu);
-    if(systrayEnabled())
-        systrayIcon.show();
-}
-
-void MainWindow::toggleSystrayOption(){
-    if(systrayIcon.isVisible()){
-        systrayIcon.hide();
+    if(systray) {
+        qApp->removeEventFilter(systray);
+        delete systray;
+        systray = nullptr;
         startInSystrayCheckButton->setDisabled(true);
         closeToSystrayCheckButton->setDisabled(true);
     } else {
-        systrayIcon.show();
+        systray = new Systray(this);
+        if(!systray)
+            return;
+        qApp->installEventFilter(systray);
         startInSystrayCheckButton->setDisabled(false);
         closeToSystrayCheckButton->setDisabled(false);
     }
-}
-
-void MainWindow::systrayMuteToggle()
-{
-    static bool muted = false;
-    static std::map<uint32_t, bool> restoreMuteState;
-    
-    for (std::map<uint32_t, SinkWidget*>::iterator it = sinkWidgets.begin(); it != sinkWidgets.end(); ++it) {
-        QToolButton *sinkMuteToggleButton = it->second->muteToggleButton;
-        if(!muted) {
-            restoreMuteState[it->first] =  sinkMuteToggleButton->isChecked();
-            sinkMuteToggleButton->setChecked(true);
-        } else {
-            if(restoreMuteState.find(it->first) != restoreMuteState.end())
-                sinkMuteToggleButton->setChecked(restoreMuteState[it->first]);
-        }
-    }
-    muted = !muted;
-    systrayIcon.setIcon(systrayIcons[muted ? MUTED : NOT_MUTED]);
-}
-
-void MainWindow::systrayVolumeChange(int step)
-{
-    for (std::map<uint32_t, SinkWidget*>::iterator it = sinkWidgets.begin(); it != sinkWidgets.end(); ++it) {
-        DeviceWidget* w = dynamic_cast<DeviceWidget*>(it->second);
-        if(!w || !w->channels || !w->channels[0])
-                continue;
-        Channel *c = w->channels[0];
-        QSlider *vs = c->volumeScale;
-        int vol = vs->value();
-        int max = vs->maximum();
-        int min = vs->minimum();
-        double single_percent_step = (double)(max-min) / 100;
-        vs->setValue(vol + step*single_percent_step);
-    }
-}
-
-void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason){
-    switch(reason)
-    {
-    case QSystemTrayIcon::Trigger:
-    case QSystemTrayIcon::DoubleClick:
-        setVisible(!QDialog::isVisible());
-        break;
-    case QSystemTrayIcon::MiddleClick:
-        systrayMuteToggle();
-        break;
-    default:
-        break;
-    }
-}
-
-bool Systray::eventFilter(QObject *obj, QEvent *event) {
-    if(event->type() == QEvent::Wheel) {
-        QWheelEvent *wheelEvent = static_cast<QWheelEvent *>(event);
-        if(wheelEvent->delta() > 0)
-            mw->systrayVolumeChange(5);
-        else
-            mw->systrayVolumeChange(-5);
-    }
-    return false;
 }
 
 bool MainWindow::startToTrayEnabled(){
@@ -1317,6 +1232,3 @@ bool MainWindow::startToTrayEnabled(){
         && startInSystrayCheckButton->isChecked();
 }
 
-bool MainWindow::systrayEnabled(){
-    return enableSystrayCheckButton->isChecked();
-}
