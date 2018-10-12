@@ -1290,7 +1290,7 @@ void MainWindow::systrayVolumeChange(int step)
 {
     for (std::map<uint32_t, SinkWidget*>::iterator it = sinkWidgets.begin(); it != sinkWidgets.end(); ++it) {
         DeviceWidget* w = dynamic_cast<DeviceWidget*>(it->second);
-        if(!w || !w->channels | !w->channels[0])
+        if(!w || !w->channels || !w->channels[0])
                 continue;
         Channel *c = w->channels[0];
         QSlider *vs = c->volumeScale;
