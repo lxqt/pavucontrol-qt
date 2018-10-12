@@ -76,6 +76,7 @@ MainWindow::MainWindow():
     eventRoleWidget(nullptr),
     canRenameDevices(false),
     m_connected(false),
+    systrayIcon(this),
     m_config_filename(nullptr) {
 
     setupUi(this);
@@ -95,8 +96,6 @@ MainWindow::MainWindow():
     connect(quit, &QAction::triggered, this, &QWidget::close);
     quit->setShortcut(QKeySequence::Quit);
     addAction(quit);
-
-    qApp->installEventFilter(this);
 
     const QSettings config;
 
@@ -1212,6 +1211,8 @@ void MainWindow::setVisible(bool visible) {
 void MainWindow::createTrayIcon() {
     if (!QSystemTrayIcon::isSystemTrayAvailable())
         return;
+    
+    qApp->installEventFilter(&systrayIcon);
 
     systrayQuitAction.setText(tr("&Quit"));
     systrayRestoreAction.setText(tr("&Restore"));
@@ -1300,13 +1301,13 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason){
     }
 }
 
-bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
-    if(obj == &systrayIcon && event->type() == QEvent::Wheel) {
+bool Systray::eventFilter(QObject *obj, QEvent *event) {
+    if(event->type() == QEvent::Wheel) {
         QWheelEvent *wheelEvent = static_cast<QWheelEvent *>(event);
         if(wheelEvent->delta() > 0)
-            systrayVolumeChange(5);
+            mw->systrayVolumeChange(5);
         else
-            systrayVolumeChange(-5);
+            mw->systrayVolumeChange(-5);
     }
     return false;
 }

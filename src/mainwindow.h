@@ -39,6 +39,13 @@ class SourceWidget;
 class SinkInputWidget;
 class SourceOutputWidget;
 class RoleWidget;
+class MainWindow;
+
+struct Systray : public QSystemTrayIcon {
+    Systray(MainWindow *parent) : mw(parent) {}
+    bool eventFilter(QObject *obj, QEvent *event);
+    MainWindow *mw;
+};
 
 class MainWindow : public QDialog, public Ui::MainWindow {
     Q_OBJECT
@@ -93,7 +100,6 @@ protected Q_SLOTS:
 
 protected:
     void closeEvent(QCloseEvent *event);
-    bool eventFilter(QObject *obj, QEvent *event);
 
 public:
     void setConnectionState(gboolean connected);
@@ -111,6 +117,7 @@ public:
 
     void createTrayIcon();
     void setVisible(bool);
+    void systrayVolumeChange(int step);
 
     QByteArray defaultSinkName, defaultSourceName;
 
@@ -125,7 +132,7 @@ private:
     QAction systrayMinimizeAction;
     QAction systrayRestoreAction;
     QAction systrayQuitAction;
-    QSystemTrayIcon systrayIcon;
+    Systray systrayIcon;
     QMenu systrayIconMenu;
     
     enum { NOT_MUTED, MUTED };
@@ -133,7 +140,6 @@ private:
 
     bool systrayEnabled();
     void systrayMuteToggle();
-    void systrayVolumeChange(int step);
 
     gboolean m_connected;
     gchar* m_config_filename;
