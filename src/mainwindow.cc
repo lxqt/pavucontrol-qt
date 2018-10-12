@@ -1307,10 +1307,10 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason){
     {
     case QSystemTrayIcon::Trigger:
     case QSystemTrayIcon::DoubleClick:
-        systrayMuteToggle();
+        setVisible(!QDialog::isVisible());
         break;
     case QSystemTrayIcon::MiddleClick:
-        setVisible(!QDialog::isVisible());
+        systrayMuteToggle();
         break;
     default:
         break;
