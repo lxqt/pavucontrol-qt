@@ -1245,9 +1245,9 @@ void MainWindow::toggleSystrayOption(){
         startInSystrayCheckButton->setDisabled(true);
         closeToSystrayCheckButton->setDisabled(true);
     } else {
+        systrayIcon.show();
         startInSystrayCheckButton->setDisabled(false);
         closeToSystrayCheckButton->setDisabled(false);
-        systrayIcon.show();
     }
 }
 
