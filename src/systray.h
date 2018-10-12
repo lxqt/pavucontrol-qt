@@ -14,7 +14,7 @@ class SinkWidget;
 struct Systray : public QSystemTrayIcon {
     Systray(MainWindow *parent);
     ~Systray();
-    
+
     bool eventFilter(QObject *obj, QEvent *event);
     void volumeChange(int step);
     void iconActivated(QSystemTrayIcon::ActivationReason reason);
