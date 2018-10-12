@@ -122,8 +122,7 @@ MainWindow::MainWindow():
     if (sourceTypeSelection.isValid())
         sourceTypeComboBox->setCurrentIndex(sourceTypeSelection.toInt());
 
-    const QVariant useSystray = config.value("systray/enabled", false);
-    if(useSystray.toBool())
+    if(config.value("systray/enabled", false).toBool())
         enableSystrayCheckButton->setChecked(true);
     else {
         enableSystrayCheckButton->setChecked(false);
