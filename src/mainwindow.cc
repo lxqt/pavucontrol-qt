@@ -122,7 +122,7 @@ MainWindow::MainWindow():
     if (sourceTypeSelection.isValid())
         sourceTypeComboBox->setCurrentIndex(sourceTypeSelection.toInt());
 
-    const QVariant useSystray = config.value("systray/enabled");
+    const QVariant useSystray = config.value("systray/enabled", false);
     if(useSystray.isValid()) {
         if(useSystray.toBool())
             enableSystrayCheckButton->setChecked(true);
@@ -136,11 +136,11 @@ MainWindow::MainWindow():
         closeToSystrayCheckButton->setDisabled(true);
     }
 
-    const QVariant startInTray = config.value("systray/startInTray");
+    const QVariant startInTray = config.value("systray/startInTray", false);
     if(startInTray.isValid())
         startInSystrayCheckButton->setChecked(startInTray.toBool());
 
-    const QVariant closeToSystray = config.value("systray/closeToTray");
+    const QVariant closeToSystray = config.value("systray/closeToTray", false);
     if(closeToSystray.isValid())
         closeToSystrayCheckButton->setChecked(closeToSystray.toBool());
 
@@ -1290,7 +1290,7 @@ void MainWindow::systrayVolumeChange(int step)
 {
     for (std::map<uint32_t, SinkWidget*>::iterator it = sinkWidgets.begin(); it != sinkWidgets.end(); ++it) {
         DeviceWidget* w = dynamic_cast<DeviceWidget*>(it->second);
-        if(!w || !w->channels | !w->channels[0])
+        if(!w || !w->channels || !w->channels[0])
                 continue;
         Channel *c = w->channels[0];
         QSlider *vs = c->volumeScale;
@@ -1307,10 +1307,10 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason){
     {
     case QSystemTrayIcon::Trigger:
     case QSystemTrayIcon::DoubleClick:
-        systrayMuteToggle();
+        setVisible(!QDialog::isVisible());
         break;
     case QSystemTrayIcon::MiddleClick:
-        setVisible(!QDialog::isVisible());
+        systrayMuteToggle();
         break;
     default:
         break;
