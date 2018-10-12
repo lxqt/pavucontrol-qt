@@ -122,16 +122,14 @@ MainWindow::MainWindow():
     if (sourceTypeSelection.isValid())
         sourceTypeComboBox->setCurrentIndex(sourceTypeSelection.toInt());
 
-    if(config.value("systray/enabled", false).toBool())
-        enableSystrayCheckButton->setChecked(true);
-    else {
-        enableSystrayCheckButton->setChecked(false);
+    enableSystrayCheckButton->setChecked(config.value("systray/enabled", false).toBool());
+    startInSystrayCheckButton->setChecked(config.value("systray/startInTray", false).toBool());
+    closeToSystrayCheckButton->setChecked(config.value("systray/closeToTray", false).toBool());
+    
+    if(!enableSystrayCheckButton->isChecked()) {
         startInSystrayCheckButton->setDisabled(true);
         closeToSystrayCheckButton->setDisabled(true);
     }
-
-    startInSystrayCheckButton->setChecked(config.value("systray/startInTray", false).toBool());
-    closeToSystrayCheckButton->setChecked(config.value("systray/closeToTray", false).toBool());
 
     createTrayIcon();
     
