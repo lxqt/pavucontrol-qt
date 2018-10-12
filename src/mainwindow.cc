@@ -1217,12 +1217,11 @@ void MainWindow::createTrayIcon() {
     systrayRestoreAction.setText(tr("&Restore"));
     systrayMinimizeAction.setText(tr("Mi&nimize"));
 
-    connect(&systrayMinimizeAction, SIGNAL(triggered()), this, SLOT(hide()));
-    connect(&systrayRestoreAction, SIGNAL(triggered()), this, SLOT(showNormal()));
-    connect(&systrayQuitAction, SIGNAL(triggered()), this, SLOT(quit()));
-    connect(&systrayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
-                this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
-    connect(enableSystrayCheckButton, SIGNAL(clicked()), this, SLOT(toggleSystrayOption()));
+    connect(&systrayMinimizeAction, &QAction::triggered, this, &MainWindow::hide);
+    connect(&systrayRestoreAction, &QAction::triggered, this, &MainWindow::showNormal);
+    connect(&systrayQuitAction, &QAction::triggered, this, &MainWindow::quit);
+    connect(&systrayIcon, &QSystemTrayIcon::activated, this, &MainWindow::iconActivated);
+    connect(enableSystrayCheckButton, &QCheckBox::clicked, this, &MainWindow::toggleSystrayOption);
 
     systrayIconMenu.addAction(&systrayMinimizeAction);
     systrayIconMenu.addAction(&systrayRestoreAction);
