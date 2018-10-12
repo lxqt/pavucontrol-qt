@@ -1264,10 +1264,7 @@ void MainWindow::systrayMuteToggle()
         } else {
             if(restoreMuteState.find(it->first) != restoreMuteState.end())
                 sinkMuteToggleButton->setChecked(restoreMuteState[it->first]);
-            else
-                continue; // skip unnecessary state update, we aren't restoring anything
         }
-        it->second->onMuteToggleButton();
     }
     muted = !muted;
     systrayIcon.setIcon(systrayIcons[muted ? MUTED : NOT_MUTED]);
