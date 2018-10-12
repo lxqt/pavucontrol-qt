@@ -1257,20 +1257,20 @@ void MainWindow::systrayMuteToggle()
     static std::map<uint32_t, bool> restore_mute_state;
     
     for (std::map<uint32_t, SinkWidget*>::iterator it = sinkWidgets.begin(); it != sinkWidgets.end(); ++it) {
+        QToolButton *sinkMuteToggleButton = it->second->muteToggleButton;
         if(!muted) {
-            restore_mute_state[it->first] =  it->second->muteToggleButton->isChecked();
-            it->second->muteToggleButton->setChecked(true);
-            systrayIcon.setIcon(systrayIcons[MUTED]);
+            restore_mute_state[it->first] =  sinkMuteToggleButton->isChecked();
+            sinkMuteToggleButton->setChecked(true);
         } else {
             if(restore_mute_state.find(it->first) != restore_mute_state.end())
-                it->second->muteToggleButton->setChecked(restore_mute_state[it->first]);
+                sinkMuteToggleButton->setChecked(restore_mute_state[it->first]);
             else
                 continue; // skip unnecessary state update, we aren't restoring anything
-            systrayIcon.setIcon(systrayIcons[NOT_MUTED]);
         }
         it->second->onMuteToggleButton();
     }
     muted = !muted;
+    systrayIcon.setIcon(systrayIcons[muted ? MUTED : NOT_MUTED]);
 }
 
 void MainWindow::systrayVolumeChange(int step)
