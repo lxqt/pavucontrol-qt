@@ -1304,7 +1304,7 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason){
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
     if(obj == &systrayIcon && event->type() == QEvent::Wheel) {
         QWheelEvent *wheelEvent = static_cast<QWheelEvent *>(event);
-	if(wheelEvent->delta() > 0)
+        if(wheelEvent->delta() > 0)
             systrayVolumeChange(5);
         else
             systrayVolumeChange(-5);
