@@ -2,7 +2,7 @@
 #include "channel.h"
 #include "sinkwidget.h"
 
-Systray::Systray(MainWindow *parent) :
+Systray::Systray(MainWindow &parent) :
     mw(parent),
     muted(false) {
 
@@ -10,9 +10,9 @@ Systray::Systray(MainWindow *parent) :
     systrayRestoreAction.setText(tr("&Restore"));
     systrayMinimizeAction.setText(tr("Mi&nimize"));
 
-    connect(&systrayMinimizeAction, &QAction::triggered, mw, &MainWindow::hide);
-    connect(&systrayRestoreAction, &QAction::triggered, mw, &MainWindow::showNormal);
-    connect(&systrayQuitAction, &QAction::triggered, mw, &MainWindow::quit);
+    connect(&systrayMinimizeAction, &QAction::triggered, &mw, &MainWindow::hide);
+    connect(&systrayRestoreAction, &QAction::triggered, &mw, &MainWindow::showNormal);
+    connect(&systrayQuitAction, &QAction::triggered, &mw, &MainWindow::quit);
     connect(this, &QSystemTrayIcon::activated, this, &Systray::iconActivated);
 
     systrayIconMenu.addAction(&systrayMinimizeAction);
@@ -21,8 +21,8 @@ Systray::Systray(MainWindow *parent) :
     systrayIconMenu.addAction(&systrayQuitAction);
 
     QSize sz(256,256);
-    systrayIcons[NOT_MUTED].addPixmap(mw->style()->standardIcon(QStyle::SP_MediaVolume).pixmap(sz));
-    systrayIcons[MUTED].addPixmap(mw->style()->standardIcon(QStyle::SP_MediaVolumeMuted).pixmap(sz));
+    systrayIcons[NOT_MUTED].addPixmap(mw.style()->standardIcon(QStyle::SP_MediaVolume).pixmap(sz));
+    systrayIcons[MUTED].addPixmap(mw.style()->standardIcon(QStyle::SP_MediaVolumeMuted).pixmap(sz));
 
     setIcon(systrayIcons[NOT_MUTED]);
     setContextMenu(&systrayIconMenu);
@@ -38,7 +38,7 @@ Systray::~Systray() {
 void Systray::muteToggle()
 {
     static std::map<uint32_t, bool> restoreMuteState;
-    for (std::map<uint32_t, SinkWidget*>::iterator it = mw->sinkWidgets.begin(); it != mw->sinkWidgets.end(); ++it) {
+    for (std::map<uint32_t, SinkWidget*>::iterator it = mw.sinkWidgets.begin(); it != mw.sinkWidgets.end(); ++it) {
         QToolButton *sinkMuteToggleButton = it->second->muteToggleButton;
         if(!muted) {
             restoreMuteState[it->first] =  sinkMuteToggleButton->isChecked();
@@ -57,7 +57,7 @@ void Systray::iconActivated(QSystemTrayIcon::ActivationReason reason){
     {
     case QSystemTrayIcon::Trigger:
     case QSystemTrayIcon::DoubleClick:
-        mw->setVisible(!mw->isVisible());
+        mw.setVisible(!mw.isVisible());
         break;
     case QSystemTrayIcon::MiddleClick:
         muteToggle();
@@ -73,7 +73,7 @@ void Systray::setVisible(bool visible) {
 }
 
 void Systray::volumeChange(int step) {
-    for (std::map<uint32_t, SinkWidget*>::iterator it = mw->sinkWidgets.begin(); it != mw->sinkWidgets.end(); ++it) {
+    for (std::map<uint32_t, SinkWidget*>::iterator it = mw.sinkWidgets.begin(); it != mw.sinkWidgets.end(); ++it) {
         DeviceWidget* w = dynamic_cast<DeviceWidget*>(it->second);
         if(!w || !w->channels || !w->channels[0])
             continue;

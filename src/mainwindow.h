@@ -29,7 +29,6 @@
 
 #include <QCloseEvent>
 #include <QDialog>
-#include <QSystemTrayIcon>
 #include "ui_mainwindow.h"
 #include "systray.h"
 

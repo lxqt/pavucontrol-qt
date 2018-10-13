@@ -12,7 +12,7 @@ class DeviceWidget;
 class SinkWidget;
 
 struct Systray : public QSystemTrayIcon {
-    Systray(MainWindow *parent);
+    Systray(MainWindow &parent);
     ~Systray();
 
     bool eventFilter(QObject *obj, QEvent *event);
@@ -22,7 +22,12 @@ struct Systray : public QSystemTrayIcon {
     void setVisible(bool visible);
 
 private:
-    MainWindow *mw;
+    Systray();
+    Systray(const Systray&);
+    Systray& operator=(Systray const &);
+
+    MainWindow &mw ;
+
     enum { NOT_MUTED, MUTED };
     bool muted;
     QIcon systrayIcons[2];

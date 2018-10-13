@@ -1220,7 +1220,7 @@ void MainWindow::toggleSystray() {
         startInSystrayCheckButton->setDisabled(true);
         closeToSystrayCheckButton->setDisabled(true);
     } else {
-        systray = new Systray(this);
+        systray = new Systray(*this);
         if(!systray)
             return;
         startInSystrayCheckButton->setDisabled(false);
