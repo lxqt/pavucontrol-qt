@@ -1,5 +1,8 @@
-cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
 project(pavucontrol-qt)
+# CMP0000 - A minimum required CMake version must be specified.
+# Note that the command invocation must appear in the CMakeLists.txt
+# file itself; a call in an included file is not sufficient.
+cmake_minimum_required(VERSION 3.6.2 FATAL_ERROR)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
@@ -18,10 +21,6 @@ find_package(Qt5LinguistTools REQUIRED)
 find_package(Qt5DBus REQUIRED)
 
 find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
-
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
-endif()
 
 set(PAVUCONTROLQT_MAJOR_VERSION 0)
 set(PAVUCONTROLQT_MINOR_VERSION 4)
@@ -45,4 +44,3 @@ pkg_check_modules(
 )
 
 add_subdirectory(src)
-
