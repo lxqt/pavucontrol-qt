@@ -1,7 +1,3 @@
-if(NOT CMAKE_BUILD_TYPE)
-   set(CMAKE_BUILD_TYPE Release)
-endif()
-
 include_directories(
     ${PULSE_INCLUDE_DIRS}
     ${GLIB_INCLUDE_DIRS}
