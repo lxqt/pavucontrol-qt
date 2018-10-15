@@ -1195,13 +1195,11 @@ void MainWindow::closeEvent(QCloseEvent *event) {
         hide();
         event->ignore();
     }
-    else
-        quit();
 }
 
 void MainWindow::quit()
 {
-    QCoreApplication::quit();
+    qApp->quit();
 }
 
 void MainWindow::setVisible(bool visible) {
