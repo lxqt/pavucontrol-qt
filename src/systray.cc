@@ -27,12 +27,12 @@ Systray::Systray(MainWindow &parent) :
     setIcon(systrayIcons[NOT_MUTED]);
     setContextMenu(&systrayIconMenu);
     
-    qApp->installEventFilter(this);
+    QSystemTrayIcon::installEventFilter(this);
     show();
 }
 
 Systray::~Systray() {
-    qApp->removeEventFilter(this);
+    QSystemTrayIcon::removeEventFilter(this);
 }
 
 void Systray::muteToggle()
@@ -89,7 +89,8 @@ void Systray::volumeChange(int step) {
 }
 
 bool Systray::eventFilter(QObject *obj, QEvent *event) {
-    if(obj == this && event->type() == QEvent::Wheel) {
+    assert(obj == this);
+    if(event->type() == QEvent::Wheel) {
         QWheelEvent *wheelEvent = static_cast<QWheelEvent *>(event);
         if(wheelEvent->delta() > 0)
             volumeChange(5);
