@@ -358,7 +358,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="66"/>
         <source>Error</source>
-        <translation></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="87"/>
