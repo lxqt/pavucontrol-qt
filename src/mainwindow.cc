@@ -74,7 +74,6 @@ MainWindow::MainWindow():
     showSourceType(SOURCE_NO_MONITOR),
     eventRoleWidget(nullptr),
     canRenameDevices(false),
-    systray(nullptr),
     m_connected(false),
     m_config_filename(nullptr) {
 
@@ -148,9 +147,6 @@ MainWindow::~MainWindow() {
     config.setValue("systray/enabled", enableSystrayCheckButton->isChecked());
     config.setValue("systray/closeToTray", closeToSystrayCheckButton->isChecked());
     config.setValue("systray/startInTray", startInSystrayCheckButton->isChecked());
-
-    if(systray) 
-        delete systray;
 
     while (!clientNames.empty()) {
         std::map<uint32_t, char*>::iterator i = clientNames.begin();
@@ -1213,12 +1209,11 @@ void MainWindow::toggleSystray() {
         return;
 
     if(systray) {
-        delete systray;
-        systray = nullptr;
+        systray.reset(nullptr);
         startInSystrayCheckButton->setDisabled(true);
         closeToSystrayCheckButton->setDisabled(true);
     } else {
-        systray = new Systray(*this);
+        systray.reset(new Systray(*this));
         if(!systray)
             return;
         startInSystrayCheckButton->setDisabled(false);

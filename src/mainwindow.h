@@ -29,6 +29,7 @@
 
 #include <QCloseEvent>
 #include <QDialog>
+#include <QScopedPointer>
 #include "ui_mainwindow.h"
 #include "systray.h"
 
@@ -115,7 +116,7 @@ public:
     bool canRenameDevices;
 
 private:
-    Systray *systray;
+    QScopedPointer<Systray> systray;
     gboolean m_connected;
     gchar* m_config_filename;
 };
