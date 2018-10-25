@@ -21,7 +21,11 @@ To build run `make`, to install `make install` which accepts variable `DESTDIR` 
 
 ### Binary packages
 
-This project was launched in August 2016 and binary packages are rare so far. On Arch Linux an [AUR](https://aur.archlinux.org/) package [pavucontrol-qt-git](https://aur.archlinux.org/packages/pavucontrol-qt-git/) can be used to build current checkouts of branch `master`.
+This project was launched in August 2016 and binary packages are rare so far. 
+
+On Arch Linux an [AUR](https://aur.archlinux.org/) package [pavucontrol-qt-git](https://aur.archlinux.org/packages/pavucontrol-qt-git/) can be used to build current checkouts of branch `master`.
+
+On FreeBSD the binary package is available as [pavucontrol-qt](https://www.freshports.org/audio/pavucontrol-qt/) and can be installed with `pkg install pavucontrol-qt`.
 
 ## Usage
 
