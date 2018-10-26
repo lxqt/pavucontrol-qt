@@ -25,43 +25,46 @@
 #include "minimalstreamwidget.h"
 #include <QGridLayout>
 #include <QProgressBar>
+#include <QPropertyAnimation>
 #include <QDebug>
 
 /*** MinimalStreamWidget ***/
 MinimalStreamWidget::MinimalStreamWidget(QWidget *parent) :
     QWidget(parent),
     peakProgressBar(new QProgressBar(this)),
-    lastPeak(0),
+    peakAnimation(new QPropertyAnimation(peakProgressBar, "value", peakProgressBar)),
     peak(nullptr),
     updating(false),
     volumeMeterEnabled(false),
     volumeMeterVisible(true) {
 
+    peakProgressBar->setMaximum(1000);
     peakProgressBar->setTextVisible(false);
     peakProgressBar->hide();
+    peakAnimation->setDuration(150);
 }
 
 void MinimalStreamWidget::initPeakProgressBar(QGridLayout* channelsGrid) {
     channelsGrid->addWidget(peakProgressBar, channelsGrid->rowCount(), 0, 1, -1);
 }
 
-#define DECAY_STEP .04
-
 void MinimalStreamWidget::updatePeak(double v) {
-
-    if (lastPeak >= DECAY_STEP)
-        if (v < lastPeak - DECAY_STEP)
-            v = lastPeak - DECAY_STEP;
-
-    lastPeak = v;
-
-    if (v >= 0) {
-        peakProgressBar->setEnabled(TRUE);
-        int value = qRound(v * peakProgressBar->maximum());
-        peakProgressBar->setValue(value);
+    int value = 0;
+    if (v > 0) {
+        peakProgressBar->setEnabled(true);
+        value = qRound(v * peakProgressBar->maximum());
     } else {
-        peakProgressBar->setEnabled(FALSE);
-        peakProgressBar->setValue(0);
+        peakProgressBar->setEnabled(false);
+    }
+    peakAnimation->stop();
+    if (peakProgressBar->value() > value)
+    {
+        peakAnimation->setStartValue(peakProgressBar->value());
+        peakAnimation->setEndValue(value);
+        peakAnimation->start();
+    } else
+    {
+        peakProgressBar->setValue(value);
     }
 
     enableVolumeMeter();
