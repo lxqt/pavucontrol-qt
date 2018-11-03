@@ -152,7 +152,7 @@
     <message>
         <location filename="../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation> ଏ.ସ.</translation>
+        <translation> ଏମ.ଏସ.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="41"/>
