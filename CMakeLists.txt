@@ -8,7 +8,6 @@ project(pavucontrol-qt)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
-set(LXQTBT_MINIMUM_VERSION "0.5.0")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -18,11 +17,17 @@ set(CMAKE_AUTOUIC ON)
 
 include(GNUInstallDirs)
 
-find_package(Qt5Widgets REQUIRED)
-find_package(Qt5LinguistTools REQUIRED)
-find_package(Qt5DBus REQUIRED)
+# Minimum Versions
+set(GLIB_MINIMUM_VERSION "2.50.0")
+set(LXQTBT_MINIMUM_VERSION "0.6.0")
+set(QT_MINIMUM_VERSION "5.7.1")
 
+find_package(Qt5Widgets ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(Qt5LinguistTools ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(Qt5DBus ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
+
+find_package(GLIB ${GLIB_MINIMUM_VERSION} REQUIRED)
 
 set(PAVUCONTROLQT_MAJOR_VERSION 0)
 set(PAVUCONTROLQT_MINOR_VERSION 14)
@@ -39,10 +44,6 @@ pkg_check_modules(
     PULSE REQUIRED
     libpulse>=5.0
     libpulse-mainloop-glib>=0.9.16
-)
-pkg_check_modules(
-    GLIB REQUIRED
-    glib-2.0
 )
 
 add_subdirectory(src)
