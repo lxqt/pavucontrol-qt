@@ -710,7 +710,7 @@ executar «start-pulseaudio-x11» manualmente.</translation>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation></translation>
+        <translation>Bloquear as canles xuntas</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
