@@ -1,4 +1,22 @@
 
+pavucontrol-qt-0.5.0 / 2018-12-01
+=================================
+
+  * Bumped version to 0.5.0
+  * Added FreeBSD installation instructions
+  * Don't use automatic string conversions
+  * Remove unused Makefile.am
+  * Treat the 'off' card profile specifically
+  * Mainwindow: Don't use deprecated libpulse members
+  * Translation updates
+  * Improved cmake scripting
+    - set cmake_minimum_required to 3.1.0
+    - removed locale compile definitons
+    - installed man page
+  * Moved translations from lxqt-l10n back to pavucontrol-qt
+    - Removed obsolete translation fuctionality
+    - Added translation promo in README.md
+
 pavucontrol-qt-0.4.0 / 2018-05-21
 =================================
 
