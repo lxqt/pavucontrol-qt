@@ -159,7 +159,7 @@
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation>Renomear o dispositivo %1 a:</translation>
+        <translation>Renomear o dispositivo %1 como:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
@@ -233,7 +233,7 @@
     <message>
         <location filename="../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation>&amp;Reproducción</translation>
+        <translation>&amp;Reprodución</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="93"/>
@@ -516,7 +516,7 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation>Produciuse un fallo na conexión a PulseAudio. Reintento automático en 5s
+        <translation>Produciuse un fallo na conexión a PulseAudio. Tentarase de novo en 5s
 
 Neste caso é probábel por  mor de que PULSE_SERVER estea mal configurado nas propiedades do
 contorno/xanela raíz de X11 ou en «client.conf» no servidor predeterminado.
