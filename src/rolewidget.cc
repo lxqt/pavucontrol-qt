@@ -51,11 +51,11 @@ void RoleWidget::executeVolumeUpdate() {
     info.channel_map.channels = 1;
     info.channel_map.map[0] = PA_CHANNEL_POSITION_MONO;
     info.volume = volume;
-    info.device = device == "" ? NULL : device.constData();
+    info.device = device == "" ? nullptr : device.constData();
     info.mute = muteToggleButton->isChecked();
 
     pa_operation* o;
-    if (!(o = pa_ext_stream_restore_write(get_context(), PA_UPDATE_REPLACE, &info, 1, TRUE, NULL, NULL))) {
+    if (!(o = pa_ext_stream_restore_write(get_context(), PA_UPDATE_REPLACE, &info, 1, TRUE, nullptr, nullptr))) {
         show_error(tr("pa_ext_stream_restore_write() failed").toUtf8().constData());
         return;
     }

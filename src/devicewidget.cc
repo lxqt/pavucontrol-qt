@@ -61,7 +61,7 @@ DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
     connect(offsetButton, static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &DeviceWidget::onOffsetChange);
 
     for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
-        channels[i] = NULL;
+        channels[i] = nullptr;
 
 
     // FIXME:
@@ -151,7 +151,7 @@ void DeviceWidget::onOffsetChange() {
     card_name = QByteArray::fromStdString(card_stream.str());
 
     if (!(o = pa_context_set_port_latency_offset(get_context(),
-            card_name, activePort, offset, NULL, NULL))) {
+            card_name, activePort, offset, nullptr, nullptr))) {
         show_error(tr("pa_context_set_port_latency_offset() failed").toUtf8().constData());
         return;
     }
@@ -236,7 +236,7 @@ void DeviceWidget::renamePopup() {
         pa_operation* o;
         gchar *key = g_markup_printf_escaped("%s:%s", mDeviceType.constData(), name.constData());
 
-        if (!(o = pa_ext_device_manager_set_device_description(get_context(), key, new_name.toUtf8().constData(), NULL, NULL)))
+        if (!(o = pa_ext_device_manager_set_device_description(get_context(), key, new_name.toUtf8().constData(), nullptr, nullptr)))
             show_error(tr("pa_ext_device_manager_set_device_description() failed").toUtf8().constData());
         else
             pa_operation_unref(o);

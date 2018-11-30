@@ -32,7 +32,7 @@ MinimalStreamWidget::MinimalStreamWidget(QWidget *parent) :
     QWidget(parent),
     peakProgressBar(new QProgressBar(this)),
     lastPeak(0),
-    peak(NULL),
+    peak(nullptr),
     updating(false),
     volumeMeterEnabled(false),
     volumeMeterVisible(true) {

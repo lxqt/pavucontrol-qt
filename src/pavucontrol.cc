@@ -51,8 +51,8 @@
 #include <QCommandLineOption>
 #include <QString>
 
-static pa_context* context = NULL;
-static pa_mainloop_api* api = NULL;
+static pa_context* context = nullptr;
+static pa_mainloop_api* api = nullptr;
 static int n_outstanding = 0;
 static int default_tab = 0;
 static bool retry = false;
@@ -470,7 +470,7 @@ void context_state_callback(pa_context *c, void *userdata) {
                                             PA_SUBSCRIPTION_MASK_SOURCE_OUTPUT|
                                             PA_SUBSCRIPTION_MASK_CLIENT|
                                             PA_SUBSCRIPTION_MASK_SERVER|
-                                            PA_SUBSCRIPTION_MASK_CARD), NULL, NULL))) {
+                                            PA_SUBSCRIPTION_MASK_CARD), nullptr, nullptr))) {
                 show_error(QObject::tr("pa_context_subscribe() failed").toUtf8().constData());
                 return;
             }
@@ -535,7 +535,7 @@ void context_state_callback(pa_context *c, void *userdata) {
 
                 pa_ext_stream_restore_set_subscribe_cb(c, ext_stream_restore_subscribe_cb, w);
 
-                if ((o = pa_ext_stream_restore_subscribe(c, 1, NULL, NULL)))
+                if ((o = pa_ext_stream_restore_subscribe(c, 1, nullptr, nullptr)))
                     pa_operation_unref(o);
 
             } else
@@ -549,7 +549,7 @@ void context_state_callback(pa_context *c, void *userdata) {
 
                 pa_ext_device_restore_set_subscribe_cb(c, ext_device_restore_subscribe_cb, w);
 
-                if ((o = pa_ext_device_restore_subscribe(c, 1, NULL, NULL)))
+                if ((o = pa_ext_device_restore_subscribe(c, 1, nullptr, nullptr)))
                     pa_operation_unref(o);
 
             } else
@@ -562,7 +562,7 @@ void context_state_callback(pa_context *c, void *userdata) {
 
                 pa_ext_device_manager_set_subscribe_cb(c, ext_device_manager_subscribe_cb, w);
 
-                if ((o = pa_ext_device_manager_subscribe(c, 1, NULL, NULL)))
+                if ((o = pa_ext_device_manager_subscribe(c, 1, nullptr, nullptr)))
                     pa_operation_unref(o);
 
             } else
@@ -578,7 +578,7 @@ void context_state_callback(pa_context *c, void *userdata) {
             w->removeAllWidgets();
             w->updateDeviceVisibility();
             pa_context_unref(context);
-            context = NULL;
+            context = nullptr;
 
             if (reconnect_timeout > 0) {
                 g_debug("%s", QObject::tr("Connection failed, attempting reconnect").toUtf8().constData());
@@ -609,7 +609,7 @@ gboolean connect_to_pulse(gpointer userdata) {
     pa_proplist_sets(proplist, PA_PROP_APPLICATION_ICON_NAME, "audio-card");
     pa_proplist_sets(proplist, PA_PROP_APPLICATION_VERSION, PACKAGE_VERSION);
 
-    context = pa_context_new_with_proplist(api, NULL, proplist);
+    context = pa_context_new_with_proplist(api, nullptr, proplist);
     g_assert(context);
 
     pa_proplist_free(proplist);
@@ -617,7 +617,7 @@ gboolean connect_to_pulse(gpointer userdata) {
     pa_context_set_state_callback(context, context_state_callback, w);
 
     w->setConnectingMessage();
-    if (pa_context_connect(context, NULL, PA_CONTEXT_NOFAIL, NULL) < 0) {
+    if (pa_context_connect(context, nullptr, PA_CONTEXT_NOFAIL, nullptr) < 0) {
         if (pa_context_errno(context) == PA_ERR_INVALID) {
             w->setConnectingMessage(QObject::tr("Connection to PulseAudio failed. Automatic retry in 5s\n\n"
                 "In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Properties\n"
