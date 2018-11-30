@@ -104,7 +104,7 @@ void SourceOutputWidget::onKill() {
 
 
 void SourceOutputWidget::buildMenu() {
-  for (std::map<uint32_t, SourceWidget*>::iterator i = mpMainWindow->sourceWidgets.begin(); i != mpMainWindow->sourceWidgets.end(); ++i) {
+  for (auto i = mpMainWindow->sourceWidgets.begin(); i != mpMainWindow->sourceWidgets.end(); ++i) {
       menu->addAction(new SourceMenuItem{this, i->second->description, i->second->index, i->second->index == mSourceIndex, menu});
   }
 }

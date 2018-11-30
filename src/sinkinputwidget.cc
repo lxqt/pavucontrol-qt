@@ -94,7 +94,7 @@ void SinkInputWidget::onKill() {
 }
 
 void SinkInputWidget::buildMenu() {
-  for (std::map<uint32_t, SinkWidget*>::iterator i = mpMainWindow->sinkWidgets.begin(); i != mpMainWindow->sinkWidgets.end(); ++i) {
+  for (auto i = mpMainWindow->sinkWidgets.begin(); i != mpMainWindow->sinkWidgets.end(); ++i) {
       menu->addAction(new SinkMenuItem{this, i->second->description, i->second->index, i->second->index == mSinkIndex, menu});
   }
 }

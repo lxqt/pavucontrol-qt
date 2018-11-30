@@ -134,7 +134,7 @@ MainWindow::~MainWindow() {
     config.setValue("window/showVolumeMeters", showVolumeMetersCheckButton->isChecked());
 
     while (!clientNames.empty()) {
-        std::map<uint32_t, char*>::iterator i = clientNames.begin();
+        auto i = clientNames.begin();
         g_free(i->second);
         clientNames.erase(i);
     }
@@ -350,7 +350,7 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
     }
 
     w->ports.clear();
-    for (std::set<pa_sink_port_info>::iterator i = port_priorities.begin(); i != port_priorities.end(); ++i)
+    for (auto i = port_priorities.begin(); i != port_priorities.end(); ++i)
         w->ports.push_back(std::pair<QByteArray,QByteArray>(i->name, i->description));
 
     w->activePort = info.active_port ? info.active_port->name : "";
@@ -517,7 +517,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
 
 
     w->ports.clear();
-    for (std::set<pa_source_port_info>::iterator i = port_priorities.begin(); i != port_priorities.end(); ++i)
+    for (auto i = port_priorities.begin(); i != port_priorities.end(); ++i)
         w->ports.push_back(std::pair<QByteArray,QByteArray>(i->name, i->description));
 
     w->activePort = info.active_port ? info.active_port->name : "";
@@ -701,7 +701,7 @@ void MainWindow::updateClient(const pa_client_info &info) {
     g_free(clientNames[info.index]);
     clientNames[info.index] = g_strdup(info.name);
 
-    for (std::map<uint32_t, SinkInputWidget*>::iterator i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
+    for (auto i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
         SinkInputWidget *w = i->second;
 
         if (!w)
@@ -719,7 +719,7 @@ void MainWindow::updateServer(const pa_server_info &info) {
     defaultSourceName = info.default_source_name ? info.default_source_name : "";
     defaultSinkName = info.default_sink_name ? info.default_sink_name : "";
 
-    for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
+    for (auto i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
         SinkWidget *w = i->second;
 
         if (!w)
@@ -731,7 +731,7 @@ void MainWindow::updateServer(const pa_server_info &info) {
         w->updating = false;
     }
 
-    for (std::map<uint32_t, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
+    for (auto i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
         SourceWidget *w = i->second;
 
         if (!w)
@@ -848,21 +848,21 @@ void MainWindow::updateVolumeMeter(uint32_t source_index, uint32_t sink_input_id
 
     } else {
 
-        for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
+        for (auto i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
             SinkWidget* w = i->second;
 
             if (w->monitor_index == source_index)
                 w->updatePeak(v);
         }
 
-        for (std::map<uint32_t, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
+        for (auto i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
             SourceWidget* w = i->second;
 
             if (w->index == source_index)
                 w->updatePeak(v);
         }
 
-        for (std::map<uint32_t, SourceOutputWidget*>::iterator i = sourceOutputWidgets.begin(); i != sourceOutputWidgets.end(); ++i) {
+        for (auto i = sourceOutputWidgets.begin(); i != sourceOutputWidgets.end(); ++i) {
             SourceOutputWidget* w = i->second;
 
             if (w->sourceIndex() == source_index)
@@ -903,7 +903,7 @@ void MainWindow::updateDeviceVisibility() {
 void MainWindow::reallyUpdateDeviceVisibility() {
     bool is_empty = true;
 
-    for (std::map<uint32_t, SinkInputWidget*>::iterator i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
+    for (auto i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
         SinkInputWidget* w = i->second;
 
         if (sinkWidgets.size() > 1) {
@@ -931,7 +931,7 @@ void MainWindow::reallyUpdateDeviceVisibility() {
 
     is_empty = true;
 
-    for (std::map<uint32_t, SourceOutputWidget*>::iterator i = sourceOutputWidgets.begin(); i != sourceOutputWidgets.end(); ++i) {
+    for (auto i = sourceOutputWidgets.begin(); i != sourceOutputWidgets.end(); ++i) {
         SourceOutputWidget* w = i->second;
 
         if (sourceWidgets.size() > 1) {
@@ -956,7 +956,7 @@ void MainWindow::reallyUpdateDeviceVisibility() {
 
     is_empty = true;
 
-    for (std::map<uint32_t, SinkWidget*>::iterator i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
+    for (auto i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
         SinkWidget* w = i->second;
 
         if (showSinkType == SINK_ALL || w->type == showSinkType) {
@@ -973,7 +973,7 @@ void MainWindow::reallyUpdateDeviceVisibility() {
 
     is_empty = true;
 
-    for (std::map<uint32_t, CardWidget*>::iterator i = cardWidgets.begin(); i != cardWidgets.end(); ++i) {
+    for (auto i = cardWidgets.begin(); i != cardWidgets.end(); ++i) {
         CardWidget* w = i->second;
 
         w->show();
@@ -987,7 +987,7 @@ void MainWindow::reallyUpdateDeviceVisibility() {
 
     is_empty = true;
 
-    for (std::map<uint32_t, SourceWidget*>::iterator i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
+    for (auto i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
         SourceWidget* w = i->second;
 
         if (showSourceType == SOURCE_ALL ||
@@ -1069,17 +1069,17 @@ void MainWindow::removeClient(uint32_t index) {
 }
 
 void MainWindow::removeAllWidgets() {
-    for (std::map<uint32_t, SinkInputWidget*>::iterator it = sinkInputWidgets.begin(); it != sinkInputWidgets.end(); ++it)
+    for (auto it = sinkInputWidgets.begin(); it != sinkInputWidgets.end(); ++it)
         removeSinkInput(it->first);
-    for (std::map<uint32_t, SourceOutputWidget*>::iterator it = sourceOutputWidgets.begin(); it != sourceOutputWidgets.end(); ++it)
+    for (auto it = sourceOutputWidgets.begin(); it != sourceOutputWidgets.end(); ++it)
         removeSourceOutput(it->first);
-    for (std::map<uint32_t, SinkWidget*>::iterator it = sinkWidgets.begin(); it != sinkWidgets.end(); ++it)
+    for (auto it = sinkWidgets.begin(); it != sinkWidgets.end(); ++it)
         removeSink(it->first);
-    for (std::map<uint32_t, SourceWidget*>::iterator it = sourceWidgets.begin(); it != sourceWidgets.end(); ++it)
+    for (auto it = sourceWidgets.begin(); it != sourceWidgets.end(); ++it)
         removeSource(it->first);
-    for (std::map<uint32_t, CardWidget*>::iterator it = cardWidgets.begin(); it != cardWidgets.end(); ++it)
+    for (auto it = cardWidgets.begin(); it != cardWidgets.end(); ++it)
        removeCard(it->first);
-    for (std::map<uint32_t, char*>::iterator it = clientNames.begin(); it != clientNames.end(); ++it)
+    for (auto it = clientNames.begin(); it != clientNames.end(); ++it)
         removeClient(it->first);
     deleteEventRoleWidget();
 }
@@ -1135,7 +1135,7 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled(bool toggled) {
     bool state = showVolumeMetersCheckButton->isChecked();
     pa_operation *o;
 
-    for (std::map<uint32_t, SinkWidget*>::iterator it = sinkWidgets.begin() ; it != sinkWidgets.end(); it++) {
+    for (auto it = sinkWidgets.begin() ; it != sinkWidgets.end(); it++) {
         SinkWidget *sw = it->second;
         if (sw->peak) {
             o = pa_stream_cork(sw->peak, (int)!state, nullptr, nullptr);
@@ -1144,7 +1144,7 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled(bool toggled) {
         }
         sw->setVolumeMeterVisible(state);
     }
-    for (std::map<uint32_t, SourceWidget*>::iterator it = sourceWidgets.begin() ; it != sourceWidgets.end(); it++) {
+    for (auto it = sourceWidgets.begin() ; it != sourceWidgets.end(); it++) {
         SourceWidget *sw = it->second;
         if (sw->peak) {
             o = pa_stream_cork(sw->peak, (int)!state, nullptr, nullptr);
@@ -1153,7 +1153,7 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled(bool toggled) {
         }
         sw->setVolumeMeterVisible(state);
     }
-    for (std::map<uint32_t, SinkInputWidget*>::iterator it = sinkInputWidgets.begin() ; it != sinkInputWidgets.end(); it++) {
+    for (auto it = sinkInputWidgets.begin() ; it != sinkInputWidgets.end(); it++) {
         SinkInputWidget *sw = it->second;
         if (sw->peak) {
             o = pa_stream_cork(sw->peak, (int)!state, nullptr, nullptr);
@@ -1162,7 +1162,7 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled(bool toggled) {
         }
         sw->setVolumeMeterVisible(state);
     }
-    for (std::map<uint32_t, SourceOutputWidget*>::iterator it = sourceOutputWidgets.begin() ; it != sourceOutputWidgets.end(); it++) {
+    for (auto it = sourceOutputWidgets.begin() ; it != sourceOutputWidgets.end(); it++) {
         SourceOutputWidget *sw = it->second;
         if (sw->peak) {
             o = pa_stream_cork(sw->peak, (int)!state, nullptr, nullptr);
