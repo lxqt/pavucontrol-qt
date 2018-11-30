@@ -201,7 +201,7 @@ void DeviceWidget::prepareMenu() {
     if (active_idx >= 0)
         portList->setCurrentIndex(active_idx);
 
-    if (ports.size() > 0) {
+    if (!ports.empty()) {
         portSelect->show();
 
         if (pa_context_get_server_protocol_version(get_context()) >= 27) {
