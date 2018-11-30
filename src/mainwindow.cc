@@ -777,8 +777,7 @@ bool MainWindow::createEventRoleWidget() {
 }
 
 void MainWindow::deleteEventRoleWidget() {
-    if (eventRoleWidget)
-        delete eventRoleWidget;
+    delete eventRoleWidget;
     eventRoleWidget = nullptr;
 }
 
