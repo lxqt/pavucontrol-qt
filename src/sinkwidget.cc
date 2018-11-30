@@ -77,7 +77,7 @@ SinkWidget::SinkWidget(MainWindow *parent) :
 
 void SinkWidget::executeVolumeUpdate() {
     pa_operation* o;
-    if (!(o = pa_context_set_sink_volume_by_index(get_context(), index, &volume, NULL, NULL))) {
+    if (!(o = pa_context_set_sink_volume_by_index(get_context(), index, &volume, nullptr, nullptr))) {
         show_error(tr("pa_context_set_sink_volume_by_index() failed").toUtf8().constData());
         return;
     }
@@ -92,7 +92,7 @@ void SinkWidget::onMuteToggleButton() {
         return;
 
     pa_operation* o;
-    if (!(o = pa_context_set_sink_mute_by_index(get_context(), index, muteToggleButton->isChecked(), NULL, NULL))) {
+    if (!(o = pa_context_set_sink_mute_by_index(get_context(), index, muteToggleButton->isChecked(), nullptr, nullptr))) {
         show_error(tr("pa_context_set_sink_mute_by_index() failed").toUtf8().constData());
         return;
     }
@@ -106,7 +106,7 @@ void SinkWidget::onDefaultToggleButton() {
     if (updating)
         return;
 
-    if (!(o = pa_context_set_default_sink(get_context(), name, NULL, NULL))) {
+    if (!(o = pa_context_set_default_sink(get_context(), name, nullptr, nullptr))) {
         show_error(tr("pa_context_set_default_sink() failed").toUtf8().constData());
         return;
     }
@@ -122,7 +122,7 @@ void SinkWidget::onPortChange() {
         pa_operation* o;
         QByteArray port = portList->itemData(sel).toString().toUtf8();
 
-        if (!(o = pa_context_set_sink_port_by_index(get_context(), index, port.constData(), NULL, NULL))) {
+        if (!(o = pa_context_set_sink_port_by_index(get_context(), index, port.constData(), nullptr, nullptr))) {
             show_error(tr("pa_context_set_sink_port_by_index() failed").toUtf8().constData());
             return;
         }
@@ -162,7 +162,7 @@ void SinkWidget::onEncodingsChange() {
         }
     }
 
-    if (!(o = pa_ext_device_restore_save_formats(get_context(), PA_DEVICE_TYPE_SINK, index, n_formats, formats, NULL, NULL))) {
+    if (!(o = pa_ext_device_restore_save_formats(get_context(), PA_DEVICE_TYPE_SINK, index, n_formats, formats, nullptr, nullptr))) {
         show_error(tr("pa_ext_device_restore_save_sink_formats() failed").toUtf8().constData());
         free(formats);
         return;

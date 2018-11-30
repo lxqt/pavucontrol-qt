@@ -68,7 +68,7 @@ uint32_t SourceOutputWidget::sourceIndex() {
 void SourceOutputWidget::executeVolumeUpdate() {
     pa_operation* o;
 
-    if (!(o = pa_context_set_source_output_volume(get_context(), index, &volume, NULL, NULL))) {
+    if (!(o = pa_context_set_source_output_volume(get_context(), index, &volume, nullptr, nullptr))) {
         show_error(tr("pa_context_set_source_output_volume() failed").toUtf8().constData());
         return;
     }
@@ -83,7 +83,7 @@ void SourceOutputWidget::onMuteToggleButton() {
         return;
 
     pa_operation* o;
-    if (!(o = pa_context_set_source_output_mute(get_context(), index, muteToggleButton->isChecked(), NULL, NULL))) {
+    if (!(o = pa_context_set_source_output_mute(get_context(), index, muteToggleButton->isChecked(), nullptr, nullptr))) {
         show_error(tr("pa_context_set_source_output_mute() failed").toUtf8().constData());
         return;
     }
@@ -94,7 +94,7 @@ void SourceOutputWidget::onMuteToggleButton() {
 
 void SourceOutputWidget::onKill() {
     pa_operation* o;
-    if (!(o = pa_context_kill_source_output(get_context(), index, NULL, NULL))) {
+    if (!(o = pa_context_kill_source_output(get_context(), index, nullptr, nullptr))) {
         show_error(tr("pa_context_kill_source_output() failed").toUtf8().constData());
         return;
     }
@@ -121,7 +121,7 @@ void SourceOutputWidget::SourceMenuItem::onToggle() {
     return;*/
 
   pa_operation* o;
-  if (!(o = pa_context_move_source_output_by_index(get_context(), widget->index, index, NULL, NULL))) {
+  if (!(o = pa_context_move_source_output_by_index(get_context(), widget->index, index, nullptr, nullptr))) {
     show_error(tr("pa_context_move_source_output_by_index() failed").toUtf8().constData());
     return;
   }

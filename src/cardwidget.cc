@@ -64,7 +64,7 @@ void CardWidget::changeProfile(const QByteArray & name)
 {
     pa_operation* o;
 
-    if (!(o = pa_context_set_card_profile_by_index(get_context(), index, name.constData(), NULL, NULL))) {
+    if (!(o = pa_context_set_card_profile_by_index(get_context(), index, name.constData(), nullptr, nullptr))) {
         show_error(tr("pa_context_set_card_profile_by_index() failed").toUtf8().constData());
         return;
     }
