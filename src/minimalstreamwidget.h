@@ -26,6 +26,7 @@
 
 class QProgressBar;
 class QGridLayout;
+class QPropertyAnimation;
 
 class MinimalStreamWidget : public QWidget {
     Q_OBJECT
@@ -34,7 +35,7 @@ public:
     void initPeakProgressBar(QGridLayout* channelsGrid);
 
     QProgressBar* peakProgressBar;
-    double lastPeak;
+    QPropertyAnimation * peakAnimation;
     pa_stream *peak;
 
     bool updating;
