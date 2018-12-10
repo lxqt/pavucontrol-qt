@@ -14,12 +14,12 @@
         <translation>音效卡名稱</translation>
     </message>
     <message>
-        <location filename="../cardwidget.ui" line="38"/>
+        <location filename="../cardwidget.ui" line="47"/>
         <source>Profile:</source>
         <translation>組態：</translation>
     </message>
     <message>
-        <location filename="../cardwidget.cc" line="66"/>
+        <location filename="../cardwidget.cc" line="68"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
         <translation>pa_context_set_card_profile_by_index() 失敗</translation>
     </message>
@@ -57,6 +57,24 @@
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
         <translation>&lt;small&gt;&lt;i&gt;基準&lt;/i&gt;&lt;/small&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelWidget</name>
+    <message>
+        <location filename="../channelwidget.ui" line="14"/>
+        <source>Form</source>
+        <translation>表單</translation>
+    </message>
+    <message>
+        <location filename="../channelwidget.ui" line="20"/>
+        <source>&lt;b&gt;left-front&lt;/b&gt;</source>
+        <translation>&lt;b&gt;左前&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../channelwidget.ui" line="34"/>
+        <source>&lt;small&gt;50%&lt;/small&gt;</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -307,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="257"/>
+        <location filename="../mainwindow.cc" line="258"/>
         <source> (unavailable)</source>
         <translation> (不可用)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="254"/>
+        <location filename="../mainwindow.cc" line="255"/>
         <source> (unplugged)</source>
         <translation> (移除)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="386"/>
+        <location filename="../mainwindow.cc" line="389"/>
         <source>Failed to read data from stream</source>
         <translation>無法從串流讀取資料</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="430"/>
+        <location filename="../mainwindow.cc" line="433"/>
         <source>Peak detect</source>
         <translation>峰值偵測</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="431"/>
+        <location filename="../mainwindow.cc" line="434"/>
         <source>Failed to create monitoring stream</source>
         <translation>無法新增監控串流</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="446"/>
+        <location filename="../mainwindow.cc" line="449"/>
         <source>Failed to connect monitoring stream</source>
         <translation>無法連結監控串流</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="585"/>
+        <location filename="../mainwindow.cc" line="588"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation>忽略sink-input，由於它被設計為事件，因此歸「事件小工具」處理</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="757"/>
+        <location filename="../mainwindow.cc" line="760"/>
         <source>System Sounds</source>
         <translation>系統音效</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1088"/>
+        <location filename="../mainwindow.cc" line="1090"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>與PulseAudio建立連線中。請稍後...</translation>
     </message>
@@ -716,24 +734,6 @@ run start-pulseaudio-x11 manually.</source>
         <location filename="../streamwidget.cc" line="34"/>
         <source>Terminate</source>
         <translation>中止</translation>
-    </message>
-</context>
-<context>
-    <name>ChannelWidget</name>
-    <message>
-        <location filename="../channelwidget.ui" line="14"/>
-        <source>Form</source>
-        <translation>表單</translation>
-    </message>
-    <message>
-        <location filename="../channelwidget.ui" line="20"/>
-        <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation>&lt;b&gt;左前&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="../channelwidget.ui" line="34"/>
-        <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation></translation>
     </message>
 </context>
 </TS>
