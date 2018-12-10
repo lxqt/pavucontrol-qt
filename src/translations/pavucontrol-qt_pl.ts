@@ -14,12 +14,12 @@
         <translation>Nazwa karty</translation>
     </message>
     <message>
-        <location filename="../cardwidget.ui" line="38"/>
+        <location filename="../cardwidget.ui" line="47"/>
         <source>Profile:</source>
         <translation>Profil:</translation>
     </message>
     <message>
-        <location filename="../cardwidget.cc" line="66"/>
+        <location filename="../cardwidget.cc" line="68"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
         <translation>pa_context_set_card_profile_by_index() się nie powiodło</translation>
     </message>
@@ -325,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="257"/>
+        <location filename="../mainwindow.cc" line="258"/>
         <source> (unavailable)</source>
         <translation> (niedostępne)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="254"/>
+        <location filename="../mainwindow.cc" line="255"/>
         <source> (unplugged)</source>
         <translation> (rozłączone)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="386"/>
+        <location filename="../mainwindow.cc" line="389"/>
         <source>Failed to read data from stream</source>
         <translation>Odczytanie danych ze strumienia się nie powiodło</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="430"/>
+        <location filename="../mainwindow.cc" line="433"/>
         <source>Peak detect</source>
         <translation>Wykrywanie szczytów</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="431"/>
+        <location filename="../mainwindow.cc" line="434"/>
         <source>Failed to create monitoring stream</source>
         <translation>Utworzenie strumienia monitorowania się nie powiodło</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="446"/>
+        <location filename="../mainwindow.cc" line="449"/>
         <source>Failed to connect monitoring stream</source>
         <translation>Połączenie ze strumienia monitorowania się nie powiodło</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="585"/>
+        <location filename="../mainwindow.cc" line="588"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation>Ignorowanie sink-input, ponieważ jest ono oznaczone jako zdarzenie, więc jest jest obsługiwane przez widżet Zdarzenia</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="757"/>
+        <location filename="../mainwindow.cc" line="760"/>
         <source>System Sounds</source>
         <translation>Dźwięki systemowe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1088"/>
+        <location filename="../mainwindow.cc" line="1090"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>Ustalanie połączenia z usługą PulseAudio. Proszę czekać…</translation>
     </message>

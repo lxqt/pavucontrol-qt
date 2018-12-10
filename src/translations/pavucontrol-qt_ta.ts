@@ -14,12 +14,12 @@
         <translation>அட்டையின் பெயர்</translation>
     </message>
     <message>
-        <location filename="../cardwidget.ui" line="38"/>
+        <location filename="../cardwidget.ui" line="47"/>
         <source>Profile:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cardwidget.cc" line="66"/>
+        <location filename="../cardwidget.cc" line="68"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
         <translation>pa_context_set_card_profile_by_index() தோல்வியடைந்தது</translation>
     </message>
@@ -325,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="257"/>
+        <location filename="../mainwindow.cc" line="258"/>
         <source> (unavailable)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="254"/>
+        <location filename="../mainwindow.cc" line="255"/>
         <source> (unplugged)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="386"/>
+        <location filename="../mainwindow.cc" line="389"/>
         <source>Failed to read data from stream</source>
         <translation>ஸ்ட்ரீமிலிருந்து தரவை வாசிக்க முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="430"/>
+        <location filename="../mainwindow.cc" line="433"/>
         <source>Peak detect</source>
         <translation>பீக் கண்டறியப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="431"/>
+        <location filename="../mainwindow.cc" line="434"/>
         <source>Failed to create monitoring stream</source>
         <translation>கண்காணிக்கும் ஸ்ட்ரீமை உருவாக்க முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="446"/>
+        <location filename="../mainwindow.cc" line="449"/>
         <source>Failed to connect monitoring stream</source>
         <translation>கண்காணிக்கும் ஸ்ட்ரீமை இணைக்க முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="585"/>
+        <location filename="../mainwindow.cc" line="588"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="757"/>
+        <location filename="../mainwindow.cc" line="760"/>
         <source>System Sounds</source>
         <translation>கணினியின் ஒலிகள்</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1088"/>
+        <location filename="../mainwindow.cc" line="1090"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation type="unfinished"></translation>
     </message>

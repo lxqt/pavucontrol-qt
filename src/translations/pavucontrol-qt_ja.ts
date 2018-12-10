@@ -14,12 +14,12 @@
         <translation>カード名</translation>
     </message>
     <message>
-        <location filename="../cardwidget.ui" line="38"/>
+        <location filename="../cardwidget.ui" line="47"/>
         <source>Profile:</source>
         <translation>プロフィール:</translation>
     </message>
     <message>
-        <location filename="../cardwidget.cc" line="66"/>
+        <location filename="../cardwidget.cc" line="68"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
         <translation>pa_context_set_card_profile_by_index() 失敗</translation>
     </message>
@@ -325,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="257"/>
+        <location filename="../mainwindow.cc" line="258"/>
         <source> (unavailable)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="254"/>
+        <location filename="../mainwindow.cc" line="255"/>
         <source> (unplugged)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="386"/>
+        <location filename="../mainwindow.cc" line="389"/>
         <source>Failed to read data from stream</source>
         <translation>ストリームからのデータの読込みに失敗</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="430"/>
+        <location filename="../mainwindow.cc" line="433"/>
         <source>Peak detect</source>
         <translation>ピーク検出</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="431"/>
+        <location filename="../mainwindow.cc" line="434"/>
         <source>Failed to create monitoring stream</source>
         <translation>モニタリングストリームの生成に失敗</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="446"/>
+        <location filename="../mainwindow.cc" line="449"/>
         <source>Failed to connect monitoring stream</source>
         <translation>モニタリングストリームへの接続に失敗</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="585"/>
+        <location filename="../mainwindow.cc" line="588"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="757"/>
+        <location filename="../mainwindow.cc" line="760"/>
         <source>System Sounds</source>
         <translation>システム音</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1088"/>
+        <location filename="../mainwindow.cc" line="1090"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>PulseAudioとの接続を確立中。少々お待ちください...</translation>
     </message>

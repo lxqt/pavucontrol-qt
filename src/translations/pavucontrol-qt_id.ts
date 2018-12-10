@@ -14,12 +14,12 @@
         <translation>Nama Kartu</translation>
     </message>
     <message>
-        <location filename="../cardwidget.ui" line="38"/>
+        <location filename="../cardwidget.ui" line="47"/>
         <source>Profile:</source>
         <translation>Profil:</translation>
     </message>
     <message>
-        <location filename="../cardwidget.cc" line="66"/>
+        <location filename="../cardwidget.cc" line="68"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
         <translation>pa_context_set_card_profile_by_index() gagal</translation>
     </message>
@@ -57,6 +57,24 @@
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
         <translation>&lt;small&gt;&lt;i&gt;Bas&lt;/i&gt;&lt;/small&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelWidget</name>
+    <message>
+        <location filename="../channelwidget.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished">Formulir</translation>
+    </message>
+    <message>
+        <location filename="../channelwidget.ui" line="20"/>
+        <source>&lt;b&gt;left-front&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../channelwidget.ui" line="34"/>
+        <source>&lt;small&gt;50%&lt;/small&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -307,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="257"/>
+        <location filename="../mainwindow.cc" line="258"/>
         <source> (unavailable)</source>
         <translation> (tak tersedia)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="254"/>
+        <location filename="../mainwindow.cc" line="255"/>
         <source> (unplugged)</source>
         <translation> (tak terpasang)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="386"/>
+        <location filename="../mainwindow.cc" line="389"/>
         <source>Failed to read data from stream</source>
         <translation>Gagal membaca data dari aliran</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="430"/>
+        <location filename="../mainwindow.cc" line="433"/>
         <source>Peak detect</source>
         <translation>Deteksi puncak</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="431"/>
+        <location filename="../mainwindow.cc" line="434"/>
         <source>Failed to create monitoring stream</source>
         <translation>Gagal membuat aliran pemantauan</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="446"/>
+        <location filename="../mainwindow.cc" line="449"/>
         <source>Failed to connect monitoring stream</source>
         <translation>Gagal menghubungkan aliran pemantauan</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="585"/>
+        <location filename="../mainwindow.cc" line="588"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation>Mengabaikan masukan-sink karena sedang ditunjuk sebagai sebuah acara dan ditangani oleh widget Acara</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="757"/>
+        <location filename="../mainwindow.cc" line="760"/>
         <source>System Sounds</source>
         <translation>Sistem Suara</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1088"/>
+        <location filename="../mainwindow.cc" line="1090"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>Membangun koneksi ke PulseAudio. Mohon tunggu...</translation>
     </message>
@@ -716,24 +734,6 @@ maka Anda harus menjalankan start-pulseaudio-x11 secara manual.</translation>
         <location filename="../streamwidget.cc" line="34"/>
         <source>Terminate</source>
         <translation>Hentikan</translation>
-    </message>
-</context>
-<context>
-    <name>ChannelWidget</name>
-    <message>
-        <location filename="../channelwidget.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished">Formulir</translation>
-    </message>
-    <message>
-        <location filename="../channelwidget.ui" line="20"/>
-        <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../channelwidget.ui" line="34"/>
-        <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

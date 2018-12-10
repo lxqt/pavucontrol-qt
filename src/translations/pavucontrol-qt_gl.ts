@@ -14,12 +14,12 @@
         <translation>Nome da tarxeta</translation>
     </message>
     <message>
-        <location filename="../cardwidget.ui" line="38"/>
+        <location filename="../cardwidget.ui" line="47"/>
         <source>Profile:</source>
         <translation>Perfil:</translation>
     </message>
     <message>
-        <location filename="../cardwidget.cc" line="66"/>
+        <location filename="../cardwidget.cc" line="68"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
         <translation>Produciuse un fallo de pa_context_set_card_profile_by_index()</translation>
     </message>
@@ -56,6 +56,24 @@
     <message>
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
+        <translation></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelWidget</name>
+    <message>
+        <location filename="../channelwidget.ui" line="14"/>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <location filename="../channelwidget.ui" line="20"/>
+        <source>&lt;b&gt;left-front&lt;/b&gt;</source>
+        <translation>&lt;b&gt;frontal-esquerdo&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../channelwidget.ui" line="34"/>
+        <source>&lt;small&gt;50%&lt;/small&gt;</source>
         <translation></translation>
     </message>
 </context>
@@ -307,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="257"/>
+        <location filename="../mainwindow.cc" line="258"/>
         <source> (unavailable)</source>
         <translation> (non dispoñíbel)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="254"/>
+        <location filename="../mainwindow.cc" line="255"/>
         <source> (unplugged)</source>
         <translation> (desconectado)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="386"/>
+        <location filename="../mainwindow.cc" line="389"/>
         <source>Failed to read data from stream</source>
         <translation>Produciuse un fallo ao ler datos do fluxo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="430"/>
+        <location filename="../mainwindow.cc" line="433"/>
         <source>Peak detect</source>
         <translation>Detección de picos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="431"/>
+        <location filename="../mainwindow.cc" line="434"/>
         <source>Failed to create monitoring stream</source>
         <translation>Produciuse un fallo ao crear o fluxo de monitorización</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="446"/>
+        <location filename="../mainwindow.cc" line="449"/>
         <source>Failed to connect monitoring stream</source>
         <translation>Produciuse un fallo ao conectarse co fluxo de monitorización</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="585"/>
+        <location filename="../mainwindow.cc" line="588"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation>Ignorarase o colector de entrada por ter sido designado como un evento, sendo polo tanto administrado polo trebello de eventos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="757"/>
+        <location filename="../mainwindow.cc" line="760"/>
         <source>System Sounds</source>
         <translation>Sons do sistema</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1088"/>
+        <location filename="../mainwindow.cc" line="1090"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>Estabelecendo a conexión co PulseAudio. Agarde...</translation>
     </message>
@@ -716,24 +734,6 @@ executar «start-pulseaudio-x11» manualmente.</translation>
         <location filename="../streamwidget.cc" line="34"/>
         <source>Terminate</source>
         <translation>Rematar</translation>
-    </message>
-</context>
-<context>
-    <name>ChannelWidget</name>
-    <message>
-        <location filename="../channelwidget.ui" line="14"/>
-        <source>Form</source>
-        <translation>Formulario</translation>
-    </message>
-    <message>
-        <location filename="../channelwidget.ui" line="20"/>
-        <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation>&lt;b&gt;frontal-esquerdo&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="../channelwidget.ui" line="34"/>
-        <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation></translation>
     </message>
 </context>
 </TS>

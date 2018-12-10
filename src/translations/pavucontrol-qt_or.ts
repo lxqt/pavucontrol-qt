@@ -14,12 +14,12 @@
         <translation>କାର୍ଡ଼ ନାମ</translation>
     </message>
     <message>
-        <location filename="../cardwidget.ui" line="38"/>
+        <location filename="../cardwidget.ui" line="47"/>
         <source>Profile:</source>
         <translation>ରୂପରେଖ:</translation>
     </message>
     <message>
-        <location filename="../cardwidget.cc" line="66"/>
+        <location filename="../cardwidget.cc" line="68"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
         <translation>pa_context_set_card_profile_by_index() ବିଫଳ ହୋଇଛି</translation>
     </message>
@@ -325,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="257"/>
+        <location filename="../mainwindow.cc" line="258"/>
         <source> (unavailable)</source>
         <translation> (ଉପଲବ୍ଧ ନୁହେଁ)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="254"/>
+        <location filename="../mainwindow.cc" line="255"/>
         <source> (unplugged)</source>
         <translation> (ଖୋଲା ଅଛି)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="386"/>
+        <location filename="../mainwindow.cc" line="389"/>
         <source>Failed to read data from stream</source>
         <translation>ଧାରାରୁ ତଥ୍ୟ ପଢ଼ିବାରେ ବିଫଳ ହୋଇଛି</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="430"/>
+        <location filename="../mainwindow.cc" line="433"/>
         <source>Peak detect</source>
         <translation>ଶିଖର ଚିହ୍ନାପଡ଼ିଛି</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="431"/>
+        <location filename="../mainwindow.cc" line="434"/>
         <source>Failed to create monitoring stream</source>
         <translation>ପ୍ରଦର୍ଶିକା ଧାରାକୁ ନିର୍ମାଣ କରିବାରେ ବିଫଳ ହୋଇଛି</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="446"/>
+        <location filename="../mainwindow.cc" line="449"/>
         <source>Failed to connect monitoring stream</source>
         <translation>ପ୍ରଦର୍ଶିକା ଧାରା ସହିତ ସଂଯୋଗ କରିବାରେ ବିଫଳ ହୋଇଛି</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="585"/>
+        <location filename="../mainwindow.cc" line="588"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="757"/>
+        <location filename="../mainwindow.cc" line="760"/>
         <source>System Sounds</source>
         <translation>ତନ୍ତ୍ର ଧ୍ୱନିି</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1088"/>
+        <location filename="../mainwindow.cc" line="1090"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>ପଲସଅଡିଓ ସହ ସଂପର୍କ ଆରମ୍ଭ କରାଯାଉଛି| କୃପା କରି ଅପେକ୍ଷା କରନ୍ତୁ...</translation>
     </message>
@@ -697,12 +697,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ଫର୍ମ</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ଯନ୍ତ୍ର ଶୀର୍ଷକ</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="52"/>
@@ -717,12 +717,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ମୌନ ଧ୍ବନି</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ଚ୍ୟାନେଲ୍ ମାନଂକୁ ଏକା ସାଂଗରେ ବନ୍ଦ କରିବା</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
