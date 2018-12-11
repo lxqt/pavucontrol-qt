@@ -6,17 +6,17 @@
     <message>
         <location filename="../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="29"/>
         <source>Card Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Kard Adı</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="47"/>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil:</translation>
     </message>
     <message>
         <location filename="../cardwidget.cc" line="68"/>
@@ -41,12 +41,12 @@
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;Sessiz&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;En az&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="162"/>
@@ -376,7 +376,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="66"/>
         <source>Error</source>
-        <translation type="unfinished">Hata</translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="87"/>
