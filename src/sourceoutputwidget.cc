@@ -104,8 +104,8 @@ void SourceOutputWidget::onKill() {
 
 
 void SourceOutputWidget::buildMenu() {
-  for (auto i = mpMainWindow->sourceWidgets.begin(); i != mpMainWindow->sourceWidgets.end(); ++i) {
-      menu->addAction(new SourceMenuItem{this, i->second->description, i->second->index, i->second->index == mSourceIndex, menu});
+  for (auto & sourceWidget : mpMainWindow->sourceWidgets) {
+      menu->addAction(new SourceMenuItem{this, sourceWidget.second->description, sourceWidget.second->index, sourceWidget.second->index == mSourceIndex, menu});
   }
 }
 

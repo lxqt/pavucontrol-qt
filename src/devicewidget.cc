@@ -60,8 +60,8 @@ DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
     connect(portList, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &DeviceWidget::onPortChange);
     connect(offsetButton, static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &DeviceWidget::onOffsetChange);
 
-    for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
-        channels[i] = nullptr;
+    for (auto & channel : channels)
+        channel = nullptr;
 
 
     // FIXME:
@@ -189,11 +189,11 @@ void DeviceWidget::prepareMenu() {
 
     portList->clear();
     /* Fill the ComboBox's Model */
-    for (uint32_t i = 0; i < ports.size(); ++i) {
-        QByteArray name = ports[i].first;
-        QString desc = ports[i].second;
+    for (auto & port : ports) {
+        QByteArray name = port.first;
+        QString desc = port.second;
         portList->addItem(desc, name);
-        if (ports[i].first == activePort)
+        if (port.first == activePort)
             active_idx = idx;
         idx++;
     }

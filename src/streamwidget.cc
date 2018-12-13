@@ -48,8 +48,8 @@ StreamWidget::StreamWidget(MainWindow *parent) :
     addAction(terminate);
     setContextMenuPolicy(Qt::ActionsContextMenu);
 
-    for (unsigned i = 0; i < PA_CHANNELS_MAX; i++)
-        channels[i] = nullptr;
+    for (auto & channel : channels)
+        channel = nullptr;
 }
 
 void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {

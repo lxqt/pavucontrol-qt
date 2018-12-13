@@ -154,10 +154,10 @@ void SinkWidget::onEncodingsChange() {
 
     formats = (pa_format_info**)malloc(sizeof(pa_format_info*) * PAVU_NUM_ENCODINGS);
 
-    for (int i = 0; i < PAVU_NUM_ENCODINGS; ++i) {
-        if (encodings[i].widget->isChecked()) {
+    for (auto & encoding : encodings) {
+        if (encoding.widget->isChecked()) {
             formats[n_formats] = pa_format_info_new();
-            formats[n_formats]->encoding = encodings[i].encoding;
+            formats[n_formats]->encoding = encoding.encoding;
             ++n_formats;
         }
     }
