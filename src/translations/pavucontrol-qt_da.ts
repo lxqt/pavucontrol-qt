@@ -266,7 +266,7 @@
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>&amp;inputenheder</translation>
+        <translation>&amp;Inputenheder</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation>Vis lydstyrke-metre</translation>
+        <translation>Vis lydstyrkemetre</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
