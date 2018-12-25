@@ -30,13 +30,13 @@
         <location filename="../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1% (%2dB)</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1%</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;100% (0dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="165"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -107,42 +107,42 @@
     <message>
         <location filename="../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Gö_ster:&lt;/b&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Geliştmiş seçenekleri göster</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
         <source>PCM</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="182"/>
         <source>AC3</source>
-        <translation type="unfinished"></translation>
+        <translation>AC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="189"/>
         <source>EAC3</source>
-        <translation type="unfinished"></translation>
+        <translation>EAC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="196"/>
         <source>DTS</source>
-        <translation type="unfinished"></translation>
+        <translation>DTS</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="203"/>
         <source>MPEG</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="210"/>
         <source>AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>AAC</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="238"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Cihazı yeniden adlandır...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
@@ -208,19 +208,19 @@
         <location filename="../mainwindow.ui" line="196"/>
         <location filename="../mainwindow.ui" line="261"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>Göster:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm Akışlar</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Uygulamalar</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="84"/>
