@@ -39,8 +39,7 @@ void CardWidget::prepareMenu() {
 
     profileList->clear();
     /* Fill the ComboBox */
-    for (uint32_t i = 0; i < profiles.size(); ++i) {
-        const auto& profile = profiles[i];
+    for (const auto & profile : profiles) {
         QByteArray name = profile.first;
         // skip the "off" profile
         if (name == noInOutProfile)

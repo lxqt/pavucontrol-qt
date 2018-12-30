@@ -145,9 +145,9 @@ static void updatePorts(DeviceWidget *w, std::map<QByteArray, PortInfo> &ports) 
     std::map<QByteArray, PortInfo>::iterator it;
     PortInfo p;
 
-    for (uint32_t i = 0; i < w->ports.size(); i++) {
+    for (auto & port : w->ports) {
         QByteArray desc;
-        it = ports.find(w->ports[i].first);
+        it = ports.find(port.first);
 
         if (it == ports.end())
             continue;
@@ -165,7 +165,7 @@ static void updatePorts(DeviceWidget *w, std::map<QByteArray, PortInfo> &ports) 
                 desc += MainWindow::tr(" (unplugged)").toUtf8().constData();
         }
 
-        w->ports[i].second = desc;
+        port.second = desc;
     }
 
     it = ports.find(w->activePort);
@@ -232,9 +232,8 @@ void MainWindow::updateCard(const pa_card_info &info) {
     }
 
     w->profiles.clear();
-    for (auto profileIt = profile_priorities.cbegin(); profileIt != profile_priorities.cend(); ++profileIt) {
+    for (auto p_profile : profile_priorities) {
         bool hasNo = false, hasOther = false;
-        pa_card_profile_info2 const * const p_profile = *profileIt;
         std::map<QByteArray, PortInfo>::iterator portIt;
         QByteArray desc = p_profile->description;
 
@@ -350,8 +349,8 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
     }
 
     w->ports.clear();
-    for (auto i = port_priorities.begin(); i != port_priorities.end(); ++i)
-        w->ports.push_back(std::pair<QByteArray,QByteArray>(i->name, i->description));
+    for (const auto & port_prioritie : port_priorities)
+        w->ports.push_back(std::pair<QByteArray,QByteArray>(port_prioritie.name, port_prioritie.description));
 
     w->activePort = info.active_port ? info.active_port->name : "";
 
@@ -517,8 +516,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
 
 
     w->ports.clear();
-    for (auto i = port_priorities.begin(); i != port_priorities.end(); ++i)
-        w->ports.push_back(std::pair<QByteArray,QByteArray>(i->name, i->description));
+    for (const auto & port_prioritie : port_priorities)
+        w->ports.push_back(std::pair<QByteArray,QByteArray>(port_prioritie.name, port_prioritie.description));
 
     w->activePort = info.active_port ? info.active_port->name : "";
 
@@ -701,8 +700,8 @@ void MainWindow::updateClient(const pa_client_info &info) {
     g_free(clientNames[info.index]);
     clientNames[info.index] = g_strdup(info.name);
 
-    for (auto i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
-        SinkInputWidget *w = i->second;
+    for (auto & sinkInputWidget : sinkInputWidgets) {
+        SinkInputWidget *w = sinkInputWidget.second;
 
         if (!w)
             continue;
@@ -719,8 +718,8 @@ void MainWindow::updateServer(const pa_server_info &info) {
     defaultSourceName = info.default_source_name ? info.default_source_name : "";
     defaultSinkName = info.default_sink_name ? info.default_sink_name : "";
 
-    for (auto i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
-        SinkWidget *w = i->second;
+    for (auto & sinkWidget : sinkWidgets) {
+        SinkWidget *w = sinkWidget.second;
 
         if (!w)
             continue;
@@ -731,8 +730,8 @@ void MainWindow::updateServer(const pa_server_info &info) {
         w->updating = false;
     }
 
-    for (auto i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
-        SourceWidget *w = i->second;
+    for (auto & sourceWidget : sourceWidgets) {
+        SourceWidget *w = sourceWidget.second;
 
         if (!w)
             continue;
@@ -848,22 +847,22 @@ void MainWindow::updateVolumeMeter(uint32_t source_index, uint32_t sink_input_id
 
     } else {
 
-        for (auto i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
-            SinkWidget* w = i->second;
+        for (auto & sinkWidget : sinkWidgets) {
+            SinkWidget* w = sinkWidget.second;
 
             if (w->monitor_index == source_index)
                 w->updatePeak(v);
         }
 
-        for (auto i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
-            SourceWidget* w = i->second;
+        for (auto & sourceWidget : sourceWidgets) {
+            SourceWidget* w = sourceWidget.second;
 
             if (w->index == source_index)
                 w->updatePeak(v);
         }
 
-        for (auto i = sourceOutputWidgets.begin(); i != sourceOutputWidgets.end(); ++i) {
-            SourceOutputWidget* w = i->second;
+        for (auto & sourceOutputWidget : sourceOutputWidgets) {
+            SourceOutputWidget* w = sourceOutputWidget.second;
 
             if (w->sourceIndex() == source_index)
                 w->updatePeak(v);
@@ -903,8 +902,8 @@ void MainWindow::updateDeviceVisibility() {
 void MainWindow::reallyUpdateDeviceVisibility() {
     bool is_empty = true;
 
-    for (auto i = sinkInputWidgets.begin(); i != sinkInputWidgets.end(); ++i) {
-        SinkInputWidget* w = i->second;
+    for (auto & sinkInputWidget : sinkInputWidgets) {
+        SinkInputWidget* w = sinkInputWidget.second;
 
         if (sinkWidgets.size() > 1) {
             w->directionLabel->show();
@@ -931,8 +930,8 @@ void MainWindow::reallyUpdateDeviceVisibility() {
 
     is_empty = true;
 
-    for (auto i = sourceOutputWidgets.begin(); i != sourceOutputWidgets.end(); ++i) {
-        SourceOutputWidget* w = i->second;
+    for (auto & sourceOutputWidget : sourceOutputWidgets) {
+        SourceOutputWidget* w = sourceOutputWidget.second;
 
         if (sourceWidgets.size() > 1) {
             w->directionLabel->show();
@@ -956,8 +955,8 @@ void MainWindow::reallyUpdateDeviceVisibility() {
 
     is_empty = true;
 
-    for (auto i = sinkWidgets.begin(); i != sinkWidgets.end(); ++i) {
-        SinkWidget* w = i->second;
+    for (auto & sinkWidget : sinkWidgets) {
+        SinkWidget* w = sinkWidget.second;
 
         if (showSinkType == SINK_ALL || w->type == showSinkType) {
             w->show();
@@ -973,8 +972,8 @@ void MainWindow::reallyUpdateDeviceVisibility() {
 
     is_empty = true;
 
-    for (auto i = cardWidgets.begin(); i != cardWidgets.end(); ++i) {
-        CardWidget* w = i->second;
+    for (auto & cardWidget : cardWidgets) {
+        CardWidget* w = cardWidget.second;
 
         w->show();
         is_empty = false;
@@ -987,8 +986,8 @@ void MainWindow::reallyUpdateDeviceVisibility() {
 
     is_empty = true;
 
-    for (auto i = sourceWidgets.begin(); i != sourceWidgets.end(); ++i) {
-        SourceWidget* w = i->second;
+    for (auto & sourceWidget : sourceWidgets) {
+        SourceWidget* w = sourceWidget.second;
 
         if (showSourceType == SOURCE_ALL ||
             w->type == showSourceType ||
@@ -1069,18 +1068,18 @@ void MainWindow::removeClient(uint32_t index) {
 }
 
 void MainWindow::removeAllWidgets() {
-    for (auto it = sinkInputWidgets.begin(); it != sinkInputWidgets.end(); ++it)
-        removeSinkInput(it->first);
-    for (auto it = sourceOutputWidgets.begin(); it != sourceOutputWidgets.end(); ++it)
-        removeSourceOutput(it->first);
-    for (auto it = sinkWidgets.begin(); it != sinkWidgets.end(); ++it)
-        removeSink(it->first);
-    for (auto it = sourceWidgets.begin(); it != sourceWidgets.end(); ++it)
-        removeSource(it->first);
-    for (auto it = cardWidgets.begin(); it != cardWidgets.end(); ++it)
-       removeCard(it->first);
-    for (auto it = clientNames.begin(); it != clientNames.end(); ++it)
-        removeClient(it->first);
+    for (auto & sinkInputWidget : sinkInputWidgets)
+        removeSinkInput(sinkInputWidget.first);
+    for (auto & sourceOutputWidget : sourceOutputWidgets)
+        removeSourceOutput(sourceOutputWidget.first);
+    for (auto & sinkWidget : sinkWidgets)
+        removeSink(sinkWidget.first);
+    for (auto & sourceWidget : sourceWidgets)
+        removeSource(sourceWidget.first);
+    for (auto & cardWidget : cardWidgets)
+       removeCard(cardWidget.first);
+    for (auto & clientName : clientNames)
+        removeClient(clientName.first);
     deleteEventRoleWidget();
 }
 
@@ -1135,8 +1134,8 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled(bool toggled) {
     bool state = showVolumeMetersCheckButton->isChecked();
     pa_operation *o;
 
-    for (auto it = sinkWidgets.begin() ; it != sinkWidgets.end(); it++) {
-        SinkWidget *sw = it->second;
+    for (auto & sinkWidget : sinkWidgets) {
+        SinkWidget *sw = sinkWidget.second;
         if (sw->peak) {
             o = pa_stream_cork(sw->peak, (int)!state, nullptr, nullptr);
             if (o)
@@ -1144,8 +1143,8 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled(bool toggled) {
         }
         sw->setVolumeMeterVisible(state);
     }
-    for (auto it = sourceWidgets.begin() ; it != sourceWidgets.end(); it++) {
-        SourceWidget *sw = it->second;
+    for (auto & sourceWidget : sourceWidgets) {
+        SourceWidget *sw = sourceWidget.second;
         if (sw->peak) {
             o = pa_stream_cork(sw->peak, (int)!state, nullptr, nullptr);
             if (o)
@@ -1153,8 +1152,8 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled(bool toggled) {
         }
         sw->setVolumeMeterVisible(state);
     }
-    for (auto it = sinkInputWidgets.begin() ; it != sinkInputWidgets.end(); it++) {
-        SinkInputWidget *sw = it->second;
+    for (auto & sinkInputWidget : sinkInputWidgets) {
+        SinkInputWidget *sw = sinkInputWidget.second;
         if (sw->peak) {
             o = pa_stream_cork(sw->peak, (int)!state, nullptr, nullptr);
             if (o)
@@ -1162,8 +1161,8 @@ void MainWindow::onShowVolumeMetersCheckButtonToggled(bool toggled) {
         }
         sw->setVolumeMeterVisible(state);
     }
-    for (auto it = sourceOutputWidgets.begin() ; it != sourceOutputWidgets.end(); it++) {
-        SourceOutputWidget *sw = it->second;
+    for (auto & sourceOutputWidget : sourceOutputWidgets) {
+        SourceOutputWidget *sw = sourceOutputWidget.second;
         if (sw->peak) {
             o = pa_stream_cork(sw->peak, (int)!state, nullptr, nullptr);
             if (o)
