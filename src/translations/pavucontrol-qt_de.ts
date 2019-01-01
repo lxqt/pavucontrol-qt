@@ -30,13 +30,13 @@
         <location filename="../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation>%1% (%2dB)</translation>
+        <translation>%1 % (%2 dB)</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation>%1%</translation>
+        <translation>%1 %</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation>&lt;small&gt;100% (0dB)&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;100 % (0 dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="165"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;50 %&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation>Erweiterte Einstellungen anzeigen</translation>
+        <translation>Erweiterte Optionen anzeigen</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
@@ -167,7 +167,7 @@
     <message>
         <location filename="../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation>Verzeihung, aber Geräteumbenennung wird nicht unterstützt.</translation>
+        <translation>Entschuldigung, aber Geräteumbenennung wird nicht unterstützt.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
@@ -306,12 +306,12 @@
     <message>
         <location filename="../mainwindow.ui" line="325"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Keine Karten zum Konfigurieren verfügbar.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Keine Karten zur Konfiguration verfügbar&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation>Zeige Lautstärkemesser</translation>
+        <translation>Lautstärkemesser anzeigen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
@@ -363,7 +363,7 @@
     <message>
         <location filename="../mainwindow.cc" line="760"/>
         <source>System Sounds</source>
-        <translation>Systemklänge</translation>
+        <translation>Systemtöne</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="1090"/>
@@ -732,7 +732,7 @@ Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten. Wenn autom
     <message>
         <location filename="../streamwidget.cc" line="34"/>
         <source>Terminate</source>
-        <translation>Wiedergabe beenden</translation>
+        <translation>Beenden</translation>
     </message>
 </context>
 </TS>
