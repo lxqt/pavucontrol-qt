@@ -1,5 +1,5 @@
 
-pavucontrol-qt-0.5.0 / 2018-12-01
+pavucontrol-qt-0.5.0 / 2019-01-25
 =================================
 
   * Bumped version to 0.5.0
@@ -32,8 +32,8 @@ pavucontrol-qt-0.4.0 / 2018-05-21
   * pavucontrol: Remove unique application constraint
   * Add Simplified Chinese desktop entry
 
-0.3.0 / 2017-09-24
-==================
+pavucontrol-qt-0.3.0 / 2017-09-24
+=================================
 
   * Release 0.3.0: Update changelog
   * Bump version to 0.3.0
@@ -58,8 +58,8 @@ pavucontrol-qt-0.4.0 / 2018-05-21
   * MainWindow: Add quit shortcut
   * Added pavucontrol-qt_da.desktop
 
-0.2.0 / 2016-12-11
-==================
+pavucontrol-qt-0.2.0 / 2016-12-11
+=================================
 
   * Release 0.2.0: Update changelog
   * Release 0.2.0: Update changelog
@@ -72,8 +72,8 @@ pavucontrol-qt-0.4.0 / 2018-05-21
   * CMakeLists: Remove XdgUserDirs requirement
   * mainwindow: Set icon for eventRoleWidget
 
-0.1.0 / 2016-09-24
-==================
+pavucontrol-qt-0.1.0 / 2016-09-24
+=================================
 
   * Release 0.1.0: Add changelog
   * devicewidget: Remove debug
