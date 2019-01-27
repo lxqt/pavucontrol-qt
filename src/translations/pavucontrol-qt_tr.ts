@@ -56,7 +56,7 @@
     <message>
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;&lt;i&gt;Temel&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -82,27 +82,27 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Aygıt Başlığı</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesi kapat</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanalları birlikte kilitle</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Geri dönüş olarak ayarla</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -147,12 +147,12 @@
     <message>
         <location filename="../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Gecikme süresi:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> ms</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="41"/>
@@ -162,12 +162,12 @@
     <message>
         <location filename="../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_port_latency_offset() başarısız</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Üzgünüm, aygıtı yeniden adlandırma desteklenmiyor.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
