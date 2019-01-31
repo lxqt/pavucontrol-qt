@@ -246,7 +246,7 @@
     <message>
         <location filename="../mainwindow.ui" line="185"/>
         <source>&lt;i&gt;No output devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;कोई आउटपुट आँकड़ा उपलब्ध नहीं&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;कोई आउटपुट उपकरण उपलब्ध नहीं&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="204"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../mainwindow.ui" line="250"/>
         <source>&lt;i&gt;No input devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;कोई इनपुट आँकड़ा उपलब्ध नहीं&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;कोई इनपुट उपकरण उपलब्ध नहीं&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="269"/>
