@@ -172,12 +172,12 @@
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aygıtları yeniden adlandırmak için PulseAudio sunucusuna modül-aygıt-yöneticisi yüklemeniz gerekir.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 cihazını yeniden adlandır:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
@@ -226,7 +226,7 @@
         <location filename="../mainwindow.ui" line="84"/>
         <location filename="../mainwindow.ui" line="149"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Sanal Akışlar</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="93"/>
@@ -251,17 +251,17 @@
     <message>
         <location filename="../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm Çıkış Aygıtları</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Donanım Çıkış Aygıtları</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="214"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Sanal Çıkış Aygıtları</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="223"/>
@@ -276,7 +276,7 @@
     <message>
         <location filename="../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm Giriş Aygıtları</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="274"/>
@@ -286,12 +286,12 @@
     <message>
         <location filename="../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Donanım Giriş Aygıtları</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Sanal Giriş Aygıtları</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="289"/>
@@ -301,39 +301,39 @@
     <message>
         <location filename="../mainwindow.ui" line="298"/>
         <source>&amp;Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Yapılandırma</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="325"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Yapılandırma için kart yok&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses ölçeri göster</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> (fişe takılı)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
         <location filename="../mainwindow.cc" line="258"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> (kullanım dışı)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
         <location filename="../mainwindow.cc" line="255"/>
         <source> (unplugged)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> (fişe takılı değil)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="389"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1090"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>PulseAudio ile bağlantı kuruluyor. Lütfen bekleyin...</translation>
     </message>
 </context>
 <context>
@@ -428,7 +428,7 @@
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aygıt geri yükleme uzantısı başlatılamadı: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
