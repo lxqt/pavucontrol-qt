@@ -56,7 +56,7 @@
     <message>
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Base &lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Port&#xa0;:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Port :&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="126"/>
@@ -220,7 +220,7 @@
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation>Applications</translation>
+        <translation>Application(s)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="84"/>
@@ -417,7 +417,7 @@
         <location filename="../pavucontrol.cc" line="245"/>
         <location filename="../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>Impossible d&apos;initialiser l&apos;extension stream_restore&#xa0;: %s</translation>
+        <translation>Impossible d&apos;initialiser l&apos;extension stream_restore : %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="263"/>
