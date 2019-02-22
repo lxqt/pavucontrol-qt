@@ -64,17 +64,17 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>表单</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
         <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation>&lt;b&gt;左-前&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;左前&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation>形式</translation>
+        <translation>表单形式</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
@@ -97,12 +97,12 @@
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation>同时设置声道</translation>
+        <translation>同时锁定全部声道</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation>设置为默认</translation>
+        <translation>设置为回退</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -147,7 +147,7 @@
     <message>
         <location filename="../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;延迟补偿:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;延迟偏移:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="245"/>
@@ -172,12 +172,12 @@
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation>要重命名设备，您需要在 PulseAudio 服务器中加载模块设备管理器</translation>
+        <translation>要重命名设备，您需要在 PulseAudio 服务中加载模块设备管理器</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation>重命名设备 %1 为:</translation>
+        <translation>重命名设备 %1 为：</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
@@ -246,7 +246,7 @@
     <message>
         <location filename="../mainwindow.ui" line="185"/>
         <source>&lt;i&gt;No output devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;没有可用的输出设备&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;无可用的输出设备&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="204"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../mainwindow.ui" line="250"/>
         <source>&lt;i&gt;No input devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;没有可用的输入设备&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;无可用的输入设备&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="269"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation>除监视器外所有</translation>
+        <translation>除监视器外的全部</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
@@ -296,17 +296,17 @@
     <message>
         <location filename="../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation>监视器</translation>
+        <translation>显示器</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="298"/>
         <source>&amp;Configuration</source>
-        <translation>配置（&amp;C）</translation>
+        <translation>配置(&amp;C)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="325"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation>&lt;i&gt;没有可用来配置的声卡&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;无声卡可配置&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="336"/>
