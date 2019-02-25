@@ -1,6 +1,11 @@
+pavucontrol-qt-0.14.1 / 2019-02-25
+==================================
+
+  * Bumped version to 0.14.1
+  * Only translations was changed.
 
 pavucontrol-qt-0.14.0 / 2019-01-25
-=================================
+==================================
 
   * Bumped version to 0.14.0
   * Added FreeBSD installation instructions
