@@ -6,7 +6,7 @@
     <message>
         <location filename="../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation>Dialogue</translation>
+        <translation>Formulaire</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="29"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../cardwidget.cc" line="68"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
-        <translation>Échec de pa_context_set_card_profile_by_index()</translation>
+        <translation>pa_context_set_card_profile_by_index() a échoué</translation>
     </message>
 </context>
 <context>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation>Dialogue</translation>
+        <translation>Formulaire</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation>Dialogue</translation>
+        <translation>Formulaire</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
@@ -102,7 +102,7 @@
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation>Définir comme repli</translation>
+        <translation>Définir comme solution de secours</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -162,12 +162,12 @@
     <message>
         <location filename="../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation>échec de pa_context_set_port_latency_offset()</translation>
+        <translation>pa_context_set_port_latency_offset() a échoué</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation>Désolé, mais renommer le périphérique n&apos;est pas possible.</translation>
+        <translation>Désolé, le changement de nom du périphérique n&apos;est pas pris en charge.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
@@ -177,12 +177,12 @@
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation>Renommer le périphérique %1 an :</translation>
+        <translation>Renommer le périphérique %1 en :</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation>Echec de pa_ext_device_manager_set_device_description()</translation>
+        <translation>pa_ext_device_manager_set_device_description() a échoué</translation>
     </message>
 </context>
 <context>
@@ -220,7 +220,7 @@
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation>Application(s)</translation>
+        <translation>Applications</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="84"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation>Tous, excepté les écrans</translation>
+        <translation>Tous sauf les écrans</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation>Afficher les volumemètres</translation>
+        <translation>Afficher les volumètres</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
@@ -343,7 +343,7 @@
     <message>
         <location filename="../mainwindow.cc" line="433"/>
         <source>Peak detect</source>
-        <translation>Détection de crêtes</translation>
+        <translation>Détection de crête</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="434"/>
@@ -358,17 +358,17 @@
     <message>
         <location filename="../mainwindow.cc" line="588"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation>Ignore la chute de l&apos;entrée parce qu&apos;elle est désignée comme un événement et donc géré par le widget des événements</translation>
+        <translation>Ignorer l&apos;entrée du récepteur car il est désigné comme événement et donc traité par le widget des événements</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="760"/>
         <source>System Sounds</source>
-        <translation>Sons système</translation>
+        <translation>Sons du système</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="1090"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation>Établissement de la connexion avec PulseAudio. Patientez ...</translation>
+        <translation>Établissement de la connexion à PulseAudio. Patientez...</translation>
     </message>
 </context>
 <context>
@@ -396,12 +396,12 @@
     <message>
         <location filename="../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
-        <translation>Échec du rappel de l&apos;entrée de la destination</translation>
+        <translation>Échec du rappel de l&apos;entrée du récepteur</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="171"/>
         <source>Source output callback failure</source>
-        <translation>Échec du rappel de la sortie de la source</translation>
+        <translation>Échec du rappel de la sortie source</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="211"/>
@@ -417,107 +417,107 @@
         <location filename="../pavucontrol.cc" line="245"/>
         <location filename="../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>Impossible d&apos;initialiser l&apos;extension stream_restore : %s</translation>
+        <translation>Échec d&apos;initialisation de l&apos;extension stream_restore : %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="263"/>
         <source>pa_ext_stream_restore_read() failed</source>
-        <translation>Échec de pa_ext_stream_restore_read()</translation>
+        <translation>pa_ext_stream_restore_read() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation>Échec d&apos;initialisation de l&apos;extension de la restauration du périphérique : %s</translation>
+        <translation>Échec d&apos;initialisation de l&apos;extension de restauration du périphérique : %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation>Échec de pa_ext_device_restore_read_sink_formats()</translation>
+        <translation>pa_ext_device_restore_read_sink_formats() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="320"/>
         <location filename="../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation>Échec de l&apos;initialisation de l&apos;extension du gestionnaire de périphérique : %s</translation>
+        <translation>Échec d&apos;initialisation de l&apos;extension du gestionnaire de périphériques : %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation>Échec de pa_ext_device_manager_read()</translation>
+        <translation>pa_ext_device_manager_read() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="356"/>
         <source>pa_context_get_sink_info_by_index() failed</source>
-        <translation>Échec de pa_context_get_sink_info_by_index()</translation>
+        <translation>pa_context_get_sink_info_by_index() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="369"/>
         <source>pa_context_get_source_info_by_index() failed</source>
-        <translation>Échec de pa_context_get_source_info_by_index()</translation>
+        <translation>pa_context_get_source_info_by_index() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="382"/>
         <location filename="../pavucontrol.cc" line="395"/>
         <source>pa_context_get_sink_input_info() failed</source>
-        <translation>Échec de pa_context_get_sink_input_info()</translation>
+        <translation>pa_context_get_sink_input_info() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="408"/>
         <source>pa_context_get_client_info() failed</source>
-        <translation>Échec de pa_context_get_client_info()</translation>
+        <translation>pa_context_get_client_info() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="418"/>
         <location filename="../pavucontrol.cc" line="483"/>
         <source>pa_context_get_server_info() failed</source>
-        <translation>Échec de pa_context_get_server_info()</translation>
+        <translation>pa_context_get_server_info() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="431"/>
         <source>pa_context_get_card_info_by_index() failed</source>
-        <translation>Échec de pa_context_get_card_info_by_index()</translation>
+        <translation>pa_context_get_card_info_by_index() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="474"/>
         <source>pa_context_subscribe() failed</source>
-        <translation>Échec de pa_context_subscribe()</translation>
+        <translation>pa_context_subscribe() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="490"/>
         <source>pa_context_client_info_list() failed</source>
-        <translation>Échec de pa_context_client_info_list()</translation>
+        <translation>pa_context_client_info_list() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="497"/>
         <source>pa_context_get_card_info_list() failed</source>
-        <translation>Échec de pa_context_get_card_info_list()</translation>
+        <translation>pa_context_get_card_info_list() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="504"/>
         <source>pa_context_get_sink_info_list() failed</source>
-        <translation>Échec de pa_context_get_sink_info_list()</translation>
+        <translation>pa_context_get_sink_info_list() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="511"/>
         <source>pa_context_get_source_info_list() failed</source>
-        <translation>Échec de pa_context_get_source_info_list()</translation>
+        <translation>pa_context_get_source_info_list() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="518"/>
         <source>pa_context_get_sink_input_info_list() failed</source>
-        <translation>Échec de pa_context_get_sink_input_info_list()</translation>
+        <translation>pa_context_get_sink_input_info_list() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="525"/>
         <source>pa_context_get_source_output_info_list() failed</source>
-        <translation>Échec de pa_context_get_source_output_info_list()</translation>
+        <translation>pa_context_get_source_output_info_list() a échoué</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="584"/>
         <location filename="../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation>Échec de la connexion, essai de reconnection</translation>
+        <translation>Échec de la connexion, tentative de reconnexion</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
@@ -534,23 +534,23 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation>Échec de la connexion à PulseAudio. Nouvelle tentative dans 5s
+        <translation>La connexion à PulseAudio a échoué. Nouvelle tentative automatique dans 5s
 
-Dans ce cas probablement parce que PULSE_SERVER est mal configuré dans la fenêtre Propriétés Environnement / X11,
-ou que le serveur par défaut-dans client.conf est mal configuré.
-Cette situation peut également survenir lorsque PulseAudio est écrasé et a laissé les détails obsolètes dans la fenêtre X11.
-Dans ce cas PulseAudio devrait auto-engendrer à nouveau, ou si ce n&apos;est pas configuré vous ne devriez
-exécuter start-pulseaudio-x11 manuellement.</translation>
+Dans ce cas, cela est probablement dû au fait que PULSE_SERVER est dans les propriétés de la fenêtre racine Environnement/X11
+ou default-server dans client.conf est mal configuré.
+Cette situation peut également se produire lorsque PulseAudio a cessé de fonctionner et laisser des détails obsolètes dans la fenêtre racine X11.
+Si tel est le cas, PulseAudio doit à nouveau lancer automatiquement l’auto-génération, ou si cela n’est pas configuré, vous devez
+lancer manuellement start-pulseaudio-x11.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
-        <translation>Sélectionnez un onglet spécifique lors du chargement.</translation>
+        <translation>Sélectionner un onglet spécifique lors du chargement.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation>Toujours réessayer si pa quitte (toutes les 5s).</translation>
+        <translation>Toujours réessayer si pavucontrol quitte (toutes les 5s).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="678"/>
@@ -568,7 +568,7 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
     <message>
         <location filename="../rolewidget.cc" line="59"/>
         <source>pa_ext_stream_restore_write() failed</source>
-        <translation>Échec de pa_ext_stream_restore_write()</translation>
+        <translation>pa_ext_stream_restore_write() a échoué</translation>
     </message>
 </context>
 <context>
@@ -581,7 +581,7 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation>Terminer lecture</translation>
+        <translation>Terminer la lecture</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
@@ -591,22 +591,22 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
     <message>
         <location filename="../sinkinputwidget.cc" line="64"/>
         <source>pa_context_set_sink_input_volume() failed</source>
-        <translation>Échec de pa_context_set_sink_input_volume()</translation>
+        <translation>pa_context_set_sink_input_volume() a échoué</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="79"/>
         <source>pa_context_set_sink_input_mute() failed</source>
-        <translation>Échec de pa_context_set_sink_input_mute()</translation>
+        <translation>pa_context_set_sink_input_mute() a échoué</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="89"/>
         <source>pa_context_kill_sink_input() failed</source>
-        <translation>Échec de pa_context_kill_sink_input()</translation>
+        <translation>pa_context_kill_sink_input() a échoué</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="114"/>
         <source>pa_context_move_sink_input_by_index() failed</source>
-        <translation>Échec de pa_context_move_sink_input_by_index()</translation>
+        <translation>pa_context_move_sink_input_by_index() a échoué</translation>
     </message>
 </context>
 <context>
@@ -614,27 +614,27 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
     <message>
         <location filename="../sinkwidget.cc" line="81"/>
         <source>pa_context_set_sink_volume_by_index() failed</source>
-        <translation>Échec de pa_context_set_sink_volume_by_index()</translation>
+        <translation>pa_context_set_sink_volume_by_index() a échoué</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="96"/>
         <source>pa_context_set_sink_mute_by_index() failed</source>
-        <translation>Échec de pa_context_set_sink_mute_by_index()</translation>
+        <translation>pa_context_set_sink_mute_by_index() a échoué</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="110"/>
         <source>pa_context_set_default_sink() failed</source>
-        <translation>Échec de pa_context_set_default_sink()</translation>
+        <translation>pa_context_set_default_sink() a échoué</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="126"/>
         <source>pa_context_set_sink_port_by_index() failed</source>
-        <translation>Échec de pa_context_set_sink_port_by_index()</translation>
+        <translation>pa_context_set_sink_port_by_index() a échoué</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="166"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation>Échec de pa_ext_device_restore_save_sink_formats()</translation>
+        <translation>pa_ext_device_restore_save_sink_formats() a échoué</translation>
     </message>
 </context>
 <context>
@@ -647,7 +647,7 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation>Terminer enregistrement</translation>
+        <translation>Mettre fin à l&apos;enregistrement</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="60"/>
@@ -657,22 +657,22 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
     <message>
         <location filename="../sourceoutputwidget.cc" line="72"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation>Échec de pa_context_set_source_output_volume()</translation>
+        <translation>pa_context_set_source_output_volume() a échoué</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="87"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation>Échec de pa_context_set_source_output_mute()</translation>
+        <translation>pa_context_set_source_output_mute() a échoué</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="98"/>
         <source>pa_context_kill_source_output() failed</source>
-        <translation>Échec de pa_context_kill_source_output()</translation>
+        <translation>pa_context_kill_source_output() a échoué</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="125"/>
         <source>pa_context_move_source_output_by_index() failed</source>
-        <translation>Échec de pa_context_move_source_output_by_index()</translation>
+        <translation>pa_context_move_source_output_by_index() a échoué</translation>
     </message>
 </context>
 <context>
@@ -680,22 +680,22 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
     <message>
         <location filename="../sourcewidget.cc" line="35"/>
         <source>pa_context_set_source_volume_by_index() failed</source>
-        <translation>Échec de pa_context_set_source_volume_by_index()</translation>
+        <translation>pa_context_set_source_volume_by_index() a échoué</translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="50"/>
         <source>pa_context_set_source_mute_by_index() failed</source>
-        <translation>Échec de pa_context_set_source_mute_by_index()</translation>
+        <translation>pa_context_set_source_mute_by_index() a échoué</translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="64"/>
         <source>pa_context_set_default_source() failed</source>
-        <translation>Échec de pa_context_set_default_source()</translation>
+        <translation>pa_context_set_default_source() a échoué</translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="80"/>
         <source>pa_context_set_source_port_by_index() failed</source>
-        <translation>Échec de pa_context_set_source_port_by_index()</translation>
+        <translation>pa_context_set_source_port_by_index() a échoué</translation>
     </message>
 </context>
 <context>
@@ -703,7 +703,7 @@ exécuter start-pulseaudio-x11 manuellement.</translation>
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation>Dialogue</translation>
+        <translation>Formulaire</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="32"/>
