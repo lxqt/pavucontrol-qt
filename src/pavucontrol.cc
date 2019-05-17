@@ -669,13 +669,13 @@ int main(int argc, char *argv[]) {
     app.setApplicationVersion(VERINFO);
     parser.addVersionOption();
 
-    QCommandLineOption tabOption(QStringList() << "tab" << "t", QObject::tr("Select a specific tab on load."), "tab");
+    QCommandLineOption tabOption(QStringList() << QStringLiteral("tab") << QStringLiteral("t"), QObject::tr("Select a specific tab on load."), QStringLiteral("tab"));
     parser.addOption(tabOption);
 
-    QCommandLineOption retryOption(QStringList() << "retry" << "r", QObject::tr("Retry forever if pa quits (every 5 seconds)."));
+    QCommandLineOption retryOption(QStringList() << QStringLiteral("retry") << QStringLiteral("r"), QObject::tr("Retry forever if pa quits (every 5 seconds)."));
     parser.addOption(retryOption);
 
-    QCommandLineOption maximizeOption(QStringList() << "maximize" << "m", QObject::tr("Maximize the window."));
+    QCommandLineOption maximizeOption(QStringList() << QStringLiteral("maximize") << QStringLiteral("m"), QObject::tr("Maximize the window."));
     parser.addOption(maximizeOption);
 
     parser.process(app);

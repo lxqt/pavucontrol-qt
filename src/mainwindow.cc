@@ -97,25 +97,25 @@ MainWindow::MainWindow():
 
     const QSettings config;
 
-    showVolumeMetersCheckButton->setChecked(config.value("window/showVolumeMeters", true).toBool());
+    showVolumeMetersCheckButton->setChecked(config.value(QStringLiteral("window/showVolumeMeters"), true).toBool());
 
-    const QSize last_size  = config.value("window/size").toSize();
+    const QSize last_size  = config.value(QStringLiteral("window/size")).toSize();
     if (last_size.isValid())
         resize(last_size);
 
-    const QVariant sinkInputTypeSelection = config.value("window/sinkInputType");
+    const QVariant sinkInputTypeSelection = config.value(QStringLiteral("window/sinkInputType"));
     if (sinkInputTypeSelection.isValid())
         sinkInputTypeComboBox->setCurrentIndex(sinkInputTypeSelection.toInt());
 
-    const QVariant sourceOutputTypeSelection = config.value("window/sourceOutputType");
+    const QVariant sourceOutputTypeSelection = config.value(QStringLiteral("window/sourceOutputType"));
     if (sourceOutputTypeSelection.isValid())
         sourceOutputTypeComboBox->setCurrentIndex(sourceOutputTypeSelection.toInt());
 
-    const QVariant sinkTypeSelection = config.value("window/sinkType");
+    const QVariant sinkTypeSelection = config.value(QStringLiteral("window/sinkType"));
     if (sinkTypeSelection.isValid())
         sinkTypeComboBox->setCurrentIndex(sinkTypeSelection.toInt());
 
-    const QVariant sourceTypeSelection = config.value("window/sourceType");
+    const QVariant sourceTypeSelection = config.value(QStringLiteral("window/sourceType"));
     if (sourceTypeSelection.isValid())
         sourceTypeComboBox->setCurrentIndex(sourceTypeSelection.toInt());
 
@@ -126,12 +126,12 @@ MainWindow::MainWindow():
 
 MainWindow::~MainWindow() {
     QSettings config;
-    config.setValue("window/size", size());
-    config.setValue("window/sinkInputType", sinkInputTypeComboBox->currentIndex());
-    config.setValue("window/sourceOutputType", sourceOutputTypeComboBox->currentIndex());
-    config.setValue("window/sinkType", sinkTypeComboBox->currentIndex());
-    config.setValue("window/sourceType", sourceTypeComboBox->currentIndex());
-    config.setValue("window/showVolumeMeters", showVolumeMetersCheckButton->isChecked());
+    config.setValue(QStringLiteral("window/size"), size());
+    config.setValue(QStringLiteral("window/sinkInputType"), sinkInputTypeComboBox->currentIndex());
+    config.setValue(QStringLiteral("window/sourceOutputType"), sourceOutputTypeComboBox->currentIndex());
+    config.setValue(QStringLiteral("window/sinkType"), sinkTypeComboBox->currentIndex());
+    config.setValue(QStringLiteral("window/sourceType"), sourceTypeComboBox->currentIndex());
+    config.setValue(QStringLiteral("window/showVolumeMeters"), showVolumeMetersCheckButton->isChecked());
 
     while (!clientNames.empty()) {
         auto i = clientNames.begin();
@@ -329,7 +329,7 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
     w->description = info.description;
     w->type = info.flags & PA_SINK_HARDWARE ? SINK_HARDWARE : SINK_VIRTUAL;
 
-    w->boldNameLabel->setText("");
+    w->boldNameLabel->setText(QLatin1String(""));
     gchar *txt;
     w->nameLabel->setText(txt = g_markup_printf_escaped("%s", info.description));
     w->nameLabel->setToolTip(info.description);
@@ -495,7 +495,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
     w->description = info.description;
     w->type = info.monitor_of_sink != PA_INVALID_INDEX ? SOURCE_MONITOR : (info.flags & PA_SOURCE_HARDWARE ? SOURCE_HARDWARE : SOURCE_VIRTUAL);
 
-    w->boldNameLabel->setText("");
+    w->boldNameLabel->setText(QLatin1String(""));
     gchar *txt;
     w->nameLabel->setText(txt = g_markup_printf_escaped("%s", info.description));
     w->nameLabel->setToolTip(info.description);
@@ -621,7 +621,7 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
         w->nameLabel->setText(txt = g_markup_printf_escaped(": %s", info.name));
         g_free(txt);
     } else {
-        w->boldNameLabel->setText("");
+        w->boldNameLabel->setText(QLatin1String(""));
         w->nameLabel->setText(info.name);
     }
 
@@ -677,7 +677,7 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
         w->nameLabel->setText(txt = g_markup_printf_escaped(": %s", info.name));
         g_free(txt);
     } else {
-        w->boldNameLabel->setText("");
+        w->boldNameLabel->setText(QLatin1String(""));
         w->nameLabel->setText(info.name);
     }
 
@@ -755,7 +755,7 @@ bool MainWindow::createEventRoleWidget() {
     eventRoleWidget->role = "sink-input-by-media-role:event";
     eventRoleWidget->setChannelMap(cm, true);
 
-    eventRoleWidget->boldNameLabel->setText("");
+    eventRoleWidget->boldNameLabel->setText(QLatin1String(""));
     eventRoleWidget->nameLabel->setText(tr("System Sounds").toUtf8().constData());
 
     setIconByName(eventRoleWidget->iconImage, "multimedia-volume-control");
