@@ -32,8 +32,8 @@ SourceOutputWidget::SourceOutputWidget(MainWindow *parent) :
     menu{new QMenu{this}}
 {
 
-    gchar *txt;
-    directionLabel->setText(txt = g_markup_printf_escaped("<i>%s</i>", tr("from").toUtf8().constData()));
+    gchar *txt = g_markup_printf_escaped("<i>%s</i>", tr("from").toUtf8().constData());
+    directionLabel->setText(QString::fromUtf8(static_cast<char*>(txt)));
     g_free(txt);
 
     terminate->setText(tr("Terminate Recording"));
@@ -54,10 +54,10 @@ void SourceOutputWidget::setSourceIndex(uint32_t idx) {
 
     if (mpMainWindow->sourceWidgets.count(idx)) {
       SourceWidget *w = mpMainWindow->sourceWidgets[idx];
-      deviceButton->setText(w->description);
+      deviceButton->setText(QString::fromUtf8(w->description));
     }
     else
-      deviceButton->setText(tr("Unknown input").toUtf8().constData());
+      deviceButton->setText(tr("Unknown input"));
 }
 
 uint32_t SourceOutputWidget::sourceIndex() {
@@ -105,7 +105,7 @@ void SourceOutputWidget::onKill() {
 
 void SourceOutputWidget::buildMenu() {
   for (auto & sourceWidget : mpMainWindow->sourceWidgets) {
-      menu->addAction(new SourceMenuItem{this, sourceWidget.second->description, sourceWidget.second->index, sourceWidget.second->index == mSourceIndex, menu});
+      menu->addAction(new SourceMenuItem{this, sourceWidget.second->description.constData(), sourceWidget.second->index, sourceWidget.second->index == mSourceIndex, menu});
   }
 }
 

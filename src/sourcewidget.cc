@@ -60,7 +60,7 @@ void SourceWidget::onDefaultToggleButton() {
     if (updating)
         return;
 
-    if (!(o = pa_context_set_default_source(get_context(), name, nullptr, nullptr))) {
+    if (!(o = pa_context_set_default_source(get_context(), name.constData(), nullptr, nullptr))) {
         show_error(tr("pa_context_set_default_source() failed").toUtf8().constData());
         return;
     }

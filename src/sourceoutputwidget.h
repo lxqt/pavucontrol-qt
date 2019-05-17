@@ -62,7 +62,7 @@ private:
                 , uint32_t i
                 , bool active
                 , QObject * parent = nullptr)
-            : QAction{label, parent}
+            : QAction{QString::fromUtf8(label), parent}
             , widget(w)
             , index(i)
         {

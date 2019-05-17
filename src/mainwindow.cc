@@ -177,7 +177,7 @@ static void updatePorts(DeviceWidget *w, std::map<QByteArray, PortInfo> &ports) 
 }
 
 static void setIconByName(QLabel* label, const char* name) {
-    QIcon icon = QIcon::fromTheme(name);
+    QIcon icon = QIcon::fromTheme(QString::fromUtf8(name));
     int size = label->style()->pixelMetric(QStyle::PM_ToolBarIconSize);
     QPixmap pix = icon.pixmap(size, size);
     label->setPixmap(pix);
@@ -202,7 +202,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
 
     description = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_DESCRIPTION);
     w->name = description ? description : info.name;
-    w->nameLabel->setText(w->name);
+    w->nameLabel->setText(QString::fromUtf8(w->name));
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
     setIconByName(w->iconImage, icon ? icon : "audio-card");
@@ -330,9 +330,9 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
     w->type = info.flags & PA_SINK_HARDWARE ? SINK_HARDWARE : SINK_VIRTUAL;
 
     w->boldNameLabel->setText(QLatin1String(""));
-    gchar *txt;
-    w->nameLabel->setText(txt = g_markup_printf_escaped("%s", info.description));
-    w->nameLabel->setToolTip(info.description);
+    gchar *txt = g_markup_printf_escaped("%s", info.description);
+    w->nameLabel->setText(QString::fromUtf8(static_cast<char*>(txt)));
+    w->nameLabel->setToolTip(QString::fromUtf8(info.description));
     g_free(txt);
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
@@ -496,9 +496,9 @@ void MainWindow::updateSource(const pa_source_info &info) {
     w->type = info.monitor_of_sink != PA_INVALID_INDEX ? SOURCE_MONITOR : (info.flags & PA_SOURCE_HARDWARE ? SOURCE_HARDWARE : SOURCE_VIRTUAL);
 
     w->boldNameLabel->setText(QLatin1String(""));
-    gchar *txt;
-    w->nameLabel->setText(txt = g_markup_printf_escaped("%s", info.description));
-    w->nameLabel->setToolTip(info.description);
+    gchar *txt = g_markup_printf_escaped("%s", info.description);
+    w->nameLabel->setText(QString::fromUtf8(static_cast<char*>(txt)));
+    w->nameLabel->setToolTip(QString::fromUtf8(info.description));
     g_free(txt);
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
@@ -616,16 +616,16 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
 
     char *txt;
     if (clientNames.count(info.client)) {
-        w->boldNameLabel->setText(txt = g_markup_printf_escaped("<b>%s</b>", clientNames[info.client]));
+        w->boldNameLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped("<b>%s</b>", clientNames[info.client])));
         g_free(txt);
-        w->nameLabel->setText(txt = g_markup_printf_escaped(": %s", info.name));
+        w->nameLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped(": %s", info.name)));
         g_free(txt);
     } else {
         w->boldNameLabel->setText(QLatin1String(""));
-        w->nameLabel->setText(info.name);
+        w->nameLabel->setText(QString::fromUtf8(info.name));
     }
 
-    w->nameLabel->setToolTip(info.name);
+    w->nameLabel->setToolTip(QString::fromUtf8(info.name));
 
     setIconFromProplist(w->iconImage, info.proplist, "audio-card");
 
@@ -672,16 +672,16 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
 
     char *txt;
     if (clientNames.count(info.client)) {
-        w->boldNameLabel->setText(txt = g_markup_printf_escaped("<b>%s</b>", clientNames[info.client]));
+        w->boldNameLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped("<b>%s</b>", clientNames[info.client])));
         g_free(txt);
-        w->nameLabel->setText(txt = g_markup_printf_escaped(": %s", info.name));
+        w->nameLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped(": %s", info.name)));
         g_free(txt);
     } else {
         w->boldNameLabel->setText(QLatin1String(""));
-        w->nameLabel->setText(info.name);
+        w->nameLabel->setText(QString::fromUtf8(info.name));
     }
 
-    w->nameLabel->setToolTip(info.name);
+    w->nameLabel->setToolTip(QString::fromUtf8(info.name));
 
     setIconFromProplist(w->iconImage, info.proplist, "audio-input-microphone");
 
@@ -708,7 +708,7 @@ void MainWindow::updateClient(const pa_client_info &info) {
 
         if (w->clientIndex == info.index) {
             gchar *txt;
-            w->boldNameLabel->setText(txt = g_markup_printf_escaped("<b>%s</b>", info.name));
+            w->boldNameLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped("<b>%s</b>", info.name)));
             g_free(txt);
         }
     }
@@ -756,7 +756,7 @@ bool MainWindow::createEventRoleWidget() {
     eventRoleWidget->setChannelMap(cm, true);
 
     eventRoleWidget->boldNameLabel->setText(QLatin1String(""));
-    eventRoleWidget->nameLabel->setText(tr("System Sounds").toUtf8().constData());
+    eventRoleWidget->nameLabel->setText(tr("System Sounds"));
 
     setIconByName(eventRoleWidget->iconImage, "multimedia-volume-control");
 

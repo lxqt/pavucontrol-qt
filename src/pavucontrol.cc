@@ -653,11 +653,11 @@ int main(int argc, char *argv[]) {
 
     QString locale = QLocale::system().name();
     QTranslator qtTranslator;
-    if(qtTranslator.load("qt_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+    if(qtTranslator.load(QStringLiteral("qt_") + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         qApp->installTranslator(&qtTranslator);
 
     QTranslator appTranslator;
-    if(appTranslator.load("pavucontrol-qt_" + locale, PAVUCONTROL_QT_DATA_DIR "/translations"))
+    if(appTranslator.load(QStringLiteral("pavucontrol-qt_") + locale, QStringLiteral(PAVUCONTROL_QT_DATA_DIR) + QStringLiteral("/translations")))
         qApp->installTranslator(&appTranslator);
 
     QCommandLineParser parser;

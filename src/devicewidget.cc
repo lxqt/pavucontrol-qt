@@ -151,7 +151,7 @@ void DeviceWidget::onOffsetChange() {
     card_name = QByteArray::fromStdString(card_stream.str());
 
     if (!(o = pa_context_set_port_latency_offset(get_context(),
-            card_name, activePort, offset, nullptr, nullptr))) {
+            card_name.constData(), activePort.constData(), offset, nullptr, nullptr))) {
         show_error(tr("pa_context_set_port_latency_offset() failed").toUtf8().constData());
         return;
     }
@@ -191,7 +191,7 @@ void DeviceWidget::prepareMenu() {
     /* Fill the ComboBox's Model */
     for (auto & port : ports) {
         QByteArray name = port.first;
-        QString desc = port.second;
+        QString desc = QString::fromUtf8(port.second);
         portList->addItem(desc, name);
         if (port.first == activePort)
             active_idx = idx;
@@ -228,7 +228,7 @@ void DeviceWidget::renamePopup() {
         return;
     }
 
-    const QString old_name = description.constData();
+    const QString old_name = QString::fromUtf8(description);
     bool ok;
     const QString new_name = QInputDialog::getText(this, QCoreApplication::organizationName(), tr("Rename device %1 to:").arg(old_name)
             , QLineEdit::Normal, old_name, &ok);
