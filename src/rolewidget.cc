@@ -47,7 +47,7 @@ void RoleWidget::executeVolumeUpdate() {
     if (updating)
         return;
 
-    info.name = role;
+    info.name = role.constData();
     info.channel_map.channels = 1;
     info.channel_map.map[0] = PA_CHANNEL_POSITION_MONO;
     info.volume = volume;
