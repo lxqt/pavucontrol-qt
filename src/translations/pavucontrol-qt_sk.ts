@@ -147,42 +147,42 @@
     <message>
         <location filename="../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Posun latencie:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> ms</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Premenovať zariadenie...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_port_latency_offset() zlyhalo</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ľutujeme, ale premenovanie zariadenia nie je podporované.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>K premenovaniu zariadenia je potrebné načítať modul PulseAudio</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Premenovať zariadenie:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_set_device_description() zlyhalo</translation>
     </message>
 </context>
 <context>
@@ -208,25 +208,25 @@
         <location filename="../mainwindow.ui" line="196"/>
         <location filename="../mainwindow.ui" line="261"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Všetky toky</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplikácie</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="84"/>
         <location filename="../mainwindow.ui" line="149"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuálne toky</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="93"/>
@@ -251,17 +251,17 @@
     <message>
         <location filename="../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Všetky výstupné zariadenia</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Hardvérové výstupné zariadenia</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="214"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuálne výstupné zariadenia</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="223"/>
@@ -276,27 +276,27 @@
     <message>
         <location filename="../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Všetky vstupné zariadenia</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Všetky okrem monitora</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Hardvérové vstupné zariadenia</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuálne vstupné zariadenia</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Monitory</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="298"/>
@@ -311,29 +311,29 @@
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť úroveň zvuku</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> .(pripojené)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
         <location filename="../mainwindow.cc" line="258"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> .(nedostupný)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
         <location filename="../mainwindow.cc" line="255"/>
         <source> (unplugged)</source>
-        <translation type="unfinished"></translation>
+        <translation> .(nepripojený)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="389"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="588"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorovanie zníženia vstupu, pretože je ovládaný widgetom</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="760"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1090"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytváram pripojenie k PulseAudio. Prosím čakajte...</translation>
     </message>
 </context>
 <context>
@@ -376,7 +376,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="66"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="87"/>
@@ -428,23 +428,23 @@
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodarilo sa inicializovať rozšírenie pre obnovu zariadenia</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_read_sink_formats() zlyhalo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="320"/>
         <location filename="../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodarilo sa inicializovať rozšírenie správcu zariadenia:% s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_read() zlyhalo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="356"/>
@@ -517,7 +517,7 @@
         <location filename="../pavucontrol.cc" line="584"/>
         <location filename="../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Pripojenie zlyhalo, pokus o znovupripojenie</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
@@ -534,27 +534,29 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pripojenie k PulseAudio zlyhalo. Pokus o znovupripojenie za
+
+V tomto prípade je to pravdepodobne preto, že koreňový vlastníkom PULSE_SERVER je X11 alebo client.conf je nesprávne nakonfigurovaný. Táto situácia môže nastať ak PulseAudio zlyhalo pri štarte, detaily je možné nájsť v hlásení koreňového systému X11. Pokúste sa prosím reštartovať sever PulseAudio</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte kartu, ktorú chcete načítať.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation type="unfinished"></translation>
+        <translation>Opakovať vždy keď pa ukončí (každých 5 sekúnd).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="678"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximalizovať okno.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba: Nepodarilo sa pripojiť k PulseAudio</translation>
     </message>
 </context>
 <context>
@@ -575,7 +577,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukončiť prehrávanie</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
@@ -628,7 +630,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkwidget.cc" line="166"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_save_sink_formats() zlyhal</translation>
     </message>
 </context>
 <context>
@@ -641,7 +643,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukončiť nahrávanie</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="60"/>
@@ -651,12 +653,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="72"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_volume() zlyhalo</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="87"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_mute() zlyhalo</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="98"/>
@@ -697,12 +699,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">Formulár</translation>
+        <translation>Formulár</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation type="unfinished">Názov zariadenia</translation>
+        <translation>Názov zariadenia</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="52"/>
@@ -712,17 +714,17 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>zariadenie</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished">Stlmiť zvuk</translation>
+        <translation>Vypnúť zvuk</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished">Ovládať kanály spoločne</translation>
+        <translation>Ovládať kanály spoločne</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
