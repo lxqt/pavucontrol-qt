@@ -30,13 +30,13 @@
         <location filename="../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1% (%2dB)</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1%</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;100% (0dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="165"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -97,12 +97,12 @@
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation></translation>
+        <translation>各チャンネルを同時に</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation></translation>
+        <translation>代替として設定</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -117,42 +117,42 @@
     <message>
         <location filename="../devicewidget.ui" line="172"/>
         <source>PCM</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="182"/>
         <source>AC3</source>
-        <translation type="unfinished"></translation>
+        <translation>AC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="189"/>
         <source>EAC3</source>
-        <translation type="unfinished"></translation>
+        <translation>EAC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="196"/>
         <source>DTS</source>
-        <translation type="unfinished"></translation>
+        <translation>DTS</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="203"/>
         <source>MPEG</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="210"/>
         <source>AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>AAC</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;遅延:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> ミリ秒</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="41"/>
@@ -162,7 +162,7 @@
     <message>
         <location filename="../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_port_latency_offset() 失敗しました</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="226"/>
@@ -182,7 +182,7 @@
     <message>
         <location filename="../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_set_device_description() 失敗しました</translation>
     </message>
 </context>
 <context>
@@ -208,25 +208,25 @@
         <location filename="../mainwindow.ui" line="196"/>
         <location filename="../mainwindow.ui" line="261"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>表示:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>すべてのストリーム</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>アプリケーション</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="84"/>
         <location filename="../mainwindow.ui" line="149"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>仮想のストリーム</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="93"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>モニター以外のすべて</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
@@ -316,24 +316,24 @@
     <message>
         <location filename="../mainwindow.ui" line="347"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> (プラグイン)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
         <location filename="../mainwindow.cc" line="258"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> (使用不可)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
         <location filename="../mainwindow.cc" line="255"/>
         <source> (unplugged)</source>
-        <translation type="unfinished"></translation>
+        <translation> (未接続)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="389"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="588"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>これはイベントとして指定されていてイベントウィジェットによって処理されるため、sink-input を無視します</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="760"/>
@@ -428,23 +428,23 @@
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>デバイスの復元拡張を初期化できません: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_read_sink_formats() 失敗しました</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="320"/>
         <location filename="../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>デバイスマネージャーの拡張を初期化できません: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_read() 失敗しました</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="356"/>
@@ -517,7 +517,7 @@
         <location filename="../pavucontrol.cc" line="584"/>
         <location filename="../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>接続に失敗しました。再接続しています</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
@@ -534,27 +534,32 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>PulseAudio に接続できません。 5秒後に自動的に再接続します。
+
+これは、Environment/X11 Root Window Properties の PULSE_SERVER が原因の可能性があります。
+または client.conf の default-server の設定が間違っている可能性があります。
+PulseAudio がクラッシュして X11 Root Window に古い詳細が残っている時にもこの状況が起こります。
+このような場合は、PulseAudio をもう一度自動起動するか、これを設定してない場合は手動で start-pulseaudio-x11 を実行します。</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>読み込み時にタブを指定してください。</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation type="unfinished"></translation>
+        <translation>PulseAudio が終了した時、(5秒ごとに)再試行を繰り返します。</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="678"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>ウィンドウを最大化する。</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>致命的なエラー: PulseAudio に接続できません</translation>
     </message>
 </context>
 <context>
@@ -575,7 +580,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>再生を終了</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
@@ -628,7 +633,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkwidget.cc" line="166"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_save_sink_formats() 失敗しました</translation>
     </message>
 </context>
 <context>
@@ -641,7 +646,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>録音を終了</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="60"/>
@@ -651,12 +656,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="72"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_volume() 失敗しました</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="87"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_mute() 失敗しました</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="98"/>
@@ -712,7 +717,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>デバイス</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="66"/>
@@ -722,12 +727,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>各チャンネルを同時に</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
         <source>Terminate</source>
-        <translation type="unfinished"></translation>
+        <translation>終了</translation>
     </message>
 </context>
 </TS>
