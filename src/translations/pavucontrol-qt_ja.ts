@@ -722,7 +722,7 @@ PulseAudio がクラッシュして X11 Root Window に古い詳細が残って�
     <message>
         <location filename="../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished">音声をミュート</translation>
+        <translation>消音</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
