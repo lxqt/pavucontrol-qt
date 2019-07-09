@@ -64,7 +64,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -702,12 +702,12 @@ PulseAudio がクラッシュして X11 Root Window に古い詳細が残って�
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation type="unfinished">デバイス名</translation>
+        <translation>デバイス名</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="52"/>
