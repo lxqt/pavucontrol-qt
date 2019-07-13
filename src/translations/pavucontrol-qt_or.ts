@@ -97,7 +97,7 @@
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation>ଚ୍ୟାନେଲ୍ ମାନଂକୁ ଏକା ସାଂଗରେ ବନ୍ଦ କରିବା</translation>
+        <translation>ଚ୍ୟାନେଲ୍ ମାନଂକୁ ଏକା ସାଂଗରେ ବନ୍ଦ କର</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
@@ -132,7 +132,7 @@
     <message>
         <location filename="../devicewidget.ui" line="196"/>
         <source>DTS</source>
-        <translation>ଦି.ଟି.ଏସ.</translation>
+        <translation>ଡି.ଟି.ଏସ୍.</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="203"/>
@@ -172,7 +172,7 @@
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>ଆପଣଙ୍କୁ module-device-manager କୁ PulseAudio ସର୍ଭର ରେ ଧାରଣ କରାଇବାକୁ ପଡିବ, ଯନ୍ତ୍ରର ନାମ ପରିବର୍ତନ କରିବା ପାଇଁ</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
@@ -190,17 +190,17 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>Volume Control</source>
-        <translation>ଭଲ୍ୟୁମ ନିୟନ୍ତ୍ରଣ</translation>
+        <translation>ଧ୍ବନିଶକ୍ତି ନିୟନ୍ତ୍ରଣ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation>ପଛକୁ ଚଲାଇବା (&amp;P)</translation>
+        <translation>&amp;ପୁନଃପ୍ରଦର୍ଶନ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="55"/>
         <source>&lt;i&gt;No application is currently playing audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;ବର୍ତ୍ତମାନ କୌଣସି ପ୍ରୟୋଗ ଧ୍ୱନି ଚଲାଉନାହିଁ।&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;ବର୍ତ୍ତମାନ କୌଣସି ପ୍ରୋଗ୍ରାମ ଧ୍ୱନି ଚଲାଉନାହିଁ।&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="66"/>
@@ -231,17 +231,17 @@
     <message>
         <location filename="../mainwindow.ui" line="93"/>
         <source>&amp;Recording</source>
-        <translation>ଲିପିବଦ୍ଧ କରୁଅଛି (&amp;R)</translation>
+        <translation>&amp;ଅଭିଲେଖନୀ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="120"/>
         <source>&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;ବର୍ତ୍ତମାନ କୌଣସି ପ୍ରୟୋଗ ଧ୍ୱନି ଲେଖୁନାହିଁ।&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;ବର୍ତ୍ତମାନ କୌଣସି ପ୍ରୋଗ୍ରାମ ଧ୍ୱନି ଅଭିଲେଖନୀ କରୁନାହିଁ |&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>ନିର୍ଗମ ଉପକରଣଗୁଡ଼ିକ (&amp;O)</translation>
+        <translation>&amp;ନିର୍ଗମ ଉପକରଣଗୁଡ଼ିକ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>ନିବେଶ ଉପକରଣଗୁଡ଼ିକ (&amp;I)</translation>
+        <translation>&amp;ନିବେଶ ଉପକରଣଗୁଡ଼ିକ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
@@ -301,7 +301,7 @@
     <message>
         <location filename="../mainwindow.ui" line="298"/>
         <source>&amp;Configuration</source>
-        <translation>ସଂରଚନା (&amp;C)</translation>
+        <translation>&amp;ସଂରଚନା</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="325"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation>ଧ୍ଵନି ମାପ ଯନ୍ତ୍ର ଦେଖାଅ</translation>
+        <translation>ଧ୍ଵନି ମାପ ଉପକରଣ ଦେଖାଅ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
@@ -338,7 +338,7 @@
     <message>
         <location filename="../mainwindow.cc" line="389"/>
         <source>Failed to read data from stream</source>
-        <translation>ଧାରାରୁ ତଥ୍ୟ ପଢ଼ିବାରେ ବିଫଳ ହୋଇଛି</translation>
+        <translation>ଧାରାରୁ ତଥ୍ୟ ପଢ଼ିବାରେ ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="433"/>
@@ -348,17 +348,17 @@
     <message>
         <location filename="../mainwindow.cc" line="434"/>
         <source>Failed to create monitoring stream</source>
-        <translation>ପ୍ରଦର୍ଶିକା ଧାରାକୁ ନିର୍ମାଣ କରିବାରେ ବିଫଳ ହୋଇଛି</translation>
+        <translation>ପ୍ରଦର୍ଶିକା ଧାରାକୁ ନିର୍ମାଣ କରିବାରେ ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="449"/>
         <source>Failed to connect monitoring stream</source>
-        <translation>ପ୍ରଦର୍ଶିକା ଧାରା ସହିତ ସଂଯୋଗ କରିବାରେ ବିଫଳ ହୋଇଛି</translation>
+        <translation>ପ୍ରଦର୍ଶିକା ଧାରା ସହିତ ସଂଯୋଗ କରିବାରେ ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="588"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>sink-input କୁ ଅଦେଖା କରାଯାଉଛି କାରଣ ଏହା ଏକ ଘଟଣା ଭାବେ ଅଭିହିତ ଅଛି ତେଣୁ ଏହା ଘଟଣା ଉପକରଣ ଦ୍ୱାରା ପରିଚାଳଣ କରାଯାଉଛି</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="760"/>
@@ -381,37 +381,37 @@
     <message>
         <location filename="../pavucontrol.cc" line="87"/>
         <source>Card callback failure</source>
-        <translation>କାର୍ଡ଼ କଲବ୍ୟାକ ବିଫଳ ହୋଇଛି</translation>
+        <translation>କାର୍ଡ଼ କଲବ୍ୟାକ ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
-        <translation>ସିଙ୍କ କଲବ୍ୟାକ ବିଫଳ ହୋଇଛି</translation>
+        <translation>ସିଙ୍କ କଲବ୍ୟାକ ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="133"/>
         <source>Source callback failure</source>
-        <translation>ଉତ୍ସ କଲବ୍ୟାକ ବିଫଳ ହୋଇଛି</translation>
+        <translation>ଉତ୍ସ କଲବ୍ୟାକ ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
-        <translation>ସିଙ୍କ ନିବେଶ କଲବ୍ୟାକ ବିଫଳ ହୋଇଛି</translation>
+        <translation>ସିଙ୍କ ନିବେଶ କଲବ୍ୟାକ ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="171"/>
         <source>Source output callback failure</source>
-        <translation>ଉତ୍ସ ନିର୍ଗମ କଲବ୍ୟାକ ବିଫଳ ହୋଇଛି</translation>
+        <translation>ଉତ୍ସ ନିର୍ଗମ କଲବ୍ୟାକ ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="211"/>
         <source>Client callback failure</source>
-        <translation>ଗ୍ରାହକ କଲବ୍ୟାକ ବିଫଳ ହୋଇଛି</translation>
+        <translation>ଗ୍ରାହକ କଲବ୍ୟାକ ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="227"/>
         <source>Server info callback failure</source>
-        <translation>ସର୍ଭର ସୂଚନା କଲବ୍ୟାକ ବିଫଳ ହୋଇଛି</translation>
+        <translation>ସର୍ଭର ସୂଚନା କଲବ୍ୟାକ ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="245"/>
@@ -428,7 +428,7 @@
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>ଯନ୍ତ୍ର ପୁନଃସ୍ଥାପନା ଅନୁଲଗ୍ନ ପ୍ରାରମ୍ଭିକରଣରେ ଅସଫଳ: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
@@ -439,91 +439,91 @@
         <location filename="../pavucontrol.cc" line="320"/>
         <location filename="../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>ଯନ୍ତ୍ର ପରିଚାଳକ ଅନୁଲଗ୍ନ ପ୍ରାରମ୍ଭିକରଣରେ ଅସଫଳ: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_read() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="356"/>
         <source>pa_context_get_sink_info_by_index() failed</source>
-        <translation>pa_context_get_sink_info_by_index() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_get_sink_info_by_index() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="369"/>
         <source>pa_context_get_source_info_by_index() failed</source>
-        <translation>pa_context_get_source_info_by_index() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_get_source_info_by_index() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="382"/>
         <location filename="../pavucontrol.cc" line="395"/>
         <source>pa_context_get_sink_input_info() failed</source>
-        <translation>pa_context_get_sink_input_info() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_get_sink_input_info() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="408"/>
         <source>pa_context_get_client_info() failed</source>
-        <translation>pa_context_get_client_info() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_get_client_info() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="418"/>
         <location filename="../pavucontrol.cc" line="483"/>
         <source>pa_context_get_server_info() failed</source>
-        <translation>pa_context_get_server_info() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_get_server_info() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="431"/>
         <source>pa_context_get_card_info_by_index() failed</source>
-        <translation>pa_context_get_card_info_by_index() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_get_card_info_by_index() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="474"/>
         <source>pa_context_subscribe() failed</source>
-        <translation>pa_context_subscribe() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_subscribe() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="490"/>
         <source>pa_context_client_info_list() failed</source>
-        <translation>pa_context_client_info_list() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_client_info_list() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="497"/>
         <source>pa_context_get_card_info_list() failed</source>
-        <translation>pa_context_get_card_info_list() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_get_card_info_list() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="504"/>
         <source>pa_context_get_sink_info_list() failed</source>
-        <translation>pa_context_get_sink_info_list() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_get_sink_info_list() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="511"/>
         <source>pa_context_get_source_info_list() failed</source>
-        <translation>pa_context_get_source_info_list() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_get_source_info_list() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="518"/>
         <source>pa_context_get_sink_input_info_list() failed</source>
-        <translation>pa_context_get_sink_input_info_list() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_get_sink_input_info_list() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="525"/>
         <source>pa_context_get_source_output_info_list() failed</source>
-        <translation>pa_context_get_source_output_info_list() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_get_source_output_info_list() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="584"/>
         <location filename="../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>ଯୋଗାଯୋଗ ଅସଫଳ, ପୁନଃ ଯୋଗାଯୋଗ ପାଇଁ ଚେଷ୍ଟା କରାଯାଉଛି</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
         <location filename="../pavucontrol.cc" line="664"/>
         <source>PulseAudio Volume Control</source>
-        <translation>PulseAudio ଭଲ୍ୟୁମ ନିୟନ୍ତ୍ରଣ</translation>
+        <translation>PulseAudio ଧ୍ୱନି ଶକ୍ତି ନିୟନ୍ତ୍ରଣ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="622"/>
@@ -539,22 +539,22 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>ଏକ ନିର୍ଦ୍ଧିଷ୍ଟ ଟ୍ୟାବ୍ କୁ ଆରମ୍ଭରେ ବାଛନ୍ତୁ |</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation type="unfinished"></translation>
+        <translation>ସବୁବେଳେ ଚେଷ୍ଟା କର ଯଦି ପା ବନ୍ଦ ହେଉଛି (ପ୍ରତି ୫ ମୁହୁର୍ତରେ) |</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="678"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>ଉଇଣ୍ଡୋ କୁ  ବୃହତ୍ତମନ କର |</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>ଗୁରୁତର ତ୍ରୁଟି: ପଲସଅଡିଓ ସହ ଯୋଗାଯୋଗ କରିବାରେ ଅସଫଳ</translation>
     </message>
 </context>
 <context>
@@ -562,7 +562,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../rolewidget.cc" line="59"/>
         <source>pa_ext_stream_restore_write() failed</source>
-        <translation>pa_ext_stream_restore_write() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_ext_stream_restore_write() ଅସଫଳ</translation>
     </message>
 </context>
 <context>
@@ -570,12 +570,12 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="36"/>
         <source>on</source>
-        <translation>ଚାଲୁ</translation>
+        <translation>ଆରମ୍ଭ</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>ପୁନଃପ୍ରଦର୍ଶନ କୁ ସମାପ୍ତ କର</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
@@ -585,22 +585,22 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="64"/>
         <source>pa_context_set_sink_input_volume() failed</source>
-        <translation>pa_context_set_sink_input_volume() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_set_sink_input_volume() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="79"/>
         <source>pa_context_set_sink_input_mute() failed</source>
-        <translation>pa_context_set_sink_input_mute() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_set_sink_input_mute() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="89"/>
         <source>pa_context_kill_sink_input() failed</source>
-        <translation>pa_context_kill_sink_input() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_kill_sink_input() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="114"/>
         <source>pa_context_move_sink_input_by_index() failed</source>
-        <translation>pa_context_move_sink_input_by_index() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_move_sink_input_by_index() ଅସଫଳ</translation>
     </message>
 </context>
 <context>
@@ -608,27 +608,27 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkwidget.cc" line="81"/>
         <source>pa_context_set_sink_volume_by_index() failed</source>
-        <translation>pa_context_set_sink_volume_by_index() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_set_sink_volume_by_index() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="96"/>
         <source>pa_context_set_sink_mute_by_index() failed</source>
-        <translation>pa_context_set_sink_mute_by_index() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_set_sink_mute_by_index() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="110"/>
         <source>pa_context_set_default_sink() failed</source>
-        <translation>pa_context_set_default_sink() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_set_default_sink() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="126"/>
         <source>pa_context_set_sink_port_by_index() failed</source>
-        <translation>pa_context_set_sink_port_by_index() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_set_sink_port_by_index() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="166"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_save_sink_formats() ଅସଫଳ</translation>
     </message>
 </context>
 <context>
@@ -641,32 +641,32 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>ଅଭିଲେଖନୀ ସମାପ୍ତ କର</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="60"/>
         <source>Unknown input</source>
-        <translation>ଅଜଣା ନିବେଶ </translation>
+        <translation>ଅଜଣା ନିବେଶ</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="72"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_volume() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="87"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_mute() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="98"/>
         <source>pa_context_kill_source_output() failed</source>
-        <translation>pa_context_kill_source_output() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_kill_source_output() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="125"/>
         <source>pa_context_move_source_output_by_index() failed</source>
-        <translation>pa_context_move_source_output_by_index() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_move_source_output_by_index() ଅସଫଳ</translation>
     </message>
 </context>
 <context>
@@ -674,22 +674,22 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourcewidget.cc" line="35"/>
         <source>pa_context_set_source_volume_by_index() failed</source>
-        <translation>pa_context_set_source_volume_by_index() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_set_source_volume_by_index() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="50"/>
         <source>pa_context_set_source_mute_by_index() failed</source>
-        <translation>pa_context_set_source_mute_by_index() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_set_source_mute_by_index() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="64"/>
         <source>pa_context_set_default_source() failed</source>
-        <translation>pa_context_set_default_source() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_set_default_source() ଅସଫଳ</translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="80"/>
         <source>pa_context_set_source_port_by_index() failed</source>
-        <translation>pa_context_set_source_port_by_index() ବିଫଳ ହୋଇଛି</translation>
+        <translation>pa_context_set_source_port_by_index() ଅସଫଳ</translation>
     </message>
 </context>
 <context>
@@ -697,37 +697,37 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">ଫର୍ମ</translation>
+        <translation>ଫର୍ମ</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation type="unfinished">ଯନ୍ତ୍ର ଶୀର୍ଷକ</translation>
+        <translation>ଯନ୍ତ୍ର ନାମ</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="52"/>
         <source>direction</source>
-        <translation>ନିର୍ଦ୍ଦେଶ</translation>
+        <translation>ଦିଗ</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>ଯନ୍ତ୍ର</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished">ମୌନ ଧ୍ବନି</translation>
+        <translation>ଧ୍ବନିକୁ ମୌନ କର</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished">ଚ୍ୟାନେଲ୍ ମାନଂକୁ ଏକା ସାଂଗରେ ବନ୍ଦ କରିବା</translation>
+        <translation>ଚ୍ୟାନେଲ୍ ମାନଂକୁ ଏକା ସାଂଗରେ ବନ୍ଦ କର</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
         <source>Terminate</source>
-        <translation>ପଛକୁ ଚଲାଇବା ସମାପ୍ତ କରନ୍ତୁ</translation>
+        <translation>ସମାପ୍ତ କର</translation>
     </message>
 </context>
 </TS>
