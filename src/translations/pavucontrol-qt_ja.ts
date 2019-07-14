@@ -41,7 +41,7 @@
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation>&lt;small&gt;沈黙&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;無音&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation>音量メーターの設定</translation>
+        <translation>音量メーターを表示する</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1090"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation>PulseAudioとの接続を確立中。少々お待ちください...</translation>
+        <translation>PulseAudio との接続を確立中です。少々お待ちください...</translation>
     </message>
 </context>
 <context>
