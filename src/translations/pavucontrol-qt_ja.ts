@@ -172,7 +172,7 @@
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation>デバイスの名前の変更するためPulseAudio サーバーのデバイスマネージャーをロードする費用があります</translation>
+        <translation>デバイスの名前の変更するため PulseAudio サーバーの module-device-manager をロードする必要があります</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
