@@ -107,7 +107,7 @@
     <message>
         <location filename="../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Profil:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Port:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="126"/>
@@ -200,7 +200,7 @@
     <message>
         <location filename="../mainwindow.ui" line="55"/>
         <source>&lt;i&gt;No application is currently playing audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Inget program spelar för närvarande inte upp något ljud.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Inget program spelar för närvarande upp något ljud.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="66"/>
@@ -236,17 +236,17 @@
     <message>
         <location filename="../mainwindow.ui" line="120"/>
         <source>&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Inget program spelar för närvarande inte in något ljud.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Inget program spelar för närvarande in något ljud.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>&amp;Utgångsenheter</translation>
+        <translation>&amp;Uppspelningsenheter</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
         <source>&lt;i&gt;No output devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Inga utgångsenheter tillgängliga&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Inga uppspelningsenheter tillgängliga&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="204"/>
@@ -266,12 +266,12 @@
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>&amp;Ingångsenheter</translation>
+        <translation>&amp;Inenheter</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
         <source>&lt;i&gt;No input devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Inga ingångsenheter tillgängliga&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Inga inenheter tillgängliga&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="269"/>
