@@ -112,7 +112,7 @@
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation>高度なオプションを表示</translation>
+        <translation>高度なオプションを表示する</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
@@ -190,7 +190,7 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>Volume Control</source>
-        <translation>音量調節</translation>
+        <translation>PulseAudio 音量調節</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="28"/>
@@ -544,12 +544,12 @@ PulseAudio がクラッシュして X11 Root Window に古い詳細が残って�
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
-        <translation>読み込み時にタブを指定してください。</translation>
+        <translation>起動してタブ&lt;tab&gt;を選択する。</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation>PulseAudio が終了した時、(5秒ごとに)再試行を繰り返します。</translation>
+        <translation>PulseAudio が終了した場合、(5 秒毎に)再試行を繰り返す。</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="678"/>
