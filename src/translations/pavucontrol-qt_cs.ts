@@ -41,7 +41,7 @@
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation>&lt;small&gt;Ticho&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Ztišit&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
