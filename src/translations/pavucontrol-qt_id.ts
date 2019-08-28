@@ -64,17 +64,17 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">Formulir</translation>
+        <translation>Formulir</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
         <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;depan-kiri&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
