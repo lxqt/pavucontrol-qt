@@ -538,19 +538,19 @@ run start-pulseaudio-x11 manually.</source>
 
 V tomto případě je to nejspíš proto, že je chybně nastavená proměnná PULSE_SERVER v
 Prostředí/Vlastnosti X11 kořenového okna nebo je v client.conf chybně nastaven parametr default-server.
-Tato situace také může nastat když PulseAudio spadne a zanechá visící podrobnosti v kořenovém okně X11.
+Tato situace také může nastat když PulseAudio zhavaruje a zanechá staré údaje v kořenovém okně X11.
 Pokud tomu je tak, PulseAudio by se mělo automaticky znovu spustit, nebo pokud tak není nastavené,
 je třeba ručně spustit start-pulseaudio-x11.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
-        <translation>Při načítání vybrat konkrétní kartu.</translation>
+        <translation>Při načítání vybrat konkrétní panel.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation>Pokud PulseAudio skončí, opakovat pořád (každých 5 sekund).</translation>
+        <translation>Pokud PulseAudio skončí, opakovat neustále (každých 5 sekund).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="678"/>
@@ -576,7 +576,7 @@ je třeba ručně spustit start-pulseaudio-x11.</translation>
     <message>
         <location filename="../sinkinputwidget.cc" line="36"/>
         <source>on</source>
-        <translation>zapnuto</translation>
+        <translation>na</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
