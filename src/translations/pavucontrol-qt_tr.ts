@@ -381,37 +381,37 @@
     <message>
         <location filename="../pavucontrol.cc" line="87"/>
         <source>Card callback failure</source>
-        <translation>Kaynak geri-çağırma hatası</translation>
+        <translation>Card geri çağırma hatası</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
-        <translation>Sink geri-çağırma hatası</translation>
+        <translation>Sink geri çağırma hatası</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="133"/>
         <source>Source callback failure</source>
-        <translation>Kaynak geri-çağırma hatası</translation>
+        <translation>Kaynak geri çağırma hatası</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
-        <translation>Sink girdisi geri-çağırma hatası</translation>
+        <translation>Sink girdisi geri çağırma hatası</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="171"/>
         <source>Source output callback failure</source>
-        <translation>Kaynak çıkışı geri-çağırma hatası</translation>
+        <translation>Kaynak çıktısı geri çağırma hatası</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="211"/>
         <source>Client callback failure</source>
-        <translation>İstemci geri-çağırma hatası</translation>
+        <translation>İstemci geri çağırma hatası</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="227"/>
         <source>Server info callback failure</source>
-        <translation>Sunucu bilgisi geri-çağırma hatası</translation>
+        <translation>Sunucu bilgisi geri çağırma hatası</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="245"/>
