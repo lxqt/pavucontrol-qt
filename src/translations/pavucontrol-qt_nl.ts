@@ -19,7 +19,7 @@
         <translation>Profiel:</translation>
     </message>
     <message>
-        <location filename="../cardwidget.cc" line="68"/>
+        <location filename="../cardwidget.cc" line="67"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
         <translation>pa_context_set_card_profile_by_index() mislukt</translation>
     </message>
@@ -325,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="258"/>
+        <location filename="../mainwindow.cc" line="257"/>
         <source> (unavailable)</source>
         <translation> (niet beschikbaar)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="255"/>
+        <location filename="../mainwindow.cc" line="254"/>
         <source> (unplugged)</source>
         <translation> (niet verbonden)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="389"/>
+        <location filename="../mainwindow.cc" line="388"/>
         <source>Failed to read data from stream</source>
         <translation>Kon geen gegevens lezen uit de stroom</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="433"/>
+        <location filename="../mainwindow.cc" line="432"/>
         <source>Peak detect</source>
         <translation>Piekbewaking</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="434"/>
+        <location filename="../mainwindow.cc" line="433"/>
         <source>Failed to create monitoring stream</source>
         <translation>Kon geen bewakingsstroom maken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="449"/>
+        <location filename="../mainwindow.cc" line="448"/>
         <source>Failed to connect monitoring stream</source>
         <translation>Kon niet verbinden met bewakingsstroom</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="588"/>
+        <location filename="../mainwindow.cc" line="587"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation>De &apos;sink-input&apos; wordt genegeerd, aangezien die is aangewezen als gebeurtenis en dus wordt afgehandeld door het Event-bedieningselement</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="760"/>
+        <location filename="../mainwindow.cc" line="759"/>
         <source>System Sounds</source>
         <translation>Systeemgeluiden</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1090"/>
+        <location filename="../mainwindow.cc" line="1089"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>Verbinding met PulseAudio wordt tot stand gebracht. Even geduld a.u.b...</translation>
     </message>
@@ -637,7 +637,7 @@ Deze situatie kan ook ontstaan wanneer PulseAudio is vastgelopen en verouderde d
 <context>
     <name>SourceOutputWidget</name>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="36"/>
+        <location filename="../sourceoutputwidget.cc" line="35"/>
         <source>from</source>
         <translation>van</translation>
     </message>

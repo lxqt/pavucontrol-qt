@@ -19,7 +19,7 @@
         <translation>Profil :</translation>
     </message>
     <message>
-        <location filename="../cardwidget.cc" line="68"/>
+        <location filename="../cardwidget.cc" line="67"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
         <translation>pa_context_set_card_profile_by_index() a échoué</translation>
     </message>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Port :&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Port&#xa0;:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="126"/>
@@ -325,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="258"/>
+        <location filename="../mainwindow.cc" line="257"/>
         <source> (unavailable)</source>
         <translation> (non disponible)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="255"/>
+        <location filename="../mainwindow.cc" line="254"/>
         <source> (unplugged)</source>
         <translation> (non enfiché)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="389"/>
+        <location filename="../mainwindow.cc" line="388"/>
         <source>Failed to read data from stream</source>
         <translation>Échec de la lecture de données du flux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="433"/>
+        <location filename="../mainwindow.cc" line="432"/>
         <source>Peak detect</source>
         <translation>Détection de crête</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="434"/>
+        <location filename="../mainwindow.cc" line="433"/>
         <source>Failed to create monitoring stream</source>
         <translation>Échec de la création du flux de surveillance</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="449"/>
+        <location filename="../mainwindow.cc" line="448"/>
         <source>Failed to connect monitoring stream</source>
         <translation>Échec de la connexion au flux de surveillance</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="588"/>
+        <location filename="../mainwindow.cc" line="587"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation>Ignorer l&apos;entrée du récepteur car il est désigné comme événement et donc traité par le widget des événements</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="760"/>
+        <location filename="../mainwindow.cc" line="759"/>
         <source>System Sounds</source>
         <translation>Sons du système</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1090"/>
+        <location filename="../mainwindow.cc" line="1089"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>Établissement de la connexion à PulseAudio. Patientez...</translation>
     </message>
@@ -640,7 +640,7 @@ lancer manuellement start-pulseaudio-x11.</translation>
 <context>
     <name>SourceOutputWidget</name>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="36"/>
+        <location filename="../sourceoutputwidget.cc" line="35"/>
         <source>from</source>
         <translation>de</translation>
     </message>

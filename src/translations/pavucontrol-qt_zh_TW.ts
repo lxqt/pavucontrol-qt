@@ -19,7 +19,7 @@
         <translation>組態：</translation>
     </message>
     <message>
-        <location filename="../cardwidget.cc" line="68"/>
+        <location filename="../cardwidget.cc" line="67"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
         <translation>pa_context_set_card_profile_by_index() 失敗</translation>
     </message>
@@ -325,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="258"/>
+        <location filename="../mainwindow.cc" line="257"/>
         <source> (unavailable)</source>
         <translation> (不可用)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="255"/>
+        <location filename="../mainwindow.cc" line="254"/>
         <source> (unplugged)</source>
         <translation> (移除)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="389"/>
+        <location filename="../mainwindow.cc" line="388"/>
         <source>Failed to read data from stream</source>
         <translation>無法從串流讀取資料</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="433"/>
+        <location filename="../mainwindow.cc" line="432"/>
         <source>Peak detect</source>
         <translation>峰值偵測</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="434"/>
+        <location filename="../mainwindow.cc" line="433"/>
         <source>Failed to create monitoring stream</source>
         <translation>無法新增監控串流</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="449"/>
+        <location filename="../mainwindow.cc" line="448"/>
         <source>Failed to connect monitoring stream</source>
         <translation>無法連結監控串流</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="588"/>
+        <location filename="../mainwindow.cc" line="587"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation>忽略sink-input，由於它被設計為事件，因此歸「事件小工具」處理</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="760"/>
+        <location filename="../mainwindow.cc" line="759"/>
         <source>System Sounds</source>
         <translation>系統音效</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1090"/>
+        <location filename="../mainwindow.cc" line="1089"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>與PulseAudio建立連線中。請稍後...</translation>
     </message>
@@ -640,7 +640,7 @@ run start-pulseaudio-x11 manually.</source>
 <context>
     <name>SourceOutputWidget</name>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="36"/>
+        <location filename="../sourceoutputwidget.cc" line="35"/>
         <source>from</source>
         <translation>來自</translation>
     </message>
