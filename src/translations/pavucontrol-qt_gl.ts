@@ -195,7 +195,7 @@
     <message>
         <location filename="../mainwindow.ui" line="55"/>
         <source>&lt;i&gt;No application is currently playing audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Non hai ningún aplicativo reproducindo son.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Non hai ningunha aplicación reproducindo son.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="66"/>
@@ -215,7 +215,7 @@
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation>Aplicativos</translation>
+        <translation>Aplicacións</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="84"/>
@@ -226,7 +226,7 @@
     <message>
         <location filename="../mainwindow.ui" line="120"/>
         <source>&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Non hai ningún aplicativo gravando son.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Non hai ningunha aplicación gravando son.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
