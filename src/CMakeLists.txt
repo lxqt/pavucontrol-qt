@@ -69,15 +69,6 @@ set_property(
      PAVUCONTROL_QT_DATA_DIR="${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}"
 )
 
-target_compile_definitions(pavucontrol-qt
-    PRIVATE
-        QT_USE_QSTRINGBUILDER
-        QT_NO_CAST_FROM_ASCII
-        QT_NO_CAST_TO_ASCII
-        QT_NO_URL_CAST_FROM_STRING
-        QT_NO_CAST_FROM_BYTEARRAY
-)
-
 target_link_libraries(pavucontrol-qt
     Qt5::Widgets
     Qt5::DBus
