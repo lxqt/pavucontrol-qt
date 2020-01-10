@@ -16,7 +16,7 @@
     <message>
         <location filename="../cardwidget.ui" line="47"/>
         <source>Profile:</source>
-        <translation></translation>
+        <translation>Profil:</translation>
     </message>
     <message>
         <location filename="../cardwidget.cc" line="67"/>
