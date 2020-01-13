@@ -69,12 +69,12 @@
     <message>
         <location filename="../channelwidget.ui" line="20"/>
         <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;b&gt;bal-elöl&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
