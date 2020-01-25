@@ -41,7 +41,7 @@
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation>&lt;small&gt;Csöndes&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Csendes&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Űrlap</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -517,7 +517,7 @@
         <location filename="../pavucontrol.cc" line="584"/>
         <location filename="../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation>Csatlakozás sikertelen, újrapróbáljuk</translation>
+        <translation>Csatlakozás sikertelen, újrapróbálkozás</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
@@ -534,7 +534,7 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation>A PulseAudio csatlakozás sikertelen. Automata újra próbálkozás 5 mp.múlva
+        <translation type="unfinished">A PulseAudio csatlakozás sikertelen. Automata újra próbálkozás 5 mp.múlva
 
 Lehet, hogy a PULSE_SERVER az X11 Root Window Tulajdonság ablakban
 , vagy a client.conf -ban a z alapértelmezett szerver nincs jól van beállítva.
@@ -545,12 +545,12 @@ pulseaoudio-x11 -et elindítani.</translation>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
-        <translation>Válaszd a megfelelő fület a betöltéshez.</translation>
+        <translation>Válaszd a megfelelő lapot a betöltéshez.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation>MIndig újrapróbálkozik, ha a pa kilép (5 másodpercenként).</translation>
+        <translation>MIndig újrapróbálkozik, ha a PA kilép (5 másodpercenként).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="678"/>
@@ -560,7 +560,7 @@ pulseaoudio-x11 -et elindítani.</translation>
     <message>
         <location filename="../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation>Végzetes hiba: A PulseAudo csatlakozás sikertelen</translation>
+        <translation>Végzetes hiba: A PulseAudio csatlakozás sikertelen</translation>
     </message>
 </context>
 <context>
@@ -601,7 +601,7 @@ pulseaoudio-x11 -et elindítani.</translation>
     <message>
         <location filename="../sinkinputwidget.cc" line="89"/>
         <source>pa_context_kill_sink_input() failed</source>
-        <translation>pa_context_kill_sink_input() meghiúsu</translation>
+        <translation>pa_context_kill_sink_input() meghiúsult</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="114"/>
@@ -703,7 +703,7 @@ pulseaoudio-x11 -et elindítani.</translation>
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation>Ürlap</translation>
+        <translation>Űrlap</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="32"/>
