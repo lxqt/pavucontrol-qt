@@ -534,9 +534,10 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation>Pripojenie k PulseAudio zlyhalo. Pokus o znovupripojenie za
+        <translation>Pripojenie k PulseAudio zlyhalo. Pokus o znovupripojenie o 5 s
 
-V tomto prípade je to pravdepodobne preto, že koreňový vlastníkom PULSE_SERVER je X11 alebo client.conf je nesprávne nakonfigurovaný. Táto situácia môže nastať ak PulseAudio zlyhalo pri štarte, detaily je možné nájsť v hlásení koreňového systému X11. Pokúste sa prosím reštartovať sever PulseAudio</translation>
+Dôvodom môže byť, že premenná prostredia (alebo vlastnosť koreňového okna X11) PULSE_SERVER je nesprávne nastavená.
+Táto situácia môže nastať, ak proces PulseAudio havaroval a nechal neplatné údaje vo vlastnostiach koreňového okna X11. V takom prípade by malo PulseAudio opäť automaticky naštartovať. Ak sa nespúšťa automaticky, je možné spustiť start-pulseaudio-x11 ručne.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
