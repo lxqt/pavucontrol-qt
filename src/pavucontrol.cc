@@ -51,6 +51,7 @@
 #include <QCommandLineOption>
 #include <QString>
 #include <QSocketNotifier>
+#include <QDebug>
 
 static pa_context* context = nullptr;
 static pa_mainloop_api* api = nullptr;
@@ -78,6 +79,22 @@ struct QtPaMainLoop
         pa_vtable.time_free = freeTimer;
         pa_vtable.time_set_destroy = timerSetDestructor;
         pa_vtable.time_set_destroy = timerSetDestructor;
+
+        pa_vtable.defer_new = newDefer;
+        pa_vtable.defer_enable = setDeferEnabled;
+        pa_vtable.defer_free = freeDefer;
+        pa_vtable.defer_set_destroy = deferSetDestructor;
+
+        pa_vtable.quit = quit;
+    }
+
+    static int msecsUntilTimeval(const struct timeval *tv)
+    {
+        time_t target = tv->tv_sec * 1000;
+        if (tv->tv_usec) {
+            target += tv->tv_usec / 1000;
+        }
+        return QDateTime::currentDateTime().msecsTo(QDateTime::fromMSecsSinceEpoch(target));
     }
 
     static pa_time_event *newTimer(pa_mainloop_api *a, const struct timeval *tv, pa_time_event_cb_t callback, void *userdata) {
@@ -86,31 +103,35 @@ struct QtPaMainLoop
         timer->setParent(qApp);
         timer->setSingleShot(true);
 
-        int interval = tv->tv_sec * 1000;
         Qt::TimerType timerType = Qt::VeryCoarseTimer;
         if (tv->tv_usec) {
-            interval += tv->tv_usec / 1000;
             timerType = Qt::PreciseTimer;
         }
         timer->setTimerType(timerType);
         QObject::connect(timer, &QTimer::timeout, [=]() {
             callback(a, reinterpret_cast<pa_time_event*>(timer), tv, userdata);
         });
-        timer->start(interval);
+        int duration = msecsUntilTimeval(tv);
+        if (duration < 0) {
+            qWarning() << "Invalid timer target, sec:" << tv->tv_sec << "usec" << tv->tv_usec;
+        }
+        timer->start(duration);
 
         return reinterpret_cast<pa_time_event*>(timer);
     }
 
     static void restartTimer(pa_time_event *e, const timeval *tv) {
         QTimer *timer = reinterpret_cast<QTimer*>(e);
-        int interval = tv->tv_sec * 1000;
         Qt::TimerType timerType = Qt::VeryCoarseTimer;
         if (tv->tv_usec) {
-            interval += tv->tv_usec / 1000;
             timerType = Qt::PreciseTimer;
         }
         timer->setTimerType(timerType);
-        timer->start(interval);
+        int duration = msecsUntilTimeval(tv);
+        if (duration < 0) {
+            qWarning() << "Invalid restart timer target, sec:" << tv->tv_sec << "usec" << tv->tv_usec;
+        }
+        timer->start(duration);
     }
 
     static void freeTimer(pa_time_event *e) {
@@ -254,6 +275,12 @@ struct QtPaMainLoop
         QObject::connect(timer, &QTimer::destroyed, [=]() {
             destructor(reinterpret_cast<pa_mainloop_api*>(timer->parent()), e, qvariant_cast<void*>(timer->property("PA_USERDATA")));
         });
+    }
+
+    static void quit(pa_mainloop_api*a, int retval) {
+        Q_UNUSED(a);
+
+        qApp->exit(retval);
     }
 };
 
@@ -887,10 +914,12 @@ int main(int argc, char *argv[]) {
     if(parser.isSet(maximizeOption))
         mainWindow->showMaximized();
 
-    pa_glib_mainloop *m = pa_glib_mainloop_new(g_main_context_default());
-    g_assert(m);
-    api = pa_glib_mainloop_get_api(m);
-    g_assert(api);
+    QtPaMainLoop mainloop;
+    api = &mainloop.pa_vtable;
+    //pa_glib_mainloop *m = pa_glib_mainloop_new(g_main_context_default());
+    //g_assert(m);
+    //api = pa_glib_mainloop_get_api(m);
+    //g_assert(api);
 
     connect_to_pulse(mainWindow);
     if (reconnect_timeout >= 0) {
@@ -905,7 +934,7 @@ int main(int argc, char *argv[]) {
 
     if (context)
         pa_context_unref(context);
-    pa_glib_mainloop_free(m);
+    //pa_glib_mainloop_free(m);
 
     return 0;
 }
