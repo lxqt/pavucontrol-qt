@@ -135,7 +135,7 @@ MainWindow::~MainWindow() {
 
     while (!clientNames.empty()) {
         auto i = clientNames.begin();
-        free(i->second);
+        delete[] i->second;
         clientNames.erase(i);
     }
 }
@@ -687,7 +687,7 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
 }
 
 void MainWindow::updateClient(const pa_client_info &info) {
-    free(clientNames[info.index]);
+    delete[] clientNames[info.index];
     clientNames[info.index] = qstrdup(info.name);
 
     for (auto & sinkInputWidget : sinkInputWidgets) {
@@ -1048,7 +1048,7 @@ void MainWindow::removeSourceOutput(uint32_t index) {
 }
 
 void MainWindow::removeClient(uint32_t index) {
-    free(clientNames[index]);
+    delete[] clientNames[index];
     clientNames.erase(index);
 }
 
