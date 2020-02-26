@@ -70,7 +70,6 @@ set_property(
 
 target_link_libraries(pavucontrol-qt
     Qt5::Widgets
-    Qt5::DBus
     ${PULSE_LDFLAGS}
 )
 

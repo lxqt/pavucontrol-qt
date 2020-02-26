@@ -23,7 +23,6 @@ set(QT_MINIMUM_VERSION "5.7.1")
 
 find_package(Qt5Widgets ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt5LinguistTools ${QT_MINIMUM_VERSION} REQUIRED)
-find_package(Qt5DBus ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
 
 set(PAVUCONTROLQT_MAJOR_VERSION 0)
