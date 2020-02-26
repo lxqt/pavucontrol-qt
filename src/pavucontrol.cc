@@ -50,6 +50,7 @@
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 #include <QString>
+#include <QSocketNotifier>
 
 static pa_context* context = nullptr;
 static pa_mainloop_api* api = nullptr;
@@ -181,12 +182,140 @@ struct QtPaMainLoop
 
     void timerSetDestructor(pa_time_event *e, pa_time_event_destroy_cb_t destructor) {
         QTimer *timer = reinterpret_cast<QTimer*>(e);
-        QObject::connect(timer, &QTimer::timeout, [=]() {
+        QObject::connect(timer, &QTimer::destroyed, [=]() {
             destructor(reinterpret_cast<pa_mainloop_api*>(timer->parent()), e, qvariant_cast<void*>(timer->property("PA_USERDATA")));
         });
     }
 
+    struct SocketNotifierWrapper {
+        ~SocketNotifierWrapper() {
+            delete readNotifier;
+            delete writeNotifier;
+            delete errorNotifier;
+            if (destructor) {
+                destructor(a, reinterpret_cast<pa_io_event*>(this), userdata);
+            }
+        }
+
+        QSocketNotifier *readNotifier = nullptr;
+        QSocketNotifier *writeNotifier = nullptr;
+        QSocketNotifier *errorNotifier = nullptr;
+
+        pa_io_event_destroy_cb_t destructor = nullptr;
+
+        void *userdata;
+        pa_mainloop_api *a;
+    };
+
     pa_io_event *newIoEvent(pa_mainloop_api*a, int fd, pa_io_event_flags_t events, pa_io_event_cb_t cb, void *userdata) {
+        SocketNotifierWrapper *wrapper = new SocketNotifierWrapper;
+        wrapper->userdata = userdata;
+        wrapper->a = a;
+
+        wrapper->readNotifier = new QSocketNotifier(fd, QSocketNotifier::Read, qApp);
+        QObject::connect(wrapper->readNotifier, &QSocketNotifier::activated, [=]() {
+                cb(a, reinterpret_cast<pa_io_event*>(wrapper), userdata);
+        });
+
+        wrapper->writeNotifier = new QSocketNotifier(fd, QSocketNotifier::Write, qApp);
+        QObject::connect(wrapper->writeNotifier, &QSocketNotifier::activated, [=]() {
+                cb(a, reinterpret_cast<pa_io_event*>(wrapper), userdata);
+        });
+
+        wrapper->errorNotifier = new QSocketNotifier(fd, QSocketNotifier::Exception, qApp);
+
+        QObject::connect(wrapper->errorNotifier, &QSocketNotifier::activated, [=]() {
+                cb(a, reinterpret_cast<pa_io_event*>(wrapper), userdata);
+        });
+
+        if (events & PA_IO_EVENT_INPUT) {
+            wrapper->readNotifier->setEnabled(true);
+        } else {
+            wrapper->readNotifier->setEnabled(false);
+        }
+
+
+        if (events & PA_IO_EVENT_OUTPUT) {
+            wrapper->writeNotifier->setEnabled(true);
+        } else {
+            wrapper->writeNotifier->setEnabled(false);
+        }
+
+        if (events & PA_IO_EVENT_ERROR || events & PA_IO_EVENT_HANGUP) {
+            wrapper->errorNotifier->setEnabled(true);
+        } else {
+            wrapper->errorNotifier->setEnabled(false);
+        }
+
+        return reinterpret_cast<pa_io_event*>(wrapper);
+    }
+
+    void setIoDestructor(pa_io_event *e, pa_io_event_destroy_cb_t cb) {
+        SocketNotifierWrapper *wrapper = reinterpret_cast<SocketNotifierWrapper*>(e);
+        e->destructor = cb;
+    }
+
+    void setIoEnabled(pa_io_event* e, pa_io_event_flags_t events) {
+        SocketNotifierWrapper *wrapper = reinterpret_cast<SocketNotifierWrapper*>(e);
+
+        if (events & PA_IO_EVENT_INPUT) {
+            wrapper->readNotifier->setEnabled(true);
+        } else {
+            wrapper->readNotifier->setEnabled(false);
+        }
+
+        if (events & PA_IO_EVENT_OUTPUT) {
+            wrapper->writeNotifier->setEnabled(true);
+        } else {
+            wrapper->writeNotifier->setEnabled(false);
+        }
+
+        if (events & PA_IO_EVENT_ERROR || events & PA_IO_EVENT_HANGUP) {
+            wrapper->errorNotifier->setEnabled(true);
+        } else {
+            wrapper->errorNotifier->setEnabled(false);
+        }
+    }
+
+    void ioDestroy(pa_io_event *e) {
+        SocketNotifierWrapper *wrapper = reinterpret_cast<SocketNotifierWrapper*>(e);
+        delete wrapper;
+    }
+
+    static pa_defer_event *newDefer(pa_mainloop_api *a, pa_defer_event_cb_t callback, void *userdata) {
+        QTimer *timer = new QTimer();
+        timer->setProperty("PA_USERDATA", QVariant::fromValue(userdata));
+        timer->setParent(qApp);
+        //timer->setParent(reinterpret_cast<QtPaMainLoop*>(a));
+        timer->setSingleShot(true);
+
+        QObject::connect(timer, &QTimer::timeout, [=]() {
+            callback(a, reinterpret_cast<pa_time_event*>(timer), userdata);
+        });
+        timer->start(0);
+
+        return reinterpret_cast<pa_defer_event*>(timer);
+    }
+
+    void setDeferEnabled(pa_defer_event *e, int b) {
+        QTimer *timer = reinterpret_cast<QTimer*>(e);
+        if (b) {
+            timer->start(0);
+        } else {
+            timer->stop();
+        }
+    }
+
+    void freeDefer(pa_defer_event *e) {
+        QTimer *timer = reinterpret_cast<QTimer*>(e);
+        delete timer;
+    }
+
+    void deferSetDestructor(pa_defer_event *e, pa_defer_event_destroy_cb_t destructor) {
+        QTimer *timer = reinterpret_cast<QTimer*>(e);
+        QObject::connect(timer, &QTimer::destroyed, [=]() {
+            destructor(reinterpret_cast<pa_mainloop_api*>(timer->parent()), e, qvariant_cast<void*>(timer->property("PA_USERDATA")));
+        });
     }
 
     //static pa_timer_event *newTimer(pa_mainloop_api *a, const struct timeval *tv, pa_time_event_cb_t callback, void *userdata) {
