@@ -73,7 +73,7 @@ public:
     std::map<uint32_t, SinkInputWidget*> sinkInputWidgets;
     std::map<uint32_t, SourceOutputWidget*> sourceOutputWidgets;
 
-    std::map<uint32_t, char*> clientNames;
+    QMap<int, QString> clientNames;
     SinkInputType showSinkInputType;
     SinkType showSinkType;
     SourceOutputType showSourceOutputType;

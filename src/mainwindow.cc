@@ -133,11 +133,7 @@ MainWindow::~MainWindow() {
     config.setValue(QStringLiteral("window/sourceType"), sourceTypeComboBox->currentIndex());
     config.setValue(QStringLiteral("window/showVolumeMeters"), showVolumeMetersCheckButton->isChecked());
 
-    while (!clientNames.empty()) {
-        auto i = clientNames.begin();
-        delete[] i->second;
-        clientNames.erase(i);
-    }
+    clientNames.clear();
 }
 
 class DeviceWidget;
@@ -610,8 +606,8 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
 
     w->setSinkIndex(info.sink);
 
-    if (clientNames.count(info.client)) {
-        w->boldNameLabel->setText(QStringLiteral("<b>%1</b>").arg(QString::fromUtf8(clientNames[info.client]).toHtmlEscaped()));
+    if (clientNames.contains(info.client)) {
+        w->boldNameLabel->setText(QStringLiteral("<b>%1</b>").arg(clientNames[info.client]));
         w->nameLabel->setText(QString::asprintf(": %s", info.name).toHtmlEscaped());
     } else {
         w->boldNameLabel->setText(QLatin1String(""));
@@ -663,8 +659,8 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
 
     w->setSourceIndex(info.source);
 
-    if (clientNames.count(info.client)) {
-        w->boldNameLabel->setText(QStringLiteral("<b>%1</b>").arg(QString::fromUtf8(clientNames[info.client]).toHtmlEscaped()));
+    if (clientNames.contains(info.client)) {
+        w->boldNameLabel->setText(QStringLiteral("<b>%1</b>").arg(clientNames[info.client]));
         w->nameLabel->setText(QString::asprintf(": %s", info.name).toHtmlEscaped());
     } else {
         w->boldNameLabel->setText(QLatin1String(""));
@@ -687,8 +683,7 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
 }
 
 void MainWindow::updateClient(const pa_client_info &info) {
-    delete[] clientNames[info.index];
-    clientNames[info.index] = qstrdup(info.name);
+    clientNames[info.index] = QString::fromUtf8(info.name).toHtmlEscaped();
 
     for (auto & sinkInputWidget : sinkInputWidgets) {
         SinkInputWidget *w = sinkInputWidget.second;
@@ -1048,8 +1043,7 @@ void MainWindow::removeSourceOutput(uint32_t index) {
 }
 
 void MainWindow::removeClient(uint32_t index) {
-    delete[] clientNames[index];
-    clientNames.erase(index);
+    clientNames.remove(index);
 }
 
 void MainWindow::removeAllWidgets() {
@@ -1063,8 +1057,7 @@ void MainWindow::removeAllWidgets() {
         removeSource(sourceWidget.first);
     for (auto & cardWidget : cardWidgets)
        removeCard(cardWidget.first);
-    for (auto & clientName : clientNames)
-        removeClient(clientName.first);
+    clientNames.clear();
     deleteEventRoleWidget();
 }
 
