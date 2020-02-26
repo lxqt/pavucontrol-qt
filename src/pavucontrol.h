@@ -23,7 +23,6 @@
 
 #include <signal.h>
 #include <string.h>
-#include <glib.h>
 
 #include <pulse/pulseaudio.h>
 

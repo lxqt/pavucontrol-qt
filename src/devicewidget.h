@@ -43,7 +43,7 @@ public:
 
     void hideLockedChannels(bool hide = true);
 
-    QByteArray name;
+    QString name;
     QByteArray description;
     uint32_t index, card_index;
 
@@ -85,7 +85,7 @@ protected:
     QAction * rename;
 
 private:
-    QByteArray mDeviceType;
+    QString mDeviceType;
 
 };
 

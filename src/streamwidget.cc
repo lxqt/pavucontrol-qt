@@ -72,7 +72,7 @@ void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
 }
 
 void StreamWidget::setVolume(const pa_cvolume &v, bool force) {
-    g_assert(v.channels == channelMap.channels);
+    Q_ASSERT(v.channels == channelMap.channels);
 
     volume = v;
 
@@ -84,7 +84,7 @@ void StreamWidget::setVolume(const pa_cvolume &v, bool force) {
 
 void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
     pa_cvolume n;
-    g_assert(channel < volume.channels);
+    Q_ASSERT(channel < volume.channels);
 
     n = volume;
     if (lockToggleButton->isChecked()) {

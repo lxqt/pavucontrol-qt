@@ -87,7 +87,7 @@ protected Q_SLOTS:
     virtual void onShowVolumeMetersCheckButtonToggled(bool toggled);
 
 public:
-    void setConnectionState(gboolean connected);
+    void setConnectionState(bool connected);
     void updateDeviceVisibility();
     void reallyUpdateDeviceVisibility();
     pa_stream* createMonitorStreamForSource(uint32_t source_idx, uint32_t stream_idx, bool suspend);
@@ -105,8 +105,8 @@ public:
     bool canRenameDevices;
 
 private:
-    gboolean m_connected;
-    gchar* m_config_filename;
+    bool m_connected;
+    char* m_config_filename;
 };
 
 

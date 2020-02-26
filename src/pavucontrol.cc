@@ -25,7 +25,6 @@
 #define PACKAGE_VERSION "0.1"
 
 #include <pulse/pulseaudio.h>
-#include <pulse/glib-mainloop.h>
 #include <pulse/ext-stream-restore.h>
 #include <pulse/ext-device-manager.h>
 
@@ -468,7 +467,7 @@ void ext_stream_restore_read_cb(
 
     if (eol < 0) {
         dec_outstanding(w);
-        g_debug(QObject::tr("Failed to initialize stream_restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
+        qDebug(QObject::tr("Failed to initialize stream_restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
         w->deleteEventRoleWidget();
         return;
     }
@@ -504,7 +503,7 @@ void ext_device_restore_read_cb(
 
     if (eol < 0) {
         dec_outstanding(w);
-        g_debug(QObject::tr("Failed to initialize device restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
+        qDebug(QObject::tr("Failed to initialize device restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
         return;
     }
 
@@ -543,7 +542,7 @@ void ext_device_manager_read_cb(
 
     if (eol < 0) {
         dec_outstanding(w);
-        g_debug(QObject::tr("Failed to initialize device manager extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
+        qDebug(QObject::tr("Failed to initialize device manager extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
         return;
     }
 
@@ -665,12 +664,12 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index,
 }
 
 /* Forward Declaration */
-gboolean connect_to_pulse(gpointer userdata);
+void connect_to_pulse(MainWindow *w);
 
 void context_state_callback(pa_context *c, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
-    g_assert(c);
+    Q_ASSERT(c);
 
     switch (pa_context_get_state(c)) {
         case PA_CONTEXT_UNCONNECTED:
@@ -765,7 +764,7 @@ void context_state_callback(pa_context *c, void *userdata) {
                     pa_operation_unref(o);
 
             } else
-                g_debug(QObject::tr("Failed to initialize stream_restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
+                qDebug(QObject::tr("Failed to initialize stream_restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
 
 #if HAVE_EXT_DEVICE_RESTORE_API
             /* TODO Change this to just the test function */
@@ -779,7 +778,7 @@ void context_state_callback(pa_context *c, void *userdata) {
                     pa_operation_unref(o);
 
             } else
-                g_debug(QObject::tr("Failed to initialize device restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
+                qDebug(QObject::tr("Failed to initialize device restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
 #endif
 
             if ((o = pa_ext_device_manager_read(c, ext_device_manager_read_cb, w))) {
@@ -792,7 +791,7 @@ void context_state_callback(pa_context *c, void *userdata) {
                     pa_operation_unref(o);
 
             } else
-                g_debug(QObject::tr("Failed to initialize device manager extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
+                qDebug(QObject::tr("Failed to initialize device manager extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
 
 
             break;
@@ -807,8 +806,11 @@ void context_state_callback(pa_context *c, void *userdata) {
             context = nullptr;
 
             if (reconnect_timeout > 0) {
-                g_debug("%s", QObject::tr("Connection failed, attempting reconnect").toUtf8().constData());
-                g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, w);
+                qDebug("%s", QObject::tr("Connection failed, attempting reconnect").toUtf8().constData());
+                QTimer::singleShot(reconnect_timeout, qApp, [w]() {
+                        connect_to_pulse(w);
+                });
+                //g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, w);
             }
             return;
 
@@ -823,11 +825,9 @@ pa_context* get_context(void) {
   return context;
 }
 
-gboolean connect_to_pulse(gpointer userdata) {
-    MainWindow *w = static_cast<MainWindow*>(userdata);
-
+void connect_to_pulse(MainWindow *w) {
     if (context)
-        return false;
+        return;
 
     pa_proplist *proplist = pa_proplist_new();
     pa_proplist_sets(proplist, PA_PROP_APPLICATION_NAME, QObject::tr("PulseAudio Volume Control").toUtf8().constData());
@@ -836,7 +836,7 @@ gboolean connect_to_pulse(gpointer userdata) {
     pa_proplist_sets(proplist, PA_PROP_APPLICATION_VERSION, PACKAGE_VERSION);
 
     context = pa_context_new_with_proplist(api, nullptr, proplist);
-    g_assert(context);
+    Q_ASSERT(context);
 
     pa_proplist_free(proplist);
 
@@ -858,14 +858,15 @@ gboolean connect_to_pulse(gpointer userdata) {
                 reconnect_timeout = -1;
                 qApp->quit();
             } else {
-                g_debug("%s", QObject::tr("Connection failed, attempting reconnect").toUtf8().constData());
+                qDebug("%s", QObject::tr("Connection failed, attempting reconnect").toUtf8().constData());
                 reconnect_timeout = 5;
-                g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, userdata);
+                QTimer::singleShot(reconnect_timeout, qApp, [w]() {
+                        connect_to_pulse(w);
+                });
+                //g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, userdata);
             }
         }
     }
-
-    return false;
 }
 
 int main(int argc, char *argv[]) {
@@ -916,10 +917,6 @@ int main(int argc, char *argv[]) {
 
     QtPaMainLoop mainloop;
     api = &mainloop.pa_vtable;
-    //pa_glib_mainloop *m = pa_glib_mainloop_new(g_main_context_default());
-    //g_assert(m);
-    //api = pa_glib_mainloop_get_api(m);
-    //g_assert(api);
 
     connect_to_pulse(mainWindow);
     if (reconnect_timeout >= 0) {
@@ -934,7 +931,6 @@ int main(int argc, char *argv[]) {
 
     if (context)
         pa_context_unref(context);
-    //pa_glib_mainloop_free(m);
 
     return 0;
 }

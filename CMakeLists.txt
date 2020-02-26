@@ -18,7 +18,6 @@ set(CMAKE_AUTOUIC ON)
 include(GNUInstallDirs)
 
 # Minimum Versions
-set(GLIB_MINIMUM_VERSION "2.50.0")
 set(LXQTBT_MINIMUM_VERSION "0.6.0")
 set(QT_MINIMUM_VERSION "5.7.1")
 
@@ -26,8 +25,6 @@ find_package(Qt5Widgets ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt5LinguistTools ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt5DBus ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
-
-find_package(GLIB ${GLIB_MINIMUM_VERSION} REQUIRED)
 
 set(PAVUCONTROLQT_MAJOR_VERSION 0)
 set(PAVUCONTROLQT_MINOR_VERSION 14)
@@ -43,7 +40,6 @@ find_package(PkgConfig REQUIRED)
 pkg_check_modules(
     PULSE REQUIRED
     libpulse>=5.0
-    libpulse-mainloop-glib>=0.9.16
 )
 
 add_subdirectory(src)

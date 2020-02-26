@@ -57,11 +57,11 @@ void MinimalStreamWidget::updatePeak(double v) {
     lastPeak = v;
 
     if (v >= 0) {
-        peakProgressBar->setEnabled(TRUE);
+        peakProgressBar->setEnabled(true);
         int value = qRound(v * peakProgressBar->maximum());
         peakProgressBar->setValue(value);
     } else {
-        peakProgressBar->setEnabled(FALSE);
+        peakProgressBar->setEnabled(false);
         peakProgressBar->setValue(0);
     }
 

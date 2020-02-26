@@ -39,7 +39,7 @@ DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
     offsetButtonEnabled(false),
     mpMainWindow(parent),
     rename{new QAction{tr("Rename device..."), this}},
-    mDeviceType(deviceType) {
+    mDeviceType(QString::fromUtf8(deviceType)) {
 
     setupUi(this);
     advancedWidget->hide();
@@ -88,7 +88,7 @@ void DeviceWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
 }
 
 void DeviceWidget::setVolume(const pa_cvolume &v, bool force) {
-    g_assert(v.channels == channelMap.channels);
+    Q_ASSERT(v.channels == channelMap.channels);
 
     volume = v;
 
@@ -100,7 +100,7 @@ void DeviceWidget::setVolume(const pa_cvolume &v, bool force) {
 
 void DeviceWidget::updateChannelVolume(int channel, pa_volume_t v) {
     pa_cvolume n;
-    g_assert(channel < volume.channels);
+    Q_ASSERT(channel < volume.channels);
 
     n = volume;
     if (lockToggleButton->isChecked())
@@ -234,12 +234,11 @@ void DeviceWidget::renamePopup() {
             , QLineEdit::Normal, old_name, &ok);
     if (ok && new_name != old_name) {
         pa_operation* o;
-        gchar *key = g_markup_printf_escaped("%s:%s", mDeviceType.constData(), name.constData());
+        QByteArray key = QStringLiteral("%1:%2").arg(mDeviceType).arg(name).toHtmlEscaped().toUtf8();
 
-        if (!(o = pa_ext_device_manager_set_device_description(get_context(), key, new_name.toUtf8().constData(), nullptr, nullptr)))
+        if (!(o = pa_ext_device_manager_set_device_description(get_context(), key.constData(), new_name.toUtf8().constData(), nullptr, nullptr)))
             show_error(tr("pa_ext_device_manager_set_device_description() failed").toUtf8().constData());
         else
             pa_operation_unref(o);
-        g_free(key);
     }
 }

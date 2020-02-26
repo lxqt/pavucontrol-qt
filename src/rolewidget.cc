@@ -55,7 +55,7 @@ void RoleWidget::executeVolumeUpdate() {
     info.mute = muteToggleButton->isChecked();
 
     pa_operation* o;
-    if (!(o = pa_ext_stream_restore_write(get_context(), PA_UPDATE_REPLACE, &info, 1, TRUE, nullptr, nullptr))) {
+    if (!(o = pa_ext_stream_restore_write(get_context(), PA_UPDATE_REPLACE, &info, 1, true, nullptr, nullptr))) {
         show_error(tr("pa_ext_stream_restore_write() failed").toUtf8().constData());
         return;
     }

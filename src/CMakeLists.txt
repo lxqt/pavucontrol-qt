@@ -1,6 +1,5 @@
 include_directories(
     ${PULSE_INCLUDE_DIRS}
-    ${GLIB_INCLUDE_DIRS}
 )
 
 set(pavucontrol-qt_HDRS
@@ -73,7 +72,6 @@ target_link_libraries(pavucontrol-qt
     Qt5::Widgets
     Qt5::DBus
     ${PULSE_LDFLAGS}
-    ${GLIB_LDFLAGS}
 )
 
 install(TARGETS

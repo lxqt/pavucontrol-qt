@@ -135,7 +135,7 @@ MainWindow::~MainWindow() {
 
     while (!clientNames.empty()) {
         auto i = clientNames.begin();
-        g_free(i->second);
+        free(i->second);
         clientNames.erase(i);
     }
 }
@@ -330,10 +330,8 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
     w->type = info.flags & PA_SINK_HARDWARE ? SINK_HARDWARE : SINK_VIRTUAL;
 
     w->boldNameLabel->setText(QLatin1String(""));
-    gchar *txt = g_markup_printf_escaped("%s", info.description);
-    w->nameLabel->setText(QString::fromUtf8(static_cast<char*>(txt)));
+    w->nameLabel->setText(QString::asprintf("%s", info.description).toHtmlEscaped());
     w->nameLabel->setToolTip(QString::fromUtf8(info.description));
-    g_free(txt);
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
     setIconByName(w->iconImage, icon ? icon : "audio-card");
@@ -496,10 +494,8 @@ void MainWindow::updateSource(const pa_source_info &info) {
     w->type = info.monitor_of_sink != PA_INVALID_INDEX ? SOURCE_MONITOR : (info.flags & PA_SOURCE_HARDWARE ? SOURCE_HARDWARE : SOURCE_VIRTUAL);
 
     w->boldNameLabel->setText(QLatin1String(""));
-    gchar *txt = g_markup_printf_escaped("%s", info.description);
-    w->nameLabel->setText(QString::fromUtf8(static_cast<char*>(txt)));
+    w->nameLabel->setText(QString::asprintf("%s", info.description).toHtmlEscaped());
     w->nameLabel->setToolTip(QString::fromUtf8(info.description));
-    g_free(txt);
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
     setIconByName(w->iconImage, icon ? icon : "audio-input-microphone");
@@ -584,7 +580,7 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
 
     if ((t = pa_proplist_gets(info.proplist, "module-stream-restore.id"))) {
         if (strcmp(t, "sink-input-by-media-role:event") == 0) {
-            g_debug("%s", tr("Ignoring sink-input due to it being designated as an event and thus handled by the Event widget").toUtf8().constData());
+            qDebug("%s", tr("Ignoring sink-input due to it being designated as an event and thus handled by the Event widget").toUtf8().constData());
             return;
         }
     }
@@ -614,12 +610,9 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info) {
 
     w->setSinkIndex(info.sink);
 
-    char *txt;
     if (clientNames.count(info.client)) {
-        w->boldNameLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped("<b>%s</b>", clientNames[info.client])));
-        g_free(txt);
-        w->nameLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped(": %s", info.name)));
-        g_free(txt);
+        w->boldNameLabel->setText(QStringLiteral("<b>%1</b>").arg(QString::fromUtf8(clientNames[info.client]).toHtmlEscaped()));
+        w->nameLabel->setText(QString::asprintf(": %s", info.name).toHtmlEscaped());
     } else {
         w->boldNameLabel->setText(QLatin1String(""));
         w->nameLabel->setText(QString::fromUtf8(info.name));
@@ -670,12 +663,9 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
 
     w->setSourceIndex(info.source);
 
-    char *txt;
     if (clientNames.count(info.client)) {
-        w->boldNameLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped("<b>%s</b>", clientNames[info.client])));
-        g_free(txt);
-        w->nameLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped(": %s", info.name)));
-        g_free(txt);
+        w->boldNameLabel->setText(QStringLiteral("<b>%1</b>").arg(QString::fromUtf8(clientNames[info.client]).toHtmlEscaped()));
+        w->nameLabel->setText(QString::asprintf(": %s", info.name).toHtmlEscaped());
     } else {
         w->boldNameLabel->setText(QLatin1String(""));
         w->nameLabel->setText(QString::fromUtf8(info.name));
@@ -697,8 +687,8 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info) {
 }
 
 void MainWindow::updateClient(const pa_client_info &info) {
-    g_free(clientNames[info.index]);
-    clientNames[info.index] = g_strdup(info.name);
+    free(clientNames[info.index]);
+    clientNames[info.index] = qstrdup(info.name);
 
     for (auto & sinkInputWidget : sinkInputWidgets) {
         SinkInputWidget *w = sinkInputWidget.second;
@@ -707,9 +697,7 @@ void MainWindow::updateClient(const pa_client_info &info) {
             continue;
 
         if (w->clientIndex == info.index) {
-            gchar *txt;
-            w->boldNameLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped("<b>%s</b>", info.name)));
-            g_free(txt);
+            w->boldNameLabel->setText(QStringLiteral("<b>%1</b>").arg(QString::fromUtf8(info.name).toHtmlEscaped()));
         }
     }
 }
@@ -772,7 +760,7 @@ bool MainWindow::createEventRoleWidget() {
     eventRoleWidget->muteToggleButton->setChecked(false);
 
     eventRoleWidget->updating = false;
-    return TRUE;
+    return true;
 }
 
 void MainWindow::deleteEventRoleWidget() {
@@ -870,15 +858,7 @@ void MainWindow::updateVolumeMeter(uint32_t source_index, uint32_t sink_input_id
     }
 }
 
-static guint idle_source = 0;
-
-gboolean idle_cb(gpointer data) {
-    ((MainWindow*) data)->reallyUpdateDeviceVisibility();
-    idle_source = 0;
-    return FALSE;
-}
-
-void MainWindow::setConnectionState(gboolean connected) {
+void MainWindow::setConnectionState(bool connected) {
     if (m_connected != connected) {
         m_connected = connected;
         if (m_connected) {
@@ -891,15 +871,20 @@ void MainWindow::setConnectionState(gboolean connected) {
     }
 }
 
+// TODO: hack to quickly port away from glib
+static bool has_updated = true;
+
 void MainWindow::updateDeviceVisibility() {
-
-    if (idle_source)
+    if (!has_updated) {
         return;
-
-    idle_source = g_idle_add(idle_cb, this);
+    }
+    has_updated = false;
+    QMetaObject::invokeMethod(this, &MainWindow::reallyUpdateDeviceVisibility);
 }
 
 void MainWindow::reallyUpdateDeviceVisibility() {
+    has_updated = true;
+
     bool is_empty = true;
 
     for (auto & sinkInputWidget : sinkInputWidgets) {
@@ -1063,7 +1048,7 @@ void MainWindow::removeSourceOutput(uint32_t index) {
 }
 
 void MainWindow::removeClient(uint32_t index) {
-    g_free(clientNames[index]);
+    free(clientNames[index]);
     clientNames.erase(index);
 }
 

@@ -32,9 +32,7 @@ SourceOutputWidget::SourceOutputWidget(MainWindow *parent) :
     menu{new QMenu{this}}
 {
 
-    gchar *txt = g_markup_printf_escaped("<i>%s</i>", tr("from").toUtf8().constData());
-    directionLabel->setText(QString::fromUtf8(static_cast<char*>(txt)));
-    g_free(txt);
+    directionLabel->setText(tr("<i>from</i>"));
 
     terminate->setText(tr("Terminate Recording"));
 

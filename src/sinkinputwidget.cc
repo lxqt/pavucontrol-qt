@@ -32,9 +32,7 @@ SinkInputWidget::SinkInputWidget(MainWindow *parent) :
     StreamWidget(parent),
     menu{new QMenu{this}} {
 
-    gchar *txt;
-    directionLabel->setText(QString::fromUtf8(txt = g_markup_printf_escaped("<i>%s</i>", tr("on").toUtf8().constData())));
-    g_free(txt);
+    directionLabel->setText(tr("<i>on</i>"));
 
     terminate->setText(tr("Terminate Playback"));
 }
