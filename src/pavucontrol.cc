@@ -214,18 +214,18 @@ struct QtPaMainLoop
 
         wrapper->readNotifier = new QSocketNotifier(fd, QSocketNotifier::Read, qApp);
         QObject::connect(wrapper->readNotifier, &QSocketNotifier::activated, [=]() {
-                cb(a, reinterpret_cast<pa_io_event*>(wrapper), userdata);
+                cb(a, reinterpret_cast<pa_io_event*>(wrapper), fd, PA_IO_EVENT_INPUT, userdata);
         });
 
         wrapper->writeNotifier = new QSocketNotifier(fd, QSocketNotifier::Write, qApp);
         QObject::connect(wrapper->writeNotifier, &QSocketNotifier::activated, [=]() {
-                cb(a, reinterpret_cast<pa_io_event*>(wrapper), userdata);
+                cb(a, reinterpret_cast<pa_io_event*>(wrapper), fd, PA_IO_EVENT_OUTPUT, userdata);
         });
 
         wrapper->errorNotifier = new QSocketNotifier(fd, QSocketNotifier::Exception, qApp);
 
         QObject::connect(wrapper->errorNotifier, &QSocketNotifier::activated, [=]() {
-                cb(a, reinterpret_cast<pa_io_event*>(wrapper), userdata);
+                cb(a, reinterpret_cast<pa_io_event*>(wrapper), fd, PA_IO_EVENT_ERROR, userdata);
         });
 
         if (events & PA_IO_EVENT_INPUT) {
@@ -252,7 +252,7 @@ struct QtPaMainLoop
 
     void setIoDestructor(pa_io_event *e, pa_io_event_destroy_cb_t cb) {
         SocketNotifierWrapper *wrapper = reinterpret_cast<SocketNotifierWrapper*>(e);
-        e->destructor = cb;
+        wrapper->destructor = cb;
     }
 
     void setIoEnabled(pa_io_event* e, pa_io_event_flags_t events) {
@@ -290,7 +290,7 @@ struct QtPaMainLoop
         timer->setSingleShot(true);
 
         QObject::connect(timer, &QTimer::timeout, [=]() {
-            callback(a, reinterpret_cast<pa_time_event*>(timer), userdata);
+            callback(a, reinterpret_cast<pa_defer_event*>(timer), userdata);
         });
         timer->start(0);
 
