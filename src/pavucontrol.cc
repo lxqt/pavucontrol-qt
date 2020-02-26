@@ -133,19 +133,27 @@ struct QtPaMainLoop;
 
 struct QtPaMainLoop
 {
-    //static QSet<TimerEventWrapper*> timerWrappers;
-    //static QSet<IoEventWrapper*> ioWrappers;
-    //static QSet<DeferredEventWrapper*> deferWrappers;
+    pa_mainloop_api pa_vtable{};
 
-    //QHash<pa_io_event*, QSocketNotifier*> ioNotifiers;
-    //QHash<pa_time_event*, QAbstractEventDispatcher::TimerInfo> timers;
-    //QHash<pa_defer_event*, DeferredEvent*> deferredEvents;
+    QtPaMainLoop()
+    {
+        pa_vtable.userdata = this;
+
+        pa_vtable.io_new = newIoEvent;
+        pa_vtable.io_enable = setIoEnabled;
+        pa_vtable.io_free = ioDestroy;
+        pa_vtable.io_set_destroy = setIoDestructor;
+        pa_vtable.time_new = newTimer;
+        pa_vtable.time_restart = restartTimer;
+        pa_vtable.time_free = freeTimer;
+        pa_vtable.time_set_destroy = timerSetDestructor;
+        pa_vtable.time_set_destroy = timerSetDestructor;
+    }
 
     static pa_time_event *newTimer(pa_mainloop_api *a, const struct timeval *tv, pa_time_event_cb_t callback, void *userdata) {
-        QTimer *timer = new QTimer();
+        QTimer *timer = new QTimer;
         timer->setProperty("PA_USERDATA", QVariant::fromValue(userdata));
         timer->setParent(qApp);
-        //timer->setParent(reinterpret_cast<QtPaMainLoop*>(a));
         timer->setSingleShot(true);
 
         int interval = tv->tv_sec * 1000;
@@ -163,7 +171,7 @@ struct QtPaMainLoop
         return reinterpret_cast<pa_time_event*>(timer);
     }
 
-    void restartTimer(pa_time_event *e, timeval *tv) {
+    static void restartTimer(pa_time_event *e, const timeval *tv) {
         QTimer *timer = reinterpret_cast<QTimer*>(e);
         int interval = tv->tv_sec * 1000;
         Qt::TimerType timerType = Qt::VeryCoarseTimer;
@@ -175,12 +183,12 @@ struct QtPaMainLoop
         timer->start(interval);
     }
 
-    void freeTimer(pa_time_event *e) {
+    static void freeTimer(pa_time_event *e) {
         QTimer *timer = reinterpret_cast<QTimer*>(e);
         delete timer;
     }
 
-    void timerSetDestructor(pa_time_event *e, pa_time_event_destroy_cb_t destructor) {
+    static void timerSetDestructor(pa_time_event *e, pa_time_event_destroy_cb_t destructor) {
         QTimer *timer = reinterpret_cast<QTimer*>(e);
         QObject::connect(timer, &QTimer::destroyed, [=]() {
             destructor(reinterpret_cast<pa_mainloop_api*>(timer->parent()), e, qvariant_cast<void*>(timer->property("PA_USERDATA")));
@@ -207,7 +215,7 @@ struct QtPaMainLoop
         pa_mainloop_api *a;
     };
 
-    pa_io_event *newIoEvent(pa_mainloop_api*a, int fd, pa_io_event_flags_t events, pa_io_event_cb_t cb, void *userdata) {
+    static pa_io_event *newIoEvent(pa_mainloop_api*a, int fd, pa_io_event_flags_t events, pa_io_event_cb_t cb, void *userdata) {
         SocketNotifierWrapper *wrapper = new SocketNotifierWrapper;
         wrapper->userdata = userdata;
         wrapper->a = a;
@@ -250,12 +258,7 @@ struct QtPaMainLoop
         return reinterpret_cast<pa_io_event*>(wrapper);
     }
 
-    void setIoDestructor(pa_io_event *e, pa_io_event_destroy_cb_t cb) {
-        SocketNotifierWrapper *wrapper = reinterpret_cast<SocketNotifierWrapper*>(e);
-        wrapper->destructor = cb;
-    }
-
-    void setIoEnabled(pa_io_event* e, pa_io_event_flags_t events) {
+    static void setIoEnabled(pa_io_event* e, pa_io_event_flags_t events) {
         SocketNotifierWrapper *wrapper = reinterpret_cast<SocketNotifierWrapper*>(e);
 
         if (events & PA_IO_EVENT_INPUT) {
@@ -277,9 +280,14 @@ struct QtPaMainLoop
         }
     }
 
-    void ioDestroy(pa_io_event *e) {
+    static void ioDestroy(pa_io_event *e) {
         SocketNotifierWrapper *wrapper = reinterpret_cast<SocketNotifierWrapper*>(e);
         delete wrapper;
+    }
+
+    static void setIoDestructor(pa_io_event *e, pa_io_event_destroy_cb_t cb) {
+        SocketNotifierWrapper *wrapper = reinterpret_cast<SocketNotifierWrapper*>(e);
+        wrapper->destructor = cb;
     }
 
     static pa_defer_event *newDefer(pa_mainloop_api *a, pa_defer_event_cb_t callback, void *userdata) {
@@ -297,7 +305,7 @@ struct QtPaMainLoop
         return reinterpret_cast<pa_defer_event*>(timer);
     }
 
-    void setDeferEnabled(pa_defer_event *e, int b) {
+    static void setDeferEnabled(pa_defer_event *e, int b) {
         QTimer *timer = reinterpret_cast<QTimer*>(e);
         if (b) {
             timer->start(0);
@@ -306,57 +314,17 @@ struct QtPaMainLoop
         }
     }
 
-    void freeDefer(pa_defer_event *e) {
+    static void freeDefer(pa_defer_event *e) {
         QTimer *timer = reinterpret_cast<QTimer*>(e);
         delete timer;
     }
 
-    void deferSetDestructor(pa_defer_event *e, pa_defer_event_destroy_cb_t destructor) {
+    static void deferSetDestructor(pa_defer_event *e, pa_defer_event_destroy_cb_t destructor) {
         QTimer *timer = reinterpret_cast<QTimer*>(e);
         QObject::connect(timer, &QTimer::destroyed, [=]() {
             destructor(reinterpret_cast<pa_mainloop_api*>(timer->parent()), e, qvariant_cast<void*>(timer->property("PA_USERDATA")));
         });
     }
-
-    //static pa_timer_event *newTimer(pa_mainloop_api *a, const struct timeval *tv, pa_time_event_cb_t callback, void *userdata) {
-    //    TimerEventWrapper *wrapper = new TimerEventWrapper(this);
-    //    wrapper->callback = callback;
-    //    wrapper->userData = userdata;
-    //    wrapper->timeVal = tv;
-    //    int interval = tv->tv_sec * 1000;
-    //    Qt::TimerType timerType = Qt::VeryCoarseTimer;
-    //    if (tv->tv_usec) {
-    //        interval += tv->tv_usec / 1000;
-    //        timerType = Qt::PreciseTimer;
-    //    }
-    //    wrapper->timerId = qApp->eventDispatcher()->registerTimer(interval, timerType, wrapper);
-
-    //    timerWrappers->insert(wrapper);
-
-    //    return reinterpret_cast<pa_timer_event*>(wrapper);
-    //}
-    //void restartTimer(pa_time_event *e, timeval *tv) {
-    //    TimerEventWrapper *wrapper = reinterpret_cast<TimerEventWrapper*>(e);
-
-    //    qApp->eventDispatcher()->unregisterTimer(wrapper->timerId);
-
-    //    wrapper->timeVal = tv;
-    //    int interval = tv->tv_sec * 1000;
-    //    Qt::TimerType timerType = Qt::VeryCoarseTimer;
-    //    if (tv->tv_usec) {
-    //        interval += tv->tv_usec / 1000;
-    //        timerType = Qt::PreciseTimer;
-    //    }
-
-    //    wrapper->timerId = qApp->eventDispatcher()->registerTimer(interval, timerType, wrapper);
-    //}
-
-    //void freeTimer(pa_time_event *e) {
-    //    TimerEventWrapper *wrapper = reinterpret_cast<TimerEventWrapper*>(e);
-    //    timerWrappers->remove(wrapper);
-    //    qApp->eventDispatcher()->unregisterTimer(wrapper->timerId);
-    //    wrapper->deleteLater();
-    //}
 };
 
 void show_error(const char *txt) {
