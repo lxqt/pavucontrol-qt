@@ -34,6 +34,7 @@
 #include <QIcon>
 #include <QStyle>
 #include <QSettings>
+#include <QDebug>
 
 /* Used for profile sorting */
 struct profile_prio_compare {
@@ -172,8 +173,18 @@ static void updatePorts(DeviceWidget *w, std::map<QByteArray, PortInfo> &ports) 
     }
 }
 
-static void setIconByName(QLabel* label, const char* name) {
-    QIcon icon = QIcon::fromTheme(QString::fromUtf8(name));
+static void setIconByName(QLabel* label, const char *name, const char *fallback) {
+    QIcon icon = QIcon::fromTheme(QString::fromUtf8(name ? name : fallback));
+    if (icon.isNull()) {
+        qWarning() << "Unable to find icon" << name << "using fallback" << fallback;
+
+        icon = QIcon::fromTheme(fallback);
+
+        if (icon.isNull()) {
+            qWarning() << "Failed to load fallback icon" << fallback;
+            return;
+        }
+    }
     int size = label->style()->pixelMetric(QStyle::PM_ToolBarIconSize);
     QPixmap pix = icon.pixmap(size, size);
     label->setPixmap(pix);
@@ -201,7 +212,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
     w->nameLabel->setText(QString::fromUtf8(w->name));
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
-    setIconByName(w->iconImage, icon ? icon : "audio-card");
+    setIconByName(w->iconImage, icon, "audio-card");
 
     w->hasSinks = w->hasSources = false;
     profile_priorities.clear();
@@ -330,7 +341,7 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
     w->nameLabel->setToolTip(QString::fromUtf8(info.description));
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
-    setIconByName(w->iconImage, icon ? icon : "audio-card");
+    setIconByName(w->iconImage, icon, "audio-card");
 
     w->setVolume(info.volume);
     w->muteToggleButton->setChecked(info.mute);
@@ -494,7 +505,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
     w->nameLabel->setToolTip(QString::fromUtf8(info.description));
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
-    setIconByName(w->iconImage, icon ? icon : "audio-input-microphone");
+    setIconByName(w->iconImage, icon, "audio-input-microphone");
 
     w->setVolume(info.volume);
     w->muteToggleButton->setChecked(info.mute);
@@ -561,11 +572,9 @@ void MainWindow::setIconFromProplist(QLabel *icon, pa_proplist *l, const char *d
         }
     }
 
-    t = def;
-
 finish:
 
-    setIconByName(icon, t);
+    setIconByName(icon, t, def);
 }
 
 
@@ -741,7 +750,7 @@ bool MainWindow::createEventRoleWidget() {
     eventRoleWidget->boldNameLabel->setText(QLatin1String(""));
     eventRoleWidget->nameLabel->setText(tr("System Sounds"));
 
-    setIconByName(eventRoleWidget->iconImage, "multimedia-volume-control");
+    setIconByName(eventRoleWidget->iconImage, "multimedia-volume-control", "multimedia-volume-control-symbolic");
 
     eventRoleWidget->device = "";
 
