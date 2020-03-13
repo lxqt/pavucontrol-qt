@@ -142,7 +142,7 @@ static void updatePorts(DeviceWidget *w, std::map<QByteArray, PortInfo> &ports) 
     std::map<QByteArray, PortInfo>::iterator it;
     PortInfo p;
 
-    for (auto & port : w->ports) {
+    for (std::pair<QByteArray,QByteArray> &port : w->ports) {
         QByteArray desc;
         it = ports.find(port.first);
 
@@ -173,7 +173,7 @@ static void updatePorts(DeviceWidget *w, std::map<QByteArray, PortInfo> &ports) 
     }
 }
 
-static void setIconByName(QLabel* label, const char *name, const char *fallback) {
+void MainWindow::setIconByName(QLabel* label, const char *name, const char *fallback) {
     QIcon icon = QIcon::fromTheme(QString::fromUtf8(name ? name : fallback));
     if (icon.isNull()) {
         qWarning() << "Unable to find icon" << name << "using fallback" << fallback;
@@ -185,9 +185,9 @@ static void setIconByName(QLabel* label, const char *name, const char *fallback)
             return;
         }
     }
-    int size = label->style()->pixelMetric(QStyle::PM_ToolBarIconSize);
-    QPixmap pix = icon.pixmap(size, size);
-    label->setPixmap(pix);
+
+    const int size = label->style()->pixelMetric(QStyle::PM_ToolBarIconSize);
+    label->setPixmap(icon.pixmap(size, size));
 }
 
 void MainWindow::updateCard(const pa_card_info &info) {
