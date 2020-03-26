@@ -61,8 +61,8 @@ DeviceWidget::DeviceWidget(MainWindow *parent, const QByteArray &deviceType) :
     connect(portList, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &DeviceWidget::onPortChange);
     connect(offsetButton, static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &DeviceWidget::onOffsetChange);
 
-    for (auto &channel : channels) {
-        channel = nullptr;
+    for (size_t i=0; i<PA_CHANNELS_MAX; i++) {
+        channels[i] = nullptr;
     }
 
 
@@ -215,7 +215,7 @@ void DeviceWidget::prepareMenu()
     portList->clear();
 
     /* Fill the ComboBox's Model */
-    for (auto &port : ports) {
+    for (const std::pair<QByteArray, QByteArray> &port : ports) {
         QByteArray name = port.first;
         QString desc = QString::fromUtf8(port.second);
         portList->addItem(desc, name);

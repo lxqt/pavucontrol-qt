@@ -49,8 +49,8 @@ StreamWidget::StreamWidget(MainWindow *parent) :
     addAction(terminate);
     setContextMenuPolicy(Qt::ActionsContextMenu);
 
-    for (auto &channel : channels) {
-        channel = nullptr;
+    for (size_t i=0; i<PA_CHANNELS_MAX; i++) {
+        channels[i] = nullptr;
     }
 }
 

@@ -42,7 +42,7 @@ void CardWidget::prepareMenu()
     profileList->clear();
 
     /* Fill the ComboBox */
-    for (const auto &profile : profiles) {
+    for (const std::pair<QByteArray, QByteArray> &profile : profiles) {
         QByteArray name = profile.first;
 
         // skip the "off" profile
