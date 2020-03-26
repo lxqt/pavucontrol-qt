@@ -18,10 +18,6 @@
   along with pavucontrol. If not, see <https://www.gnu.org/licenses/>.
 ***/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <set>
 
 #include "mainwindow.h"
@@ -729,9 +725,7 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info)
         w = sourceOutputWidgets[info.index];
     } else {
         sourceOutputWidgets[info.index] = w = new SourceOutputWidget(this);
-#if HAVE_SOURCE_OUTPUT_VOLUMES
         w->setChannelMap(info.channel_map, true);
-#endif
         recsVBox->layout()->addWidget(w);
 
         w->index = info.index;
@@ -758,10 +752,8 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info)
 
     setIconFromProplist(w->iconImage, info.proplist, "audio-input-microphone");
 
-#if HAVE_SOURCE_OUTPUT_VOLUMES
     w->setVolume(info.volume);
     w->muteToggleButton->setChecked(info.mute);
-#endif
 
     w->updating = false;
 
@@ -887,7 +879,6 @@ void MainWindow::updateRole(const pa_ext_stream_restore_info &info)
     }
 }
 
-#if HAVE_EXT_DEVICE_RESTORE_API
 void MainWindow::updateDeviceInfo(const pa_ext_device_restore_info &info)
 {
     if (sinkWidgets.count(info.index)) {
@@ -918,7 +909,6 @@ void MainWindow::updateDeviceInfo(const pa_ext_device_restore_info &info)
         w->updating = false;
     }
 }
-#endif
 
 
 void MainWindow::updateVolumeMeter(uint32_t source_index, uint32_t sink_input_idx, double v)

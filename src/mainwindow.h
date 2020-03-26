@@ -23,9 +23,7 @@
 
 #include "pavucontrol.h"
 #include <pulse/ext-stream-restore.h>
-#if HAVE_EXT_DEVICE_RESTORE_API
-#  include <pulse/ext-device-restore.h>
-#endif
+#include <pulse/ext-device-restore.h>
 
 #include <QDialog>
 #include "ui_mainwindow.h"
@@ -54,9 +52,7 @@ public:
     void updateServer(const pa_server_info &info);
     void updateVolumeMeter(uint32_t source_index, uint32_t sink_input_index, double v);
     void updateRole(const pa_ext_stream_restore_info &info);
-#if HAVE_EXT_DEVICE_RESTORE_API
     void updateDeviceInfo(const pa_ext_device_restore_info &info);
-#endif
 
     void removeCard(uint32_t index);
     void removeSink(uint32_t index);

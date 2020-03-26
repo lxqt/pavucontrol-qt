@@ -18,17 +18,11 @@
   along with pavucontrol. If not, see <https://www.gnu.org/licenses/>.
 ***/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #define PACKAGE_VERSION "0.1"
 
 #include <pulse/pulseaudio.h>
 #include <pulse/ext-stream-restore.h>
 #include <pulse/ext-device-manager.h>
-
-// #include <canberra-gtk.h>
 
 #include "pavucontrol.h"
 #include "minimalstreamwidget.h"
@@ -102,9 +96,7 @@ void card_cb(pa_context *, const pa_card_info *i, int eol, void *userdata)
     w->updateCard(*i);
 }
 
-#if HAVE_EXT_DEVICE_RESTORE_API
 static void ext_device_restore_subscribe_cb(pa_context *c, pa_device_type_t type, uint32_t idx, void *userdata);
-#endif
 
 void sink_cb(pa_context *c, const pa_sink_info *i, int eol, void *userdata)
 {
@@ -124,15 +116,9 @@ void sink_cb(pa_context *c, const pa_sink_info *i, int eol, void *userdata)
         return;
     }
 
-#if HAVE_EXT_DEVICE_RESTORE_API
-
     if (w->updateSink(*i)) {
         ext_device_restore_subscribe_cb(c, PA_DEVICE_TYPE_SINK, i->index, w);
     }
-
-#else
-    w->updateSink(*i);
-#endif
 }
 
 void source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata)
@@ -292,7 +278,6 @@ static void ext_stream_restore_subscribe_cb(pa_context *c, void *userdata)
     pa_operation_unref(o);
 }
 
-#if HAVE_EXT_DEVICE_RESTORE_API
 void ext_device_restore_read_cb(
     pa_context *,
     const pa_ext_device_restore_info *i,
@@ -333,7 +318,6 @@ static void ext_device_restore_subscribe_cb(pa_context *c, pa_device_type_t type
 
     pa_operation_unref(o);
 }
-#endif
 
 void ext_device_manager_read_cb(
     pa_context *,
@@ -603,8 +587,6 @@ void context_state_callback(pa_context *c, void *userdata)
             qDebug(QObject::tr("Failed to initialize stream_restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
         }
 
-#if HAVE_EXT_DEVICE_RESTORE_API
-
         /* TODO Change this to just the test function */
         if ((o = pa_ext_device_restore_read_formats_all(c, ext_device_restore_read_cb, w))) {
             pa_operation_unref(o);
@@ -619,8 +601,6 @@ void context_state_callback(pa_context *c, void *userdata)
         } else {
             qDebug(QObject::tr("Failed to initialize device restore extension: %s").toUtf8().constData(), pa_strerror(pa_context_errno(context)));
         }
-
-#endif
 
         if ((o = pa_ext_device_manager_read(c, ext_device_manager_read_cb, w))) {
             pa_operation_unref(o);
@@ -653,7 +633,6 @@ void context_state_callback(pa_context *c, void *userdata)
             QTimer::singleShot(reconnect_timeout, qApp, [w]() {
                 connect_to_pulse(w);
             });
-            //g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, w);
         }
 
         return;
@@ -710,7 +689,6 @@ void connect_to_pulse(MainWindow *w)
                 QTimer::singleShot(reconnect_timeout, qApp, [w]() {
                     connect_to_pulse(w);
                 });
-                //g_timeout_add_seconds(reconnect_timeout, connect_to_pulse, userdata);
             }
         }
     }

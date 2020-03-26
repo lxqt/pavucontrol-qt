@@ -18,10 +18,6 @@
   along with pavucontrol. If not, see <https://www.gnu.org/licenses/>.
 ***/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "sourceoutputwidget.h"
 #include "mainwindow.h"
 #include "sourcewidget.h"
@@ -82,12 +78,6 @@ SourceOutputWidget::SourceOutputWidget(MainWindow *parent) :
     directionLabel->setText(tr("<i>from</i>"));
 
     terminate->setText(tr("Terminate Recording"));
-
-#if !HAVE_SOURCE_OUTPUT_VOLUMES
-    /* Source Outputs do not have volume controls in versions of PA < 1.0 */
-    muteToggleButton->hide();
-    lockToggleButton->hide();
-#endif
 }
 
 void SourceOutputWidget::setSourceIndex(uint32_t idx)
@@ -107,7 +97,6 @@ uint32_t SourceOutputWidget::sourceIndex()
     return mSourceIndex;
 }
 
-#if HAVE_SOURCE_OUTPUT_VOLUMES
 void SourceOutputWidget::executeVolumeUpdate()
 {
     pa_operation *o;
@@ -137,7 +126,6 @@ void SourceOutputWidget::onMuteToggleButton()
 
     pa_operation_unref(o);
 }
-#endif
 
 void SourceOutputWidget::onKill()
 {

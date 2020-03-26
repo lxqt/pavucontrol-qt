@@ -18,23 +18,15 @@
   along with pavucontrol. If not, see <https://www.gnu.org/licenses/>.
 ***/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "sinkwidget.h"
 
-// #include <canberra-gtk.h>
-#if HAVE_EXT_DEVICE_RESTORE_API
-#  include <pulse/format.h>
-#  include <pulse/ext-device-restore.h>
-#endif
+#include <pulse/format.h>
+#include <pulse/ext-device-restore.h>
 
 SinkWidget::SinkWidget(MainWindow *parent) :
     DeviceWidget(parent, "sink")
 {
 
-#if HAVE_EXT_DEVICE_RESTORE_API
     uint8_t i = 0;
 
     encodings[i].encoding = PA_ENCODING_PCM;
@@ -66,14 +58,11 @@ SinkWidget::SinkWidget(MainWindow *parent) :
     encodings[i].widget = encodingFormatAAC;
     encodings[i].widget->setEnabled(false);
 #ifdef PA_ENCODING_MPEG2_AAC_IEC61937
-
     if (pa_context_get_server_protocol_version(get_context()) >= 28) {
         encodings[i].encoding = PA_ENCODING_MPEG2_AAC_IEC61937;
         connect(encodings[i].widget, &QCheckBox::toggled, this, &SinkWidget::onEncodingsChange);
         encodings[i].widget->setEnabled(true);
     }
-
-#endif
 #endif
 
 }
@@ -147,8 +136,6 @@ void SinkWidget::onPortChange()
 
 void SinkWidget::setDigital(bool digital)
 {
-#if HAVE_EXT_DEVICE_RESTORE_API
-
     if (digital) {
         encodingSelect->show();
         advancedOptions->setEnabled(true);
@@ -156,13 +143,10 @@ void SinkWidget::setDigital(bool digital)
         /* advancedOptions is disabled by default */
         encodingSelect->hide();
     }
-
-#endif
 }
 
 void SinkWidget::onEncodingsChange()
 {
-#if HAVE_EXT_DEVICE_RESTORE_API
     pa_operation *o;
     uint8_t n_formats = 0;
     pa_format_info **formats;
@@ -189,5 +173,4 @@ void SinkWidget::onEncodingsChange()
 
     free(formats);
     pa_operation_unref(o);
-#endif
 }

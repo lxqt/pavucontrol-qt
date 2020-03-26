@@ -25,10 +25,9 @@
 #include "devicewidget.h"
 
 
-#if HAVE_EXT_DEVICE_RESTORE_API
-#  include <pulse/format.h>
+#include <pulse/format.h>
 
-#  define PAVU_NUM_ENCODINGS 6
+#define PAVU_NUM_ENCODINGS 6
 
 class QCheckBox;
 
@@ -36,7 +35,6 @@ typedef struct {
     pa_encoding encoding;
     QCheckBox *widget;
 } encodingList;
-#endif
 
 class SinkWidget : public DeviceWidget
 {
@@ -48,9 +46,7 @@ public:
     uint32_t monitor_index;
     bool can_decibel;
 
-#if HAVE_EXT_DEVICE_RESTORE_API
     encodingList encodings[PAVU_NUM_ENCODINGS];
-#endif
 
     virtual void onMuteToggleButton();
     virtual void executeVolumeUpdate();

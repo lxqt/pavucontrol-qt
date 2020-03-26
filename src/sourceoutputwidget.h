@@ -40,10 +40,8 @@ public:
     uint32_t index, clientIndex;
     void setSourceIndex(uint32_t idx);
     uint32_t sourceIndex();
-#if HAVE_SOURCE_OUTPUT_VOLUMES
     virtual void executeVolumeUpdate();
     virtual void onMuteToggleButton();
-#endif
     virtual void onDeviceChangePopup();
     virtual void onKill();
 
