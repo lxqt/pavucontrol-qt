@@ -37,7 +37,8 @@ class SinkInputWidget;
 class SourceOutputWidget;
 class RoleWidget;
 
-class MainWindow : public QDialog, public Ui::MainWindow {
+class MainWindow : public QDialog, public Ui::MainWindow
+{
     Q_OBJECT
 public:
     MainWindow();
@@ -67,11 +68,11 @@ public:
 
     void setConnectingMessage(const char *string = NULL);
 
-    std::map<uint32_t, CardWidget*> cardWidgets;
-    std::map<uint32_t, SinkWidget*> sinkWidgets;
-    std::map<uint32_t, SourceWidget*> sourceWidgets;
-    std::map<uint32_t, SinkInputWidget*> sinkInputWidgets;
-    std::map<uint32_t, SourceOutputWidget*> sourceOutputWidgets;
+    std::map<uint32_t, CardWidget *> cardWidgets;
+    std::map<uint32_t, SinkWidget *> sinkWidgets;
+    std::map<uint32_t, SourceWidget *> sourceWidgets;
+    std::map<uint32_t, SinkInputWidget *> sinkInputWidgets;
+    std::map<uint32_t, SourceOutputWidget *> sourceOutputWidgets;
 
     QMap<int, QString> clientNames;
     SinkInputType showSinkInputType;
@@ -90,8 +91,8 @@ public:
     void setConnectionState(bool connected);
     void updateDeviceVisibility();
     void reallyUpdateDeviceVisibility();
-    pa_stream* createMonitorStreamForSource(uint32_t source_idx, uint32_t stream_idx, bool suspend);
-    void createMonitorStreamForSinkInput(SinkInputWidget* w, uint32_t sink_idx);
+    pa_stream *createMonitorStreamForSource(uint32_t source_idx, uint32_t stream_idx, bool suspend);
+    void createMonitorStreamForSinkInput(SinkInputWidget *w, uint32_t sink_idx);
 
     void setIconFromProplist(QLabel *icon, pa_proplist *l, const char *name);
 
@@ -105,10 +106,10 @@ public:
     bool canRenameDevices;
 
 private:
-    void setIconByName(QLabel* label, const char *name, const char *fallback);
+    void setIconByName(QLabel *label, const char *name, const char *fallback);
 
     bool m_connected;
-    char* m_config_filename;
+    char *m_config_filename;
 };
 
 

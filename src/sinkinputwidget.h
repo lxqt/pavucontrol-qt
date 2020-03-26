@@ -29,7 +29,8 @@
 class MainWindow;
 class QMenu;
 
-class SinkInputWidget : public StreamWidget {
+class SinkInputWidget : public StreamWidget
+{
     Q_OBJECT
 public:
     SinkInputWidget(MainWindow *parent);
@@ -50,15 +51,14 @@ private:
 
     void buildMenu();
 
-    QMenu * menu;
+    QMenu *menu;
 
-    struct SinkMenuItem : public QAction
-    {
+    struct SinkMenuItem : public QAction {
         SinkMenuItem(SinkInputWidget *w
-                , const char *label
-                , uint32_t i
-                , bool active
-                , QObject * parent = nullptr)
+                     , const char *label
+                     , uint32_t i
+                     , bool active
+                     , QObject *parent = nullptr)
             : QAction(QString::fromUtf8(label), parent)
             , widget(w)
             , index(i)

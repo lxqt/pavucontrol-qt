@@ -25,11 +25,13 @@
 #include "sourcewidget.h"
 
 SourceWidget::SourceWidget(MainWindow *parent) :
-    DeviceWidget(parent, "source") {
+    DeviceWidget(parent, "source")
+{
 }
 
-void SourceWidget::executeVolumeUpdate() {
-    pa_operation* o;
+void SourceWidget::executeVolumeUpdate()
+{
+    pa_operation *o;
 
     if (!(o = pa_context_set_source_volume_by_index(get_context(), index, &volume, nullptr, nullptr))) {
         show_error(tr("pa_context_set_source_volume_by_index() failed").toUtf8().constData());
@@ -39,13 +41,16 @@ void SourceWidget::executeVolumeUpdate() {
     pa_operation_unref(o);
 }
 
-void SourceWidget::onMuteToggleButton() {
+void SourceWidget::onMuteToggleButton()
+{
     DeviceWidget::onMuteToggleButton();
 
-    if (updating)
+    if (updating) {
         return;
+    }
 
-    pa_operation* o;
+    pa_operation *o;
+
     if (!(o = pa_context_set_source_mute_by_index(get_context(), index, muteToggleButton->isChecked(), nullptr, nullptr))) {
         show_error(tr("pa_context_set_source_mute_by_index() failed").toUtf8().constData());
         return;
@@ -54,33 +59,39 @@ void SourceWidget::onMuteToggleButton() {
     pa_operation_unref(o);
 }
 
-void SourceWidget::onDefaultToggleButton() {
-    pa_operation* o;
+void SourceWidget::onDefaultToggleButton()
+{
+    pa_operation *o;
 
-    if (updating)
+    if (updating) {
         return;
+    }
 
     if (!(o = pa_context_set_default_source(get_context(), name.toUtf8().constData(), nullptr, nullptr))) {
         show_error(tr("pa_context_set_default_source() failed").toUtf8().constData());
         return;
     }
+
     pa_operation_unref(o);
 }
 
-void SourceWidget::onPortChange() {
-    if (updating)
+void SourceWidget::onPortChange()
+{
+    if (updating) {
         return;
+    }
 
     int current = portList->currentIndex();
+
     if (current != -1) {
-        pa_operation* o;
+        pa_operation *o;
         QByteArray port = portList->itemData(current).toByteArray();
 
         if (!(o = pa_context_set_source_port_by_index(get_context(), index, port.constData(), nullptr, nullptr))) {
             show_error(tr("pa_context_set_source_port_by_index() failed").toUtf8().constData());
-        return;
-    }
+            return;
+        }
 
-    pa_operation_unref(o);
+        pa_operation_unref(o);
     }
 }

@@ -44,27 +44,31 @@ SourceOutputWidget::SourceOutputWidget(MainWindow *parent) :
 }
 
 
-SourceOutputWidget::~SourceOutputWidget(void) {
+SourceOutputWidget::~SourceOutputWidget(void)
+{
 }
 
-void SourceOutputWidget::setSourceIndex(uint32_t idx) {
+void SourceOutputWidget::setSourceIndex(uint32_t idx)
+{
     mSourceIndex = idx;
 
     if (mpMainWindow->sourceWidgets.count(idx)) {
-      SourceWidget *w = mpMainWindow->sourceWidgets[idx];
-      deviceButton->setText(QString::fromUtf8(w->description));
+        SourceWidget *w = mpMainWindow->sourceWidgets[idx];
+        deviceButton->setText(QString::fromUtf8(w->description));
+    } else {
+        deviceButton->setText(tr("Unknown input"));
     }
-    else
-      deviceButton->setText(tr("Unknown input"));
 }
 
-uint32_t SourceOutputWidget::sourceIndex() {
+uint32_t SourceOutputWidget::sourceIndex()
+{
     return mSourceIndex;
 }
 
 #if HAVE_SOURCE_OUTPUT_VOLUMES
-void SourceOutputWidget::executeVolumeUpdate() {
-    pa_operation* o;
+void SourceOutputWidget::executeVolumeUpdate()
+{
+    pa_operation *o;
 
     if (!(o = pa_context_set_source_output_volume(get_context(), index, &volume, nullptr, nullptr))) {
         show_error(tr("pa_context_set_source_output_volume() failed").toUtf8().constData());
@@ -74,13 +78,16 @@ void SourceOutputWidget::executeVolumeUpdate() {
     pa_operation_unref(o);
 }
 
-void SourceOutputWidget::onMuteToggleButton() {
+void SourceOutputWidget::onMuteToggleButton()
+{
     StreamWidget::onMuteToggleButton();
 
-    if (updating)
+    if (updating) {
         return;
+    }
 
-    pa_operation* o;
+    pa_operation *o;
+
     if (!(o = pa_context_set_source_output_mute(get_context(), index, muteToggleButton->isChecked(), nullptr, nullptr))) {
         show_error(tr("pa_context_set_source_output_mute() failed").toUtf8().constData());
         return;
@@ -90,8 +97,10 @@ void SourceOutputWidget::onMuteToggleButton() {
 }
 #endif
 
-void SourceOutputWidget::onKill() {
-    pa_operation* o;
+void SourceOutputWidget::onKill()
+{
+    pa_operation *o;
+
     if (!(o = pa_context_kill_source_output(get_context(), index, nullptr, nullptr))) {
         show_error(tr("pa_context_kill_source_output() failed").toUtf8().constData());
         return;
@@ -101,33 +110,39 @@ void SourceOutputWidget::onKill() {
 }
 
 
-void SourceOutputWidget::buildMenu() {
-  for (auto & sourceWidget : mpMainWindow->sourceWidgets) {
-      menu->addAction(new SourceMenuItem{this, sourceWidget.second->description.constData(), sourceWidget.second->index, sourceWidget.second->index == mSourceIndex, menu});
-  }
+void SourceOutputWidget::buildMenu()
+{
+    for (auto &sourceWidget : mpMainWindow->sourceWidgets) {
+        menu->addAction(new SourceMenuItem{this, sourceWidget.second->description.constData(), sourceWidget.second->index, sourceWidget.second->index == mSourceIndex, menu});
+    }
 }
 
-void SourceOutputWidget::SourceMenuItem::onToggle() {
+void SourceOutputWidget::SourceMenuItem::onToggle()
+{
 
-  if (widget->updating)
-    return;
+    if (widget->updating) {
+        return;
+    }
 
-  if (!isChecked())
-    return;
+    if (!isChecked()) {
+        return;
+    }
 
-  /*if (!mpMainWindow->sourceWidgets.count(widget->index))
-    return;*/
+    /*if (!mpMainWindow->sourceWidgets.count(widget->index))
+      return;*/
 
-  pa_operation* o;
-  if (!(o = pa_context_move_source_output_by_index(get_context(), widget->index, index, nullptr, nullptr))) {
-    show_error(tr("pa_context_move_source_output_by_index() failed").toUtf8().constData());
-    return;
-  }
+    pa_operation *o;
 
-  pa_operation_unref(o);
+    if (!(o = pa_context_move_source_output_by_index(get_context(), widget->index, index, nullptr, nullptr))) {
+        show_error(tr("pa_context_move_source_output_by_index() failed").toUtf8().constData());
+        return;
+    }
+
+    pa_operation_unref(o);
 }
 
-void SourceOutputWidget::onDeviceChangePopup() {
+void SourceOutputWidget::onDeviceChangePopup()
+{
     menu->clear();
     buildMenu();
     menu->popup(QCursor::pos());

@@ -25,11 +25,12 @@
 
 #include "devicewidget.h"
 
-class SourceWidget : public DeviceWidget {
+class SourceWidget : public DeviceWidget
+{
     Q_OBJECT
 public:
     SourceWidget(MainWindow *parent);
-    static SourceWidget* create(MainWindow* mainWindow);
+    static SourceWidget *create(MainWindow *mainWindow);
 
     SourceType type;
     bool can_decibel;

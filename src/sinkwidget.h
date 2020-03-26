@@ -38,7 +38,8 @@ typedef struct {
 } encodingList;
 #endif
 
-class SinkWidget : public DeviceWidget {
+class SinkWidget : public DeviceWidget
+{
     Q_OBJECT
 public:
     SinkWidget(MainWindow *parent);

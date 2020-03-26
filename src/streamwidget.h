@@ -31,7 +31,8 @@ class MainWindow;
 class Channel;
 class QAction;
 
-class StreamWidget : public MinimalStreamWidget, public Ui::StreamWidget {
+class StreamWidget : public MinimalStreamWidget, public Ui::StreamWidget
+{
     Q_OBJECT
 public:
     StreamWidget(MainWindow *parent);
@@ -60,9 +61,9 @@ public:
     virtual void onKill();
 
 protected:
-    MainWindow* mpMainWindow;
+    MainWindow *mpMainWindow;
 
-    QAction * terminate;
+    QAction *terminate;
 };
 
 #endif

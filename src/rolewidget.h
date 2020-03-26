@@ -25,10 +25,11 @@
 
 #include "streamwidget.h"
 
-class RoleWidget : public StreamWidget {
+class RoleWidget : public StreamWidget
+{
     Q_OBJECT
 public:
-    RoleWidget(MainWindow* parent);
+    RoleWidget(MainWindow *parent);
 
     QByteArray role;
     QByteArray device;

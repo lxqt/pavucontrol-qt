@@ -31,7 +31,8 @@
 #endif
 
 SinkWidget::SinkWidget(MainWindow *parent) :
-    DeviceWidget(parent, "sink") {
+    DeviceWidget(parent, "sink")
+{
 
 #if HAVE_EXT_DEVICE_RESTORE_API
     uint8_t i = 0;
@@ -65,18 +66,22 @@ SinkWidget::SinkWidget(MainWindow *parent) :
     encodings[i].widget = encodingFormatAAC;
     encodings[i].widget->setEnabled(false);
 #ifdef PA_ENCODING_MPEG2_AAC_IEC61937
+
     if (pa_context_get_server_protocol_version(get_context()) >= 28) {
         encodings[i].encoding = PA_ENCODING_MPEG2_AAC_IEC61937;
         connect(encodings[i].widget, &QCheckBox::toggled, this, &SinkWidget::onEncodingsChange);
         encodings[i].widget->setEnabled(true);
     }
+
 #endif
 #endif
 
 }
 
-void SinkWidget::executeVolumeUpdate() {
-    pa_operation* o;
+void SinkWidget::executeVolumeUpdate()
+{
+    pa_operation *o;
+
     if (!(o = pa_context_set_sink_volume_by_index(get_context(), index, &volume, nullptr, nullptr))) {
         show_error(tr("pa_context_set_sink_volume_by_index() failed").toUtf8().constData());
         return;
@@ -85,13 +90,16 @@ void SinkWidget::executeVolumeUpdate() {
     pa_operation_unref(o);
 }
 
-void SinkWidget::onMuteToggleButton() {
+void SinkWidget::onMuteToggleButton()
+{
     DeviceWidget::onMuteToggleButton();
 
-    if (updating)
+    if (updating) {
         return;
+    }
 
-    pa_operation* o;
+    pa_operation *o;
+
     if (!(o = pa_context_set_sink_mute_by_index(get_context(), index, muteToggleButton->isChecked(), nullptr, nullptr))) {
         show_error(tr("pa_context_set_sink_mute_by_index() failed").toUtf8().constData());
         return;
@@ -100,26 +108,32 @@ void SinkWidget::onMuteToggleButton() {
     pa_operation_unref(o);
 }
 
-void SinkWidget::onDefaultToggleButton() {
-    pa_operation* o;
+void SinkWidget::onDefaultToggleButton()
+{
+    pa_operation *o;
 
-    if (updating)
+    if (updating) {
         return;
+    }
 
     if (!(o = pa_context_set_default_sink(get_context(), name.toUtf8().constData(), nullptr, nullptr))) {
         show_error(tr("pa_context_set_default_sink() failed").toUtf8().constData());
         return;
     }
+
     pa_operation_unref(o);
 }
 
-void SinkWidget::onPortChange() {
-    if (updating)
+void SinkWidget::onPortChange()
+{
+    if (updating) {
         return;
+    }
 
     int sel = portList->currentIndex();
+
     if (sel != -1) {
-        pa_operation* o;
+        pa_operation *o;
         QByteArray port = portList->itemData(sel).toString().toUtf8();
 
         if (!(o = pa_context_set_sink_port_by_index(get_context(), index, port.constData(), nullptr, nullptr))) {
@@ -131,8 +145,10 @@ void SinkWidget::onPortChange() {
     }
 }
 
-void SinkWidget::setDigital(bool digital) {
+void SinkWidget::setDigital(bool digital)
+{
 #if HAVE_EXT_DEVICE_RESTORE_API
+
     if (digital) {
         encodingSelect->show();
         advancedOptions->setEnabled(true);
@@ -140,21 +156,24 @@ void SinkWidget::setDigital(bool digital) {
         /* advancedOptions is disabled by default */
         encodingSelect->hide();
     }
+
 #endif
 }
 
-void SinkWidget::onEncodingsChange() {
+void SinkWidget::onEncodingsChange()
+{
 #if HAVE_EXT_DEVICE_RESTORE_API
-    pa_operation* o;
+    pa_operation *o;
     uint8_t n_formats = 0;
     pa_format_info **formats;
 
-    if (updating)
+    if (updating) {
         return;
+    }
 
-    formats = (pa_format_info**)malloc(sizeof(pa_format_info*) * PAVU_NUM_ENCODINGS);
+    formats = (pa_format_info **)malloc(sizeof(pa_format_info *) * PAVU_NUM_ENCODINGS);
 
-    for (auto & encoding : encodings) {
+    for (auto &encoding : encodings) {
         if (encoding.widget->isChecked()) {
             formats[n_formats] = pa_format_info_new();
             formats[n_formats]->encoding = encoding.encoding;

@@ -29,10 +29,11 @@ class QLabel;
 class QSlider;
 class MinimalStreamWidget;
 
-class Channel : public QObject {
+class Channel : public QObject
+{
     Q_OBJECT
 public:
-    Channel(QGridLayout* parent=nullptr);
+    Channel(QGridLayout *parent = nullptr);
 
     void setVolume(pa_volume_t volume);
     void setVisible(bool visible);

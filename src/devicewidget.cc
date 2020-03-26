@@ -34,12 +34,13 @@
 #include <QInputDialog>
 
 /*** DeviceWidget ***/
-DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
+DeviceWidget::DeviceWidget(MainWindow *parent, QByteArray deviceType) :
     MinimalStreamWidget(parent),
     offsetButtonEnabled(false),
     mpMainWindow(parent),
     rename{new QAction{tr("Rename device..."), this}},
-    mDeviceType(QString::fromUtf8(deviceType)) {
+       mDeviceType(QString::fromUtf8(deviceType))
+{
 
     setupUi(this);
     advancedWidget->hide();
@@ -60,8 +61,9 @@ DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
     connect(portList, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &DeviceWidget::onPortChange);
     connect(offsetButton, static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &DeviceWidget::onOffsetChange);
 
-    for (auto & channel : channels)
+    for (auto &channel : channels) {
         channel = nullptr;
+    }
 
 
     // FIXME:
@@ -69,7 +71,8 @@ DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
 //    offsetButton->configure(offsetAdjustment, 0, 2);
 }
 
-void DeviceWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
+void DeviceWidget::setChannelMap(const pa_channel_map &m, bool can_decibel)
+{
     channelMap = m;
 
     for (int i = 0; i < m.channels; i++) {
@@ -81,32 +84,38 @@ void DeviceWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
         snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_pretty_string(m.map[i]));
         ch->channelLabel->setText(QString::fromUtf8(text));
     }
-    channels[m.channels-1]->last = true;
+
+    channels[m.channels - 1]->last = true;
 
     lockToggleButton->setEnabled(m.channels > 1);
     hideLockedChannels(lockToggleButton->isChecked());
 }
 
-void DeviceWidget::setVolume(const pa_cvolume &v, bool force) {
+void DeviceWidget::setVolume(const pa_cvolume &v, bool force)
+{
     Q_ASSERT(v.channels == channelMap.channels);
 
     volume = v;
 
     if (!timeout.isActive() || force) { /* do not update the volume when a volume change is still in flux */
-        for (int i = 0; i < volume.channels; i++)
+        for (int i = 0; i < volume.channels; i++) {
             channels[i]->setVolume(volume.values[i]);
+        }
     }
 }
 
-void DeviceWidget::updateChannelVolume(int channel, pa_volume_t v) {
+void DeviceWidget::updateChannelVolume(int channel, pa_volume_t v)
+{
     pa_cvolume n;
     Q_ASSERT(channel < volume.channels);
 
     n = volume;
-    if (lockToggleButton->isChecked())
+
+    if (lockToggleButton->isChecked()) {
         pa_cvolume_set(&n, n.channels, v);
-    else
+    } else {
         n.values[channel] = v;
+    }
 
     setVolume(n, true);
 
@@ -115,91 +124,112 @@ void DeviceWidget::updateChannelVolume(int channel, pa_volume_t v) {
     }
 }
 
-void DeviceWidget::hideLockedChannels(bool hide) {
-    for (int i = 0; i < channelMap.channels - 1; i++)
+void DeviceWidget::hideLockedChannels(bool hide)
+{
+    for (int i = 0; i < channelMap.channels - 1; i++) {
         channels[i]->setVisible(!hide);
+    }
 
     channels[channelMap.channels - 1]->channelLabel->setVisible(!hide);
 }
 
-void DeviceWidget::onMuteToggleButton() {
+void DeviceWidget::onMuteToggleButton()
+{
 
     lockToggleButton->setEnabled(!muteToggleButton->isChecked());
 
-    for (int i = 0; i < channelMap.channels; i++)
+    for (int i = 0; i < channelMap.channels; i++) {
         channels[i]->setEnabled(!muteToggleButton->isChecked());
+    }
 }
 
-void DeviceWidget::onLockToggleButton() {
+void DeviceWidget::onLockToggleButton()
+{
     hideLockedChannels(lockToggleButton->isChecked());
 }
 
-void DeviceWidget::onDefaultToggleButton() {
+void DeviceWidget::onDefaultToggleButton()
+{
 }
 
-void DeviceWidget::onOffsetChange() {
+void DeviceWidget::onOffsetChange()
+{
     pa_operation *o;
     int64_t offset;
     std::ostringstream card_stream;
     QByteArray card_name;
 
-    if (!offsetButtonEnabled)
+    if (!offsetButtonEnabled) {
         return;
+    }
 
     offset = offsetButton->value() * 1000.0;
     card_stream << card_index;
     card_name = QByteArray::fromStdString(card_stream.str());
 
     if (!(o = pa_context_set_port_latency_offset(get_context(),
-            card_name.constData(), activePort.constData(), offset, nullptr, nullptr))) {
+              card_name.constData(), activePort.constData(), offset, nullptr, nullptr))) {
         show_error(tr("pa_context_set_port_latency_offset() failed").toUtf8().constData());
         return;
     }
+
     pa_operation_unref(o);
 }
 
-void DeviceWidget::setDefault(bool isDefault) {
+void DeviceWidget::setDefault(bool isDefault)
+{
     defaultToggleButton->setChecked(isDefault);
     /*defaultToggleButton->setEnabled(!isDefault);*/
 }
 
-bool DeviceWidget::timeoutEvent() {
+bool DeviceWidget::timeoutEvent()
+{
     executeVolumeUpdate();
     return false;
 }
 
-void DeviceWidget::executeVolumeUpdate() {
+void DeviceWidget::executeVolumeUpdate()
+{
 }
 
-void DeviceWidget::setLatencyOffset(int64_t offset) {
+void DeviceWidget::setLatencyOffset(int64_t offset)
+{
     offsetButtonEnabled = false;
     offsetButton->setValue(offset / 1000.0);
     offsetButtonEnabled = true;
 }
 
-void DeviceWidget::setBaseVolume(pa_volume_t v) {
+void DeviceWidget::setBaseVolume(pa_volume_t v)
+{
 
-    for (int i = 0; i < channelMap.channels; i++)
+    for (int i = 0; i < channelMap.channels; i++) {
         channels[i]->setBaseVolume(v);
+    }
 }
 
-void DeviceWidget::prepareMenu() {
+void DeviceWidget::prepareMenu()
+{
     int idx = 0;
     int active_idx = -1;
 
     portList->clear();
+
     /* Fill the ComboBox's Model */
-    for (auto & port : ports) {
+    for (auto &port : ports) {
         QByteArray name = port.first;
         QString desc = QString::fromUtf8(port.second);
         portList->addItem(desc, name);
-        if (port.first == activePort)
+
+        if (port.first == activePort) {
             active_idx = idx;
+        }
+
         idx++;
     }
 
-    if (active_idx >= 0)
+    if (active_idx >= 0) {
         portList->setCurrentIndex(active_idx);
+    }
 
     if (!ports.empty()) {
         portSelect->show();
@@ -219,26 +249,31 @@ void DeviceWidget::prepareMenu() {
     }
 }
 
-void DeviceWidget::renamePopup() {
-    if (updating)
+void DeviceWidget::renamePopup()
+{
+    if (updating) {
         return;
+    }
+
     if (!mpMainWindow->canRenameDevices) {
         QMessageBox::warning(this, tr("Sorry, but device renaming is not supported.")
-                , tr("You need to load module-device-manager in the PulseAudio server in order to rename devices"));
+                             , tr("You need to load module-device-manager in the PulseAudio server in order to rename devices"));
         return;
     }
 
     const QString old_name = QString::fromUtf8(description);
     bool ok;
     const QString new_name = QInputDialog::getText(this, QCoreApplication::organizationName(), tr("Rename device %1 to:").arg(old_name)
-            , QLineEdit::Normal, old_name, &ok);
+                             , QLineEdit::Normal, old_name, &ok);
+
     if (ok && new_name != old_name) {
-        pa_operation* o;
+        pa_operation *o;
         QByteArray key = QStringLiteral("%1:%2").arg(mDeviceType).arg(name).toHtmlEscaped().toUtf8();
 
-        if (!(o = pa_ext_device_manager_set_device_description(get_context(), key.constData(), new_name.toUtf8().constData(), nullptr, nullptr)))
+        if (!(o = pa_ext_device_manager_set_device_description(get_context(), key.constData(), new_name.toUtf8().constData(), nullptr, nullptr))) {
             show_error(tr("pa_ext_device_manager_set_device_description() failed").toUtf8().constData());
-        else
+        } else {
             pa_operation_unref(o);
+        }
     }
 }

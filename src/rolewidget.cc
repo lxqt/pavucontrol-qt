@@ -27,7 +27,8 @@
 #include <pulse/ext-stream-restore.h>
 
 RoleWidget::RoleWidget(MainWindow *parent) :
-    StreamWidget(parent) {
+    StreamWidget(parent)
+{
 
     lockToggleButton->hide();
     directionLabel->hide();
@@ -35,17 +36,20 @@ RoleWidget::RoleWidget(MainWindow *parent) :
     setContextMenuPolicy(Qt::DefaultContextMenu);
 }
 
-void RoleWidget::onMuteToggleButton() {
+void RoleWidget::onMuteToggleButton()
+{
     StreamWidget::onMuteToggleButton();
 
     executeVolumeUpdate();
 }
 
-void RoleWidget::executeVolumeUpdate() {
+void RoleWidget::executeVolumeUpdate()
+{
     pa_ext_stream_restore_info info;
 
-    if (updating)
+    if (updating) {
         return;
+    }
 
     info.name = role.constData();
     info.channel_map.channels = 1;
@@ -54,7 +58,8 @@ void RoleWidget::executeVolumeUpdate() {
     info.device = device == "" ? nullptr : device.constData();
     info.mute = muteToggleButton->isChecked();
 
-    pa_operation* o;
+    pa_operation *o;
+
     if (!(o = pa_ext_stream_restore_write(get_context(), PA_UPDATE_REPLACE, &info, 1, true, nullptr, nullptr))) {
         show_error(tr("pa_ext_stream_restore_write() failed").toUtf8().constData());
         return;

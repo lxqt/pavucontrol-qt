@@ -27,13 +27,14 @@
 class QProgressBar;
 class QGridLayout;
 
-class MinimalStreamWidget : public QWidget {
+class MinimalStreamWidget : public QWidget
+{
     Q_OBJECT
 public:
-    MinimalStreamWidget(QWidget* parent = nullptr);
-    void initPeakProgressBar(QGridLayout* channelsGrid);
+    MinimalStreamWidget(QWidget *parent = nullptr);
+    void initPeakProgressBar(QGridLayout *channelsGrid);
 
-    QProgressBar* peakProgressBar;
+    QProgressBar *peakProgressBar;
     double lastPeak;
     pa_stream *peak;
 

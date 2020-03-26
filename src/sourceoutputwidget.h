@@ -29,7 +29,8 @@
 class MainWindow;
 class QMenu;
 
-class SourceOutputWidget : public StreamWidget {
+class SourceOutputWidget : public StreamWidget
+{
     Q_OBJECT
 public:
     SourceOutputWidget(MainWindow *parent);
@@ -53,15 +54,14 @@ private:
     void clearMenu();
     void buildMenu();
 
-    QMenu * menu;
+    QMenu *menu;
 
-    struct SourceMenuItem : public QAction
-    {
+    struct SourceMenuItem : public QAction {
         SourceMenuItem(SourceOutputWidget *w
-                , const char *label
-                , uint32_t i
-                , bool active
-                , QObject * parent = nullptr)
+                       , const char *label
+                       , uint32_t i
+                       , bool active
+                       , QObject *parent = nullptr)
             : QAction{QString::fromUtf8(label), parent}
             , widget(w)
             , index(i)

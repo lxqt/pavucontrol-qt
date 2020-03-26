@@ -25,18 +25,20 @@
 #include "ui_cardwidget.h"
 #include <QWidget>
 
-class PortInfo {
+class PortInfo
+{
 public:
-      QByteArray name;
-      QByteArray description;
-      uint32_t priority;
-      int available;
-      int direction;
-      int64_t latency_offset;
-      std::vector<QByteArray> profiles;
+    QByteArray name;
+    QByteArray description;
+    uint32_t priority;
+    int available;
+    int direction;
+    int64_t latency_offset;
+    std::vector<QByteArray> profiles;
 };
 
-class CardWidget : public QWidget, public Ui::CardWidget {
+class CardWidget : public QWidget, public Ui::CardWidget
+{
     Q_OBJECT
 public:
     CardWidget(QWidget *parent = nullptr);
@@ -45,7 +47,7 @@ public:
     uint32_t index;
     bool updating;
 
-    std::vector< std::pair<QByteArray,QByteArray> > profiles;
+    std::vector< std::pair<QByteArray, QByteArray>> profiles;
     std::map<QByteArray, PortInfo> ports;
     QByteArray activeProfile;
     QByteArray noInOutProfile;
@@ -56,7 +58,7 @@ public:
     void prepareMenu();
 
 protected:
-    void changeProfile(const QByteArray & name);
+    void changeProfile(const QByteArray &name);
     void onProfileChange(int active);
     void onProfileCheck(bool on);
 

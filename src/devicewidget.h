@@ -32,7 +32,8 @@ class MainWindow;
 class Channel;
 class QAction;
 
-class DeviceWidget : public MinimalStreamWidget, public Ui::DeviceWidget {
+class DeviceWidget : public MinimalStreamWidget, public Ui::DeviceWidget
+{
     Q_OBJECT
 public:
     DeviceWidget(MainWindow *parent, QByteArray deviceType = "");
@@ -70,7 +71,7 @@ public:
     virtual void executeVolumeUpdate();
     virtual void setBaseVolume(pa_volume_t v);
 
-    std::vector< std::pair<QByteArray,QByteArray> > ports;
+    std::vector< std::pair<QByteArray, QByteArray>> ports;
     QByteArray activePort;
 
     void prepareMenu();
@@ -82,7 +83,7 @@ protected:
 
     virtual void onPortChange() = 0;
 
-    QAction * rename;
+    QAction *rename;
 
 private:
     QString mDeviceType;

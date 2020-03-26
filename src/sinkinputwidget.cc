@@ -30,33 +30,38 @@
 
 SinkInputWidget::SinkInputWidget(MainWindow *parent) :
     StreamWidget(parent),
-    menu{new QMenu{this}} {
+    menu{new QMenu{this}}
+{
 
     directionLabel->setText(tr("<i>on</i>"));
 
     terminate->setText(tr("Terminate Playback"));
 }
 
-SinkInputWidget::~SinkInputWidget(void) {
+SinkInputWidget::~SinkInputWidget(void)
+{
 }
 
-void SinkInputWidget::setSinkIndex(uint32_t idx) {
+void SinkInputWidget::setSinkIndex(uint32_t idx)
+{
     mSinkIndex = idx;
 
     if (mpMainWindow->sinkWidgets.count(idx)) {
         SinkWidget *w = mpMainWindow->sinkWidgets[idx];
         deviceButton->setText(QString::fromUtf8(w->description));
-    }
-    else
+    } else {
         deviceButton->setText(tr("Unknown output"));
+    }
 }
 
-uint32_t SinkInputWidget::sinkIndex() {
+uint32_t SinkInputWidget::sinkIndex()
+{
     return mSinkIndex;
 }
 
-void SinkInputWidget::executeVolumeUpdate() {
-    pa_operation* o;
+void SinkInputWidget::executeVolumeUpdate()
+{
+    pa_operation *o;
 
     if (!(o = pa_context_set_sink_input_volume(get_context(), index, &volume, nullptr, nullptr))) {
         show_error(tr("pa_context_set_sink_input_volume() failed").toUtf8().constData());
@@ -66,13 +71,16 @@ void SinkInputWidget::executeVolumeUpdate() {
     pa_operation_unref(o);
 }
 
-void SinkInputWidget::onMuteToggleButton() {
+void SinkInputWidget::onMuteToggleButton()
+{
     StreamWidget::onMuteToggleButton();
 
-    if (updating)
+    if (updating) {
         return;
+    }
 
-    pa_operation* o;
+    pa_operation *o;
+
     if (!(o = pa_context_set_sink_input_mute(get_context(), index, muteToggleButton->isChecked(), nullptr, nullptr))) {
         show_error(tr("pa_context_set_sink_input_mute() failed").toUtf8().constData());
         return;
@@ -81,8 +89,10 @@ void SinkInputWidget::onMuteToggleButton() {
     pa_operation_unref(o);
 }
 
-void SinkInputWidget::onKill() {
-    pa_operation* o;
+void SinkInputWidget::onKill()
+{
+    pa_operation *o;
+
     if (!(o = pa_context_kill_sink_input(get_context(), index, nullptr, nullptr))) {
         show_error(tr("pa_context_kill_sink_input() failed").toUtf8().constData());
         return;
@@ -91,32 +101,38 @@ void SinkInputWidget::onKill() {
     pa_operation_unref(o);
 }
 
-void SinkInputWidget::buildMenu() {
-  for (auto & sinkWidget : mpMainWindow->sinkWidgets) {
-      menu->addAction(new SinkMenuItem{this, sinkWidget.second->description.constData(), sinkWidget.second->index, sinkWidget.second->index == mSinkIndex, menu});
-  }
+void SinkInputWidget::buildMenu()
+{
+    for (auto &sinkWidget : mpMainWindow->sinkWidgets) {
+        menu->addAction(new SinkMenuItem{this, sinkWidget.second->description.constData(), sinkWidget.second->index, sinkWidget.second->index == mSinkIndex, menu});
+    }
 }
 
-void SinkInputWidget::SinkMenuItem::onToggle() {
-  if (widget->updating)
-    return;
+void SinkInputWidget::SinkMenuItem::onToggle()
+{
+    if (widget->updating) {
+        return;
+    }
 
-  if (!isChecked())
-    return;
+    if (!isChecked()) {
+        return;
+    }
 
-  /*if (!mpMainWindow->sinkWidgets.count(widget->index))
-    return;*/
+    /*if (!mpMainWindow->sinkWidgets.count(widget->index))
+      return;*/
 
-  pa_operation* o;
-  if (!(o = pa_context_move_sink_input_by_index(get_context(), widget->index, index, nullptr, nullptr))) {
-    show_error(tr("pa_context_move_sink_input_by_index() failed").toUtf8().constData());
-    return;
-  }
+    pa_operation *o;
 
-  pa_operation_unref(o);
+    if (!(o = pa_context_move_sink_input_by_index(get_context(), widget->index, index, nullptr, nullptr))) {
+        show_error(tr("pa_context_move_sink_input_by_index() failed").toUtf8().constData());
+        return;
+    }
+
+    pa_operation_unref(o);
 }
 
-void SinkInputWidget::onDeviceChangePopup() {
+void SinkInputWidget::onDeviceChangePopup()
+{
     menu->clear();
     buildMenu();
     menu->popup(QCursor::pos());

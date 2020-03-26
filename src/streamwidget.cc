@@ -31,7 +31,8 @@
 StreamWidget::StreamWidget(MainWindow *parent) :
     MinimalStreamWidget(parent),
     mpMainWindow(parent),
-    terminate{new QAction{tr("Terminate"), this}} {
+    terminate{new QAction{tr("Terminate"), this}}
+{
 
     setupUi(this);
     initPeakProgressBar(channelsGrid);
@@ -48,11 +49,13 @@ StreamWidget::StreamWidget(MainWindow *parent) :
     addAction(terminate);
     setContextMenuPolicy(Qt::ActionsContextMenu);
 
-    for (auto & channel : channels)
+    for (auto &channel : channels) {
         channel = nullptr;
+    }
 }
 
-void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
+void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel)
+{
     channelMap = m;
 
     for (int i = 0; i < m.channels; i++) {
@@ -64,71 +67,87 @@ void StreamWidget::setChannelMap(const pa_channel_map &m, bool can_decibel) {
         snprintf(text, sizeof(text), "<b>%s</b>", pa_channel_position_to_pretty_string(m.map[i]));
         ch->channelLabel->setText(QString::fromUtf8(text));
     }
-    channels[m.channels-1]->last = true;
-    channels[m.channels-1]->setBaseVolume(PA_VOLUME_NORM);
+
+    channels[m.channels - 1]->last = true;
+    channels[m.channels - 1]->setBaseVolume(PA_VOLUME_NORM);
 
     lockToggleButton->setEnabled(m.channels > 1);
     hideLockedChannels(lockToggleButton->isChecked());
 }
 
-void StreamWidget::setVolume(const pa_cvolume &v, bool force) {
+void StreamWidget::setVolume(const pa_cvolume &v, bool force)
+{
     Q_ASSERT(v.channels == channelMap.channels);
 
     volume = v;
 
     if (!timeout.isActive() || force) { /* do not update the volume when a volume change is still in flux */
-        for (int i = 0; i < volume.channels; i++)
+        for (int i = 0; i < volume.channels; i++) {
             channels[i]->setVolume(volume.values[i]);
+        }
     }
 }
 
-void StreamWidget::updateChannelVolume(int channel, pa_volume_t v) {
+void StreamWidget::updateChannelVolume(int channel, pa_volume_t v)
+{
     pa_cvolume n;
     Q_ASSERT(channel < volume.channels);
 
     n = volume;
+
     if (lockToggleButton->isChecked()) {
-        for (int i = 0; i < n.channels; i++)
+        for (int i = 0; i < n.channels; i++) {
             n.values[i] = v;
-    } else
+        }
+    } else {
         n.values[channel] = v;
+    }
 
     setVolume(n, true);
 
-    if(!timeout.isActive()) {
+    if (!timeout.isActive()) {
         timeout.start();
     }
 }
 
-void StreamWidget::hideLockedChannels(bool hide) {
-    for (int i = 0; i < channelMap.channels - 1; i++)
+void StreamWidget::hideLockedChannels(bool hide)
+{
+    for (int i = 0; i < channelMap.channels - 1; i++) {
         channels[i]->setVisible(!hide);
+    }
 
     channels[channelMap.channels - 1]->channelLabel->setVisible(!hide);
 }
 
-void StreamWidget::onMuteToggleButton() {
+void StreamWidget::onMuteToggleButton()
+{
 
     lockToggleButton->setEnabled(!muteToggleButton->isChecked());
 
-    for (int i = 0; i < channelMap.channels; i++)
+    for (int i = 0; i < channelMap.channels; i++) {
         channels[i]->setEnabled(!muteToggleButton->isChecked());
+    }
 }
 
-void StreamWidget::onLockToggleButton() {
+void StreamWidget::onLockToggleButton()
+{
     hideLockedChannels(lockToggleButton->isChecked());
 }
 
-bool StreamWidget::timeoutEvent() {
+bool StreamWidget::timeoutEvent()
+{
     executeVolumeUpdate();
     return false;
 }
 
-void StreamWidget::executeVolumeUpdate() {
+void StreamWidget::executeVolumeUpdate()
+{
 }
 
-void StreamWidget::onDeviceChangePopup() {
+void StreamWidget::onDeviceChangePopup()
+{
 }
 
-void StreamWidget::onKill() {
+void StreamWidget::onKill()
+{
 }

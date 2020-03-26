@@ -60,7 +60,7 @@ enum SourceType {
     SOURCE_MONITOR,
 };
 
-pa_context* get_context(void);
+pa_context *get_context(void);
 void show_error(const char *txt);
 
 #endif

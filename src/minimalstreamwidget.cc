@@ -35,24 +35,28 @@ MinimalStreamWidget::MinimalStreamWidget(QWidget *parent) :
     peak(nullptr),
     updating(false),
     volumeMeterEnabled(false),
-    volumeMeterVisible(true) {
+    volumeMeterVisible(true)
+{
 
     peakProgressBar->setTextVisible(false);
     peakProgressBar->setMaximumHeight(4 /* FIXME: hardcoded */);
     peakProgressBar->hide();
 }
 
-void MinimalStreamWidget::initPeakProgressBar(QGridLayout* channelsGrid) {
+void MinimalStreamWidget::initPeakProgressBar(QGridLayout *channelsGrid)
+{
     channelsGrid->addWidget(peakProgressBar, channelsGrid->rowCount(), 0, 1, -1);
 }
 
 #define DECAY_STEP .04
 
-void MinimalStreamWidget::updatePeak(double v) {
+void MinimalStreamWidget::updatePeak(double v)
+{
 
     if (lastPeak >= DECAY_STEP)
-        if (v < lastPeak - DECAY_STEP)
+        if (v < lastPeak - DECAY_STEP) {
             v = lastPeak - DECAY_STEP;
+        }
 
     lastPeak = v;
 
@@ -68,18 +72,23 @@ void MinimalStreamWidget::updatePeak(double v) {
     enableVolumeMeter();
 }
 
-void MinimalStreamWidget::enableVolumeMeter() {
-    if (volumeMeterEnabled)
+void MinimalStreamWidget::enableVolumeMeter()
+{
+    if (volumeMeterEnabled) {
         return;
+    }
 
     volumeMeterEnabled = true;
+
     if (volumeMeterVisible) {
         peakProgressBar->show();
     }
 }
 
-void MinimalStreamWidget::setVolumeMeterVisible(bool v) {
+void MinimalStreamWidget::setVolumeMeterVisible(bool v)
+{
     volumeMeterVisible = v;
+
     if (v) {
         if (volumeMeterEnabled) {
             peakProgressBar->show();

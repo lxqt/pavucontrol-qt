@@ -32,8 +32,10 @@
 constexpr int SLIDER_SNAP = 2;
 static inline int paVolume2Percent(pa_volume_t vol)
 {
-    if (vol > PA_VOLUME_UI_MAX)
+    if (vol > PA_VOLUME_UI_MAX) {
         vol = PA_VOLUME_UI_MAX;
+    }
+
     return qRound(static_cast<double>(vol - PA_VOLUME_MUTED) / PA_VOLUME_NORM * 100);
 }
 
@@ -44,7 +46,7 @@ static inline pa_volume_t percent2PaVolume(int percent)
 
 /*** ChannelWidget ***/
 
-Channel::Channel(QGridLayout* parent) :
+Channel::Channel(QGridLayout *parent) :
     QObject(parent),
     can_decibel(false),
     volumeScaleEnabled(true),
@@ -61,10 +63,13 @@ Channel::Channel(QGridLayout* parent) :
 
     // make the info font smaller
     QFont label_font = volumeLabel->font();
-    if (label_font.pixelSize() == -1)
+
+    if (label_font.pixelSize() == -1) {
         label_font.setPointSizeF(label_font.pointSizeF() * 0.8);
-    else
+    } else {
         label_font.setPixelSize(qRound(static_cast<double>(label_font.pixelSize()) * 0.8));
+    }
+
     volumeLabel->setFont(label_font);
     volumeLabel->setFixedWidth(QFontMetrics{volumeLabel->font()}.size(Qt::TextSingleLine, QStringLiteral("100%(-99.99dB)")).width());
     volumeLabel->setAlignment(Qt::AlignHCenter);
@@ -82,15 +87,17 @@ Channel::Channel(QGridLayout* parent) :
     connect(volumeScale, &QSlider::sliderMoved, this, &Channel::onVolumeScaleSliderMoved);
 }
 
-void Channel::setVolume(pa_volume_t volume) {
+void Channel::setVolume(pa_volume_t volume)
+{
     const int v = paVolume2Percent(volume);
+
     if (can_decibel) {
         const double dB = pa_sw_volume_to_dB(volume);
         volumeLabel->setText(tr("%1% (%2dB)", "volume slider label [X% (YdB)]").arg(v)
-                .arg(dB > PA_DECIBEL_MININFTY ? QString::asprintf("%0.2f", dB) : QStringLiteral("-&#8734;")));
-    }
-    else
+                             .arg(dB > PA_DECIBEL_MININFTY ? QString::asprintf("%0.2f", dB) : QStringLiteral("-&#8734;")));
+    } else {
         volumeLabel->setText(tr("%1%", "volume slider label [X%]").arg(v));
+    }
 
     volumeScaleEnabled = false;
     volumeScale->setValue(v);
@@ -111,28 +118,33 @@ void Channel::setEnabled(bool enabled)
     volumeLabel->setEnabled(enabled);
 }
 
-void Channel::onVolumeScaleValueChanged(int value) {
+void Channel::onVolumeScaleValueChanged(int value)
+{
 
-    if (!volumeScaleEnabled)
+    if (!volumeScaleEnabled) {
         return;
+    }
 
-    if (minimalStreamWidget->updating)
+    if (minimalStreamWidget->updating) {
         return;
+    }
 
     minimalStreamWidget->updateChannelVolume(channel, percent2PaVolume(value));
 }
 
 void Channel::onVolumeScaleSliderMoved(int value)
 {
-    if (!volumeScaleEnabled)
+    if (!volumeScaleEnabled) {
         return;
+    }
 
-    if (minimalStreamWidget->updating)
+    if (minimalStreamWidget->updating) {
         return;
+    }
 
     const int current_value = volumeScale->value();
-    if (current_value == 100 && qAbs(value - current_value) <= SLIDER_SNAP)
-    {
+
+    if (current_value == 100 && qAbs(value - current_value) <= SLIDER_SNAP) {
         volumeScale->blockSignals(true);
         volumeScale->setSliderPosition(current_value);
         volumeScale->blockSignals(false);
@@ -152,7 +164,8 @@ void Channel::set_sensitive(bool enabled) {
 }
 */
 
-void Channel::setBaseVolume(pa_volume_t /*v*/) {
+void Channel::setBaseVolume(pa_volume_t /*v*/)
+{
 #if 0  // FIXME: Qt does not support this functionality
     gtk_scale_clear_marks(GTK_SCALE(volumeScale->gobj()));
 
@@ -160,10 +173,12 @@ void Channel::setBaseVolume(pa_volume_t /*v*/) {
                        last ? (can_decibel ? tr("<small>Silence</small>").toUtf8().constData() : tr("<small>Min</small>").toUtf8().constData()) : NULL);
     gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), (double)PA_VOLUME_NORM, (GtkPositionType) GTK_POS_BOTTOM,
                        last ? tr("<small>100% (0dB)</small>").toUtf8().constData() : NULL);
+
     if (v > PA_VOLUME_MUTED && v < PA_VOLUME_NORM) {
         gtk_scale_add_mark(GTK_SCALE(volumeScale->gobj()), (double)v, (GtkPositionType) GTK_POS_BOTTOM,
                            last ? tr("<small><i>Base</i></small>").toUtf8().constData() : NULL);
     }
+
 #endif
 
 }
