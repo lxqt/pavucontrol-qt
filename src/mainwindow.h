@@ -40,8 +40,9 @@ class RoleWidget;
 class MainWindow : public QDialog, public Ui::MainWindow
 {
     Q_OBJECT
+
 public:
-    MainWindow();
+    MainWindow(QWidget *parent);
     virtual ~MainWindow();
 
     void updateCard(const pa_card_info &info);

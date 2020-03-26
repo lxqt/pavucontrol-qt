@@ -1012,7 +1012,7 @@ int main(int argc, char *argv[])
 
     // ca_context_set_driver(ca_gtk_context_get(), "pulse");
 
-    MainWindow *mainWindow = new MainWindow();
+    MainWindow *mainWindow = new MainWindow(nullptr);
 
     if (parser.isSet(maximizeOption)) {
         mainWindow->showMaximized();
