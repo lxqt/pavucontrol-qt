@@ -526,7 +526,6 @@ void MainWindow::updateSource(const pa_source_info &info)
 {
     SourceWidget *w;
     bool is_new = false;
-    const char *icon;
     std::map<uint32_t, CardWidget *>::iterator cw;
     std::set<pa_source_port_info, source_port_prio_compare> port_priorities;
 
@@ -559,8 +558,7 @@ void MainWindow::updateSource(const pa_source_info &info)
     w->nameLabel->setText(QString::asprintf("%s", info.description).toHtmlEscaped());
     w->nameLabel->setToolTip(QString::fromUtf8(info.description));
 
-    icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
-    setIconByName(w->iconImage, icon, "audio-input-microphone");
+    setIconFromProplist(w->iconImage, info.proplist, "audio-input-microphone");
 
     w->setVolume(info.volume);
     w->muteToggleButton->setChecked(info.mute);
