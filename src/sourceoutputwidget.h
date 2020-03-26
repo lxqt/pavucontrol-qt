@@ -55,26 +55,6 @@ private:
     void buildMenu();
 
     QMenu *menu;
-
-    struct SourceMenuItem : public QAction {
-        SourceMenuItem(SourceOutputWidget *w
-                       , const char *label
-                       , uint32_t i
-                       , bool active
-                       , QObject *parent = nullptr)
-            : QAction{QString::fromUtf8(label), parent}
-            , widget(w)
-            , index(i)
-        {
-            setCheckable(true);
-            setChecked(active);
-            connect(this, &QAction::toggled, [this] { onToggle(); });
-        }
-
-        SourceOutputWidget *widget;
-        uint32_t index;
-        void onToggle();
-    };
 };
 
 #endif

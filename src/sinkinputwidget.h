@@ -32,6 +32,7 @@ class QMenu;
 class SinkInputWidget : public StreamWidget
 {
     Q_OBJECT
+
 public:
     SinkInputWidget(MainWindow *parent);
     ~SinkInputWidget(void);
@@ -52,26 +53,6 @@ private:
     void buildMenu();
 
     QMenu *menu;
-
-    struct SinkMenuItem : public QAction {
-        SinkMenuItem(SinkInputWidget *w
-                     , const char *label
-                     , uint32_t i
-                     , bool active
-                     , QObject *parent = nullptr)
-            : QAction(QString::fromUtf8(label), parent)
-            , widget(w)
-            , index(i)
-        {
-            setCheckable(true);
-            setChecked(active);
-            connect(this, &QAction::toggled, [this] { onToggle(); });
-        }
-
-        SinkInputWidget *widget;
-        uint32_t index;
-        void onToggle();
-    };
 };
 
 #endif

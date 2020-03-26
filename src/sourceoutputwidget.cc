@@ -27,6 +27,53 @@
 #include "sourcewidget.h"
 #include <QMenu>
 
+class SourceMenuItem : public QAction
+{
+    Q_OBJECT
+
+public:
+    SourceMenuItem(SourceOutputWidget *w
+                   , const char *label
+                   , uint32_t i
+                   , bool active
+                   , QObject *parent = nullptr)
+        : QAction{QString::fromUtf8(label), parent}
+        , widget(w)
+        , index(i)
+    {
+        setCheckable(true);
+        setChecked(active);
+        connect(this, &QAction::toggled, [this] { onToggle(); });
+    }
+
+    SourceOutputWidget *widget;
+    uint32_t index;
+
+public slots:
+    void onToggle()
+    {
+        if (widget->updating) {
+            return;
+        }
+
+        if (!isChecked()) {
+            return;
+        }
+
+        /*if (!mpMainWindow->sourceWidgets.count(widget->index))
+          return;*/
+
+        pa_operation *o;
+
+        if (!(o = pa_context_move_source_output_by_index(get_context(), widget->index, index, nullptr, nullptr))) {
+            show_error(tr("pa_context_move_source_output_by_index() failed").toUtf8().constData());
+            return;
+        }
+
+        pa_operation_unref(o);
+    }
+};
+
 SourceOutputWidget::SourceOutputWidget(MainWindow *parent) :
     StreamWidget(parent),
     menu{new QMenu{this}}
@@ -117,33 +164,11 @@ void SourceOutputWidget::buildMenu()
     }
 }
 
-void SourceOutputWidget::SourceMenuItem::onToggle()
-{
-
-    if (widget->updating) {
-        return;
-    }
-
-    if (!isChecked()) {
-        return;
-    }
-
-    /*if (!mpMainWindow->sourceWidgets.count(widget->index))
-      return;*/
-
-    pa_operation *o;
-
-    if (!(o = pa_context_move_source_output_by_index(get_context(), widget->index, index, nullptr, nullptr))) {
-        show_error(tr("pa_context_move_source_output_by_index() failed").toUtf8().constData());
-        return;
-    }
-
-    pa_operation_unref(o);
-}
-
 void SourceOutputWidget::onDeviceChangePopup()
 {
     menu->clear();
     buildMenu();
     menu->popup(QCursor::pos());
 }
+
+#include "sourceoutputwidget.moc"

@@ -28,6 +28,52 @@
 #include <QMenu>
 
 
+class SinkMenuItem : public QAction
+{
+    Q_OBJECT
+
+public:
+    SinkMenuItem(SinkInputWidget *w
+            , const char *label
+            , uint32_t i
+            , bool active
+            , QObject *parent = nullptr)
+        : QAction(QString::fromUtf8(label), parent)
+          , widget(w)
+          , index(i)
+    {
+        setCheckable(true);
+        setChecked(active);
+        connect(this, &QAction::toggled, [this] { onToggle(); });
+    }
+
+    SinkInputWidget *widget;
+    uint32_t index;
+
+public slots:
+    void onToggle() {
+        if (widget->updating) {
+            return;
+        }
+
+        if (!isChecked()) {
+            return;
+        }
+
+        /*if (!mpMainWindow->sinkWidgets.count(widget->index))
+          return;*/
+
+        pa_operation *o;
+
+        if (!(o = pa_context_move_sink_input_by_index(get_context(), widget->index, index, nullptr, nullptr))) {
+            show_error(tr("pa_context_move_sink_input_by_index() failed").toUtf8().constData());
+            return;
+        }
+
+        pa_operation_unref(o);
+    }
+};
+
 SinkInputWidget::SinkInputWidget(MainWindow *parent) :
     StreamWidget(parent),
     menu{new QMenu{this}}
@@ -108,32 +154,11 @@ void SinkInputWidget::buildMenu()
     }
 }
 
-void SinkInputWidget::SinkMenuItem::onToggle()
-{
-    if (widget->updating) {
-        return;
-    }
-
-    if (!isChecked()) {
-        return;
-    }
-
-    /*if (!mpMainWindow->sinkWidgets.count(widget->index))
-      return;*/
-
-    pa_operation *o;
-
-    if (!(o = pa_context_move_sink_input_by_index(get_context(), widget->index, index, nullptr, nullptr))) {
-        show_error(tr("pa_context_move_sink_input_by_index() failed").toUtf8().constData());
-        return;
-    }
-
-    pa_operation_unref(o);
-}
-
 void SinkInputWidget::onDeviceChangePopup()
 {
     menu->clear();
     buildMenu();
     menu->popup(QCursor::pos());
 }
+
+#include "sinkinputwidget.moc"
