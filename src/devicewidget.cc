@@ -18,20 +18,18 @@
   along with pavucontrol. If not, see <https://www.gnu.org/licenses/>.
 ***/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
-#include <pulse/ext-device-manager.h>
+#include "devicewidget.h"
 
 #include "mainwindow.h"
-#include "devicewidget.h"
 #include "channel.h"
+
 #include <sstream>
 #include <QAction>
 #include <QLabel>
 #include <QMessageBox>
 #include <QInputDialog>
+
+#include <pulse/ext-device-manager.h>
 
 /*** DeviceWidget ***/
 DeviceWidget::DeviceWidget(MainWindow *parent, const QByteArray &deviceType) :

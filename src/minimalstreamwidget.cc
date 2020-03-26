@@ -18,11 +18,8 @@
   along with pavucontrol. If not, see <https://www.gnu.org/licenses/>.
 ***/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "minimalstreamwidget.h"
+
 #include <QGridLayout>
 #include <QProgressBar>
 #include <QDebug>

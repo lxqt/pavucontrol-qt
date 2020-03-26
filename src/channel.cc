@@ -17,17 +17,14 @@
   You should have received a copy of the GNU General Public License
   along with pavucontrol. If not, see <https://www.gnu.org/licenses/>.
 ***/
+#include "channel.h"
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
+#include "minimalstreamwidget.h"
 
 #include <QGridLayout>
 #include <QLabel>
 #include <QSlider>
 #include <QFontMetrics>
-#include "channel.h"
-#include "minimalstreamwidget.h"
 
 constexpr int SLIDER_SNAP = 2;
 static inline int paVolume2Percent(pa_volume_t vol)
