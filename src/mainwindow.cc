@@ -190,9 +190,9 @@ static void updatePorts(DeviceWidget *w, std::map<QByteArray, PortInfo> *ports)
     }
 }
 
-void MainWindow::setIconByName(QLabel *label, const char *name, const char *fallback)
+void MainWindow::setIconByName(QLabel *label, const QByteArray &name, const QByteArray &fallback)
 {
-    QIcon icon = QIcon::fromTheme(QString::fromUtf8(name ? name : fallback));
+    QIcon icon = QIcon::fromTheme(QString::fromUtf8(!name.isEmpty() ? name : fallback));
 
     if (icon.isNull()) {
         qWarning() << "Unable to find icon" << name << "using fallback" << fallback;
@@ -598,48 +598,54 @@ void MainWindow::updateSource(const pa_source_info &info)
 }
 
 
-void MainWindow::setIconFromProplist(QLabel *icon, pa_proplist *l, const char *def)
+void MainWindow::setIconFromProplist(QLabel *icon, pa_proplist *l, const char *fallback)
 {
-    const char *t;
+    QByteArray name = pa_proplist_gets(l, PA_PROP_MEDIA_ICON_NAME);
 
-    if ((t = pa_proplist_gets(l, PA_PROP_MEDIA_ICON_NAME))) {
-        goto finish;
+    if (!name.isEmpty()) {
+        setIconByName(icon, name, fallback);
+        return;
     }
 
-    if ((t = pa_proplist_gets(l, PA_PROP_WINDOW_ICON_NAME))) {
-        goto finish;
+    name = pa_proplist_gets(l, PA_PROP_WINDOW_ICON_NAME);
+    if (!name.isEmpty()) {
+        setIconByName(icon, name, fallback);
+        return;
     }
 
-    if ((t = pa_proplist_gets(l, PA_PROP_APPLICATION_ICON_NAME))) {
-        goto finish;
+    name = pa_proplist_gets(l, PA_PROP_APPLICATION_ICON_NAME);
+    if (!name.isEmpty()) {
+        setIconByName(icon, name, fallback);
+        return;
     }
 
-    if ((t = pa_proplist_gets(l, PA_PROP_MEDIA_ROLE))) {
-
-        if (strcmp(t, "video") == 0 ||
-                strcmp(t, "phone") == 0) {
-            goto finish;
-        }
-
-        if (strcmp(t, "music") == 0) {
-            t = "audio";
-            goto finish;
-        }
-
-        if (strcmp(t, "game") == 0) {
-            t = "applications-games";
-            goto finish;
-        }
-
-        if (strcmp(t, "event") == 0) {
-            t = "dialog-information";
-            goto finish;
-        }
+    const QByteArray role = pa_proplist_gets(l, PA_PROP_MEDIA_ROLE);
+    if (role.isEmpty()) {
+        setIconByName(icon, name, fallback);
+        return;
     }
 
-finish:
 
-    setIconByName(icon, t, def);
+    if (role == "video" || role == "phone") {
+        setIconByName(icon, role, fallback);
+        return;
+    }
+
+    if (role == "music") {
+        setIconByName(icon, "audio", fallback);
+        return;
+    }
+
+    if (role == "game") {
+        setIconByName(icon, "applications-games", fallback);
+        return;
+    }
+    if (role == "event") {
+        setIconByName(icon, "dialog-information", fallback);
+        return;
+    }
+
+    setIconByName(icon, role, fallback);
 }
 
 

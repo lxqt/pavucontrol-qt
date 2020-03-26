@@ -103,7 +103,7 @@ public:
     bool canRenameDevices;
 
 private:
-    static void setIconByName(QLabel *label, const char *name, const char *fallback);
+    static void setIconByName(QLabel *label, const QByteArray &name, const QByteArray &fallback);
 
     bool m_connected;
     char *m_config_filename;
