@@ -36,7 +36,7 @@ class DeviceWidget : public MinimalStreamWidget, public Ui::DeviceWidget
 {
     Q_OBJECT
 public:
-    DeviceWidget(MainWindow *parent, QByteArray deviceType = "");
+    DeviceWidget(MainWindow *parent, const QByteArray &deviceType);
 
     void setChannelMap(const pa_channel_map &m, bool can_decibel);
     void setVolume(const pa_cvolume &volume, bool force = false);

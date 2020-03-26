@@ -35,7 +35,6 @@ class SinkInputWidget : public StreamWidget
 
 public:
     SinkInputWidget(MainWindow *parent);
-    ~SinkInputWidget(void);
 
     SinkInputType type;
 

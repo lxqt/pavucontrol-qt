@@ -90,11 +90,6 @@ SourceOutputWidget::SourceOutputWidget(MainWindow *parent) :
 #endif
 }
 
-
-SourceOutputWidget::~SourceOutputWidget(void)
-{
-}
-
 void SourceOutputWidget::setSourceIndex(uint32_t idx)
 {
     mSourceIndex = idx;

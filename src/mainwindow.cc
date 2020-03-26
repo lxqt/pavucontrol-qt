@@ -156,16 +156,16 @@ MainWindow::~MainWindow()
 }
 
 class DeviceWidget;
-static void updatePorts(DeviceWidget *w, std::map<QByteArray, PortInfo> &ports)
+static void updatePorts(DeviceWidget *w, std::map<QByteArray, PortInfo> *ports)
 {
     std::map<QByteArray, PortInfo>::iterator it;
     PortInfo p;
 
     for (std::pair<QByteArray, QByteArray> &port : w->ports) {
         QByteArray desc;
-        it = ports.find(port.first);
+        it = ports->find(port.first);
 
-        if (it == ports.end()) {
+        if (it == ports->end()) {
             continue;
         }
 
@@ -186,9 +186,9 @@ static void updatePorts(DeviceWidget *w, std::map<QByteArray, PortInfo> &ports)
         port.second = desc;
     }
 
-    it = ports.find(w->activePort);
+    it = ports->find(w->activePort);
 
-    if (it != ports.end()) {
+    if (it != ports->end()) {
         p = it->second;
         w->setLatencyOffset(p.latency_offset);
     }
@@ -315,7 +315,7 @@ void MainWindow::updateCard(const pa_card_info &info)
 
             if (sw->card_index == w->index) {
                 sw->updating = true;
-                updatePorts(sw, w->ports);
+                updatePorts(sw, &w->ports);
                 sw->updating = false;
             }
         }
@@ -329,7 +329,7 @@ void MainWindow::updateCard(const pa_card_info &info)
 
             if (sw->card_index == w->index) {
                 sw->updating = true;
-                updatePorts(sw, w->ports);
+                updatePorts(sw, &w->ports);
                 sw->updating = false;
             }
         }
@@ -403,7 +403,7 @@ bool MainWindow::updateSink(const pa_sink_info &info)
     cw = cardWidgets.find(info.card);
 
     if (cw != cardWidgets.end()) {
-        updatePorts(w, cw->second->ports);
+        updatePorts(w, &cw->second->ports);
     }
 
 #ifdef PA_SINK_SET_FORMATS
@@ -589,7 +589,7 @@ void MainWindow::updateSource(const pa_source_info &info)
     cw = cardWidgets.find(info.card);
 
     if (cw != cardWidgets.end()) {
-        updatePorts(w, cw->second->ports);
+        updatePorts(w, &cw->second->ports);
     }
 
     w->prepareMenu();
@@ -663,10 +663,11 @@ void MainWindow::updateSinkInput(const pa_sink_input_info &info)
     if (sinkInputWidgets.count(info.index)) {
         w = sinkInputWidgets[info.index];
 
-        if (pa_context_get_server_protocol_version(get_context()) >= 13)
+        if (pa_context_get_server_protocol_version(get_context()) >= 13) {
             if (w->sinkIndex() != info.sink) {
                 createMonitorStreamForSinkInput(w, info.sink);
             }
+        }
     } else {
         sinkInputWidgets[info.index] = w = new SinkInputWidget(this);
         w->setChannelMap(info.channel_map, true);
@@ -716,12 +717,13 @@ void MainWindow::updateSourceOutput(const pa_source_output_info &info)
     const char *app;
     bool is_new = false;
 
-    if ((app = pa_proplist_gets(info.proplist, PA_PROP_APPLICATION_ID)))
+    if ((app = pa_proplist_gets(info.proplist, PA_PROP_APPLICATION_ID))) {
         if (strcmp(app, "org.PulseAudio.pavucontrol") == 0
                 || strcmp(app, "org.gnome.VolumeControl") == 0
                 || strcmp(app, "org.kde.kmixd") == 0) {
             return;
         }
+    }
 
     if (sourceOutputWidgets.count(info.index)) {
         w = sourceOutputWidgets[info.index];

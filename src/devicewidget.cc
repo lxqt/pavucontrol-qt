@@ -34,7 +34,7 @@
 #include <QInputDialog>
 
 /*** DeviceWidget ***/
-DeviceWidget::DeviceWidget(MainWindow *parent, QByteArray deviceType) :
+DeviceWidget::DeviceWidget(MainWindow *parent, const QByteArray &deviceType) :
     MinimalStreamWidget(parent),
     offsetButtonEnabled(false),
     mpMainWindow(parent),

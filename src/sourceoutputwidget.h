@@ -34,7 +34,6 @@ class SourceOutputWidget : public StreamWidget
     Q_OBJECT
 public:
     SourceOutputWidget(MainWindow *parent);
-    ~SourceOutputWidget(void);
 
     SourceOutputType type;
 

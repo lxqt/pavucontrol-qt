@@ -95,7 +95,7 @@ public:
     pa_stream *createMonitorStreamForSource(uint32_t source_idx, uint32_t stream_idx, bool suspend);
     void createMonitorStreamForSinkInput(SinkInputWidget *w, uint32_t sink_idx);
 
-    void setIconFromProplist(QLabel *icon, pa_proplist *l, const char *name);
+    static void setIconFromProplist(QLabel *icon, pa_proplist *l, const char *name);
 
     RoleWidget *eventRoleWidget;
 
@@ -107,7 +107,7 @@ public:
     bool canRenameDevices;
 
 private:
-    void setIconByName(QLabel *label, const char *name, const char *fallback);
+    static void setIconByName(QLabel *label, const char *name, const char *fallback);
 
     bool m_connected;
     char *m_config_filename;
