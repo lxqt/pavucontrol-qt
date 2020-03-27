@@ -244,6 +244,9 @@
            <property name="suffix">
             <string> ms</string>
            </property>
+           <property name="maximum">
+            <number>10000</number>
+           </property>
           </widget>
          </item>
         </layout>
