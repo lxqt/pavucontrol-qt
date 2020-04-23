@@ -1,3 +1,10 @@
+pavucontrol-qt-0.15.0 / 2020-04-23
+==================================
+  * Bumped version to 0.15.0.
+  * Avoid char raw strings literals memory allocations.
+  * Don't use automatic string conversions.
+  * Removed (duplicated) string casts definitions.
+
 pavucontrol-qt-0.14.1 / 2019-02-25
 ==================================
 
