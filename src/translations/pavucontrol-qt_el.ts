@@ -147,7 +147,7 @@
     <message>
         <location filename="../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Μετατόπιση του λανθάνοντος χρόνου:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Μετατόπιση του χρόνου καθυστέρησης:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="245"/>

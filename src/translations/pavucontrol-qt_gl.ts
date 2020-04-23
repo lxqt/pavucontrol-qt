@@ -536,7 +536,7 @@ If this is the case, then PulseAudio should autospawn again, or if this is not c
 run start-pulseaudio-x11 manually.</source>
         <translation>Produciuse un fallo na conexión a PulseAudio. Tentarase de novo en 5s
 
-Neste caso é probábel por  mor de que PULSE_SERVER estea mal configurado nas propiedades do
+Neste caso é probábel, por mor de que PULSE_SERVER estea mal configurado nas propiedades do
 contorno/xanela raíz de X11 ou en «client.conf» no servidor predeterminado.
 Esta situación tamén pode xurdir cando falla PulseAudio e deixa restos na xanela raíz de X11.
 Se é este o caso, deberá reiniciarse o PulseAudio, ou, se iso non está configurado, vostede debe
