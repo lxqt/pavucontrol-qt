@@ -209,7 +209,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
 
     w->hasSinks = w->hasSources = false;
     profile_priorities.clear();
-    for (pa_card_profile_info2 ** p_profile = info.profiles2; *p_profile != nullptr; ++p_profile) {
+    for (pa_card_profile_info2 ** p_profile = info.profiles2; p_profile && *p_profile != nullptr; ++p_profile) {
         w->hasSinks = w->hasSinks || ((*p_profile)->n_sinks > 0);
         w->hasSources = w->hasSources || ((*p_profile)->n_sources > 0);
         profile_priorities.insert(*p_profile);
@@ -225,7 +225,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
         p.available = info.ports[i]->available;
         p.direction = info.ports[i]->direction;
         p.latency_offset = info.ports[i]->latency_offset;
-        for (pa_card_profile_info2 ** p_profile = info.ports[i]->profiles2; *p_profile != nullptr; ++p_profile)
+        for (pa_card_profile_info2 ** p_profile = info.ports[i]->profiles2; p_profile && *p_profile != nullptr; ++p_profile)
             p.profiles.push_back((*p_profile)->name);
 
         w->ports[p.name] = p;
