@@ -176,8 +176,10 @@ static void updatePorts(DeviceWidget *w, std::map<QByteArray, PortInfo> &ports) 
     }
 }
 
-static void setIconByName(QLabel* label, const char* name) {
-    QIcon icon = QIcon::fromTheme(QString::fromUtf8(name));
+static void setIconByName(QLabel* label, const char* name, const char* fallback_name = nullptr) {
+    QIcon icon = QIcon::fromTheme(QString::fromLatin1(name));
+    if (icon.isNull() || icon.availableSizes().isEmpty())
+        icon = QIcon::fromTheme(QString::fromLatin1(fallback_name));
     int size = label->style()->pixelMetric(QStyle::PM_ToolBarIconSize);
     QPixmap pix = icon.pixmap(size, size);
     label->setPixmap(pix);
@@ -205,7 +207,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
     w->nameLabel->setText(QString::fromUtf8(w->name));
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
-    setIconByName(w->iconImage, icon ? icon : "audio-card");
+    setIconByName(w->iconImage, icon, "audio-card");
 
     w->hasSinks = w->hasSources = false;
     profile_priorities.clear();
@@ -336,7 +338,7 @@ bool MainWindow::updateSink(const pa_sink_info &info) {
     g_free(txt);
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
-    setIconByName(w->iconImage, icon ? icon : "audio-card");
+    setIconByName(w->iconImage, icon, "audio-card");
 
     w->setVolume(info.volume);
     w->muteToggleButton->setChecked(info.mute);
@@ -502,7 +504,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
     g_free(txt);
 
     icon = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_ICON_NAME);
-    setIconByName(w->iconImage, icon ? icon : "audio-input-microphone");
+    setIconByName(w->iconImage, icon, "audio-input-microphone");
 
     w->setVolume(info.volume);
     w->muteToggleButton->setChecked(info.mute);
@@ -573,7 +575,7 @@ void MainWindow::setIconFromProplist(QLabel *icon, pa_proplist *l, const char *d
 
 finish:
 
-    setIconByName(icon, t);
+    setIconByName(icon, t, def);
 }
 
 
