@@ -11,7 +11,7 @@
     <message>
         <location filename="../cardwidget.ui" line="29"/>
         <source>Card Name</source>
-        <translation>Kard Adı</translation>
+        <translation>Kart Adı</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="47"/>
@@ -107,12 +107,12 @@
     <message>
         <location filename="../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Bağlantı Noktası:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation>Geliştmiş seçenekleri göster</translation>
+        <translation>Gelişmiş seçenekleri göster</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
-        <translation>Cihazı yeniden adlandır...</translation>
+        <translation>Aygıtı yeniden adlandır...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
@@ -177,7 +177,7 @@
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation>%1 cihazını yeniden adlandır:</translation>
+        <translation>%1 aygıtını yeniden adlandır:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="587"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Olay olarak tanımlanması ve dolayısıyla Etkinlik widget&apos;ı tarafından işlenmesi nedeniyle sink-girişi yok sayılyor</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="759"/>
@@ -381,7 +381,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="87"/>
         <source>Card callback failure</source>
-        <translation>Card geri çağırma hatası</translation>
+        <translation>Kart geri çağırma hatası</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="110"/>
@@ -537,8 +537,8 @@ run start-pulseaudio-x11 manually.</source>
         <translation>PulseAudio&apos;ya bağlanılamadı. 5 sn.&apos;de bir otomatik denenecek
 
 Bunun nedeni Ortam/X11 Kök Pencere Özelliklerinde PULSE_SERVER&apos;ın seçilmiş olması veya 
-client.conf içindeki varsayılan sunucu yanlış yapılandırılmasıdır.
-Bu durum, PulseAudio çöktüğünde ve  X11 Kök Penceresinde bozuk detaylarını bıraktığı zaman
+client.conf içindeki varsayılan sunucunun yanlış yapılandırılmasıdır.
+Bu durum, PulseAudio çöktüğünde ve X11 Kök Penceresinde bozuk detaylarını bıraktığı zaman
 da ortaya çıkabilir.
 Bu durumda, PulseAudio tekrar durdurulmalı veya yapılandırılmamışsa, start-pulseaudio-x11&apos;i 
 kendiniz çalıştırmalısınız.</translation>
@@ -577,7 +577,7 @@ kendiniz çalıştırmalısınız.</translation>
     <message>
         <location filename="../sinkinputwidget.cc" line="36"/>
         <source>on</source>
-        <translation type="unfinished"></translation>
+        <translation>açık</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
@@ -643,7 +643,7 @@ kendiniz çalıştırmalısınız.</translation>
     <message>
         <location filename="../sourceoutputwidget.cc" line="35"/>
         <source>from</source>
-        <translation type="unfinished"></translation>
+        <translation>şuradan</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
