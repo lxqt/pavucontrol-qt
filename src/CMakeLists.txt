@@ -16,6 +16,7 @@ set(pavucontrol-qt_HDRS
     sourceoutputwidget.h
     sourcewidget.h
     streamwidget.h
+    elidinglabel.h
 )
 
 set(pavucontrol-qt_SRCS
@@ -31,6 +32,7 @@ set(pavucontrol-qt_SRCS
     sourceoutputwidget.cc
     sourcewidget.cc
     streamwidget.cc
+    elidinglabel.cc
 )
 
 set(pavucontrol-qt_UI
