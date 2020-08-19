@@ -27,7 +27,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="nameLabel">
+      <widget class="ElidingLabel" name="nameLabel">
        <property name="text">
         <string>Device Title</string>
        </property>
@@ -103,6 +103,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ElidingLabel</class>
+   <extends>QLabel</extends>
+   <header>elidinglabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
