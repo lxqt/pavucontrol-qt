@@ -1095,7 +1095,7 @@ void MainWindow::setConnectingMessage(const char *string) {
     connectingLabel->setText(QString::fromUtf8(markup));
 }
 
-void MainWindow::onSinkTypeComboBoxChanged(int index) {
+void MainWindow::onSinkTypeComboBoxChanged(int /*index*/) {
     showSinkType = (SinkType) sinkTypeComboBox->currentIndex();
 
     if (showSinkType == (SinkType) -1)
@@ -1104,7 +1104,7 @@ void MainWindow::onSinkTypeComboBoxChanged(int index) {
     updateDeviceVisibility();
 }
 
-void MainWindow::onSourceTypeComboBoxChanged(int index) {
+void MainWindow::onSourceTypeComboBoxChanged(int /*index*/) {
     showSourceType = (SourceType) sourceTypeComboBox->currentIndex();
 
     if (showSourceType == (SourceType) -1)
@@ -1113,7 +1113,7 @@ void MainWindow::onSourceTypeComboBoxChanged(int index) {
     updateDeviceVisibility();
 }
 
-void MainWindow::onSinkInputTypeComboBoxChanged(int index) {
+void MainWindow::onSinkInputTypeComboBoxChanged(int /*index*/) {
     showSinkInputType = (SinkInputType) sinkInputTypeComboBox->currentIndex();
 
     if (showSinkInputType == (SinkInputType) -1)
@@ -1122,7 +1122,7 @@ void MainWindow::onSinkInputTypeComboBoxChanged(int index) {
     updateDeviceVisibility();
 }
 
-void MainWindow::onSourceOutputTypeComboBoxChanged(int index) {
+void MainWindow::onSourceOutputTypeComboBoxChanged(int /*index*/) {
     showSourceOutputType = (SourceOutputType) sourceOutputTypeComboBox->currentIndex();
 
     if (showSourceOutputType == (SourceOutputType) -1)
@@ -1132,7 +1132,7 @@ void MainWindow::onSourceOutputTypeComboBoxChanged(int index) {
 }
 
 
-void MainWindow::onShowVolumeMetersCheckButtonToggled(bool toggled) {
+void MainWindow::onShowVolumeMetersCheckButtonToggled(bool /*toggled*/) {
     bool state = showVolumeMetersCheckButton->isChecked();
     pa_operation *o;
 
