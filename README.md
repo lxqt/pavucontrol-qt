@@ -34,10 +34,10 @@ In LXQt sessions the binary is placed in sub-menu "Sound & Video" of the panel's
 The usage itself should be self-explanatory.
 
 
-### Translations
+## Translations
 
-Translations can be done in [LXQt-Weblate](https://translate.lxqt-project.org/projects/lxqt-configuration/obconf-qt/).
+Translations can be done in [LXQt-Weblate](https://translate.lxqt-project.org/projects/lxqt-configuration/pavucontrol-qt/).
 
-<a href="https://translate.lxqt-project.org/projects/lxqt-configuration/obconf-qt/">
-<img src="https://translate.lxqt-project.org/widgets/lxqt-configuration/-/obconf-qt/multi-auto.svg" alt="Translation status" />
+<a href="https://translate.lxqt-project.org/projects/lxqt-configuration/pavucontrol-qt/">
+<img src="https://translate.lxqt-project.org/widgets/lxqt-configuration/-/pavucontrol-qt/multi-auto.svg" alt="Translation status" />
 </a>
