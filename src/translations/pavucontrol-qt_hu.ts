@@ -251,7 +251,7 @@
     <message>
         <location filename="../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation>Leját&amp;szás</translation>
+        <translation>&amp;Lejátszás</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="93"/>
@@ -327,13 +327,13 @@
         <location filename="../mainwindow.cc" line="163"/>
         <location filename="../mainwindow.cc" line="257"/>
         <source> (unavailable)</source>
-        <translation> (elérhetetlen)</translation>
+        <translation> (nem elérhető)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
         <location filename="../mainwindow.cc" line="254"/>
         <source> (unplugged)</source>
-        <translation> (nem csatlakoztatott)</translation>
+        <translation> (nincs csatlakoztatva)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="388"/>
@@ -353,7 +353,7 @@
     <message>
         <location filename="../mainwindow.cc" line="448"/>
         <source>Failed to connect monitoring stream</source>
-        <translation>A megfigyelő adatfolyam csatlakoztatása meghiúsult</translation>
+        <translation>Nem sikerült csatlakozni a megfigyelő adatfolyamhoz</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="587"/>
