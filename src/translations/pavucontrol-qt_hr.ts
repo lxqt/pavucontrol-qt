@@ -550,7 +550,7 @@ konfigurirano, pokreni start-pulseaudio-x11 ručno.</translation>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation>Pokušaj ponovo unedogled, ako se PA zatvori (svakih 5 s)</translation>
+        <translation>Pokušaj ponovo unedogled, ako se PA zatvori (svakih 5 s).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="678"/>
