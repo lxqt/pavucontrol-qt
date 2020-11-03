@@ -1,3 +1,12 @@
+pavucontrol-qt-0.16.0 / 2020-11-01
+==================================
+  * Safely iterate over card profile info array.
+  * Fall back to default icon when no candidate is found.
+  * Elide playback name label if needed
+  * Don't force a height on progressbars.
+  * Remove warnings about unused function parameters.
+  * Wrapped the text of connecting error label.
+
 pavucontrol-qt-0.15.0 / 2020-04-23
 ==================================
   * Bumped version to 0.15.0.
