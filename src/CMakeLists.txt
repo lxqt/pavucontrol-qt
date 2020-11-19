@@ -57,6 +57,7 @@ lxqt_translate_ts(pavucontrol-qt_QM_FILES
 lxqt_translate_desktop(DESKTOP_FILES
     SOURCES
     pavucontrol-qt.desktop.in
+    USE_YAML
 )
 
 add_executable(pavucontrol-qt
