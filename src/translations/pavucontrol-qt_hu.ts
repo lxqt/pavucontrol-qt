@@ -11,7 +11,7 @@
     <message>
         <location filename="../cardwidget.ui" line="29"/>
         <source>Card Name</source>
-        <translation>Kártyanév</translation>
+        <translation>Kártya neve</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="47"/>
@@ -102,7 +102,7 @@
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation>Tartaléknak vesz</translation>
+        <translation>Tartaléknak vétel</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation>Haladó beállítások</translation>
+        <translation>Haladó beállítások megjelenítése</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
@@ -167,7 +167,7 @@
     <message>
         <location filename="../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation>Sajnos az átnevezés nem támogatott.</translation>
+        <translation>Sajnos az eszköz átnevezése nem támogatott.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
