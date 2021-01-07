@@ -220,7 +220,7 @@
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation>Ohjelmat</translation>
+        <translation>Sovellukset</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="84"/>
@@ -647,7 +647,7 @@ asetettu, käynnistä start-pulseaudio-x11 käsin.</translation>
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Pysäytä tallennus</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="60"/>
@@ -657,12 +657,12 @@ asetettu, käynnistä start-pulseaudio-x11 käsin.</translation>
     <message>
         <location filename="../sourceoutputwidget.cc" line="72"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_volume() epäonnistui</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="87"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_mute() epäonnistui</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="98"/>
@@ -708,7 +708,7 @@ asetettu, käynnistä start-pulseaudio-x11 käsin.</translation>
     <message>
         <location filename="../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Laitteen nimi</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="52"/>
@@ -718,17 +718,17 @@ asetettu, käynnistä start-pulseaudio-x11 käsin.</translation>
     <message>
         <location filename="../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>laite</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Mykistä ääni</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukitse kanavat yhteen</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
