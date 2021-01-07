@@ -311,7 +311,7 @@
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation>hangerőszabályzók láthatók</translation>
+        <translation>hangerőmérők megjelenítése</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="587"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation>A nyelő bemenet nincs figyelembevéve, mivel ezt az &quot;eseménykezelő&quot; végzi</translation>
+        <translation type="unfinished">Nyelő bemenet figyelmen kívül hagyása, mert eseménynek minősül, és így az eseménykezelő kezeli</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="759"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1089"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation>Kapcsolódás a PulseAudio-hoz. Türelem...</translation>
+        <translation>Kapcsolat létrehozása a PulseAudio-val. Kérjük várjon...</translation>
     </message>
 </context>
 <context>
@@ -396,7 +396,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
-        <translation>Függvényvisszatérési hiba a nyelő bemeneten</translation>
+        <translation>Függvényvisszatérési hiba a nyelőbemeneten</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="171"/>
@@ -428,7 +428,7 @@
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation>A „device-restor eextension: %s indítása meghiúsult</translation>
+        <translation>Nem sikerült inicializálni az eszköz-visszaállítási kiterjesztést: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
@@ -439,7 +439,7 @@
         <location filename="../pavucontrol.cc" line="320"/>
         <location filename="../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation>A device manager extension: %s indítása meghiúsult</translation>
+        <translation>Nem sikerült inicializálni az eszközkezelő kiterjesztést: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
@@ -581,7 +581,7 @@ a start-pulseaudio-x11-et manuálisan kell futtatni.</translation>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation>Lejátszás leállítása</translation>
+        <translation>Lejátszás kilövése</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
@@ -647,7 +647,7 @@ a start-pulseaudio-x11-et manuálisan kell futtatni.</translation>
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation>Felvétel leállítása</translation>
+        <translation>Felvétel kilövése</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="60"/>
