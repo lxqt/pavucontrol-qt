@@ -41,22 +41,22 @@
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Тиша&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Тиша&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Мін.&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Мін.&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;100% (0дБ)&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;100% (0дБ)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;Основний&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Основний&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation>мс</translation>
+        <translation> мс</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="41"/>
@@ -172,7 +172,7 @@
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation>Вам потрібно завантажити module-device-manager в сервері PulseAudio, щоб мати змогу перейменовувати пристрої </translation>
+        <translation>Вам потрібно завантажити module-device-manager на сервері PulseAudio, щоб мати змогу перейменовувати пристрої</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
@@ -266,17 +266,17 @@
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>Пристрої &amp;отримання</translation>
+        <translation>Пристрої &amp;вводу</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
         <source>&lt;i&gt;No input devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Пристроїв отримання звукових даних не знайдено&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Пристроїв вводу не знайдено&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation>Всі пристрої отримання </translation>
+        <translation>Всі пристрої вводу</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="274"/>
@@ -286,12 +286,12 @@
     <message>
         <location filename="../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation>Фізичні пристрої отримання</translation>
+        <translation>Фізичні пристрої вводу</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation>Віртуальні пристрої отримання</translation>
+        <translation>Віртуальні пристрої вводу</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="289"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation> (вставлено)</translation>
+        <translation> (під&apos;єднано)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
@@ -333,7 +333,7 @@
         <location filename="../mainwindow.cc" line="165"/>
         <location filename="../mainwindow.cc" line="254"/>
         <source> (unplugged)</source>
-        <translation>(витягнено)</translation>
+        <translation> (від&apos;єднано)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="388"/>
