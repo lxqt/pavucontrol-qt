@@ -214,7 +214,7 @@
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation>所有流媒体</translation>
+        <translation>所有流</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
@@ -226,7 +226,7 @@
         <location filename="../mainwindow.ui" line="84"/>
         <location filename="../mainwindow.ui" line="149"/>
         <source>Virtual Streams</source>
-        <translation>虚拟流媒体</translation>
+        <translation>虚拟流</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="93"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation>除监视器外的全部</translation>
+        <translation>除监听外的全部</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
@@ -296,7 +296,7 @@
     <message>
         <location filename="../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation>显示器</translation>
+        <translation>监听</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="298"/>
@@ -348,12 +348,12 @@
     <message>
         <location filename="../mainwindow.cc" line="433"/>
         <source>Failed to create monitoring stream</source>
-        <translation>无法创建监视流媒体</translation>
+        <translation>无法创建监听流</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="448"/>
         <source>Failed to connect monitoring stream</source>
-        <translation>无法连接到监视流媒体</translation>
+        <translation>无法连接到监听流</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="587"/>
@@ -381,37 +381,37 @@
     <message>
         <location filename="../pavucontrol.cc" line="87"/>
         <source>Card callback failure</source>
-        <translation>声卡回叫失败</translation>
+        <translation>声卡回调失败</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
-        <translation>Sink 回叫失败</translation>
+        <translation>Sink 回调失败</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="133"/>
         <source>Source callback failure</source>
-        <translation>源回叫失败</translation>
+        <translation>源回调失败</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
-        <translation>Sink 输入回叫失败</translation>
+        <translation>Sink 输入回调失败</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="171"/>
         <source>Source output callback failure</source>
-        <translation>源输出回叫失败</translation>
+        <translation>源输出回调失败</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="211"/>
         <source>Client callback failure</source>
-        <translation>客户端回叫失败</translation>
+        <translation>客户端回调失败</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="227"/>
         <source>Server info callback failure</source>
-        <translation>服务器信息回叫失败</translation>
+        <translation>服务器信息回调失败</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="245"/>
@@ -558,7 +558,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation>严重错误：无法连接 PulseAudio</translation>
+        <translation>严重错误：无法连接到 PulseAudio</translation>
     </message>
 </context>
 <context>
@@ -574,7 +574,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="36"/>
         <source>on</source>
-        <translation>开</translation>
+        <translation>输出到</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
@@ -640,7 +640,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="35"/>
         <source>from</source>
-        <translation>形式</translation>
+        <translation>源自</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
