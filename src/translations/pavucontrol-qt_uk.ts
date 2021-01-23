@@ -30,13 +30,13 @@
         <location filename="../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1% (%2дБ)</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1%</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -92,17 +92,17 @@
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Заглушити звук</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Пов&apos;язати канали разом</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Встановити запасним</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейменувати пристрій...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
@@ -177,12 +177,12 @@
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейменувати пристрій %1 на:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Збій pa_ext_device_manager_set_device_description()</translation>
     </message>
 </context>
 <context>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="587"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Нехтування вхідним сигналом, оскільки його визначено подією та оброблено віджетом події</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="759"/>
@@ -534,13 +534,13 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished">Зв&apos;язок з PulseAudio втрачено. Автоматична спроба зв&apos;язку через 5с
+        <translation>З&apos;єднання з PulseAudio втрачено. Автоматична спроба зв&apos;язку через 5с
 
-In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Properties
-or default-server in client.conf is misconfigured.
-This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
-If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
-run start-pulseaudio-x11 manually.</translation>
+Схоже це спричинено неправильними властивостями PULSE_SERVER у кореневому вікні Environment/X11
+або default-server у client.conf неправильно налаштовано.
+Ця ситуація також може виникнути, коли стається збій PulseAudio і залишаються застарілі деталі в корінному вікні X11.
+Якщо це так, то PulseAudio повинен знову автоматично запуститися, або якщо це не налаштовано, вам слід
+запустити start-pulseaudio-x11 власноруч.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
@@ -581,7 +581,7 @@ run start-pulseaudio-x11 manually.</translation>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершити відтворення</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
@@ -647,7 +647,7 @@ run start-pulseaudio-x11 manually.</translation>
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершити запис</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="60"/>
@@ -718,17 +718,17 @@ run start-pulseaudio-x11 manually.</translation>
     <message>
         <location filename="../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>пристрій</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Заглушити звук</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Пов&apos;язати канали разом</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
