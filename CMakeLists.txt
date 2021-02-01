@@ -24,7 +24,6 @@ set(QT_MINIMUM_VERSION "5.12.0")
 
 find_package(Qt5Widgets ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt5LinguistTools ${QT_MINIMUM_VERSION} REQUIRED)
-find_package(Qt5DBus ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
 
 find_package(GLIB ${GLIB_MINIMUM_VERSION} REQUIRED)
