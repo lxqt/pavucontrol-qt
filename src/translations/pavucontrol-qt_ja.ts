@@ -87,7 +87,7 @@
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation>デバイス名</translation>
+        <translation>デバイスのタイトル</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="56"/>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation>高度なオプションを表示する</translation>
+        <translation>詳細オプションを表示する</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
-        <translation>デバイスの名前を変更...</translation>
+        <translation>デバイス名の変更...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
@@ -167,17 +167,17 @@
     <message>
         <location filename="../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation>申し訳ありません、デバイスの名前の変更はサポートしていません。</translation>
+        <translation>申し訳ありませんが、デバイス名の変更をサポートしていません。</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation>デバイスの名前の変更するため PulseAudio サーバーの module-device-manager をロードする必要があります</translation>
+        <translation>デバイス名を変更するには PulseAudio サーバーに module-device-manager をロードする必要があります</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation>デバイス %1 の名前の変更:</translation>
+        <translation>デバイス %1 の名前を変更:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
@@ -200,7 +200,7 @@
     <message>
         <location filename="../mainwindow.ui" line="55"/>
         <source>&lt;i&gt;No application is currently playing audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;現在音声を再生しているアプリケーションはありません。&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;現在音声を再生しているアプリケーションがありません。&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="66"/>
@@ -236,47 +236,47 @@
     <message>
         <location filename="../mainwindow.ui" line="120"/>
         <source>&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;現在録音しているアプリケーションはありません。&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;現在録音しているアプリケーションがありません。&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>出力装置(&amp;O)</translation>
+        <translation>出力デバイス(&amp;O)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
         <source>&lt;i&gt;No output devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;出力装置がありません&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;出力デバイスがありません&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation>全ての出力デバイス</translation>
+        <translation>すべての出力デバイス</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation>ハードウェア出力デバイス</translation>
+        <translation>ハードウェアの出力デバイス</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="214"/>
         <source>Virtual Output Devices</source>
-        <translation>仮想出力デバイス</translation>
+        <translation>仮想の出力デバイス</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>入力装置(&amp;I)</translation>
+        <translation>入力デバイス(&amp;I)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
         <source>&lt;i&gt;No input devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;入力装置がありません&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;入力デバイスがありません&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation>全ての入力デバイス</translation>
+        <translation>すべての入力デバイス</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="274"/>
@@ -286,12 +286,12 @@
     <message>
         <location filename="../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation>ハードウェア入力デバイス</translation>
+        <translation>ハードウェアの入力デバイス</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation>仮想入力デバイス</translation>
+        <translation>仮想の入力デバイス</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="289"/>
@@ -707,7 +707,7 @@ PulseAudio がクラッシュして X11 Root Window に古い詳細が残って�
     <message>
         <location filename="../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation>デバイス名</translation>
+        <translation>デバイスのタイトル</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="52"/>
