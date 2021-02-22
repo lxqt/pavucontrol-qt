@@ -92,7 +92,7 @@
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation>音声をミュート</translation>
+        <translation>音量をミュートします</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
@@ -722,7 +722,7 @@ PulseAudio がクラッシュして X11 Root Window に古い詳細が残って�
     <message>
         <location filename="../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation>消音</translation>
+        <translation>音量をミュートします</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
