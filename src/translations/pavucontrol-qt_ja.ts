@@ -102,7 +102,7 @@
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation>代替として設定</translation>
+        <translation>代替として設定します</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1089"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation>PulseAudio との接続を確立中です。少々お待ちください...</translation>
+        <translation>PulseAudio との接続を確立中です。少々お待ち下さい...</translation>
     </message>
 </context>
 <context>
