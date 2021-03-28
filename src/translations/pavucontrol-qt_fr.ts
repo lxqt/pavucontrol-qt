@@ -92,7 +92,7 @@
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation>Audio muette</translation>
+        <translation>Couper l&apos;audio</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Port&#xa0;:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Port :&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="126"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation> (enfiché)</translation>
+        <translation> (branché)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
@@ -333,7 +333,7 @@
         <location filename="../mainwindow.cc" line="165"/>
         <location filename="../mainwindow.cc" line="254"/>
         <source> (unplugged)</source>
-        <translation> (non enfiché)</translation>
+        <translation> (débranché)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="388"/>
@@ -723,7 +723,7 @@ lancer manuellement start-pulseaudio-x11.</translation>
     <message>
         <location filename="../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation>Audio muette</translation>
+        <translation>Couper l&apos;audio</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
