@@ -102,7 +102,7 @@
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation>設為倒退</translation>
+        <translation>設為預設</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
