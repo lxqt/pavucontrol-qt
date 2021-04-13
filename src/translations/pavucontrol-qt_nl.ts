@@ -6,7 +6,7 @@
     <message>
         <location filename="../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation>Vorm</translation>
+        <translation>Dialoogvenster</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="29"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation>&lt;small&gt;Min&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Min.&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="162"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation>Vorm</translation>
+        <translation>Dialoogvenster</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -82,12 +82,12 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation>Vorm</translation>
+        <translation>Dialoogvenster</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation>Titel van apparaat</translation>
+        <translation>Apparaatnaam</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="56"/>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation>Toon geavanceerde opties</translation>
+        <translation>Geavanceerde opties tonen</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
-        <translation>Apparaat hernoemen...</translation>
+        <translation>Apparaatnaam wijzigen…</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
@@ -167,17 +167,17 @@
     <message>
         <location filename="../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation>Helaas wordt hernoemen van het apparaat niet ondersteund.</translation>
+        <translation>Het wijzigen van apparaatnamen wordt niet ondersteund.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation>U dient module-device-manager te laden in de PulseAudio-server, om apparaten te hernoemen</translation>
+        <translation>U dient module-device-manager te laden in de PulseAudio-server om apparaatnamen te kunnen wijzigen</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation>Hernoem apparaat %1 naar:</translation>
+        <translation>Apparaatnaam &apos;%1&apos; wijzigen in:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
@@ -190,7 +190,7 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>Volume Control</source>
-        <translation>Volumebeheer</translation>
+        <translation>Volumeregeling</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="28"/>
@@ -200,7 +200,7 @@
     <message>
         <location filename="../mainwindow.ui" line="55"/>
         <source>&lt;i&gt;No application is currently playing audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Thans speelt er geen enkele toepassing geluid af.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Er wordt momenteel geen geluid afgespeeld.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="66"/>
@@ -214,39 +214,39 @@
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation>Alle stromen</translation>
+        <translation>Alle streams</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation>Toepassingen</translation>
+        <translation>Programma&apos;s</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="84"/>
         <location filename="../mainwindow.ui" line="149"/>
         <source>Virtual Streams</source>
-        <translation>Virtuele stromen</translation>
+        <translation>Virtuele streams</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="93"/>
         <source>&amp;Recording</source>
-        <translation>G&amp;Opnemen</translation>
+        <translation>&amp;Opnemen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="120"/>
         <source>&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Thans neemt er geen enkele toepassing geluid op.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Er wordt momenteel geen geluid opgenomen.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>Uitvoer&amp;apparaten</translation>
+        <translation>Uitv&amp;oerapparaten</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
         <source>&lt;i&gt;No output devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Er zijn geen uitvoerapparaten beschikbaar&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Er zijn geen uitvoerapparaten beschikbaar.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="204"/>
@@ -266,12 +266,12 @@
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>Invoera&amp;pparaten</translation>
+        <translation>&amp;Invoerapparaten</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
         <source>&lt;i&gt;No input devices available&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Er zijn geen invoerapparaten beschikbaar&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Er zijn geen invoerapparaten beschikbaar.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="269"/>
@@ -306,17 +306,17 @@
     <message>
         <location filename="../mainwindow.ui" line="325"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Er zijn geen kaarten beschikbaar om in te stellen&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Er zijn geen in te stellen kaarten beschikbaar.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation>Toon volumemeters</translation>
+        <translation>Volumemeters tonen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="159"/>
@@ -338,7 +338,7 @@
     <message>
         <location filename="../mainwindow.cc" line="388"/>
         <source>Failed to read data from stream</source>
-        <translation>Kon geen gegevens lezen uit de stroom</translation>
+        <translation>Er kunnen geen gegevens worden gelezen uit de stream</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="432"/>
@@ -348,12 +348,12 @@
     <message>
         <location filename="../mainwindow.cc" line="433"/>
         <source>Failed to create monitoring stream</source>
-        <translation>Kon geen bewakingsstroom maken</translation>
+        <translation>Er kan geen bewakingsstroom worden aangemaakt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="448"/>
         <source>Failed to connect monitoring stream</source>
-        <translation>Kon niet verbinden met bewakingsstroom</translation>
+        <translation>Er kan geen verbinding worden gemaakt met de bewakingsstroom</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="587"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1089"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation>Verbinding met PulseAudio wordt tot stand gebracht. Even geduld a.u.b...</translation>
+        <translation>Bezig met verbinden met PulseAudio…</translation>
     </message>
 </context>
 <context>
@@ -376,7 +376,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="66"/>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation>Foutmelding</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="87"/>
@@ -417,7 +417,7 @@
         <location filename="../pavucontrol.cc" line="245"/>
         <location filename="../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>Kon de extensie voor stroomherstel niet starten: %s</translation>
+        <translation>De extensie voor stroomherstel kan niet worden gestart: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="263"/>
@@ -428,7 +428,7 @@
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation>Kon de extensie voor apparaatherstel niet starten: %s</translation>
+        <translation>De extensie voor apparaatherstel kan niet worden gestart: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
@@ -439,7 +439,7 @@
         <location filename="../pavucontrol.cc" line="320"/>
         <location filename="../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation>Kon de extensie voor apparaatbeheer niet starten: %s</translation>
+        <translation>De extensie voor apparaatbeheer kan niet worden gestart: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
@@ -517,13 +517,13 @@
         <location filename="../pavucontrol.cc" line="584"/>
         <location filename="../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation>Verbinding mislukt, bezig met nieuwe verbindingspoging</translation>
+        <translation>Verbinding mislukt - bezig met nieuwe verbindingspoging…</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
         <location filename="../pavucontrol.cc" line="664"/>
         <source>PulseAudio Volume Control</source>
-        <translation>PulseAudio volumebeheer</translation>
+        <translation>PulseAudio-volumeregeling</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="622"/>
@@ -534,10 +534,10 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation>Verbinding met PulseAudio is mislukt. Automatische nieuwe poging over 5 sec.
+        <translation>De verbinding met PulseAudio is mislukt. Er wordt over 5 seconden automatische een nieuwe poging gedaan.
 
-In dit geval is de oorzaak waarschijnlijk dat PULSE_SERVER verkeerd is ingesteld in de Omgeving/X11 rootvenstereigenschappen of dat default-server verkeerd is ingesteld in client.conf.
-Deze situatie kan ook ontstaan wanneer PulseAudio is vastgelopen en verouderde details heeft achtergelaten in het X11-rootvenster. Indien dat het geval is, dan zou PulseAudio automatisch moeten herstarten, of als dat niet zo is ingesteld, moet u handmatig start-pulseaudio-x11 uitvoeren.</translation>
+In dit geval is de oorzaak waarschijnlijk dat PULSE_SERVER verkeerd is ingesteld in de omgevingsvariabelen of X11-rootvenstereigenschappen, of dat default-server verkeerd is ingesteld in client.conf
+Deze situatie kan ook ontstaan als PulseAudio is vastgelopen en verouderde details heeft achtergelaten in het X11-rootvenster. Als dat het geval is, dan zou PulseAudio automatisch moeten herstarten, of als dat niet zo is ingesteld, moet u handmatig start-pulseaudio-x11 uitvoeren.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
@@ -557,7 +557,7 @@ Deze situatie kan ook ontstaan wanneer PulseAudio is vastgelopen en verouderde d
     <message>
         <location filename="../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation>Fatale fout: kon niet verbinden met PulseAudio</translation>
+        <translation>Fatale fout: kan niet verbinden met PulseAudio</translation>
     </message>
 </context>
 <context>
@@ -578,7 +578,7 @@ Deze situatie kan ook ontstaan wanneer PulseAudio is vastgelopen en verouderde d
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation>Afspelen staken</translation>
+        <translation>Afspelen afbreken</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
@@ -644,7 +644,7 @@ Deze situatie kan ook ontstaan wanneer PulseAudio is vastgelopen en verouderde d
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation>Opnemen staken</translation>
+        <translation>Opname afbreken</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="60"/>
@@ -700,12 +700,12 @@ Deze situatie kan ook ontstaan wanneer PulseAudio is vastgelopen en verouderde d
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation>Vorm</translation>
+        <translation>Dialoogvenster</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation>Titel van apparaat</translation>
+        <translation>Apparaatnaam</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="52"/>
@@ -730,7 +730,7 @@ Deze situatie kan ook ontstaan wanneer PulseAudio is vastgelopen en verouderde d
     <message>
         <location filename="../streamwidget.cc" line="34"/>
         <source>Terminate</source>
-        <translation>Beëindigen</translation>
+        <translation>Afbreken</translation>
     </message>
 </context>
 </TS>
