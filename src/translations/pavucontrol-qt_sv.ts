@@ -41,12 +41,12 @@
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Tystnad&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Tysta&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Max&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Min&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="162"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;Bas&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Bas&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Formulär</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -82,27 +82,27 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Formulär</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Enhetens titel</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Stäng av ljudet</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Lås kanaler tillsammans</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange som reserv</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Byt namn på enhet...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
@@ -167,17 +167,17 @@
     <message>
         <location filename="../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyvärr, men enhetsnamnbyte stöds inte.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Du måste ladda modul-enhetshanteraren i PulseAudio-servern för att byta namn på enheter</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Byt namn på enhet %1 till:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
@@ -214,7 +214,7 @@
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Alla strömmar</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
@@ -226,7 +226,7 @@
         <location filename="../mainwindow.ui" line="84"/>
         <location filename="../mainwindow.ui" line="149"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuella strömmar</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="93"/>
@@ -251,17 +251,17 @@
     <message>
         <location filename="../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Alla utgångsenheter</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Hårdvaruutmatningsenheter</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="214"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuella utgångsenheter</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="223"/>
@@ -276,7 +276,7 @@
     <message>
         <location filename="../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Alla ingångsenheter</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="274"/>
@@ -286,12 +286,12 @@
     <message>
         <location filename="../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Inmatningsenheter för maskinvara</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuella inmatningsenheter</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="289"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa volymmätare</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1089"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Upprättar anslutning till PulseAudio. Vänta...</translation>
     </message>
 </context>
 <context>
@@ -517,7 +517,7 @@
         <location filename="../pavucontrol.cc" line="584"/>
         <location filename="../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Anslutningen misslyckades, försökte återansluta</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
@@ -544,17 +544,17 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation type="unfinished"></translation>
+        <translation>Försök igen för evigt om pa slutar (var 5:e sekund).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="678"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximera fönstret.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>Allvarligt fel: Det går inte att ansluta till PulseAudio</translation>
     </message>
 </context>
 <context>
@@ -580,7 +580,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
         <source>Unknown output</source>
-        <translation type="unfinished"></translation>
+        <translation>Okänd utgång</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="64"/>
@@ -646,7 +646,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="60"/>
         <source>Unknown input</source>
-        <translation type="unfinished"></translation>
+        <translation>Okänd ingång</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="72"/>
@@ -697,17 +697,17 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Formulär</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Enhetens titel</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="52"/>
         <source>direction</source>
-        <translation type="unfinished"></translation>
+        <translation>riktning</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="59"/>
@@ -722,7 +722,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Lås kanaler tillsammans</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
