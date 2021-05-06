@@ -20,7 +20,7 @@ include(GNUInstallDirs)
 # Minimum Versions
 set(GLIB_MINIMUM_VERSION "2.50.0")
 set(LXQTBT_MINIMUM_VERSION "0.9.0")
-set(QT_MINIMUM_VERSION "5.12.0")
+set(QT_MINIMUM_VERSION "5.15.0")
 
 find_package(Qt5Widgets ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt5LinguistTools ${QT_MINIMUM_VERSION} REQUIRED)
