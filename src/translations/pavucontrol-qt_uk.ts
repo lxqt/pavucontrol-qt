@@ -417,7 +417,7 @@
         <location filename="../pavucontrol.cc" line="245"/>
         <location filename="../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>Спроба ініціалізації додатка stream_restore зазнала невдачі: %s</translation>
+        <translation>Не вдалося ініціалізувати розширення stream_restore : %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="263"/>
