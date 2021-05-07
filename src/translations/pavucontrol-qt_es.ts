@@ -30,13 +30,13 @@
         <location filename="../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation>%1% (%2dB)</translation>
+        <translation>%1 % (%2 dB)</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation>%1%</translation>
+        <translation>%1 %</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation></translation>
+        <translation>&lt;small&gt;100 % (0 dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="165"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;50 %&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../devicewidget.cc" line="41"/>
         <source>Rename device...</source>
-        <translation>Renombrar el dispositivo...</translation>
+        <translation>Cambiar nombre del dispositivo…</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="155"/>
@@ -167,17 +167,17 @@
     <message>
         <location filename="../devicewidget.cc" line="226"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation>Lo sentimos, no es posible renombrar el dispositivo.</translation>
+        <translation>No se admite el cambio de nombre del dispositivo.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation>Necesita cargar module-device-manager en el servidor de PulseAudio para poder renombrar dispositivos</translation>
+        <translation>Necesita cargar module-device-manager en el servidor de PulseAudio para cambiar los nombres de los dispositivos</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
         <source>Rename device %1 to:</source>
-        <translation>Renombrar el dispositivo %1 a:</translation>
+        <translation>Cambiar nombre del dispositivo %1 a:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="240"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="587"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation>Se ignora el &quot;sink&quot; por estar designado como un evento, siendo así manejado por la miniaplicación Eventos</translation>
+        <translation>Se ignora la entrada del receptor por haberse designado como un suceso, siendo por tanto gestionado por la miniaplicación Sucesos</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="759"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1089"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation>Estableciendo la conexión a PulseAudio. Espere...</translation>
+        <translation>Estableciendo la conexión con PulseAudio. Espere…</translation>
     </message>
 </context>
 <context>
@@ -381,37 +381,37 @@
     <message>
         <location filename="../pavucontrol.cc" line="87"/>
         <source>Card callback failure</source>
-        <translation>Fallo en la llamada de respuesta de la tarjeta</translation>
+        <translation>Fallo en la devolución de llamada de la tarjeta</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
-        <translation>Fallo en la llamada de respuesta al sumidero</translation>
+        <translation>Fallo en la devolución de llamada al receptor</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="133"/>
         <source>Source callback failure</source>
-        <translation>Fallo en la llamada de respuesta a la fuente</translation>
+        <translation>Fallo en la devolución de llamada a la fuente</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
-        <translation>Fallo en la llamada de respuesta de entrada sumidero</translation>
+        <translation>Fallo en la devolución de llamada de la entrada del receptor</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="171"/>
         <source>Source output callback failure</source>
-        <translation>Fallo en la llamada de respuesta de salida fuente</translation>
+        <translation>Fallo en la devolución de llamada de la salida de la fuente</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="211"/>
         <source>Client callback failure</source>
-        <translation>Fallo en la llamada de respuesta al cliente</translation>
+        <translation>Fallo en la devolución de llamada al cliente</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="227"/>
         <source>Server info callback failure</source>
-        <translation>Fallo en la llamada de respuesta por información del servidor</translation>
+        <translation>Fallo en la devolución de llamada por información del servidor</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="245"/>
@@ -728,7 +728,7 @@ ejecutar start-pulseaudio-x11 manualmente.</translation>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation>Bloquear juntos los canales</translation>
+        <translation>Sincronizar canales</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
