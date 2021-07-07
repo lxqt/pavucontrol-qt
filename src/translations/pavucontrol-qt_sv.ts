@@ -296,7 +296,7 @@
     <message>
         <location filename="../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Skärmar</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="298"/>
