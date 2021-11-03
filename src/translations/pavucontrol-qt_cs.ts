@@ -162,7 +162,7 @@
     <message>
         <location filename="../devicewidget.cc" line="155"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation>volání funkce pa_context_set_port_latency_offset() neproběhlo úspěšně</translation>
+        <translation>volání funkce pa_context_set_port_latency_offset() se nezdařilo</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="226"/>
@@ -182,7 +182,7 @@
     <message>
         <location filename="../devicewidget.cc" line="240"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation>volání funkce pa_ext_device_manager_set_device_description() neproběhlo úspěšně</translation>
+        <translation>volání funkce pa_ext_device_manager_set_device_description() se nezdařilo</translation>
     </message>
 </context>
 <context>
