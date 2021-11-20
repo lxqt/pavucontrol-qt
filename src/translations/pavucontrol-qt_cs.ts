@@ -172,7 +172,7 @@
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation>Pro přejmenovávání zařízení je potřeba do zvukového serveru PulseAudio nahrát modul module-device-manager (správa zařízení)</translation>
+        <translation>Pokud chcete přejmenovat zařízení, je třeba do zvukového serveru PulseAudio načíst modul module-device-manager (správa zařízení)</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
@@ -386,22 +386,22 @@
     <message>
         <location filename="../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
-        <translation>Cílové zpětné volání se nezdařilo</translation>
+        <translation>Zpětné volání cíle se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="133"/>
         <source>Source callback failure</source>
-        <translation>Zdrojové zpětné volání se nezdařilo</translation>
+        <translation>Zpětné volání zdroje se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
-        <translation>Cílové vstupní zpětné volání se nezdařilo</translation>
+        <translation>Zpětné volání vstupu cíle se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="171"/>
         <source>Source output callback failure</source>
-        <translation>Zdrojové výstupní zpětné volání se nezdařilo</translation>
+        <translation>Zpětné volání zdroje výstupu se nezdařilo</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="211"/>
@@ -523,7 +523,7 @@
         <location filename="../pavucontrol.cc" line="607"/>
         <location filename="../pavucontrol.cc" line="664"/>
         <source>PulseAudio Volume Control</source>
-        <translation>Ovládání hlasitosti PulseAudio</translation>
+        <translation>PulseAudio ovládání hlasitosti</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="622"/>
@@ -537,9 +537,9 @@ run start-pulseaudio-x11 manually.</source>
         <translation>Spojení s PulseAudio vypadlo. Pokus o automatické opětovné navázání za 5 s
 
 V tomto případě je to nejspíš proto, že je chybně nastavená proměnná PULSE_SERVER v
-Prostředí/Vlastnosti X11 kořenového okna nebo je v client.conf chybně nastaven parametr default-server.
+prostředí / vlastnostech kořenového okna X11 nebo je v client.conf chybně nastaven parametr default-server.
 Tato situace také může nastat když PulseAudio zhavaruje a zanechá staré údaje v kořenovém okně X11.
-Pokud tomu je tak, PulseAudio by se mělo automaticky znovu spustit, nebo pokud tak není nastavené,
+Pokud je tomu tak, PulseAudio by se mělo automaticky znovu spustit, nebo pokud tak není nastavené,
 je třeba ručně spustit start-pulseaudio-x11.</translation>
     </message>
     <message>
