@@ -56,7 +56,7 @@
     <message>
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;Perus&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Perus&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -560,7 +560,7 @@ asetettu, käynnistä start-pulseaudio-x11 käsin.</translation>
     <message>
         <location filename="../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe: PulseAudio yhteydenotto epäonnistui</translation>
     </message>
 </context>
 <context>
@@ -581,7 +581,7 @@ asetettu, käynnistä start-pulseaudio-x11 käsin.</translation>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskeytä Toisto</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
@@ -634,7 +634,7 @@ asetettu, käynnistä start-pulseaudio-x11 käsin.</translation>
     <message>
         <location filename="../sinkwidget.cc" line="166"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_restore_save_sink_formats() epäonnistui</translation>
     </message>
 </context>
 <context>
@@ -703,7 +703,7 @@ asetettu, käynnistä start-pulseaudio-x11 käsin.</translation>
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Lomake</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="32"/>
