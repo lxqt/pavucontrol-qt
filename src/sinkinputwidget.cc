@@ -39,8 +39,7 @@ SinkInputWidget::SinkInputWidget(MainWindow *parent) :
     terminate->setText(tr("Terminate Playback"));
 }
 
-SinkInputWidget::~SinkInputWidget(void) {
-}
+SinkInputWidget::~SinkInputWidget(void) = default;
 
 void SinkInputWidget::setSinkIndex(uint32_t idx) {
     mSinkIndex = idx;
