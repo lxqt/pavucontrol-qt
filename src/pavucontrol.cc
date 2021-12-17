@@ -593,7 +593,7 @@ void context_state_callback(pa_context *c, void *userdata) {
     }
 }
 
-pa_context* get_context(void) {
+pa_context* get_context() {
   return context;
 }
 
