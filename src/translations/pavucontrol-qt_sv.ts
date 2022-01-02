@@ -428,7 +428,7 @@
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Det gick inte att initiera enhetsåterställningstillägget: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
@@ -439,7 +439,7 @@
         <location filename="../pavucontrol.cc" line="320"/>
         <location filename="../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Det gick inte att initiera enhetshanterartillägget: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
@@ -539,7 +539,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj en specifik flik vid laddning.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="675"/>
