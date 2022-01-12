@@ -32,6 +32,7 @@
 #include <QLabel>
 #include <QMessageBox>
 #include <QInputDialog>
+#include <utility>
 
 /*** DeviceWidget ***/
 DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
@@ -39,7 +40,7 @@ DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
     offsetButtonEnabled(false),
     mpMainWindow(parent),
     rename{new QAction{tr("Rename device..."), this}},
-    mDeviceType(deviceType) {
+    mDeviceType(std::move(deviceType)) {
 
     setupUi(this);
     advancedWidget->hide();

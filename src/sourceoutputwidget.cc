@@ -46,8 +46,7 @@ SourceOutputWidget::SourceOutputWidget(MainWindow *parent) :
 }
 
 
-SourceOutputWidget::~SourceOutputWidget(void) {
-}
+SourceOutputWidget::~SourceOutputWidget(void) = default;
 
 void SourceOutputWidget::setSourceIndex(uint32_t idx) {
     mSourceIndex = idx;
