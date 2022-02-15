@@ -2,9 +2,9 @@
 
 ## Overview
 
-pavucontrol-qt is the Qt port of volume control [pavucontrol](https://freedesktop.org/software/pulseaudio/pavucontrol/) of sound server [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/).   
+pavucontrol-qt is the Qt port of the volume control [pavucontrol](https://freedesktop.org/software/pulseaudio/pavucontrol/) for the sound server [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/).   
 
-As such it can be used to adjust all controls provided by PulseAudio as well as some additional settings.   
+As such it can be used to adjust all controls provided by PulseAudio and ALSA as well as some additional settings.   
 
 The software belongs to the LXQt project but its usage isn't limited to this desktop environment.   
 
@@ -13,7 +13,7 @@ The software belongs to the LXQt project but its usage isn't limited to this des
 ### Compiling source code
 
 Runtime dependencies are qtbase and PulseAudio client library libpulse.   
-Additional build dependencies are CMake and [liblxqt](https://github.com/lxqt/liblxqt) as well as optionally Git to pull latest VCS checkouts. The localization files were outsourced to repository [lxqt-l10n](https://github.com/lxqt/lxqt-l10n) so the corresponding dependencies are needed, too. Please refer to this repository's `README.md` for further information.
+Additional build dependencies are CMake and [liblxqt](https://github.com/lxqt/liblxqt) as well as optionally Git to pull latest VCS checkouts. 
 
 Code configuration is handled by CMake. CMake variable `CMAKE_INSTALL_PREFIX` has to be set to `/usr` on most operating systems.   
 
@@ -21,24 +21,7 @@ To build run `make`, to install `make install` which accepts variable `DESTDIR` 
 
 ### Binary packages
 
-On Arch Linux the package [pavucontrol-qt](https://www.archlinux.org/packages/community/x86_64/pavucontrol-qt/) can be used and [pavucontrol-qt-git](https://aur.archlinux.org/packages/pavucontrol-qt-git/) is to build current checkouts of branch `master`.
-
-On FreeBSD the binary package is available as [pavucontrol-qt](https://www.freshports.org/audio/pavucontrol-qt/) and can be installed with `pkg install pavucontrol-qt`.
-
-#### Debian
-
-Package `pavucontrol-qt` is available in the official repositories as of Debian buster. 
-
-#### Fedora
-
-Package `pavucontrol-qt` is available in the official repositories as of Fedora 31. 
-
-#### OpenSuse
-
-Package `pavucontrol-qt` is available in the official repositories as of openSUSE Leap:15.2 
-
-
-
+Official binary packages are available in Arch Linux, Debian, Fedora and openSUSE (Leap and Tumbleweed) and most other distributions.
 
 ## Usage
 
