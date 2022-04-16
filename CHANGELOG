@@ -1,3 +1,9 @@
+pavucontrol-qt-1.1.0 / 2022-04-15
+==================================
+ * Modernized some trivial destructors.
+ * Removed a redundant void argument in function definition.
+ * Pass by value and use `std::move()`.
+
 pavucontrol-qt-1.0.0 / 2021-11-04
 ==================================
  * Bumped minimum required Qt version to 5.15.
