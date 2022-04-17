@@ -11,7 +11,7 @@
     <message>
         <location filename="../cardwidget.ui" line="29"/>
         <source>Card Name</source>
-        <translation>कार्ड नाम</translation>
+        <translation>कार्ड का नाम</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="47"/>
