@@ -172,7 +172,7 @@
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation>PulseAudio serverin module-device-manager täytyy olla ladattuna jotta laitteita voidaan uudelleennimetä</translation>
+        <translation>PulseAudio-palvelimen module-device-manager täytyy olla ladattuna jotta laitteita voidaan uudelleennimetä</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="233"/>
@@ -251,7 +251,7 @@
     <message>
         <location filename="../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation>Kaikki ulostulo laitteet</translation>
+        <translation>Kaikki ulostulolaitteet</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="209"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1089"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation>Muodostetaan PulseAudio yhteyttä. Ole hyvä, ja odota...</translation>
+        <translation>Muodostetaan PulseAudio-yhteyttä. Odota hetki...</translation>
     </message>
 </context>
 <context>
@@ -560,7 +560,7 @@ asetettu, käynnistä start-pulseaudio-x11 käsin.</translation>
     <message>
         <location filename="../pavucontrol.cc" line="703"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation>Virhe: PulseAudio yhteydenotto epäonnistui</translation>
+        <translation>Virhe: PulseAudio-yhteys epäonnistui</translation>
     </message>
 </context>
 <context>
