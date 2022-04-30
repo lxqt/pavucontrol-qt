@@ -575,7 +575,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminera uppspelning</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="53"/>
@@ -641,7 +641,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminera Inspelning</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="60"/>

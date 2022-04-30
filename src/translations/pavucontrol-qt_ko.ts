@@ -642,7 +642,7 @@ run start-pulseaudio-x11 manually.</source>
     <message>
         <location filename="../sourceoutputwidget.cc" line="35"/>
         <source>from</source>
-        <translation type="unfinished"></translation>
+        <translation>장치에서</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
