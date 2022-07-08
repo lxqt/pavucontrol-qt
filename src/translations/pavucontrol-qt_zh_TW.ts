@@ -296,7 +296,7 @@
     <message>
         <location filename="../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation type="unfinished">監視器</translation>
+        <translation>監聽裝置</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="298"/>
