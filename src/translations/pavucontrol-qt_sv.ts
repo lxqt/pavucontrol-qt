@@ -147,7 +147,7 @@
     <message>
         <location filename="../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Latensförskjutning:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="245"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Alla förutom monitorer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="587"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorerar sink-indata på grund av att den har betecknats som en händelse och därmed hanteras av händelse-widgeten</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="759"/>
@@ -534,7 +534,13 @@ or default-server in client.conf is misconfigured.
 This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
 If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
 run start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anslutning till PulseAudio misslyckades. Försöker automatiskt igen om 5s
+
+I det här fallet beror det troligen på att PULSE_SERVER i miljö/X11 rootfönsteregenskaper
+eller standard-server i client.conf är felkonfigurerad.
+Denna situation kan också uppstå när PulseAudio har kraschat och lämnat inaktuella detaljer i X11 Root fönster.
+Om så är fallet bör PulseAudio automatiskt starta igen, eller om detta inte är konfigurerat bör du
+köra start-pulsaudio-x11 manuellt.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
