@@ -4,4 +4,4 @@ Exec=pavucontrol-qt
 Icon=multimedia-volume-control
 StartupNotify=true
 Type=Application
-Categories=AudioVideo;Audio;Mixer;Qt;
+Categories=Qt;AudioVideo;Audio;Settings;DesktopSettings;
