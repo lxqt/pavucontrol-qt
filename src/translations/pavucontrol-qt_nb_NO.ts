@@ -155,32 +155,32 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="41"/>
+        <location filename="../devicewidget.cc" line="42"/>
         <source>Rename device...</source>
         <translation>Gi enheten nytt navn..</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="155"/>
+        <location filename="../devicewidget.cc" line="156"/>
         <source>pa_context_set_port_latency_offset() failed</source>
         <translation>pa_context_set_port_latency_offset() mislyktes</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="226"/>
+        <location filename="../devicewidget.cc" line="227"/>
         <source>Sorry, but device renaming is not supported.</source>
         <translation>Unnskyld, men å gi enheten nytt navn støttes ikke.</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="227"/>
+        <location filename="../devicewidget.cc" line="228"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
         <translation>Du må laste inn module-device-manager i PulseAudio-serveren for å kunne gi nytt navn til enheter</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="233"/>
+        <location filename="../devicewidget.cc" line="234"/>
         <source>Rename device %1 to:</source>
         <translation>Gi enheten %1 nytt navn:</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="240"/>
+        <location filename="../devicewidget.cc" line="241"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
         <translation>pa_ext_device_manager_set_device_description() mislyktes</translation>
     </message>
@@ -325,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="257"/>
+        <location filename="../mainwindow.cc" line="259"/>
         <source> (unavailable)</source>
         <translation> (ikke tilgjengelig)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="254"/>
+        <location filename="../mainwindow.cc" line="256"/>
         <source> (unplugged)</source>
         <translation> (frakoblet)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="388"/>
+        <location filename="../mainwindow.cc" line="390"/>
         <source>Failed to read data from stream</source>
         <translation>Klarte ikke å lese data fra strøm</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="432"/>
+        <location filename="../mainwindow.cc" line="434"/>
         <source>Peak detect</source>
         <translation>Overstyringsoppdaging</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="433"/>
+        <location filename="../mainwindow.cc" line="435"/>
         <source>Failed to create monitoring stream</source>
         <translation>Klarte ikke å lage monitorstrøm</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="448"/>
+        <location filename="../mainwindow.cc" line="450"/>
         <source>Failed to connect monitoring stream</source>
         <translation>Klarte ikke å koble til monitorstrøm</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="587"/>
+        <location filename="../mainwindow.cc" line="589"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation>Ignorerer sink-input fordi den er satt opp til å håndteres som en hendelse og dermed blir håndtert av Event widgeten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="759"/>
+        <location filename="../mainwindow.cc" line="761"/>
         <source>System Sounds</source>
         <translation>Systemlyder</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1089"/>
+        <location filename="../mainwindow.cc" line="1091"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>Setter opp forbindelse til PulseAudio. Vennligst vent...</translation>
     </message>
@@ -527,20 +527,8 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="622"/>
-        <source>Connection to PulseAudio failed. Automatic retry in 5s
-
-In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Properties
-or default-server in client.conf is misconfigured.
-This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
-If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
-run start-pulseaudio-x11 manually.</source>
-        <translation>Forbindelsen til PulseAudio mislyktes. Prøver igjen om 5 sekunder
-
-Denne gangen er det sannsynligvis fordi PULSE_SERVER i skrivebordsmiljøet eller X11 Root Window Properties
-eller i standard-serveren i client.conf er feilinnstilt.
-Denne situasjonen kan også oppstå når PulseAudio har kræsjet og har etterlatt detaljer i X11 Root Window.
-Hvis så er tilfelle burde PulseAudio autooppstarte igjen. Hvis dette ikke er stilt inn 
-burde du kjøre start-pulseaudio-x11 manuelt.</translation>
+        <source>Connection to PulseAudio failed. Automatic retry in 5s.&lt;br&gt;&lt;br&gt;In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Propertiesor default-server in client.conf is misconfigured.&lt;br&gt;This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.&lt;br&gt;If this is the case, then PulseAudio should autospawn again, or if this is not configured you shouldrun start-pulseaudio-x11 manually.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
@@ -584,27 +572,27 @@ burde du kjøre start-pulseaudio-x11 manuelt.</translation>
         <translation>Slå av avspilling</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="53"/>
+        <location filename="../sinkinputwidget.cc" line="52"/>
         <source>Unknown output</source>
         <translation>Ukjent utgang</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="64"/>
+        <location filename="../sinkinputwidget.cc" line="63"/>
         <source>pa_context_set_sink_input_volume() failed</source>
         <translation>pa_context_set_sink_input_volume() mislyktes</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="79"/>
+        <location filename="../sinkinputwidget.cc" line="78"/>
         <source>pa_context_set_sink_input_mute() failed</source>
         <translation>pa_context_set_sink_input_mute() mislyktes</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="89"/>
+        <location filename="../sinkinputwidget.cc" line="88"/>
         <source>pa_context_kill_sink_input() failed</source>
         <translation>pa_context_kill_sink_input() mislyktes</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="114"/>
+        <location filename="../sinkinputwidget.cc" line="113"/>
         <source>pa_context_move_sink_input_by_index() failed</source>
         <translation>pa_context_move_sink_input_by_index() mislyktes</translation>
     </message>
@@ -650,27 +638,27 @@ burde du kjøre start-pulseaudio-x11 manuelt.</translation>
         <translation>Avslutt opptak</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="60"/>
+        <location filename="../sourceoutputwidget.cc" line="59"/>
         <source>Unknown input</source>
         <translation>Ukjent inngang</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="72"/>
+        <location filename="../sourceoutputwidget.cc" line="71"/>
         <source>pa_context_set_source_output_volume() failed</source>
         <translation>pa_context_set_source_output_volume() mislyktes</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="87"/>
+        <location filename="../sourceoutputwidget.cc" line="86"/>
         <source>pa_context_set_source_output_mute() failed</source>
         <translation>pa_context_set_source_output_mute() mislyktes</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="98"/>
+        <location filename="../sourceoutputwidget.cc" line="97"/>
         <source>pa_context_kill_source_output() failed</source>
         <translation>pa_context_kill_source_output() mislyktes</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="125"/>
+        <location filename="../sourceoutputwidget.cc" line="124"/>
         <source>pa_context_move_source_output_by_index() failed</source>
         <translation>pa_context_move_source_output_by_index() mislyktes</translation>
     </message>

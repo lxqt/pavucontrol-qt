@@ -155,32 +155,32 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="41"/>
+        <location filename="../devicewidget.cc" line="42"/>
         <source>Rename device...</source>
         <translation>Eszköz átnevezése...</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="155"/>
+        <location filename="../devicewidget.cc" line="156"/>
         <source>pa_context_set_port_latency_offset() failed</source>
         <translation>pa_context_set_port_latency_offset() meghiúsult</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="226"/>
+        <location filename="../devicewidget.cc" line="227"/>
         <source>Sorry, but device renaming is not supported.</source>
         <translation>Sajnos az eszköz átnevezése nem támogatott.</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="227"/>
+        <location filename="../devicewidget.cc" line="228"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
         <translation>Az eszközök átnevezéséhez a module-device-managert be kell töltenie a PulseAudio szerverben</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="233"/>
+        <location filename="../devicewidget.cc" line="234"/>
         <source>Rename device %1 to:</source>
         <translation>A %1 eszköz átnevezése erre:</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="240"/>
+        <location filename="../devicewidget.cc" line="241"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
         <translation>pa_ext_device_manager_set_device_description() meghiúsult</translation>
     </message>
@@ -325,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="257"/>
+        <location filename="../mainwindow.cc" line="259"/>
         <source> (unavailable)</source>
         <translation> (nem elérhető)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="254"/>
+        <location filename="../mainwindow.cc" line="256"/>
         <source> (unplugged)</source>
         <translation> (nincs csatlakoztatva)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="388"/>
+        <location filename="../mainwindow.cc" line="390"/>
         <source>Failed to read data from stream</source>
         <translation>Az adatok olvasása meghiúsult az adatfolyamból</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="432"/>
+        <location filename="../mainwindow.cc" line="434"/>
         <source>Peak detect</source>
         <translation>Csúcsérzékelés</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="433"/>
+        <location filename="../mainwindow.cc" line="435"/>
         <source>Failed to create monitoring stream</source>
         <translation>A megfigyelő adatfolyam létrehozása meghiúsult</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="448"/>
+        <location filename="../mainwindow.cc" line="450"/>
         <source>Failed to connect monitoring stream</source>
         <translation>Nem sikerült csatlakozni a megfigyelő adatfolyamhoz</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="587"/>
+        <location filename="../mainwindow.cc" line="589"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation type="unfinished">Nyelő bemenet figyelmen kívül hagyása, mert eseménynek minősül, és így az eseménykezelő kezeli</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="759"/>
+        <location filename="../mainwindow.cc" line="761"/>
         <source>System Sounds</source>
         <translation>Rendszerhangok</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1089"/>
+        <location filename="../mainwindow.cc" line="1091"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>Kapcsolat létrehozása a PulseAudio-val. Kérjük várjon...</translation>
     </message>
@@ -527,20 +527,8 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="622"/>
-        <source>Connection to PulseAudio failed. Automatic retry in 5s
-
-In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Properties
-or default-server in client.conf is misconfigured.
-This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
-If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
-run start-pulseaudio-x11 manually.</source>
-        <translation>A PulseAudio-hoz való csatlakozás sikertelen. Automatikus újrapróbálkozás 5 mp múlva
-
-Ebben az esetben ez valószínűleg azért van, mert a PULSE_SERVER a környezetben/X11 root ablak tulajdonságaiban
-vagy a client.conf-ban az alapértelmezett kiszolgáló helytelenül van beállítva.
-Ez a helyzet akkor is előfordulhat, ha a PulseAudio összeomlott, és elakadt részleteket hagyott az X11 gyökérablakban.
-Ebben az esetben a PulseAudio-nak automatikusan újra kell indulnia, vagy ha ez nincs beállítva, akkor
-a start-pulseaudio-x11-et manuálisan kell futtatni.</translation>
+        <source>Connection to PulseAudio failed. Automatic retry in 5s.&lt;br&gt;&lt;br&gt;In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Propertiesor default-server in client.conf is misconfigured.&lt;br&gt;This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.&lt;br&gt;If this is the case, then PulseAudio should autospawn again, or if this is not configured you shouldrun start-pulseaudio-x11 manually.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
@@ -584,27 +572,27 @@ a start-pulseaudio-x11-et manuálisan kell futtatni.</translation>
         <translation>Lejátszás kilövése</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="53"/>
+        <location filename="../sinkinputwidget.cc" line="52"/>
         <source>Unknown output</source>
         <translation>Ismeretlen kimenet</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="64"/>
+        <location filename="../sinkinputwidget.cc" line="63"/>
         <source>pa_context_set_sink_input_volume() failed</source>
         <translation>pa_context_set_sink_input_volume() meghiúsult</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="79"/>
+        <location filename="../sinkinputwidget.cc" line="78"/>
         <source>pa_context_set_sink_input_mute() failed</source>
         <translation>pa_context_set_sink_input_mute() meghiúsult</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="89"/>
+        <location filename="../sinkinputwidget.cc" line="88"/>
         <source>pa_context_kill_sink_input() failed</source>
         <translation>pa_context_kill_sink_input() meghiúsult</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="114"/>
+        <location filename="../sinkinputwidget.cc" line="113"/>
         <source>pa_context_move_sink_input_by_index() failed</source>
         <translation>pa_context_move_sink_input_by_index() meghiúsult</translation>
     </message>
@@ -650,27 +638,27 @@ a start-pulseaudio-x11-et manuálisan kell futtatni.</translation>
         <translation>Felvétel kilövése</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="60"/>
+        <location filename="../sourceoutputwidget.cc" line="59"/>
         <source>Unknown input</source>
         <translation>Ismeretlen bemenet</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="72"/>
+        <location filename="../sourceoutputwidget.cc" line="71"/>
         <source>pa_context_set_source_output_volume() failed</source>
         <translation>pa_context_set_source_output_volume() meghiúsult</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="87"/>
+        <location filename="../sourceoutputwidget.cc" line="86"/>
         <source>pa_context_set_source_output_mute() failed</source>
         <translation>pa_context_set_source_output_mute() meghiúsult</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="98"/>
+        <location filename="../sourceoutputwidget.cc" line="97"/>
         <source>pa_context_kill_source_output() failed</source>
         <translation>pa_context_kill_source_output() meghiúsult</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="125"/>
+        <location filename="../sourceoutputwidget.cc" line="124"/>
         <source>pa_context_move_source_output_by_index() failed</source>
         <translation>pa_context_move_source_output_by_index() meghiúsult</translation>
     </message>
