@@ -31,6 +31,7 @@ class MinimalStreamWidget : public QWidget {
     Q_OBJECT
 public:
     MinimalStreamWidget(QWidget* parent = nullptr);
+    ~MinimalStreamWidget() override;
     void initPeakProgressBar(QGridLayout* channelsGrid);
 
     QProgressBar* peakProgressBar;
