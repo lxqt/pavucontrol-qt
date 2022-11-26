@@ -460,6 +460,7 @@ void MainWindow::createMonitorStreamForSinkInput(SinkInputWidget* w, uint32_t si
 
     if (w->peak) {
         pa_stream_disconnect(w->peak);
+        pa_stream_unref(w->peak);
         w->peak = nullptr;
     }
 

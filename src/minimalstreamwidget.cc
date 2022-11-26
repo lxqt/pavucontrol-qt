@@ -41,6 +41,14 @@ MinimalStreamWidget::MinimalStreamWidget(QWidget *parent) :
     peakProgressBar->hide();
 }
 
+MinimalStreamWidget::~MinimalStreamWidget() {
+    if (peak != nullptr) {
+        pa_stream_disconnect(peak);
+        pa_stream_unref(peak);
+        peak = nullptr;
+    }
+}
+
 void MinimalStreamWidget::initPeakProgressBar(QGridLayout* channelsGrid) {
     channelsGrid->addWidget(peakProgressBar, channelsGrid->rowCount(), 0, 1, -1);
 }
