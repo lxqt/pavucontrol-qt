@@ -281,7 +281,7 @@
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished">除監視器外全部</translation>
+        <translation>監聽裝置以外的全部裝置</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
