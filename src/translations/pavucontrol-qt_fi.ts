@@ -92,7 +92,7 @@
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation>Vaimenna äänet</translation>
+        <translation>Mykistä ääni</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation>Ulostulolaitteet</translation>
+        <translation>Ulostulo laitteet</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="214"/>
