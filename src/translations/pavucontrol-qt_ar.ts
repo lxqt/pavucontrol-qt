@@ -155,32 +155,32 @@
         <translation> م‌ث</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="41"/>
+        <location filename="../devicewidget.cc" line="42"/>
         <source>Rename device...</source>
         <translation>إعادة تسمية الجهاز...</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="155"/>
+        <location filename="../devicewidget.cc" line="156"/>
         <source>pa_context_set_port_latency_offset() failed</source>
         <translation>فشل pa_context_set_port_latency_offset()</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="226"/>
+        <location filename="../devicewidget.cc" line="227"/>
         <source>Sorry, but device renaming is not supported.</source>
         <translation>عذرا، ولكن إعادة تسمية الجهاز غير مدعومة.</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="227"/>
+        <location filename="../devicewidget.cc" line="228"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
         <translation>تحتاج إلى تحميل وحدة إدارة الأجهزة في خادم PulseAudio من أجل إعادة تسمية الأجهزة</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="233"/>
+        <location filename="../devicewidget.cc" line="234"/>
         <source>Rename device %1 to:</source>
         <translation>إعادة تسمية الجهاز %1 إلى:</translation>
     </message>
     <message>
-        <location filename="../devicewidget.cc" line="240"/>
+        <location filename="../devicewidget.cc" line="241"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
         <translation>فشل pa_ext_device_manager_set_device_description()</translation>
     </message>
@@ -325,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="257"/>
+        <location filename="../mainwindow.cc" line="259"/>
         <source> (unavailable)</source>
         <translation> (غير متوفر)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="254"/>
+        <location filename="../mainwindow.cc" line="256"/>
         <source> (unplugged)</source>
         <translation> (غير موصول)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="388"/>
+        <location filename="../mainwindow.cc" line="390"/>
         <source>Failed to read data from stream</source>
         <translation>فشل في قراءة البيانات من البث</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="432"/>
+        <location filename="../mainwindow.cc" line="434"/>
         <source>Peak detect</source>
         <translation>كشف الذروة</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="433"/>
+        <location filename="../mainwindow.cc" line="435"/>
         <source>Failed to create monitoring stream</source>
         <translation>فشل في إنشاء دفق مراقبة</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="448"/>
+        <location filename="../mainwindow.cc" line="450"/>
         <source>Failed to connect monitoring stream</source>
         <translation>فشل في توصيل دفق المراقبة</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="587"/>
+        <location filename="../mainwindow.cc" line="590"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation>تجاهل إدخال الحوض بسبب تعيينه كحدث وبالتالي التعامل معه بواسطة عنصر واجهة مستخدم الحدث</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="759"/>
+        <location filename="../mainwindow.cc" line="762"/>
         <source>System Sounds</source>
         <translation>أصوات النظام</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1089"/>
+        <location filename="../mainwindow.cc" line="1092"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>إنشاء اتصال ب PulseAudio. الرجاء الانتظار...</translation>
     </message>
@@ -527,20 +527,8 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="622"/>
-        <source>Connection to PulseAudio failed. Automatic retry in 5s
-
-In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Properties
-or default-server in client.conf is misconfigured.
-This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.
-If this is the case, then PulseAudio should autospawn again, or if this is not configured you should
-run start-pulseaudio-x11 manually.</source>
-        <translation>فشل الاتصال ب PulseAudio. إعادة المحاولة التلقائية في 5s
-
-في هذه الحالة ، من المحتمل أن يكون هذا بسبب PULSE_SERVER في خصائص نافذة جذر البيئة / X11
-أو تم اعداد الخادم الافتراضي في client.conf بشكل خاطئ.
-يمكن أن ينشأ هذا الموقف أيضا عندما تعطل PulseAudio وترك تفاصيل قديمة في نافذة الجذر X11.
-إذا كانت هذه هي الحالة ، فيجب أن تفرخ PulseAudio تلقائيا مرة أخرى ، أو إذا لم يتم اعداد ذلك ، فيجب عليك
-تشغيل بدء نبض الصوت-x11 يدويا.</translation>
+        <source>Connection to PulseAudio failed. Automatic retry in 5s.&lt;br&gt;&lt;br&gt;In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Propertiesor default-server in client.conf is misconfigured.&lt;br&gt;This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.&lt;br&gt;If this is the case, then PulseAudio should autospawn again, or if this is not configured you shouldrun start-pulseaudio-x11 manually.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
@@ -584,27 +572,27 @@ run start-pulseaudio-x11 manually.</source>
         <translation>إنهاء التشغيل</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="53"/>
+        <location filename="../sinkinputwidget.cc" line="52"/>
         <source>Unknown output</source>
         <translation>إخراج غير معروف</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="64"/>
+        <location filename="../sinkinputwidget.cc" line="63"/>
         <source>pa_context_set_sink_input_volume() failed</source>
         <translation>فشل pa_context_set_sink_input_volume()</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="79"/>
+        <location filename="../sinkinputwidget.cc" line="78"/>
         <source>pa_context_set_sink_input_mute() failed</source>
         <translation>فشل pa_context_set_sink_input_mute()</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="89"/>
+        <location filename="../sinkinputwidget.cc" line="88"/>
         <source>pa_context_kill_sink_input() failed</source>
         <translation>فشل pa_context_kill_sink_input()</translation>
     </message>
     <message>
-        <location filename="../sinkinputwidget.cc" line="114"/>
+        <location filename="../sinkinputwidget.cc" line="113"/>
         <source>pa_context_move_sink_input_by_index() failed</source>
         <translation>فشل pa_context_move_sink_input_by_index()</translation>
     </message>
@@ -650,27 +638,27 @@ run start-pulseaudio-x11 manually.</source>
         <translation>إنهاء التسجيل</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="60"/>
+        <location filename="../sourceoutputwidget.cc" line="59"/>
         <source>Unknown input</source>
         <translation>إدخال غير معروف</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="72"/>
+        <location filename="../sourceoutputwidget.cc" line="71"/>
         <source>pa_context_set_source_output_volume() failed</source>
         <translation>فشل pa_context_set_source_output_volume()</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="87"/>
+        <location filename="../sourceoutputwidget.cc" line="86"/>
         <source>pa_context_set_source_output_mute() failed</source>
         <translation>فشل pa_context_set_source_output_mute()</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="98"/>
+        <location filename="../sourceoutputwidget.cc" line="97"/>
         <source>pa_context_kill_source_output() failed</source>
         <translation>فشل pa_context_kill_source_output()</translation>
     </message>
     <message>
-        <location filename="../sourceoutputwidget.cc" line="125"/>
+        <location filename="../sourceoutputwidget.cc" line="124"/>
         <source>pa_context_move_source_output_by_index() failed</source>
         <translation>فشل pa_context_move_source_output_by_index()</translation>
     </message>
