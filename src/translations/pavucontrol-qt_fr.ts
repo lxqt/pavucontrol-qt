@@ -107,7 +107,7 @@
     <message>
         <location filename="../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Port&#xa0;:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Port :&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="126"/>
@@ -528,7 +528,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="622"/>
         <source>Connection to PulseAudio failed. Automatic retry in 5s.&lt;br&gt;&lt;br&gt;In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Propertiesor default-server in client.conf is misconfigured.&lt;br&gt;This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.&lt;br&gt;If this is the case, then PulseAudio should autospawn again, or if this is not configured you shouldrun start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>La connexion à PulseAudio a échoué. Réessai automatique dans 5s.&lt;br&gt;&lt;br&gt; Dans ce cas, il est probable que la configuration de PULSE_SERVER dans les propriétés d&apos;Environment/de fenêtre racine X11 ou de default-server dans client.conf soit erronée.&lt;br&gt; Cette situation peut également se produire lorsque PulseAudio s&apos;est planté et a laissé des détails périmés dans la fenêtre racine X11.&lt;br&gt;Si c&apos;est le cas, PulseAudio devrait redémarrer automatiquement, ou si ce n&apos;est pas configuré, vous devriez lancer manuellement start-pulseaudio-x11.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>

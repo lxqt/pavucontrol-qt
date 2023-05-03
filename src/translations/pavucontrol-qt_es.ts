@@ -30,13 +30,13 @@
         <location filename="../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation>%1&#xa0;% (%2&#xa0;dB)</translation>
+        <translation>%1 % (%2 dB)</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation>%1&#xa0;%</translation>
+        <translation>%1 %</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation>&lt;small&gt;100&#xa0;% (0&#xa0;dB)&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;100 % (0 dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="165"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation>&lt;small&gt;50&#xa0;%&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;50 %&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -528,7 +528,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="622"/>
         <source>Connection to PulseAudio failed. Automatic retry in 5s.&lt;br&gt;&lt;br&gt;In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Propertiesor default-server in client.conf is misconfigured.&lt;br&gt;This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.&lt;br&gt;If this is the case, then PulseAudio should autospawn again, or if this is not configured you shouldrun start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>La conexión con PulseAudio ha fallado. Se volverá a intentar automáticamente en 5.&lt;br&gt;&lt;br&gt;En este caso, es probable que se deba a una configuración incorrecta de PULSE_SERVER en las Propiedades de la Ventana Raíz de Environment/X11, o default-server en client.conf. &lt;br&gt;Esta situación también puede ocurrir cuando PulseAudio falla y se va detalles obsoletos en la ventana raíz de X11.&lt;br&gt;Si este es el caso, entonces PulseAudio debería iniciarse automáticamente de nuevo, o si esto no está configurado, deberías ejecutar start-pulseaudio-x11 manualmente.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
