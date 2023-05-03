@@ -528,7 +528,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="622"/>
         <source>Connection to PulseAudio failed. Automatic retry in 5s.&lt;br&gt;&lt;br&gt;In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Propertiesor default-server in client.conf is misconfigured.&lt;br&gt;This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.&lt;br&gt;If this is the case, then PulseAudio should autospawn again, or if this is not configured you shouldrun start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Připojení k PulseAudio se nezdařilo. Automatický opětovný pokus za 5s.&lt;br&gt;&lt;br&gt;V tomto případě je toto pravděpodobně protože PULSE_SERVER v Environment/X11 Root Window Propertiesor default-server v client.conf není nastaveno správně.&lt;br&gt;Tato situace také může nastat když PulseAudio zhavarovalo a zanechalo zaseknuté podrobnosti v kořenovém okně X11.&lt;br&gt;Pokud je to tento případ, pak by PulseAudio se mělo automaticky znovu spustit, nebo pokud toto není nastaveno, měli byste start-pulseaudio-x11 spustit ručně.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
