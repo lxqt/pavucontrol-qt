@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="590"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation>Ignorowanie sink-input, ponieważ jest ono oznaczone jako zdarzenie, więc jest jest obsługiwane przez widżet Zdarzenia</translation>
+        <translation>Ignorowanie sink-input, ponieważ jest ono oznaczone jako zdarzenie, więc jest obsługiwane przez widżet Zdarzenia</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="762"/>
@@ -528,7 +528,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="622"/>
         <source>Connection to PulseAudio failed. Automatic retry in 5s.&lt;br&gt;&lt;br&gt;In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Propertiesor default-server in client.conf is misconfigured.&lt;br&gt;This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.&lt;br&gt;If this is the case, then PulseAudio should autospawn again, or if this is not configured you shouldrun start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Połączenie z PulseAudio nie powiodło się. Automatyczna ponowna próba za 5 sekund.&lt;br&gt;&lt;br&gt;W tym przypadku jest to prawdopodobne, ponieważ PULSE_SERVER we właściwościach okna głównego środowiska/X11 lub domyślny serwer w pliku client.conf jest źle skonfigurowany.&lt;br&gt;Ta sytuacja może również wystąpić, gdy PulseAudio uległ awarii i pozostawił nieaktualne szczegóły w oknie głównym X11.&lt;br&gt;W takim przypadku PulseAudio powinien odrodzić się automatycznie, a jeśli nie jest skonfigurowany, należy uruchomić ręcznie start-pulseaudio-x11.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="672"/>
