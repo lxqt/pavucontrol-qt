@@ -6,7 +6,7 @@
     <message>
         <location filename="../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="29"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../cardwidget.ui" line="47"/>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>ਪਰੋਫਾਈਲ:</translation>
     </message>
     <message>
         <location filename="../cardwidget.cc" line="67"/>
@@ -30,33 +30,33 @@
         <location filename="../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1% (%2dB)</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1%</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;ਚੁੱਪ&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;ਚੁੱਪ&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;ਘੱਟ&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;ਘੱਟ&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;100% (0dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;ਬੇਸ&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;ਬੇਸ&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;small&gt;50%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -82,22 +82,22 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>ਡਿਵਾਈਸ ਦਾ ਨਾਂ</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>ਆਡੀਓ ਮੌਨ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>ਚੈਨਲਾਂ ਨੂੰ ਇਕੱਠੇ ਲਾਕ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>ਤਕਨੀਕੀ ਚੋਣਾਂ ਵੇਖਾਓ</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../devicewidget.cc" line="42"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>ਡਿਵਾਈਸ ਦਾ ਨਾਂ ਬਦਲੋ...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="156"/>
@@ -208,7 +208,7 @@
         <location filename="../mainwindow.ui" line="196"/>
         <location filename="../mainwindow.ui" line="261"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>ਵੇਖਾਓ:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="74"/>
@@ -220,13 +220,13 @@
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>ਐਪਲੀਕੇਸ਼ਨਾਂ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="84"/>
         <location filename="../mainwindow.ui" line="149"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>ਵਰਚੁਅਲ ਸਟਰੀਮਾਂ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="93"/>
@@ -251,17 +251,17 @@
     <message>
         <location filename="../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>ਸਾਰੇ ਆਉਟਪੁੱਟ ਡਿਵਾਈਸ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>ਹਾਰਡਵੇਅਰ ਆਉਟਪੁੱਟ ਡਿਵਾਈਸ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="214"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>ਵਰਚੁਅਲ ਆਉਟਪੁੱਟ ਡਿਵਾਈਸ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="223"/>
@@ -276,17 +276,17 @@
     <message>
         <location filename="../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>ਸਾਰੇ ਇਨਪੁੱਟ ਡਿਵਾਈਸ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>ਮਾਨੀਟਰਾਂ ਤੋਂ ਬਿਨਾਂ ਸਾਰੇ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>ਹਾਰਡਵੇਅਰ ਇਨਪੁੱਟ ਡਿਵਾਈਸਾਂ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="284"/>
@@ -296,7 +296,7 @@
     <message>
         <location filename="../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>ਮਾਨੀਟਰ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="298"/>
@@ -311,17 +311,17 @@
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>ਵਾਲੀਅਮ ਮੀਟਰ ਵੇਖਾਓ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> (ਪਲੱਗ ਲੱਗਾ)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
@@ -376,7 +376,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="66"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>ਗਲਤੀ</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="87"/>

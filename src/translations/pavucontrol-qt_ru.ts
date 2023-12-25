@@ -92,7 +92,7 @@
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation>Выключить звук</translation>
+        <translation>Заглушить звук</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>Устройства В&amp;ывода</translation>
+        <translation>Устройства выво&amp;да</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>Устройства &amp;Ввода</translation>
+        <translation>Устройства вв&amp;ода</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
@@ -711,7 +711,7 @@
     <message>
         <location filename="../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation>Выключить звук</translation>
+        <translation>Заглушить звук</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
