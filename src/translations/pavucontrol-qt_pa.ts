@@ -117,32 +117,32 @@
     <message>
         <location filename="../devicewidget.ui" line="172"/>
         <source>PCM</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="182"/>
         <source>AC3</source>
-        <translation type="unfinished"></translation>
+        <translation>AC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="189"/>
         <source>EAC3</source>
-        <translation type="unfinished"></translation>
+        <translation>EAC3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="196"/>
         <source>DTS</source>
-        <translation type="unfinished"></translation>
+        <translation>DTS</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="203"/>
         <source>MPEG</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="210"/>
         <source>AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>AAC</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="238"/>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> ms</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="42"/>
@@ -214,7 +214,7 @@
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>ਸਭ ਸਟਰੀਮਾਂ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
@@ -291,7 +291,7 @@
     <message>
         <location filename="../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>ਵਰਚੁਅਲ ਇਨਪੁੱਟ ਡਿਵਾਈਸ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="289"/>
@@ -327,7 +327,7 @@
         <location filename="../mainwindow.cc" line="163"/>
         <location filename="../mainwindow.cc" line="259"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> (ਨਾ-ਮੌਜੂਦ)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
