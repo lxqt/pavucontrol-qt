@@ -73,7 +73,7 @@ set_property(
 )
 
 target_link_libraries(pavucontrol-qt
-    Qt5::Widgets
+    Qt6::Widgets
     ${PULSE_LDFLAGS}
     ${GLIB_LDFLAGS}
 )
