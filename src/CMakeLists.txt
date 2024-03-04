@@ -72,11 +72,19 @@ set_property(
      PAVUCONTROL_QT_DATA_DIR="${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}"
 )
 
-target_link_libraries(pavucontrol-qt
-    Qt5::Widgets
-    ${PULSE_LDFLAGS}
-    ${GLIB_LDFLAGS}
-)
+if (CONFIG_QT6)
+	target_link_libraries(pavucontrol-qt
+	    Qt6::Widgets
+	    ${PULSE_LDFLAGS}
+	    ${GLIB_LDFLAGS}
+	)
+else()
+	target_link_libraries(pavucontrol-qt
+	    Qt5::Widgets
+	    ${PULSE_LDFLAGS}
+	    ${GLIB_LDFLAGS}
+	)
+endif()
 
 install(TARGETS
     pavucontrol-qt
