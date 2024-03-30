@@ -649,11 +649,10 @@ int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
 
     app.setOrganizationName(QStringLiteral("pavucontrol-qt"));
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
     QString locale = QLocale::system().name();
     QTranslator qtTranslator;
-    if(qtTranslator.load(QStringLiteral("qt_") + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+    if(qtTranslator.load(QStringLiteral("qt_") + locale, QLibraryInfo::path(QLibraryInfo::TranslationsPath)))
         qApp->installTranslator(&qtTranslator);
 
     QTranslator appTranslator;
