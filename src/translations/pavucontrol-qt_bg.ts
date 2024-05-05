@@ -348,12 +348,12 @@
     <message>
         <location filename="../mainwindow.cc" line="435"/>
         <source>Failed to create monitoring stream</source>
-        <translation>Създаването на поток за мониториране неуспешно</translation>
+        <translation>Създаването на поток за проследяване е неуспешно</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="450"/>
         <source>Failed to connect monitoring stream</source>
-        <translation>Свързването към поток за мониториране неуспешно</translation>
+        <translation>Свързването към поток за проследяване е неуспешно</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="590"/>
