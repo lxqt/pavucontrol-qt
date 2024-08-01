@@ -244,6 +244,15 @@
            <property name="suffix">
             <string> ms</string>
            </property>
+           <property name="minimum">
+            <number>-2000</number>
+           </property>
+           <property name="maximum">
+            <number>5000</number>
+           </property>
+           <property name="singleStep">
+            <number>10</number>
+           </property>
           </widget>
          </item>
         </layout>
