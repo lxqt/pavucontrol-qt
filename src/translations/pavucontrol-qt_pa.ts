@@ -167,7 +167,7 @@
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>ਅਫ਼ਸੋਸ ਹੈ ਪਰ ਡਿਵਾਈਸ ਦੇ ਨਾਂ ਬਦਲਣ ਲਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="228"/>
@@ -177,7 +177,7 @@
     <message>
         <location filename="../devicewidget.cc" line="234"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ਡਿਵਾਈਸ ਦਾ ਨਾਂ ਬਦਲੋ:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="241"/>
