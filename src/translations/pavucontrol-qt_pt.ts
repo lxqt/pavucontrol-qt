@@ -167,7 +167,7 @@
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation>Desculpe mas não é possível renomear dispositivos.</translation>
+        <translation>Lamentamos, mas a renomeação de dispositivos não é suportada.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="228"/>
