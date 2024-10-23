@@ -97,7 +97,7 @@
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation>Kanalen tezamen vergrendelen</translation>
+        <translation>Alle kanalen vergrendelen</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
@@ -386,7 +386,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
-        <translation>&apos;Sink callback&apos;-fout</translation>
+        <translation>‘Sink callback’-fout</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="133"/>
