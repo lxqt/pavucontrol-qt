@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>PulseAudion äänenvoimakkuuden hallinta</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>Yhteys PulseAudioon epäonnistui. Yritetään automaattisesti 5s kuluttua.&lt;br&gt;&lt;br&gt;Tämä todennäköisesti johtuu virheellisestä määrityksestä, joko työpöytäympäristön tai X11-juuri-ikkunan ominaisuuksissa PULSE_SERVER, tai client.conf:issa default-server.&lt;br&gt;Tämä saattaa tapahtua myös, kun PulseAudio kaatuessaan jättää vanhentunutta yksityiskohtaista tietoa X11-juuri-ikkunaan.&lt;br&gt;Tässä tapauksessa PulseAudion pitäisi käynnistyä uudelleen itsestään, tai sen määrityksen puutteessa start-pulseaudio-x11 täytyy suorittaa manuaalisesti.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Valitse välilehti latauksen yhteydessä.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Yritä uudelleen jos pa lopettaa (joka 5 sekunti).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Suurenna ikkuna.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Virhe: PulseAudio-yhteys epäonnistui</translation>
     </message>

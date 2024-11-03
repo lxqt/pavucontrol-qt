@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>Controlo de volume PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>Falha na ligação com o PulseAudio. Nova tentativa automática daqui a 5s.&lt;br&gt;&lt;br&gt;Neste caso, é provável que o PULSE_SERVER nas Propriedades da Janela Root do Ambiente/X11 ou servidor predefinido em client.conf esteja configurado incorretamente.&lt;br&gt;Esta situação também pode ocorrer quando o PulseAudio falha e deixou detalhes obsoletos na janela Root do X11.&lt;br&gt;Se for esse o caso, o PulseAudio deve gerar automaticamente novamente ou, se isso não estiver configurado, deve executar o start-pulseaudio-x11 manualmente.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Selecione o separador a carregar automaticamente.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Tentar novamente se o PulseAudio encerrar (a cada 5 segundos).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Maximizar a janela.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Erro fatal: incapaz de estabelecer a ligação ao PulseAudio</translation>
     </message>

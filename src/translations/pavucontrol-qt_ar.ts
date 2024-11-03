@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>التحكم في مستوى الصوت PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>فشل الاتصال بـ PulseAudio. إعادة المحاولة تلقائيًا في 5 ثوانٍ. &lt;br&gt; &lt;br&gt; في هذه الحالة ، من المحتمل أن يكون هذا بسبب خطأ PULSE_SERVER في البيئة / خصائص نافذة الجذر X11 أو الخادم الافتراضي في client.conf. &lt;br&gt; يمكن أن يحدث هذا الموقف أيضًا عند تعطل PulseAudio ومغادرته التفاصيل التي لا معنى لها في نافذة الجذر X11. &lt;br&gt; إذا كانت هذه هي الحالة ، فيجب عندئذٍ نشر PulseAudio تلقائيًا مرة أخرى ، أو إذا لم تتم تهيئتها ، فيجب تشغيل start-pulseaudio-x11 يدويًا.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>حدد علامة تبويب معينة عند التحميل.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>أعد المحاولة إلى الأبد إذا استقال PA (كل 5 ثوان).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>تكبير النافذة.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>خطأ فادح: غير قادر على الاتصال ب PulseAudio</translation>
     </message>

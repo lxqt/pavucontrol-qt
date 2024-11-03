@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>בקרת עצמת שמע PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>החיבור ל־PulseAudio נכשל. יתבצע ניסיון חוזר אוטומטית בעוד 5 שניות.&lt;br&gt;&lt;br&gt;במקרה כזה כנראה ש־PULSE_SERVER במאפייני חלון השורש בסביבה/X11 או ש־default-server ב־client.conf לא מוגדר.&lt;br&gt;המצב הזה יכול לקרות גם אם PulseAudio קרס והשאיר פרטים מיושנים בחלון השורש של X11.&lt;br&gt;אם זה המצב, אז PulseAudio אמור להפעיל את עצמו אוטומטית שוב, או שאם זה לא מוגדר יש להריץ את start-pulseaudio-x11 ידנית.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>בחירת לשונית מסוימת לטעינה.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>לנסות לעד אם הפעילות של pa הסתיימה (כל 5 שניות).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>הגדלת החלון.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>שגיאה מכרעת: לא ניתן להתחבר ל־PulseAudio</translation>
     </message>

@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>PulseAudio 音量調節</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>PulseAudio への接続に失敗しました。5 秒後に自動的に再試行します。&lt;br&gt;&lt;br&gt;この場合、環境/X11 ルートウィンドウのプロパティの PULSE_SERVER または client.conf の default-server の設定が間違っている可能性があります。&lt;br&gt;この状況は PulseAudio がクラッシュして X11 ルートウィンドウに古い情報が残った場合にも発生する可能性があります。&lt;br&gt;この場合 PulseAudio は再度自動生成されます。これが設定されていない場合は、start-pulseaudio-X11 を手動で実行する必要があります。</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>起動してタブ&lt;tab&gt;を選択する。</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>PulseAudio が終了した場合、(5 秒毎に)再試行を繰り返す。</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>ウィンドウを最大化する。</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>致命的なエラー: PulseAudio に接続できません</translation>
     </message>

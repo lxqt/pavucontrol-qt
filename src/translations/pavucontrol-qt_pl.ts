@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>Kontrola głośności PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>Połączenie z PulseAudio nie powiodło się. Automatyczna ponowna próba za 5 sekund.&lt;br&gt;&lt;br&gt;W tym przypadku jest to prawdopodobne, ponieważ PULSE_SERVER we właściwościach okna głównego środowiska/X11 lub domyślny serwer w pliku client.conf jest źle skonfigurowany.&lt;br&gt;Ta sytuacja może również wystąpić, gdy PulseAudio uległ awarii i pozostawił nieaktualne szczegóły w oknie głównym X11.&lt;br&gt;W takim przypadku PulseAudio powinien odrodzić się automatycznie, a jeśli nie jest skonfigurowany, należy uruchomić ręcznie start-pulseaudio-x11.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Wczytuje podaną kartę.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Ponawia w nieskończoność, jeśli PA zakończy działanie (co 5 sekund).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Maksymalizuje okno.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Błąd krytyczny: nie można połączyć z usługą PulseAudio</translation>
     </message>

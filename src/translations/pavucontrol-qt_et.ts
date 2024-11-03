@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>PulseAudio helivaljuse seadistused</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>Ühendus PulseAudio serveriga ei toimi. Proovime automaatselt 5 sekundi pärast uuesti.&lt;br&gt;&lt;br&gt;Antud juhul on tõenäoline, et PULSE_SERVER muutuja Environment/X11 Root Window Properties objektis või default-server client.conf failis on valesti seadistatud.&lt;br&gt;Selline olukord võib ka tekkida siis, kui PulseAudio jooksis kokku ebatäpsed andmed jäid X11 Root Window objekti.&lt;br&gt;Sellisel puhul PulseAudio peaks lihtsalt uue protsessi käivitama, aga kui selline funktsionaalsus on seadistamata, siis palun käivita ise start-pulseaudio-x11 .</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Vali laetav kaart.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Kui PulseAudio lõpetab töö, siis proovi lõputult uuesti (iga 5 sekundi järel).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Suurenda aken.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Lõplik viga: PulseAudio taustateenusega ei saa ühendust</translation>
     </message>

@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>PulseAudio ovládání hlasitosti</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>Připojení k PulseAudio se nezdařilo. Automatický opětovný pokus za 5s.&lt;br&gt;&lt;br&gt;V tomto případě je toto pravděpodobně protože PULSE_SERVER v Environment/X11 Root Window Propertiesor default-server v client.conf není nastaveno správně.&lt;br&gt;Tato situace také může nastat když PulseAudio zhavarovalo a zanechalo zaseknuté podrobnosti v kořenovém okně X11.&lt;br&gt;Pokud je to tento případ, pak by PulseAudio se mělo automaticky znovu spustit, nebo pokud toto není nastaveno, měli byste start-pulseaudio-x11 spustit ručně.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Při načítání vybrat konkrétní panel.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Pokud PulseAudio skončí, opakovat neustále (každých 5 sekund).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Maximalizovat okno.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Vážná chyba: nedaří se spojit s PulseAudio</translation>
     </message>

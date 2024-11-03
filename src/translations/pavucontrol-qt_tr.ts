@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>PulseAudio Ses Denetimi</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>PulseAudio bağlantısı başarısız oldu. 5 saniye içinde otomatik yeniden denenecek.&lt;br&gt;&lt;br&gt;Bunun nedeni büyük olasılıkla Ortam/X11 Kök Pencere Özellikleri&apos;ndeki PULSE_SERVER veya client.conf&apos;taki varsayılan sunucunun yanlış yapılandırılmasıdır.&lt;br&gt;Bu durum, PulseAudio çöktüğünde ve X11 Kök Penceresinde eski kalıntılar bıraktığında da ortaya çıkabilir.&lt;br&gt;Durum buysa, PulseAudio yeniden otomatik olarak çalışmalı veya bu yapılandırılmamışsa start-pulseaudio-x11&apos;i elle çalıştırmalısınız.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Yüklemede belirli bir sekme seçin.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Eğer durursa sonsuza kadar tekrarla (her 5 sn.&apos;de bir).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Pencereyi büyüt.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Ölümcül Hata: PulseAudio&apos;ya bağlanılamadı</translation>
     </message>

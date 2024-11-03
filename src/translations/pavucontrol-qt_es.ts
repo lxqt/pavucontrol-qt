@@ -30,13 +30,13 @@
         <location filename="../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation>%1 % (%2 dB)</translation>
+        <translation>%1&#xa0;% (%2&#xa0;dB)</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation>%1 %</translation>
+        <translation>%1&#xa0;%</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation>&lt;small&gt;100 % (0 dB)&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;100&#xa0;% (0&#xa0;dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="165"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation>&lt;small&gt;50 %&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;50&#xa0;%&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>Control de volumen de PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>La conexión con PulseAudio ha fallado. Se volverá a intentar automáticamente en 5.&lt;br&gt;&lt;br&gt;En este caso, es probable que se deba a una configuración incorrecta de PULSE_SERVER en las Propiedades de la Ventana Raíz de Environment/X11, o default-server en client.conf. &lt;br&gt;Esta situación también puede ocurrir cuando PulseAudio falla y se va detalles obsoletos en la ventana raíz de X11.&lt;br&gt;Si este es el caso, entonces PulseAudio debería iniciarse automáticamente de nuevo, o si esto no está configurado, deberías ejecutar start-pulseaudio-x11 manualmente.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Seleccionar una pestaña específica al cargar.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Reintentar indefinidamente si pa termina (cada 5 segundos).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Maximizar la ventana.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Error fatal: no se puede reconectar con PulseAudio</translation>
     </message>
