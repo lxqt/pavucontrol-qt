@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>PulseAudio ଧ୍ୱନି ଶକ୍ତି ନିୟନ୍ତ୍ରଣ</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>ଏକ ନିର୍ଦ୍ଧିଷ୍ଟ ଟ୍ୟାବ୍ କୁ ଆରମ୍ଭରେ ବାଛନ୍ତୁ |</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>ସବୁବେଳେ ଚେଷ୍ଟା କର ଯଦି ପା ବନ୍ଦ ହେଉଛି (ପ୍ରତି ୫ ମୁହୁର୍ତରେ) |</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>ଉଇଣ୍ଡୋ କୁ  ବୃହତ୍ତମନ କର |</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>ଗୁରୁତର ତ୍ରୁଟି: ପଲସଅଡିଓ ସହ ଯୋଗାଯୋଗ କରିବାରେ ଅସଫଳ</translation>
     </message>

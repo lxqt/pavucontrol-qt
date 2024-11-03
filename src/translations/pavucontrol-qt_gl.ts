@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>Control de volume do PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>Fallou a conexión a PulseAudio.  Reintento automático en 5 segundos.&lt;br&gt;&lt;br&gt;Neste caso, é probable que PULSE_SERVER no entorno/X11 Propiedades da xanela raíz ou o servidor predeterminado en client.conf está mal configurado.&lt;br&gt;Esta situación tamén pode darse cando PulseAudio falla e sae  detalles obsoletos na xanela raíz de X11.&lt;br&gt;Se este é o caso, PulseAudio debería aparecer automaticamente de novo ou, se isto non está configurado, debería executar start-pulseaudio-x11 manualmente.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Seleccionar unha lapela específica ao cargar.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Reintentar indefinidamente se PA se pecha (cada 5 segundos).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Maximizar a xanela.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Produciuse un erro grave: Non é posíbel volver conectar co PulseAudio</translation>
     </message>

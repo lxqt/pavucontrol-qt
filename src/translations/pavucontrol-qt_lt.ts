@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>PulseAudio garsio reguliavimas</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>Ryšys su PulseAudio patyrė nesėkmę. Automatinis bandymas iš naujo po 5 sek.&lt;br&gt;&lt;br&gt;Šiuo atveju, greičiausiai, taip nutiko dėl to, kad PULSE_SERVER yra neteisingai sukonfigūruota aplinkos/X11 šakninio lango savybėse arba faile „client.conf“ neteisingai sukonfigūruota default-server.&lt;br&gt;Tokia situacija taip pat gali atsirasti, kai PulseAudio užstrigo ir X11 šakniniame lange paliko pasenusios informacijos.&lt;br&gt;Jei tai yra tas atvejis, tuomet PulseAudio turėtų ir vėl automatiškai pasileisti arba, jei tai nėra sukonfigūruota, jūs turėtumėte rankiniu būdu paleisti „start-pulseaudio-x11“.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Įkėlus, pasirinkti tam tikrą kortelę.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Amžinai bandyti iš naujo, jei pa baigia darbą (kas 5 sekundes).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Išskleisti langą.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Lemtingoji klaida: Nepavyko prisijungti prie PulseAudio</translation>
     </message>

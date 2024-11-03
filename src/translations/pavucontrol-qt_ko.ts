@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>PulseAudio 음량 조절</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>PulseAudio에 연결하지 못했습니다. 5초 후에 자동 재시도합니다.&lt;br&gt;&lt;br&gt;이 경우 환경/X11 루트 창 속성의 PULSE_SERVER 또는 client.conf의 default-server가 잘못 구성되었기 때문일 수 있습니다.&lt;br&gt;이 상황은 PulseAudio가 충돌하여 종료되었을 때도 발생할 수 있습니다. X11 루트 창의 오래된 세부 정보입니다.&lt;br&gt;이 경우 PulseAudio가 다시 자동 생성되어야 합니다. 구성되지 않은 경우 수동으로 start-pulseaudio-x11을 실행해야 합니다.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>불러오기 시 특정 탭을 선택합니다.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>pa가 종료되면 영원히 재시도합니다(5초마다).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>창을 최대화합니다.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>치명적인 오류: PulseAudio에 연결할 수 없습니다</translation>
     </message>

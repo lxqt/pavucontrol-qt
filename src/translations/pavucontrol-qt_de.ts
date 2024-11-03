@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>PulseAudio-Lautstärkeregler</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>Verbindung zu PulseAudio fehlgeschlagen. Automatischer Wiederholungsversuch in 5 s.&lt;br&gt;&lt;br&gt;In diesem Fall liegt es wahrscheinlich daran, dass PULSE_SERVER in den Eigenschaften von Environment/X11 Root Window oder default-server in client.conf falsch konfiguriert ist.&lt;br&gt;Diese Situation kann auch eintreten, wenn PulseAudio abstürzt und veraltete Details im X11 Root Window hinterlässt.&lt;br&gt;Wenn dies der Fall ist, sollte PulseAudio wieder automatisch starten, oder wenn dies nicht konfiguriert ist, sollten Sie start-pulseaudio-x11 manuell ausführen.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Eine bestimmte Registerkarte beim Start auswählen.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Wiederhole für immer, wenn pa sich beendet (alle 5 Sekunden).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Fenster maximieren.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Schwerwiegender Fehler: Verbindung zu PulseAudio nicht möglich</translation>
     </message>

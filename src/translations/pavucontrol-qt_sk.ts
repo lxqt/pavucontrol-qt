@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>Ovládanie hlasitosti PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>Pripojenie k PulseAudio zlyhalo. Automatický pokus o 5 s.&lt;br&gt;&lt;br&gt;V tomto prípade je to pravdepodobne preto, že PULSE_SERVER vo vlastnostiach koreňového okna Environment/X11, alebo predvolený server v client.conf nie je správne nakonfigurovaný.&lt;br&gt;Táto situácia môže nastať aj vtedy, keď PulseAudio zlyhá kvôli neaktuálnym detailom v koreňovom okne X11.&lt;br&gt;V tomto prípade by sa PulseAudio malo znova spustiť automaticky, a v prípade, že nie je nakonfigurované, je potrebné spustiť start-pulseaudio-x11 manuálne.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Vyberte kartu, ktorú chcete načítať.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Opakovať vždy keď pa ukončí (každých 5 sekúnd).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Maximalizovať okno.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Chyba: Nepodarilo sa pripojiť k PulseAudio</translation>
     </message>

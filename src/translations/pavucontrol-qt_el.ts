@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>Έλεγχος έντασης ήχου PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>Η σύνδεση στο PulseAudio απέτυχε. Επαναπροσπάθεια σε 5δευτ.&lt;br&gt;&lt;br&gt;Αυτό πιθανώς να συμβαίνει λόγω κακής διαμόρφωσης του αρχείου client.conf για το PULSE_SERVER στο Environment/X11 Root Window Properties ή default-server&lt;br&gt;Αυτό μπορεί επίσης να συμβεί αν το PulseAudio καταρρεύσει και αφήσει στοιχεία στοίβας στο ριζικό παράθυρο X11.&lt;br&gt;Σε αυτήν την περίπτωση, το PulseAudio θα επανεκκινηθεί αν έχει διαμορφωθεί καταλλήλως το autospawn. Αν δεν έχει γίνει αυτή η διαμόρφωση θα πρέπει να το εκτελέσετε χειροκίνητα με start-pulseaudio-x11.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Επιλογή μιας συγκεκριμένης καρτέλας κατά την φόρτωση.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Επαναφορά αέναα κατά την εγκατάλειψη του pa (κάθε 5 δευτερόλεπτα).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Μεγιστοποίηση του παράθυρου.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Ανεπανόρθωτο σφάλμα: Αδύνατη η σύνδεση στο PulseAudio</translation>
     </message>

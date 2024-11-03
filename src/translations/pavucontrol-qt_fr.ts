@@ -107,7 +107,7 @@
     <message>
         <location filename="../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Port :&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Port&#xa0;:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="126"/>
@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>Contrôle du volume PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>La connexion à PulseAudio a échoué. Réessai automatique dans 5s.&lt;br&gt;&lt;br&gt; Dans ce cas, il est probable que la configuration de PULSE_SERVER dans les propriétés d&apos;Environment/de fenêtre racine X11 ou de default-server dans client.conf soit erronée.&lt;br&gt; Cette situation peut également se produire lorsque PulseAudio s&apos;est planté et a laissé des détails périmés dans la fenêtre racine X11.&lt;br&gt;Si c&apos;est le cas, PulseAudio devrait redémarrer automatiquement, ou si ce n&apos;est pas configuré, vous devriez lancer manuellement start-pulseaudio-x11.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Sélectionner un onglet spécifique lors du chargement.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Toujours réessayer si pavucontrol quitte (toutes les 5s).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Maximiser la fenêtre.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Erreur fatale : connexion impossible à PulseAudio</translation>
     </message>

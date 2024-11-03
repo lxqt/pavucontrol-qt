@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>Керування гучністю PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>Не вдалося з&apos;єднатися з PulseAudio. Автоматична повторна спроба за 5 секунд.&lt;br&gt;&lt;br&gt;У цьому випадку це може статися через неправильне налаштування параметра PULSE_SERVER в Environment/X11 Root Window Properties або default-server у client.conf.&lt;br&gt;Така ситуація також може виникнути, якщо стався збій PulseAudio і залишились застарілі дані у X11 Root Window..&lt;br&gt;Якщо це так, то PulseAudio має знову автозапуститися, або, якщо це не налаштовано, вам слід запустити start-pulseaudio-x11 вручну.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Вибрати специфічну вкладку при завантаженні.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Пробувати знову, якщо PulseAudio завершиться (кожні 5 секунд).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Максималізувати вікно.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Фатальна помилка: Неможливо зв&apos;язатися з PulseAudio</translation>
     </message>

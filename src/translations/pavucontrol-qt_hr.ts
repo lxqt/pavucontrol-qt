@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>Kontrola glasnoće za PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>Povezivanje s PulseAudiom nije uspjelo. Pokušaj će se automatski ponoviti za 5 s.&lt;br&gt;&lt;br&gt;Vjerojatno je PULSE_SERVER u Environment/X11 Root Window Properties ili je default-server u client.conf krivo konfiguriran.&lt;br&gt;Ova situacija također može nastati kada se PulseAudio sruši i napusti ustajale pojedinosti u korijenskom prozoru X11.&lt;br&gt;Ako je to slučaj, onda bi se PulseAudio trebao ponovno automatski pokrenuti, ili ako to nije konfigurirano, pokreni start-pulseaudio-x11 ručno.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Odaberi određenu karticu za učitavanje.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Pokušaj ponovo unedogled, ako se PA zatvori (svakih 5 s).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Maksimalno proširi prozor.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Fatalna greška: Povezivanje s PulseAudio nije moguće</translation>
     </message>

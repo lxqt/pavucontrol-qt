@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>Lydstyrkekontrol for PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>Kan ikke forbinde PulseAudio. Prøver automatisk igen om 5 s.&lt;br&gt;&lt;br&gt;I dette tilfælde er dette sandsynligvis fordi PULSE_SERVER i Environment/X11 Root Window Indstillinger eller standardserveren i client.conf er forkert indstillet.&lt;br&gt;Denne situation kan også opstå, når PulseAudio crasheder og forlader forældedet information i X11 Root-vinduet.&lt;br&gt;Hvis dette er tilfældet, så burde PulseAudio automatisk genstarte, eller hvis dette ikke er indstillet, skal du køre start-pulseaudio-x11 manuelt.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Vælg et bestemt faneblad ved start.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Gentag uendeligt hvis pa afslutter (hvert 5. sekund).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Maksimer vinduet.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Fatal fejl: kan ikke oprette forbindelse til PulseAudio</translation>
     </message>

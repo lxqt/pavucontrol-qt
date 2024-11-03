@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>Control del volum del PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>La connexió amb PulseAudio ha fallat. Es reintentarà automàticament d&apos;aquí a 5 segons.&lt;br&gt;&lt;br&gt;En aquest cas, és probable que PULSE_SERVER a l&apos;entorn/X11 Root Window Properties o el servidor predeterminat a client.conf estigui mal configurat.&lt;br&gt;Aquesta situació també es pot produir quan PulseAudio va fallar i es van deixar detalls obsolets a la finestra d&apos;arrel de l&apos;X11.&lt;br&gt;Si aquest és el cas, PulseAudio s&apos;hauria de tornar a generar automàticament o, si no està configurat, hauríeu d&apos;executar start-pulseaudio-x11 manualment.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Selecciona una pestanya específica amb la càrrega.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Torna a intentar-ho per sempre si pa surt (cada 5 segons).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Maximitza la finestra.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Error fatal: no s&apos;ha pogut connectar a PulseAudio</translation>
     </message>

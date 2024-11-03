@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>PulseAudio 音量控制</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>连接 PulseAudio 失败。在5秒内自动重试。&lt;br&gt;&lt;br&gt;在这种情况下，这可能是因为环境/ X11 根窗口属性中的 PULSE_SERVER 或 client.conf 中的 default-server 配置错误。&lt;br&gt;当 PulseAudio 崩溃并在 X11 根窗口中留下陈旧的详细信息时，也会出现这种情况。&lt;br&gt;如果是这种情况，那么 PulseAudio 应该再次自动生成，或者如果没有配置，您应该手动运行 start-pulseaudio-x11 。</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>选择加载特定标签。</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>如果 pa 退出，永远尝试（每 5 秒）。</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>最大化窗口。</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>严重错误：无法连接到 PulseAudio</translation>
     </message>

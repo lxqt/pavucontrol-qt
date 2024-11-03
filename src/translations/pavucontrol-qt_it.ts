@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>Regolazione del volume PulseAudio</translation>
     </message>
@@ -531,22 +531,22 @@
         <translation>La connessione a PulseAudio è fallita. Riprova automatica tra 5 secondi.&lt;br&gt;&lt;br&gt;In questo caso, probabilmente è perché PULSE_SERVER nell&apos;Environment/X11 Root Window Properties o default-server in client.conf è configurato in modo errato.&lt;br&gt;Questa situazione può anche verificarsi quando PulseAudio si è bloccato e ha lasciato dettagli obsoleti nella finestra radice X11.&lt;br&gt;Se questo è il caso, allora PulseAudio dovrebbe autogenerarsi nuovamente oppure, se non è configurato, dovresti eseguire manualmente start-pulseaudio-x11.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Seleziona una scheda specifica al avvio.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Riprova in continuazione quando PA chiude (ogni 5 secondi).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Masssimizza la finestra.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Errore fatale: Impossibile connettersi a PulsaAudio</translation>
     </message>
