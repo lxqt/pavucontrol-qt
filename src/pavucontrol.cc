@@ -49,6 +49,7 @@
 #include <QTranslator>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
+#include <QScreen>
 #include <QString>
 
 static pa_context* context = nullptr;
@@ -694,6 +695,7 @@ int main(int argc, char *argv[]) {
 
     connect_to_pulse(mainWindow);
     if (reconnect_timeout >= 0) {
+        mainWindow->move(QGuiApplication::primaryScreen()->availableGeometry().center() - mainWindow->frameGeometry().center());
         mainWindow->show();
         app.exec();
     }
