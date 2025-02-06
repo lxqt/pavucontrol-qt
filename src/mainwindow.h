@@ -27,7 +27,7 @@
 #  include <pulse/ext-device-restore.h>
 #endif
 
-#include <QDialog>
+#include <QWidget>
 #include "ui_mainwindow.h"
 
 class CardWidget;
@@ -37,7 +37,7 @@ class SinkInputWidget;
 class SourceOutputWidget;
 class RoleWidget;
 
-class MainWindow : public QDialog, public Ui::MainWindow {
+class MainWindow : public QWidget, public Ui::MainWindow {
     Q_OBJECT
 public:
     MainWindow();

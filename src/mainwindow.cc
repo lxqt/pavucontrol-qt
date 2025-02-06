@@ -67,7 +67,7 @@ struct source_port_prio_compare {
 };
 
 MainWindow::MainWindow():
-    QDialog(),
+    QWidget(),
     showSinkInputType(SINK_INPUT_CLIENT),
     showSinkType(SINK_ALL),
     showSourceOutputType(SOURCE_OUTPUT_CLIENT),
