@@ -112,7 +112,7 @@
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation>Rodyti išplėstinius parametrus</translation>
+        <translation>Rodyti išplėstines parinktis</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
