@@ -281,7 +281,7 @@
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation>監聽裝置以外的全部裝置</translation>
+        <translation>除了顯示器以外的全部裝置</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
@@ -528,7 +528,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="622"/>
         <source>Connection to PulseAudio failed. Automatic retry in 5s.&lt;br&gt;&lt;br&gt;In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Propertiesor default-server in client.conf is misconfigured.&lt;br&gt;This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.&lt;br&gt;If this is the case, then PulseAudio should autospawn again, or if this is not configured you shouldrun start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>連接 PulseAudio 失敗。 5 秒後自動重試。&lt;br&gt;&lt;br&gt;在此狀況下，很可能是因為環境/X11 根視窗屬性中的 PULSE_SERVER 或 client.conf 中的預設伺服器配置錯誤。 &lt;br&gt;當 PulseAudio 發生當機並在 X11 根視窗中留下陳舊的詳細資訊時，也會出現這種情況。&lt;br&gt;如果是這種狀況，則 PulseAudio 應該再次自動生成，或者如果沒有配置，您應該手動執行 start-pulseaudio-x11。</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="671"/>
