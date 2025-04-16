@@ -6,7 +6,7 @@
     <message>
         <location filename="../cardwidget.ui" line="14"/>
         <source>Form</source>
-        <translation>表單</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <location filename="../cardwidget.ui" line="29"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation>&lt;small&gt;無聲&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;安靜&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation>表單</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation>表單</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
@@ -102,12 +102,12 @@
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation>設為預設</translation>
+        <translation>設為後援備設</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;埠：&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;連接埠：&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="126"/>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation> 毫秒</translation>
+        <translation> ms</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="42"/>
@@ -172,7 +172,7 @@
     <message>
         <location filename="../devicewidget.cc" line="228"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation>為了重新命名裝置，你需要在 PulseAudio 伺服器運行模組裝置管理員</translation>
+        <translation>為了重新命名裝置，需要在 PulseAudio 服務器中載入模組裝置管理員</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="234"/>
@@ -195,7 +195,7 @@
     <message>
         <location filename="../mainwindow.ui" line="55"/>
         <source>&lt;i&gt;No application is currently playing audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;現在沒有應用程式在播放音訊。&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;現無應用程式正在播放音訊。&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="66"/>
@@ -209,7 +209,7 @@
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation>所有串流</translation>
+        <translation>全部串流</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
@@ -226,7 +226,7 @@
     <message>
         <location filename="../mainwindow.ui" line="120"/>
         <source>&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;現在沒有應用程式在錄音。&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;現無應用程式正在錄音。&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
@@ -251,22 +251,22 @@
     <message>
         <location filename="../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation>播放 (&amp;P)</translation>
+        <translation>播放(&amp;P)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="93"/>
         <source>&amp;Recording</source>
-        <translation>錄音 (&amp;R)</translation>
+        <translation>錄音(&amp;R)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation>輸出裝置 (&amp;O)</translation>
+        <translation>輸出裝置(&amp;O)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation>輸入裝置 (&amp;I)</translation>
+        <translation>輸入裝置(&amp;I)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
@@ -301,12 +301,12 @@
     <message>
         <location filename="../mainwindow.ui" line="298"/>
         <source>&amp;Configuration</source>
-        <translation>配置 (&amp;C)</translation>
+        <translation>設定(&amp;C)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="325"/>
         <source>&lt;i&gt;No cards available for configuration&lt;/i&gt;</source>
-        <translation>&lt;i&gt;沒有可配置的音效卡&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;沒有可作設定的音效卡&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="336"/>
@@ -321,19 +321,19 @@
     <message>
         <location filename="../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation> (插入)</translation>
+        <translation> (已經插入)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
         <location filename="../mainwindow.cc" line="259"/>
         <source> (unavailable)</source>
-        <translation> (不可用)</translation>
+        <translation> (不適用)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
         <location filename="../mainwindow.cc" line="256"/>
         <source> (unplugged)</source>
-        <translation> (移除)</translation>
+        <translation> (已經拔開)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="390"/>
@@ -348,17 +348,17 @@
     <message>
         <location filename="../mainwindow.cc" line="435"/>
         <source>Failed to create monitoring stream</source>
-        <translation>無法新增監控串流</translation>
+        <translation>建立監控串流失敗</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="450"/>
         <source>Failed to connect monitoring stream</source>
-        <translation>無法連結監控串流</translation>
+        <translation>無法連接監控串流</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="590"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation>忽略sink-input，由於它被設計為事件，因此歸「事件小工具」處理</translation>
+        <translation>忽略 sink-input，由於它被設計為事件，因此由「事件小工具」處理</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="762"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1092"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation>與PulseAudio建立連線中。請稍後...</translation>
+        <translation>正與 PulseAudio 建立連接中。請稍後…</translation>
     </message>
 </context>
 <context>
@@ -381,43 +381,43 @@
     <message>
         <location filename="../pavucontrol.cc" line="87"/>
         <source>Card callback failure</source>
-        <translation>音效卡回調失敗</translation>
+        <translation>音效卡呼叫返回失敗</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
-        <translation>Sink回調失敗</translation>
+        <translation>Sink 呼叫返回失敗</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="133"/>
         <source>Source callback failure</source>
-        <translation>Source回調失敗</translation>
+        <translation>Source 呼叫返回失敗</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="152"/>
         <source>Sink input callback failure</source>
-        <translation>Sink輸入回調失敗</translation>
+        <translation>Sink 輸入呼叫返回失敗</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="171"/>
         <source>Source output callback failure</source>
-        <translation>Source輸出回調失敗</translation>
+        <translation>Source 輸出呼叫返回失敗</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="211"/>
         <source>Client callback failure</source>
-        <translation>客戶端回調失敗</translation>
+        <translation>客戶端呼叫返回失敗</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="227"/>
         <source>Server info callback failure</source>
-        <translation>伺服器資訊回調失敗</translation>
+        <translation>伺服器資訊呼叫返回失敗</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="245"/>
         <location filename="../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>無法初始化「串流復原」擴充套件：%s</translation>
+        <translation>初始化 stream_restore 擴充套件失敗： %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="263"/>
@@ -428,7 +428,7 @@
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation>無法初始化「裝置復原」擴充套件：%s</translation>
+        <translation>初始化裝置還原擴充套件失敗： %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
@@ -439,7 +439,7 @@
         <location filename="../pavucontrol.cc" line="320"/>
         <location filename="../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation>無法初始化「裝置管理員」擴充套件：%s</translation>
+        <translation>初始化裝置管理器擴充套件失敗： %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
@@ -523,22 +523,22 @@
         <location filename="../pavucontrol.cc" line="607"/>
         <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
-        <translation>PulseAudio音量控制</translation>
+        <translation>PulseAudio 音量控制</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="622"/>
         <source>Connection to PulseAudio failed. Automatic retry in 5s.&lt;br&gt;&lt;br&gt;In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Propertiesor default-server in client.conf is misconfigured.&lt;br&gt;This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.&lt;br&gt;If this is the case, then PulseAudio should autospawn again, or if this is not configured you shouldrun start-pulseaudio-x11 manually.</source>
-        <translation>連接 PulseAudio 失敗。 5 秒後自動重試。&lt;br&gt;&lt;br&gt;在此狀況下，很可能是因為環境/X11 根視窗屬性中的 PULSE_SERVER 或 client.conf 中的預設伺服器配置錯誤。 &lt;br&gt;當 PulseAudio 發生當機並在 X11 根視窗中留下陳舊的詳細資訊時，也會出現這種情況。&lt;br&gt;如果是這種狀況，則 PulseAudio 應該再次自動生成，或者如果沒有配置，您應該手動執行 start-pulseaudio-x11。</translation>
+        <translation>連接 PulseAudio 失敗。 5 秒內自動重試。&lt;br&gt;&lt;br&gt;在此狀況下，很可能是因為環境/X11 根視窗屬性中的 PULSE_SERVER 或 client.conf 中的預設伺服器設定錯誤。 &lt;br&gt;當 PulseAudio 發生當機並在 X11 根視窗中留下陳舊的詳細資訊時，也會出現這種情況。&lt;br&gt;如果是這種狀況，則 PulseAudio 應該再次自動生成，或是如果沒有設定，應該手動執行 start-pulseaudio-x11。</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
-        <translation>在負載上選擇一個指定的分頁。</translation>
+        <translation>於載入中選擇特定分頁。</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation>如果pa離開時永遠嘗試重啟 (每5秒)。</translation>
+        <translation>如果 pa 退出時則總是進行重試 (每5秒)。</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="677"/>
@@ -548,7 +548,7 @@
     <message>
         <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation>致命錯誤：無法連接到PulseAudio</translation>
+        <translation>致命錯誤：無法連接至 PulseAudio</translation>
     </message>
 </context>
 <context>
@@ -564,17 +564,17 @@
     <message>
         <location filename="../sinkinputwidget.cc" line="36"/>
         <source>on</source>
-        <translation>開啟</translation>
+        <translation>開用</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation>中止播放</translation>
+        <translation>終止播放</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="52"/>
         <source>Unknown output</source>
-        <translation>未知輸出</translation>
+        <translation>不明的輸出</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="63"/>
@@ -635,12 +635,12 @@
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation>中止錄製</translation>
+        <translation>終止錄製</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="59"/>
         <source>Unknown input</source>
-        <translation>未知輸入</translation>
+        <translation>不明的輸入</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="71"/>
@@ -691,7 +691,7 @@
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation>表單</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="32"/>
@@ -721,7 +721,7 @@
     <message>
         <location filename="../streamwidget.cc" line="34"/>
         <source>Terminate</source>
-        <translation>中止</translation>
+        <translation>終止</translation>
     </message>
 </context>
 </TS>
