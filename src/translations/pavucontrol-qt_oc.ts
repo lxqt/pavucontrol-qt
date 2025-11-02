@@ -69,7 +69,7 @@
     <message>
         <location filename="../channelwidget.ui" line="20"/>
         <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;avant-esquèrra&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="34"/>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../devicewidget.ui" line="103"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Pòrt&#xa0;:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Pòrt :&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="126"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../devicewidget.cc" line="42"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Renomenar lo periferic...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="156"/>
@@ -209,7 +209,7 @@
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Totas las transmissions</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
@@ -221,7 +221,7 @@
         <location filename="../mainwindow.ui" line="84"/>
         <location filename="../mainwindow.ui" line="149"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Transmissions virtualas</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="120"/>
@@ -261,12 +261,12 @@
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <source>&amp;Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Periferic de s&amp;ortida</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="223"/>
         <source>&amp;Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Periferic d’&amp;entrada</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
@@ -296,12 +296,12 @@
     <message>
         <location filename="../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Monitors</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="298"/>
         <source>&amp;Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuracion</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="325"/>
@@ -316,24 +316,24 @@
     <message>
         <location filename="../mainwindow.ui" line="347"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> (brancat)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
         <location filename="../mainwindow.cc" line="259"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> (non disponible)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
         <location filename="../mainwindow.cc" line="256"/>
         <source> (unplugged)</source>
-        <translation type="unfinished"></translation>
+        <translation> (desbrancat)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="390"/>
