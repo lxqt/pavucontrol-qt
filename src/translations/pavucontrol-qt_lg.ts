@@ -521,7 +521,7 @@
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
-        <location filename="../pavucontrol.cc" line="664"/>
+        <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
         <translation>Ddoboozi mu PulseAudio</translation>
     </message>
@@ -531,23 +531,23 @@
         <translation>Nnemedwa okussawo empulizigana ne PulseAudio. Nŋenda okuddmu okugezaako mu sikonda 5.&lt;br&gt;&lt;br&gt;Ekizibu kino kyandiba nga kireetedwa nsobi mu kimu ku bintu bibiri; (1) ekigambo kya mu nviromenti, PULSE_SERVER, ekifuga enneyisa ya X11 mu ddirisa ery&apos;ennono, oba (2) ekikongozzi default-server ekitegedwa mu fayiro client.conf.&lt;br&gt;Ekirala ekiyinza okuleetawo ekizibu kino ye PulseAudio okukoma olw&apos;okutabuka n&apos;ereka ebitegekedwa ku nneyisa ya X11 mu ddirisa ery&apos;ennono ebitakyakozeseka.&lt;br&gt;Olwo PulseAudio etera okuddamu ne yetandika yokka. Bw&apos;ebeera nga ssi bwe yateekateekebwa gitandike nga weyambisa ekiragiro start-pulseaudio-x11.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="672"/>
+        <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
         <translation>Kano kalaga katimbe ki akaba kalabika pavucontrol-qt nga etandise.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="675"/>
+        <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
         <translation>Kano kategeka nti, singa PulseAudio ekoma olw&apos;okutabuka, teta
 kugezaako okuddamu okwetandika (buli luvanyuma lwa sikonda 5).</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="678"/>
+        <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
         <translation>Kano kagireetera okutandika nga eddirisa libunye olutimbe.</translation>
     </message>
     <message>
-        <location filename="../pavucontrol.cc" line="703"/>
+        <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
         <translation>Kiremya kattamirimu: Nnemedwa okuteekawo empulizigana ne PulseAudio</translation>
     </message>
