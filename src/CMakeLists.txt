@@ -72,6 +72,11 @@ set_property(
      PAVUCONTROL_QT_DATA_DIR="${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}"
 )
 
+target_compile_options(pavucontrol-qt
+    PRIVATE
+        "$<$<CXX_COMPILER_ID:Clang>:-Wno-c2y-extensions>"
+)
+
 target_link_libraries(pavucontrol-qt
     Qt6::Widgets
     ${PULSE_LDFLAGS}
