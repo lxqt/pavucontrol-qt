@@ -41,12 +41,12 @@
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Silence&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Тишина&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Тишина&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
         <source>&lt;small&gt;Min&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;Мин&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Најмање&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="162"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../channel.cc" line="165"/>
         <source>&lt;small&gt;&lt;i&gt;Base&lt;/i&gt;&lt;/small&gt;</source>
-        <translation type="unfinished">&lt;small&gt;&lt;i&gt;Основа&lt;/i&gt;&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;&lt;i&gt;Основа&lt;/i&gt;&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -64,12 +64,12 @@
     <message>
         <location filename="../channelwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="20"/>
         <source>&lt;b&gt;left-front&lt;/b&gt;</source>
-        <translation>&lt;b&gt;леви-предњи&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;предњи леви&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../channelwidget.ui" line="34"/>
@@ -82,27 +82,27 @@
     <message>
         <location filename="../devicewidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="36"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Наслов уређаја</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="56"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Пригуши звук</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="69"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Закључај канале заједно</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Постави као резервни</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -112,77 +112,77 @@
     <message>
         <location filename="../devicewidget.ui" line="126"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Прикажи напредне могућности</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="172"/>
         <source>PCM</source>
-        <translation type="unfinished"></translation>
+        <translation>ПЦМ</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="182"/>
         <source>AC3</source>
-        <translation type="unfinished"></translation>
+        <translation>АЦ3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="189"/>
         <source>EAC3</source>
-        <translation type="unfinished"></translation>
+        <translation>ЕАЦ3</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="196"/>
         <source>DTS</source>
-        <translation type="unfinished"></translation>
+        <translation>ДТС</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="203"/>
         <source>MPEG</source>
-        <translation type="unfinished"></translation>
+        <translation>МПЕГ</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="210"/>
         <source>AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>ААЦ</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="238"/>
         <source>&lt;b&gt;Latency offset:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Померај кашњења:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="245"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> мс</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="42"/>
         <source>Rename device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Преименуј уређај...</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="156"/>
         <source>pa_context_set_port_latency_offset() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_port_latency_offset() није успело</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="227"/>
         <source>Sorry, but device renaming is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Извините, али преименовање уређаја није подржано.</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="228"/>
         <source>You need to load module-device-manager in the PulseAudio server in order to rename devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Морате учитати module-device-manager у Пулс-аудио сервер да бисте преименовали уређаје</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="234"/>
         <source>Rename device %1 to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Преименуј уређај %1 у:</translation>
     </message>
     <message>
         <location filename="../devicewidget.cc" line="241"/>
         <source>pa_ext_device_manager_set_device_description() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_set_device_description() није успело</translation>
     </message>
 </context>
 <context>
@@ -190,17 +190,17 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>Volume Control</source>
-        <translation>Контрола јачине звука</translation>
+        <translation>Управљање јачином звука</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="28"/>
         <source>&amp;Playback</source>
-        <translation>&amp;Репродукција</translation>
+        <translation>&amp;Пуштање</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="55"/>
         <source>&lt;i&gt;No application is currently playing audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Нема програма који тренутно репродукује звук.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Нема програма који тренутно пушта звук.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="66"/>
@@ -208,25 +208,25 @@
         <location filename="../mainwindow.ui" line="196"/>
         <location filename="../mainwindow.ui" line="261"/>
         <source>Show:</source>
-        <translation type="unfinished"></translation>
+        <translation>Прикажи:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="74"/>
         <location filename="../mainwindow.ui" line="139"/>
         <source>All Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Сви токови</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="79"/>
         <location filename="../mainwindow.ui" line="144"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Програми</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="84"/>
         <location filename="../mainwindow.ui" line="149"/>
         <source>Virtual Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Виртуелни токови</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="93"/>
@@ -251,17 +251,17 @@
     <message>
         <location filename="../mainwindow.ui" line="204"/>
         <source>All Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Сви излазни уређаји</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="209"/>
         <source>Hardware Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Хардверски излазни уређаји</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="214"/>
         <source>Virtual Output Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Виртуелни излазни уређаји</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="223"/>
@@ -276,27 +276,27 @@
     <message>
         <location filename="../mainwindow.ui" line="269"/>
         <source>All Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Сви улазни уређаји</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="274"/>
         <source>All Except Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Сви осим монитора</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="279"/>
         <source>Hardware Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Хардверски улазни уређаји</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="284"/>
         <source>Virtual Input Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Виртуелни улазни уређаји</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="289"/>
         <source>Monitors</source>
-        <translation type="unfinished"></translation>
+        <translation>Монитори</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="298"/>
@@ -311,29 +311,29 @@
     <message>
         <location filename="../mainwindow.ui" line="336"/>
         <source>Show volume meters</source>
-        <translation type="unfinished"></translation>
+        <translation>Прикажи мере јачине</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="347"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation type="unfinished"></translation>
+        <translation> (прикључено)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
         <location filename="../mainwindow.cc" line="259"/>
         <source> (unavailable)</source>
-        <translation type="unfinished"></translation>
+        <translation> (недоступно)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
         <location filename="../mainwindow.cc" line="256"/>
         <source> (unplugged)</source>
-        <translation type="unfinished"></translation>
+        <translation> (ископчано)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="390"/>
@@ -343,7 +343,7 @@
     <message>
         <location filename="../mainwindow.cc" line="434"/>
         <source>Peak detect</source>
-        <translation>Откривање максималног нивоа</translation>
+        <translation>Откривање највишег нивоа</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="435"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../mainwindow.cc" line="590"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Занемарујем унос сливника јер је одређен као догађај и стога га обрађује елемент Догађај</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="762"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cc" line="1092"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Успостављање везе са Пулс-аудиом. Сачекајте...</translation>
     </message>
 </context>
 <context>
@@ -376,17 +376,17 @@
     <message>
         <location filename="../pavucontrol.cc" line="66"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Грешка</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="87"/>
         <source>Card callback failure</source>
-        <translation>Неуспешан опозив картице</translation>
+        <translation>Неуспешан повратни позив картице</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="110"/>
         <source>Sink callback failure</source>
-        <translation>Неуспешан опозив сливника</translation>
+        <translation>Неуспешан повратни позив сливника</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="133"/>
@@ -417,138 +417,138 @@
         <location filename="../pavucontrol.cc" line="245"/>
         <location filename="../pavucontrol.cc" line="542"/>
         <source>Failed to initialize stream_restore extension: %s</source>
-        <translation>Неуспешна иницијализација проширења stream_restore: %s</translation>
+        <translation>Неуспешно успостављање проширења stream_restore: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="263"/>
         <source>pa_ext_stream_restore_read() failed</source>
-        <translation>Неуспела функција pa_ext_stream_restore_read()</translation>
+        <translation>Функција pa_ext_stream_restore_read() није успела</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="281"/>
         <location filename="../pavucontrol.cc" line="556"/>
         <source>Failed to initialize device restore extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Неуспешно успостављање проширења за враћање уређаја: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="302"/>
         <source>pa_ext_device_restore_read_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Функција pa_ext_device_restore_read_sink_formats() није успела</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="320"/>
         <location filename="../pavucontrol.cc" line="569"/>
         <source>Failed to initialize device manager extension: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Неуспешно је успостављено проширење управника уређаја: %s</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="339"/>
         <source>pa_ext_device_manager_read() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_ext_device_manager_read() није успело</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="356"/>
         <source>pa_context_get_sink_info_by_index() failed</source>
-        <translation>Неуспела функција pa_context_get_sink_info_by_index()</translation>
+        <translation>pa_context_get_sink_info_by_index() није успело</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="369"/>
         <source>pa_context_get_source_info_by_index() failed</source>
-        <translation>Неуспела функција pa_context_get_source_info_by_index()</translation>
+        <translation>pa_context_get_source_info_by_index() није успело</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="382"/>
         <location filename="../pavucontrol.cc" line="395"/>
         <source>pa_context_get_sink_input_info() failed</source>
-        <translation>Неуспела функција pa_context_get_sink_input_info()</translation>
+        <translation>pa_context_get_sink_input_info() није успело</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="408"/>
         <source>pa_context_get_client_info() failed</source>
-        <translation>Неуспела функција pa_context_get_client_info()</translation>
+        <translation>pa_context_get_client_info() није успело</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="418"/>
         <location filename="../pavucontrol.cc" line="483"/>
         <source>pa_context_get_server_info() failed</source>
-        <translation>Неуспела функција pa_context_get_server_info()</translation>
+        <translation>pa_context_get_server_info() није успело</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="431"/>
         <source>pa_context_get_card_info_by_index() failed</source>
-        <translation>Неуспела функција pa_context_get_card_info_by_index()</translation>
+        <translation>pa_context_get_card_info_by_index() није успело</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="474"/>
         <source>pa_context_subscribe() failed</source>
-        <translation>Неуспела функција pa_context_subscribe()</translation>
+        <translation>pa_context_subscribe() није успело</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="490"/>
         <source>pa_context_client_info_list() failed</source>
-        <translation>Неуспела функција pa_context_client_info_list()</translation>
+        <translation>pa_context_client_info_list() није успело</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="497"/>
         <source>pa_context_get_card_info_list() failed</source>
-        <translation>Није успело извршавање функције pa_context_get_card_info_list()</translation>
+        <translation>pa_context_get_card_info_list() није успело</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="504"/>
         <source>pa_context_get_sink_info_list() failed</source>
-        <translation>Неуспела функција pa_context_get_sink_info_list()</translation>
+        <translation>Неуспешно извршавање функције pa_context_get_sink_info_list()</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="511"/>
         <source>pa_context_get_source_info_list() failed</source>
-        <translation>Неуспела функција pa_context_get_source_info_list()</translation>
+        <translation>Неуспешно извршавање функције pa_context_get_source_info_list()</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="518"/>
         <source>pa_context_get_sink_input_info_list() failed</source>
-        <translation>Неуспела функција pa_context_get_sink_input_info_list()</translation>
+        <translation>Неуспешно извршавање функције pa_context_get_sink_input_info_list()</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="525"/>
         <source>pa_context_get_source_output_info_list() failed</source>
-        <translation>Неуспела функција pa_context_get_source_output_info_list()</translation>
+        <translation>Неуспешно извршавање функције pa_context_get_source_output_info_list()</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="584"/>
         <location filename="../pavucontrol.cc" line="635"/>
         <source>Connection failed, attempting reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Повезивање није успело, покушава се поновно повезивање</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="607"/>
         <location filename="../pavucontrol.cc" line="663"/>
         <source>PulseAudio Volume Control</source>
-        <translation>PulseAudio контрола јачине звука</translation>
+        <translation>Пулс-аудио контрола јачине звука</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="622"/>
         <source>Connection to PulseAudio failed. Automatic retry in 5s.&lt;br&gt;&lt;br&gt;In this case this is likely because PULSE_SERVER in the Environment/X11 Root Window Propertiesor default-server in client.conf is misconfigured.&lt;br&gt;This situation can also arrise when PulseAudio crashed and left stale details in the X11 Root Window.&lt;br&gt;If this is the case, then PulseAudio should autospawn again, or if this is not configured you shouldrun start-pulseaudio-x11 manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Веза са Пулс-аудиом је неуспешна. Самостални поновни покушај за 5 с.&lt;br&gt;&lt;br&gt;У овом случају је то вероватно зато што су PULSE_SERVER у Environment/X11 Root Window Properties или default-server у client.conf неправилно подешени.&lt;br&gt;Ова ситуација се такође може јавити када Пулс-аудио падне и остави застареле податке у X11 коренском прозору.&lt;br&gt;Ако је то случај, Пулс-аудио би требало да се поново аутоматски покрене, или ако ово није подешено, требало би ручно покренути start-pulseaudio-x11.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="671"/>
         <source>Select a specific tab on load.</source>
-        <translation type="unfinished"></translation>
+        <translation>Изаберите одређени језичак при учитавању.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="674"/>
         <source>Retry forever if pa quits (every 5 seconds).</source>
-        <translation type="unfinished"></translation>
+        <translation>Бескрајно покушавај поново ако pa прекине рад (сваких 5 секунди).</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="677"/>
         <source>Maximize the window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Увећај прозор.</translation>
     </message>
     <message>
         <location filename="../pavucontrol.cc" line="702"/>
         <source>Fatal Error: Unable to connect to PulseAudio</source>
-        <translation type="unfinished"></translation>
+        <translation>Кобна грешка: немогуће се повезати са Пулс-аудиом</translation>
     </message>
 </context>
 <context>
@@ -556,7 +556,7 @@
     <message>
         <location filename="../rolewidget.cc" line="59"/>
         <source>pa_ext_stream_restore_write() failed</source>
-        <translation>Неуспела функција pa_ext_stream_restore_write()</translation>
+        <translation>Неуспешно извршавање функције pa_ext_stream_restore_write()</translation>
     </message>
 </context>
 <context>
@@ -564,12 +564,12 @@
     <message>
         <location filename="../sinkinputwidget.cc" line="36"/>
         <source>on</source>
-        <translation>на</translation>
+        <translation>укључено</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="39"/>
         <source>Terminate Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Прекини пуштање</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="52"/>
@@ -579,22 +579,22 @@
     <message>
         <location filename="../sinkinputwidget.cc" line="63"/>
         <source>pa_context_set_sink_input_volume() failed</source>
-        <translation>Неуспела функција pa_context_set_sink_input_volume()</translation>
+        <translation>Неуспешно је извршено pa_context_set_sink_input_volume()</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="78"/>
         <source>pa_context_set_sink_input_mute() failed</source>
-        <translation>Неуспела функција pa_context_set_sink_input_mute()</translation>
+        <translation>Неуспешно је извршено pa_context_set_sink_input_mute()</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="88"/>
         <source>pa_context_kill_sink_input() failed</source>
-        <translation>Неуспела функција pa_context_kill_sink_input()</translation>
+        <translation>Неуспешно је извршено pa_context_kill_sink_input()</translation>
     </message>
     <message>
         <location filename="../sinkinputwidget.cc" line="113"/>
         <source>pa_context_move_sink_input_by_index() failed</source>
-        <translation>Неуспела функција pa_context_move_sink_input_by_index()</translation>
+        <translation>Неуспешно је извршено pa_context_move_sink_input_by_index()</translation>
     </message>
 </context>
 <context>
@@ -602,27 +602,27 @@
     <message>
         <location filename="../sinkwidget.cc" line="81"/>
         <source>pa_context_set_sink_volume_by_index() failed</source>
-        <translation>Неуспела функција pa_context_set_sink_volume_by_index()</translation>
+        <translation>Неуспешно је извршено pa_context_set_sink_volume_by_index()</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="96"/>
         <source>pa_context_set_sink_mute_by_index() failed</source>
-        <translation>Неуспела функција pa_context_set_sink_mute_by_index()</translation>
+        <translation>Неуспешно је извршено pa_context_set_sink_mute_by_index()</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="110"/>
         <source>pa_context_set_default_sink() failed</source>
-        <translation>Неуспела функција pa_context_set_default_sink()</translation>
+        <translation>Неуспешно је извршено pa_context_set_default_sink()</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="126"/>
         <source>pa_context_set_sink_port_by_index() failed</source>
-        <translation>Неуспела функција pa_context_set_sink_port_by_index()</translation>
+        <translation>Неуспешно је извршено pa_context_set_sink_port_by_index()</translation>
     </message>
     <message>
         <location filename="../sinkwidget.cc" line="166"/>
         <source>pa_ext_device_restore_save_sink_formats() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Неуспешно је извршено pa_ext_device_restore_save_sink_formats()</translation>
     </message>
 </context>
 <context>
@@ -635,7 +635,7 @@
     <message>
         <location filename="../sourceoutputwidget.cc" line="39"/>
         <source>Terminate Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Прекини снимање</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="59"/>
@@ -645,22 +645,22 @@
     <message>
         <location filename="../sourceoutputwidget.cc" line="71"/>
         <source>pa_context_set_source_output_volume() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_volume() није успело</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="86"/>
         <source>pa_context_set_source_output_mute() failed</source>
-        <translation type="unfinished"></translation>
+        <translation>pa_context_set_source_output_mute() није успело</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="97"/>
         <source>pa_context_kill_source_output() failed</source>
-        <translation>Неуспела функција pa_context_kill_source_output()</translation>
+        <translation>pa_context_kill_source_output() није успело</translation>
     </message>
     <message>
         <location filename="../sourceoutputwidget.cc" line="124"/>
         <source>pa_context_move_source_output_by_index() failed</source>
-        <translation>Неуспела функција pa_context_move_source_output_by_index()</translation>
+        <translation>pa_context_move_source_output_by_index() није успело</translation>
     </message>
 </context>
 <context>
@@ -668,22 +668,22 @@
     <message>
         <location filename="../sourcewidget.cc" line="35"/>
         <source>pa_context_set_source_volume_by_index() failed</source>
-        <translation>Неуспела функција pa_context_set_source_volume_by_index()</translation>
+        <translation>pa_context_set_source_volume_by_index() није успело</translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="50"/>
         <source>pa_context_set_source_mute_by_index() failed</source>
-        <translation>Неуспела функција pa_context_set_source_mute_by_index()</translation>
+        <translation>pa_context_set_source_mute_by_index() није успело</translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="64"/>
         <source>pa_context_set_default_source() failed</source>
-        <translation>Неуспела функција pa_context_set_default_source()</translation>
+        <translation>pa_context_set_default_source() није успело</translation>
     </message>
     <message>
         <location filename="../sourcewidget.cc" line="80"/>
         <source>pa_context_set_source_port_by_index() failed</source>
-        <translation>Неуспела функција pa_context_set_source_port_by_index()</translation>
+        <translation>pa_context_set_source_port_by_index() није успело</translation>
     </message>
 </context>
 <context>
@@ -691,12 +691,12 @@
     <message>
         <location filename="../streamwidget.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="32"/>
         <source>Device Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Наслов уређаја</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="52"/>
@@ -706,22 +706,22 @@
     <message>
         <location filename="../streamwidget.ui" line="59"/>
         <source>device</source>
-        <translation type="unfinished"></translation>
+        <translation>уређај</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="66"/>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Пригуши звук</translation>
     </message>
     <message>
         <location filename="../streamwidget.ui" line="79"/>
         <source>Lock channels together</source>
-        <translation type="unfinished"></translation>
+        <translation>Закључај канале заједно</translation>
     </message>
     <message>
         <location filename="../streamwidget.cc" line="34"/>
         <source>Terminate</source>
-        <translation>Прекини репродукцију</translation>
+        <translation>Окончај</translation>
     </message>
 </context>
 </TS>
