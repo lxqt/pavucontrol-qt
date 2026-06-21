@@ -200,7 +200,7 @@
     <message>
         <location filename="../mainwindow.ui" line="55"/>
         <source>&lt;i&gt;No application is currently playing audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;現在音声を再生しているアプリケーションがありません。&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;現在音声を再生しているアプリケーションはありません。&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="66"/>
@@ -236,7 +236,7 @@
     <message>
         <location filename="../mainwindow.ui" line="120"/>
         <source>&lt;i&gt;No application is currently recording audio.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;現在録音しているアプリケーションがありません。&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;現在録音しているアプリケーションはありません。&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
@@ -321,13 +321,13 @@
     <message>
         <location filename="../mainwindow.cc" line="159"/>
         <source> (plugged in)</source>
-        <translation> (プラグイン)</translation>
+        <translation> (接続済み)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
         <location filename="../mainwindow.cc" line="259"/>
         <source> (unavailable)</source>
-        <translation> (使用不可)</translation>
+        <translation> (利用不可)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
