@@ -82,7 +82,7 @@
      <item>
       <widget class="QToolButton" name="defaultToggleButton">
        <property name="toolTip">
-        <string>Set as fallback</string>
+        <string>Set as default</string>
        </property>
        <property name="icon">
         <iconset theme="applications-multimedia"/>
