@@ -22,6 +22,7 @@
 #include <config.h>
 #endif
 
+#include <cstring>
 #include <set>
 
 #include "mainwindow.h"
@@ -201,6 +202,7 @@ void MainWindow::updateCard(const pa_card_info &info) {
     }
 
     w->updating = true;
+    w->pulseCardName = info.name;
 
     description = pa_proplist_gets(info.proplist, PA_PROP_DEVICE_DESCRIPTION);
     w->name = description ? description : info.name;
@@ -301,6 +303,48 @@ void MainWindow::updateCard(const pa_card_info &info) {
 
     w->updating = false;
 }
+
+#if HAVE_PULSE_MESSAGING_API
+/* Called asynchronously from pavucontrol.cc once a "list-codecs" reply comes
+ * back for a Bluetooth-capable card.
+ * cardWidgets is keyed by PulseAudio's numeric card index, not by name, so
+ * we look the widget up by its stored pulseCardName instead. If the card
+ * has since disappeared (e.g. the Bluetooth device was unplugged mid-query)
+ * this simply finds nothing and does nothing - there is no dangling pointer
+ * risk since we never hold on to a CardWidget*, only the MainWindow itself. */
+void MainWindow::updateCardCodecs(const QByteArray &cardName, const std::vector<std::pair<QByteArray, QByteArray>> &codecs) {
+    for (auto & c : cardWidgets) {
+        CardWidget *w = c.second;
+
+        if (w->pulseCardName != cardName)
+            continue;
+
+        w->updating = true;
+        w->codecs = codecs;
+        w->prepareMenu();
+        w->updating = false;
+        return;
+    }
+}
+
+/* Same as updateCardCodecs() above, but for the "get-codec" reply that
+ * reports which codec is currently active, so the combo box can pre-select
+ * it instead of defaulting to the first entry. */
+void MainWindow::setActiveCodec(const QByteArray &cardName, const QByteArray &codec) {
+    for (auto & c : cardWidgets) {
+        CardWidget *w = c.second;
+
+        if (w->pulseCardName != cardName)
+            continue;
+
+        w->updating = true;
+        w->activeCodec = codec;
+        w->prepareMenu();
+        w->updating = false;
+        return;
+    }
+}
+#endif
 
 bool MainWindow::updateSink(const pa_sink_info &info) {
     SinkWidget *w;
