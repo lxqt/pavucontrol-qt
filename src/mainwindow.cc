@@ -381,6 +381,31 @@ static void suspended_callback(pa_stream *s, void *userdata) {
         w->updateVolumeMeter(pa_stream_get_device_index(s), PA_INVALID_INDEX, -1);
 }
 
+/* Monitoring streams can fail asynchronously (e.g. the device they read from
+ * disappears). Without this, a failed stream is never unref'd and the widget
+ * is left believing it still has a live peak stream. */
+static void stream_state_callback(pa_stream *s, void *userdata) {
+    MinimalStreamWidget *w = static_cast<MinimalStreamWidget*>(userdata);
+
+    switch (pa_stream_get_state(s)) {
+        case PA_STREAM_FAILED:
+            /* Not fatal: the device this peak stream was reading from likely
+             * just disappeared. show_error() quits the whole app, which
+             * would be a massive overreaction to one dead meter. */
+            g_debug("%s", MainWindow::tr("Monitoring stream failed").toUtf8().constData());
+            /* fall through */
+        case PA_STREAM_TERMINATED:
+            if (w->peak == s) {
+                pa_stream_unref(s);
+                w->peak = nullptr;
+            }
+            break;
+
+        default:
+            break;
+    }
+}
+
 static void read_callback(pa_stream *s, size_t length, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
     const void *data;
@@ -414,7 +439,7 @@ static void read_callback(pa_stream *s, size_t length, void *userdata) {
     w->updateVolumeMeter(pa_stream_get_device_index(s), pa_stream_get_monitor_stream(s), v);
 }
 
-pa_stream* MainWindow::createMonitorStreamForSource(uint32_t source_idx, uint32_t stream_idx = -1, bool suspend = false) {
+pa_stream* MainWindow::createMonitorStreamForSource(MinimalStreamWidget *w, uint32_t source_idx, uint32_t stream_idx = -1, bool suspend = false) {
     pa_stream *s;
     char t[16];
     pa_buffer_attr attr;
@@ -441,6 +466,7 @@ pa_stream* MainWindow::createMonitorStreamForSource(uint32_t source_idx, uint32_
 
     pa_stream_set_read_callback(s, read_callback, this);
     pa_stream_set_suspended_callback(s, suspended_callback, this);
+    pa_stream_set_state_callback(s, stream_state_callback, w);
 
     flags = (pa_stream_flags_t) (PA_STREAM_DONT_MOVE | PA_STREAM_PEAK_DETECT | PA_STREAM_ADJUST_LATENCY |
                                  (suspend ? PA_STREAM_DONT_INHIBIT_AUTO_SUSPEND : PA_STREAM_NOFLAGS) |
@@ -459,12 +485,13 @@ void MainWindow::createMonitorStreamForSinkInput(SinkInputWidget* w, uint32_t si
         return;
 
     if (w->peak) {
+        pa_stream_set_state_callback(w->peak, nullptr, nullptr);
         pa_stream_disconnect(w->peak);
         pa_stream_unref(w->peak);
         w->peak = nullptr;
     }
 
-    w->peak = createMonitorStreamForSource(sinkWidgets[sink_idx]->monitor_index, w->index);
+    w->peak = createMonitorStreamForSource(w, sinkWidgets[sink_idx]->monitor_index, w->index);
 }
 
 void MainWindow::updateSource(const pa_source_info &info) {
@@ -488,7 +515,7 @@ void MainWindow::updateSource(const pa_source_info &info) {
         w->setVolumeMeterVisible(showVolumeMetersCheckButton->isChecked());
 
         if (pa_context_get_server_protocol_version(get_context()) >= 13)
-            w->peak = createMonitorStreamForSource(info.index, -1, !!(info.flags & PA_SOURCE_NETWORK));
+            w->peak = createMonitorStreamForSource(w, info.index, -1, !!(info.flags & PA_SOURCE_NETWORK));
     }
 
     w->updating = true;
