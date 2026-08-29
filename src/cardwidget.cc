@@ -40,6 +40,18 @@ CardWidget::CardWidget(QWidget* parent) :
 void CardWidget::prepareMenu() {
     int idx = 0;
     const bool off = activeProfile == noInOutProfile;
+    /* Some backends (observed with PipeWire's own Bluetooth support, as
+     * opposed to real PulseAudio's module-bluez5-device) expose codec choice
+     * as separate profile entries instead - e.g. "High Fidelity Playback
+     * (A2DP Sink, codec LDAC)" *and* "... codec AAC)" *and* "... codec SBC)"
+     * all appearing as distinct, individually selectable profiles. When
+     * that's the case, the Profile dropdown below already IS the codec
+     * switcher, and showing our own separate Codec dropdown alongside it
+     * would just be a confusing, redundant second control offering the same
+     * choice. Real PulseAudio only ever exposes a single, codec-agnostic
+     * A2DP profile - "High Fidelity Playback (A2DP Sink)", no codec name in
+     * sight - which is the actual case this feature exists for. */
+    bool profileListAlreadyOffersCodecs = false;
 
     profileList->clear();
     /* Fill the ComboBox */
@@ -48,6 +60,8 @@ void CardWidget::prepareMenu() {
         // skip the "off" profile
         if (name == noInOutProfile)
             continue;
+        if (profile.second.contains(", codec "))
+            profileListAlreadyOffersCodecs = true;
         QString desc = QString::fromUtf8(profile.second);
         profileList->addItem(desc, name);
         if (profile.first == activeProfile
@@ -66,14 +80,17 @@ void CardWidget::prepareMenu() {
      * Bluetooth codecs. `codecs` (and therefore this whole block) stays
      * empty for every non-Bluetooth card, in which case the loop does
      * nothing and codecBox ends up hidden below - exactly the same as
-     * before this feature existed. */
+     * before this feature existed. Also stays empty when the profile list
+     * already offers per-codec entries, per the comment above. */
     codecList->clear();
-    for (const auto & codec : codecs) {
-        codecList->addItem(QString::fromUtf8(codec.second), codec.first);
-        if (codec.first == activeCodec)
-            codecList->setCurrentIndex(codecList->count() - 1);
+    if (!profileListAlreadyOffersCodecs) {
+        for (const auto & codec : codecs) {
+            codecList->addItem(QString::fromUtf8(codec.second), codec.first);
+            if (codec.first == activeCodec)
+                codecList->setCurrentIndex(codecList->count() - 1);
+        }
     }
-    codecBox->setVisible(!codecs.empty());
+    codecBox->setVisible(!profileListAlreadyOffersCodecs && !codecs.empty());
 }
 
 void CardWidget::changeProfile(const QByteArray & name)
