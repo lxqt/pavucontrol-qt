@@ -53,7 +53,7 @@ void MinimalStreamWidget::initPeakProgressBar(QGridLayout* channelsGrid) {
     channelsGrid->addWidget(peakProgressBar, channelsGrid->rowCount(), 0, 1, -1);
 }
 
-#define DECAY_STEP .04
+#define DECAY_STEP (1.0 / PEAKS_RATE)
 
 void MinimalStreamWidget::updatePeak(double v) {
 

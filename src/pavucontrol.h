@@ -21,8 +21,6 @@
 #ifndef pavucontrol_h
 #define pavucontrol_h
 
-#include <signal.h>
-#include <string.h>
 #include <glib.h>
 
 #include <pulse/pulseaudio.h>
@@ -34,6 +32,9 @@
 
 #define HAVE_SOURCE_OUTPUT_VOLUMES PA_CHECK_VERSION(0,99,0)
 #define HAVE_EXT_DEVICE_RESTORE_API PA_CHECK_VERSION(0,99,0)
+
+/* Sample rate for peak-detect monitor streams */
+#define PEAKS_RATE 144
 
 enum SinkInputType {
     SINK_INPUT_ALL,
