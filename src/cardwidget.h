@@ -21,7 +21,6 @@
 #ifndef cardwidget_h
 #define cardwidget_h
 
-#include "pavucontrol.h"
 #include "ui_cardwidget.h"
 #include <QWidget>
 
@@ -29,6 +28,7 @@ class PortInfo {
 public:
       QByteArray name;
       QByteArray description;
+      QByteArray port_device_name;
       uint32_t priority;
       int available;
       int direction;

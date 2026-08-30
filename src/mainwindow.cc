@@ -223,6 +223,8 @@ void MainWindow::updateCard(const pa_card_info &info) {
 
         p.name = info.ports[i]->name;
         p.description = info.ports[i]->description;
+        /* device.product.name is not guaranteed to exist on a port */
+        p.port_device_name = pa_proplist_gets(info.ports[i]->proplist, PA_PROP_DEVICE_PRODUCT_NAME);
         p.priority = info.ports[i]->priority;
         p.available = info.ports[i]->available;
         p.direction = info.ports[i]->direction;
@@ -244,6 +246,10 @@ void MainWindow::updateCard(const pa_card_info &info) {
 
             if (std::find(port.profiles.begin(), port.profiles.end(), p_profile->name) == port.profiles.end())
                 continue;
+
+            /* If port has a device name, add it to the description */
+            if (!port.port_device_name.isEmpty())
+                desc += " [" + port.port_device_name + "]";
 
             if (port.available == PA_PORT_AVAILABLE_NO)
                 hasNo = true;
