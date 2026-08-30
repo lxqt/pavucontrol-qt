@@ -36,6 +36,7 @@ class SourceWidget;
 class SinkInputWidget;
 class SourceOutputWidget;
 class RoleWidget;
+class MinimalStreamWidget;
 
 class MainWindow : public QDialog, public Ui::MainWindow {
     Q_OBJECT
@@ -90,7 +91,7 @@ public:
     void setConnectionState(gboolean connected);
     void updateDeviceVisibility();
     void reallyUpdateDeviceVisibility();
-    pa_stream* createMonitorStreamForSource(uint32_t source_idx, uint32_t stream_idx, bool suspend);
+    pa_stream* createMonitorStreamForSource(MinimalStreamWidget *w, uint32_t source_idx, uint32_t stream_idx, bool suspend);
     void createMonitorStreamForSinkInput(SinkInputWidget* w, uint32_t sink_idx);
 
     void setIconFromProplist(QLabel *icon, pa_proplist *l, const char *name);
