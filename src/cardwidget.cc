@@ -22,6 +22,7 @@
 #include <config.h>
 #endif
 
+#include "pavucontrol.h"
 #include "cardwidget.h"
 
 /*** CardWidget ***/
