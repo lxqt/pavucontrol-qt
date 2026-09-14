@@ -19,7 +19,7 @@
         <translation>Профіль:</translation>
     </message>
     <message>
-        <location filename="../cardwidget.cc" line="67"/>
+        <location filename="../cardwidget.cc" line="68"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
         <translation>Спроба виконання pa_context_set_card_profile_by_index() була невдалою</translation>
     </message>
@@ -101,8 +101,8 @@
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
-        <source>Set as fallback</source>
-        <translation>Встановити запасним</translation>
+        <source>Set as default</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -325,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="259"/>
+        <location filename="../mainwindow.cc" line="265"/>
         <source> (unavailable)</source>
         <translation> (недоступно)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="256"/>
+        <location filename="../mainwindow.cc" line="262"/>
         <source> (unplugged)</source>
         <translation> (від&apos;єднано)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="390"/>
+        <location filename="../mainwindow.cc" line="396"/>
         <source>Failed to read data from stream</source>
         <translation>Спроба читання даних з потоку була невдалою</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="434"/>
+        <location filename="../mainwindow.cc" line="440"/>
         <source>Peak detect</source>
         <translation>Визначення максимумів</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="435"/>
+        <location filename="../mainwindow.cc" line="441"/>
         <source>Failed to create monitoring stream</source>
         <translation>Не вдалося створити потік для спостереження</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="450"/>
+        <location filename="../mainwindow.cc" line="456"/>
         <source>Failed to connect monitoring stream</source>
         <translation>Не вдалося з’єднатися з потоком для спостереження</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="590"/>
+        <location filename="../mainwindow.cc" line="596"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation>Нехтування вхідним сигналом, оскільки його визначено подією та оброблено віджетом події</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="762"/>
+        <location filename="../mainwindow.cc" line="768"/>
         <source>System Sounds</source>
         <translation>Системні звуки</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1092"/>
+        <location filename="../mainwindow.cc" line="1098"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>Встановлено з&apos;єднання з PulseAudio. Зачекайте, будь ласка...</translation>
     </message>

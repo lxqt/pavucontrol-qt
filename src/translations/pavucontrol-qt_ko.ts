@@ -19,7 +19,7 @@
         <translation>프로필:</translation>
     </message>
     <message>
-        <location filename="../cardwidget.cc" line="67"/>
+        <location filename="../cardwidget.cc" line="68"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
         <translation>pa_context_set_card_profile_by_index() 실패함</translation>
     </message>
@@ -101,8 +101,8 @@
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
-        <source>Set as fallback</source>
-        <translation>대체로 설정</translation>
+        <source>Set as default</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -325,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="259"/>
+        <location filename="../mainwindow.cc" line="265"/>
         <source> (unavailable)</source>
         <translation> (사용할 수 없음)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="256"/>
+        <location filename="../mainwindow.cc" line="262"/>
         <source> (unplugged)</source>
         <translation> (분리됨)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="390"/>
+        <location filename="../mainwindow.cc" line="396"/>
         <source>Failed to read data from stream</source>
         <translation>스트림에서 데이터를 읽지 못했습니다</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="434"/>
+        <location filename="../mainwindow.cc" line="440"/>
         <source>Peak detect</source>
         <translation>피크 감지</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="435"/>
+        <location filename="../mainwindow.cc" line="441"/>
         <source>Failed to create monitoring stream</source>
         <translation>모니터링 스트림을 만들지 못했습니다</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="450"/>
+        <location filename="../mainwindow.cc" line="456"/>
         <source>Failed to connect monitoring stream</source>
         <translation>모니터링 스트림을 연결하지 못했습니다</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="590"/>
+        <location filename="../mainwindow.cc" line="596"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation>이벤트로 지정되어 이벤트 위젯에서 처리되는 싱크 입력 무시하는 중</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="762"/>
+        <location filename="../mainwindow.cc" line="768"/>
         <source>System Sounds</source>
         <translation>시스템 사운드</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1092"/>
+        <location filename="../mainwindow.cc" line="1098"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>PulseAudio에 연결하는 중입니다. 기다려 주세요...</translation>
     </message>
