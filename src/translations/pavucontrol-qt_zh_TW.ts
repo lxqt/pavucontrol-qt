@@ -19,7 +19,7 @@
         <translation>組態：</translation>
     </message>
     <message>
-        <location filename="../cardwidget.cc" line="67"/>
+        <location filename="../cardwidget.cc" line="68"/>
         <source>pa_context_set_card_profile_by_index() failed</source>
         <translation>pa_context_set_card_profile_by_index() 失敗</translation>
     </message>
@@ -101,8 +101,8 @@
     </message>
     <message>
         <location filename="../devicewidget.ui" line="85"/>
-        <source>Set as fallback</source>
-        <translation>設為後援備設</translation>
+        <source>Set as default</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
@@ -325,48 +325,48 @@
     </message>
     <message>
         <location filename="../mainwindow.cc" line="163"/>
-        <location filename="../mainwindow.cc" line="259"/>
+        <location filename="../mainwindow.cc" line="265"/>
         <source> (unavailable)</source>
         <translation> (不適用)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cc" line="165"/>
-        <location filename="../mainwindow.cc" line="256"/>
+        <location filename="../mainwindow.cc" line="262"/>
         <source> (unplugged)</source>
         <translation> (已經拔開)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="390"/>
+        <location filename="../mainwindow.cc" line="396"/>
         <source>Failed to read data from stream</source>
         <translation>無法從串流讀取資料</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="434"/>
+        <location filename="../mainwindow.cc" line="440"/>
         <source>Peak detect</source>
         <translation>峰值偵測</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="435"/>
+        <location filename="../mainwindow.cc" line="441"/>
         <source>Failed to create monitoring stream</source>
         <translation>建立監控串流失敗</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="450"/>
+        <location filename="../mainwindow.cc" line="456"/>
         <source>Failed to connect monitoring stream</source>
         <translation>無法連接監控串流</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="590"/>
+        <location filename="../mainwindow.cc" line="596"/>
         <source>Ignoring sink-input due to it being designated as an event and thus handled by the Event widget</source>
         <translation>忽略 sink-input，由於它被設計為事件，因此由「事件小工具」處理</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="762"/>
+        <location filename="../mainwindow.cc" line="768"/>
         <source>System Sounds</source>
         <translation>系統音效</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cc" line="1092"/>
+        <location filename="../mainwindow.cc" line="1098"/>
         <source>Establishing connection to PulseAudio. Please wait...</source>
         <translation>正與 PulseAudio 建立連接中。請稍後…</translation>
     </message>
