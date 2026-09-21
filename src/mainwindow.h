@@ -55,6 +55,12 @@ public:
 #if HAVE_EXT_DEVICE_RESTORE_API
     void updateDeviceInfo(const pa_ext_device_restore_info &info);
 #endif
+#if HAVE_PULSE_MESSAGING_API
+    /* Bluetooth codec discovery results, delivered asynchronously from the
+     * message-handler queries in pavucontrol.cc. */
+    void updateCardCodecs(const QByteArray &cardName, const std::vector<std::pair<QByteArray, QByteArray>> &codecs);
+    void setActiveCodec(const QByteArray &cardName, const QByteArray &codec);
+#endif
 
     void removeCard(uint32_t index);
     void removeSink(uint32_t index);

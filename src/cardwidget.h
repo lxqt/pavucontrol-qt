@@ -42,6 +42,7 @@ public:
     CardWidget(QWidget *parent = nullptr);
 
     QByteArray name;
+    QByteArray pulseCardName;
     uint32_t index;
     bool updating;
 
@@ -52,6 +53,8 @@ public:
     QByteArray lastActiveProfile;
     bool hasSinks;
     bool hasSources;
+    std::vector< std::pair<QByteArray,QByteArray> > codecs;
+    QByteArray activeCodec;
 
     void prepareMenu();
 
@@ -59,6 +62,7 @@ protected:
     void changeProfile(const QByteArray & name);
     void onProfileChange(int active);
     void onProfileCheck(bool on);
+    void onCodecChange(int active);
 
 };
 

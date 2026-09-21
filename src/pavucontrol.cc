@@ -24,6 +24,8 @@
 
 #define PACKAGE_VERSION "0.1"
 
+#include <csignal>
+
 #include <pulse/pulseaudio.h>
 #include <pulse/glib-mainloop.h>
 #include <pulse/ext-stream-restore.h>
@@ -32,15 +34,9 @@
 // #include <canberra-gtk.h>
 
 #include "pavucontrol.h"
-#include "minimalstreamwidget.h"
-#include "channel.h"
 #include "streamwidget.h"
-#include "cardwidget.h"
-#include "sinkwidget.h"
-#include "sourcewidget.h"
 #include "sinkinputwidget.h"
 #include "sourceoutputwidget.h"
-#include "rolewidget.h"
 #include "mainwindow.h"
 #include <QMessageBox>
 #include <QApplication>
@@ -50,6 +46,10 @@
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 #include <QString>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QJsonValue>
 
 static pa_context* context = nullptr;
 static pa_mainloop_api* api = nullptr;
@@ -77,6 +77,157 @@ static void dec_outstanding(MainWindow *w) {
     }
 }
 
+#if HAVE_PULSE_MESSAGING_API
+
+/*
+ * Bluetooth codec selection (e.g. switching a headset between SBC/AAC/LDAC)
+ * is not exposed through the normal pa_context_get_card_info()/pa_card_info
+ * API. Instead, PulseAudio's module-bluez5-device registers a generic
+ * "message handler" per Bluetooth card, reachable through the object
+ * messaging API added in PulseAudio 15.0 (pa_context_send_message_to_object(),
+ * see pulse/introspect.h and https://cgit.freedesktop.org/pulseaudio/pulseaudio/tree/doc/messaging_api.txt).
+ *
+ * The handler lives at path "/card/<pulse card name>/bluez" and understands
+ * three messages:
+ *   - "list-codecs" -> returns a JSON array of {"name": ..., "description": ...}
+ *                       describing every codec this device could use
+ *   - "get-codec"   -> returns a bare JSON string with the currently active
+ *                       codec's name (or JSON null if nothing is active yet)
+ *   - "switch-codec"-> takes a bare JSON string (the codec name) as its
+ *                       message_parameters and switches to it
+ *
+ * Because most cards are not Bluetooth devices at all, and plenty of servers
+ * (older PulseAudio, or PipeWire's pulse-compat layer, which may or may not
+ * implement this specific handler) won't have this handler registered, every
+ * failure in this chain is treated as "this card doesn't support codec
+ * switching" rather than as an error: it must NEVER call show_error(), since
+ * show_error() calls qApp->quit() — that's correct for genuinely fatal,
+ * connection-level failures elsewhere in this file, but here it would mean
+ * a single unremarkable, totally expected non-Bluetooth card would quit the
+ * whole application.
+ */
+
+/* Path of the per-card Bluetooth codec-switching message handler, if the
+ * running PulseAudio/module-bluez5-device registered one for this card. */
+QByteArray bluezMessageHandlerPath(const QByteArray &cardName) {
+    return "/card/" + cardName + "/bluez";
+}
+
+/* Carries the MainWindow + PulseAudio card name across one async message
+ * round-trip. Every send below allocates one of these as the pa_operation's
+ * userdata and the matching callback below is responsible for deleting it
+ * exactly once, on every path (success, failure, or "not applicable"). */
+struct CardCodecQuery {
+    MainWindow *window;
+    QByteArray cardName;
+};
+
+/* Sends a codec-related message to a registered PulseAudio message handler.
+ * Best-effort only: most cards (and servers that don't implement the
+ * messaging API at all) simply won't have a handler at the given path, so
+ * failures here are routine and must never be treated as fatal.
+ *
+ * If pa_context_send_message_to_object() itself fails synchronously (no
+ * pa_operation is created), `cb` will never fire, so the CardCodecQuery is
+ * freed here instead to avoid leaking it. */
+static void sendCodecMessage(const QByteArray &path, const char *message, MainWindow *w, const QByteArray &cardName, pa_context_string_cb_t cb) {
+    pa_operation *o;
+    auto *q = new CardCodecQuery{w, cardName};
+
+    if ((o = pa_context_send_message_to_object(context, path.constData(), message, nullptr, cb, q)))
+        pa_operation_unref(o);
+    else
+        delete q;
+}
+
+/* Parses a "list-codecs" or "list-handlers" style response: a JSON array of
+ * {"name": "...", "description": "..."} objects. Used both for the codec
+ * list itself and (in context_message_handlers_cb below) to search the
+ * handler list for our target path — same shape, different meaning of the
+ * name/description pair. Malformed or unexpected JSON just yields an empty
+ * result rather than an error. */
+static std::vector<std::pair<QByteArray, QByteArray>> parseCodecArray(const QJsonDocument &doc) {
+    std::vector<std::pair<QByteArray, QByteArray>> codecs;
+
+    if (!doc.isArray())
+        return codecs;
+
+    for (const QJsonValue &v : doc.array()) {
+        if (!v.isObject())
+            continue;
+        QJsonObject o = v.toObject();
+        codecs.emplace_back(o.value(QStringLiteral("name")).toString().toUtf8(),
+                             o.value(QStringLiteral("description")).toString().toUtf8());
+    }
+
+    return codecs;
+}
+
+/* Response callback for "list-codecs": hands the parsed codec list to the
+ * CardWidget matching q->cardName so it can populate the codec combo box. */
+static void context_bluetooth_codec_list_cb(pa_context *, int success, char *response, void *userdata) {
+    auto *q = static_cast<CardCodecQuery*>(userdata);
+
+    if (success && response)
+        q->window->updateCardCodecs(q->cardName, parseCodecArray(QJsonDocument::fromJson(response)));
+
+    delete q;
+}
+
+/* Response callback for "get-codec": the response is a *bare* JSON string
+ * (e.g. `"ldac"`) or bare `null`, not wrapped in an object or array.
+ * QJsonDocument::fromJson() only accepts an object or array at the top
+ * level (per Qt's JSON implementation), so a bare scalar would otherwise
+ * fail to parse even though it's valid JSON by the RFC. Wrapping it in "["
+ * ... "]" turns it into a single-element array QJsonDocument is happy to
+ * parse, and we then just read that one element back out. */
+static void context_bluetooth_active_codec_cb(pa_context *, int success, char *response, void *userdata) {
+    auto *q = static_cast<CardCodecQuery*>(userdata);
+
+    if (success && response) {
+        QJsonDocument doc = QJsonDocument::fromJson("[" + QByteArray(response) + "]");
+        if (doc.isArray() && doc.array().size() == 1) {
+            QJsonValue v = doc.array().at(0);
+            if (v.isString())
+                q->window->setActiveCodec(q->cardName, v.toString().toUtf8());
+        }
+    }
+
+    delete q;
+}
+
+/* Response callback for "list-handlers" sent to the global "/core" object.
+ * This is the entry point of the whole chain (kicked off from card_cb below
+ * for every card): it lists every message handler currently registered
+ * anywhere on the server, and we check whether our card's bluez handler
+ * path is among them. Only if it is do we know this card actually supports
+ * codec switching, and only then do we go on to ask for the codec list and
+ * the currently active codec. */
+static void context_message_handlers_cb(pa_context *, int success, char *response, void *userdata) {
+    auto *q = static_cast<CardCodecQuery*>(userdata);
+
+    if (success && response) {
+        QByteArray targetPath = bluezMessageHandlerPath(q->cardName);
+        bool found = false;
+
+        for (const QJsonValue &v : QJsonDocument::fromJson(response).array()) {
+            if (v.isObject() && v.toObject().value(QStringLiteral("name")).toString().toUtf8() == targetPath) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            sendCodecMessage(targetPath, "get-codec", q->window, q->cardName, context_bluetooth_active_codec_cb);
+            sendCodecMessage(targetPath, "list-codecs", q->window, q->cardName, context_bluetooth_codec_list_cb);
+        }
+    }
+
+    delete q;
+}
+
+#endif
+
 void card_cb(pa_context *, const pa_card_info *i, int eol, void *userdata) {
     MainWindow *w = static_cast<MainWindow*>(userdata);
 
@@ -94,6 +245,10 @@ void card_cb(pa_context *, const pa_card_info *i, int eol, void *userdata) {
     }
 
     w->updateCard(*i);
+
+#if HAVE_PULSE_MESSAGING_API
+    sendCodecMessage("/core", "list-handlers", w, QByteArray(i->name), context_message_handlers_cb);
+#endif
 }
 
 #if HAVE_EXT_DEVICE_RESTORE_API
