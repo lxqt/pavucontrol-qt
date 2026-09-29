@@ -102,7 +102,7 @@
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as default</source>
-        <translation type="unfinished"></translation>
+        <translation>Bino bibeere nga bye ebya bulijjo</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
