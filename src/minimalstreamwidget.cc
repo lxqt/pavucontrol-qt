@@ -43,6 +43,7 @@ MinimalStreamWidget::MinimalStreamWidget(QWidget *parent) :
 
 MinimalStreamWidget::~MinimalStreamWidget() {
     if (peak != nullptr) {
+        pa_stream_set_state_callback(peak, nullptr, nullptr);
         pa_stream_disconnect(peak);
         pa_stream_unref(peak);
         peak = nullptr;
