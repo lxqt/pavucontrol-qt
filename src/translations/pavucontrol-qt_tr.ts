@@ -102,7 +102,7 @@
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as default</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsayılan olarak ayarla</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
