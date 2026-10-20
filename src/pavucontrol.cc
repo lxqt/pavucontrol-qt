@@ -152,7 +152,8 @@ static std::vector<std::pair<QByteArray, QByteArray>> parseCodecArray(const QJso
     if (!doc.isArray())
         return codecs;
 
-    for (const QJsonValue &v : doc.array()) {
+    const auto values = doc.array();
+    for (const QJsonValue &v : values) {
         if (!v.isObject())
             continue;
         QJsonObject o = v.toObject();
@@ -210,7 +211,8 @@ static void context_message_handlers_cb(pa_context *, int success, char *respons
         QByteArray targetPath = bluezMessageHandlerPath(q->cardName);
         bool found = false;
 
-        for (const QJsonValue &v : QJsonDocument::fromJson(response).array()) {
+        const auto values = QJsonDocument::fromJson(response).array();
+        for (const QJsonValue &v : values) {
             if (v.isObject() && v.toObject().value(QStringLiteral("name")).toString().toUtf8() == targetPath) {
                 found = true;
                 break;
