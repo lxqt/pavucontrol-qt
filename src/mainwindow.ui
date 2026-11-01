@@ -14,8 +14,7 @@
    <string>Volume Control</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="multimedia-volume-control">
-    <normaloff>.</normaloff>.</iconset>
+   <iconset theme="multimedia-volume-control"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

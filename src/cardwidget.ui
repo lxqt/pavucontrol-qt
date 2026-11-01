@@ -97,32 +97,12 @@
    <signal>toggled(bool)</signal>
    <receiver>profileLabel</receiver>
    <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>137</x>
-     <y>47</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>147</x>
-     <y>47</y>
-    </hint>
-   </hints>
   </connection>
   <connection>
    <sender>profileCB</sender>
    <signal>toggled(bool)</signal>
    <receiver>profileList</receiver>
    <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>137</x>
-     <y>47</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>315</x>
-     <y>47</y>
-    </hint>
-   </hints>
   </connection>
  </connections>
 </ui>

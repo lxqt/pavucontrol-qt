@@ -277,16 +277,6 @@
    <signal>toggled(bool)</signal>
    <receiver>advancedWidget</receiver>
    <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>151</x>
-     <y>103</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>364</x>
-     <y>122</y>
-    </hint>
-   </hints>
   </connection>
  </connections>
 </ui>
