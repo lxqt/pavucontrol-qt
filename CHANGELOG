@@ -1,3 +1,12 @@
+pavucontrol-qt-2.5.0 / 2026-11-05
+==================================
+ * Updated peak meter latency handling.
+ * Implemented Bluetooth codec selection and UI integration.
+ * Included pavucontrol header in `cardwidget.cc`.
+ * Don't show C2Y extensions warnings.
+ * CMake maintenance.
+ * Updated the address of Free Software Foundation.
+
 pavucontrol-qt-2.4.0 / 2026-04-20
 ==================================
  * Updated translations and bumped the version.
