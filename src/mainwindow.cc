@@ -1148,18 +1148,19 @@ void MainWindow::removeClient(uint32_t index) {
 }
 
 void MainWindow::removeAllWidgets() {
-    for (auto & sinkInputWidget : sinkInputWidgets)
-        removeSinkInput(sinkInputWidget.first);
-    for (auto & sourceOutputWidget : sourceOutputWidgets)
-        removeSourceOutput(sourceOutputWidget.first);
-    for (auto & sinkWidget : sinkWidgets)
-        removeSink(sinkWidget.first);
-    for (auto & sourceWidget : sourceWidgets)
-        removeSource(sourceWidget.first);
-    for (auto & cardWidget : cardWidgets)
-       removeCard(cardWidget.first);
-    for (auto & clientName : clientNames)
-        removeClient(clientName.first);
+    // removeX() erases from the map, so never hold an iterator across the call
+    while (!sinkInputWidgets.empty())
+        removeSinkInput(sinkInputWidgets.begin()->first);
+    while (!sourceOutputWidgets.empty())
+        removeSourceOutput(sourceOutputWidgets.begin()->first);
+    while (!sinkWidgets.empty())
+        removeSink(sinkWidgets.begin()->first);
+    while (!sourceWidgets.empty())
+        removeSource(sourceWidgets.begin()->first);
+    while (!cardWidgets.empty())
+        removeCard(cardWidgets.begin()->first);
+    while (!clientNames.empty())
+        removeClient(clientNames.begin()->first);
     deleteEventRoleWidget();
 }
 
