@@ -29,9 +29,9 @@
 CardWidget::CardWidget(QWidget* parent) :
     QWidget(parent) {
     setupUi(this);
-    connect(profileList, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &CardWidget::onProfileChange);
+    connect(profileList, &QComboBox::currentIndexChanged, this, &CardWidget::onProfileChange);
     connect(profileCB, &QAbstractButton::toggled, this, &CardWidget::onProfileCheck);
-    connect(codecList, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &CardWidget::onCodecChange);
+    connect(codecList, &QComboBox::currentIndexChanged, this, &CardWidget::onCodecChange);
     /* Hidden until prepareMenu() finds this card actually has codecs to
      * offer - most cards never will, since this is Bluetooth-only. */
     codecBox->hide();

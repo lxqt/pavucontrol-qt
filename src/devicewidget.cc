@@ -58,8 +58,8 @@ DeviceWidget::DeviceWidget(MainWindow* parent, QByteArray deviceType) :
     addAction(rename);
     setContextMenuPolicy(Qt::ActionsContextMenu);
 
-    connect(portList, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &DeviceWidget::onPortChange);
-    connect(offsetButton, static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &DeviceWidget::onOffsetChange);
+    connect(portList, &QComboBox::currentIndexChanged, this, &DeviceWidget::onPortChange);
+    connect(offsetButton, &QSpinBox::valueChanged, this, &DeviceWidget::onOffsetChange);
 
     for (auto & channel : channels)
         channel = nullptr;
