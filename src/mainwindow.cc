@@ -85,10 +85,10 @@ MainWindow::MainWindow():
     sinkTypeComboBox->setCurrentIndex((int) showSinkType);
     sourceTypeComboBox->setCurrentIndex((int) showSourceType);
 
-    connect(sinkInputTypeComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::onSinkInputTypeComboBoxChanged);
-    connect(sourceOutputTypeComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::onSourceOutputTypeComboBoxChanged);
-    connect(sinkTypeComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::onSinkTypeComboBoxChanged);
-    connect(sourceTypeComboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::onSourceTypeComboBoxChanged);
+    connect(sinkInputTypeComboBox, &QComboBox::currentIndexChanged, this, &MainWindow::onSinkInputTypeComboBoxChanged);
+    connect(sourceOutputTypeComboBox, &QComboBox::currentIndexChanged, this, &MainWindow::onSourceOutputTypeComboBoxChanged);
+    connect(sinkTypeComboBox, &QComboBox::currentIndexChanged, this, &MainWindow::onSinkTypeComboBoxChanged);
+    connect(sourceTypeComboBox, &QComboBox::currentIndexChanged, this, &MainWindow::onSourceTypeComboBoxChanged);
     connect(showVolumeMetersCheckButton, &QCheckBox::toggled, this, &MainWindow::onShowVolumeMetersCheckButtonToggled);
 
     QAction * quit = new QAction{this};
