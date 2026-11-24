@@ -30,13 +30,13 @@
         <location filename="../channel.cc" line="89"/>
         <source>%1% (%2dB)</source>
         <comment>volume slider label [X% (YdB)]</comment>
-        <translation>%1&#xa0;% (%2&#xa0;dB)</translation>
+        <translation>%1 % (%2 dB)</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="93"/>
         <source>%1%</source>
         <comment>volume slider label [X%]</comment>
-        <translation>%1&#xa0;%</translation>
+        <translation>%1 %</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="160"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../channel.cc" line="162"/>
         <source>&lt;small&gt;100% (0dB)&lt;/small&gt;</source>
-        <translation>&lt;small&gt;100&#xa0;% (0&#xa0;dB)&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;100 % (0 dB)&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../channel.cc" line="165"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../channelwidget.ui" line="34"/>
         <source>&lt;small&gt;50%&lt;/small&gt;</source>
-        <translation>&lt;small&gt;50&#xa0;%&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;50 %&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -102,7 +102,7 @@
     <message>
         <location filename="../devicewidget.ui" line="85"/>
         <source>Set as default</source>
-        <translation type="unfinished"></translation>
+        <translation>Establecer como predeterminado</translation>
     </message>
     <message>
         <location filename="../devicewidget.ui" line="103"/>
